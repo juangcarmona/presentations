@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<p:tagLst xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:p="http://schemas.openxmlformats.org/presentationml/2006/main">
+  <p:tag name="MIO_DBID" val="b15d55ba-4c00-4206-9fbb-5be4a269f5fe"/>
+  <p:tag name="MIO_DISABLE_DIRECT_UPDATE" val="True"/>
+  <p:tag name="MIO_EKGUID" val="bfe97ece-e0fd-4d13-8372-a23814b228dc"/>
+  <p:tag name="MIO_GUID" val="89741fee-6e01-4b17-a8d8-a093ee21619f"/>
+  <p:tag name="MIO_LASTDOWNLOADED" val="02.02.2023 08:40:27"/>
+  <p:tag name="MIO_LASTEDITORNAME" val="Chema de la Vega Gimenez"/>
+  <p:tag name="MIO_OBJECTNAME" val="Plain Concepts"/>
+  <p:tag name="MIO_UPDATE" val="True"/>
+  <p:tag name="MIO_VERSION" val="16.12.2022 09:36:14"/>
+</p:tagLst>

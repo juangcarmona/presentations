@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="utf-8"?>
+<p:notes xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:p="http://schemas.openxmlformats.org/presentationml/2006/main">
+  <p:cSld>
+    <p:spTree>
+      <p:nvGrpSpPr>
+        <p:cNvPr id="1" name="">
+          <a:extLst>
+            <a:ext uri="{FF2B5EF4-FFF2-40B4-BE49-F238E27FC236}">
+              <a16:creationId xmlns:a16="http://schemas.microsoft.com/office/drawing/2014/main" id="{735AD04E-64E9-8C24-5AAF-6B9F0289D6D7}"/>
+            </a:ext>
+          </a:extLst>
+        </p:cNvPr>
+        <p:cNvGrpSpPr/>
+        <p:nvPr/>
+      </p:nvGrpSpPr>
+      <p:grpSpPr>
+        <a:xfrm>
+          <a:off x="0" y="0"/>
+          <a:ext cx="0" cy="0"/>
+          <a:chOff x="0" y="0"/>
+          <a:chExt cx="0" cy="0"/>
+        </a:xfrm>
+      </p:grpSpPr>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="2" name="Slide Image Placeholder 1">
+            <a:extLst>
+              <a:ext uri="{FF2B5EF4-FFF2-40B4-BE49-F238E27FC236}">
+                <a16:creationId xmlns:a16="http://schemas.microsoft.com/office/drawing/2014/main" id="{1A355409-2A12-08B1-A9F3-A31A5D58E544}"/>
+              </a:ext>
+            </a:extLst>
+          </p:cNvPr>
+          <p:cNvSpPr>
+            <a:spLocks noGrp="1" noRot="1" noChangeAspect="1"/>
+          </p:cNvSpPr>
+          <p:nvPr>
+            <p:ph type="sldImg"/>
+          </p:nvPr>
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="-171450" y="1143000"/>
+            <a:ext cx="5486400" cy="3086100"/>
+          </a:xfrm>
+          <a:prstGeom prst="rect">
+            <a:avLst/>
+          </a:prstGeom>
+          <a:noFill/>
+          <a:ln w="12700">
+            <a:solidFill>
+              <a:prstClr val="black"/>
+            </a:solidFill>
+          </a:ln>
+        </p:spPr>
+      </p:sp>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="3" name="Notes Placeholder 2">
+            <a:extLst>
+              <a:ext uri="{FF2B5EF4-FFF2-40B4-BE49-F238E27FC236}">
+                <a16:creationId xmlns:a16="http://schemas.microsoft.com/office/drawing/2014/main" id="{E83F976D-1920-B685-D0F0-E06AFAC12F82}"/>
+              </a:ext>
+            </a:extLst>
+          </p:cNvPr>
+          <p:cNvSpPr>
+            <a:spLocks noGrp="1"/>
+          </p:cNvSpPr>
+          <p:nvPr>
+            <p:ph type="body" idx="1"/>
+          </p:nvPr>
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="514350" y="4400550"/>
+            <a:ext cx="4114800" cy="3600450"/>
+          </a:xfrm>
+          <a:prstGeom prst="rect">
+            <a:avLst/>
+          </a:prstGeom>
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr/>
+          <a:lstStyle/>
+          <a:p>
+            <a:r>
+              <a:rPr lang="en-US" sz="1200" b="1" kern="1200" dirty="0">
+                <a:solidFill>
+                  <a:schemeClr val="tx1"/>
+                </a:solidFill>
+                <a:effectLst/>
+                <a:latin typeface="+mn-lt"/>
+                <a:ea typeface="+mn-ea"/>
+                <a:cs typeface="+mn-cs"/>
+              </a:rPr>
+              <a:t>**Full replacement**</a:t>
+            </a:r>
+            <a:endParaRPr lang="en-US" sz="1200" b="0" kern="1200" dirty="0">
+              <a:solidFill>
+                <a:schemeClr val="tx1"/>
+              </a:solidFill>
+              <a:effectLst/>
+              <a:latin typeface="+mn-lt"/>
+              <a:ea typeface="+mn-ea"/>
+              <a:cs typeface="+mn-cs"/>
+            </a:endParaRPr>
+          </a:p>
+          <a:p>
+            <a:r>
+              <a:rPr lang="en-US" dirty="0" err="1">
+                <a:latin typeface="Calibri"/>
+                <a:ea typeface="Calibri"/>
+                <a:cs typeface="Calibri"/>
+              </a:rPr>
+              <a:t>visibilizar</a:t>
+            </a:r>
+            <a:r>
+              <a:rPr lang="en-US" dirty="0">
+                <a:latin typeface="Calibri"/>
+                <a:ea typeface="Calibri"/>
+                <a:cs typeface="Calibri"/>
+              </a:rPr>
+              <a:t> de </a:t>
+            </a:r>
+            <a:r>
+              <a:rPr lang="en-US" dirty="0" err="1">
+                <a:latin typeface="Calibri"/>
+                <a:ea typeface="Calibri"/>
+                <a:cs typeface="Calibri"/>
+              </a:rPr>
+              <a:t>alguna</a:t>
+            </a:r>
+            <a:r>
+              <a:rPr lang="en-US" dirty="0">
+                <a:latin typeface="Calibri"/>
+                <a:ea typeface="Calibri"/>
+                <a:cs typeface="Calibri"/>
+              </a:rPr>
+              <a:t> </a:t>
+            </a:r>
+            <a:r>
+              <a:rPr lang="en-US" dirty="0" err="1">
+                <a:latin typeface="Calibri"/>
+                <a:ea typeface="Calibri"/>
+                <a:cs typeface="Calibri"/>
+              </a:rPr>
+              <a:t>manera</a:t>
+            </a:r>
+            <a:r>
+              <a:rPr lang="en-US" dirty="0">
+                <a:latin typeface="Calibri"/>
+                <a:ea typeface="Calibri"/>
+                <a:cs typeface="Calibri"/>
+              </a:rPr>
+              <a:t> </a:t>
+            </a:r>
+            <a:r>
+              <a:rPr lang="en-US" dirty="0" err="1">
+                <a:latin typeface="Calibri"/>
+                <a:ea typeface="Calibri"/>
+                <a:cs typeface="Calibri"/>
+              </a:rPr>
+              <a:t>dichas</a:t>
+            </a:r>
+            <a:r>
+              <a:rPr lang="en-US" dirty="0">
+                <a:latin typeface="Calibri"/>
+                <a:ea typeface="Calibri"/>
+                <a:cs typeface="Calibri"/>
+              </a:rPr>
+              <a:t> </a:t>
+            </a:r>
+            <a:r>
+              <a:rPr lang="en-US" dirty="0" err="1">
+                <a:latin typeface="Calibri"/>
+                <a:ea typeface="Calibri"/>
+                <a:cs typeface="Calibri"/>
+              </a:rPr>
+              <a:t>fases</a:t>
+            </a:r>
+            <a:r>
+              <a:rPr lang="en-US" dirty="0">
+                <a:latin typeface="Calibri"/>
+                <a:ea typeface="Calibri"/>
+                <a:cs typeface="Calibri"/>
+              </a:rPr>
+              <a:t>.</a:t>
+            </a:r>
+          </a:p>
+          <a:p>
+            <a:r>
+              <a:rPr lang="en-US" dirty="0">
+                <a:latin typeface="Calibri"/>
+                <a:ea typeface="Calibri"/>
+                <a:cs typeface="Calibri"/>
+              </a:rPr>
+              <a:t>Sino me </a:t>
+            </a:r>
+            <a:r>
+              <a:rPr lang="en-US" dirty="0" err="1">
+                <a:latin typeface="Calibri"/>
+                <a:ea typeface="Calibri"/>
+                <a:cs typeface="Calibri"/>
+              </a:rPr>
+              <a:t>puede</a:t>
+            </a:r>
+            <a:r>
+              <a:rPr lang="en-US" dirty="0">
+                <a:latin typeface="Calibri"/>
+                <a:ea typeface="Calibri"/>
+                <a:cs typeface="Calibri"/>
+              </a:rPr>
+              <a:t> </a:t>
+            </a:r>
+            <a:r>
+              <a:rPr lang="en-US" dirty="0" err="1">
+                <a:latin typeface="Calibri"/>
+                <a:ea typeface="Calibri"/>
+                <a:cs typeface="Calibri"/>
+              </a:rPr>
+              <a:t>valer</a:t>
+            </a:r>
+            <a:r>
+              <a:rPr lang="en-US" dirty="0">
+                <a:latin typeface="Calibri"/>
+                <a:ea typeface="Calibri"/>
+                <a:cs typeface="Calibri"/>
+              </a:rPr>
+              <a:t> meter 1 slide </a:t>
+            </a:r>
+            <a:r>
+              <a:rPr lang="en-US" dirty="0" err="1">
+                <a:latin typeface="Calibri"/>
+                <a:ea typeface="Calibri"/>
+                <a:cs typeface="Calibri"/>
+              </a:rPr>
+              <a:t>fija</a:t>
+            </a:r>
+            <a:r>
+              <a:rPr lang="en-US" dirty="0">
+                <a:latin typeface="Calibri"/>
+                <a:ea typeface="Calibri"/>
+                <a:cs typeface="Calibri"/>
+              </a:rPr>
+              <a:t> para </a:t>
+            </a:r>
+            <a:r>
+              <a:rPr lang="en-US" dirty="0" err="1">
+                <a:latin typeface="Calibri"/>
+                <a:ea typeface="Calibri"/>
+                <a:cs typeface="Calibri"/>
+              </a:rPr>
+              <a:t>que</a:t>
+            </a:r>
+            <a:r>
+              <a:rPr lang="en-US" dirty="0">
+                <a:latin typeface="Calibri"/>
+                <a:ea typeface="Calibri"/>
+                <a:cs typeface="Calibri"/>
+              </a:rPr>
+              <a:t> </a:t>
+            </a:r>
+            <a:r>
+              <a:rPr lang="en-US" dirty="0" err="1">
+                <a:latin typeface="Calibri"/>
+                <a:ea typeface="Calibri"/>
+                <a:cs typeface="Calibri"/>
+              </a:rPr>
+              <a:t>quién</a:t>
+            </a:r>
+            <a:r>
+              <a:rPr lang="en-US" dirty="0">
+                <a:latin typeface="Calibri"/>
+                <a:ea typeface="Calibri"/>
+                <a:cs typeface="Calibri"/>
+              </a:rPr>
+              <a:t> </a:t>
+            </a:r>
+            <a:r>
+              <a:rPr lang="en-US" dirty="0" err="1">
+                <a:latin typeface="Calibri"/>
+                <a:ea typeface="Calibri"/>
+                <a:cs typeface="Calibri"/>
+              </a:rPr>
+              <a:t>haga</a:t>
+            </a:r>
+            <a:r>
+              <a:rPr lang="en-US" dirty="0">
+                <a:latin typeface="Calibri"/>
+                <a:ea typeface="Calibri"/>
+                <a:cs typeface="Calibri"/>
+              </a:rPr>
+              <a:t> la </a:t>
+            </a:r>
+            <a:r>
+              <a:rPr lang="en-US" dirty="0" err="1">
+                <a:latin typeface="Calibri"/>
+                <a:ea typeface="Calibri"/>
+                <a:cs typeface="Calibri"/>
+              </a:rPr>
+              <a:t>porpuesta</a:t>
+            </a:r>
+            <a:r>
+              <a:rPr lang="en-US" dirty="0">
+                <a:latin typeface="Calibri"/>
+                <a:ea typeface="Calibri"/>
+                <a:cs typeface="Calibri"/>
+              </a:rPr>
+              <a:t> se </a:t>
+            </a:r>
+            <a:r>
+              <a:rPr lang="en-US" dirty="0" err="1">
+                <a:latin typeface="Calibri"/>
+                <a:ea typeface="Calibri"/>
+                <a:cs typeface="Calibri"/>
+              </a:rPr>
+              <a:t>acuerde</a:t>
+            </a:r>
+            <a:r>
+              <a:rPr lang="en-US" dirty="0">
+                <a:latin typeface="Calibri"/>
+                <a:ea typeface="Calibri"/>
+                <a:cs typeface="Calibri"/>
+              </a:rPr>
+              <a:t> de </a:t>
+            </a:r>
+            <a:r>
+              <a:rPr lang="en-US" dirty="0" err="1">
+                <a:latin typeface="Calibri"/>
+                <a:ea typeface="Calibri"/>
+                <a:cs typeface="Calibri"/>
+              </a:rPr>
+              <a:t>ponerlo</a:t>
+            </a:r>
+            <a:endParaRPr lang="en-US" dirty="0">
+              <a:latin typeface="Calibri"/>
+              <a:ea typeface="Calibri"/>
+              <a:cs typeface="Calibri"/>
+            </a:endParaRPr>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+    </p:spTree>
+    <p:extLst>
+      <p:ext uri="{BB962C8B-B14F-4D97-AF65-F5344CB8AC3E}">
+        <p14:creationId xmlns:p14="http://schemas.microsoft.com/office/powerpoint/2010/main" val="4072907688"/>
+      </p:ext>
+    </p:extLst>
+  </p:cSld>
+  <p:clrMapOvr>
+    <a:masterClrMapping/>
+  </p:clrMapOvr>
+</p:notes>

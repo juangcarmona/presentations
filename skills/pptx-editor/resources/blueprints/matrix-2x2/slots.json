@@ -1,0 +1,101 @@
+{
+  "layout": "matrix-2x2",
+  "source": "offerings",
+  "slide": "slide32.xml",
+  "media": [
+    "image4.png"
+  ],
+  "slots": [
+    {
+      "name": "SECTION",
+      "kind": "scalar"
+    },
+    {
+      "name": "TITLE",
+      "kind": "scalar"
+    },
+    {
+      "name": "AXIS_Y",
+      "kind": "scalar"
+    },
+    {
+      "name": "AXIS_X",
+      "kind": "scalar"
+    },
+    {
+      "name": "QA_TITLE",
+      "kind": "scalar",
+      "group": "qa"
+    },
+    {
+      "name": "QA_DESC",
+      "kind": "scalar",
+      "group": "qa"
+    },
+    {
+      "name": "QB_TITLE",
+      "kind": "scalar",
+      "group": "qb"
+    },
+    {
+      "name": "QB_DESC",
+      "kind": "scalar",
+      "group": "qb"
+    },
+    {
+      "name": "QC_TITLE",
+      "kind": "scalar",
+      "group": "qc"
+    },
+    {
+      "name": "QC_DESC",
+      "kind": "scalar",
+      "group": "qc"
+    },
+    {
+      "name": "QD_TITLE",
+      "kind": "scalar",
+      "group": "qd"
+    },
+    {
+      "name": "QD_DESC",
+      "kind": "scalar",
+      "group": "qd"
+    }
+  ],
+  "groups": {
+    "qa": {
+      "ids": [
+        28,
+        29,
+        30
+      ],
+      "control_slot": "QA_TITLE"
+    },
+    "qb": {
+      "ids": [
+        31,
+        32,
+        33
+      ],
+      "control_slot": "QB_TITLE"
+    },
+    "qc": {
+      "ids": [
+        34,
+        35,
+        36
+      ],
+      "control_slot": "QC_TITLE"
+    },
+    "qd": {
+      "ids": [
+        37,
+        38,
+        39
+      ],
+      "control_slot": "QD_TITLE"
+    }
+  },
+  "tables": []
+}

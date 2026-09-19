@@ -1,0 +1,4289 @@
+{
+ "_comment": "Per-layout blueprint specs. Each layout: source (master|proposal-example) + slide file + shape map. shape entries are keyed by cNvPr id in the source slide. kind=scalar (single line) or list (bullet array, paragraph cloned per item). group ties shapes together for pruning when the controlling slot is empty.",
+ "three-col-cards": {
+  "source": "master",
+  "slide": "slide13.xml",
+  "shapes": [
+   {
+    "id": 4,
+    "slot": "SECTION",
+    "kind": "scalar"
+   },
+   {
+    "id": 5,
+    "slot": "TITLE",
+    "kind": "scalar"
+   },
+   {
+    "id": 7,
+    "slot": "CARD1_HEADER",
+    "kind": "scalar",
+    "group": "card1"
+   },
+   {
+    "id": 9,
+    "slot": "CARD1_BODY",
+    "kind": "list",
+    "group": "card1"
+   },
+   {
+    "id": 11,
+    "slot": "CARD2_HEADER",
+    "kind": "scalar",
+    "group": "card2"
+   },
+   {
+    "id": 13,
+    "slot": "CARD2_BODY",
+    "kind": "list",
+    "group": "card2"
+   },
+   {
+    "id": 15,
+    "slot": "CARD3_HEADER",
+    "kind": "scalar",
+    "group": "card3"
+   },
+   {
+    "id": 17,
+    "slot": "CARD3_BODY",
+    "kind": "list",
+    "group": "card3"
+   }
+  ],
+  "groups": {
+   "card1": [
+    6,
+    7,
+    8,
+    9
+   ],
+   "card2": [
+    10,
+    11,
+    12,
+    13
+   ],
+   "card3": [
+    14,
+    15,
+    16,
+    17
+   ]
+  }
+ },
+ "phase-dark-left": {
+  "source": "master",
+  "slide": "slide15.xml",
+  "shapes": [
+   {
+    "id": 3,
+    "slot": "PHASE_LABEL",
+    "kind": "scalar"
+   },
+   {
+    "id": 4,
+    "slot": "TITLE",
+    "kind": "scalar"
+   },
+   {
+    "id": 5,
+    "slot": "SUBTITLE",
+    "kind": "scalar"
+   },
+   {
+    "id": 6,
+    "slot": "LEAD",
+    "kind": "scalar"
+   },
+   {
+    "id": 8,
+    "slot": "TAG1",
+    "kind": "scalar",
+    "group": "tag1"
+   },
+   {
+    "id": 10,
+    "slot": "TAG2",
+    "kind": "scalar",
+    "group": "tag2"
+   },
+   {
+    "id": 12,
+    "slot": "TAG3",
+    "kind": "scalar",
+    "group": "tag3"
+   },
+   {
+    "id": 13,
+    "slot": "RIGHT_TITLE",
+    "kind": "scalar"
+   },
+   {
+    "id": 16,
+    "slot": "STEP1_HEAD",
+    "kind": "scalar",
+    "group": "step1"
+   },
+   {
+    "id": 17,
+    "slot": "STEP1_DESC",
+    "kind": "scalar",
+    "group": "step1"
+   },
+   {
+    "id": 20,
+    "slot": "STEP2_HEAD",
+    "kind": "scalar",
+    "group": "step2"
+   },
+   {
+    "id": 21,
+    "slot": "STEP2_DESC",
+    "kind": "scalar",
+    "group": "step2"
+   },
+   {
+    "id": 24,
+    "slot": "STEP3_HEAD",
+    "kind": "scalar",
+    "group": "step3"
+   },
+   {
+    "id": 25,
+    "slot": "STEP3_DESC",
+    "kind": "scalar",
+    "group": "step3"
+   },
+   {
+    "id": 28,
+    "slot": "STEP4_HEAD",
+    "kind": "scalar",
+    "group": "step4"
+   },
+   {
+    "id": 29,
+    "slot": "STEP4_DESC",
+    "kind": "scalar",
+    "group": "step4"
+   }
+  ],
+  "groups": {
+   "tag1": [
+    7,
+    8
+   ],
+   "tag2": [
+    9,
+    10
+   ],
+   "tag3": [
+    11,
+    12
+   ],
+   "step1": [
+    14,
+    15,
+    16,
+    17
+   ],
+   "step2": [
+    18,
+    19,
+    20,
+    21
+   ],
+   "step3": [
+    22,
+    23,
+    24,
+    25
+   ],
+   "step4": [
+    26,
+    27,
+    28,
+    29
+   ]
+  }
+ },
+ "two-col-text-callout": {
+  "source": "master",
+  "slide": "slide16.xml",
+  "shapes": [
+   {
+    "id": 4,
+    "slot": "SECTION",
+    "kind": "scalar"
+   },
+   {
+    "id": 5,
+    "slot": "TITLE",
+    "kind": "scalar"
+   },
+   {
+    "id": 6,
+    "slot": "LEAD",
+    "kind": "scalar"
+   },
+   {
+    "id": 7,
+    "slot": "LEAD2",
+    "kind": "scalar"
+   },
+   {
+    "id": 9,
+    "slot": "CALLOUT1_HEADER",
+    "kind": "scalar",
+    "group": "callout1"
+   },
+   {
+    "id": 10,
+    "slot": "CALLOUT1_BODY",
+    "kind": "list",
+    "group": "callout1"
+   },
+   {
+    "id": 12,
+    "slot": "CALLOUT2_HEADER",
+    "kind": "scalar",
+    "group": "callout2"
+   },
+   {
+    "id": 13,
+    "slot": "CALLOUT2_BODY",
+    "kind": "list",
+    "group": "callout2"
+   }
+  ],
+  "groups": {
+   "callout1": [
+    8,
+    9,
+    10
+   ],
+   "callout2": [
+    11,
+    12,
+    13
+   ]
+  }
+ },
+ "icon-list-split": {
+  "source": "master",
+  "slide": "slide17.xml",
+  "shapes": [
+   {
+    "id": 4,
+    "slot": "SECTION",
+    "kind": "scalar"
+   },
+   {
+    "id": 5,
+    "slot": "TITLE",
+    "kind": "scalar"
+   },
+   {
+    "id": 6,
+    "slot": "INTRO",
+    "kind": "scalar"
+   },
+   {
+    "id": 8,
+    "slot": "ROW1_LABEL",
+    "kind": "scalar",
+    "group": "row1"
+   },
+   {
+    "id": 9,
+    "slot": "ROW1_VALUE",
+    "kind": "scalar",
+    "group": "row1"
+   },
+   {
+    "id": 11,
+    "slot": "ROW2_LABEL",
+    "kind": "scalar",
+    "group": "row2"
+   },
+   {
+    "id": 12,
+    "slot": "ROW2_VALUE",
+    "kind": "scalar",
+    "group": "row2"
+   },
+   {
+    "id": 14,
+    "slot": "ROW3_LABEL",
+    "kind": "scalar",
+    "group": "row3"
+   },
+   {
+    "id": 15,
+    "slot": "ROW3_VALUE",
+    "kind": "scalar",
+    "group": "row3"
+   },
+   {
+    "id": 17,
+    "slot": "ROW4_LABEL",
+    "kind": "scalar",
+    "group": "row4"
+   },
+   {
+    "id": 18,
+    "slot": "ROW4_VALUE",
+    "kind": "scalar",
+    "group": "row4"
+   }
+  ],
+  "groups": {
+   "row1": [
+    7,
+    8,
+    9
+   ],
+   "row2": [
+    10,
+    11,
+    12
+   ],
+   "row3": [
+    13,
+    14,
+    15
+   ],
+   "row4": [
+    16,
+    17,
+    18
+   ]
+  },
+  "drop": [19, 20, 21],
+  "_geometry_comment": "Re-flowed from the master's label-left/value-right + sidebar-callout layout into 4 full-width stacked blocks (bold label over wrapped value), spread vertically. The narrow value column + sidebar made long descriptive values overlap; full width lets the same text wrap to ~2 lines per block. Sidebar-callout need is covered by two-col-text-callout.",
+  "geometry": {
+   "6":  {"x": 0.5,  "y": 1.50, "w": 9.0,  "h": 0.40},
+   "7":  {"x": 0.5,  "y": 2.15, "w": 0.15, "h": 0.15},
+   "8":  {"x": 0.8,  "y": 2.12, "w": 8.65, "h": 0.24},
+   "9":  {"x": 0.8,  "y": 2.38, "w": 8.65, "h": 0.54},
+   "10": {"x": 0.5,  "y": 2.99, "w": 0.15, "h": 0.15},
+   "11": {"x": 0.8,  "y": 2.96, "w": 8.65, "h": 0.24},
+   "12": {"x": 0.8,  "y": 3.22, "w": 8.65, "h": 0.54},
+   "13": {"x": 0.5,  "y": 3.83, "w": 0.15, "h": 0.15},
+   "14": {"x": 0.8,  "y": 3.80, "w": 8.65, "h": 0.24},
+   "15": {"x": 0.8,  "y": 4.06, "w": 8.65, "h": 0.54},
+   "16": {"x": 0.5,  "y": 4.67, "w": 0.15, "h": 0.15},
+   "17": {"x": 0.8,  "y": 4.64, "w": 8.65, "h": 0.24},
+   "18": {"x": 0.8,  "y": 4.90, "w": 8.65, "h": 0.40}
+  }
+ },
+ "phase-detail-left-right": {
+  "source": "master",
+  "slide": "slide14.xml",
+  "shapes": [
+   {
+    "id": 3,
+    "slot": "PHASE_LABEL",
+    "kind": "scalar"
+   },
+   {
+    "id": 4,
+    "slot": "TITLE",
+    "kind": "scalar"
+   },
+   {
+    "id": 5,
+    "slot": "SUBTITLE",
+    "kind": "scalar"
+   },
+   {
+    "id": 6,
+    "slot": "LEAD",
+    "kind": "scalar"
+   },
+   {
+    "id": 8,
+    "slot": "TAG1",
+    "kind": "scalar",
+    "group": "tag1"
+   },
+   {
+    "id": 10,
+    "slot": "TAG2",
+    "kind": "scalar",
+    "group": "tag2"
+   },
+   {
+    "id": 12,
+    "slot": "TAG3",
+    "kind": "scalar",
+    "group": "tag3"
+   },
+   {
+    "id": 13,
+    "slot": "RIGHT_TITLE",
+    "kind": "scalar"
+   },
+   {
+    "id": 16,
+    "slot": "ACT1_HEAD",
+    "kind": "scalar",
+    "group": "act1"
+   },
+   {
+    "id": 17,
+    "slot": "ACT1_DESC",
+    "kind": "scalar",
+    "group": "act1"
+   },
+   {
+    "id": 20,
+    "slot": "ACT2_HEAD",
+    "kind": "scalar",
+    "group": "act2"
+   },
+   {
+    "id": 21,
+    "slot": "ACT2_DESC",
+    "kind": "scalar",
+    "group": "act2"
+   },
+   {
+    "id": 24,
+    "slot": "ACT3_HEAD",
+    "kind": "scalar",
+    "group": "act3"
+   },
+   {
+    "id": 25,
+    "slot": "ACT3_DESC",
+    "kind": "scalar",
+    "group": "act3"
+   },
+   {
+    "id": 28,
+    "slot": "ACT4_HEAD",
+    "kind": "scalar",
+    "group": "act4"
+   },
+   {
+    "id": 29,
+    "slot": "ACT4_DESC",
+    "kind": "scalar",
+    "group": "act4"
+   }
+  ],
+  "groups": {
+   "tag1": [
+    7,
+    8
+   ],
+   "tag2": [
+    9,
+    10
+   ],
+   "tag3": [
+    11,
+    12
+   ],
+   "act1": [
+    14,
+    15,
+    16,
+    17
+   ],
+   "act2": [
+    18,
+    19,
+    20,
+    21
+   ],
+   "act3": [
+    22,
+    23,
+    24,
+    25
+   ],
+   "act4": [
+    26,
+    27,
+    28,
+    29
+   ]
+  }
+ },
+ "arch-diagram-tech": {
+  "source": "master",
+  "slide": "slide21.xml",
+  "shapes": [
+   {
+    "id": 4,
+    "slot": "SECTION",
+    "kind": "scalar"
+   },
+   {
+    "id": 5,
+    "slot": "TITLE",
+    "kind": "scalar"
+   },
+   {
+    "id": 7,
+    "slot": "DIAGRAM_CAPTION",
+    "kind": "scalar"
+   },
+   {
+    "id": 8,
+    "slot": "DIAGRAM_NOTE",
+    "kind": "scalar"
+   },
+   {
+    "id": 11,
+    "slot": "TECH_TITLE",
+    "kind": "scalar"
+   },
+   {
+    "id": 12,
+    "slot": "TECH_LIST",
+    "kind": "list"
+   }
+  ],
+  "groups": {}
+ },
+ "numbered-list-callout": {
+  "source": "master",
+  "slide": "slide27.xml",
+  "shapes": [
+   {
+    "id": 4,
+    "slot": "SECTION",
+    "kind": "scalar"
+   },
+   {
+    "id": 5,
+    "slot": "TITLE",
+    "kind": "scalar"
+   },
+   {
+    "id": 8,
+    "slot": "ITEM1_HEAD",
+    "kind": "scalar",
+    "group": "item1"
+   },
+   {
+    "id": 9,
+    "slot": "ITEM1_DESC",
+    "kind": "scalar",
+    "group": "item1"
+   },
+   {
+    "id": 12,
+    "slot": "ITEM2_HEAD",
+    "kind": "scalar",
+    "group": "item2"
+   },
+   {
+    "id": 13,
+    "slot": "ITEM2_DESC",
+    "kind": "scalar",
+    "group": "item2"
+   },
+   {
+    "id": 16,
+    "slot": "ITEM3_HEAD",
+    "kind": "scalar",
+    "group": "item3"
+   },
+   {
+    "id": 17,
+    "slot": "ITEM3_DESC",
+    "kind": "scalar",
+    "group": "item3"
+   },
+   {
+    "id": 20,
+    "slot": "CALLOUT_HEAD",
+    "kind": "scalar"
+   },
+   {
+    "id": 21,
+    "slot": "CALLOUT_BODY",
+    "kind": "scalar"
+   }
+  ],
+  "groups": {
+   "item1": [
+    6,
+    7,
+    8,
+    9
+   ],
+   "item2": [
+    10,
+    11,
+    12,
+    13
+   ],
+   "item3": [
+    14,
+    15,
+    16,
+    17
+   ]
+  }
+ },
+ "roles-two-col": {
+  "source": "master",
+  "slide": "slide30.xml",
+  "shapes": [
+   {
+    "id": 4,
+    "slot": "SECTION",
+    "kind": "scalar"
+   },
+   {
+    "id": 5,
+    "slot": "TITLE",
+    "kind": "scalar"
+   },
+   {
+    "id": 6,
+    "slot": "SUBTITLE",
+    "kind": "scalar"
+   },
+   {
+    "id": 10,
+    "slot": "LEFT_ROLE",
+    "kind": "scalar"
+   },
+   {
+    "id": 11,
+    "slot": "LEFT_ROLE_SUB",
+    "kind": "scalar"
+   },
+   {
+    "id": 12,
+    "slot": "LEFT_LIST",
+    "kind": "list"
+   },
+   {
+    "id": 16,
+    "slot": "RIGHT_ROLE",
+    "kind": "scalar"
+   },
+   {
+    "id": 17,
+    "slot": "RIGHT_ROLE_SUB",
+    "kind": "scalar"
+   },
+   {
+    "id": 18,
+    "slot": "RIGHT_LIST",
+    "kind": "list"
+   }
+  ],
+  "groups": {}
+ },
+ "comms-tiered": {
+  "source": "master",
+  "slide": "slide33.xml",
+  "shapes": [
+   {
+    "id": 4,
+    "slot": "SECTION",
+    "kind": "scalar"
+   },
+   {
+    "id": 5,
+    "slot": "TITLE",
+    "kind": "scalar"
+   },
+   {
+    "id": 8,
+    "slot": "T1_LABEL",
+    "kind": "scalar",
+    "group": "tier1"
+   },
+   {
+    "id": 10,
+    "slot": "T1_FREQ",
+    "kind": "scalar",
+    "group": "tier1"
+   },
+   {
+    "id": 11,
+    "slot": "T1_DESC",
+    "kind": "scalar",
+    "group": "tier1"
+   },
+   {
+    "id": 14,
+    "slot": "T2_LABEL",
+    "kind": "scalar",
+    "group": "tier2"
+   },
+   {
+    "id": 16,
+    "slot": "T2_FREQ",
+    "kind": "scalar",
+    "group": "tier2"
+   },
+   {
+    "id": 17,
+    "slot": "T2_DESC",
+    "kind": "scalar",
+    "group": "tier2"
+   },
+   {
+    "id": 20,
+    "slot": "T3_LABEL",
+    "kind": "scalar",
+    "group": "tier3"
+   },
+   {
+    "id": 22,
+    "slot": "T3_FREQ",
+    "kind": "scalar",
+    "group": "tier3"
+   },
+   {
+    "id": 23,
+    "slot": "T3_DESC",
+    "kind": "scalar",
+    "group": "tier3"
+   }
+  ],
+  "groups": {
+   "tier1": [
+    6,
+    7,
+    8,
+    9,
+    10,
+    11
+   ],
+   "tier2": [
+    12,
+    13,
+    14,
+    15,
+    16,
+    17
+   ],
+   "tier3": [
+    18,
+    19,
+    20,
+    21,
+    22,
+    23
+   ]
+  }
+ },
+ "three-options": {
+  "source": "master",
+  "slide": "slide38.xml",
+  "shapes": [
+   {
+    "id": 4,
+    "slot": "SECTION",
+    "kind": "scalar"
+   },
+   {
+    "id": 5,
+    "slot": "TITLE",
+    "kind": "scalar"
+   },
+   {
+    "id": 8,
+    "slot": "A_NAME",
+    "kind": "scalar",
+    "group": "optA"
+   },
+   {
+    "id": 9,
+    "slot": "A_ITEMS",
+    "kind": "list",
+    "group": "optA"
+   },
+   {
+    "id": 10,
+    "slot": "A_TOTAL",
+    "kind": "scalar",
+    "group": "optA"
+   },
+   {
+    "id": 13,
+    "slot": "B_NAME",
+    "kind": "scalar",
+    "group": "optB"
+   },
+   {
+    "id": 14,
+    "slot": "B_ITEMS",
+    "kind": "list",
+    "group": "optB"
+   },
+   {
+    "id": 15,
+    "slot": "B_TOTAL",
+    "kind": "scalar",
+    "group": "optB"
+   },
+   {
+    "id": 16,
+    "slot": "B_DISCOUNT",
+    "kind": "scalar",
+    "group": "optB"
+   },
+   {
+    "id": 17,
+    "slot": "B_FINAL",
+    "kind": "scalar",
+    "group": "optB"
+   },
+   {
+    "id": 20,
+    "slot": "C_NAME",
+    "kind": "scalar",
+    "group": "optC"
+   },
+   {
+    "id": 21,
+    "slot": "C_ITEMS",
+    "kind": "list",
+    "group": "optC"
+   },
+   {
+    "id": 22,
+    "slot": "C_TOTAL",
+    "kind": "scalar",
+    "group": "optC"
+   },
+   {
+    "id": 23,
+    "slot": "C_DISCOUNT",
+    "kind": "scalar",
+    "group": "optC"
+   },
+   {
+    "id": 24,
+    "slot": "C_FINAL",
+    "kind": "scalar",
+    "group": "optC"
+   }
+  ],
+  "groups": {
+   "optA": [
+    6,
+    7,
+    8,
+    9,
+    10
+   ],
+   "optB": [
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17
+   ],
+   "optC": [
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24
+   ]
+  }
+ },
+ "services-grid": {
+  "source": "master",
+  "slide": "slide39.xml",
+  "shapes": [
+   {
+    "id": 4,
+    "slot": "SECTION",
+    "kind": "scalar"
+   },
+   {
+    "id": 5,
+    "slot": "TITLE",
+    "kind": "scalar"
+   },
+   {
+    "id": 9,
+    "slot": "S1_NAME",
+    "kind": "scalar",
+    "group": "s1"
+   },
+   {
+    "id": 10,
+    "slot": "S1_DESC",
+    "kind": "scalar",
+    "group": "s1"
+   },
+   {
+    "id": 14,
+    "slot": "S2_NAME",
+    "kind": "scalar",
+    "group": "s2"
+   },
+   {
+    "id": 15,
+    "slot": "S2_DESC",
+    "kind": "scalar",
+    "group": "s2"
+   },
+   {
+    "id": 19,
+    "slot": "S3_NAME",
+    "kind": "scalar",
+    "group": "s3"
+   },
+   {
+    "id": 20,
+    "slot": "S3_DESC",
+    "kind": "scalar",
+    "group": "s3"
+   },
+   {
+    "id": 24,
+    "slot": "S4_NAME",
+    "kind": "scalar",
+    "group": "s4"
+   },
+   {
+    "id": 25,
+    "slot": "S4_DESC",
+    "kind": "scalar",
+    "group": "s4"
+   },
+   {
+    "id": 29,
+    "slot": "S5_NAME",
+    "kind": "scalar",
+    "group": "s5"
+   },
+   {
+    "id": 30,
+    "slot": "S5_DESC",
+    "kind": "scalar",
+    "group": "s5"
+   },
+   {
+    "id": 34,
+    "slot": "S6_NAME",
+    "kind": "scalar",
+    "group": "s6"
+   },
+   {
+    "id": 35,
+    "slot": "S6_DESC",
+    "kind": "scalar",
+    "group": "s6"
+   }
+  ],
+  "groups": {
+   "s1": [
+    6,
+    7,
+    8,
+    9,
+    10
+   ],
+   "s2": [
+    11,
+    12,
+    13,
+    14,
+    15
+   ],
+   "s3": [
+    16,
+    17,
+    18,
+    19,
+    20
+   ],
+   "s4": [
+    21,
+    22,
+    23,
+    24,
+    25
+   ],
+   "s5": [
+    26,
+    27,
+    28,
+    29,
+    30
+   ],
+   "s6": [
+    31,
+    32,
+    33,
+    34,
+    35
+   ]
+  }
+ },
+ "team-dual-col": {
+  "source": "master",
+  "slide": "slide28.xml",
+  "shapes": [
+   {
+    "id": 4,
+    "slot": "SECTION",
+    "kind": "scalar"
+   },
+   {
+    "id": 5,
+    "slot": "TITLE",
+    "kind": "scalar"
+   },
+   {
+    "id": 8,
+    "slot": "LEFT_TITLE",
+    "kind": "scalar"
+   },
+   {
+    "id": 9,
+    "slot": "LEFT_ROLE",
+    "kind": "scalar"
+   },
+   {
+    "id": 10,
+    "slot": "LEFT_ROLE_DESC",
+    "kind": "scalar"
+   },
+   {
+    "id": 11,
+    "slot": "LEFT_SUB",
+    "kind": "scalar"
+   },
+   {
+    "id": 12,
+    "slot": "LEFT_SUB_DESC",
+    "kind": "scalar"
+   },
+   {
+    "id": 14,
+    "slot": "CONNECTOR",
+    "kind": "scalar"
+   },
+   {
+    "id": 16,
+    "slot": "RIGHT_TITLE",
+    "kind": "scalar"
+   },
+   {
+    "id": 17,
+    "slot": "RIGHT_DESC",
+    "kind": "scalar"
+   },
+   {
+    "id": 19,
+    "slot": "ROLE1",
+    "kind": "scalar",
+    "group": "role1"
+   },
+   {
+    "id": 20,
+    "slot": "ROLE1_DESC",
+    "kind": "scalar",
+    "group": "role1"
+   },
+   {
+    "id": 22,
+    "slot": "ROLE2",
+    "kind": "scalar",
+    "group": "role2"
+   },
+   {
+    "id": 23,
+    "slot": "ROLE2_DESC",
+    "kind": "scalar",
+    "group": "role2"
+   },
+   {
+    "id": 25,
+    "slot": "ROLE3",
+    "kind": "scalar",
+    "group": "role3"
+   },
+   {
+    "id": 26,
+    "slot": "ROLE3_DESC",
+    "kind": "scalar",
+    "group": "role3"
+   }
+  ],
+  "groups": {
+   "role1": [
+    18,
+    19,
+    20
+   ],
+   "role2": [
+    21,
+    22,
+    23
+   ],
+   "role3": [
+    24,
+    25,
+    26
+   ]
+  }
+ },
+ "hybrid-team": {
+  "source": "master",
+  "slide": "slide29.xml",
+  "shapes": [
+   {
+    "id": 4,
+    "slot": "SECTION",
+    "kind": "scalar"
+   },
+   {
+    "id": 5,
+    "slot": "TITLE",
+    "kind": "scalar"
+   },
+   {
+    "id": 8,
+    "slot": "LEFT_TITLE",
+    "kind": "scalar"
+   },
+   {
+    "id": 9,
+    "slot": "LEFT_ROLE",
+    "kind": "scalar"
+   },
+   {
+    "id": 10,
+    "slot": "LEFT_ROLE_DESC",
+    "kind": "scalar"
+   },
+   {
+    "id": 11,
+    "slot": "LEFT_SUB",
+    "kind": "scalar"
+   },
+   {
+    "id": 12,
+    "slot": "LEFT_SUB_DESC",
+    "kind": "scalar"
+   },
+   {
+    "id": 14,
+    "slot": "CONNECTOR",
+    "kind": "scalar"
+   },
+   {
+    "id": 16,
+    "slot": "RIGHT_TITLE",
+    "kind": "scalar"
+   },
+   {
+    "id": 17,
+    "slot": "RIGHT_DESC",
+    "kind": "scalar"
+   },
+   {
+    "id": 19,
+    "slot": "ROLE1",
+    "kind": "scalar",
+    "group": "role1"
+   },
+   {
+    "id": 20,
+    "slot": "ROLE1_DESC",
+    "kind": "scalar",
+    "group": "role1"
+   },
+   {
+    "id": 22,
+    "slot": "ROLE2",
+    "kind": "scalar",
+    "group": "role2"
+   },
+   {
+    "id": 23,
+    "slot": "ROLE2_DESC",
+    "kind": "scalar",
+    "group": "role2"
+   },
+   {
+    "id": 25,
+    "slot": "ROLE3",
+    "kind": "scalar",
+    "group": "role3"
+   },
+   {
+    "id": 26,
+    "slot": "ROLE3_DESC",
+    "kind": "scalar",
+    "group": "role3"
+   }
+  ],
+  "groups": {
+   "role1": [
+    18,
+    19,
+    20
+   ],
+   "role2": [
+    21,
+    22,
+    23
+   ],
+   "role3": [
+    24,
+    25,
+    26
+   ]
+  }
+ },
+ "budget-summary": {
+  "source": "master",
+  "slide": "slide35.xml",
+  "shapes": [
+   {
+    "id": 4,
+    "slot": "SECTION",
+    "kind": "scalar"
+   },
+   {
+    "id": 5,
+    "slot": "TITLE",
+    "kind": "scalar"
+   },
+   {
+    "id": 8,
+    "slot": "DESGLOSE_TITLE",
+    "kind": "scalar"
+   },
+   {
+    "id": 9,
+    "slot": "DESGLOSE_DESC",
+    "kind": "scalar"
+   },
+   {
+    "id": 11,
+    "slot": "M1_LABEL",
+    "kind": "scalar",
+    "group": "m1"
+   },
+   {
+    "id": 12,
+    "slot": "M1_VALUE",
+    "kind": "scalar",
+    "group": "m1"
+   },
+   {
+    "id": 14,
+    "slot": "M2_LABEL",
+    "kind": "scalar",
+    "group": "m2"
+   },
+   {
+    "id": 15,
+    "slot": "M2_VALUE",
+    "kind": "scalar",
+    "group": "m2"
+   },
+   {
+    "id": 17,
+    "slot": "M3_LABEL",
+    "kind": "scalar",
+    "group": "m3"
+   },
+   {
+    "id": 18,
+    "slot": "M3_VALUE",
+    "kind": "scalar",
+    "group": "m3"
+   },
+   {
+    "id": 20,
+    "slot": "TOTAL",
+    "kind": "scalar"
+   },
+   {
+    "id": 21,
+    "slot": "TOTAL_NOTE",
+    "kind": "scalar"
+   }
+  ],
+  "groups": {
+   "m1": [
+    10,
+    11,
+    12
+   ],
+   "m2": [
+    13,
+    14,
+    15
+   ],
+   "m3": [
+    16,
+    17,
+    18
+   ]
+  }
+ },
+ "pricing-table": {
+  "source": "master",
+  "slide": "slide37.xml",
+  "shapes": [
+   {
+    "id": 4,
+    "slot": "SECTION",
+    "kind": "scalar"
+   },
+   {
+    "id": 5,
+    "slot": "TITLE",
+    "kind": "scalar"
+   }
+  ],
+  "table": {
+   "slot": "RATES",
+   "header_rows": 1
+  },
+  "groups": {}
+ },
+ "two-col-contrast": {
+  "source": "manual",
+  "note": "Hand-authored from three-col-cards (no source slide). Rebuild with the one-off builder, not build_blueprints."
+ },
+ "data-table": {
+  "source": "agentes",
+  "slide": "slide10.xml",
+  "note": "Generic blue-header data/requirements/dependencies table (Tipo|Descripcion). Fill ROWS with a list of [cell, cell] rows, or {header, rows} to override the header. Net-new: existing tables (pricing-table, capacity-table) are domain-specific.",
+  "shapes": [
+   {
+    "id": 2,
+    "slot": "SECTION",
+    "kind": "scalar"
+   },
+   {
+    "id": 3,
+    "slot": "TITLE",
+    "kind": "scalar"
+   }
+  ],
+  "table": {
+   "slot": "ROWS",
+   "header_rows": 1
+  },
+  "groups": {}
+ },
+ "capability-grid": {
+  "source": "offerings",
+  "slide": "slide38.xml",
+  "note": "NATIVE re-extraction (was agentes). 6 numbered capability cards 3x2: card + blue badge (fixed 1-6) + TITLE + BODY. Each card a prunable group. drop=[41,42,35] logo + page-number + stray 21 literal.",
+  "drop": [
+   41,
+   42,
+   35
+  ],
+  "shapes": [
+   {
+    "id": 34,
+    "slot": "SECTION",
+    "kind": "scalar"
+   },
+   {
+    "id": 36,
+    "slot": "TITLE",
+    "kind": "scalar"
+   },
+   {
+    "id": 7,
+    "slot": "CAP1_TITLE",
+    "kind": "scalar",
+    "group": "cap1"
+   },
+   {
+    "id": 8,
+    "slot": "CAP1_BODY",
+    "kind": "scalar",
+    "group": "cap1"
+   },
+   {
+    "id": 12,
+    "slot": "CAP2_TITLE",
+    "kind": "scalar",
+    "group": "cap2"
+   },
+   {
+    "id": 13,
+    "slot": "CAP2_BODY",
+    "kind": "scalar",
+    "group": "cap2"
+   },
+   {
+    "id": 17,
+    "slot": "CAP3_TITLE",
+    "kind": "scalar",
+    "group": "cap3"
+   },
+   {
+    "id": 18,
+    "slot": "CAP3_BODY",
+    "kind": "scalar",
+    "group": "cap3"
+   },
+   {
+    "id": 22,
+    "slot": "CAP4_TITLE",
+    "kind": "scalar",
+    "group": "cap4"
+   },
+   {
+    "id": 23,
+    "slot": "CAP4_BODY",
+    "kind": "scalar",
+    "group": "cap4"
+   },
+   {
+    "id": 27,
+    "slot": "CAP5_TITLE",
+    "kind": "scalar",
+    "group": "cap5"
+   },
+   {
+    "id": 28,
+    "slot": "CAP5_BODY",
+    "kind": "scalar",
+    "group": "cap5"
+   },
+   {
+    "id": 32,
+    "slot": "CAP6_TITLE",
+    "kind": "scalar",
+    "group": "cap6"
+   },
+   {
+    "id": 33,
+    "slot": "CAP6_BODY",
+    "kind": "scalar",
+    "group": "cap6"
+   }
+  ],
+  "groups": {
+   "cap1": [
+    4,
+    5,
+    6,
+    7,
+    8
+   ],
+   "cap2": [
+    9,
+    10,
+    11,
+    12,
+    13
+   ],
+   "cap3": [
+    14,
+    15,
+    16,
+    17,
+    18
+   ],
+   "cap4": [
+    19,
+    20,
+    21,
+    22,
+    23
+   ],
+   "cap5": [
+    24,
+    25,
+    26,
+    27,
+    28
+   ],
+   "cap6": [
+    29,
+    30,
+    31,
+    32,
+    33
+   ]
+  }
+ },
+ "benefits-icons": {
+  "source": "agentes",
+  "slide": "slide16.xml",
+  "note": "Four benefit columns: icon (picture) + ellipse + HEADER + BODY (prose). Empty BENEFITn_HEADER prunes the whole column, including its icon <p:pic> (relies on the pic-aware group pruning in fill_blueprint). Net-new: horizontal icon/stat benefits row.",
+  "shapes": [
+   {
+    "id": 2,
+    "slot": "SECTION",
+    "kind": "scalar"
+   },
+   {
+    "id": 3,
+    "slot": "TITLE",
+    "kind": "scalar"
+   },
+   {
+    "id": 6,
+    "slot": "BENEFIT1_HEADER",
+    "kind": "scalar",
+    "group": "benefit1"
+   },
+   {
+    "id": 8,
+    "slot": "BENEFIT1_BODY",
+    "kind": "scalar",
+    "group": "benefit1"
+   },
+   {
+    "id": 11,
+    "slot": "BENEFIT2_HEADER",
+    "kind": "scalar",
+    "group": "benefit2"
+   },
+   {
+    "id": 13,
+    "slot": "BENEFIT2_BODY",
+    "kind": "scalar",
+    "group": "benefit2"
+   },
+   {
+    "id": 16,
+    "slot": "BENEFIT3_HEADER",
+    "kind": "scalar",
+    "group": "benefit3"
+   },
+   {
+    "id": 18,
+    "slot": "BENEFIT3_BODY",
+    "kind": "scalar",
+    "group": "benefit3"
+   },
+   {
+    "id": 21,
+    "slot": "BENEFIT4_HEADER",
+    "kind": "scalar",
+    "group": "benefit4"
+   },
+   {
+    "id": 23,
+    "slot": "BENEFIT4_BODY",
+    "kind": "scalar",
+    "group": "benefit4"
+   }
+  ],
+  "groups": {
+   "benefit1": [
+    4,
+    5,
+    6,
+    8,
+    25
+   ],
+   "benefit2": [
+    9,
+    10,
+    11,
+    13,
+    31
+   ],
+   "benefit3": [
+    14,
+    15,
+    16,
+    18,
+    33
+   ],
+   "benefit4": [
+    19,
+    20,
+    21,
+    23,
+    35
+   ]
+  }
+ },
+ "pros-cons-split": {
+  "source": "sermes",
+  "slide": "slide22.xml",
+  "note": "Two-column pain-points vs opportunities. Left column = up to 5 red numbered cards (PAINn_BODY); right column = up to 5 green cards (OPPn_BODY). Empty body prunes the card. Net-new: the only layout with semantic red/green contrast. Bounded-accent exception: red (#C0392B/#FCEEEE pain) + green (#1E8E5A/#EAF7F0 opportunity) are kept on purpose; only off-palette navy is normalized. header_normalize=[2,4,5,7] drops the source number-badge/icon-circle/icon-pic and the LEAD subtitle (dense layout has no room) and restyles SECTION/TITLE to the master header pattern.",
+  "recolor": {
+   "0F1729": "1A1A2E"
+  },
+  "drop": [
+   50,
+   51
+  ],
+  "header_normalize": [
+   2,
+   4,
+   5,
+   7
+  ],
+  "shapes": [
+   {
+    "id": 3,
+    "slot": "SECTION",
+    "kind": "scalar"
+   },
+   {
+    "id": 6,
+    "slot": "TITLE",
+    "kind": "scalar"
+   },
+   {
+    "id": 8,
+    "slot": "PAIN_TITLE",
+    "kind": "scalar"
+   },
+   {
+    "id": 12,
+    "slot": "PAIN1_BODY",
+    "kind": "scalar",
+    "group": "pain1"
+   },
+   {
+    "id": 16,
+    "slot": "PAIN2_BODY",
+    "kind": "scalar",
+    "group": "pain2"
+   },
+   {
+    "id": 20,
+    "slot": "PAIN3_BODY",
+    "kind": "scalar",
+    "group": "pain3"
+   },
+   {
+    "id": 24,
+    "slot": "PAIN4_BODY",
+    "kind": "scalar",
+    "group": "pain4"
+   },
+   {
+    "id": 28,
+    "slot": "PAIN5_BODY",
+    "kind": "scalar",
+    "group": "pain5"
+   },
+   {
+    "id": 29,
+    "slot": "OPP_TITLE",
+    "kind": "scalar"
+   },
+   {
+    "id": 33,
+    "slot": "OPP1_BODY",
+    "kind": "scalar",
+    "group": "opp1"
+   },
+   {
+    "id": 37,
+    "slot": "OPP2_BODY",
+    "kind": "scalar",
+    "group": "opp2"
+   },
+   {
+    "id": 41,
+    "slot": "OPP3_BODY",
+    "kind": "scalar",
+    "group": "opp3"
+   },
+   {
+    "id": 45,
+    "slot": "OPP4_BODY",
+    "kind": "scalar",
+    "group": "opp4"
+   },
+   {
+    "id": 49,
+    "slot": "OPP5_BODY",
+    "kind": "scalar",
+    "group": "opp5"
+   }
+  ],
+  "groups": {
+   "pain1": [
+    9,
+    10,
+    11,
+    12
+   ],
+   "pain2": [
+    13,
+    14,
+    15,
+    16
+   ],
+   "pain3": [
+    17,
+    18,
+    19,
+    20
+   ],
+   "pain4": [
+    21,
+    22,
+    23,
+    24
+   ],
+   "pain5": [
+    25,
+    26,
+    27,
+    28
+   ],
+   "opp1": [
+    30,
+    31,
+    33
+   ],
+   "opp2": [
+    34,
+    35,
+    37
+   ],
+   "opp3": [
+    38,
+    39,
+    41
+   ],
+   "opp4": [
+    42,
+    43,
+    45
+   ],
+   "opp5": [
+    46,
+    47,
+    49
+   ]
+  }
+ },
+ "value-stats-cta": {
+  "source": "sermes",
+  "slide": "slide5.xml",
+  "note": "Three KPI stat cards (big STATn number + STATn_LABEL + STATn_DESC) over a full-width highlight panel (PANEL_TITLE + PANEL_LEFT + PANEL_RIGHT). Empty STATn prunes a card; empty PANEL_TITLE prunes the panel. Net-new: the only layout with large-number metrics. Off-palette greens normalized to master navy; panel tint to off-white; stat-3 neutral gray kept. drop=[10,16,22,28,...] removes the source decorative icon pics inside the stat/panel circles (meaningless out of context — one was the Plain Concepts logo); the colored circles stay as clean accent dots. header_normalize=[2,4,5,7] drops the source number-badge/icon-circle/icon-pic and the LEAD subtitle and restyles SECTION/TITLE to the master header pattern.",
+  "recolor": {
+   "1E8E5A": "1A1A2E",
+   "0F1729": "1A1A2E",
+   "EAF7F0": "F2F3F7"
+  },
+  "drop": [
+   10,
+   16,
+   22,
+   28,
+   32,
+   33
+  ],
+  "header_normalize": [
+   2,
+   4,
+   5,
+   7
+  ],
+  "shapes": [
+   {
+    "id": 3,
+    "slot": "SECTION",
+    "kind": "scalar"
+   },
+   {
+    "id": 6,
+    "slot": "TITLE",
+    "kind": "scalar"
+   },
+   {
+    "id": 11,
+    "slot": "STAT1",
+    "kind": "scalar",
+    "group": "stat1"
+   },
+   {
+    "id": 12,
+    "slot": "STAT1_LABEL",
+    "kind": "scalar",
+    "group": "stat1"
+   },
+   {
+    "id": 13,
+    "slot": "STAT1_DESC",
+    "kind": "scalar",
+    "group": "stat1"
+   },
+   {
+    "id": 17,
+    "slot": "STAT2",
+    "kind": "scalar",
+    "group": "stat2"
+   },
+   {
+    "id": 18,
+    "slot": "STAT2_LABEL",
+    "kind": "scalar",
+    "group": "stat2"
+   },
+   {
+    "id": 19,
+    "slot": "STAT2_DESC",
+    "kind": "scalar",
+    "group": "stat2"
+   },
+   {
+    "id": 23,
+    "slot": "STAT3",
+    "kind": "scalar",
+    "group": "stat3"
+   },
+   {
+    "id": 24,
+    "slot": "STAT3_LABEL",
+    "kind": "scalar",
+    "group": "stat3"
+   },
+   {
+    "id": 25,
+    "slot": "STAT3_DESC",
+    "kind": "scalar",
+    "group": "stat3"
+   },
+   {
+    "id": 29,
+    "slot": "PANEL_TITLE",
+    "kind": "scalar",
+    "group": "panel"
+   },
+   {
+    "id": 30,
+    "slot": "PANEL_LEFT",
+    "kind": "scalar",
+    "group": "panel"
+   },
+   {
+    "id": 31,
+    "slot": "PANEL_RIGHT",
+    "kind": "scalar",
+    "group": "panel"
+   }
+  ],
+  "groups": {
+   "stat1": [
+    8,
+    9,
+    11,
+    12,
+    13
+   ],
+   "stat2": [
+    14,
+    15,
+    17,
+    18,
+    19
+   ],
+   "stat3": [
+    20,
+    21,
+    23,
+    24,
+    25
+   ],
+   "panel": [
+    26,
+    27,
+    29,
+    30,
+    31
+   ]
+  }
+ },
+ "layered-architecture": {
+  "source": "offerings",
+  "slide": "slide49.xml",
+  "note": "NATIVE re-extraction (was sermes). 5 stacked horizontal layer bands (F2F3F7), each a prunable group. drop=[16,21] logo + page-number.",
+  "drop": [
+   16,
+   21
+  ],
+  "shapes": [
+   {
+    "id": 14,
+    "slot": "SECTION",
+    "kind": "scalar"
+   },
+   {
+    "id": 15,
+    "slot": "TITLE",
+    "kind": "scalar"
+   },
+   {
+    "id": 5,
+    "slot": "LAYER1",
+    "kind": "scalar",
+    "group": "l1"
+   },
+   {
+    "id": 7,
+    "slot": "LAYER2",
+    "kind": "scalar",
+    "group": "l2"
+   },
+   {
+    "id": 9,
+    "slot": "LAYER3",
+    "kind": "scalar",
+    "group": "l3"
+   },
+   {
+    "id": 11,
+    "slot": "LAYER4",
+    "kind": "scalar",
+    "group": "l4"
+   },
+   {
+    "id": 13,
+    "slot": "LAYER5",
+    "kind": "scalar",
+    "group": "l5"
+   }
+  ],
+  "groups": {
+   "l1": [
+    4,
+    5
+   ],
+   "l2": [
+    6,
+    7
+   ],
+   "l3": [
+    8,
+    9
+   ],
+   "l4": [
+    10,
+    11
+   ],
+   "l5": [
+    12,
+    13
+   ]
+  }
+ },
+ "statement": {
+  "source": "offerings",
+  "slide": "slide13.xml",
+  "note": "Big narrative statement: SECTION label + STATEMENT (large insight) + SUPPORTING context paragraph. drop=[5,6] removes offerings top-right logo pic + page-number placeholder (master chrome grafted by normalize_chrome).",
+  "drop": [
+   5,
+   6
+  ],
+  "shapes": [
+   {
+    "id": 2,
+    "slot": "SECTION",
+    "kind": "scalar"
+   },
+   {
+    "id": 3,
+    "slot": "STATEMENT",
+    "kind": "scalar"
+   },
+   {
+    "id": 4,
+    "slot": "SUPPORTING",
+    "kind": "scalar"
+   }
+  ],
+  "groups": {}
+ },
+ "maturity-staircase": {
+  "source": "offerings",
+  "slide": "slide22.xml",
+  "note": "Ascending 5-step maturity staircase (Level 1..5, each = card + blue badge dot + tag + name) over a foundation base bar. SECTION+TITLE header, AXIS vertical label, BASE foundation bar. Each step is a prunable group (empty STEPn_NAME prunes its card+badge). Fills the previously-deferred maturity-staircase (no clean source existed). drop=[30,31] removes offerings logo pic + page-number.",
+  "recolor": {
+   "9746FE": "3D5AFE",
+   "FBC640": "1A1A2E"
+  },
+  "drop": [
+   30,
+   31
+  ],
+  "shapes": [
+   {
+    "id": 28,
+    "slot": "SECTION",
+    "kind": "scalar"
+   },
+   {
+    "id": 29,
+    "slot": "TITLE",
+    "kind": "scalar"
+   },
+   {
+    "id": 4,
+    "slot": "AXIS",
+    "kind": "scalar"
+   },
+   {
+    "id": 7,
+    "slot": "STEP1_TAG",
+    "kind": "scalar",
+    "group": "step1"
+   },
+   {
+    "id": 8,
+    "slot": "STEP1_NAME",
+    "kind": "scalar",
+    "group": "step1"
+   },
+   {
+    "id": 11,
+    "slot": "STEP2_TAG",
+    "kind": "scalar",
+    "group": "step2"
+   },
+   {
+    "id": 12,
+    "slot": "STEP2_NAME",
+    "kind": "scalar",
+    "group": "step2"
+   },
+   {
+    "id": 15,
+    "slot": "STEP3_TAG",
+    "kind": "scalar",
+    "group": "step3"
+   },
+   {
+    "id": 16,
+    "slot": "STEP3_NAME",
+    "kind": "scalar",
+    "group": "step3"
+   },
+   {
+    "id": 19,
+    "slot": "STEP4_TAG",
+    "kind": "scalar",
+    "group": "step4"
+   },
+   {
+    "id": 20,
+    "slot": "STEP4_NAME",
+    "kind": "scalar",
+    "group": "step4"
+   },
+   {
+    "id": 23,
+    "slot": "STEP5_TAG",
+    "kind": "scalar",
+    "group": "step5"
+   },
+   {
+    "id": 24,
+    "slot": "STEP5_NAME",
+    "kind": "scalar",
+    "group": "step5"
+   },
+   {
+    "id": 26,
+    "slot": "BASE",
+    "kind": "scalar"
+   }
+  ],
+  "groups": {
+   "step1": [
+    5,
+    6,
+    7,
+    8
+   ],
+   "step2": [
+    9,
+    10,
+    11,
+    12
+   ],
+   "step3": [
+    13,
+    14,
+    15,
+    16
+   ],
+   "step4": [
+    17,
+    18,
+    19,
+    20
+   ],
+   "step5": [
+    21,
+    22,
+    23,
+    24
+   ]
+  }
+ },
+ "quote": {
+  "source": "offerings",
+  "slide": "slide33.xml",
+  "note": "Full-bleed dark quote slide: large QUOTE + ATTRIB (author/title). Dark navy bg recolored to master 1A1A2E. drop=[10,11] page-number + offerings logo.",
+  "recolor": {
+   "1A2340": "1A1A2E"
+  },
+  "drop": [
+   10,
+   11
+  ],
+  "shapes": [
+   {
+    "id": 5,
+    "slot": "QUOTE",
+    "kind": "scalar"
+   },
+   {
+    "id": 6,
+    "slot": "ATTRIB",
+    "kind": "scalar"
+   }
+  ],
+  "groups": {}
+ },
+ "references": {
+  "source": "offerings",
+  "slide": "slide56.xml",
+  "note": "Appendix/references: SECTION+TITLE, SOURCES line, up to 4 numbered reference lines (each a prunable group). drop=[11,16] offerings logo + page-number.",
+  "drop": [
+   11,
+   16
+  ],
+  "shapes": [
+   {
+    "id": 9,
+    "slot": "SECTION",
+    "kind": "scalar"
+   },
+   {
+    "id": 10,
+    "slot": "TITLE",
+    "kind": "scalar"
+   },
+   {
+    "id": 4,
+    "slot": "SOURCES",
+    "kind": "scalar"
+   },
+   {
+    "id": 5,
+    "slot": "REF1",
+    "kind": "scalar",
+    "group": "ref1"
+   },
+   {
+    "id": 6,
+    "slot": "REF2",
+    "kind": "scalar",
+    "group": "ref2"
+   },
+   {
+    "id": 7,
+    "slot": "REF3",
+    "kind": "scalar",
+    "group": "ref3"
+   },
+   {
+    "id": 8,
+    "slot": "REF4",
+    "kind": "scalar",
+    "group": "ref4"
+   }
+  ],
+  "groups": {
+   "ref1": [
+    5
+   ],
+   "ref2": [
+    6
+   ],
+   "ref3": [
+    7
+   ],
+   "ref4": [
+    8
+   ]
+  }
+ },
+ "kpi-row-4": {
+  "source": "offerings",
+  "slide": "slide15.xml",
+  "note": "Row of 4 KPI cards (big VALUE % + LABEL + DESC + SOURCE) + a full-width highlight INSIGHT bar. Each KPI is a prunable group. Insight bar (accent4 yellow) recolored to primary blue. drop=[29,30] offerings logo + page-number.",
+  "recolor": {
+   "FBC640": "3D5AFE"
+  },
+  "drop": [
+   29,
+   30
+  ],
+  "shapes": [
+   {
+    "id": 27,
+    "slot": "SECTION",
+    "kind": "scalar"
+   },
+   {
+    "id": 28,
+    "slot": "TITLE",
+    "kind": "scalar"
+   },
+   {
+    "id": 4,
+    "slot": "SUBTITLE",
+    "kind": "scalar"
+   },
+   {
+    "id": 6,
+    "slot": "KPI1_VALUE",
+    "kind": "scalar",
+    "group": "kpi1"
+   },
+   {
+    "id": 7,
+    "slot": "KPI1_LABEL",
+    "kind": "scalar",
+    "group": "kpi1"
+   },
+   {
+    "id": 8,
+    "slot": "KPI1_DESC",
+    "kind": "scalar",
+    "group": "kpi1"
+   },
+   {
+    "id": 9,
+    "slot": "KPI1_SOURCE",
+    "kind": "scalar",
+    "group": "kpi1"
+   },
+   {
+    "id": 11,
+    "slot": "KPI2_VALUE",
+    "kind": "scalar",
+    "group": "kpi2"
+   },
+   {
+    "id": 12,
+    "slot": "KPI2_LABEL",
+    "kind": "scalar",
+    "group": "kpi2"
+   },
+   {
+    "id": 13,
+    "slot": "KPI2_DESC",
+    "kind": "scalar",
+    "group": "kpi2"
+   },
+   {
+    "id": 14,
+    "slot": "KPI2_SOURCE",
+    "kind": "scalar",
+    "group": "kpi2"
+   },
+   {
+    "id": 16,
+    "slot": "KPI3_VALUE",
+    "kind": "scalar",
+    "group": "kpi3"
+   },
+   {
+    "id": 17,
+    "slot": "KPI3_LABEL",
+    "kind": "scalar",
+    "group": "kpi3"
+   },
+   {
+    "id": 18,
+    "slot": "KPI3_DESC",
+    "kind": "scalar",
+    "group": "kpi3"
+   },
+   {
+    "id": 19,
+    "slot": "KPI3_SOURCE",
+    "kind": "scalar",
+    "group": "kpi3"
+   },
+   {
+    "id": 21,
+    "slot": "KPI4_VALUE",
+    "kind": "scalar",
+    "group": "kpi4"
+   },
+   {
+    "id": 22,
+    "slot": "KPI4_LABEL",
+    "kind": "scalar",
+    "group": "kpi4"
+   },
+   {
+    "id": 23,
+    "slot": "KPI4_DESC",
+    "kind": "scalar",
+    "group": "kpi4"
+   },
+   {
+    "id": 24,
+    "slot": "KPI4_SOURCE",
+    "kind": "scalar",
+    "group": "kpi4"
+   },
+   {
+    "id": 26,
+    "slot": "INSIGHT",
+    "kind": "scalar"
+   }
+  ],
+  "groups": {
+   "kpi1": [
+    5,
+    6,
+    7,
+    8,
+    9
+   ],
+   "kpi2": [
+    10,
+    11,
+    12,
+    13,
+    14
+   ],
+   "kpi3": [
+    15,
+    16,
+    17,
+    18,
+    19
+   ],
+   "kpi4": [
+    20,
+    21,
+    22,
+    23,
+    24
+   ]
+  }
+ },
+ "logo-wall": {
+  "source": "offerings",
+  "slide": "slide47.xml",
+  "note": "2x3 client-logo wall: SECTION+TITLE + up to 6 logo cells (gray box placeholder + LOGOn label, prunable). Boxes stay as image placeholders. drop=[18,19].",
+  "drop": [
+   18,
+   19
+  ],
+  "shapes": [
+   {
+    "id": 16,
+    "slot": "SECTION",
+    "kind": "scalar"
+   },
+   {
+    "id": 17,
+    "slot": "TITLE",
+    "kind": "scalar"
+   },
+   {
+    "id": 5,
+    "slot": "LOGO1",
+    "kind": "scalar",
+    "group": "logo1"
+   },
+   {
+    "id": 7,
+    "slot": "LOGO2",
+    "kind": "scalar",
+    "group": "logo2"
+   },
+   {
+    "id": 9,
+    "slot": "LOGO3",
+    "kind": "scalar",
+    "group": "logo3"
+   },
+   {
+    "id": 11,
+    "slot": "LOGO4",
+    "kind": "scalar",
+    "group": "logo4"
+   },
+   {
+    "id": 13,
+    "slot": "LOGO5",
+    "kind": "scalar",
+    "group": "logo5"
+   },
+   {
+    "id": 15,
+    "slot": "LOGO6",
+    "kind": "scalar",
+    "group": "logo6"
+   }
+  ],
+  "groups": {
+   "logo1": [
+    4,
+    5
+   ],
+   "logo2": [
+    6,
+    7
+   ],
+   "logo3": [
+    8,
+    9
+   ],
+   "logo4": [
+    10,
+    11
+   ],
+   "logo5": [
+    12,
+    13
+   ],
+   "logo6": [
+    14,
+    15
+   ]
+  }
+ },
+ "team-photos": {
+  "source": "offerings",
+  "slide": "slide40.xml",
+  "note": "Row of 4 team members: photo placeholder box + NAME + ROLE + BIO. Each member a prunable group (empty NAME prunes it). PHOTO slot clears the [Photo] bracket; box stays as image placeholder. drop=[26,31].",
+  "drop": [
+   26,
+   31
+  ],
+  "shapes": [
+   {
+    "id": 24,
+    "slot": "SECTION",
+    "kind": "scalar"
+   },
+   {
+    "id": 25,
+    "slot": "TITLE",
+    "kind": "scalar"
+   },
+   {
+    "id": 6,
+    "slot": "MEMBER1_NAME",
+    "kind": "scalar",
+    "group": "m1"
+   },
+   {
+    "id": 7,
+    "slot": "MEMBER1_ROLE",
+    "kind": "scalar",
+    "group": "m1"
+   },
+   {
+    "id": 8,
+    "slot": "MEMBER1_BIO",
+    "kind": "scalar",
+    "group": "m1"
+   },
+   {
+    "id": 5,
+    "slot": "MEMBER1_PHOTO",
+    "kind": "scalar",
+    "group": "m1"
+   },
+   {
+    "id": 11,
+    "slot": "MEMBER2_NAME",
+    "kind": "scalar",
+    "group": "m2"
+   },
+   {
+    "id": 12,
+    "slot": "MEMBER2_ROLE",
+    "kind": "scalar",
+    "group": "m2"
+   },
+   {
+    "id": 13,
+    "slot": "MEMBER2_BIO",
+    "kind": "scalar",
+    "group": "m2"
+   },
+   {
+    "id": 10,
+    "slot": "MEMBER2_PHOTO",
+    "kind": "scalar",
+    "group": "m2"
+   },
+   {
+    "id": 16,
+    "slot": "MEMBER3_NAME",
+    "kind": "scalar",
+    "group": "m3"
+   },
+   {
+    "id": 17,
+    "slot": "MEMBER3_ROLE",
+    "kind": "scalar",
+    "group": "m3"
+   },
+   {
+    "id": 18,
+    "slot": "MEMBER3_BIO",
+    "kind": "scalar",
+    "group": "m3"
+   },
+   {
+    "id": 15,
+    "slot": "MEMBER3_PHOTO",
+    "kind": "scalar",
+    "group": "m3"
+   },
+   {
+    "id": 21,
+    "slot": "MEMBER4_NAME",
+    "kind": "scalar",
+    "group": "m4"
+   },
+   {
+    "id": 22,
+    "slot": "MEMBER4_ROLE",
+    "kind": "scalar",
+    "group": "m4"
+   },
+   {
+    "id": 23,
+    "slot": "MEMBER4_BIO",
+    "kind": "scalar",
+    "group": "m4"
+   },
+   {
+    "id": 20,
+    "slot": "MEMBER4_PHOTO",
+    "kind": "scalar",
+    "group": "m4"
+   }
+  ],
+  "groups": {
+   "m1": [
+    4,
+    5,
+    6,
+    7,
+    8
+   ],
+   "m2": [
+    9,
+    10,
+    11,
+    12,
+    13
+   ],
+   "m3": [
+    14,
+    15,
+    16,
+    17,
+    18
+   ],
+   "m4": [
+    19,
+    20,
+    21,
+    22,
+    23
+   ]
+  }
+ },
+ "data-insights": {
+  "source": "offerings",
+  "slide": "slide37.xml",
+  "note": "Left chart/graph placeholder + right column of 3 insights (TITLE+DESC each, prunable). CHART slot clears the placeholder bracket; box stays. drop=[14,19].",
+  "drop": [
+   14,
+   19
+  ],
+  "shapes": [
+   {
+    "id": 12,
+    "slot": "SECTION",
+    "kind": "scalar"
+   },
+   {
+    "id": 13,
+    "slot": "TITLE",
+    "kind": "scalar"
+   },
+   {
+    "id": 5,
+    "slot": "CHART",
+    "kind": "scalar"
+   },
+   {
+    "id": 6,
+    "slot": "INSIGHT1_TITLE",
+    "kind": "scalar",
+    "group": "i1"
+   },
+   {
+    "id": 7,
+    "slot": "INSIGHT1_DESC",
+    "kind": "scalar",
+    "group": "i1"
+   },
+   {
+    "id": 8,
+    "slot": "INSIGHT2_TITLE",
+    "kind": "scalar",
+    "group": "i2"
+   },
+   {
+    "id": 9,
+    "slot": "INSIGHT2_DESC",
+    "kind": "scalar",
+    "group": "i2"
+   },
+   {
+    "id": 10,
+    "slot": "INSIGHT3_TITLE",
+    "kind": "scalar",
+    "group": "i3"
+   },
+   {
+    "id": 11,
+    "slot": "INSIGHT3_DESC",
+    "kind": "scalar",
+    "group": "i3"
+   }
+  ],
+  "groups": {
+   "i1": [
+    6,
+    7
+   ],
+   "i2": [
+    8,
+    9
+   ],
+   "i3": [
+    10,
+    11
+   ]
+  }
+ },
+ "objectives-grid": {
+  "source": "offerings",
+  "slide": "slide17.xml",
+  "note": "Left context panel (STATEMENT + POINTS bullets + OBJ_HEADER) and a 2x2 grid of numbered objective cards (blue, 01-04). Each objective a prunable group. drop=[25,26].",
+  "drop": [
+   25,
+   26
+  ],
+  "shapes": [
+   {
+    "id": 8,
+    "slot": "SECTION",
+    "kind": "scalar"
+   },
+   {
+    "id": 4,
+    "slot": "STATEMENT",
+    "kind": "scalar"
+   },
+   {
+    "id": 5,
+    "slot": "POINTS",
+    "kind": "list"
+   },
+   {
+    "id": 7,
+    "slot": "OBJ_HEADER",
+    "kind": "scalar"
+   },
+   {
+    "id": 11,
+    "slot": "OBJ1_TITLE",
+    "kind": "scalar",
+    "group": "obj1"
+   },
+   {
+    "id": 12,
+    "slot": "OBJ1_DESC",
+    "kind": "scalar",
+    "group": "obj1"
+   },
+   {
+    "id": 15,
+    "slot": "OBJ2_TITLE",
+    "kind": "scalar",
+    "group": "obj2"
+   },
+   {
+    "id": 16,
+    "slot": "OBJ2_DESC",
+    "kind": "scalar",
+    "group": "obj2"
+   },
+   {
+    "id": 19,
+    "slot": "OBJ3_TITLE",
+    "kind": "scalar",
+    "group": "obj3"
+   },
+   {
+    "id": 20,
+    "slot": "OBJ3_DESC",
+    "kind": "scalar",
+    "group": "obj3"
+   },
+   {
+    "id": 23,
+    "slot": "OBJ4_TITLE",
+    "kind": "scalar",
+    "group": "obj4"
+   },
+   {
+    "id": 24,
+    "slot": "OBJ4_DESC",
+    "kind": "scalar",
+    "group": "obj4"
+   }
+  ],
+  "groups": {
+   "obj1": [
+    9,
+    10,
+    11,
+    12
+   ],
+   "obj2": [
+    13,
+    14,
+    15,
+    16
+   ],
+   "obj3": [
+    17,
+    18,
+    19,
+    20
+   ],
+   "obj4": [
+    21,
+    22,
+    23,
+    24
+   ]
+  }
+ },
+ "matrix-2x2": {
+  "source": "offerings",
+  "slide": "slide32.xml",
+  "note": "2x2 strategic matrix: 4 quadrant cards (TITLE+DESC) with X/Y axis labels and divider lines. Each quadrant a prunable group. drop=[4,5,42] (logo, page-number, stray 17 literal).",
+  "drop": [
+   4,
+   5,
+   42
+  ],
+  "shapes": [
+   {
+    "id": 2,
+    "slot": "SECTION",
+    "kind": "scalar"
+   },
+   {
+    "id": 3,
+    "slot": "TITLE",
+    "kind": "scalar"
+   },
+   {
+    "id": 40,
+    "slot": "AXIS_Y",
+    "kind": "scalar"
+   },
+   {
+    "id": 41,
+    "slot": "AXIS_X",
+    "kind": "scalar"
+   },
+   {
+    "id": 29,
+    "slot": "QA_TITLE",
+    "kind": "scalar",
+    "group": "qa"
+   },
+   {
+    "id": 30,
+    "slot": "QA_DESC",
+    "kind": "scalar",
+    "group": "qa"
+   },
+   {
+    "id": 32,
+    "slot": "QB_TITLE",
+    "kind": "scalar",
+    "group": "qb"
+   },
+   {
+    "id": 33,
+    "slot": "QB_DESC",
+    "kind": "scalar",
+    "group": "qb"
+   },
+   {
+    "id": 35,
+    "slot": "QC_TITLE",
+    "kind": "scalar",
+    "group": "qc"
+   },
+   {
+    "id": 36,
+    "slot": "QC_DESC",
+    "kind": "scalar",
+    "group": "qc"
+   },
+   {
+    "id": 38,
+    "slot": "QD_TITLE",
+    "kind": "scalar",
+    "group": "qd"
+   },
+   {
+    "id": 39,
+    "slot": "QD_DESC",
+    "kind": "scalar",
+    "group": "qd"
+   }
+  ],
+  "groups": {
+   "qa": [
+    28,
+    29,
+    30
+   ],
+   "qb": [
+    31,
+    32,
+    33
+   ],
+   "qc": [
+    34,
+    35,
+    36
+   ],
+   "qd": [
+    37,
+    38,
+    39
+   ]
+  }
+ },
+ "case-study": {
+  "source": "offerings",
+  "slide": "slide48.xml",
+  "note": "Case study: 3 columns (Challenge/Solution/Results = HEADER+DESC with blue tick) over 3 KPI cards (VALUE %+LABEL). Columns and KPIs prunable. drop=[24,29].",
+  "drop": [
+   24,
+   29
+  ],
+  "shapes": [
+   {
+    "id": 22,
+    "slot": "SECTION",
+    "kind": "scalar"
+   },
+   {
+    "id": 23,
+    "slot": "TITLE",
+    "kind": "scalar"
+   },
+   {
+    "id": 5,
+    "slot": "COL1_HEADER",
+    "kind": "scalar",
+    "group": "col1"
+   },
+   {
+    "id": 6,
+    "slot": "COL1_DESC",
+    "kind": "scalar",
+    "group": "col1"
+   },
+   {
+    "id": 8,
+    "slot": "COL2_HEADER",
+    "kind": "scalar",
+    "group": "col2"
+   },
+   {
+    "id": 9,
+    "slot": "COL2_DESC",
+    "kind": "scalar",
+    "group": "col2"
+   },
+   {
+    "id": 11,
+    "slot": "COL3_HEADER",
+    "kind": "scalar",
+    "group": "col3"
+   },
+   {
+    "id": 12,
+    "slot": "COL3_DESC",
+    "kind": "scalar",
+    "group": "col3"
+   },
+   {
+    "id": 14,
+    "slot": "KPI1_VALUE",
+    "kind": "scalar",
+    "group": "kpi1"
+   },
+   {
+    "id": 15,
+    "slot": "KPI1_LABEL",
+    "kind": "scalar",
+    "group": "kpi1"
+   },
+   {
+    "id": 17,
+    "slot": "KPI2_VALUE",
+    "kind": "scalar",
+    "group": "kpi2"
+   },
+   {
+    "id": 18,
+    "slot": "KPI2_LABEL",
+    "kind": "scalar",
+    "group": "kpi2"
+   },
+   {
+    "id": 20,
+    "slot": "KPI3_VALUE",
+    "kind": "scalar",
+    "group": "kpi3"
+   },
+   {
+    "id": 21,
+    "slot": "KPI3_LABEL",
+    "kind": "scalar",
+    "group": "kpi3"
+   }
+  ],
+  "groups": {
+   "col1": [
+    4,
+    5,
+    6
+   ],
+   "col2": [
+    7,
+    8,
+    9
+   ],
+   "col3": [
+    10,
+    11,
+    12
+   ],
+   "kpi1": [
+    13,
+    14,
+    15
+   ],
+   "kpi2": [
+    16,
+    17,
+    18
+   ],
+   "kpi3": [
+    19,
+    20,
+    21
+   ]
+  }
+ },
+ "risk-table": {
+  "source": "offerings",
+  "slide": "slide42.xml",
+  "note": "4 risk rows (shape-based, not a real table): blue priority badge (H/M/L) + TITLE + MITIGATION + OWNER + TIMELINE. Each row a prunable group. drop=[34,39].",
+  "drop": [
+   34,
+   39
+  ],
+  "shapes": [
+   {
+    "id": 32,
+    "slot": "SECTION",
+    "kind": "scalar"
+   },
+   {
+    "id": 33,
+    "slot": "TITLE",
+    "kind": "scalar"
+   },
+   {
+    "id": 45,
+    "slot": "RISK1_TITLE",
+    "kind": "scalar",
+    "group": "r1"
+   },
+   {
+    "id": 44,
+    "slot": "RISK1_PRIORITY",
+    "kind": "scalar",
+    "group": "r1"
+   },
+   {
+    "id": 46,
+    "slot": "RISK1_MITIGATION",
+    "kind": "scalar",
+    "group": "r1"
+   },
+   {
+    "id": 47,
+    "slot": "RISK1_OWNER",
+    "kind": "scalar",
+    "group": "r1"
+   },
+   {
+    "id": 48,
+    "slot": "RISK1_TIMELINE",
+    "kind": "scalar",
+    "group": "r1"
+   },
+   {
+    "id": 52,
+    "slot": "RISK2_TITLE",
+    "kind": "scalar",
+    "group": "r2"
+   },
+   {
+    "id": 51,
+    "slot": "RISK2_PRIORITY",
+    "kind": "scalar",
+    "group": "r2"
+   },
+   {
+    "id": 53,
+    "slot": "RISK2_MITIGATION",
+    "kind": "scalar",
+    "group": "r2"
+   },
+   {
+    "id": 54,
+    "slot": "RISK2_OWNER",
+    "kind": "scalar",
+    "group": "r2"
+   },
+   {
+    "id": 55,
+    "slot": "RISK2_TIMELINE",
+    "kind": "scalar",
+    "group": "r2"
+   },
+   {
+    "id": 59,
+    "slot": "RISK3_TITLE",
+    "kind": "scalar",
+    "group": "r3"
+   },
+   {
+    "id": 58,
+    "slot": "RISK3_PRIORITY",
+    "kind": "scalar",
+    "group": "r3"
+   },
+   {
+    "id": 60,
+    "slot": "RISK3_MITIGATION",
+    "kind": "scalar",
+    "group": "r3"
+   },
+   {
+    "id": 61,
+    "slot": "RISK3_OWNER",
+    "kind": "scalar",
+    "group": "r3"
+   },
+   {
+    "id": 62,
+    "slot": "RISK3_TIMELINE",
+    "kind": "scalar",
+    "group": "r3"
+   },
+   {
+    "id": 66,
+    "slot": "RISK4_TITLE",
+    "kind": "scalar",
+    "group": "r4"
+   },
+   {
+    "id": 65,
+    "slot": "RISK4_PRIORITY",
+    "kind": "scalar",
+    "group": "r4"
+   },
+   {
+    "id": 67,
+    "slot": "RISK4_MITIGATION",
+    "kind": "scalar",
+    "group": "r4"
+   },
+   {
+    "id": 68,
+    "slot": "RISK4_OWNER",
+    "kind": "scalar",
+    "group": "r4"
+   },
+   {
+    "id": 69,
+    "slot": "RISK4_TIMELINE",
+    "kind": "scalar",
+    "group": "r4"
+   }
+  ],
+  "groups": {
+   "r1": [
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48
+   ],
+   "r2": [
+    49,
+    50,
+    51,
+    52,
+    53,
+    54,
+    55
+   ],
+   "r3": [
+    56,
+    57,
+    58,
+    59,
+    60,
+    61,
+    62
+   ],
+   "r4": [
+    63,
+    64,
+    65,
+    66,
+    67,
+    68,
+    69
+   ]
+  }
+ },
+ "next-steps": {
+  "source": "offerings",
+  "slide": "slide41.xml",
+  "note": "4 numbered action-item rows (shape-based): fixed 1-4 badge + TITLE + DESC + OWNER + DATE. Each row a prunable group. drop=[34,39].",
+  "drop": [
+   34,
+   39
+  ],
+  "shapes": [
+   {
+    "id": 32,
+    "slot": "SECTION",
+    "kind": "scalar"
+   },
+   {
+    "id": 33,
+    "slot": "TITLE",
+    "kind": "scalar"
+   },
+   {
+    "id": 43,
+    "slot": "STEP1_TITLE",
+    "kind": "scalar",
+    "group": "s1"
+   },
+   {
+    "id": 44,
+    "slot": "STEP1_DESC",
+    "kind": "scalar",
+    "group": "s1"
+   },
+   {
+    "id": 45,
+    "slot": "STEP1_OWNER",
+    "kind": "scalar",
+    "group": "s1"
+   },
+   {
+    "id": 46,
+    "slot": "STEP1_DATE",
+    "kind": "scalar",
+    "group": "s1"
+   },
+   {
+    "id": 50,
+    "slot": "STEP2_TITLE",
+    "kind": "scalar",
+    "group": "s2"
+   },
+   {
+    "id": 51,
+    "slot": "STEP2_DESC",
+    "kind": "scalar",
+    "group": "s2"
+   },
+   {
+    "id": 52,
+    "slot": "STEP2_OWNER",
+    "kind": "scalar",
+    "group": "s2"
+   },
+   {
+    "id": 53,
+    "slot": "STEP2_DATE",
+    "kind": "scalar",
+    "group": "s2"
+   },
+   {
+    "id": 57,
+    "slot": "STEP3_TITLE",
+    "kind": "scalar",
+    "group": "s3"
+   },
+   {
+    "id": 58,
+    "slot": "STEP3_DESC",
+    "kind": "scalar",
+    "group": "s3"
+   },
+   {
+    "id": 59,
+    "slot": "STEP3_OWNER",
+    "kind": "scalar",
+    "group": "s3"
+   },
+   {
+    "id": 60,
+    "slot": "STEP3_DATE",
+    "kind": "scalar",
+    "group": "s3"
+   },
+   {
+    "id": 64,
+    "slot": "STEP4_TITLE",
+    "kind": "scalar",
+    "group": "s4"
+   },
+   {
+    "id": 65,
+    "slot": "STEP4_DESC",
+    "kind": "scalar",
+    "group": "s4"
+   },
+   {
+    "id": 66,
+    "slot": "STEP4_OWNER",
+    "kind": "scalar",
+    "group": "s4"
+   },
+   {
+    "id": 67,
+    "slot": "STEP4_DATE",
+    "kind": "scalar",
+    "group": "s4"
+   }
+  ],
+  "groups": {
+   "s1": [
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46
+   ],
+   "s2": [
+    47,
+    48,
+    49,
+    50,
+    51,
+    52,
+    53
+   ],
+   "s3": [
+    54,
+    55,
+    56,
+    57,
+    58,
+    59,
+    60
+   ],
+   "s4": [
+    61,
+    62,
+    63,
+    64,
+    65,
+    66,
+    67
+   ]
+  }
+ },
+ "paradigm-shift": {
+  "source": "offerings",
+  "slide": "slide20.xml",
+  "note": "Left: LEFT_HEADER + 3 numbered step descriptions. Right: 3 change areas (HEADER + POINTS bullets). Steps and areas prunable. drop=[22,23].",
+  "drop": [
+   22,
+   23
+  ],
+  "shapes": [
+   {
+    "id": 20,
+    "slot": "SECTION",
+    "kind": "scalar"
+   },
+   {
+    "id": 21,
+    "slot": "TITLE",
+    "kind": "scalar"
+   },
+   {
+    "id": 4,
+    "slot": "LEFT_HEADER",
+    "kind": "scalar"
+   },
+   {
+    "id": 7,
+    "slot": "STEP1_DESC",
+    "kind": "scalar",
+    "group": "step1"
+   },
+   {
+    "id": 10,
+    "slot": "STEP2_DESC",
+    "kind": "scalar",
+    "group": "step2"
+   },
+   {
+    "id": 13,
+    "slot": "STEP3_DESC",
+    "kind": "scalar",
+    "group": "step3"
+   },
+   {
+    "id": 14,
+    "slot": "AREA1_HEADER",
+    "kind": "scalar",
+    "group": "area1"
+   },
+   {
+    "id": 15,
+    "slot": "AREA1_POINTS",
+    "kind": "list",
+    "group": "area1"
+   },
+   {
+    "id": 16,
+    "slot": "AREA2_HEADER",
+    "kind": "scalar",
+    "group": "area2"
+   },
+   {
+    "id": 17,
+    "slot": "AREA2_POINTS",
+    "kind": "list",
+    "group": "area2"
+   },
+   {
+    "id": 18,
+    "slot": "AREA3_HEADER",
+    "kind": "scalar",
+    "group": "area3"
+   },
+   {
+    "id": 19,
+    "slot": "AREA3_POINTS",
+    "kind": "list",
+    "group": "area3"
+   }
+  ],
+  "groups": {
+   "step1": [
+    5,
+    6,
+    7
+   ],
+   "step2": [
+    8,
+    9,
+    10
+   ],
+   "step3": [
+    11,
+    12,
+    13
+   ],
+   "area1": [
+    14,
+    15
+   ],
+   "area2": [
+    16,
+    17
+   ],
+   "area3": [
+    18,
+    19
+   ]
+  }
+ },
+ "dual-row": {
+  "source": "offerings",
+  "slide": "slide18.xml",
+  "note": "Two rows of 3 cards: top row blue objective cards (HEADER+DESC), bottom row navy action cards. Each card a prunable group. accent4 (yellow) recolored to navy for on-brand contrast. drop=[25,29].",
+  "recolor": {
+   "FBC640": "F2F3F7"
+  },
+  "drop": [
+   25,
+   29
+  ],
+  "shapes": [
+   {
+    "id": 23,
+    "slot": "SECTION",
+    "kind": "scalar"
+   },
+   {
+    "id": 24,
+    "slot": "TITLE",
+    "kind": "scalar"
+   },
+   {
+    "id": 5,
+    "slot": "OBJ1_HEADER",
+    "kind": "scalar",
+    "group": "obj1"
+   },
+   {
+    "id": 6,
+    "slot": "OBJ1_DESC",
+    "kind": "scalar",
+    "group": "obj1"
+   },
+   {
+    "id": 8,
+    "slot": "OBJ2_HEADER",
+    "kind": "scalar",
+    "group": "obj2"
+   },
+   {
+    "id": 9,
+    "slot": "OBJ2_DESC",
+    "kind": "scalar",
+    "group": "obj2"
+   },
+   {
+    "id": 11,
+    "slot": "OBJ3_HEADER",
+    "kind": "scalar",
+    "group": "obj3"
+   },
+   {
+    "id": 12,
+    "slot": "OBJ3_DESC",
+    "kind": "scalar",
+    "group": "obj3"
+   },
+   {
+    "id": 14,
+    "slot": "ACT1_HEADER",
+    "kind": "scalar",
+    "group": "act1"
+   },
+   {
+    "id": 15,
+    "slot": "ACT1_DESC",
+    "kind": "scalar",
+    "group": "act1"
+   },
+   {
+    "id": 17,
+    "slot": "ACT2_HEADER",
+    "kind": "scalar",
+    "group": "act2"
+   },
+   {
+    "id": 18,
+    "slot": "ACT2_DESC",
+    "kind": "scalar",
+    "group": "act2"
+   },
+   {
+    "id": 20,
+    "slot": "ACT3_HEADER",
+    "kind": "scalar",
+    "group": "act3"
+   },
+   {
+    "id": 21,
+    "slot": "ACT3_DESC",
+    "kind": "scalar",
+    "group": "act3"
+   }
+  ],
+  "groups": {
+   "obj1": [
+    4,
+    5,
+    6
+   ],
+   "obj2": [
+    7,
+    8,
+    9
+   ],
+   "obj3": [
+    10,
+    11,
+    12
+   ],
+   "act1": [
+    13,
+    14,
+    15
+   ],
+   "act2": [
+    16,
+    17,
+    18
+   ],
+   "act3": [
+    19,
+    20,
+    21
+   ]
+  }
+ },
+ "before-after": {
+  "source": "offerings",
+  "slide": "slide39.xml",
+  "note": "Before/After comparison: navy BEFORE panel vs blue AFTER panel, HEADER + 4 prunable points each. accent4 (yellow before box) recolored to navy. drop=[18,23].",
+  "recolor": {
+   "FBC640": "F2F3F7"
+  },
+  "drop": [
+   18,
+   23
+  ],
+  "shapes": [
+   {
+    "id": 16,
+    "slot": "SECTION",
+    "kind": "scalar"
+   },
+   {
+    "id": 17,
+    "slot": "TITLE",
+    "kind": "scalar"
+   },
+   {
+    "id": 5,
+    "slot": "BEFORE_HEADER",
+    "kind": "scalar"
+   },
+   {
+    "id": 6,
+    "slot": "BEFORE1",
+    "kind": "scalar",
+    "group": "b1"
+   },
+   {
+    "id": 7,
+    "slot": "BEFORE2",
+    "kind": "scalar",
+    "group": "b2"
+   },
+   {
+    "id": 8,
+    "slot": "BEFORE3",
+    "kind": "scalar",
+    "group": "b3"
+   },
+   {
+    "id": 9,
+    "slot": "BEFORE4",
+    "kind": "scalar",
+    "group": "b4"
+   },
+   {
+    "id": 11,
+    "slot": "AFTER_HEADER",
+    "kind": "scalar"
+   },
+   {
+    "id": 12,
+    "slot": "AFTER1",
+    "kind": "scalar",
+    "group": "a1"
+   },
+   {
+    "id": 13,
+    "slot": "AFTER2",
+    "kind": "scalar",
+    "group": "a2"
+   },
+   {
+    "id": 14,
+    "slot": "AFTER3",
+    "kind": "scalar",
+    "group": "a3"
+   },
+   {
+    "id": 15,
+    "slot": "AFTER4",
+    "kind": "scalar",
+    "group": "a4"
+   }
+  ],
+  "groups": {
+   "b1": [
+    6
+   ],
+   "b2": [
+    7
+   ],
+   "b3": [
+    8
+   ],
+   "b4": [
+    9
+   ],
+   "a1": [
+    12
+   ],
+   "a2": [
+    13
+   ],
+   "a3": [
+    14
+   ],
+   "a4": [
+    15
+   ]
+  }
+ },
+ "agenda-3panel": {
+  "source": "offerings",
+  "slide": "slide11.xml",
+  "note": "Agenda divider: left \"Agenda\" + blue image strip + dark right panel with HEADER and up to 4 numbered agenda items (prunable). IMAGE_STRIP clears its bracket. drop=[27,28].",
+  "drop": [
+   27,
+   28
+  ],
+  "shapes": [
+   {
+    "id": 10,
+    "slot": "HEADER",
+    "kind": "scalar"
+   },
+   {
+    "id": 4,
+    "slot": "IMAGE_STRIP",
+    "kind": "scalar"
+   },
+   {
+    "id": 6,
+    "slot": "AGENDA1",
+    "kind": "scalar",
+    "group": "a1"
+   },
+   {
+    "id": 7,
+    "slot": "AGENDA2",
+    "kind": "scalar",
+    "group": "a2"
+   },
+   {
+    "id": 8,
+    "slot": "AGENDA3",
+    "kind": "scalar",
+    "group": "a3"
+   },
+   {
+    "id": 9,
+    "slot": "AGENDA4",
+    "kind": "scalar",
+    "group": "a4"
+   }
+  ],
+  "groups": {
+   "a1": [
+    6
+   ],
+   "a2": [
+    7
+   ],
+   "a3": [
+    8
+   ],
+   "a4": [
+    9
+   ]
+  }
+ },
+ "milestone-timeline": {
+  "source": "offerings",
+  "slide": "slide55.xml",
+  "note": "Horizontal milestone timeline: 4 milestone cards (alternating up/down) on a baseline, each MONTH badge + TITLE + DESC. Fixed 4-milestone geometry; each a prunable group. drop=[39,40].",
+  "drop": [
+   39,
+   40
+  ],
+  "shapes": [
+   {
+    "id": 37,
+    "slot": "SECTION",
+    "kind": "scalar"
+   },
+   {
+    "id": 38,
+    "slot": "TITLE",
+    "kind": "scalar"
+   },
+   {
+    "id": 10,
+    "slot": "M1_TITLE",
+    "kind": "scalar",
+    "group": "m1"
+   },
+   {
+    "id": 9,
+    "slot": "M1_MONTH",
+    "kind": "scalar",
+    "group": "m1"
+   },
+   {
+    "id": 11,
+    "slot": "M1_DESC",
+    "kind": "scalar",
+    "group": "m1"
+   },
+   {
+    "id": 17,
+    "slot": "M2_TITLE",
+    "kind": "scalar",
+    "group": "m2"
+   },
+   {
+    "id": 16,
+    "slot": "M2_MONTH",
+    "kind": "scalar",
+    "group": "m2"
+   },
+   {
+    "id": 18,
+    "slot": "M2_DESC",
+    "kind": "scalar",
+    "group": "m2"
+   },
+   {
+    "id": 24,
+    "slot": "M3_TITLE",
+    "kind": "scalar",
+    "group": "m3"
+   },
+   {
+    "id": 23,
+    "slot": "M3_MONTH",
+    "kind": "scalar",
+    "group": "m3"
+   },
+   {
+    "id": 25,
+    "slot": "M3_DESC",
+    "kind": "scalar",
+    "group": "m3"
+   },
+   {
+    "id": 31,
+    "slot": "M4_TITLE",
+    "kind": "scalar",
+    "group": "m4"
+   },
+   {
+    "id": 30,
+    "slot": "M4_MONTH",
+    "kind": "scalar",
+    "group": "m4"
+   },
+   {
+    "id": 32,
+    "slot": "M4_DESC",
+    "kind": "scalar",
+    "group": "m4"
+   }
+  ],
+  "groups": {
+   "m1": [
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11
+   ],
+   "m2": [
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18
+   ],
+   "m3": [
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25
+   ],
+   "m4": [
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32
+   ]
+  }
+ },
+ "impact-numbers": {
+  "source": "offerings",
+  "slide": "slide44.xml",
+  "note": "Native large-number layout: left hero stat (HERO_VALUE % + HERO_LABEL + HERO_SUB + HERO_DESC) and right column of 3 metric rows (VALUE % + LABEL + DESC, prunable). drop=[26,27,20] logo + page-number + stray 26 literal.",
+  "drop": [
+   26,
+   27,
+   20
+  ],
+  "shapes": [
+   {
+    "id": 19,
+    "slot": "SECTION",
+    "kind": "scalar"
+   },
+   {
+    "id": 3,
+    "slot": "HERO_VALUE",
+    "kind": "scalar"
+   },
+   {
+    "id": 4,
+    "slot": "HERO_LABEL",
+    "kind": "scalar"
+   },
+   {
+    "id": 5,
+    "slot": "HERO_SUB",
+    "kind": "scalar"
+   },
+   {
+    "id": 18,
+    "slot": "HERO_DESC",
+    "kind": "scalar"
+   },
+   {
+    "id": 7,
+    "slot": "METRIC1_VALUE",
+    "kind": "scalar",
+    "group": "m1"
+   },
+   {
+    "id": 8,
+    "slot": "METRIC1_LABEL",
+    "kind": "scalar",
+    "group": "m1"
+   },
+   {
+    "id": 9,
+    "slot": "METRIC1_DESC",
+    "kind": "scalar",
+    "group": "m1"
+   },
+   {
+    "id": 11,
+    "slot": "METRIC2_VALUE",
+    "kind": "scalar",
+    "group": "m2"
+   },
+   {
+    "id": 12,
+    "slot": "METRIC2_LABEL",
+    "kind": "scalar",
+    "group": "m2"
+   },
+   {
+    "id": 13,
+    "slot": "METRIC2_DESC",
+    "kind": "scalar",
+    "group": "m2"
+   },
+   {
+    "id": 15,
+    "slot": "METRIC3_VALUE",
+    "kind": "scalar",
+    "group": "m3"
+   },
+   {
+    "id": 16,
+    "slot": "METRIC3_LABEL",
+    "kind": "scalar",
+    "group": "m3"
+   },
+   {
+    "id": 17,
+    "slot": "METRIC3_DESC",
+    "kind": "scalar",
+    "group": "m3"
+   }
+  ],
+  "groups": {
+   "m1": [
+    6,
+    7,
+    8,
+    9
+   ],
+   "m2": [
+    10,
+    11,
+    12,
+    13
+   ],
+   "m3": [
+    14,
+    15,
+    16,
+    17
+   ]
+  }
+ },
+ "quarterly-roadmap": {
+  "source": "offerings",
+  "slide": "slide54.xml",
+  "note": "Quarterly roadmap: 4 quarter columns (Q1-Q4), each 3 initiative cards (TITLE+DESC) with fixed status badge (In Progress/Planned/Completed) + illustrative progress bar. Each card a prunable group. Planned purple badge recolored to neutral gray. drop=[102,103].",
+  "recolor": {
+   "9746FE": "6B7280"
+  },
+  "drop": [
+   102,
+   103
+  ],
+  "shapes": [
+   {
+    "id": 100,
+    "slot": "SECTION",
+    "kind": "scalar"
+   },
+   {
+    "id": 101,
+    "slot": "TITLE",
+    "kind": "scalar"
+   },
+   {
+    "id": 9,
+    "slot": "Q1_C1_TITLE",
+    "kind": "scalar",
+    "group": "q1c1"
+   },
+   {
+    "id": 10,
+    "slot": "Q1_C1_DESC",
+    "kind": "scalar",
+    "group": "q1c1"
+   },
+   {
+    "id": 16,
+    "slot": "Q1_C2_TITLE",
+    "kind": "scalar",
+    "group": "q1c2"
+   },
+   {
+    "id": 17,
+    "slot": "Q1_C2_DESC",
+    "kind": "scalar",
+    "group": "q1c2"
+   },
+   {
+    "id": 23,
+    "slot": "Q1_C3_TITLE",
+    "kind": "scalar",
+    "group": "q1c3"
+   },
+   {
+    "id": 24,
+    "slot": "Q1_C3_DESC",
+    "kind": "scalar",
+    "group": "q1c3"
+   },
+   {
+    "id": 32,
+    "slot": "Q2_C1_TITLE",
+    "kind": "scalar",
+    "group": "q2c1"
+   },
+   {
+    "id": 33,
+    "slot": "Q2_C1_DESC",
+    "kind": "scalar",
+    "group": "q2c1"
+   },
+   {
+    "id": 39,
+    "slot": "Q2_C2_TITLE",
+    "kind": "scalar",
+    "group": "q2c2"
+   },
+   {
+    "id": 40,
+    "slot": "Q2_C2_DESC",
+    "kind": "scalar",
+    "group": "q2c2"
+   },
+   {
+    "id": 46,
+    "slot": "Q2_C3_TITLE",
+    "kind": "scalar",
+    "group": "q2c3"
+   },
+   {
+    "id": 47,
+    "slot": "Q2_C3_DESC",
+    "kind": "scalar",
+    "group": "q2c3"
+   },
+   {
+    "id": 55,
+    "slot": "Q3_C1_TITLE",
+    "kind": "scalar",
+    "group": "q3c1"
+   },
+   {
+    "id": 56,
+    "slot": "Q3_C1_DESC",
+    "kind": "scalar",
+    "group": "q3c1"
+   },
+   {
+    "id": 62,
+    "slot": "Q3_C2_TITLE",
+    "kind": "scalar",
+    "group": "q3c2"
+   },
+   {
+    "id": 63,
+    "slot": "Q3_C2_DESC",
+    "kind": "scalar",
+    "group": "q3c2"
+   },
+   {
+    "id": 69,
+    "slot": "Q3_C3_TITLE",
+    "kind": "scalar",
+    "group": "q3c3"
+   },
+   {
+    "id": 70,
+    "slot": "Q3_C3_DESC",
+    "kind": "scalar",
+    "group": "q3c3"
+   },
+   {
+    "id": 78,
+    "slot": "Q4_C1_TITLE",
+    "kind": "scalar",
+    "group": "q4c1"
+   },
+   {
+    "id": 79,
+    "slot": "Q4_C1_DESC",
+    "kind": "scalar",
+    "group": "q4c1"
+   },
+   {
+    "id": 85,
+    "slot": "Q4_C2_TITLE",
+    "kind": "scalar",
+    "group": "q4c2"
+   },
+   {
+    "id": 86,
+    "slot": "Q4_C2_DESC",
+    "kind": "scalar",
+    "group": "q4c2"
+   },
+   {
+    "id": 92,
+    "slot": "Q4_C3_TITLE",
+    "kind": "scalar",
+    "group": "q4c3"
+   },
+   {
+    "id": 93,
+    "slot": "Q4_C3_DESC",
+    "kind": "scalar",
+    "group": "q4c3"
+   }
+  ],
+  "groups": {
+   "q1c1": [
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+   ],
+   "q1c2": [
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19
+   ],
+   "q1c3": [
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26
+   ],
+   "q2c1": [
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35
+   ],
+   "q2c2": [
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42
+   ],
+   "q2c3": [
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49
+   ],
+   "q3c1": [
+    52,
+    53,
+    54,
+    55,
+    56,
+    57,
+    58
+   ],
+   "q3c2": [
+    59,
+    60,
+    61,
+    62,
+    63,
+    64,
+    65
+   ],
+   "q3c3": [
+    66,
+    67,
+    68,
+    69,
+    70,
+    71,
+    72
+   ],
+   "q4c1": [
+    75,
+    76,
+    77,
+    78,
+    79,
+    80,
+    81
+   ],
+   "q4c2": [
+    82,
+    83,
+    84,
+    85,
+    86,
+    87,
+    88
+   ],
+   "q4c3": [
+    89,
+    90,
+    91,
+    92,
+    93,
+    94,
+    95
+   ]
+  }
+ }
+}

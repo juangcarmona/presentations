@@ -1,0 +1,22 @@
+{
+  "source": "manual",
+  "slide": "(generated)",
+  "media": [],
+  "slots": [],
+  "groups": {},
+  "tables": [
+    {
+      "name": "TABLE",
+      "header_rows": 1,
+      "cols": 2
+    }
+  ],
+  "component": "mini-table",
+  "component_box": {
+    "w": 4.3,
+    "h": 3.25
+  },
+  "capacity": {
+    "TABLE": 6
+  }
+}

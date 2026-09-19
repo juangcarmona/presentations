@@ -1,0 +1,173 @@
+{
+  "layout": "risk-table",
+  "source": "offerings",
+  "slide": "slide42.xml",
+  "media": [
+    "image4.png"
+  ],
+  "slots": [
+    {
+      "name": "SECTION",
+      "kind": "scalar"
+    },
+    {
+      "name": "TITLE",
+      "kind": "scalar"
+    },
+    {
+      "name": "RISK1_TITLE",
+      "kind": "scalar",
+      "group": "r1"
+    },
+    {
+      "name": "RISK1_PRIORITY",
+      "kind": "scalar",
+      "group": "r1"
+    },
+    {
+      "name": "RISK1_MITIGATION",
+      "kind": "scalar",
+      "group": "r1"
+    },
+    {
+      "name": "RISK1_OWNER",
+      "kind": "scalar",
+      "group": "r1"
+    },
+    {
+      "name": "RISK1_TIMELINE",
+      "kind": "scalar",
+      "group": "r1"
+    },
+    {
+      "name": "RISK2_TITLE",
+      "kind": "scalar",
+      "group": "r2"
+    },
+    {
+      "name": "RISK2_PRIORITY",
+      "kind": "scalar",
+      "group": "r2"
+    },
+    {
+      "name": "RISK2_MITIGATION",
+      "kind": "scalar",
+      "group": "r2"
+    },
+    {
+      "name": "RISK2_OWNER",
+      "kind": "scalar",
+      "group": "r2"
+    },
+    {
+      "name": "RISK2_TIMELINE",
+      "kind": "scalar",
+      "group": "r2"
+    },
+    {
+      "name": "RISK3_TITLE",
+      "kind": "scalar",
+      "group": "r3"
+    },
+    {
+      "name": "RISK3_PRIORITY",
+      "kind": "scalar",
+      "group": "r3"
+    },
+    {
+      "name": "RISK3_MITIGATION",
+      "kind": "scalar",
+      "group": "r3"
+    },
+    {
+      "name": "RISK3_OWNER",
+      "kind": "scalar",
+      "group": "r3"
+    },
+    {
+      "name": "RISK3_TIMELINE",
+      "kind": "scalar",
+      "group": "r3"
+    },
+    {
+      "name": "RISK4_TITLE",
+      "kind": "scalar",
+      "group": "r4"
+    },
+    {
+      "name": "RISK4_PRIORITY",
+      "kind": "scalar",
+      "group": "r4"
+    },
+    {
+      "name": "RISK4_MITIGATION",
+      "kind": "scalar",
+      "group": "r4"
+    },
+    {
+      "name": "RISK4_OWNER",
+      "kind": "scalar",
+      "group": "r4"
+    },
+    {
+      "name": "RISK4_TIMELINE",
+      "kind": "scalar",
+      "group": "r4"
+    },
+    {
+      "name": "DISCLAIMER",
+      "kind": "scalar"
+    }
+  ],
+  "groups": {
+    "r1": {
+      "ids": [
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48
+      ],
+      "control_slot": "RISK1_TITLE"
+    },
+    "r2": {
+      "ids": [
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55
+      ],
+      "control_slot": "RISK2_TITLE"
+    },
+    "r3": {
+      "ids": [
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62
+      ],
+      "control_slot": "RISK3_TITLE"
+    },
+    "r4": {
+      "ids": [
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69
+      ],
+      "control_slot": "RISK4_TITLE"
+    }
+  },
+  "tables": []
+}

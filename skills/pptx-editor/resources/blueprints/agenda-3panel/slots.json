@@ -1,0 +1,65 @@
+{
+  "layout": "agenda-3panel",
+  "source": "offerings",
+  "slide": "slide11.xml",
+  "media": [
+    "image5.png"
+  ],
+  "slots": [
+    {
+      "name": "HEADER",
+      "kind": "scalar"
+    },
+    {
+      "name": "IMAGE_STRIP",
+      "kind": "scalar"
+    },
+    {
+      "name": "AGENDA1",
+      "kind": "scalar",
+      "group": "a1"
+    },
+    {
+      "name": "AGENDA2",
+      "kind": "scalar",
+      "group": "a2"
+    },
+    {
+      "name": "AGENDA3",
+      "kind": "scalar",
+      "group": "a3"
+    },
+    {
+      "name": "AGENDA4",
+      "kind": "scalar",
+      "group": "a4"
+    }
+  ],
+  "groups": {
+    "a1": {
+      "ids": [
+        6
+      ],
+      "control_slot": "AGENDA1"
+    },
+    "a2": {
+      "ids": [
+        7
+      ],
+      "control_slot": "AGENDA2"
+    },
+    "a3": {
+      "ids": [
+        8
+      ],
+      "control_slot": "AGENDA3"
+    },
+    "a4": {
+      "ids": [
+        9
+      ],
+      "control_slot": "AGENDA4"
+    }
+  },
+  "tables": []
+}

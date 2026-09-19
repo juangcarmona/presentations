@@ -1,0 +1,926 @@
+<?xml version="1.0" encoding="utf-8"?>
+<pc:chgInfo xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:ac="http://schemas.microsoft.com/office/drawing/2013/main/command" xmlns:pc="http://schemas.microsoft.com/office/powerpoint/2013/main/command">
+  <pc:docChgLst>
+    <pc:chgData name="Ibon Landa Martín" userId="S::ilanda@plainconcepts.com::60f846aa-ad2b-4777-970b-d4f0f7e9760e" providerId="AD" clId="Web-{57EB1025-161C-C451-BD74-F8DA87D35A16}"/>
+    <pc:docChg chg="modSld">
+      <pc:chgData name="Ibon Landa Martín" userId="S::ilanda@plainconcepts.com::60f846aa-ad2b-4777-970b-d4f0f7e9760e" providerId="AD" clId="Web-{57EB1025-161C-C451-BD74-F8DA87D35A16}" dt="2026-05-11T13:51:40.007" v="187"/>
+      <pc:docMkLst>
+        <pc:docMk/>
+      </pc:docMkLst>
+      <pc:sldChg chg="modNotes">
+        <pc:chgData name="Ibon Landa Martín" userId="S::ilanda@plainconcepts.com::60f846aa-ad2b-4777-970b-d4f0f7e9760e" providerId="AD" clId="Web-{57EB1025-161C-C451-BD74-F8DA87D35A16}" dt="2026-05-11T13:51:40.007" v="187"/>
+        <pc:sldMkLst>
+          <pc:docMk/>
+          <pc:sldMk cId="256538626" sldId="331"/>
+        </pc:sldMkLst>
+      </pc:sldChg>
+    </pc:docChg>
+  </pc:docChgLst>
+  <pc:docChgLst>
+    <pc:chgData name="Ibon Landa Martín" userId="S::ilanda@plainconcepts.com::60f846aa-ad2b-4777-970b-d4f0f7e9760e" providerId="AD" clId="Web-{3D68E851-CA96-7F95-B54C-3BBDB5BCFC3C}"/>
+    <pc:docChg chg="modSld">
+      <pc:chgData name="Ibon Landa Martín" userId="S::ilanda@plainconcepts.com::60f846aa-ad2b-4777-970b-d4f0f7e9760e" providerId="AD" clId="Web-{3D68E851-CA96-7F95-B54C-3BBDB5BCFC3C}" dt="2026-05-11T11:16:38.599" v="36"/>
+      <pc:docMkLst>
+        <pc:docMk/>
+      </pc:docMkLst>
+      <pc:sldChg chg="modNotes">
+        <pc:chgData name="Ibon Landa Martín" userId="S::ilanda@plainconcepts.com::60f846aa-ad2b-4777-970b-d4f0f7e9760e" providerId="AD" clId="Web-{3D68E851-CA96-7F95-B54C-3BBDB5BCFC3C}" dt="2026-05-11T11:16:38.599" v="36"/>
+        <pc:sldMkLst>
+          <pc:docMk/>
+          <pc:sldMk cId="0" sldId="279"/>
+        </pc:sldMkLst>
+      </pc:sldChg>
+      <pc:sldChg chg="modSp">
+        <pc:chgData name="Ibon Landa Martín" userId="S::ilanda@plainconcepts.com::60f846aa-ad2b-4777-970b-d4f0f7e9760e" providerId="AD" clId="Web-{3D68E851-CA96-7F95-B54C-3BBDB5BCFC3C}" dt="2026-05-11T11:15:02.878" v="2" actId="20577"/>
+        <pc:sldMkLst>
+          <pc:docMk/>
+          <pc:sldMk cId="4083776056" sldId="289"/>
+        </pc:sldMkLst>
+        <pc:spChg chg="mod">
+          <ac:chgData name="Ibon Landa Martín" userId="S::ilanda@plainconcepts.com::60f846aa-ad2b-4777-970b-d4f0f7e9760e" providerId="AD" clId="Web-{3D68E851-CA96-7F95-B54C-3BBDB5BCFC3C}" dt="2026-05-11T11:15:02.878" v="2" actId="20577"/>
+          <ac:spMkLst>
+            <pc:docMk/>
+            <pc:sldMk cId="4083776056" sldId="289"/>
+            <ac:spMk id="5" creationId="{C90700D0-D5BE-2995-3003-DE54A504A04C}"/>
+          </ac:spMkLst>
+        </pc:spChg>
+      </pc:sldChg>
+    </pc:docChg>
+  </pc:docChgLst>
+  <pc:docChgLst>
+    <pc:chgData name="Ibon Landa Martín" userId="S::ilanda@plainconcepts.com::60f846aa-ad2b-4777-970b-d4f0f7e9760e" providerId="AD" clId="Web-{7B780259-678D-CFF4-10CE-36A04D929D2E}"/>
+    <pc:docChg chg="addSld delSld modSld sldOrd">
+      <pc:chgData name="Ibon Landa Martín" userId="S::ilanda@plainconcepts.com::60f846aa-ad2b-4777-970b-d4f0f7e9760e" providerId="AD" clId="Web-{7B780259-678D-CFF4-10CE-36A04D929D2E}" dt="2026-05-11T13:48:43.316" v="1903"/>
+      <pc:docMkLst>
+        <pc:docMk/>
+      </pc:docMkLst>
+      <pc:sldChg chg="modSp modNotes">
+        <pc:chgData name="Ibon Landa Martín" userId="S::ilanda@plainconcepts.com::60f846aa-ad2b-4777-970b-d4f0f7e9760e" providerId="AD" clId="Web-{7B780259-678D-CFF4-10CE-36A04D929D2E}" dt="2026-05-11T13:19:33.026" v="1363" actId="20577"/>
+        <pc:sldMkLst>
+          <pc:docMk/>
+          <pc:sldMk cId="0" sldId="257"/>
+        </pc:sldMkLst>
+        <pc:spChg chg="mod">
+          <ac:chgData name="Ibon Landa Martín" userId="S::ilanda@plainconcepts.com::60f846aa-ad2b-4777-970b-d4f0f7e9760e" providerId="AD" clId="Web-{7B780259-678D-CFF4-10CE-36A04D929D2E}" dt="2026-05-11T13:18:48.131" v="1313" actId="20577"/>
+          <ac:spMkLst>
+            <pc:docMk/>
+            <pc:sldMk cId="0" sldId="257"/>
+            <ac:spMk id="12" creationId="{00000000-0000-0000-0000-000000000000}"/>
+          </ac:spMkLst>
+        </pc:spChg>
+        <pc:spChg chg="mod">
+          <ac:chgData name="Ibon Landa Martín" userId="S::ilanda@plainconcepts.com::60f846aa-ad2b-4777-970b-d4f0f7e9760e" providerId="AD" clId="Web-{7B780259-678D-CFF4-10CE-36A04D929D2E}" dt="2026-05-11T13:19:07.976" v="1318" actId="20577"/>
+          <ac:spMkLst>
+            <pc:docMk/>
+            <pc:sldMk cId="0" sldId="257"/>
+            <ac:spMk id="20" creationId="{00000000-0000-0000-0000-000000000000}"/>
+          </ac:spMkLst>
+        </pc:spChg>
+        <pc:spChg chg="mod">
+          <ac:chgData name="Ibon Landa Martín" userId="S::ilanda@plainconcepts.com::60f846aa-ad2b-4777-970b-d4f0f7e9760e" providerId="AD" clId="Web-{7B780259-678D-CFF4-10CE-36A04D929D2E}" dt="2026-05-11T13:19:16.555" v="1327" actId="20577"/>
+          <ac:spMkLst>
+            <pc:docMk/>
+            <pc:sldMk cId="0" sldId="257"/>
+            <ac:spMk id="24" creationId="{00000000-0000-0000-0000-000000000000}"/>
+          </ac:spMkLst>
+        </pc:spChg>
+        <pc:spChg chg="mod">
+          <ac:chgData name="Ibon Landa Martín" userId="S::ilanda@plainconcepts.com::60f846aa-ad2b-4777-970b-d4f0f7e9760e" providerId="AD" clId="Web-{7B780259-678D-CFF4-10CE-36A04D929D2E}" dt="2026-05-11T13:19:29.682" v="1357" actId="20577"/>
+          <ac:spMkLst>
+            <pc:docMk/>
+            <pc:sldMk cId="0" sldId="257"/>
+            <ac:spMk id="25" creationId="{00000000-0000-0000-0000-000000000000}"/>
+          </ac:spMkLst>
+        </pc:spChg>
+        <pc:spChg chg="mod">
+          <ac:chgData name="Ibon Landa Martín" userId="S::ilanda@plainconcepts.com::60f846aa-ad2b-4777-970b-d4f0f7e9760e" providerId="AD" clId="Web-{7B780259-678D-CFF4-10CE-36A04D929D2E}" dt="2026-05-11T13:19:20.899" v="1337" actId="20577"/>
+          <ac:spMkLst>
+            <pc:docMk/>
+            <pc:sldMk cId="0" sldId="257"/>
+            <ac:spMk id="28" creationId="{00000000-0000-0000-0000-000000000000}"/>
+          </ac:spMkLst>
+        </pc:spChg>
+        <pc:spChg chg="mod">
+          <ac:chgData name="Ibon Landa Martín" userId="S::ilanda@plainconcepts.com::60f846aa-ad2b-4777-970b-d4f0f7e9760e" providerId="AD" clId="Web-{7B780259-678D-CFF4-10CE-36A04D929D2E}" dt="2026-05-11T13:19:33.026" v="1363" actId="20577"/>
+          <ac:spMkLst>
+            <pc:docMk/>
+            <pc:sldMk cId="0" sldId="257"/>
+            <ac:spMk id="29" creationId="{00000000-0000-0000-0000-000000000000}"/>
+          </ac:spMkLst>
+        </pc:spChg>
+      </pc:sldChg>
+      <pc:sldChg chg="modNotes">
+        <pc:chgData name="Ibon Landa Martín" userId="S::ilanda@plainconcepts.com::60f846aa-ad2b-4777-970b-d4f0f7e9760e" providerId="AD" clId="Web-{7B780259-678D-CFF4-10CE-36A04D929D2E}" dt="2026-05-11T12:44:12.827" v="129"/>
+        <pc:sldMkLst>
+          <pc:docMk/>
+          <pc:sldMk cId="0" sldId="258"/>
+        </pc:sldMkLst>
+      </pc:sldChg>
+      <pc:sldChg chg="modNotes">
+        <pc:chgData name="Ibon Landa Martín" userId="S::ilanda@plainconcepts.com::60f846aa-ad2b-4777-970b-d4f0f7e9760e" providerId="AD" clId="Web-{7B780259-678D-CFF4-10CE-36A04D929D2E}" dt="2026-05-11T12:44:21.952" v="133"/>
+        <pc:sldMkLst>
+          <pc:docMk/>
+          <pc:sldMk cId="0" sldId="259"/>
+        </pc:sldMkLst>
+      </pc:sldChg>
+      <pc:sldChg chg="modNotes">
+        <pc:chgData name="Ibon Landa Martín" userId="S::ilanda@plainconcepts.com::60f846aa-ad2b-4777-970b-d4f0f7e9760e" providerId="AD" clId="Web-{7B780259-678D-CFF4-10CE-36A04D929D2E}" dt="2026-05-11T12:45:25.144" v="225"/>
+        <pc:sldMkLst>
+          <pc:docMk/>
+          <pc:sldMk cId="0" sldId="260"/>
+        </pc:sldMkLst>
+      </pc:sldChg>
+      <pc:sldChg chg="modNotes">
+        <pc:chgData name="Ibon Landa Martín" userId="S::ilanda@plainconcepts.com::60f846aa-ad2b-4777-970b-d4f0f7e9760e" providerId="AD" clId="Web-{7B780259-678D-CFF4-10CE-36A04D929D2E}" dt="2026-05-11T12:45:34.989" v="227"/>
+        <pc:sldMkLst>
+          <pc:docMk/>
+          <pc:sldMk cId="0" sldId="261"/>
+        </pc:sldMkLst>
+      </pc:sldChg>
+      <pc:sldChg chg="modSp add del modNotes">
+        <pc:chgData name="Ibon Landa Martín" userId="S::ilanda@plainconcepts.com::60f846aa-ad2b-4777-970b-d4f0f7e9760e" providerId="AD" clId="Web-{7B780259-678D-CFF4-10CE-36A04D929D2E}" dt="2026-05-11T12:56:42.992" v="519" actId="20577"/>
+        <pc:sldMkLst>
+          <pc:docMk/>
+          <pc:sldMk cId="0" sldId="262"/>
+        </pc:sldMkLst>
+        <pc:spChg chg="mod">
+          <ac:chgData name="Ibon Landa Martín" userId="S::ilanda@plainconcepts.com::60f846aa-ad2b-4777-970b-d4f0f7e9760e" providerId="AD" clId="Web-{7B780259-678D-CFF4-10CE-36A04D929D2E}" dt="2026-05-11T12:56:42.992" v="519" actId="20577"/>
+          <ac:spMkLst>
+            <pc:docMk/>
+            <pc:sldMk cId="0" sldId="262"/>
+            <ac:spMk id="4" creationId="{00000000-0000-0000-0000-000000000000}"/>
+          </ac:spMkLst>
+        </pc:spChg>
+      </pc:sldChg>
+      <pc:sldChg chg="add del">
+        <pc:chgData name="Ibon Landa Martín" userId="S::ilanda@plainconcepts.com::60f846aa-ad2b-4777-970b-d4f0f7e9760e" providerId="AD" clId="Web-{7B780259-678D-CFF4-10CE-36A04D929D2E}" dt="2026-05-11T13:12:30.461" v="958"/>
+        <pc:sldMkLst>
+          <pc:docMk/>
+          <pc:sldMk cId="0" sldId="266"/>
+        </pc:sldMkLst>
+      </pc:sldChg>
+      <pc:sldChg chg="modSp add del">
+        <pc:chgData name="Ibon Landa Martín" userId="S::ilanda@plainconcepts.com::60f846aa-ad2b-4777-970b-d4f0f7e9760e" providerId="AD" clId="Web-{7B780259-678D-CFF4-10CE-36A04D929D2E}" dt="2026-05-11T12:54:25.001" v="472" actId="20577"/>
+        <pc:sldMkLst>
+          <pc:docMk/>
+          <pc:sldMk cId="0" sldId="267"/>
+        </pc:sldMkLst>
+        <pc:spChg chg="mod">
+          <ac:chgData name="Ibon Landa Martín" userId="S::ilanda@plainconcepts.com::60f846aa-ad2b-4777-970b-d4f0f7e9760e" providerId="AD" clId="Web-{7B780259-678D-CFF4-10CE-36A04D929D2E}" dt="2026-05-11T12:51:13.491" v="409" actId="20577"/>
+          <ac:spMkLst>
+            <pc:docMk/>
+            <pc:sldMk cId="0" sldId="267"/>
+            <ac:spMk id="3" creationId="{00000000-0000-0000-0000-000000000000}"/>
+          </ac:spMkLst>
+        </pc:spChg>
+        <pc:spChg chg="mod">
+          <ac:chgData name="Ibon Landa Martín" userId="S::ilanda@plainconcepts.com::60f846aa-ad2b-4777-970b-d4f0f7e9760e" providerId="AD" clId="Web-{7B780259-678D-CFF4-10CE-36A04D929D2E}" dt="2026-05-11T12:54:25.001" v="472" actId="20577"/>
+          <ac:spMkLst>
+            <pc:docMk/>
+            <pc:sldMk cId="0" sldId="267"/>
+            <ac:spMk id="4" creationId="{00000000-0000-0000-0000-000000000000}"/>
+          </ac:spMkLst>
+        </pc:spChg>
+      </pc:sldChg>
+      <pc:sldChg chg="modSp add del modNotes">
+        <pc:chgData name="Ibon Landa Martín" userId="S::ilanda@plainconcepts.com::60f846aa-ad2b-4777-970b-d4f0f7e9760e" providerId="AD" clId="Web-{7B780259-678D-CFF4-10CE-36A04D929D2E}" dt="2026-05-11T13:12:17.866" v="957" actId="20577"/>
+        <pc:sldMkLst>
+          <pc:docMk/>
+          <pc:sldMk cId="0" sldId="268"/>
+        </pc:sldMkLst>
+        <pc:spChg chg="mod">
+          <ac:chgData name="Ibon Landa Martín" userId="S::ilanda@plainconcepts.com::60f846aa-ad2b-4777-970b-d4f0f7e9760e" providerId="AD" clId="Web-{7B780259-678D-CFF4-10CE-36A04D929D2E}" dt="2026-05-11T13:12:17.866" v="957" actId="20577"/>
+          <ac:spMkLst>
+            <pc:docMk/>
+            <pc:sldMk cId="0" sldId="268"/>
+            <ac:spMk id="5" creationId="{00000000-0000-0000-0000-000000000000}"/>
+          </ac:spMkLst>
+        </pc:spChg>
+      </pc:sldChg>
+      <pc:sldChg chg="modSp">
+        <pc:chgData name="Ibon Landa Martín" userId="S::ilanda@plainconcepts.com::60f846aa-ad2b-4777-970b-d4f0f7e9760e" providerId="AD" clId="Web-{7B780259-678D-CFF4-10CE-36A04D929D2E}" dt="2026-05-11T13:15:13.295" v="1020" actId="20577"/>
+        <pc:sldMkLst>
+          <pc:docMk/>
+          <pc:sldMk cId="0" sldId="269"/>
+        </pc:sldMkLst>
+        <pc:spChg chg="mod">
+          <ac:chgData name="Ibon Landa Martín" userId="S::ilanda@plainconcepts.com::60f846aa-ad2b-4777-970b-d4f0f7e9760e" providerId="AD" clId="Web-{7B780259-678D-CFF4-10CE-36A04D929D2E}" dt="2026-05-11T13:14:43.591" v="972" actId="20577"/>
+          <ac:spMkLst>
+            <pc:docMk/>
+            <pc:sldMk cId="0" sldId="269"/>
+            <ac:spMk id="4" creationId="{00000000-0000-0000-0000-000000000000}"/>
+          </ac:spMkLst>
+        </pc:spChg>
+        <pc:spChg chg="mod">
+          <ac:chgData name="Ibon Landa Martín" userId="S::ilanda@plainconcepts.com::60f846aa-ad2b-4777-970b-d4f0f7e9760e" providerId="AD" clId="Web-{7B780259-678D-CFF4-10CE-36A04D929D2E}" dt="2026-05-11T13:15:13.295" v="1020" actId="20577"/>
+          <ac:spMkLst>
+            <pc:docMk/>
+            <pc:sldMk cId="0" sldId="269"/>
+            <ac:spMk id="5" creationId="{00000000-0000-0000-0000-000000000000}"/>
+          </ac:spMkLst>
+        </pc:spChg>
+      </pc:sldChg>
+      <pc:sldChg chg="modSp add del modNotes">
+        <pc:chgData name="Ibon Landa Martín" userId="S::ilanda@plainconcepts.com::60f846aa-ad2b-4777-970b-d4f0f7e9760e" providerId="AD" clId="Web-{7B780259-678D-CFF4-10CE-36A04D929D2E}" dt="2026-05-11T13:10:56.753" v="947"/>
+        <pc:sldMkLst>
+          <pc:docMk/>
+          <pc:sldMk cId="0" sldId="270"/>
+        </pc:sldMkLst>
+        <pc:spChg chg="mod">
+          <ac:chgData name="Ibon Landa Martín" userId="S::ilanda@plainconcepts.com::60f846aa-ad2b-4777-970b-d4f0f7e9760e" providerId="AD" clId="Web-{7B780259-678D-CFF4-10CE-36A04D929D2E}" dt="2026-05-11T13:08:24.698" v="860" actId="20577"/>
+          <ac:spMkLst>
+            <pc:docMk/>
+            <pc:sldMk cId="0" sldId="270"/>
+            <ac:spMk id="4" creationId="{00000000-0000-0000-0000-000000000000}"/>
+          </ac:spMkLst>
+        </pc:spChg>
+        <pc:spChg chg="mod">
+          <ac:chgData name="Ibon Landa Martín" userId="S::ilanda@plainconcepts.com::60f846aa-ad2b-4777-970b-d4f0f7e9760e" providerId="AD" clId="Web-{7B780259-678D-CFF4-10CE-36A04D929D2E}" dt="2026-05-11T13:09:13.544" v="905" actId="20577"/>
+          <ac:spMkLst>
+            <pc:docMk/>
+            <pc:sldMk cId="0" sldId="270"/>
+            <ac:spMk id="9" creationId="{00000000-0000-0000-0000-000000000000}"/>
+          </ac:spMkLst>
+        </pc:spChg>
+      </pc:sldChg>
+      <pc:sldChg chg="modSp add del modNotes">
+        <pc:chgData name="Ibon Landa Martín" userId="S::ilanda@plainconcepts.com::60f846aa-ad2b-4777-970b-d4f0f7e9760e" providerId="AD" clId="Web-{7B780259-678D-CFF4-10CE-36A04D929D2E}" dt="2026-05-11T13:10:35.815" v="926" actId="20577"/>
+        <pc:sldMkLst>
+          <pc:docMk/>
+          <pc:sldMk cId="0" sldId="271"/>
+        </pc:sldMkLst>
+        <pc:spChg chg="mod">
+          <ac:chgData name="Ibon Landa Martín" userId="S::ilanda@plainconcepts.com::60f846aa-ad2b-4777-970b-d4f0f7e9760e" providerId="AD" clId="Web-{7B780259-678D-CFF4-10CE-36A04D929D2E}" dt="2026-05-11T13:10:35.815" v="926" actId="20577"/>
+          <ac:spMkLst>
+            <pc:docMk/>
+            <pc:sldMk cId="0" sldId="271"/>
+            <ac:spMk id="4" creationId="{00000000-0000-0000-0000-000000000000}"/>
+          </ac:spMkLst>
+        </pc:spChg>
+      </pc:sldChg>
+      <pc:sldChg chg="modSp add del modNotes">
+        <pc:chgData name="Ibon Landa Martín" userId="S::ilanda@plainconcepts.com::60f846aa-ad2b-4777-970b-d4f0f7e9760e" providerId="AD" clId="Web-{7B780259-678D-CFF4-10CE-36A04D929D2E}" dt="2026-05-11T13:10:44.643" v="937" actId="20577"/>
+        <pc:sldMkLst>
+          <pc:docMk/>
+          <pc:sldMk cId="0" sldId="272"/>
+        </pc:sldMkLst>
+        <pc:spChg chg="mod">
+          <ac:chgData name="Ibon Landa Martín" userId="S::ilanda@plainconcepts.com::60f846aa-ad2b-4777-970b-d4f0f7e9760e" providerId="AD" clId="Web-{7B780259-678D-CFF4-10CE-36A04D929D2E}" dt="2026-05-11T13:10:44.643" v="937" actId="20577"/>
+          <ac:spMkLst>
+            <pc:docMk/>
+            <pc:sldMk cId="0" sldId="272"/>
+            <ac:spMk id="4" creationId="{00000000-0000-0000-0000-000000000000}"/>
+          </ac:spMkLst>
+        </pc:spChg>
+      </pc:sldChg>
+      <pc:sldChg chg="add del modNotes">
+        <pc:chgData name="Ibon Landa Martín" userId="S::ilanda@plainconcepts.com::60f846aa-ad2b-4777-970b-d4f0f7e9760e" providerId="AD" clId="Web-{7B780259-678D-CFF4-10CE-36A04D929D2E}" dt="2026-05-11T13:16:13.110" v="1034"/>
+        <pc:sldMkLst>
+          <pc:docMk/>
+          <pc:sldMk cId="0" sldId="273"/>
+        </pc:sldMkLst>
+      </pc:sldChg>
+      <pc:sldChg chg="modSp add del modNotes">
+        <pc:chgData name="Ibon Landa Martín" userId="S::ilanda@plainconcepts.com::60f846aa-ad2b-4777-970b-d4f0f7e9760e" providerId="AD" clId="Web-{7B780259-678D-CFF4-10CE-36A04D929D2E}" dt="2026-05-11T13:22:16.045" v="1498"/>
+        <pc:sldMkLst>
+          <pc:docMk/>
+          <pc:sldMk cId="0" sldId="274"/>
+        </pc:sldMkLst>
+        <pc:spChg chg="mod">
+          <ac:chgData name="Ibon Landa Martín" userId="S::ilanda@plainconcepts.com::60f846aa-ad2b-4777-970b-d4f0f7e9760e" providerId="AD" clId="Web-{7B780259-678D-CFF4-10CE-36A04D929D2E}" dt="2026-05-11T13:16:29.783" v="1054" actId="20577"/>
+          <ac:spMkLst>
+            <pc:docMk/>
+            <pc:sldMk cId="0" sldId="274"/>
+            <ac:spMk id="4" creationId="{00000000-0000-0000-0000-000000000000}"/>
+          </ac:spMkLst>
+        </pc:spChg>
+      </pc:sldChg>
+      <pc:sldChg chg="del">
+        <pc:chgData name="Ibon Landa Martín" userId="S::ilanda@plainconcepts.com::60f846aa-ad2b-4777-970b-d4f0f7e9760e" providerId="AD" clId="Web-{7B780259-678D-CFF4-10CE-36A04D929D2E}" dt="2026-05-11T13:13:30.994" v="961"/>
+        <pc:sldMkLst>
+          <pc:docMk/>
+          <pc:sldMk cId="0" sldId="275"/>
+        </pc:sldMkLst>
+      </pc:sldChg>
+      <pc:sldChg chg="del">
+        <pc:chgData name="Ibon Landa Martín" userId="S::ilanda@plainconcepts.com::60f846aa-ad2b-4777-970b-d4f0f7e9760e" providerId="AD" clId="Web-{7B780259-678D-CFF4-10CE-36A04D929D2E}" dt="2026-05-11T13:15:17.046" v="1021"/>
+        <pc:sldMkLst>
+          <pc:docMk/>
+          <pc:sldMk cId="0" sldId="276"/>
+        </pc:sldMkLst>
+      </pc:sldChg>
+      <pc:sldChg chg="modSp modNotes">
+        <pc:chgData name="Ibon Landa Martín" userId="S::ilanda@plainconcepts.com::60f846aa-ad2b-4777-970b-d4f0f7e9760e" providerId="AD" clId="Web-{7B780259-678D-CFF4-10CE-36A04D929D2E}" dt="2026-05-11T13:16:02.594" v="1033" actId="20577"/>
+        <pc:sldMkLst>
+          <pc:docMk/>
+          <pc:sldMk cId="0" sldId="277"/>
+        </pc:sldMkLst>
+        <pc:spChg chg="mod">
+          <ac:chgData name="Ibon Landa Martín" userId="S::ilanda@plainconcepts.com::60f846aa-ad2b-4777-970b-d4f0f7e9760e" providerId="AD" clId="Web-{7B780259-678D-CFF4-10CE-36A04D929D2E}" dt="2026-05-11T13:16:02.594" v="1033" actId="20577"/>
+          <ac:spMkLst>
+            <pc:docMk/>
+            <pc:sldMk cId="0" sldId="277"/>
+            <ac:spMk id="4" creationId="{00000000-0000-0000-0000-000000000000}"/>
+          </ac:spMkLst>
+        </pc:spChg>
+      </pc:sldChg>
+      <pc:sldChg chg="modSp modNotes">
+        <pc:chgData name="Ibon Landa Martín" userId="S::ilanda@plainconcepts.com::60f846aa-ad2b-4777-970b-d4f0f7e9760e" providerId="AD" clId="Web-{7B780259-678D-CFF4-10CE-36A04D929D2E}" dt="2026-05-11T13:36:39.186" v="1823" actId="20577"/>
+        <pc:sldMkLst>
+          <pc:docMk/>
+          <pc:sldMk cId="0" sldId="278"/>
+        </pc:sldMkLst>
+        <pc:spChg chg="mod">
+          <ac:chgData name="Ibon Landa Martín" userId="S::ilanda@plainconcepts.com::60f846aa-ad2b-4777-970b-d4f0f7e9760e" providerId="AD" clId="Web-{7B780259-678D-CFF4-10CE-36A04D929D2E}" dt="2026-05-11T13:36:39.186" v="1823" actId="20577"/>
+          <ac:spMkLst>
+            <pc:docMk/>
+            <pc:sldMk cId="0" sldId="278"/>
+            <ac:spMk id="20" creationId="{00000000-0000-0000-0000-000000000000}"/>
+          </ac:spMkLst>
+        </pc:spChg>
+      </pc:sldChg>
+      <pc:sldChg chg="modSp modNotes">
+        <pc:chgData name="Ibon Landa Martín" userId="S::ilanda@plainconcepts.com::60f846aa-ad2b-4777-970b-d4f0f7e9760e" providerId="AD" clId="Web-{7B780259-678D-CFF4-10CE-36A04D929D2E}" dt="2026-05-11T13:37:22.770" v="1899" actId="20577"/>
+        <pc:sldMkLst>
+          <pc:docMk/>
+          <pc:sldMk cId="0" sldId="279"/>
+        </pc:sldMkLst>
+        <pc:spChg chg="mod">
+          <ac:chgData name="Ibon Landa Martín" userId="S::ilanda@plainconcepts.com::60f846aa-ad2b-4777-970b-d4f0f7e9760e" providerId="AD" clId="Web-{7B780259-678D-CFF4-10CE-36A04D929D2E}" dt="2026-05-11T13:37:22.770" v="1899" actId="20577"/>
+          <ac:spMkLst>
+            <pc:docMk/>
+            <pc:sldMk cId="0" sldId="279"/>
+            <ac:spMk id="4" creationId="{00000000-0000-0000-0000-000000000000}"/>
+          </ac:spMkLst>
+        </pc:spChg>
+        <pc:spChg chg="mod">
+          <ac:chgData name="Ibon Landa Martín" userId="S::ilanda@plainconcepts.com::60f846aa-ad2b-4777-970b-d4f0f7e9760e" providerId="AD" clId="Web-{7B780259-678D-CFF4-10CE-36A04D929D2E}" dt="2026-05-11T13:29:38.589" v="1678" actId="20577"/>
+          <ac:spMkLst>
+            <pc:docMk/>
+            <pc:sldMk cId="0" sldId="279"/>
+            <ac:spMk id="5" creationId="{00000000-0000-0000-0000-000000000000}"/>
+          </ac:spMkLst>
+        </pc:spChg>
+      </pc:sldChg>
+      <pc:sldChg chg="modSp modNotes">
+        <pc:chgData name="Ibon Landa Martín" userId="S::ilanda@plainconcepts.com::60f846aa-ad2b-4777-970b-d4f0f7e9760e" providerId="AD" clId="Web-{7B780259-678D-CFF4-10CE-36A04D929D2E}" dt="2026-05-11T13:30:30.810" v="1731" actId="20577"/>
+        <pc:sldMkLst>
+          <pc:docMk/>
+          <pc:sldMk cId="0" sldId="280"/>
+        </pc:sldMkLst>
+        <pc:spChg chg="mod">
+          <ac:chgData name="Ibon Landa Martín" userId="S::ilanda@plainconcepts.com::60f846aa-ad2b-4777-970b-d4f0f7e9760e" providerId="AD" clId="Web-{7B780259-678D-CFF4-10CE-36A04D929D2E}" dt="2026-05-11T13:30:30.810" v="1731" actId="20577"/>
+          <ac:spMkLst>
+            <pc:docMk/>
+            <pc:sldMk cId="0" sldId="280"/>
+            <ac:spMk id="17" creationId="{00000000-0000-0000-0000-000000000000}"/>
+          </ac:spMkLst>
+        </pc:spChg>
+      </pc:sldChg>
+      <pc:sldChg chg="modSp">
+        <pc:chgData name="Ibon Landa Martín" userId="S::ilanda@plainconcepts.com::60f846aa-ad2b-4777-970b-d4f0f7e9760e" providerId="AD" clId="Web-{7B780259-678D-CFF4-10CE-36A04D929D2E}" dt="2026-05-11T13:23:34.271" v="1535" actId="20577"/>
+        <pc:sldMkLst>
+          <pc:docMk/>
+          <pc:sldMk cId="0" sldId="281"/>
+        </pc:sldMkLst>
+        <pc:spChg chg="mod">
+          <ac:chgData name="Ibon Landa Martín" userId="S::ilanda@plainconcepts.com::60f846aa-ad2b-4777-970b-d4f0f7e9760e" providerId="AD" clId="Web-{7B780259-678D-CFF4-10CE-36A04D929D2E}" dt="2026-05-11T13:23:34.271" v="1535" actId="20577"/>
+          <ac:spMkLst>
+            <pc:docMk/>
+            <pc:sldMk cId="0" sldId="281"/>
+            <ac:spMk id="3" creationId="{00000000-0000-0000-0000-000000000000}"/>
+          </ac:spMkLst>
+        </pc:spChg>
+      </pc:sldChg>
+      <pc:sldChg chg="modSp ord modNotes">
+        <pc:chgData name="Ibon Landa Martín" userId="S::ilanda@plainconcepts.com::60f846aa-ad2b-4777-970b-d4f0f7e9760e" providerId="AD" clId="Web-{7B780259-678D-CFF4-10CE-36A04D929D2E}" dt="2026-05-11T13:23:01.143" v="1534" actId="20577"/>
+        <pc:sldMkLst>
+          <pc:docMk/>
+          <pc:sldMk cId="0" sldId="282"/>
+        </pc:sldMkLst>
+        <pc:spChg chg="mod">
+          <ac:chgData name="Ibon Landa Martín" userId="S::ilanda@plainconcepts.com::60f846aa-ad2b-4777-970b-d4f0f7e9760e" providerId="AD" clId="Web-{7B780259-678D-CFF4-10CE-36A04D929D2E}" dt="2026-05-11T13:23:01.143" v="1534" actId="20577"/>
+          <ac:spMkLst>
+            <pc:docMk/>
+            <pc:sldMk cId="0" sldId="282"/>
+            <ac:spMk id="4" creationId="{00000000-0000-0000-0000-000000000000}"/>
+          </ac:spMkLst>
+        </pc:spChg>
+        <pc:spChg chg="mod">
+          <ac:chgData name="Ibon Landa Martín" userId="S::ilanda@plainconcepts.com::60f846aa-ad2b-4777-970b-d4f0f7e9760e" providerId="AD" clId="Web-{7B780259-678D-CFF4-10CE-36A04D929D2E}" dt="2026-05-11T13:22:51.705" v="1511" actId="20577"/>
+          <ac:spMkLst>
+            <pc:docMk/>
+            <pc:sldMk cId="0" sldId="282"/>
+            <ac:spMk id="5" creationId="{00000000-0000-0000-0000-000000000000}"/>
+          </ac:spMkLst>
+        </pc:spChg>
+      </pc:sldChg>
+      <pc:sldChg chg="modNotes">
+        <pc:chgData name="Ibon Landa Martín" userId="S::ilanda@plainconcepts.com::60f846aa-ad2b-4777-970b-d4f0f7e9760e" providerId="AD" clId="Web-{7B780259-678D-CFF4-10CE-36A04D929D2E}" dt="2026-05-11T12:59:59.734" v="642"/>
+        <pc:sldMkLst>
+          <pc:docMk/>
+          <pc:sldMk cId="0" sldId="283"/>
+        </pc:sldMkLst>
+      </pc:sldChg>
+      <pc:sldChg chg="ord modNotes">
+        <pc:chgData name="Ibon Landa Martín" userId="S::ilanda@plainconcepts.com::60f846aa-ad2b-4777-970b-d4f0f7e9760e" providerId="AD" clId="Web-{7B780259-678D-CFF4-10CE-36A04D929D2E}" dt="2026-05-11T13:00:04.343" v="643"/>
+        <pc:sldMkLst>
+          <pc:docMk/>
+          <pc:sldMk cId="0" sldId="284"/>
+        </pc:sldMkLst>
+      </pc:sldChg>
+      <pc:sldChg chg="modNotes">
+        <pc:chgData name="Ibon Landa Martín" userId="S::ilanda@plainconcepts.com::60f846aa-ad2b-4777-970b-d4f0f7e9760e" providerId="AD" clId="Web-{7B780259-678D-CFF4-10CE-36A04D929D2E}" dt="2026-05-11T12:58:11.589" v="574"/>
+        <pc:sldMkLst>
+          <pc:docMk/>
+          <pc:sldMk cId="0" sldId="285"/>
+        </pc:sldMkLst>
+      </pc:sldChg>
+      <pc:sldChg chg="modSp modNotes">
+        <pc:chgData name="Ibon Landa Martín" userId="S::ilanda@plainconcepts.com::60f846aa-ad2b-4777-970b-d4f0f7e9760e" providerId="AD" clId="Web-{7B780259-678D-CFF4-10CE-36A04D929D2E}" dt="2026-05-11T12:57:49.041" v="536"/>
+        <pc:sldMkLst>
+          <pc:docMk/>
+          <pc:sldMk cId="0" sldId="286"/>
+        </pc:sldMkLst>
+        <pc:spChg chg="mod">
+          <ac:chgData name="Ibon Landa Martín" userId="S::ilanda@plainconcepts.com::60f846aa-ad2b-4777-970b-d4f0f7e9760e" providerId="AD" clId="Web-{7B780259-678D-CFF4-10CE-36A04D929D2E}" dt="2026-05-11T11:37:53.587" v="1" actId="20577"/>
+          <ac:spMkLst>
+            <pc:docMk/>
+            <pc:sldMk cId="0" sldId="286"/>
+            <ac:spMk id="9" creationId="{00000000-0000-0000-0000-000000000000}"/>
+          </ac:spMkLst>
+        </pc:spChg>
+        <pc:spChg chg="mod">
+          <ac:chgData name="Ibon Landa Martín" userId="S::ilanda@plainconcepts.com::60f846aa-ad2b-4777-970b-d4f0f7e9760e" providerId="AD" clId="Web-{7B780259-678D-CFF4-10CE-36A04D929D2E}" dt="2026-05-11T11:38:05.259" v="2" actId="20577"/>
+          <ac:spMkLst>
+            <pc:docMk/>
+            <pc:sldMk cId="0" sldId="286"/>
+            <ac:spMk id="19" creationId="{00000000-0000-0000-0000-000000000000}"/>
+          </ac:spMkLst>
+        </pc:spChg>
+        <pc:spChg chg="mod">
+          <ac:chgData name="Ibon Landa Martín" userId="S::ilanda@plainconcepts.com::60f846aa-ad2b-4777-970b-d4f0f7e9760e" providerId="AD" clId="Web-{7B780259-678D-CFF4-10CE-36A04D929D2E}" dt="2026-05-11T11:41:06.568" v="28" actId="20577"/>
+          <ac:spMkLst>
+            <pc:docMk/>
+            <pc:sldMk cId="0" sldId="286"/>
+            <ac:spMk id="30" creationId="{00000000-0000-0000-0000-000000000000}"/>
+          </ac:spMkLst>
+        </pc:spChg>
+      </pc:sldChg>
+      <pc:sldChg chg="modNotes">
+        <pc:chgData name="Ibon Landa Martín" userId="S::ilanda@plainconcepts.com::60f846aa-ad2b-4777-970b-d4f0f7e9760e" providerId="AD" clId="Web-{7B780259-678D-CFF4-10CE-36A04D929D2E}" dt="2026-05-11T12:57:51.807" v="538"/>
+        <pc:sldMkLst>
+          <pc:docMk/>
+          <pc:sldMk cId="0" sldId="287"/>
+        </pc:sldMkLst>
+      </pc:sldChg>
+      <pc:sldChg chg="del">
+        <pc:chgData name="Ibon Landa Martín" userId="S::ilanda@plainconcepts.com::60f846aa-ad2b-4777-970b-d4f0f7e9760e" providerId="AD" clId="Web-{7B780259-678D-CFF4-10CE-36A04D929D2E}" dt="2026-05-11T13:03:01.433" v="726"/>
+        <pc:sldMkLst>
+          <pc:docMk/>
+          <pc:sldMk cId="4083776056" sldId="289"/>
+        </pc:sldMkLst>
+      </pc:sldChg>
+      <pc:sldChg chg="modSp add del modNotes">
+        <pc:chgData name="Ibon Landa Martín" userId="S::ilanda@plainconcepts.com::60f846aa-ad2b-4777-970b-d4f0f7e9760e" providerId="AD" clId="Web-{7B780259-678D-CFF4-10CE-36A04D929D2E}" dt="2026-05-11T13:21:53.793" v="1496" actId="20577"/>
+        <pc:sldMkLst>
+          <pc:docMk/>
+          <pc:sldMk cId="0" sldId="290"/>
+        </pc:sldMkLst>
+        <pc:spChg chg="mod">
+          <ac:chgData name="Ibon Landa Martín" userId="S::ilanda@plainconcepts.com::60f846aa-ad2b-4777-970b-d4f0f7e9760e" providerId="AD" clId="Web-{7B780259-678D-CFF4-10CE-36A04D929D2E}" dt="2026-05-11T13:21:53.793" v="1496" actId="20577"/>
+          <ac:spMkLst>
+            <pc:docMk/>
+            <pc:sldMk cId="0" sldId="290"/>
+            <ac:spMk id="4" creationId="{00000000-0000-0000-0000-000000000000}"/>
+          </ac:spMkLst>
+        </pc:spChg>
+      </pc:sldChg>
+      <pc:sldChg chg="add del modNotes">
+        <pc:chgData name="Ibon Landa Martín" userId="S::ilanda@plainconcepts.com::60f846aa-ad2b-4777-970b-d4f0f7e9760e" providerId="AD" clId="Web-{7B780259-678D-CFF4-10CE-36A04D929D2E}" dt="2026-05-11T13:11:02.332" v="951"/>
+        <pc:sldMkLst>
+          <pc:docMk/>
+          <pc:sldMk cId="0" sldId="291"/>
+        </pc:sldMkLst>
+      </pc:sldChg>
+      <pc:sldChg chg="add del">
+        <pc:chgData name="Ibon Landa Martín" userId="S::ilanda@plainconcepts.com::60f846aa-ad2b-4777-970b-d4f0f7e9760e" providerId="AD" clId="Web-{7B780259-678D-CFF4-10CE-36A04D929D2E}" dt="2026-05-11T13:08:11.869" v="849"/>
+        <pc:sldMkLst>
+          <pc:docMk/>
+          <pc:sldMk cId="0" sldId="292"/>
+        </pc:sldMkLst>
+      </pc:sldChg>
+      <pc:sldChg chg="modSp modNotes">
+        <pc:chgData name="Ibon Landa Martín" userId="S::ilanda@plainconcepts.com::60f846aa-ad2b-4777-970b-d4f0f7e9760e" providerId="AD" clId="Web-{7B780259-678D-CFF4-10CE-36A04D929D2E}" dt="2026-05-11T12:44:04.530" v="125"/>
+        <pc:sldMkLst>
+          <pc:docMk/>
+          <pc:sldMk cId="1018329768" sldId="293"/>
+        </pc:sldMkLst>
+        <pc:spChg chg="mod">
+          <ac:chgData name="Ibon Landa Martín" userId="S::ilanda@plainconcepts.com::60f846aa-ad2b-4777-970b-d4f0f7e9760e" providerId="AD" clId="Web-{7B780259-678D-CFF4-10CE-36A04D929D2E}" dt="2026-05-11T12:41:55.478" v="42" actId="20577"/>
+          <ac:spMkLst>
+            <pc:docMk/>
+            <pc:sldMk cId="1018329768" sldId="293"/>
+            <ac:spMk id="12" creationId="{DCA6A150-CEDF-1654-6FC2-F143DE24D109}"/>
+          </ac:spMkLst>
+        </pc:spChg>
+        <pc:spChg chg="mod">
+          <ac:chgData name="Ibon Landa Martín" userId="S::ilanda@plainconcepts.com::60f846aa-ad2b-4777-970b-d4f0f7e9760e" providerId="AD" clId="Web-{7B780259-678D-CFF4-10CE-36A04D929D2E}" dt="2026-05-11T12:42:04.166" v="46" actId="20577"/>
+          <ac:spMkLst>
+            <pc:docMk/>
+            <pc:sldMk cId="1018329768" sldId="293"/>
+            <ac:spMk id="13" creationId="{A5041233-F75D-6EA1-6BBE-FB1FF36A2D7E}"/>
+          </ac:spMkLst>
+        </pc:spChg>
+      </pc:sldChg>
+      <pc:sldChg chg="modNotes">
+        <pc:chgData name="Ibon Landa Martín" userId="S::ilanda@plainconcepts.com::60f846aa-ad2b-4777-970b-d4f0f7e9760e" providerId="AD" clId="Web-{7B780259-678D-CFF4-10CE-36A04D929D2E}" dt="2026-05-11T12:58:00.448" v="540"/>
+        <pc:sldMkLst>
+          <pc:docMk/>
+          <pc:sldMk cId="4118427813" sldId="318"/>
+        </pc:sldMkLst>
+      </pc:sldChg>
+      <pc:sldChg chg="addSp delSp modSp new mod ord modClrScheme chgLayout modNotes">
+        <pc:chgData name="Ibon Landa Martín" userId="S::ilanda@plainconcepts.com::60f846aa-ad2b-4777-970b-d4f0f7e9760e" providerId="AD" clId="Web-{7B780259-678D-CFF4-10CE-36A04D929D2E}" dt="2026-05-11T12:51:24.789" v="413"/>
+        <pc:sldMkLst>
+          <pc:docMk/>
+          <pc:sldMk cId="1755683636" sldId="319"/>
+        </pc:sldMkLst>
+        <pc:spChg chg="del">
+          <ac:chgData name="Ibon Landa Martín" userId="S::ilanda@plainconcepts.com::60f846aa-ad2b-4777-970b-d4f0f7e9760e" providerId="AD" clId="Web-{7B780259-678D-CFF4-10CE-36A04D929D2E}" dt="2026-05-11T12:46:07.978" v="238"/>
+          <ac:spMkLst>
+            <pc:docMk/>
+            <pc:sldMk cId="1755683636" sldId="319"/>
+            <ac:spMk id="2" creationId="{A7051F8A-CAC7-C78A-AFCC-EADFD20349E8}"/>
+          </ac:spMkLst>
+        </pc:spChg>
+        <pc:spChg chg="del">
+          <ac:chgData name="Ibon Landa Martín" userId="S::ilanda@plainconcepts.com::60f846aa-ad2b-4777-970b-d4f0f7e9760e" providerId="AD" clId="Web-{7B780259-678D-CFF4-10CE-36A04D929D2E}" dt="2026-05-11T12:46:07.978" v="238"/>
+          <ac:spMkLst>
+            <pc:docMk/>
+            <pc:sldMk cId="1755683636" sldId="319"/>
+            <ac:spMk id="3" creationId="{223C938F-274E-D930-C3E8-AFCCE205572D}"/>
+          </ac:spMkLst>
+        </pc:spChg>
+        <pc:spChg chg="del">
+          <ac:chgData name="Ibon Landa Martín" userId="S::ilanda@plainconcepts.com::60f846aa-ad2b-4777-970b-d4f0f7e9760e" providerId="AD" clId="Web-{7B780259-678D-CFF4-10CE-36A04D929D2E}" dt="2026-05-11T12:46:07.978" v="238"/>
+          <ac:spMkLst>
+            <pc:docMk/>
+            <pc:sldMk cId="1755683636" sldId="319"/>
+            <ac:spMk id="4" creationId="{CBCC188B-019D-D57A-2975-51C74FD11695}"/>
+          </ac:spMkLst>
+        </pc:spChg>
+        <pc:spChg chg="add mod">
+          <ac:chgData name="Ibon Landa Martín" userId="S::ilanda@plainconcepts.com::60f846aa-ad2b-4777-970b-d4f0f7e9760e" providerId="AD" clId="Web-{7B780259-678D-CFF4-10CE-36A04D929D2E}" dt="2026-05-11T12:46:36.466" v="267" actId="20577"/>
+          <ac:spMkLst>
+            <pc:docMk/>
+            <pc:sldMk cId="1755683636" sldId="319"/>
+            <ac:spMk id="6" creationId="{2EE3EF0B-B8EB-544D-33AB-EA3440EF8DCE}"/>
+          </ac:spMkLst>
+        </pc:spChg>
+      </pc:sldChg>
+      <pc:sldChg chg="modSp add del replId modNotes">
+        <pc:chgData name="Ibon Landa Martín" userId="S::ilanda@plainconcepts.com::60f846aa-ad2b-4777-970b-d4f0f7e9760e" providerId="AD" clId="Web-{7B780259-678D-CFF4-10CE-36A04D929D2E}" dt="2026-05-11T12:51:47.009" v="416"/>
+        <pc:sldMkLst>
+          <pc:docMk/>
+          <pc:sldMk cId="1076393903" sldId="320"/>
+        </pc:sldMkLst>
+        <pc:spChg chg="mod">
+          <ac:chgData name="Ibon Landa Martín" userId="S::ilanda@plainconcepts.com::60f846aa-ad2b-4777-970b-d4f0f7e9760e" providerId="AD" clId="Web-{7B780259-678D-CFF4-10CE-36A04D929D2E}" dt="2026-05-11T12:47:14.518" v="317" actId="20577"/>
+          <ac:spMkLst>
+            <pc:docMk/>
+            <pc:sldMk cId="1076393903" sldId="320"/>
+            <ac:spMk id="6" creationId="{AF32DD21-A83F-A62B-C95B-8FF99B546D8D}"/>
+          </ac:spMkLst>
+        </pc:spChg>
+      </pc:sldChg>
+      <pc:sldChg chg="modSp add ord replId modNotes">
+        <pc:chgData name="Ibon Landa Martín" userId="S::ilanda@plainconcepts.com::60f846aa-ad2b-4777-970b-d4f0f7e9760e" providerId="AD" clId="Web-{7B780259-678D-CFF4-10CE-36A04D929D2E}" dt="2026-05-11T12:51:29.445" v="415"/>
+        <pc:sldMkLst>
+          <pc:docMk/>
+          <pc:sldMk cId="592035382" sldId="321"/>
+        </pc:sldMkLst>
+        <pc:spChg chg="mod">
+          <ac:chgData name="Ibon Landa Martín" userId="S::ilanda@plainconcepts.com::60f846aa-ad2b-4777-970b-d4f0f7e9760e" providerId="AD" clId="Web-{7B780259-678D-CFF4-10CE-36A04D929D2E}" dt="2026-05-11T12:47:34.114" v="329" actId="20577"/>
+          <ac:spMkLst>
+            <pc:docMk/>
+            <pc:sldMk cId="592035382" sldId="321"/>
+            <ac:spMk id="6" creationId="{33F7C9BE-C7B9-CF53-065F-B774709220B5}"/>
+          </ac:spMkLst>
+        </pc:spChg>
+      </pc:sldChg>
+      <pc:sldChg chg="add del replId">
+        <pc:chgData name="Ibon Landa Martín" userId="S::ilanda@plainconcepts.com::60f846aa-ad2b-4777-970b-d4f0f7e9760e" providerId="AD" clId="Web-{7B780259-678D-CFF4-10CE-36A04D929D2E}" dt="2026-05-11T12:52:11.979" v="418"/>
+        <pc:sldMkLst>
+          <pc:docMk/>
+          <pc:sldMk cId="552580099" sldId="322"/>
+        </pc:sldMkLst>
+      </pc:sldChg>
+      <pc:sldChg chg="modSp add del replId">
+        <pc:chgData name="Ibon Landa Martín" userId="S::ilanda@plainconcepts.com::60f846aa-ad2b-4777-970b-d4f0f7e9760e" providerId="AD" clId="Web-{7B780259-678D-CFF4-10CE-36A04D929D2E}" dt="2026-05-11T13:11:30.489" v="953"/>
+        <pc:sldMkLst>
+          <pc:docMk/>
+          <pc:sldMk cId="1525280611" sldId="322"/>
+        </pc:sldMkLst>
+        <pc:spChg chg="mod">
+          <ac:chgData name="Ibon Landa Martín" userId="S::ilanda@plainconcepts.com::60f846aa-ad2b-4777-970b-d4f0f7e9760e" providerId="AD" clId="Web-{7B780259-678D-CFF4-10CE-36A04D929D2E}" dt="2026-05-11T12:52:33.746" v="431" actId="20577"/>
+          <ac:spMkLst>
+            <pc:docMk/>
+            <pc:sldMk cId="1525280611" sldId="322"/>
+            <ac:spMk id="6" creationId="{C8E7CE1F-FE6F-16CD-5C6C-BB6C089DC46B}"/>
+          </ac:spMkLst>
+        </pc:spChg>
+      </pc:sldChg>
+      <pc:sldChg chg="modSp add del replId modNotes">
+        <pc:chgData name="Ibon Landa Martín" userId="S::ilanda@plainconcepts.com::60f846aa-ad2b-4777-970b-d4f0f7e9760e" providerId="AD" clId="Web-{7B780259-678D-CFF4-10CE-36A04D929D2E}" dt="2026-05-11T13:07:11.568" v="845"/>
+        <pc:sldMkLst>
+          <pc:docMk/>
+          <pc:sldMk cId="1266698331" sldId="323"/>
+        </pc:sldMkLst>
+        <pc:spChg chg="mod">
+          <ac:chgData name="Ibon Landa Martín" userId="S::ilanda@plainconcepts.com::60f846aa-ad2b-4777-970b-d4f0f7e9760e" providerId="AD" clId="Web-{7B780259-678D-CFF4-10CE-36A04D929D2E}" dt="2026-05-11T12:53:06.013" v="453" actId="20577"/>
+          <ac:spMkLst>
+            <pc:docMk/>
+            <pc:sldMk cId="1266698331" sldId="323"/>
+            <ac:spMk id="6" creationId="{14D2F00B-5195-2C12-0394-728FEEAB2122}"/>
+          </ac:spMkLst>
+        </pc:spChg>
+      </pc:sldChg>
+      <pc:sldChg chg="add del replId modNotes">
+        <pc:chgData name="Ibon Landa Martín" userId="S::ilanda@plainconcepts.com::60f846aa-ad2b-4777-970b-d4f0f7e9760e" providerId="AD" clId="Web-{7B780259-678D-CFF4-10CE-36A04D929D2E}" dt="2026-05-11T13:07:24.428" v="848"/>
+        <pc:sldMkLst>
+          <pc:docMk/>
+          <pc:sldMk cId="1308529537" sldId="324"/>
+        </pc:sldMkLst>
+      </pc:sldChg>
+      <pc:sldChg chg="modSp add replId modNotes">
+        <pc:chgData name="Ibon Landa Martín" userId="S::ilanda@plainconcepts.com::60f846aa-ad2b-4777-970b-d4f0f7e9760e" providerId="AD" clId="Web-{7B780259-678D-CFF4-10CE-36A04D929D2E}" dt="2026-05-11T13:06:35.268" v="839"/>
+        <pc:sldMkLst>
+          <pc:docMk/>
+          <pc:sldMk cId="1537465024" sldId="325"/>
+        </pc:sldMkLst>
+        <pc:spChg chg="mod">
+          <ac:chgData name="Ibon Landa Martín" userId="S::ilanda@plainconcepts.com::60f846aa-ad2b-4777-970b-d4f0f7e9760e" providerId="AD" clId="Web-{7B780259-678D-CFF4-10CE-36A04D929D2E}" dt="2026-05-11T13:05:55.593" v="747" actId="20577"/>
+          <ac:spMkLst>
+            <pc:docMk/>
+            <pc:sldMk cId="1537465024" sldId="325"/>
+            <ac:spMk id="6" creationId="{4C502C7D-9FCE-F03B-B4D7-49B39E613287}"/>
+          </ac:spMkLst>
+        </pc:spChg>
+      </pc:sldChg>
+      <pc:sldChg chg="modSp add replId modNotes">
+        <pc:chgData name="Ibon Landa Martín" userId="S::ilanda@plainconcepts.com::60f846aa-ad2b-4777-970b-d4f0f7e9760e" providerId="AD" clId="Web-{7B780259-678D-CFF4-10CE-36A04D929D2E}" dt="2026-05-11T13:18:33.334" v="1299"/>
+        <pc:sldMkLst>
+          <pc:docMk/>
+          <pc:sldMk cId="243631415" sldId="326"/>
+        </pc:sldMkLst>
+        <pc:spChg chg="mod">
+          <ac:chgData name="Ibon Landa Martín" userId="S::ilanda@plainconcepts.com::60f846aa-ad2b-4777-970b-d4f0f7e9760e" providerId="AD" clId="Web-{7B780259-678D-CFF4-10CE-36A04D929D2E}" dt="2026-05-11T13:17:37.707" v="1107" actId="20577"/>
+          <ac:spMkLst>
+            <pc:docMk/>
+            <pc:sldMk cId="243631415" sldId="326"/>
+            <ac:spMk id="6" creationId="{1C311523-D485-02B2-F761-F8F37B014FF4}"/>
+          </ac:spMkLst>
+        </pc:spChg>
+      </pc:sldChg>
+      <pc:sldChg chg="add del replId">
+        <pc:chgData name="Ibon Landa Martín" userId="S::ilanda@plainconcepts.com::60f846aa-ad2b-4777-970b-d4f0f7e9760e" providerId="AD" clId="Web-{7B780259-678D-CFF4-10CE-36A04D929D2E}" dt="2026-05-11T13:13:44.667" v="964"/>
+        <pc:sldMkLst>
+          <pc:docMk/>
+          <pc:sldMk cId="2708768339" sldId="326"/>
+        </pc:sldMkLst>
+      </pc:sldChg>
+      <pc:sldChg chg="modSp add replId modNotes">
+        <pc:chgData name="Ibon Landa Martín" userId="S::ilanda@plainconcepts.com::60f846aa-ad2b-4777-970b-d4f0f7e9760e" providerId="AD" clId="Web-{7B780259-678D-CFF4-10CE-36A04D929D2E}" dt="2026-05-11T13:20:53.849" v="1464"/>
+        <pc:sldMkLst>
+          <pc:docMk/>
+          <pc:sldMk cId="2816560146" sldId="327"/>
+        </pc:sldMkLst>
+        <pc:spChg chg="mod">
+          <ac:chgData name="Ibon Landa Martín" userId="S::ilanda@plainconcepts.com::60f846aa-ad2b-4777-970b-d4f0f7e9760e" providerId="AD" clId="Web-{7B780259-678D-CFF4-10CE-36A04D929D2E}" dt="2026-05-11T13:20:20.845" v="1376" actId="20577"/>
+          <ac:spMkLst>
+            <pc:docMk/>
+            <pc:sldMk cId="2816560146" sldId="327"/>
+            <ac:spMk id="6" creationId="{60CD8E4B-FB29-32D1-99EC-7100B142B796}"/>
+          </ac:spMkLst>
+        </pc:spChg>
+      </pc:sldChg>
+      <pc:sldChg chg="modSp add replId">
+        <pc:chgData name="Ibon Landa Martín" userId="S::ilanda@plainconcepts.com::60f846aa-ad2b-4777-970b-d4f0f7e9760e" providerId="AD" clId="Web-{7B780259-678D-CFF4-10CE-36A04D929D2E}" dt="2026-05-11T13:21:31.166" v="1484" actId="20577"/>
+        <pc:sldMkLst>
+          <pc:docMk/>
+          <pc:sldMk cId="227458661" sldId="328"/>
+        </pc:sldMkLst>
+        <pc:spChg chg="mod">
+          <ac:chgData name="Ibon Landa Martín" userId="S::ilanda@plainconcepts.com::60f846aa-ad2b-4777-970b-d4f0f7e9760e" providerId="AD" clId="Web-{7B780259-678D-CFF4-10CE-36A04D929D2E}" dt="2026-05-11T13:21:31.166" v="1484" actId="20577"/>
+          <ac:spMkLst>
+            <pc:docMk/>
+            <pc:sldMk cId="227458661" sldId="328"/>
+            <ac:spMk id="6" creationId="{74DE51A7-CC0C-9213-41BA-956E2D6B181E}"/>
+          </ac:spMkLst>
+        </pc:spChg>
+      </pc:sldChg>
+      <pc:sldChg chg="modSp add replId">
+        <pc:chgData name="Ibon Landa Martín" userId="S::ilanda@plainconcepts.com::60f846aa-ad2b-4777-970b-d4f0f7e9760e" providerId="AD" clId="Web-{7B780259-678D-CFF4-10CE-36A04D929D2E}" dt="2026-05-11T13:23:57.038" v="1548" actId="20577"/>
+        <pc:sldMkLst>
+          <pc:docMk/>
+          <pc:sldMk cId="3121924688" sldId="329"/>
+        </pc:sldMkLst>
+        <pc:spChg chg="mod">
+          <ac:chgData name="Ibon Landa Martín" userId="S::ilanda@plainconcepts.com::60f846aa-ad2b-4777-970b-d4f0f7e9760e" providerId="AD" clId="Web-{7B780259-678D-CFF4-10CE-36A04D929D2E}" dt="2026-05-11T13:23:45.803" v="1537" actId="20577"/>
+          <ac:spMkLst>
+            <pc:docMk/>
+            <pc:sldMk cId="3121924688" sldId="329"/>
+            <ac:spMk id="3" creationId="{324DDF19-8141-4CD3-BC8A-81C33DCE63F0}"/>
+          </ac:spMkLst>
+        </pc:spChg>
+        <pc:spChg chg="mod">
+          <ac:chgData name="Ibon Landa Martín" userId="S::ilanda@plainconcepts.com::60f846aa-ad2b-4777-970b-d4f0f7e9760e" providerId="AD" clId="Web-{7B780259-678D-CFF4-10CE-36A04D929D2E}" dt="2026-05-11T13:23:51.178" v="1546" actId="20577"/>
+          <ac:spMkLst>
+            <pc:docMk/>
+            <pc:sldMk cId="3121924688" sldId="329"/>
+            <ac:spMk id="4" creationId="{F10CE6AB-FA11-28F3-C239-8E51C9EEFD9C}"/>
+          </ac:spMkLst>
+        </pc:spChg>
+        <pc:spChg chg="mod">
+          <ac:chgData name="Ibon Landa Martín" userId="S::ilanda@plainconcepts.com::60f846aa-ad2b-4777-970b-d4f0f7e9760e" providerId="AD" clId="Web-{7B780259-678D-CFF4-10CE-36A04D929D2E}" dt="2026-05-11T13:23:57.038" v="1548" actId="20577"/>
+          <ac:spMkLst>
+            <pc:docMk/>
+            <pc:sldMk cId="3121924688" sldId="329"/>
+            <ac:spMk id="5" creationId="{2424F890-620F-811A-4670-1AAAD71C0BC0}"/>
+          </ac:spMkLst>
+        </pc:spChg>
+      </pc:sldChg>
+      <pc:sldChg chg="modSp add replId modNotes">
+        <pc:chgData name="Ibon Landa Martín" userId="S::ilanda@plainconcepts.com::60f846aa-ad2b-4777-970b-d4f0f7e9760e" providerId="AD" clId="Web-{7B780259-678D-CFF4-10CE-36A04D929D2E}" dt="2026-05-11T13:37:27.474" v="1900" actId="20577"/>
+        <pc:sldMkLst>
+          <pc:docMk/>
+          <pc:sldMk cId="788561476" sldId="330"/>
+        </pc:sldMkLst>
+        <pc:spChg chg="mod">
+          <ac:chgData name="Ibon Landa Martín" userId="S::ilanda@plainconcepts.com::60f846aa-ad2b-4777-970b-d4f0f7e9760e" providerId="AD" clId="Web-{7B780259-678D-CFF4-10CE-36A04D929D2E}" dt="2026-05-11T13:37:27.474" v="1900" actId="20577"/>
+          <ac:spMkLst>
+            <pc:docMk/>
+            <pc:sldMk cId="788561476" sldId="330"/>
+            <ac:spMk id="4" creationId="{008D0551-97AF-C850-AF8E-C182AA05E8EC}"/>
+          </ac:spMkLst>
+        </pc:spChg>
+        <pc:spChg chg="mod">
+          <ac:chgData name="Ibon Landa Martín" userId="S::ilanda@plainconcepts.com::60f846aa-ad2b-4777-970b-d4f0f7e9760e" providerId="AD" clId="Web-{7B780259-678D-CFF4-10CE-36A04D929D2E}" dt="2026-05-11T13:29:35.823" v="1676" actId="20577"/>
+          <ac:spMkLst>
+            <pc:docMk/>
+            <pc:sldMk cId="788561476" sldId="330"/>
+            <ac:spMk id="5" creationId="{380006A2-9CCA-ACC8-D012-7D6232610473}"/>
+          </ac:spMkLst>
+        </pc:spChg>
+        <pc:spChg chg="mod">
+          <ac:chgData name="Ibon Landa Martín" userId="S::ilanda@plainconcepts.com::60f846aa-ad2b-4777-970b-d4f0f7e9760e" providerId="AD" clId="Web-{7B780259-678D-CFF4-10CE-36A04D929D2E}" dt="2026-05-11T13:28:18.804" v="1626" actId="20577"/>
+          <ac:spMkLst>
+            <pc:docMk/>
+            <pc:sldMk cId="788561476" sldId="330"/>
+            <ac:spMk id="12" creationId="{9D9D9737-5659-7B7F-5558-E952EA1FECB3}"/>
+          </ac:spMkLst>
+        </pc:spChg>
+        <pc:spChg chg="mod">
+          <ac:chgData name="Ibon Landa Martín" userId="S::ilanda@plainconcepts.com::60f846aa-ad2b-4777-970b-d4f0f7e9760e" providerId="AD" clId="Web-{7B780259-678D-CFF4-10CE-36A04D929D2E}" dt="2026-05-11T13:26:56.612" v="1606" actId="20577"/>
+          <ac:spMkLst>
+            <pc:docMk/>
+            <pc:sldMk cId="788561476" sldId="330"/>
+            <ac:spMk id="16" creationId="{A7846761-6E23-2810-2F56-509391694DC7}"/>
+          </ac:spMkLst>
+        </pc:spChg>
+        <pc:spChg chg="mod">
+          <ac:chgData name="Ibon Landa Martín" userId="S::ilanda@plainconcepts.com::60f846aa-ad2b-4777-970b-d4f0f7e9760e" providerId="AD" clId="Web-{7B780259-678D-CFF4-10CE-36A04D929D2E}" dt="2026-05-11T13:28:15.023" v="1623" actId="20577"/>
+          <ac:spMkLst>
+            <pc:docMk/>
+            <pc:sldMk cId="788561476" sldId="330"/>
+            <ac:spMk id="18" creationId="{B14369FC-0D4C-A840-6651-DD4C6B0291D9}"/>
+          </ac:spMkLst>
+        </pc:spChg>
+      </pc:sldChg>
+      <pc:sldChg chg="modSp add replId modNotes">
+        <pc:chgData name="Ibon Landa Martín" userId="S::ilanda@plainconcepts.com::60f846aa-ad2b-4777-970b-d4f0f7e9760e" providerId="AD" clId="Web-{7B780259-678D-CFF4-10CE-36A04D929D2E}" dt="2026-05-11T13:48:43.316" v="1903"/>
+        <pc:sldMkLst>
+          <pc:docMk/>
+          <pc:sldMk cId="256538626" sldId="331"/>
+        </pc:sldMkLst>
+        <pc:spChg chg="mod">
+          <ac:chgData name="Ibon Landa Martín" userId="S::ilanda@plainconcepts.com::60f846aa-ad2b-4777-970b-d4f0f7e9760e" providerId="AD" clId="Web-{7B780259-678D-CFF4-10CE-36A04D929D2E}" dt="2026-05-11T13:26:42.705" v="1595" actId="20577"/>
+          <ac:spMkLst>
+            <pc:docMk/>
+            <pc:sldMk cId="256538626" sldId="331"/>
+            <ac:spMk id="4" creationId="{4B0A4018-EA40-DCB0-D5D6-227EE918BB6F}"/>
+          </ac:spMkLst>
+        </pc:spChg>
+        <pc:spChg chg="mod">
+          <ac:chgData name="Ibon Landa Martín" userId="S::ilanda@plainconcepts.com::60f846aa-ad2b-4777-970b-d4f0f7e9760e" providerId="AD" clId="Web-{7B780259-678D-CFF4-10CE-36A04D929D2E}" dt="2026-05-11T13:30:56.530" v="1734" actId="20577"/>
+          <ac:spMkLst>
+            <pc:docMk/>
+            <pc:sldMk cId="256538626" sldId="331"/>
+            <ac:spMk id="5" creationId="{CBE00AF9-6108-BD30-70D4-24C2944FF6CB}"/>
+          </ac:spMkLst>
+        </pc:spChg>
+        <pc:spChg chg="mod">
+          <ac:chgData name="Ibon Landa Martín" userId="S::ilanda@plainconcepts.com::60f846aa-ad2b-4777-970b-d4f0f7e9760e" providerId="AD" clId="Web-{7B780259-678D-CFF4-10CE-36A04D929D2E}" dt="2026-05-11T13:28:54.431" v="1636" actId="20577"/>
+          <ac:spMkLst>
+            <pc:docMk/>
+            <pc:sldMk cId="256538626" sldId="331"/>
+            <ac:spMk id="12" creationId="{20BF23FC-AA81-D68E-552F-3B505AB9BB52}"/>
+          </ac:spMkLst>
+        </pc:spChg>
+        <pc:spChg chg="mod">
+          <ac:chgData name="Ibon Landa Martín" userId="S::ilanda@plainconcepts.com::60f846aa-ad2b-4777-970b-d4f0f7e9760e" providerId="AD" clId="Web-{7B780259-678D-CFF4-10CE-36A04D929D2E}" dt="2026-05-11T13:26:49.424" v="1601" actId="20577"/>
+          <ac:spMkLst>
+            <pc:docMk/>
+            <pc:sldMk cId="256538626" sldId="331"/>
+            <ac:spMk id="16" creationId="{91CE2B37-542D-0DCD-1525-1DA6C4846D8D}"/>
+          </ac:spMkLst>
+        </pc:spChg>
+        <pc:spChg chg="mod">
+          <ac:chgData name="Ibon Landa Martín" userId="S::ilanda@plainconcepts.com::60f846aa-ad2b-4777-970b-d4f0f7e9760e" providerId="AD" clId="Web-{7B780259-678D-CFF4-10CE-36A04D929D2E}" dt="2026-05-11T13:28:51.306" v="1633" actId="20577"/>
+          <ac:spMkLst>
+            <pc:docMk/>
+            <pc:sldMk cId="256538626" sldId="331"/>
+            <ac:spMk id="18" creationId="{4AF76664-D981-A25E-241F-076461D06F41}"/>
+          </ac:spMkLst>
+        </pc:spChg>
+      </pc:sldChg>
+      <pc:sldChg chg="modSp add del modNotes">
+        <pc:chgData name="Ibon Landa Martín" userId="S::ilanda@plainconcepts.com::60f846aa-ad2b-4777-970b-d4f0f7e9760e" providerId="AD" clId="Web-{7B780259-678D-CFF4-10CE-36A04D929D2E}" dt="2026-05-11T13:35:33.650" v="1784"/>
+        <pc:sldMkLst>
+          <pc:docMk/>
+          <pc:sldMk cId="3271118094" sldId="332"/>
+        </pc:sldMkLst>
+        <pc:spChg chg="mod">
+          <ac:chgData name="Ibon Landa Martín" userId="S::ilanda@plainconcepts.com::60f846aa-ad2b-4777-970b-d4f0f7e9760e" providerId="AD" clId="Web-{7B780259-678D-CFF4-10CE-36A04D929D2E}" dt="2026-05-11T13:33:20.582" v="1779" actId="20577"/>
+          <ac:spMkLst>
+            <pc:docMk/>
+            <pc:sldMk cId="3271118094" sldId="332"/>
+            <ac:spMk id="3" creationId="{153264B0-43B8-548D-71C2-58838AB14F07}"/>
+          </ac:spMkLst>
+        </pc:spChg>
+        <pc:spChg chg="mod">
+          <ac:chgData name="Ibon Landa Martín" userId="S::ilanda@plainconcepts.com::60f846aa-ad2b-4777-970b-d4f0f7e9760e" providerId="AD" clId="Web-{7B780259-678D-CFF4-10CE-36A04D929D2E}" dt="2026-05-11T13:31:53.188" v="1737" actId="20577"/>
+          <ac:spMkLst>
+            <pc:docMk/>
+            <pc:sldMk cId="3271118094" sldId="332"/>
+            <ac:spMk id="12" creationId="{4A59D992-4282-A435-B73F-7002F8C32E91}"/>
+          </ac:spMkLst>
+        </pc:spChg>
+        <pc:spChg chg="mod">
+          <ac:chgData name="Ibon Landa Martín" userId="S::ilanda@plainconcepts.com::60f846aa-ad2b-4777-970b-d4f0f7e9760e" providerId="AD" clId="Web-{7B780259-678D-CFF4-10CE-36A04D929D2E}" dt="2026-05-11T13:33:02.613" v="1775" actId="20577"/>
+          <ac:spMkLst>
+            <pc:docMk/>
+            <pc:sldMk cId="3271118094" sldId="332"/>
+            <ac:spMk id="26" creationId="{52537404-7CC2-D405-12E5-4082397CE957}"/>
+          </ac:spMkLst>
+        </pc:spChg>
+      </pc:sldChg>
+      <pc:sldChg chg="add mod modShow modNotes">
+        <pc:chgData name="Ibon Landa Martín" userId="S::ilanda@plainconcepts.com::60f846aa-ad2b-4777-970b-d4f0f7e9760e" providerId="AD" clId="Web-{7B780259-678D-CFF4-10CE-36A04D929D2E}" dt="2026-05-11T13:36:09.932" v="1806"/>
+        <pc:sldMkLst>
+          <pc:docMk/>
+          <pc:sldMk cId="2716837964" sldId="2147480257"/>
+        </pc:sldMkLst>
+      </pc:sldChg>
+      <pc:sldChg chg="delSp add modNotes">
+        <pc:chgData name="Ibon Landa Martín" userId="S::ilanda@plainconcepts.com::60f846aa-ad2b-4777-970b-d4f0f7e9760e" providerId="AD" clId="Web-{7B780259-678D-CFF4-10CE-36A04D929D2E}" dt="2026-05-11T13:35:38.056" v="1785"/>
+        <pc:sldMkLst>
+          <pc:docMk/>
+          <pc:sldMk cId="3271118094" sldId="2147480369"/>
+        </pc:sldMkLst>
+        <pc:spChg chg="del">
+          <ac:chgData name="Ibon Landa Martín" userId="S::ilanda@plainconcepts.com::60f846aa-ad2b-4777-970b-d4f0f7e9760e" providerId="AD" clId="Web-{7B780259-678D-CFF4-10CE-36A04D929D2E}" dt="2026-05-11T13:35:38.056" v="1785"/>
+          <ac:spMkLst>
+            <pc:docMk/>
+            <pc:sldMk cId="3271118094" sldId="2147480369"/>
+            <ac:spMk id="10" creationId="{966E5B3F-5191-1C00-D9D3-31180F402248}"/>
+          </ac:spMkLst>
+        </pc:spChg>
+      </pc:sldChg>
+      <pc:sldMasterChg chg="addSldLayout">
+        <pc:chgData name="Ibon Landa Martín" userId="S::ilanda@plainconcepts.com::60f846aa-ad2b-4777-970b-d4f0f7e9760e" providerId="AD" clId="Web-{7B780259-678D-CFF4-10CE-36A04D929D2E}" dt="2026-05-11T13:35:08.321" v="1780"/>
+        <pc:sldMasterMkLst>
+          <pc:docMk/>
+          <pc:sldMasterMk cId="0" sldId="2147483648"/>
+        </pc:sldMasterMkLst>
+        <pc:sldLayoutChg chg="add">
+          <pc:chgData name="Ibon Landa Martín" userId="S::ilanda@plainconcepts.com::60f846aa-ad2b-4777-970b-d4f0f7e9760e" providerId="AD" clId="Web-{7B780259-678D-CFF4-10CE-36A04D929D2E}" dt="2026-05-11T13:31:41.063" v="1735"/>
+          <pc:sldLayoutMkLst>
+            <pc:docMk/>
+            <pc:sldMasterMk cId="0" sldId="2147483648"/>
+            <pc:sldLayoutMk cId="1894331259" sldId="2147483652"/>
+          </pc:sldLayoutMkLst>
+        </pc:sldLayoutChg>
+        <pc:sldLayoutChg chg="add">
+          <pc:chgData name="Ibon Landa Martín" userId="S::ilanda@plainconcepts.com::60f846aa-ad2b-4777-970b-d4f0f7e9760e" providerId="AD" clId="Web-{7B780259-678D-CFF4-10CE-36A04D929D2E}" dt="2026-05-11T13:35:08.321" v="1780"/>
+          <pc:sldLayoutMkLst>
+            <pc:docMk/>
+            <pc:sldMasterMk cId="0" sldId="2147483648"/>
+            <pc:sldLayoutMk cId="843058364" sldId="2147483653"/>
+          </pc:sldLayoutMkLst>
+        </pc:sldLayoutChg>
+      </pc:sldMasterChg>
+    </pc:docChg>
+  </pc:docChgLst>
+</pc:chgInfo>

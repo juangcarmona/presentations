@@ -1,0 +1,2209 @@
+<p:sld xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" xmlns:a14="http://schemas.microsoft.com/office/drawing/2010/main" xmlns:a16="http://schemas.microsoft.com/office/drawing/2014/main" xmlns:p="http://schemas.openxmlformats.org/presentationml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships">
+  <p:cSld>
+    <p:spTree>
+      <p:nvGrpSpPr>
+        <p:cNvPr id="1" name="" />
+        <p:cNvGrpSpPr />
+        <p:nvPr />
+      </p:nvGrpSpPr>
+      <p:grpSpPr>
+        <a:xfrm>
+          <a:off x="0" y="0" />
+          <a:ext cx="0" cy="0" />
+          <a:chOff x="0" y="0" />
+          <a:chExt cx="0" cy="0" />
+        </a:xfrm>
+      </p:grpSpPr>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="70" name="Shape 0" />
+          <p:cNvSpPr />
+          <p:nvPr />
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="0" y="0" />
+            <a:ext cx="54864" cy="5143500" />
+          </a:xfrm>
+          <a:prstGeom prst="rect">
+            <a:avLst />
+          </a:prstGeom>
+          <a:solidFill>
+            <a:srgbClr val="3D5AFE" />
+          </a:solidFill>
+          <a:ln w="12700">
+            <a:solidFill>
+              <a:srgbClr val="3D5AFE" />
+            </a:solidFill>
+            <a:prstDash val="solid" />
+          </a:ln>
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr />
+          <a:lstStyle />
+          <a:p>
+            <a:endParaRPr lang="en-ES" />
+          </a:p>
+        </p:txBody>
+      </p:sp>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="32" name="Text 0">
+            <a:extLst>
+              <a:ext uri="{FF2B5EF4-FFF2-40B4-BE49-F238E27FC236}">
+                <a16:creationId id="{E98379FF-25B0-E9DE-538E-658167CFD975}" />
+              </a:ext>
+            </a:extLst>
+          </p:cNvPr>
+          <p:cNvSpPr />
+          <p:nvPr />
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="456672" y="322208" />
+            <a:ext cx="7637756" cy="274320" />
+          </a:xfrm>
+          <a:prstGeom prst="rect">
+            <a:avLst />
+          </a:prstGeom>
+          <a:noFill />
+          <a:ln />
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr wrap="square" lIns="0" tIns="0" rIns="0" bIns="0" rtlCol="0" anchor="ctr" />
+          <a:lstStyle />
+          <a:p>
+            <a:pPr marL="0" indent="0">
+              <a:buNone />
+            </a:pPr>
+            <a:r>
+              <a:rPr lang="en-US" sz="1000" b="1" kern="0" spc="400">
+                <a:solidFill>
+                  <a:srgbClr val="3D5AFE" />
+                </a:solidFill>
+                <a:latin typeface="Outfit" />
+                <a:ea typeface="Open Sans" />
+                <a:cs typeface="Open Sans" />
+              </a:rPr>
+              <a:t>___SLOT_SECTION___</a:t>
+            </a:r>
+            <a:endParaRPr lang="en-US" sz="1000">
+              <a:solidFill>
+                <a:srgbClr val="3D5AFE" />
+              </a:solidFill>
+              <a:latin typeface="Outfit" />
+              <a:ea typeface="Open Sans" />
+              <a:cs typeface="Open Sans" />
+            </a:endParaRPr>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="33" name="Text 3">
+            <a:extLst>
+              <a:ext uri="{FF2B5EF4-FFF2-40B4-BE49-F238E27FC236}">
+                <a16:creationId id="{17C79AB6-E519-7C3A-62E7-214D4D67A3C8}" />
+              </a:ext>
+            </a:extLst>
+          </p:cNvPr>
+          <p:cNvSpPr />
+          <p:nvPr />
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="457199" y="578838" />
+            <a:ext cx="8229601" cy="429306" />
+          </a:xfrm>
+          <a:prstGeom prst="rect">
+            <a:avLst />
+          </a:prstGeom>
+          <a:noFill />
+          <a:ln />
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr wrap="square" lIns="0" tIns="0" rIns="0" bIns="0" rtlCol="0" anchor="ctr" />
+          <a:lstStyle />
+          <a:p>
+            <a:pPr marL="0" indent="0">
+              <a:buNone />
+            </a:pPr>
+            <a:r>
+              <a:rPr lang="en-US" sz="2400" b="1">
+                <a:solidFill>
+                  <a:srgbClr val="0D0E0F" />
+                </a:solidFill>
+                <a:latin typeface="Outfit" />
+                <a:ea typeface="Open Sans" />
+                <a:cs typeface="Open Sans" />
+              </a:rPr>
+              <a:t>___SLOT_TITLE___</a:t>
+            </a:r>
+            <a:endParaRPr lang="en-US" sz="2400">
+              <a:solidFill>
+                <a:srgbClr val="0D0E0F" />
+              </a:solidFill>
+              <a:latin typeface="Outfit" pitchFamily="2" charset="0" />
+            </a:endParaRPr>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="42" name="Shape 2">
+            <a:extLst>
+              <a:ext uri="{FF2B5EF4-FFF2-40B4-BE49-F238E27FC236}">
+                <a16:creationId id="{5D69B646-4AAC-952A-F9DD-091EF3E5F205}" />
+              </a:ext>
+            </a:extLst>
+          </p:cNvPr>
+          <p:cNvSpPr />
+          <p:nvPr />
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="456672" y="1312429" />
+            <a:ext cx="8184408" cy="685800" />
+          </a:xfrm>
+          <a:prstGeom prst="roundRect">
+            <a:avLst>
+              <a:gd name="adj" fmla="val 0" />
+            </a:avLst>
+          </a:prstGeom>
+          <a:solidFill>
+            <a:srgbClr val="F2F3F7" />
+          </a:solidFill>
+          <a:ln />
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr />
+          <a:lstStyle />
+          <a:p>
+            <a:pPr marL="0" marR="0" lvl="0" indent="0" algn="l" defTabSz="914400" rtl="0" eaLnBrk="1" fontAlgn="auto" latinLnBrk="0" hangingPunct="1">
+              <a:lnSpc>
+                <a:spcPct val="100000" />
+              </a:lnSpc>
+              <a:spcBef>
+                <a:spcPts val="0" />
+              </a:spcBef>
+              <a:spcAft>
+                <a:spcPts val="0" />
+              </a:spcAft>
+              <a:buClrTx />
+              <a:buSzTx />
+              <a:buFontTx />
+              <a:buNone />
+              <a:tabLst />
+              <a:defRPr />
+            </a:pPr>
+            <a:endParaRPr kumimoji="0" lang="en-US" sz="1800" b="0" i="0" u="none" strike="noStrike" kern="1200" cap="none" spc="0" normalizeH="0" baseline="0" noProof="0">
+              <a:ln>
+                <a:noFill />
+              </a:ln>
+              <a:solidFill>
+                <a:prstClr val="black" />
+              </a:solidFill>
+              <a:effectLst />
+              <a:uLnTx />
+              <a:uFillTx />
+              <a:latin typeface="Outfit" pitchFamily="2" charset="0" />
+            </a:endParaRPr>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="43" name="Shape 3">
+            <a:extLst>
+              <a:ext uri="{FF2B5EF4-FFF2-40B4-BE49-F238E27FC236}">
+                <a16:creationId id="{27CBA553-33E6-D2FC-08ED-0BF59A91C87A}" />
+              </a:ext>
+            </a:extLst>
+          </p:cNvPr>
+          <p:cNvSpPr />
+          <p:nvPr />
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="731520" y="1495309" />
+            <a:ext cx="320040" cy="320040" />
+          </a:xfrm>
+          <a:prstGeom prst="ellipse">
+            <a:avLst />
+          </a:prstGeom>
+          <a:solidFill>
+            <a:srgbClr val="3D5AFE" />
+          </a:solidFill>
+          <a:ln />
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr />
+          <a:lstStyle />
+          <a:p>
+            <a:pPr marL="0" marR="0" lvl="0" indent="0" algn="l" defTabSz="914400" rtl="0" eaLnBrk="1" fontAlgn="auto" latinLnBrk="0" hangingPunct="1">
+              <a:lnSpc>
+                <a:spcPct val="100000" />
+              </a:lnSpc>
+              <a:spcBef>
+                <a:spcPts val="0" />
+              </a:spcBef>
+              <a:spcAft>
+                <a:spcPts val="0" />
+              </a:spcAft>
+              <a:buClrTx />
+              <a:buSzTx />
+              <a:buFontTx />
+              <a:buNone />
+              <a:tabLst />
+              <a:defRPr />
+            </a:pPr>
+            <a:endParaRPr kumimoji="0" lang="en-US" sz="1800" b="0" i="0" u="none" strike="noStrike" kern="1200" cap="none" spc="0" normalizeH="0" baseline="0" noProof="0">
+              <a:ln>
+                <a:noFill />
+              </a:ln>
+              <a:solidFill>
+                <a:prstClr val="black" />
+              </a:solidFill>
+              <a:effectLst />
+              <a:uLnTx />
+              <a:uFillTx />
+              <a:latin typeface="Calibri" panose="020F0502020204030204" />
+              <a:ea typeface="+mn-ea" />
+              <a:cs typeface="+mn-cs" />
+            </a:endParaRPr>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="44" name="Text 4">
+            <a:extLst>
+              <a:ext uri="{FF2B5EF4-FFF2-40B4-BE49-F238E27FC236}">
+                <a16:creationId id="{D7AC9C01-2457-9332-892E-DFAC0539D7CE}" />
+              </a:ext>
+            </a:extLst>
+          </p:cNvPr>
+          <p:cNvSpPr />
+          <p:nvPr />
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="731520" y="1495309" />
+            <a:ext cx="320040" cy="320040" />
+          </a:xfrm>
+          <a:prstGeom prst="rect">
+            <a:avLst />
+          </a:prstGeom>
+          <a:noFill />
+          <a:ln />
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr wrap="square" rtlCol="0" anchor="ctr" />
+          <a:lstStyle />
+          <a:p>
+            <a:pPr marL="0" marR="0" lvl="0" indent="0" algn="ctr" defTabSz="914400" rtl="0" eaLnBrk="1" fontAlgn="auto" latinLnBrk="0" hangingPunct="1">
+              <a:lnSpc>
+                <a:spcPct val="100000" />
+              </a:lnSpc>
+              <a:spcBef>
+                <a:spcPts val="0" />
+              </a:spcBef>
+              <a:spcAft>
+                <a:spcPts val="0" />
+              </a:spcAft>
+              <a:buClrTx />
+              <a:buSzTx />
+              <a:buFontTx />
+              <a:buNone />
+              <a:tabLst />
+              <a:defRPr />
+            </a:pPr>
+            <a:r>
+              <a:rPr kumimoji="0" lang="en-US" sz="1100" b="1" i="0" u="none" strike="noStrike" kern="1200" cap="none" spc="0" normalizeH="0" baseline="0" noProof="0">
+                <a:ln>
+                  <a:noFill />
+                </a:ln>
+                <a:solidFill>
+                  <a:srgbClr val="FFFFFF" />
+                </a:solidFill>
+                <a:effectLst />
+                <a:uLnTx />
+                <a:uFillTx />
+                <a:latin typeface="Outfit" pitchFamily="2" charset="0" />
+                <a:ea typeface="Open Sans" pitchFamily="34" charset="-122" />
+                <a:cs typeface="Open Sans" pitchFamily="34" charset="-120" />
+              </a:rPr>
+              <a:t>___SLOT_RISK1_PRIORITY___</a:t>
+            </a:r>
+            <a:endParaRPr kumimoji="0" lang="en-US" sz="1100" b="0" i="0" u="none" strike="noStrike" kern="1200" cap="none" spc="0" normalizeH="0" baseline="0" noProof="0">
+              <a:ln>
+                <a:noFill />
+              </a:ln>
+              <a:solidFill>
+                <a:prstClr val="black" />
+              </a:solidFill>
+              <a:effectLst />
+              <a:uLnTx />
+              <a:uFillTx />
+              <a:latin typeface="Outfit" pitchFamily="2" charset="0" />
+            </a:endParaRPr>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="45" name="Text 5">
+            <a:extLst>
+              <a:ext uri="{FF2B5EF4-FFF2-40B4-BE49-F238E27FC236}">
+                <a16:creationId id="{C03AA834-8DF4-178D-671C-35CE1EC62A76}" />
+              </a:ext>
+            </a:extLst>
+          </p:cNvPr>
+          <p:cNvSpPr />
+          <p:nvPr />
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="1188720" y="1385581" />
+            <a:ext cx="3657600" cy="256032" />
+          </a:xfrm>
+          <a:prstGeom prst="rect">
+            <a:avLst />
+          </a:prstGeom>
+          <a:noFill />
+          <a:ln />
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr wrap="square" lIns="0" tIns="0" rIns="0" bIns="0" rtlCol="0" anchor="ctr" />
+          <a:lstStyle />
+          <a:p>
+            <a:pPr marL="0" marR="0" lvl="0" indent="0" algn="l" defTabSz="914400" rtl="0" eaLnBrk="1" fontAlgn="auto" latinLnBrk="0" hangingPunct="1">
+              <a:lnSpc>
+                <a:spcPct val="100000" />
+              </a:lnSpc>
+              <a:spcBef>
+                <a:spcPts val="0" />
+              </a:spcBef>
+              <a:spcAft>
+                <a:spcPts val="0" />
+              </a:spcAft>
+              <a:buClrTx />
+              <a:buSzTx />
+              <a:buFontTx />
+              <a:buNone />
+              <a:tabLst />
+              <a:defRPr />
+            </a:pPr>
+            <a:r>
+              <a:rPr kumimoji="0" lang="en-US" sz="1200" b="1" i="0" u="none" strike="noStrike" kern="1200" cap="none" spc="0" normalizeH="0" baseline="0" noProof="0">
+                <a:ln>
+                  <a:noFill />
+                </a:ln>
+                <a:solidFill>
+                  <a:srgbClr val="0D0E0F" />
+                </a:solidFill>
+                <a:effectLst />
+                <a:uLnTx />
+                <a:uFillTx />
+                <a:latin typeface="Outfit" />
+                <a:ea typeface="Open Sans" />
+                <a:cs typeface="Open Sans" />
+              </a:rPr>
+              <a:t>___SLOT_RISK1_TITLE___</a:t>
+            </a:r>
+            <a:endParaRPr kumimoji="0" lang="en-US" sz="1200" b="0" i="0" u="none" strike="noStrike" kern="1200" cap="none" spc="0" normalizeH="0" baseline="0" noProof="0">
+              <a:ln>
+                <a:noFill />
+              </a:ln>
+              <a:solidFill>
+                <a:srgbClr val="0D0E0F" />
+              </a:solidFill>
+              <a:effectLst />
+              <a:uLnTx />
+              <a:uFillTx />
+              <a:latin typeface="Outfit" pitchFamily="2" charset="0" />
+            </a:endParaRPr>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="46" name="Text 6">
+            <a:extLst>
+              <a:ext uri="{FF2B5EF4-FFF2-40B4-BE49-F238E27FC236}">
+                <a16:creationId id="{4950014E-41B6-B7F4-04E4-DB603A1C99CA}" />
+              </a:ext>
+            </a:extLst>
+          </p:cNvPr>
+          <p:cNvSpPr />
+          <p:nvPr />
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="1188720" y="1659901" />
+            <a:ext cx="4572000" cy="256032" />
+          </a:xfrm>
+          <a:prstGeom prst="rect">
+            <a:avLst />
+          </a:prstGeom>
+          <a:noFill />
+          <a:ln />
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr wrap="square" lIns="0" tIns="0" rIns="0" bIns="0" rtlCol="0" anchor="ctr" />
+          <a:lstStyle />
+          <a:p>
+            <a:r>
+              <a:rPr lang="en-US" sz="900">
+                <a:solidFill>
+                  <a:srgbClr val="6B7280" />
+                </a:solidFill>
+                <a:latin typeface="Outfit" />
+                <a:ea typeface="Open Sans" />
+                <a:cs typeface="Open Sans" />
+              </a:rPr>
+              <a:t>___SLOT_RISK1_MITIGATION___</a:t>
+            </a:r>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="47" name="Text 7">
+            <a:extLst>
+              <a:ext uri="{FF2B5EF4-FFF2-40B4-BE49-F238E27FC236}">
+                <a16:creationId id="{0555045C-B357-F9CB-B8B1-8A17E3A2D2F7}" />
+              </a:ext>
+            </a:extLst>
+          </p:cNvPr>
+          <p:cNvSpPr />
+          <p:nvPr />
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="6120063" y="1506413" />
+            <a:ext cx="1378017" cy="256032" />
+          </a:xfrm>
+          <a:prstGeom prst="rect">
+            <a:avLst />
+          </a:prstGeom>
+          <a:noFill />
+          <a:ln />
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr wrap="square" lIns="91440" tIns="45720" rIns="91440" bIns="45720" rtlCol="0" anchor="ctr" />
+          <a:lstStyle />
+          <a:p>
+            <a:pPr marL="0" marR="0" lvl="0" indent="0" algn="ctr" defTabSz="914400" rtl="0" eaLnBrk="1" fontAlgn="auto" latinLnBrk="0" hangingPunct="1">
+              <a:lnSpc>
+                <a:spcPct val="100000" />
+              </a:lnSpc>
+              <a:spcBef>
+                <a:spcPts val="0" />
+              </a:spcBef>
+              <a:spcAft>
+                <a:spcPts val="0" />
+              </a:spcAft>
+              <a:buClrTx />
+              <a:buSzTx />
+              <a:buFontTx />
+              <a:buNone />
+              <a:tabLst />
+              <a:defRPr />
+            </a:pPr>
+            <a:r>
+              <a:rPr kumimoji="0" lang="en-US" sz="900" b="1" i="0" u="none" strike="noStrike" kern="1200" cap="none" spc="0" normalizeH="0" baseline="0" noProof="0">
+                <a:ln>
+                  <a:noFill />
+                </a:ln>
+                <a:solidFill>
+                  <a:srgbClr val="3ABAAF" />
+                </a:solidFill>
+                <a:effectLst />
+                <a:uLnTx />
+                <a:uFillTx />
+                <a:latin typeface="Outfit" />
+                <a:ea typeface="Open Sans" />
+                <a:cs typeface="Open Sans" />
+              </a:rPr>
+              <a:t>___SLOT_RISK1_OWNER___</a:t>
+            </a:r>
+            <a:endParaRPr kumimoji="0" lang="en-US" sz="900" b="0" i="0" u="none" strike="noStrike" kern="1200" cap="none" spc="0" normalizeH="0" baseline="0" noProof="0">
+              <a:ln>
+                <a:noFill />
+              </a:ln>
+              <a:solidFill>
+                <a:srgbClr val="3ABAAF" />
+              </a:solidFill>
+              <a:effectLst />
+              <a:uLnTx />
+              <a:uFillTx />
+              <a:latin typeface="Outfit" />
+              <a:ea typeface="Open Sans" />
+              <a:cs typeface="Open Sans" />
+            </a:endParaRPr>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="48" name="Text 8">
+            <a:extLst>
+              <a:ext uri="{FF2B5EF4-FFF2-40B4-BE49-F238E27FC236}">
+                <a16:creationId id="{F1DEEE48-C440-20CF-23BD-8D2CC216CA92}" />
+              </a:ext>
+            </a:extLst>
+          </p:cNvPr>
+          <p:cNvSpPr />
+          <p:nvPr />
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="7498080" y="1506413" />
+            <a:ext cx="914400" cy="256032" />
+          </a:xfrm>
+          <a:prstGeom prst="rect">
+            <a:avLst />
+          </a:prstGeom>
+          <a:noFill />
+          <a:ln />
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr wrap="square" rtlCol="0" anchor="ctr" />
+          <a:lstStyle />
+          <a:p>
+            <a:pPr marL="0" marR="0" lvl="0" indent="0" algn="ctr" defTabSz="914400" rtl="0" eaLnBrk="1" fontAlgn="auto" latinLnBrk="0" hangingPunct="1">
+              <a:lnSpc>
+                <a:spcPct val="100000" />
+              </a:lnSpc>
+              <a:spcBef>
+                <a:spcPts val="0" />
+              </a:spcBef>
+              <a:spcAft>
+                <a:spcPts val="0" />
+              </a:spcAft>
+              <a:buClrTx />
+              <a:buSzTx />
+              <a:buFontTx />
+              <a:buNone />
+              <a:tabLst />
+              <a:defRPr />
+            </a:pPr>
+            <a:r>
+              <a:rPr kumimoji="0" lang="en-US" sz="900" b="0" i="0" u="none" strike="noStrike" kern="1200" cap="none" spc="0" normalizeH="0" baseline="0" noProof="0">
+                <a:ln>
+                  <a:noFill />
+                </a:ln>
+                <a:solidFill>
+                  <a:srgbClr val="6B7280" />
+                </a:solidFill>
+                <a:effectLst />
+                <a:uLnTx />
+                <a:uFillTx />
+                <a:latin typeface="Outfit" pitchFamily="2" charset="0" />
+                <a:ea typeface="Open Sans" pitchFamily="34" charset="-122" />
+                <a:cs typeface="Open Sans" pitchFamily="34" charset="-120" />
+              </a:rPr>
+              <a:t>___SLOT_RISK1_TIMELINE___</a:t>
+            </a:r>
+            <a:endParaRPr kumimoji="0" lang="en-US" sz="900" b="0" i="0" u="none" strike="noStrike" kern="1200" cap="none" spc="0" normalizeH="0" baseline="0" noProof="0">
+              <a:ln>
+                <a:noFill />
+              </a:ln>
+              <a:solidFill>
+                <a:srgbClr val="6B7280" />
+              </a:solidFill>
+              <a:effectLst />
+              <a:uLnTx />
+              <a:uFillTx />
+              <a:latin typeface="Outfit" pitchFamily="2" charset="0" />
+            </a:endParaRPr>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="49" name="Shape 9">
+            <a:extLst>
+              <a:ext uri="{FF2B5EF4-FFF2-40B4-BE49-F238E27FC236}">
+                <a16:creationId id="{57EC0FB6-E758-3B26-63A3-DD0592400BB1}" />
+              </a:ext>
+            </a:extLst>
+          </p:cNvPr>
+          <p:cNvSpPr />
+          <p:nvPr />
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="456672" y="2135389" />
+            <a:ext cx="8184408" cy="685800" />
+          </a:xfrm>
+          <a:prstGeom prst="roundRect">
+            <a:avLst>
+              <a:gd name="adj" fmla="val 0" />
+            </a:avLst>
+          </a:prstGeom>
+          <a:solidFill>
+            <a:srgbClr val="F2F3F7" />
+          </a:solidFill>
+          <a:ln />
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr />
+          <a:lstStyle />
+          <a:p>
+            <a:pPr marL="0" marR="0" lvl="0" indent="0" algn="l" defTabSz="914400" rtl="0" eaLnBrk="1" fontAlgn="auto" latinLnBrk="0" hangingPunct="1">
+              <a:lnSpc>
+                <a:spcPct val="100000" />
+              </a:lnSpc>
+              <a:spcBef>
+                <a:spcPts val="0" />
+              </a:spcBef>
+              <a:spcAft>
+                <a:spcPts val="0" />
+              </a:spcAft>
+              <a:buClrTx />
+              <a:buSzTx />
+              <a:buFontTx />
+              <a:buNone />
+              <a:tabLst />
+              <a:defRPr />
+            </a:pPr>
+            <a:endParaRPr kumimoji="0" lang="en-US" sz="1800" b="0" i="0" u="none" strike="noStrike" kern="1200" cap="none" spc="0" normalizeH="0" baseline="0" noProof="0">
+              <a:ln>
+                <a:noFill />
+              </a:ln>
+              <a:solidFill>
+                <a:prstClr val="black" />
+              </a:solidFill>
+              <a:effectLst />
+              <a:uLnTx />
+              <a:uFillTx />
+              <a:latin typeface="Calibri" panose="020F0502020204030204" />
+              <a:ea typeface="+mn-ea" />
+              <a:cs typeface="+mn-cs" />
+            </a:endParaRPr>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="50" name="Shape 10">
+            <a:extLst>
+              <a:ext uri="{FF2B5EF4-FFF2-40B4-BE49-F238E27FC236}">
+                <a16:creationId id="{681A6E4F-D63C-5EF5-8D8F-FD85752180B8}" />
+              </a:ext>
+            </a:extLst>
+          </p:cNvPr>
+          <p:cNvSpPr />
+          <p:nvPr />
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="731520" y="2318269" />
+            <a:ext cx="320040" cy="320040" />
+          </a:xfrm>
+          <a:prstGeom prst="ellipse">
+            <a:avLst />
+          </a:prstGeom>
+          <a:solidFill>
+            <a:srgbClr val="3D5AFE" />
+          </a:solidFill>
+          <a:ln />
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr />
+          <a:lstStyle />
+          <a:p>
+            <a:pPr marL="0" marR="0" lvl="0" indent="0" algn="l" defTabSz="914400" rtl="0" eaLnBrk="1" fontAlgn="auto" latinLnBrk="0" hangingPunct="1">
+              <a:lnSpc>
+                <a:spcPct val="100000" />
+              </a:lnSpc>
+              <a:spcBef>
+                <a:spcPts val="0" />
+              </a:spcBef>
+              <a:spcAft>
+                <a:spcPts val="0" />
+              </a:spcAft>
+              <a:buClrTx />
+              <a:buSzTx />
+              <a:buFontTx />
+              <a:buNone />
+              <a:tabLst />
+              <a:defRPr />
+            </a:pPr>
+            <a:endParaRPr kumimoji="0" lang="en-US" sz="1800" b="0" i="0" u="none" strike="noStrike" kern="1200" cap="none" spc="0" normalizeH="0" baseline="0" noProof="0">
+              <a:ln>
+                <a:noFill />
+              </a:ln>
+              <a:solidFill>
+                <a:prstClr val="black" />
+              </a:solidFill>
+              <a:effectLst />
+              <a:uLnTx />
+              <a:uFillTx />
+              <a:latin typeface="Calibri" panose="020F0502020204030204" />
+              <a:ea typeface="+mn-ea" />
+              <a:cs typeface="+mn-cs" />
+            </a:endParaRPr>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="51" name="Text 11">
+            <a:extLst>
+              <a:ext uri="{FF2B5EF4-FFF2-40B4-BE49-F238E27FC236}">
+                <a16:creationId id="{BD777982-29DA-DDFC-599B-BADE0941C244}" />
+              </a:ext>
+            </a:extLst>
+          </p:cNvPr>
+          <p:cNvSpPr />
+          <p:nvPr />
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="731520" y="2318269" />
+            <a:ext cx="320040" cy="320040" />
+          </a:xfrm>
+          <a:prstGeom prst="rect">
+            <a:avLst />
+          </a:prstGeom>
+          <a:noFill />
+          <a:ln />
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr wrap="square" rtlCol="0" anchor="ctr" />
+          <a:lstStyle />
+          <a:p>
+            <a:pPr marL="0" marR="0" lvl="0" indent="0" algn="ctr" defTabSz="914400" rtl="0" eaLnBrk="1" fontAlgn="auto" latinLnBrk="0" hangingPunct="1">
+              <a:lnSpc>
+                <a:spcPct val="100000" />
+              </a:lnSpc>
+              <a:spcBef>
+                <a:spcPts val="0" />
+              </a:spcBef>
+              <a:spcAft>
+                <a:spcPts val="0" />
+              </a:spcAft>
+              <a:buClrTx />
+              <a:buSzTx />
+              <a:buFontTx />
+              <a:buNone />
+              <a:tabLst />
+              <a:defRPr />
+            </a:pPr>
+            <a:r>
+              <a:rPr kumimoji="0" lang="en-US" sz="1100" b="1" i="0" u="none" strike="noStrike" kern="1200" cap="none" spc="0" normalizeH="0" baseline="0" noProof="0">
+                <a:ln>
+                  <a:noFill />
+                </a:ln>
+                <a:solidFill>
+                  <a:srgbClr val="FFFFFF" />
+                </a:solidFill>
+                <a:effectLst />
+                <a:uLnTx />
+                <a:uFillTx />
+                <a:latin typeface="Outfit" pitchFamily="2" charset="0" />
+                <a:ea typeface="Open Sans" pitchFamily="34" charset="-122" />
+                <a:cs typeface="Open Sans" pitchFamily="34" charset="-120" />
+              </a:rPr>
+              <a:t>___SLOT_RISK2_PRIORITY___</a:t>
+            </a:r>
+            <a:endParaRPr kumimoji="0" lang="en-US" sz="1100" b="0" i="0" u="none" strike="noStrike" kern="1200" cap="none" spc="0" normalizeH="0" baseline="0" noProof="0">
+              <a:ln>
+                <a:noFill />
+              </a:ln>
+              <a:solidFill>
+                <a:prstClr val="black" />
+              </a:solidFill>
+              <a:effectLst />
+              <a:uLnTx />
+              <a:uFillTx />
+              <a:latin typeface="Outfit" pitchFamily="2" charset="0" />
+            </a:endParaRPr>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="52" name="Text 12">
+            <a:extLst>
+              <a:ext uri="{FF2B5EF4-FFF2-40B4-BE49-F238E27FC236}">
+                <a16:creationId id="{D15DCEA4-BDB2-EB51-2A88-E121D6C78CE0}" />
+              </a:ext>
+            </a:extLst>
+          </p:cNvPr>
+          <p:cNvSpPr />
+          <p:nvPr />
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="1188720" y="2208541" />
+            <a:ext cx="3657600" cy="256032" />
+          </a:xfrm>
+          <a:prstGeom prst="rect">
+            <a:avLst />
+          </a:prstGeom>
+          <a:noFill />
+          <a:ln />
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr wrap="square" lIns="0" tIns="0" rIns="0" bIns="0" rtlCol="0" anchor="ctr" />
+          <a:lstStyle />
+          <a:p>
+            <a:pPr>
+              <a:defRPr />
+            </a:pPr>
+            <a:r>
+              <a:rPr lang="en-US" sz="1200" b="1">
+                <a:solidFill>
+                  <a:srgbClr val="0D0E0F" />
+                </a:solidFill>
+                <a:latin typeface="Outfit" />
+                <a:ea typeface="Open Sans" pitchFamily="34" charset="-122" />
+                <a:cs typeface="Open Sans" pitchFamily="34" charset="-120" />
+              </a:rPr>
+              <a:t>___SLOT_RISK2_TITLE___</a:t>
+            </a:r>
+            <a:endParaRPr lang="en-US" sz="1200">
+              <a:solidFill>
+                <a:srgbClr val="000000" />
+              </a:solidFill>
+              <a:latin typeface="Outfit" />
+              <a:ea typeface="Open Sans" pitchFamily="34" charset="-122" />
+              <a:cs typeface="Open Sans" pitchFamily="34" charset="-120" />
+            </a:endParaRPr>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="53" name="Text 13">
+            <a:extLst>
+              <a:ext uri="{FF2B5EF4-FFF2-40B4-BE49-F238E27FC236}">
+                <a16:creationId id="{05363458-1C47-AAFB-3C13-C188A2BFE4F8}" />
+              </a:ext>
+            </a:extLst>
+          </p:cNvPr>
+          <p:cNvSpPr />
+          <p:nvPr />
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="1188720" y="2482861" />
+            <a:ext cx="4572000" cy="256032" />
+          </a:xfrm>
+          <a:prstGeom prst="rect">
+            <a:avLst />
+          </a:prstGeom>
+          <a:noFill />
+          <a:ln />
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr wrap="square" lIns="0" tIns="0" rIns="0" bIns="0" rtlCol="0" anchor="ctr" />
+          <a:lstStyle />
+          <a:p>
+            <a:r>
+              <a:rPr lang="en-US" sz="900">
+                <a:solidFill>
+                  <a:srgbClr val="6B7280" />
+                </a:solidFill>
+                <a:latin typeface="Outfit" />
+                <a:ea typeface="Open Sans" pitchFamily="34" charset="-122" />
+                <a:cs typeface="Open Sans" pitchFamily="34" charset="-120" />
+              </a:rPr>
+              <a:t>___SLOT_RISK2_MITIGATION___</a:t>
+            </a:r>
+            <a:endParaRPr lang="en-US" sz="900">
+              <a:solidFill>
+                <a:srgbClr val="000000" />
+              </a:solidFill>
+              <a:latin typeface="Outfit" />
+              <a:ea typeface="Open Sans" pitchFamily="34" charset="-122" />
+              <a:cs typeface="Open Sans" pitchFamily="34" charset="-120" />
+            </a:endParaRPr>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="54" name="Text 14">
+            <a:extLst>
+              <a:ext uri="{FF2B5EF4-FFF2-40B4-BE49-F238E27FC236}">
+                <a16:creationId id="{FAE60359-449E-8A1E-0E5E-B622088CA3CA}" />
+              </a:ext>
+            </a:extLst>
+          </p:cNvPr>
+          <p:cNvSpPr />
+          <p:nvPr />
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="6120063" y="2329373" />
+            <a:ext cx="1378017" cy="256032" />
+          </a:xfrm>
+          <a:prstGeom prst="rect">
+            <a:avLst />
+          </a:prstGeom>
+          <a:noFill />
+          <a:ln />
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr wrap="square" lIns="91440" tIns="45720" rIns="91440" bIns="45720" rtlCol="0" anchor="ctr" />
+          <a:lstStyle />
+          <a:p>
+            <a:pPr algn="ctr">
+              <a:defRPr />
+            </a:pPr>
+            <a:r>
+              <a:rPr kumimoji="0" lang="en-US" sz="900" b="1" i="0" u="none" strike="noStrike" kern="1200" cap="none" spc="0" normalizeH="0" baseline="0" noProof="0">
+                <a:ln>
+                  <a:noFill />
+                </a:ln>
+                <a:solidFill>
+                  <a:srgbClr val="3ABAAF" />
+                </a:solidFill>
+                <a:effectLst />
+                <a:uLnTx />
+                <a:uFillTx />
+                <a:latin typeface="Outfit" />
+                <a:ea typeface="Open Sans" pitchFamily="34" charset="-122" />
+                <a:cs typeface="Open Sans" pitchFamily="34" charset="-120" />
+              </a:rPr>
+              <a:t>___SLOT_RISK2_OWNER___</a:t>
+            </a:r>
+            <a:endParaRPr lang="en-US" sz="900">
+              <a:solidFill>
+                <a:srgbClr val="000000" />
+              </a:solidFill>
+              <a:latin typeface="Outfit" />
+              <a:ea typeface="Open Sans" pitchFamily="34" charset="-122" />
+              <a:cs typeface="Open Sans" pitchFamily="34" charset="-120" />
+            </a:endParaRPr>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="55" name="Text 15">
+            <a:extLst>
+              <a:ext uri="{FF2B5EF4-FFF2-40B4-BE49-F238E27FC236}">
+                <a16:creationId id="{C2CCE123-6FB7-5693-B891-2B2E65EED69F}" />
+              </a:ext>
+            </a:extLst>
+          </p:cNvPr>
+          <p:cNvSpPr />
+          <p:nvPr />
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="7498080" y="2329373" />
+            <a:ext cx="914400" cy="256032" />
+          </a:xfrm>
+          <a:prstGeom prst="rect">
+            <a:avLst />
+          </a:prstGeom>
+          <a:noFill />
+          <a:ln />
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr wrap="square" rtlCol="0" anchor="ctr" />
+          <a:lstStyle />
+          <a:p>
+            <a:pPr lvl="0" algn="ctr">
+              <a:defRPr />
+            </a:pPr>
+            <a:r>
+              <a:rPr lang="en-US" sz="900">
+                <a:solidFill>
+                  <a:srgbClr val="6B7280" />
+                </a:solidFill>
+                <a:latin typeface="Outfit" pitchFamily="2" charset="0" />
+                <a:ea typeface="Open Sans" pitchFamily="34" charset="-122" />
+                <a:cs typeface="Open Sans" pitchFamily="34" charset="-120" />
+              </a:rPr>
+              <a:t>___SLOT_RISK2_TIMELINE___</a:t>
+            </a:r>
+            <a:endParaRPr lang="en-US" sz="900">
+              <a:solidFill>
+                <a:srgbClr val="6B7280" />
+              </a:solidFill>
+              <a:latin typeface="Outfit" pitchFamily="2" charset="0" />
+            </a:endParaRPr>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="56" name="Shape 16">
+            <a:extLst>
+              <a:ext uri="{FF2B5EF4-FFF2-40B4-BE49-F238E27FC236}">
+                <a16:creationId id="{61D7D0D0-E3EA-6E16-5897-1928C7A17B7A}" />
+              </a:ext>
+            </a:extLst>
+          </p:cNvPr>
+          <p:cNvSpPr />
+          <p:nvPr />
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="456672" y="2958349" />
+            <a:ext cx="8184408" cy="685800" />
+          </a:xfrm>
+          <a:prstGeom prst="roundRect">
+            <a:avLst>
+              <a:gd name="adj" fmla="val 0" />
+            </a:avLst>
+          </a:prstGeom>
+          <a:solidFill>
+            <a:srgbClr val="F2F3F7" />
+          </a:solidFill>
+          <a:ln />
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr />
+          <a:lstStyle />
+          <a:p>
+            <a:pPr marL="0" marR="0" lvl="0" indent="0" algn="l" defTabSz="914400" rtl="0" eaLnBrk="1" fontAlgn="auto" latinLnBrk="0" hangingPunct="1">
+              <a:lnSpc>
+                <a:spcPct val="100000" />
+              </a:lnSpc>
+              <a:spcBef>
+                <a:spcPts val="0" />
+              </a:spcBef>
+              <a:spcAft>
+                <a:spcPts val="0" />
+              </a:spcAft>
+              <a:buClrTx />
+              <a:buSzTx />
+              <a:buFontTx />
+              <a:buNone />
+              <a:tabLst />
+              <a:defRPr />
+            </a:pPr>
+            <a:endParaRPr kumimoji="0" lang="en-US" sz="1800" b="0" i="0" u="none" strike="noStrike" kern="1200" cap="none" spc="0" normalizeH="0" baseline="0" noProof="0">
+              <a:ln>
+                <a:noFill />
+              </a:ln>
+              <a:solidFill>
+                <a:prstClr val="black" />
+              </a:solidFill>
+              <a:effectLst />
+              <a:uLnTx />
+              <a:uFillTx />
+              <a:latin typeface="Calibri" panose="020F0502020204030204" />
+              <a:ea typeface="+mn-ea" />
+              <a:cs typeface="+mn-cs" />
+            </a:endParaRPr>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="57" name="Shape 17">
+            <a:extLst>
+              <a:ext uri="{FF2B5EF4-FFF2-40B4-BE49-F238E27FC236}">
+                <a16:creationId id="{11F848CA-EEB7-8639-04AB-BD05231257A3}" />
+              </a:ext>
+            </a:extLst>
+          </p:cNvPr>
+          <p:cNvSpPr />
+          <p:nvPr />
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="731520" y="3141229" />
+            <a:ext cx="320040" cy="320040" />
+          </a:xfrm>
+          <a:prstGeom prst="ellipse">
+            <a:avLst />
+          </a:prstGeom>
+          <a:solidFill>
+            <a:srgbClr val="3D5AFE" />
+          </a:solidFill>
+          <a:ln />
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr />
+          <a:lstStyle />
+          <a:p>
+            <a:pPr marL="0" marR="0" lvl="0" indent="0" algn="l" defTabSz="914400" rtl="0" eaLnBrk="1" fontAlgn="auto" latinLnBrk="0" hangingPunct="1">
+              <a:lnSpc>
+                <a:spcPct val="100000" />
+              </a:lnSpc>
+              <a:spcBef>
+                <a:spcPts val="0" />
+              </a:spcBef>
+              <a:spcAft>
+                <a:spcPts val="0" />
+              </a:spcAft>
+              <a:buClrTx />
+              <a:buSzTx />
+              <a:buFontTx />
+              <a:buNone />
+              <a:tabLst />
+              <a:defRPr />
+            </a:pPr>
+            <a:endParaRPr kumimoji="0" lang="en-US" sz="1800" b="0" i="0" u="none" strike="noStrike" kern="1200" cap="none" spc="0" normalizeH="0" baseline="0" noProof="0">
+              <a:ln>
+                <a:noFill />
+              </a:ln>
+              <a:solidFill>
+                <a:prstClr val="black" />
+              </a:solidFill>
+              <a:effectLst />
+              <a:uLnTx />
+              <a:uFillTx />
+              <a:latin typeface="Calibri" panose="020F0502020204030204" />
+              <a:ea typeface="+mn-ea" />
+              <a:cs typeface="+mn-cs" />
+            </a:endParaRPr>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="58" name="Text 18">
+            <a:extLst>
+              <a:ext uri="{FF2B5EF4-FFF2-40B4-BE49-F238E27FC236}">
+                <a16:creationId id="{D1ADEAC4-24A1-2C6B-1DC1-FDD1D2813E50}" />
+              </a:ext>
+            </a:extLst>
+          </p:cNvPr>
+          <p:cNvSpPr />
+          <p:nvPr />
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="731520" y="3141229" />
+            <a:ext cx="320040" cy="320040" />
+          </a:xfrm>
+          <a:prstGeom prst="rect">
+            <a:avLst />
+          </a:prstGeom>
+          <a:noFill />
+          <a:ln />
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr wrap="square" rtlCol="0" anchor="ctr" />
+          <a:lstStyle />
+          <a:p>
+            <a:pPr marL="0" marR="0" lvl="0" indent="0" algn="ctr" defTabSz="914400" rtl="0" eaLnBrk="1" fontAlgn="auto" latinLnBrk="0" hangingPunct="1">
+              <a:lnSpc>
+                <a:spcPct val="100000" />
+              </a:lnSpc>
+              <a:spcBef>
+                <a:spcPts val="0" />
+              </a:spcBef>
+              <a:spcAft>
+                <a:spcPts val="0" />
+              </a:spcAft>
+              <a:buClrTx />
+              <a:buSzTx />
+              <a:buFontTx />
+              <a:buNone />
+              <a:tabLst />
+              <a:defRPr />
+            </a:pPr>
+            <a:r>
+              <a:rPr kumimoji="0" lang="en-US" sz="1100" b="1" i="0" u="none" strike="noStrike" kern="1200" cap="none" spc="0" normalizeH="0" baseline="0" noProof="0">
+                <a:ln>
+                  <a:noFill />
+                </a:ln>
+                <a:solidFill>
+                  <a:srgbClr val="FFFFFF" />
+                </a:solidFill>
+                <a:effectLst />
+                <a:uLnTx />
+                <a:uFillTx />
+                <a:latin typeface="Outfit" pitchFamily="2" charset="0" />
+                <a:ea typeface="Open Sans" pitchFamily="34" charset="-122" />
+                <a:cs typeface="Open Sans" pitchFamily="34" charset="-120" />
+              </a:rPr>
+              <a:t>___SLOT_RISK3_PRIORITY___</a:t>
+            </a:r>
+            <a:endParaRPr kumimoji="0" lang="en-US" sz="1100" b="0" i="0" u="none" strike="noStrike" kern="1200" cap="none" spc="0" normalizeH="0" baseline="0" noProof="0">
+              <a:ln>
+                <a:noFill />
+              </a:ln>
+              <a:solidFill>
+                <a:prstClr val="black" />
+              </a:solidFill>
+              <a:effectLst />
+              <a:uLnTx />
+              <a:uFillTx />
+              <a:latin typeface="Outfit" pitchFamily="2" charset="0" />
+            </a:endParaRPr>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="59" name="Text 19">
+            <a:extLst>
+              <a:ext uri="{FF2B5EF4-FFF2-40B4-BE49-F238E27FC236}">
+                <a16:creationId id="{F510DD3C-F074-D8D9-63A3-582092B81E77}" />
+              </a:ext>
+            </a:extLst>
+          </p:cNvPr>
+          <p:cNvSpPr />
+          <p:nvPr />
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="1188720" y="3031501" />
+            <a:ext cx="3657600" cy="256032" />
+          </a:xfrm>
+          <a:prstGeom prst="rect">
+            <a:avLst />
+          </a:prstGeom>
+          <a:noFill />
+          <a:ln />
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr wrap="square" lIns="0" tIns="0" rIns="0" bIns="0" rtlCol="0" anchor="ctr" />
+          <a:lstStyle />
+          <a:p>
+            <a:pPr>
+              <a:defRPr />
+            </a:pPr>
+            <a:r>
+              <a:rPr lang="en-US" sz="1200" b="1">
+                <a:solidFill>
+                  <a:srgbClr val="0D0E0F" />
+                </a:solidFill>
+                <a:latin typeface="Outfit" />
+                <a:ea typeface="Open Sans" pitchFamily="34" charset="-122" />
+                <a:cs typeface="Open Sans" pitchFamily="34" charset="-120" />
+              </a:rPr>
+              <a:t>___SLOT_RISK3_TITLE___</a:t>
+            </a:r>
+            <a:endParaRPr lang="en-US" sz="1200">
+              <a:solidFill>
+                <a:srgbClr val="000000" />
+              </a:solidFill>
+              <a:latin typeface="Outfit" />
+              <a:ea typeface="Open Sans" pitchFamily="34" charset="-122" />
+              <a:cs typeface="Open Sans" pitchFamily="34" charset="-120" />
+            </a:endParaRPr>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="60" name="Text 20">
+            <a:extLst>
+              <a:ext uri="{FF2B5EF4-FFF2-40B4-BE49-F238E27FC236}">
+                <a16:creationId id="{EF97129C-85F3-D8AF-697F-111AD6A852C4}" />
+              </a:ext>
+            </a:extLst>
+          </p:cNvPr>
+          <p:cNvSpPr />
+          <p:nvPr />
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="1188720" y="3305821" />
+            <a:ext cx="4572000" cy="256032" />
+          </a:xfrm>
+          <a:prstGeom prst="rect">
+            <a:avLst />
+          </a:prstGeom>
+          <a:noFill />
+          <a:ln />
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr wrap="square" lIns="0" tIns="0" rIns="0" bIns="0" rtlCol="0" anchor="ctr" />
+          <a:lstStyle />
+          <a:p>
+            <a:r>
+              <a:rPr lang="en-US" sz="900">
+                <a:solidFill>
+                  <a:srgbClr val="6B7280" />
+                </a:solidFill>
+                <a:latin typeface="Outfit" />
+                <a:ea typeface="Open Sans" pitchFamily="34" charset="-122" />
+                <a:cs typeface="Open Sans" pitchFamily="34" charset="-120" />
+              </a:rPr>
+              <a:t>___SLOT_RISK3_MITIGATION___</a:t>
+            </a:r>
+            <a:endParaRPr lang="en-US" sz="900">
+              <a:solidFill>
+                <a:srgbClr val="000000" />
+              </a:solidFill>
+              <a:latin typeface="Outfit" />
+              <a:ea typeface="Open Sans" pitchFamily="34" charset="-122" />
+              <a:cs typeface="Open Sans" pitchFamily="34" charset="-120" />
+            </a:endParaRPr>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="61" name="Text 21">
+            <a:extLst>
+              <a:ext uri="{FF2B5EF4-FFF2-40B4-BE49-F238E27FC236}">
+                <a16:creationId id="{D1C5745D-B551-C5CA-888B-045DCF7AE4E0}" />
+              </a:ext>
+            </a:extLst>
+          </p:cNvPr>
+          <p:cNvSpPr />
+          <p:nvPr />
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="6120063" y="3152333" />
+            <a:ext cx="1378017" cy="256032" />
+          </a:xfrm>
+          <a:prstGeom prst="rect">
+            <a:avLst />
+          </a:prstGeom>
+          <a:noFill />
+          <a:ln />
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr wrap="square" lIns="91440" tIns="45720" rIns="91440" bIns="45720" rtlCol="0" anchor="ctr" />
+          <a:lstStyle />
+          <a:p>
+            <a:pPr algn="ctr">
+              <a:defRPr />
+            </a:pPr>
+            <a:r>
+              <a:rPr kumimoji="0" lang="en-US" sz="900" b="1" i="0" u="none" strike="noStrike" kern="1200" cap="none" spc="0" normalizeH="0" baseline="0" noProof="0">
+                <a:ln>
+                  <a:noFill />
+                </a:ln>
+                <a:solidFill>
+                  <a:srgbClr val="3ABAAF" />
+                </a:solidFill>
+                <a:effectLst />
+                <a:uLnTx />
+                <a:uFillTx />
+                <a:latin typeface="Outfit" />
+                <a:ea typeface="Open Sans" pitchFamily="34" charset="-122" />
+                <a:cs typeface="Open Sans" pitchFamily="34" charset="-120" />
+              </a:rPr>
+              <a:t>___SLOT_RISK3_OWNER___</a:t>
+            </a:r>
+            <a:endParaRPr lang="en-US" sz="900">
+              <a:solidFill>
+                <a:srgbClr val="000000" />
+              </a:solidFill>
+              <a:latin typeface="Outfit" />
+              <a:ea typeface="Open Sans" pitchFamily="34" charset="-122" />
+              <a:cs typeface="Open Sans" pitchFamily="34" charset="-120" />
+            </a:endParaRPr>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="62" name="Text 22">
+            <a:extLst>
+              <a:ext uri="{FF2B5EF4-FFF2-40B4-BE49-F238E27FC236}">
+                <a16:creationId id="{57F24705-D638-88A8-E7C5-F6BB70DC66D8}" />
+              </a:ext>
+            </a:extLst>
+          </p:cNvPr>
+          <p:cNvSpPr />
+          <p:nvPr />
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="7498080" y="3152333" />
+            <a:ext cx="914400" cy="256032" />
+          </a:xfrm>
+          <a:prstGeom prst="rect">
+            <a:avLst />
+          </a:prstGeom>
+          <a:noFill />
+          <a:ln />
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr wrap="square" rtlCol="0" anchor="ctr" />
+          <a:lstStyle />
+          <a:p>
+            <a:pPr lvl="0" algn="ctr">
+              <a:defRPr />
+            </a:pPr>
+            <a:r>
+              <a:rPr lang="en-US" sz="900">
+                <a:solidFill>
+                  <a:srgbClr val="6B7280" />
+                </a:solidFill>
+                <a:latin typeface="Outfit" pitchFamily="2" charset="0" />
+                <a:ea typeface="Open Sans" pitchFamily="34" charset="-122" />
+                <a:cs typeface="Open Sans" pitchFamily="34" charset="-120" />
+              </a:rPr>
+              <a:t>___SLOT_RISK3_TIMELINE___</a:t>
+            </a:r>
+            <a:endParaRPr lang="en-US" sz="900">
+              <a:solidFill>
+                <a:srgbClr val="6B7280" />
+              </a:solidFill>
+              <a:latin typeface="Outfit" pitchFamily="2" charset="0" />
+            </a:endParaRPr>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="63" name="Shape 23">
+            <a:extLst>
+              <a:ext uri="{FF2B5EF4-FFF2-40B4-BE49-F238E27FC236}">
+                <a16:creationId id="{FCF86D9F-87C6-9FBB-C4DA-F8328BD6282E}" />
+              </a:ext>
+            </a:extLst>
+          </p:cNvPr>
+          <p:cNvSpPr />
+          <p:nvPr />
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="456672" y="3781309" />
+            <a:ext cx="8184408" cy="685800" />
+          </a:xfrm>
+          <a:prstGeom prst="roundRect">
+            <a:avLst>
+              <a:gd name="adj" fmla="val 0" />
+            </a:avLst>
+          </a:prstGeom>
+          <a:solidFill>
+            <a:srgbClr val="F2F3F7" />
+          </a:solidFill>
+          <a:ln />
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr />
+          <a:lstStyle />
+          <a:p>
+            <a:pPr marL="0" marR="0" lvl="0" indent="0" algn="l" defTabSz="914400" rtl="0" eaLnBrk="1" fontAlgn="auto" latinLnBrk="0" hangingPunct="1">
+              <a:lnSpc>
+                <a:spcPct val="100000" />
+              </a:lnSpc>
+              <a:spcBef>
+                <a:spcPts val="0" />
+              </a:spcBef>
+              <a:spcAft>
+                <a:spcPts val="0" />
+              </a:spcAft>
+              <a:buClrTx />
+              <a:buSzTx />
+              <a:buFontTx />
+              <a:buNone />
+              <a:tabLst />
+              <a:defRPr />
+            </a:pPr>
+            <a:endParaRPr kumimoji="0" lang="en-US" sz="1800" b="0" i="0" u="none" strike="noStrike" kern="1200" cap="none" spc="0" normalizeH="0" baseline="0" noProof="0">
+              <a:ln>
+                <a:noFill />
+              </a:ln>
+              <a:solidFill>
+                <a:prstClr val="black" />
+              </a:solidFill>
+              <a:effectLst />
+              <a:uLnTx />
+              <a:uFillTx />
+              <a:latin typeface="Calibri" panose="020F0502020204030204" />
+              <a:ea typeface="+mn-ea" />
+              <a:cs typeface="+mn-cs" />
+            </a:endParaRPr>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="64" name="Shape 24">
+            <a:extLst>
+              <a:ext uri="{FF2B5EF4-FFF2-40B4-BE49-F238E27FC236}">
+                <a16:creationId id="{5C58940C-9BD7-4B3A-67DE-EC9B5A152BF5}" />
+              </a:ext>
+            </a:extLst>
+          </p:cNvPr>
+          <p:cNvSpPr />
+          <p:nvPr />
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="731520" y="3964189" />
+            <a:ext cx="320040" cy="320040" />
+          </a:xfrm>
+          <a:prstGeom prst="ellipse">
+            <a:avLst />
+          </a:prstGeom>
+          <a:solidFill>
+            <a:srgbClr val="3D5AFE" />
+          </a:solidFill>
+          <a:ln />
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr />
+          <a:lstStyle />
+          <a:p>
+            <a:pPr marL="0" marR="0" lvl="0" indent="0" algn="l" defTabSz="914400" rtl="0" eaLnBrk="1" fontAlgn="auto" latinLnBrk="0" hangingPunct="1">
+              <a:lnSpc>
+                <a:spcPct val="100000" />
+              </a:lnSpc>
+              <a:spcBef>
+                <a:spcPts val="0" />
+              </a:spcBef>
+              <a:spcAft>
+                <a:spcPts val="0" />
+              </a:spcAft>
+              <a:buClrTx />
+              <a:buSzTx />
+              <a:buFontTx />
+              <a:buNone />
+              <a:tabLst />
+              <a:defRPr />
+            </a:pPr>
+            <a:endParaRPr kumimoji="0" lang="en-US" sz="1800" b="0" i="0" u="none" strike="noStrike" kern="1200" cap="none" spc="0" normalizeH="0" baseline="0" noProof="0">
+              <a:ln>
+                <a:noFill />
+              </a:ln>
+              <a:solidFill>
+                <a:prstClr val="black" />
+              </a:solidFill>
+              <a:effectLst />
+              <a:uLnTx />
+              <a:uFillTx />
+              <a:latin typeface="Calibri" panose="020F0502020204030204" />
+              <a:ea typeface="+mn-ea" />
+              <a:cs typeface="+mn-cs" />
+            </a:endParaRPr>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="65" name="Text 25">
+            <a:extLst>
+              <a:ext uri="{FF2B5EF4-FFF2-40B4-BE49-F238E27FC236}">
+                <a16:creationId id="{A107693F-7491-8AA9-59C2-5685DA3B9C6F}" />
+              </a:ext>
+            </a:extLst>
+          </p:cNvPr>
+          <p:cNvSpPr />
+          <p:nvPr />
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="731520" y="3964189" />
+            <a:ext cx="320040" cy="320040" />
+          </a:xfrm>
+          <a:prstGeom prst="rect">
+            <a:avLst />
+          </a:prstGeom>
+          <a:noFill />
+          <a:ln />
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr wrap="square" rtlCol="0" anchor="ctr" />
+          <a:lstStyle />
+          <a:p>
+            <a:pPr marL="0" marR="0" lvl="0" indent="0" algn="ctr" defTabSz="914400" rtl="0" eaLnBrk="1" fontAlgn="auto" latinLnBrk="0" hangingPunct="1">
+              <a:lnSpc>
+                <a:spcPct val="100000" />
+              </a:lnSpc>
+              <a:spcBef>
+                <a:spcPts val="0" />
+              </a:spcBef>
+              <a:spcAft>
+                <a:spcPts val="0" />
+              </a:spcAft>
+              <a:buClrTx />
+              <a:buSzTx />
+              <a:buFontTx />
+              <a:buNone />
+              <a:tabLst />
+              <a:defRPr />
+            </a:pPr>
+            <a:r>
+              <a:rPr kumimoji="0" lang="en-US" sz="1100" b="1" i="0" u="none" strike="noStrike" kern="1200" cap="none" spc="0" normalizeH="0" baseline="0" noProof="0">
+                <a:ln>
+                  <a:noFill />
+                </a:ln>
+                <a:solidFill>
+                  <a:srgbClr val="FFFFFF" />
+                </a:solidFill>
+                <a:effectLst />
+                <a:uLnTx />
+                <a:uFillTx />
+                <a:latin typeface="Outfit" pitchFamily="2" charset="0" />
+                <a:ea typeface="Open Sans" pitchFamily="34" charset="-122" />
+                <a:cs typeface="Open Sans" pitchFamily="34" charset="-120" />
+              </a:rPr>
+              <a:t>___SLOT_RISK4_PRIORITY___</a:t>
+            </a:r>
+            <a:endParaRPr kumimoji="0" lang="en-US" sz="1100" b="0" i="0" u="none" strike="noStrike" kern="1200" cap="none" spc="0" normalizeH="0" baseline="0" noProof="0">
+              <a:ln>
+                <a:noFill />
+              </a:ln>
+              <a:solidFill>
+                <a:prstClr val="black" />
+              </a:solidFill>
+              <a:effectLst />
+              <a:uLnTx />
+              <a:uFillTx />
+              <a:latin typeface="Outfit" pitchFamily="2" charset="0" />
+            </a:endParaRPr>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="66" name="Text 26">
+            <a:extLst>
+              <a:ext uri="{FF2B5EF4-FFF2-40B4-BE49-F238E27FC236}">
+                <a16:creationId id="{F13DF0D9-D569-6E9D-A90D-7CB199294443}" />
+              </a:ext>
+            </a:extLst>
+          </p:cNvPr>
+          <p:cNvSpPr />
+          <p:nvPr />
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="1188720" y="3854461" />
+            <a:ext cx="3657600" cy="256032" />
+          </a:xfrm>
+          <a:prstGeom prst="rect">
+            <a:avLst />
+          </a:prstGeom>
+          <a:noFill />
+          <a:ln />
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr wrap="square" lIns="0" tIns="0" rIns="0" bIns="0" rtlCol="0" anchor="ctr" />
+          <a:lstStyle />
+          <a:p>
+            <a:pPr>
+              <a:defRPr />
+            </a:pPr>
+            <a:r>
+              <a:rPr lang="en-US" sz="1200" b="1">
+                <a:solidFill>
+                  <a:srgbClr val="0D0E0F" />
+                </a:solidFill>
+                <a:latin typeface="Outfit" />
+                <a:ea typeface="Open Sans" pitchFamily="34" charset="-122" />
+                <a:cs typeface="Open Sans" pitchFamily="34" charset="-120" />
+              </a:rPr>
+              <a:t>___SLOT_RISK4_TITLE___</a:t>
+            </a:r>
+            <a:endParaRPr lang="en-US" sz="1200">
+              <a:solidFill>
+                <a:srgbClr val="000000" />
+              </a:solidFill>
+              <a:latin typeface="Outfit" />
+              <a:ea typeface="Open Sans" pitchFamily="34" charset="-122" />
+              <a:cs typeface="Open Sans" pitchFamily="34" charset="-120" />
+            </a:endParaRPr>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="67" name="Text 27">
+            <a:extLst>
+              <a:ext uri="{FF2B5EF4-FFF2-40B4-BE49-F238E27FC236}">
+                <a16:creationId id="{B3C68D30-8520-F6A0-04D0-43469327B82D}" />
+              </a:ext>
+            </a:extLst>
+          </p:cNvPr>
+          <p:cNvSpPr />
+          <p:nvPr />
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="1188720" y="4128781" />
+            <a:ext cx="4572000" cy="256032" />
+          </a:xfrm>
+          <a:prstGeom prst="rect">
+            <a:avLst />
+          </a:prstGeom>
+          <a:noFill />
+          <a:ln />
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr wrap="square" lIns="0" tIns="0" rIns="0" bIns="0" rtlCol="0" anchor="ctr" />
+          <a:lstStyle />
+          <a:p>
+            <a:r>
+              <a:rPr lang="en-US" sz="900">
+                <a:solidFill>
+                  <a:srgbClr val="6B7280" />
+                </a:solidFill>
+                <a:latin typeface="Outfit" />
+                <a:ea typeface="Open Sans" pitchFamily="34" charset="-122" />
+                <a:cs typeface="Open Sans" pitchFamily="34" charset="-120" />
+              </a:rPr>
+              <a:t>___SLOT_RISK4_MITIGATION___</a:t>
+            </a:r>
+            <a:endParaRPr lang="en-US" sz="900">
+              <a:solidFill>
+                <a:srgbClr val="000000" />
+              </a:solidFill>
+              <a:latin typeface="Outfit" />
+              <a:ea typeface="Open Sans" pitchFamily="34" charset="-122" />
+              <a:cs typeface="Open Sans" pitchFamily="34" charset="-120" />
+            </a:endParaRPr>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="68" name="Text 28">
+            <a:extLst>
+              <a:ext uri="{FF2B5EF4-FFF2-40B4-BE49-F238E27FC236}">
+                <a16:creationId id="{6A032CE9-FDBD-0CF5-98C5-AE88075014CD}" />
+              </a:ext>
+            </a:extLst>
+          </p:cNvPr>
+          <p:cNvSpPr />
+          <p:nvPr />
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="6120063" y="3975293" />
+            <a:ext cx="1378017" cy="256032" />
+          </a:xfrm>
+          <a:prstGeom prst="rect">
+            <a:avLst />
+          </a:prstGeom>
+          <a:noFill />
+          <a:ln />
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr wrap="square" lIns="91440" tIns="45720" rIns="91440" bIns="45720" rtlCol="0" anchor="ctr" />
+          <a:lstStyle />
+          <a:p>
+            <a:pPr algn="ctr">
+              <a:defRPr />
+            </a:pPr>
+            <a:r>
+              <a:rPr kumimoji="0" lang="en-US" sz="900" b="1" i="0" u="none" strike="noStrike" kern="1200" cap="none" spc="0" normalizeH="0" baseline="0" noProof="0">
+                <a:ln>
+                  <a:noFill />
+                </a:ln>
+                <a:solidFill>
+                  <a:srgbClr val="3ABAAF" />
+                </a:solidFill>
+                <a:effectLst />
+                <a:uLnTx />
+                <a:uFillTx />
+                <a:latin typeface="Outfit" />
+                <a:ea typeface="Open Sans" pitchFamily="34" charset="-122" />
+                <a:cs typeface="Open Sans" pitchFamily="34" charset="-120" />
+              </a:rPr>
+              <a:t>___SLOT_RISK4_OWNER___</a:t>
+            </a:r>
+            <a:endParaRPr lang="en-US" sz="900">
+              <a:solidFill>
+                <a:srgbClr val="000000" />
+              </a:solidFill>
+              <a:latin typeface="Outfit" />
+              <a:ea typeface="Open Sans" pitchFamily="34" charset="-122" />
+              <a:cs typeface="Open Sans" pitchFamily="34" charset="-120" />
+            </a:endParaRPr>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="69" name="Text 29">
+            <a:extLst>
+              <a:ext uri="{FF2B5EF4-FFF2-40B4-BE49-F238E27FC236}">
+                <a16:creationId id="{6B1ED0EC-F5F3-E4A4-D267-5299A85EB45C}" />
+              </a:ext>
+            </a:extLst>
+          </p:cNvPr>
+          <p:cNvSpPr />
+          <p:nvPr />
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="7498080" y="3975293" />
+            <a:ext cx="914400" cy="256032" />
+          </a:xfrm>
+          <a:prstGeom prst="rect">
+            <a:avLst />
+          </a:prstGeom>
+          <a:noFill />
+          <a:ln />
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr wrap="square" rtlCol="0" anchor="ctr" />
+          <a:lstStyle />
+          <a:p>
+            <a:pPr lvl="0" algn="ctr">
+              <a:defRPr />
+            </a:pPr>
+            <a:r>
+              <a:rPr lang="en-US" sz="900">
+                <a:solidFill>
+                  <a:srgbClr val="6B7280" />
+                </a:solidFill>
+                <a:latin typeface="Outfit" pitchFamily="2" charset="0" />
+                <a:ea typeface="Open Sans" pitchFamily="34" charset="-122" />
+                <a:cs typeface="Open Sans" pitchFamily="34" charset="-120" />
+              </a:rPr>
+              <a:t>___SLOT_RISK4_TIMELINE___</a:t>
+            </a:r>
+            <a:endParaRPr lang="en-US" sz="900">
+              <a:solidFill>
+                <a:srgbClr val="6B7280" />
+              </a:solidFill>
+              <a:latin typeface="Outfit" pitchFamily="2" charset="0" />
+            </a:endParaRPr>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+    <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="9001" name="Disclaimer" />
+          <p:cNvSpPr />
+          <p:nvPr />
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="457200" y="4950000" />
+            <a:ext cx="7400000" cy="170000" />
+          </a:xfrm>
+          <a:prstGeom prst="rect">
+            <a:avLst />
+          </a:prstGeom>
+          <a:noFill />
+          <a:ln />
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr wrap="square" lIns="0" tIns="0" rIns="0" bIns="0" rtlCol="0" anchor="t" />
+          <a:lstStyle />
+          <a:p>
+            <a:pPr marL="0" indent="0">
+              <a:buNone />
+            </a:pPr>
+            <a:r>
+              <a:rPr lang="en-US" sz="800" i="1">
+                <a:solidFill>
+                  <a:srgbClr val="6B7280" />
+                </a:solidFill>
+                <a:latin typeface="Outfit" pitchFamily="2" charset="0" />
+                <a:ea typeface="Open Sans" pitchFamily="34" charset="-122" />
+                <a:cs typeface="Open Sans" pitchFamily="34" charset="-120" />
+              </a:rPr>
+              <a:t>___SLOT_DISCLAIMER___</a:t>
+            </a:r>
+            <a:endParaRPr lang="en-US" sz="800" i="1" />
+          </a:p>
+        </p:txBody>
+      </p:sp>
+    <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="71" name="Shape 1" />
+          <p:cNvSpPr />
+          <p:nvPr />
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="456672" y="230768" />
+            <a:ext cx="320040" cy="36576" />
+          </a:xfrm>
+          <a:prstGeom prst="rect">
+            <a:avLst />
+          </a:prstGeom>
+          <a:solidFill>
+            <a:srgbClr val="3D5AFE" />
+          </a:solidFill>
+          <a:ln w="12700">
+            <a:solidFill>
+              <a:srgbClr val="3D5AFE" />
+            </a:solidFill>
+            <a:prstDash val="solid" />
+          </a:ln>
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr />
+          <a:lstStyle />
+          <a:p>
+            <a:endParaRPr lang="en-ES" />
+          </a:p>
+        </p:txBody>
+      </p:sp>
+      <p:grpSp>
+        <p:nvGrpSpPr>
+          <p:cNvPr id="72" name="Group 21">
+            <a:extLst>
+              <a:ext uri="{FF2B5EF4-FFF2-40B4-BE49-F238E27FC236}">
+                <a16:creationId id="{5CE1E2E8-B745-C0CF-B03F-E67783B8A7DC}" />
+              </a:ext>
+            </a:extLst>
+          </p:cNvPr>
+          <p:cNvGrpSpPr />
+          <p:nvPr />
+        </p:nvGrpSpPr>
+        <p:grpSpPr>
+          <a:xfrm>
+            <a:off x="8039657" y="4755838" />
+            <a:ext cx="795753" cy="246857" />
+            <a:chOff x="7435419" y="4613467" />
+            <a:chExt cx="1708581" cy="530033" />
+          </a:xfrm>
+        </p:grpSpPr>
+        <p:pic>
+          <p:nvPicPr>
+            <p:cNvPr id="73" name="Picture 22" descr="A black background with white text  AI-generated content may be incorrect.">
+              <a:extLst>
+                <a:ext uri="{FF2B5EF4-FFF2-40B4-BE49-F238E27FC236}">
+                  <a16:creationId id="{2B406CC5-3903-746C-EC58-C5566654CF00}" />
+                </a:ext>
+              </a:extLst>
+            </p:cNvPr>
+            <p:cNvPicPr>
+              <a:picLocks noChangeAspect="1" />
+            </p:cNvPicPr>
+            <p:nvPr />
+          </p:nvPicPr>
+          <p:blipFill>
+            <a:blip r:embed="rId4" cstate="print">
+              <a:extLst>
+                <a:ext uri="{28A0092B-C50C-407E-A947-70E740481C1C}">
+                  <a14:useLocalDpi />
+                </a:ext>
+              </a:extLst>
+            </a:blip>
+            <a:stretch>
+              <a:fillRect />
+            </a:stretch>
+          </p:blipFill>
+          <p:spPr>
+            <a:xfrm>
+              <a:off x="8190522" y="4672767" />
+              <a:ext cx="953478" cy="361434" />
+            </a:xfrm>
+            <a:prstGeom prst="rect">
+              <a:avLst />
+            </a:prstGeom>
+          </p:spPr>
+        </p:pic>
+        <p:sp>
+          <p:nvSpPr>
+            <p:cNvPr id="74" name="Rectangle 23">
+              <a:extLst>
+                <a:ext uri="{FF2B5EF4-FFF2-40B4-BE49-F238E27FC236}">
+                  <a16:creationId id="{AFD10ADA-58E4-1B03-78D3-B3E8EC38B6E4}" />
+                </a:ext>
+              </a:extLst>
+            </p:cNvPr>
+            <p:cNvSpPr>
+              <a:spLocks noChangeAspect="1" />
+            </p:cNvSpPr>
+            <p:nvPr />
+          </p:nvSpPr>
+          <p:spPr>
+            <a:xfrm>
+              <a:off x="7435419" y="4663467" />
+              <a:ext cx="480033" cy="480033" />
+            </a:xfrm>
+            <a:prstGeom prst="rect">
+              <a:avLst />
+            </a:prstGeom>
+            <a:solidFill>
+              <a:srgbClr val="3D5AFE" />
+            </a:solidFill>
+            <a:ln>
+              <a:noFill />
+            </a:ln>
+          </p:spPr>
+          <p:style>
+            <a:lnRef idx="2">
+              <a:schemeClr val="accent1">
+                <a:shade val="15000" />
+              </a:schemeClr>
+            </a:lnRef>
+            <a:fillRef idx="1">
+              <a:schemeClr val="accent1" />
+            </a:fillRef>
+            <a:effectRef idx="0">
+              <a:schemeClr val="accent1" />
+            </a:effectRef>
+            <a:fontRef idx="minor">
+              <a:schemeClr val="lt1" />
+            </a:fontRef>
+          </p:style>
+          <p:txBody>
+            <a:bodyPr rtlCol="0" anchor="ctr" />
+            <a:lstStyle />
+            <a:p>
+              <a:pPr algn="ctr" defTabSz="685664" />
+              <a:endParaRPr lang="es-ES" sz="1350">
+                <a:solidFill>
+                  <a:prstClr val="white" />
+                </a:solidFill>
+                <a:latin typeface="Calibri" panose="020F0502020204030204" />
+              </a:endParaRPr>
+            </a:p>
+          </p:txBody>
+        </p:sp>
+        <p:sp>
+          <p:nvSpPr>
+            <p:cNvPr id="75" name="Marcador de número de diapositiva 1">
+              <a:extLst>
+                <a:ext uri="{FF2B5EF4-FFF2-40B4-BE49-F238E27FC236}">
+                  <a16:creationId id="{4542D956-F034-D594-528D-4A833694B7A3}" />
+                </a:ext>
+              </a:extLst>
+            </p:cNvPr>
+            <p:cNvSpPr txBox="1">
+              <a:spLocks noChangeAspect="1" />
+            </p:cNvSpPr>
+            <p:nvPr />
+          </p:nvSpPr>
+          <p:spPr>
+            <a:xfrm>
+              <a:off x="7480062" y="4613467" />
+              <a:ext cx="480033" cy="480033" />
+            </a:xfrm>
+            <a:prstGeom prst="rect">
+              <a:avLst />
+            </a:prstGeom>
+            <a:solidFill>
+              <a:srgbClr val="151618" />
+            </a:solidFill>
+          </p:spPr>
+          <p:txBody>
+            <a:bodyPr vert="horz" lIns="0" tIns="0" rIns="0" bIns="0" rtlCol="0" anchor="ctr" />
+            <a:lstStyle>
+              <a:defPPr>
+                <a:defRPr lang="en-US" />
+              </a:defPPr>
+              <a:lvl1pPr marL="0" algn="r" defTabSz="914400" rtl="0" eaLnBrk="1" latinLnBrk="0" hangingPunct="1">
+                <a:defRPr sz="1200" kern="1200">
+                  <a:solidFill>
+                    <a:schemeClr val="tx1">
+                      <a:tint val="75000" />
+                    </a:schemeClr>
+                  </a:solidFill>
+                  <a:latin typeface="+mn-lt" />
+                  <a:ea typeface="+mn-ea" />
+                  <a:cs typeface="+mn-cs" />
+                </a:defRPr>
+              </a:lvl1pPr>
+              <a:lvl2pPr marL="457200" algn="l" defTabSz="914400" rtl="0" eaLnBrk="1" latinLnBrk="0" hangingPunct="1">
+                <a:defRPr sz="1800" kern="1200">
+                  <a:solidFill>
+                    <a:schemeClr val="tx1" />
+                  </a:solidFill>
+                  <a:latin typeface="+mn-lt" />
+                  <a:ea typeface="+mn-ea" />
+                  <a:cs typeface="+mn-cs" />
+                </a:defRPr>
+              </a:lvl2pPr>
+              <a:lvl3pPr marL="914400" algn="l" defTabSz="914400" rtl="0" eaLnBrk="1" latinLnBrk="0" hangingPunct="1">
+                <a:defRPr sz="1800" kern="1200">
+                  <a:solidFill>
+                    <a:schemeClr val="tx1" />
+                  </a:solidFill>
+                  <a:latin typeface="+mn-lt" />
+                  <a:ea typeface="+mn-ea" />
+                  <a:cs typeface="+mn-cs" />
+                </a:defRPr>
+              </a:lvl3pPr>
+              <a:lvl4pPr marL="1371600" algn="l" defTabSz="914400" rtl="0" eaLnBrk="1" latinLnBrk="0" hangingPunct="1">
+                <a:defRPr sz="1800" kern="1200">
+                  <a:solidFill>
+                    <a:schemeClr val="tx1" />
+                  </a:solidFill>
+                  <a:latin typeface="+mn-lt" />
+                  <a:ea typeface="+mn-ea" />
+                  <a:cs typeface="+mn-cs" />
+                </a:defRPr>
+              </a:lvl4pPr>
+              <a:lvl5pPr marL="1828800" algn="l" defTabSz="914400" rtl="0" eaLnBrk="1" latinLnBrk="0" hangingPunct="1">
+                <a:defRPr sz="1800" kern="1200">
+                  <a:solidFill>
+                    <a:schemeClr val="tx1" />
+                  </a:solidFill>
+                  <a:latin typeface="+mn-lt" />
+                  <a:ea typeface="+mn-ea" />
+                  <a:cs typeface="+mn-cs" />
+                </a:defRPr>
+              </a:lvl5pPr>
+              <a:lvl6pPr marL="2286000" algn="l" defTabSz="914400" rtl="0" eaLnBrk="1" latinLnBrk="0" hangingPunct="1">
+                <a:defRPr sz="1800" kern="1200">
+                  <a:solidFill>
+                    <a:schemeClr val="tx1" />
+                  </a:solidFill>
+                  <a:latin typeface="+mn-lt" />
+                  <a:ea typeface="+mn-ea" />
+                  <a:cs typeface="+mn-cs" />
+                </a:defRPr>
+              </a:lvl6pPr>
+              <a:lvl7pPr marL="2743200" algn="l" defTabSz="914400" rtl="0" eaLnBrk="1" latinLnBrk="0" hangingPunct="1">
+                <a:defRPr sz="1800" kern="1200">
+                  <a:solidFill>
+                    <a:schemeClr val="tx1" />
+                  </a:solidFill>
+                  <a:latin typeface="+mn-lt" />
+                  <a:ea typeface="+mn-ea" />
+                  <a:cs typeface="+mn-cs" />
+                </a:defRPr>
+              </a:lvl7pPr>
+              <a:lvl8pPr marL="3200400" algn="l" defTabSz="914400" rtl="0" eaLnBrk="1" latinLnBrk="0" hangingPunct="1">
+                <a:defRPr sz="1800" kern="1200">
+                  <a:solidFill>
+                    <a:schemeClr val="tx1" />
+                  </a:solidFill>
+                  <a:latin typeface="+mn-lt" />
+                  <a:ea typeface="+mn-ea" />
+                  <a:cs typeface="+mn-cs" />
+                </a:defRPr>
+              </a:lvl8pPr>
+              <a:lvl9pPr marL="3657600" algn="l" defTabSz="914400" rtl="0" eaLnBrk="1" latinLnBrk="0" hangingPunct="1">
+                <a:defRPr sz="1800" kern="1200">
+                  <a:solidFill>
+                    <a:schemeClr val="tx1" />
+                  </a:solidFill>
+                  <a:latin typeface="+mn-lt" />
+                  <a:ea typeface="+mn-ea" />
+                  <a:cs typeface="+mn-cs" />
+                </a:defRPr>
+              </a:lvl9pPr>
+            </a:lstStyle>
+            <a:p>
+              <a:pPr algn="ctr" defTabSz="685664">
+                <a:defRPr />
+              </a:pPr>
+              <a:fld id="{0A472BC1-5914-40F9-BF22-C7FC96329A92}" type="slidenum">
+                <a:rPr lang="en-US" sz="1000" b="1">
+                  <a:solidFill>
+                    <a:prstClr val="white" />
+                  </a:solidFill>
+                  <a:latin typeface="Open Sans" panose="020B0606030504020204" pitchFamily="34" charset="0" />
+                  <a:ea typeface="Open Sans" panose="020B0606030504020204" pitchFamily="34" charset="0" />
+                  <a:cs typeface="Open Sans" panose="020B0606030504020204" pitchFamily="34" charset="0" />
+                </a:rPr>
+                <a:pPr algn="ctr" defTabSz="685664">
+                  <a:defRPr />
+                </a:pPr>
+                <a:t>13</a:t>
+              </a:fld>
+              <a:endParaRPr lang="en-US" sz="1000" b="1">
+                <a:solidFill>
+                  <a:prstClr val="white" />
+                </a:solidFill>
+                <a:latin typeface="Open Sans" panose="020B0606030504020204" pitchFamily="34" charset="0" />
+                <a:ea typeface="Open Sans" panose="020B0606030504020204" pitchFamily="34" charset="0" />
+                <a:cs typeface="Open Sans" panose="020B0606030504020204" pitchFamily="34" charset="0" />
+              </a:endParaRPr>
+            </a:p>
+          </p:txBody>
+        </p:sp>
+      </p:grpSp>
+    </p:spTree>
+  </p:cSld>
+  <p:clrMapOvr>
+    <a:masterClrMapping />
+  </p:clrMapOvr>
+</p:sld>

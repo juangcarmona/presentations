@@ -1,0 +1,129 @@
+{
+  "layout": "case-study",
+  "source": "offerings",
+  "slide": "slide48.xml",
+  "media": [
+    "image4.png"
+  ],
+  "slots": [
+    {
+      "name": "SECTION",
+      "kind": "scalar"
+    },
+    {
+      "name": "TITLE",
+      "kind": "scalar"
+    },
+    {
+      "name": "COL1_HEADER",
+      "kind": "scalar",
+      "group": "col1"
+    },
+    {
+      "name": "COL1_DESC",
+      "kind": "scalar",
+      "group": "col1"
+    },
+    {
+      "name": "COL2_HEADER",
+      "kind": "scalar",
+      "group": "col2"
+    },
+    {
+      "name": "COL2_DESC",
+      "kind": "scalar",
+      "group": "col2"
+    },
+    {
+      "name": "COL3_HEADER",
+      "kind": "scalar",
+      "group": "col3"
+    },
+    {
+      "name": "COL3_DESC",
+      "kind": "scalar",
+      "group": "col3"
+    },
+    {
+      "name": "KPI1_VALUE",
+      "kind": "scalar",
+      "group": "kpi1"
+    },
+    {
+      "name": "KPI1_LABEL",
+      "kind": "scalar",
+      "group": "kpi1"
+    },
+    {
+      "name": "KPI2_VALUE",
+      "kind": "scalar",
+      "group": "kpi2"
+    },
+    {
+      "name": "KPI2_LABEL",
+      "kind": "scalar",
+      "group": "kpi2"
+    },
+    {
+      "name": "KPI3_VALUE",
+      "kind": "scalar",
+      "group": "kpi3"
+    },
+    {
+      "name": "KPI3_LABEL",
+      "kind": "scalar",
+      "group": "kpi3"
+    }
+  ],
+  "groups": {
+    "col1": {
+      "ids": [
+        4,
+        5,
+        6
+      ],
+      "control_slot": "COL1_HEADER"
+    },
+    "col2": {
+      "ids": [
+        7,
+        8,
+        9
+      ],
+      "control_slot": "COL2_HEADER"
+    },
+    "col3": {
+      "ids": [
+        10,
+        11,
+        12
+      ],
+      "control_slot": "COL3_HEADER"
+    },
+    "kpi1": {
+      "ids": [
+        13,
+        14,
+        15
+      ],
+      "control_slot": "KPI1_VALUE"
+    },
+    "kpi2": {
+      "ids": [
+        16,
+        17,
+        18
+      ],
+      "control_slot": "KPI2_VALUE"
+    },
+    "kpi3": {
+      "ids": [
+        19,
+        20,
+        21
+      ],
+      "control_slot": "KPI3_VALUE"
+    }
+  },
+  "tables": []
+}

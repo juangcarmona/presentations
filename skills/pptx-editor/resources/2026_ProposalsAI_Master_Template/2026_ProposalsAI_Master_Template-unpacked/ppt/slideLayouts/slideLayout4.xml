@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="utf-8"?>
+<p:sldLayout xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:p="http://schemas.openxmlformats.org/presentationml/2006/main" preserve="1" userDrawn="1">
+  <p:cSld name="6. Content">
+    <p:spTree>
+      <p:nvGrpSpPr>
+        <p:cNvPr id="1" name=""/>
+        <p:cNvGrpSpPr/>
+        <p:nvPr/>
+      </p:nvGrpSpPr>
+      <p:grpSpPr>
+        <a:xfrm>
+          <a:off x="0" y="0"/>
+          <a:ext cx="0" cy="0"/>
+          <a:chOff x="0" y="0"/>
+          <a:chExt cx="0" cy="0"/>
+        </a:xfrm>
+      </p:grpSpPr>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="4" name="Content Placeholder 3">
+            <a:extLst>
+              <a:ext uri="{FF2B5EF4-FFF2-40B4-BE49-F238E27FC236}">
+                <a16:creationId xmlns:a16="http://schemas.microsoft.com/office/drawing/2014/main" id="{937EB2EB-0E41-4260-B6D6-490A1B969142}"/>
+              </a:ext>
+            </a:extLst>
+          </p:cNvPr>
+          <p:cNvSpPr>
+            <a:spLocks noGrp="1"/>
+          </p:cNvSpPr>
+          <p:nvPr>
+            <p:ph sz="quarter" idx="10"/>
+          </p:nvPr>
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="575074" y="1085295"/>
+            <a:ext cx="7904558" cy="3364719"/>
+          </a:xfrm>
+          <a:prstGeom prst="rect">
+            <a:avLst/>
+          </a:prstGeom>
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr/>
+          <a:lstStyle>
+            <a:lvl1pPr>
+              <a:buClr>
+                <a:srgbClr val="326FFF"/>
+              </a:buClr>
+              <a:defRPr sz="1500">
+                <a:latin typeface="Outfit Medium" charset="0"/>
+              </a:defRPr>
+            </a:lvl1pPr>
+            <a:lvl2pPr>
+              <a:buClr>
+                <a:srgbClr val="326FFF"/>
+              </a:buClr>
+              <a:defRPr sz="1350">
+                <a:latin typeface="Outfit Medium" charset="0"/>
+              </a:defRPr>
+            </a:lvl2pPr>
+            <a:lvl3pPr>
+              <a:buClr>
+                <a:srgbClr val="326FFF"/>
+              </a:buClr>
+              <a:defRPr sz="1200">
+                <a:latin typeface="Outfit Medium" charset="0"/>
+              </a:defRPr>
+            </a:lvl3pPr>
+            <a:lvl4pPr>
+              <a:buClr>
+                <a:srgbClr val="326FFF"/>
+              </a:buClr>
+              <a:defRPr sz="1050">
+                <a:latin typeface="Outfit Medium" charset="0"/>
+              </a:defRPr>
+            </a:lvl4pPr>
+            <a:lvl5pPr>
+              <a:buClr>
+                <a:srgbClr val="326FFF"/>
+              </a:buClr>
+              <a:defRPr sz="1050">
+                <a:latin typeface="Outfit Medium" charset="0"/>
+              </a:defRPr>
+            </a:lvl5pPr>
+          </a:lstStyle>
+          <a:p>
+            <a:pPr lvl="0"/>
+            <a:r>
+              <a:rPr lang="es-ES"/>
+              <a:t>Haga clic para modificar los estilos de texto del patrón</a:t>
+            </a:r>
+          </a:p>
+          <a:p>
+            <a:pPr lvl="1"/>
+            <a:r>
+              <a:rPr lang="es-ES"/>
+              <a:t>Segundo nivel</a:t>
+            </a:r>
+          </a:p>
+          <a:p>
+            <a:pPr lvl="2"/>
+            <a:r>
+              <a:rPr lang="es-ES"/>
+              <a:t>Tercer nivel</a:t>
+            </a:r>
+          </a:p>
+          <a:p>
+            <a:pPr lvl="3"/>
+            <a:r>
+              <a:rPr lang="es-ES"/>
+              <a:t>Cuarto nivel</a:t>
+            </a:r>
+          </a:p>
+          <a:p>
+            <a:pPr lvl="4"/>
+            <a:r>
+              <a:rPr lang="es-ES"/>
+              <a:t>Quinto nivel</a:t>
+            </a:r>
+            <a:endParaRPr lang="en-US"/>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+      <p:grpSp>
+        <p:nvGrpSpPr>
+          <p:cNvPr id="2" name="Grupo 1">
+            <a:extLst>
+              <a:ext uri="{FF2B5EF4-FFF2-40B4-BE49-F238E27FC236}">
+                <a16:creationId xmlns:a16="http://schemas.microsoft.com/office/drawing/2014/main" id="{3C604589-5B35-0FC1-16D1-609C1EA269C7}"/>
+              </a:ext>
+            </a:extLst>
+          </p:cNvPr>
+          <p:cNvGrpSpPr/>
+          <p:nvPr userDrawn="1"/>
+        </p:nvGrpSpPr>
+        <p:grpSpPr>
+          <a:xfrm>
+            <a:off x="8269941" y="316005"/>
+            <a:ext cx="514591" cy="201345"/>
+            <a:chOff x="5483301" y="3891121"/>
+            <a:chExt cx="652698" cy="255382"/>
+          </a:xfrm>
+        </p:grpSpPr>
+        <p:pic>
+          <p:nvPicPr>
+            <p:cNvPr id="6" name="Imagen 5">
+              <a:extLst>
+                <a:ext uri="{FF2B5EF4-FFF2-40B4-BE49-F238E27FC236}">
+                  <a16:creationId xmlns:a16="http://schemas.microsoft.com/office/drawing/2014/main" id="{6BC5FE52-BB5D-4FBC-8117-E34EBEB247DF}"/>
+                </a:ext>
+              </a:extLst>
+            </p:cNvPr>
+            <p:cNvPicPr>
+              <a:picLocks noChangeAspect="1"/>
+            </p:cNvPicPr>
+            <p:nvPr userDrawn="1"/>
+          </p:nvPicPr>
+          <p:blipFill>
+            <a:blip r:embed="rId2">
+              <a:extLst>
+                <a:ext uri="{28A0092B-C50C-407E-A947-70E740481C1C}">
+                  <a14:useLocalDpi xmlns:a14="http://schemas.microsoft.com/office/drawing/2010/main"/>
+                </a:ext>
+              </a:extLst>
+            </a:blip>
+            <a:stretch>
+              <a:fillRect/>
+            </a:stretch>
+          </p:blipFill>
+          <p:spPr>
+            <a:xfrm>
+              <a:off x="5483301" y="3891121"/>
+              <a:ext cx="638455" cy="255382"/>
+            </a:xfrm>
+            <a:prstGeom prst="rect">
+              <a:avLst/>
+            </a:prstGeom>
+          </p:spPr>
+        </p:pic>
+        <p:pic>
+          <p:nvPicPr>
+            <p:cNvPr id="7" name="Imagen 6">
+              <a:extLst>
+                <a:ext uri="{FF2B5EF4-FFF2-40B4-BE49-F238E27FC236}">
+                  <a16:creationId xmlns:a16="http://schemas.microsoft.com/office/drawing/2014/main" id="{27CA945A-A69C-89C1-D0EC-9E214476115A}"/>
+                </a:ext>
+              </a:extLst>
+            </p:cNvPr>
+            <p:cNvPicPr>
+              <a:picLocks noChangeAspect="1"/>
+            </p:cNvPicPr>
+            <p:nvPr userDrawn="1"/>
+          </p:nvPicPr>
+          <p:blipFill>
+            <a:blip r:embed="rId3">
+              <a:extLst>
+                <a:ext uri="{28A0092B-C50C-407E-A947-70E740481C1C}">
+                  <a14:useLocalDpi xmlns:a14="http://schemas.microsoft.com/office/drawing/2010/main"/>
+                </a:ext>
+              </a:extLst>
+            </a:blip>
+            <a:stretch>
+              <a:fillRect/>
+            </a:stretch>
+          </p:blipFill>
+          <p:spPr>
+            <a:xfrm>
+              <a:off x="6053392" y="3924300"/>
+              <a:ext cx="82607" cy="82607"/>
+            </a:xfrm>
+            <a:prstGeom prst="rect">
+              <a:avLst/>
+            </a:prstGeom>
+          </p:spPr>
+        </p:pic>
+      </p:grpSp>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="5" name="Subtitle 2">
+            <a:extLst>
+              <a:ext uri="{FF2B5EF4-FFF2-40B4-BE49-F238E27FC236}">
+                <a16:creationId xmlns:a16="http://schemas.microsoft.com/office/drawing/2014/main" id="{D86799A5-46EF-4EB5-BE79-E55CAB43DC26}"/>
+              </a:ext>
+            </a:extLst>
+          </p:cNvPr>
+          <p:cNvSpPr>
+            <a:spLocks noGrp="1"/>
+          </p:cNvSpPr>
+          <p:nvPr>
+            <p:ph type="subTitle" idx="1" hasCustomPrompt="1"/>
+          </p:nvPr>
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="217885" y="452339"/>
+            <a:ext cx="4354115" cy="327422"/>
+          </a:xfrm>
+          <a:prstGeom prst="rect">
+            <a:avLst/>
+          </a:prstGeom>
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr anchor="ctr">
+            <a:noAutofit/>
+          </a:bodyPr>
+          <a:lstStyle>
+            <a:lvl1pPr marL="0" indent="0" algn="l">
+              <a:buNone/>
+              <a:defRPr sz="1500" spc="0">
+                <a:solidFill>
+                  <a:schemeClr val="tx1"/>
+                </a:solidFill>
+                <a:latin typeface="Outfit SemiBold" charset="0"/>
+                <a:ea typeface="Open Sans Light" panose="020B0306030504020204" pitchFamily="34" charset="0"/>
+                <a:cs typeface="Open Sans Light" panose="020B0306030504020204" pitchFamily="34" charset="0"/>
+              </a:defRPr>
+            </a:lvl1pPr>
+            <a:lvl2pPr marL="342900" indent="0" algn="ctr">
+              <a:buNone/>
+              <a:defRPr sz="1500"/>
+            </a:lvl2pPr>
+            <a:lvl3pPr marL="685800" indent="0" algn="ctr">
+              <a:buNone/>
+              <a:defRPr sz="1350"/>
+            </a:lvl3pPr>
+            <a:lvl4pPr marL="1028700" indent="0" algn="ctr">
+              <a:buNone/>
+              <a:defRPr sz="1200"/>
+            </a:lvl4pPr>
+            <a:lvl5pPr marL="1371600" indent="0" algn="ctr">
+              <a:buNone/>
+              <a:defRPr sz="1200"/>
+            </a:lvl5pPr>
+            <a:lvl6pPr marL="1714500" indent="0" algn="ctr">
+              <a:buNone/>
+              <a:defRPr sz="1200"/>
+            </a:lvl6pPr>
+            <a:lvl7pPr marL="2057400" indent="0" algn="ctr">
+              <a:buNone/>
+              <a:defRPr sz="1200"/>
+            </a:lvl7pPr>
+            <a:lvl8pPr marL="2400300" indent="0" algn="ctr">
+              <a:buNone/>
+              <a:defRPr sz="1200"/>
+            </a:lvl8pPr>
+            <a:lvl9pPr marL="2743200" indent="0" algn="ctr">
+              <a:buNone/>
+              <a:defRPr sz="1200"/>
+            </a:lvl9pPr>
+          </a:lstStyle>
+          <a:p>
+            <a:r>
+              <a:rPr lang="en-US"/>
+              <a:t>Title</a:t>
+            </a:r>
+            <a:endParaRPr lang="en-MY"/>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+    </p:spTree>
+    <p:extLst>
+      <p:ext uri="{BB962C8B-B14F-4D97-AF65-F5344CB8AC3E}">
+        <p14:creationId xmlns:p14="http://schemas.microsoft.com/office/powerpoint/2010/main" val="1894331259"/>
+      </p:ext>
+    </p:extLst>
+  </p:cSld>
+  <p:clrMapOvr>
+    <a:masterClrMapping/>
+  </p:clrMapOvr>
+</p:sldLayout>

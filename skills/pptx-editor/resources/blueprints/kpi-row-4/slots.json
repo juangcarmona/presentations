@@ -1,0 +1,149 @@
+{
+  "layout": "kpi-row-4",
+  "source": "offerings",
+  "slide": "slide15.xml",
+  "media": [
+    "image4.png"
+  ],
+  "slots": [
+    {
+      "name": "SECTION",
+      "kind": "scalar"
+    },
+    {
+      "name": "TITLE",
+      "kind": "scalar"
+    },
+    {
+      "name": "SUBTITLE",
+      "kind": "scalar"
+    },
+    {
+      "name": "KPI1_VALUE",
+      "kind": "scalar",
+      "group": "kpi1"
+    },
+    {
+      "name": "KPI1_LABEL",
+      "kind": "scalar",
+      "group": "kpi1"
+    },
+    {
+      "name": "KPI1_DESC",
+      "kind": "scalar",
+      "group": "kpi1"
+    },
+    {
+      "name": "KPI1_SOURCE",
+      "kind": "scalar",
+      "group": "kpi1"
+    },
+    {
+      "name": "KPI2_VALUE",
+      "kind": "scalar",
+      "group": "kpi2"
+    },
+    {
+      "name": "KPI2_LABEL",
+      "kind": "scalar",
+      "group": "kpi2"
+    },
+    {
+      "name": "KPI2_DESC",
+      "kind": "scalar",
+      "group": "kpi2"
+    },
+    {
+      "name": "KPI2_SOURCE",
+      "kind": "scalar",
+      "group": "kpi2"
+    },
+    {
+      "name": "KPI3_VALUE",
+      "kind": "scalar",
+      "group": "kpi3"
+    },
+    {
+      "name": "KPI3_LABEL",
+      "kind": "scalar",
+      "group": "kpi3"
+    },
+    {
+      "name": "KPI3_DESC",
+      "kind": "scalar",
+      "group": "kpi3"
+    },
+    {
+      "name": "KPI3_SOURCE",
+      "kind": "scalar",
+      "group": "kpi3"
+    },
+    {
+      "name": "KPI4_VALUE",
+      "kind": "scalar",
+      "group": "kpi4"
+    },
+    {
+      "name": "KPI4_LABEL",
+      "kind": "scalar",
+      "group": "kpi4"
+    },
+    {
+      "name": "KPI4_DESC",
+      "kind": "scalar",
+      "group": "kpi4"
+    },
+    {
+      "name": "KPI4_SOURCE",
+      "kind": "scalar",
+      "group": "kpi4"
+    },
+    {
+      "name": "INSIGHT",
+      "kind": "scalar"
+    }
+  ],
+  "groups": {
+    "kpi1": {
+      "ids": [
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "control_slot": "KPI1_VALUE"
+    },
+    "kpi2": {
+      "ids": [
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "control_slot": "KPI2_VALUE"
+    },
+    "kpi3": {
+      "ids": [
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "control_slot": "KPI3_VALUE"
+    },
+    "kpi4": {
+      "ids": [
+        20,
+        21,
+        22,
+        23,
+        24
+      ],
+      "control_slot": "KPI4_VALUE"
+    }
+  },
+  "tables": []
+}

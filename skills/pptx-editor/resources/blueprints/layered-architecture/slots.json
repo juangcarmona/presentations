@@ -1,0 +1,81 @@
+{
+  "layout": "layered-architecture",
+  "source": "offerings",
+  "slide": "slide49.xml",
+  "media": [
+    "image4.png"
+  ],
+  "slots": [
+    {
+      "name": "SECTION",
+      "kind": "scalar"
+    },
+    {
+      "name": "TITLE",
+      "kind": "scalar"
+    },
+    {
+      "name": "LAYER1",
+      "kind": "scalar",
+      "group": "l1"
+    },
+    {
+      "name": "LAYER2",
+      "kind": "scalar",
+      "group": "l2"
+    },
+    {
+      "name": "LAYER3",
+      "kind": "scalar",
+      "group": "l3"
+    },
+    {
+      "name": "LAYER4",
+      "kind": "scalar",
+      "group": "l4"
+    },
+    {
+      "name": "LAYER5",
+      "kind": "scalar",
+      "group": "l5"
+    }
+  ],
+  "groups": {
+    "l1": {
+      "ids": [
+        4,
+        5
+      ],
+      "control_slot": "LAYER1"
+    },
+    "l2": {
+      "ids": [
+        6,
+        7
+      ],
+      "control_slot": "LAYER2"
+    },
+    "l3": {
+      "ids": [
+        8,
+        9
+      ],
+      "control_slot": "LAYER3"
+    },
+    "l4": {
+      "ids": [
+        10,
+        11
+      ],
+      "control_slot": "LAYER4"
+    },
+    "l5": {
+      "ids": [
+        12,
+        13
+      ],
+      "control_slot": "LAYER5"
+    }
+  },
+  "tables": []
+}

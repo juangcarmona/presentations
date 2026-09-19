@@ -1,0 +1,26 @@
+{
+  "layout": "pricing-table",
+  "source": "master",
+  "slide": "slide37.xml",
+  "media": [
+    "image8.png"
+  ],
+  "slots": [
+    {
+      "name": "SECTION",
+      "kind": "scalar"
+    },
+    {
+      "name": "TITLE",
+      "kind": "scalar"
+    }
+  ],
+  "groups": {},
+  "tables": [
+    {
+      "name": "RATES",
+      "header_rows": 1,
+      "cols": 4
+    }
+  ]
+}

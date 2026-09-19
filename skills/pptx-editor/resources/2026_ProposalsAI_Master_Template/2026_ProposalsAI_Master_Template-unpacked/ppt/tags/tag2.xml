@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<p:tagLst xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:p="http://schemas.openxmlformats.org/presentationml/2006/main">
+  <p:tag name="MIO_DBID" val="B15D55BA-4C00-4206-9FBB-5BE4A269F5FE"/>
+  <p:tag name="MIO_EKGUID" val="4154da53-594e-4718-832f-95104a53edf9"/>
+  <p:tag name="MIO_GUID" val="7d2611d3-f272-491b-8a3a-d013e1e00272"/>
+  <p:tag name="MIO_LASTDOWNLOADED" val="19.10.2023 13:23:06.212"/>
+  <p:tag name="MIO_LASTEDITORNAME" val="Chema de la Vega Gimenez"/>
+  <p:tag name="MIO_OBJECTNAME" val="Our Hybrid Team Composition"/>
+  <p:tag name="MIO_UPDATE" val="True"/>
+  <p:tag name="MIO_VERSION" val="11.10.2023 09:37:16"/>
+</p:tagLst>

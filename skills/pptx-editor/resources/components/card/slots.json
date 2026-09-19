@@ -1,0 +1,25 @@
+{
+  "source": "manual",
+  "slide": "(generated)",
+  "media": [],
+  "slots": [
+    {
+      "name": "CARD_HEADER",
+      "kind": "scalar"
+    },
+    {
+      "name": "CARD_BODY",
+      "kind": "list"
+    }
+  ],
+  "groups": {},
+  "tables": [],
+  "component": "card",
+  "component_box": {
+    "w": 4.3,
+    "h": 3.25
+  },
+  "capacity": {
+    "CARD_BODY": 5
+  }
+}

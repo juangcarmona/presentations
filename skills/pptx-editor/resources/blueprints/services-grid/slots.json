@@ -1,0 +1,147 @@
+{
+  "layout": "services-grid",
+  "source": "master",
+  "slide": "slide39.xml",
+  "media": [
+    "image18.png",
+    "image21.png",
+    "image25.png",
+    "image24.png",
+    "image12.png",
+    "image23.png",
+    "image8.png"
+  ],
+  "slots": [
+    {
+      "name": "SECTION",
+      "kind": "scalar"
+    },
+    {
+      "name": "TITLE",
+      "kind": "scalar"
+    },
+    {
+      "name": "S1_NAME",
+      "kind": "scalar",
+      "group": "s1"
+    },
+    {
+      "name": "S1_DESC",
+      "kind": "scalar",
+      "group": "s1"
+    },
+    {
+      "name": "S2_NAME",
+      "kind": "scalar",
+      "group": "s2"
+    },
+    {
+      "name": "S2_DESC",
+      "kind": "scalar",
+      "group": "s2"
+    },
+    {
+      "name": "S3_NAME",
+      "kind": "scalar",
+      "group": "s3"
+    },
+    {
+      "name": "S3_DESC",
+      "kind": "scalar",
+      "group": "s3"
+    },
+    {
+      "name": "S4_NAME",
+      "kind": "scalar",
+      "group": "s4"
+    },
+    {
+      "name": "S4_DESC",
+      "kind": "scalar",
+      "group": "s4"
+    },
+    {
+      "name": "S5_NAME",
+      "kind": "scalar",
+      "group": "s5"
+    },
+    {
+      "name": "S5_DESC",
+      "kind": "scalar",
+      "group": "s5"
+    },
+    {
+      "name": "S6_NAME",
+      "kind": "scalar",
+      "group": "s6"
+    },
+    {
+      "name": "S6_DESC",
+      "kind": "scalar",
+      "group": "s6"
+    }
+  ],
+  "groups": {
+    "s1": {
+      "ids": [
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "control_slot": "S1_NAME"
+    },
+    "s2": {
+      "ids": [
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "control_slot": "S2_NAME"
+    },
+    "s3": {
+      "ids": [
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "control_slot": "S3_NAME"
+    },
+    "s4": {
+      "ids": [
+        21,
+        22,
+        23,
+        24,
+        25
+      ],
+      "control_slot": "S4_NAME"
+    },
+    "s5": {
+      "ids": [
+        26,
+        27,
+        28,
+        29,
+        30
+      ],
+      "control_slot": "S5_NAME"
+    },
+    "s6": {
+      "ids": [
+        31,
+        32,
+        33,
+        34,
+        35
+      ],
+      "control_slot": "S6_NAME"
+    }
+  },
+  "tables": []
+}

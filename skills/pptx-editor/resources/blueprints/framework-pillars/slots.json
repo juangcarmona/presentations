@@ -1,0 +1,101 @@
+{
+  "layout": "framework-pillars",
+  "source": "manual",
+  "slide": "(generated)",
+  "media": [
+    "image8.png"
+  ],
+  "slots": [
+    {
+      "name": "SECTION",
+      "kind": "scalar"
+    },
+    {
+      "name": "TITLE",
+      "kind": "scalar"
+    },
+    {
+      "name": "HUB",
+      "kind": "scalar"
+    },
+    {
+      "name": "PILLAR1_HEADER",
+      "kind": "scalar",
+      "group": "pillar1"
+    },
+    {
+      "name": "PILLAR1_BODY",
+      "kind": "scalar",
+      "group": "pillar1"
+    },
+    {
+      "name": "PILLAR2_HEADER",
+      "kind": "scalar",
+      "group": "pillar2"
+    },
+    {
+      "name": "PILLAR2_BODY",
+      "kind": "scalar",
+      "group": "pillar2"
+    },
+    {
+      "name": "PILLAR3_HEADER",
+      "kind": "scalar",
+      "group": "pillar3"
+    },
+    {
+      "name": "PILLAR3_BODY",
+      "kind": "scalar",
+      "group": "pillar3"
+    },
+    {
+      "name": "PILLAR4_HEADER",
+      "kind": "scalar",
+      "group": "pillar4"
+    },
+    {
+      "name": "PILLAR4_BODY",
+      "kind": "scalar",
+      "group": "pillar4"
+    }
+  ],
+  "groups": {
+    "pillar1": {
+      "ids": [
+        1004,
+        1005,
+        1006,
+        1007
+      ],
+      "control_slot": "PILLAR1_HEADER"
+    },
+    "pillar2": {
+      "ids": [
+        1008,
+        1009,
+        1010,
+        1011
+      ],
+      "control_slot": "PILLAR2_HEADER"
+    },
+    "pillar3": {
+      "ids": [
+        1012,
+        1013,
+        1014,
+        1015
+      ],
+      "control_slot": "PILLAR3_HEADER"
+    },
+    "pillar4": {
+      "ids": [
+        1016,
+        1017,
+        1018,
+        1019
+      ],
+      "control_slot": "PILLAR4_HEADER"
+    }
+  },
+  "tables": []
+}

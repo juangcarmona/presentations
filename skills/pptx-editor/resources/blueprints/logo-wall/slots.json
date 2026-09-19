@@ -1,0 +1,93 @@
+{
+  "layout": "logo-wall",
+  "source": "offerings",
+  "slide": "slide47.xml",
+  "media": [
+    "image4.png"
+  ],
+  "slots": [
+    {
+      "name": "SECTION",
+      "kind": "scalar"
+    },
+    {
+      "name": "TITLE",
+      "kind": "scalar"
+    },
+    {
+      "name": "LOGO1",
+      "kind": "scalar",
+      "group": "logo1"
+    },
+    {
+      "name": "LOGO2",
+      "kind": "scalar",
+      "group": "logo2"
+    },
+    {
+      "name": "LOGO3",
+      "kind": "scalar",
+      "group": "logo3"
+    },
+    {
+      "name": "LOGO4",
+      "kind": "scalar",
+      "group": "logo4"
+    },
+    {
+      "name": "LOGO5",
+      "kind": "scalar",
+      "group": "logo5"
+    },
+    {
+      "name": "LOGO6",
+      "kind": "scalar",
+      "group": "logo6"
+    }
+  ],
+  "groups": {
+    "logo1": {
+      "ids": [
+        4,
+        5
+      ],
+      "control_slot": "LOGO1"
+    },
+    "logo2": {
+      "ids": [
+        6,
+        7
+      ],
+      "control_slot": "LOGO2"
+    },
+    "logo3": {
+      "ids": [
+        8,
+        9
+      ],
+      "control_slot": "LOGO3"
+    },
+    "logo4": {
+      "ids": [
+        10,
+        11
+      ],
+      "control_slot": "LOGO4"
+    },
+    "logo5": {
+      "ids": [
+        12,
+        13
+      ],
+      "control_slot": "LOGO5"
+    },
+    "logo6": {
+      "ids": [
+        14,
+        15
+      ],
+      "control_slot": "LOGO6"
+    }
+  },
+  "tables": []
+}

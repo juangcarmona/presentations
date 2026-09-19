@@ -1,0 +1,101 @@
+{
+  "layout": "icon-list-split",
+  "source": "master",
+  "slide": "slide17.xml",
+  "media": [
+    "image8.png"
+  ],
+  "slots": [
+    {
+      "name": "SECTION",
+      "kind": "scalar"
+    },
+    {
+      "name": "TITLE",
+      "kind": "scalar"
+    },
+    {
+      "name": "INTRO",
+      "kind": "scalar"
+    },
+    {
+      "name": "ROW1_LABEL",
+      "kind": "scalar",
+      "group": "row1"
+    },
+    {
+      "name": "ROW1_VALUE",
+      "kind": "scalar",
+      "group": "row1"
+    },
+    {
+      "name": "ROW2_LABEL",
+      "kind": "scalar",
+      "group": "row2"
+    },
+    {
+      "name": "ROW2_VALUE",
+      "kind": "scalar",
+      "group": "row2"
+    },
+    {
+      "name": "ROW3_LABEL",
+      "kind": "scalar",
+      "group": "row3"
+    },
+    {
+      "name": "ROW3_VALUE",
+      "kind": "scalar",
+      "group": "row3"
+    },
+    {
+      "name": "ROW4_LABEL",
+      "kind": "scalar",
+      "group": "row4"
+    },
+    {
+      "name": "ROW4_VALUE",
+      "kind": "scalar",
+      "group": "row4"
+    },
+    {
+      "name": "DISCLAIMER",
+      "kind": "scalar"
+    }
+  ],
+  "groups": {
+    "row1": {
+      "ids": [
+        7,
+        8,
+        9
+      ],
+      "control_slot": "ROW1_LABEL"
+    },
+    "row2": {
+      "ids": [
+        10,
+        11,
+        12
+      ],
+      "control_slot": "ROW2_LABEL"
+    },
+    "row3": {
+      "ids": [
+        13,
+        14,
+        15
+      ],
+      "control_slot": "ROW3_LABEL"
+    },
+    "row4": {
+      "ids": [
+        16,
+        17,
+        18
+      ],
+      "control_slot": "ROW4_LABEL"
+    }
+  },
+  "tables": []
+}

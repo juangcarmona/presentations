@@ -1,0 +1,141 @@
+{
+  "layout": "team-photos",
+  "source": "offerings",
+  "slide": "slide40.xml",
+  "media": [
+    "image4.png"
+  ],
+  "slots": [
+    {
+      "name": "SECTION",
+      "kind": "scalar"
+    },
+    {
+      "name": "TITLE",
+      "kind": "scalar"
+    },
+    {
+      "name": "MEMBER1_NAME",
+      "kind": "scalar",
+      "group": "m1"
+    },
+    {
+      "name": "MEMBER1_ROLE",
+      "kind": "scalar",
+      "group": "m1"
+    },
+    {
+      "name": "MEMBER1_BIO",
+      "kind": "scalar",
+      "group": "m1"
+    },
+    {
+      "name": "MEMBER1_PHOTO",
+      "kind": "scalar",
+      "group": "m1"
+    },
+    {
+      "name": "MEMBER2_NAME",
+      "kind": "scalar",
+      "group": "m2"
+    },
+    {
+      "name": "MEMBER2_ROLE",
+      "kind": "scalar",
+      "group": "m2"
+    },
+    {
+      "name": "MEMBER2_BIO",
+      "kind": "scalar",
+      "group": "m2"
+    },
+    {
+      "name": "MEMBER2_PHOTO",
+      "kind": "scalar",
+      "group": "m2"
+    },
+    {
+      "name": "MEMBER3_NAME",
+      "kind": "scalar",
+      "group": "m3"
+    },
+    {
+      "name": "MEMBER3_ROLE",
+      "kind": "scalar",
+      "group": "m3"
+    },
+    {
+      "name": "MEMBER3_BIO",
+      "kind": "scalar",
+      "group": "m3"
+    },
+    {
+      "name": "MEMBER3_PHOTO",
+      "kind": "scalar",
+      "group": "m3"
+    },
+    {
+      "name": "MEMBER4_NAME",
+      "kind": "scalar",
+      "group": "m4"
+    },
+    {
+      "name": "MEMBER4_ROLE",
+      "kind": "scalar",
+      "group": "m4"
+    },
+    {
+      "name": "MEMBER4_BIO",
+      "kind": "scalar",
+      "group": "m4"
+    },
+    {
+      "name": "MEMBER4_PHOTO",
+      "kind": "scalar",
+      "group": "m4"
+    }
+  ],
+  "groups": {
+    "m1": {
+      "ids": [
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "control_slot": "MEMBER1_NAME"
+    },
+    "m2": {
+      "ids": [
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "control_slot": "MEMBER2_NAME"
+    },
+    "m3": {
+      "ids": [
+        14,
+        15,
+        16,
+        17,
+        18
+      ],
+      "control_slot": "MEMBER3_NAME"
+    },
+    "m4": {
+      "ids": [
+        19,
+        20,
+        21,
+        22,
+        23
+      ],
+      "control_slot": "MEMBER4_NAME"
+    }
+  },
+  "tables": []
+}

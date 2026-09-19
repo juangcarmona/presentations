@@ -1,0 +1,285 @@
+{
+  "layout": "quarterly-roadmap",
+  "source": "offerings",
+  "slide": "slide54.xml",
+  "media": [
+    "image4.png"
+  ],
+  "slots": [
+    {
+      "name": "SECTION",
+      "kind": "scalar"
+    },
+    {
+      "name": "TITLE",
+      "kind": "scalar"
+    },
+    {
+      "name": "Q1_C1_TITLE",
+      "kind": "scalar",
+      "group": "q1c1"
+    },
+    {
+      "name": "Q1_C1_DESC",
+      "kind": "scalar",
+      "group": "q1c1"
+    },
+    {
+      "name": "Q1_C2_TITLE",
+      "kind": "scalar",
+      "group": "q1c2"
+    },
+    {
+      "name": "Q1_C2_DESC",
+      "kind": "scalar",
+      "group": "q1c2"
+    },
+    {
+      "name": "Q1_C3_TITLE",
+      "kind": "scalar",
+      "group": "q1c3"
+    },
+    {
+      "name": "Q1_C3_DESC",
+      "kind": "scalar",
+      "group": "q1c3"
+    },
+    {
+      "name": "Q2_C1_TITLE",
+      "kind": "scalar",
+      "group": "q2c1"
+    },
+    {
+      "name": "Q2_C1_DESC",
+      "kind": "scalar",
+      "group": "q2c1"
+    },
+    {
+      "name": "Q2_C2_TITLE",
+      "kind": "scalar",
+      "group": "q2c2"
+    },
+    {
+      "name": "Q2_C2_DESC",
+      "kind": "scalar",
+      "group": "q2c2"
+    },
+    {
+      "name": "Q2_C3_TITLE",
+      "kind": "scalar",
+      "group": "q2c3"
+    },
+    {
+      "name": "Q2_C3_DESC",
+      "kind": "scalar",
+      "group": "q2c3"
+    },
+    {
+      "name": "Q3_C1_TITLE",
+      "kind": "scalar",
+      "group": "q3c1"
+    },
+    {
+      "name": "Q3_C1_DESC",
+      "kind": "scalar",
+      "group": "q3c1"
+    },
+    {
+      "name": "Q3_C2_TITLE",
+      "kind": "scalar",
+      "group": "q3c2"
+    },
+    {
+      "name": "Q3_C2_DESC",
+      "kind": "scalar",
+      "group": "q3c2"
+    },
+    {
+      "name": "Q3_C3_TITLE",
+      "kind": "scalar",
+      "group": "q3c3"
+    },
+    {
+      "name": "Q3_C3_DESC",
+      "kind": "scalar",
+      "group": "q3c3"
+    },
+    {
+      "name": "Q4_C1_TITLE",
+      "kind": "scalar",
+      "group": "q4c1"
+    },
+    {
+      "name": "Q4_C1_DESC",
+      "kind": "scalar",
+      "group": "q4c1"
+    },
+    {
+      "name": "Q4_C2_TITLE",
+      "kind": "scalar",
+      "group": "q4c2"
+    },
+    {
+      "name": "Q4_C2_DESC",
+      "kind": "scalar",
+      "group": "q4c2"
+    },
+    {
+      "name": "Q4_C3_TITLE",
+      "kind": "scalar",
+      "group": "q4c3"
+    },
+    {
+      "name": "Q4_C3_DESC",
+      "kind": "scalar",
+      "group": "q4c3"
+    }
+  ],
+  "groups": {
+    "q1c1": {
+      "ids": [
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "control_slot": "Q1_C1_TITLE"
+    },
+    "q1c2": {
+      "ids": [
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "control_slot": "Q1_C2_TITLE"
+    },
+    "q1c3": {
+      "ids": [
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26
+      ],
+      "control_slot": "Q1_C3_TITLE"
+    },
+    "q2c1": {
+      "ids": [
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35
+      ],
+      "control_slot": "Q2_C1_TITLE"
+    },
+    "q2c2": {
+      "ids": [
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42
+      ],
+      "control_slot": "Q2_C2_TITLE"
+    },
+    "q2c3": {
+      "ids": [
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49
+      ],
+      "control_slot": "Q2_C3_TITLE"
+    },
+    "q3c1": {
+      "ids": [
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58
+      ],
+      "control_slot": "Q3_C1_TITLE"
+    },
+    "q3c2": {
+      "ids": [
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65
+      ],
+      "control_slot": "Q3_C2_TITLE"
+    },
+    "q3c3": {
+      "ids": [
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72
+      ],
+      "control_slot": "Q3_C3_TITLE"
+    },
+    "q4c1": {
+      "ids": [
+        75,
+        76,
+        77,
+        78,
+        79,
+        80,
+        81
+      ],
+      "control_slot": "Q4_C1_TITLE"
+    },
+    "q4c2": {
+      "ids": [
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88
+      ],
+      "control_slot": "Q4_C2_TITLE"
+    },
+    "q4c3": {
+      "ids": [
+        89,
+        90,
+        91,
+        92,
+        93,
+        94,
+        95
+      ],
+      "control_slot": "Q4_C3_TITLE"
+    }
+  },
+  "tables": []
+}

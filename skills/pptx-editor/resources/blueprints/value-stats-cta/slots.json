@@ -1,0 +1,125 @@
+{
+  "layout": "value-stats-cta",
+  "source": "sermes",
+  "slide": "slide5.xml",
+  "media": [
+    "image4.png",
+    "image8.png",
+    "image7.png",
+    "image6.png",
+    "image5.png"
+  ],
+  "slots": [
+    {
+      "name": "SECTION",
+      "kind": "scalar"
+    },
+    {
+      "name": "TITLE",
+      "kind": "scalar"
+    },
+    {
+      "name": "STAT1",
+      "kind": "scalar",
+      "group": "stat1"
+    },
+    {
+      "name": "STAT1_LABEL",
+      "kind": "scalar",
+      "group": "stat1"
+    },
+    {
+      "name": "STAT1_DESC",
+      "kind": "scalar",
+      "group": "stat1"
+    },
+    {
+      "name": "STAT2",
+      "kind": "scalar",
+      "group": "stat2"
+    },
+    {
+      "name": "STAT2_LABEL",
+      "kind": "scalar",
+      "group": "stat2"
+    },
+    {
+      "name": "STAT2_DESC",
+      "kind": "scalar",
+      "group": "stat2"
+    },
+    {
+      "name": "STAT3",
+      "kind": "scalar",
+      "group": "stat3"
+    },
+    {
+      "name": "STAT3_LABEL",
+      "kind": "scalar",
+      "group": "stat3"
+    },
+    {
+      "name": "STAT3_DESC",
+      "kind": "scalar",
+      "group": "stat3"
+    },
+    {
+      "name": "PANEL_TITLE",
+      "kind": "scalar",
+      "group": "panel"
+    },
+    {
+      "name": "PANEL_LEFT",
+      "kind": "scalar",
+      "group": "panel"
+    },
+    {
+      "name": "PANEL_RIGHT",
+      "kind": "scalar",
+      "group": "panel"
+    }
+  ],
+  "groups": {
+    "stat1": {
+      "ids": [
+        8,
+        9,
+        11,
+        12,
+        13
+      ],
+      "control_slot": "STAT1"
+    },
+    "stat2": {
+      "ids": [
+        14,
+        15,
+        17,
+        18,
+        19
+      ],
+      "control_slot": "STAT2"
+    },
+    "stat3": {
+      "ids": [
+        20,
+        21,
+        23,
+        24,
+        25
+      ],
+      "control_slot": "STAT3"
+    },
+    "panel": {
+      "ids": [
+        26,
+        27,
+        29,
+        30,
+        31
+      ],
+      "control_slot": "PANEL_TITLE"
+    }
+  },
+  "tables": []
+}

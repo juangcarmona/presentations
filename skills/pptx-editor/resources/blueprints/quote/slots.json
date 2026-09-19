@@ -1,0 +1,20 @@
+{
+  "layout": "quote",
+  "source": "offerings",
+  "slide": "slide33.xml",
+  "media": [
+    "image5.png"
+  ],
+  "slots": [
+    {
+      "name": "QUOTE",
+      "kind": "scalar"
+    },
+    {
+      "name": "ATTRIB",
+      "kind": "scalar"
+    }
+  ],
+  "groups": {},
+  "tables": []
+}

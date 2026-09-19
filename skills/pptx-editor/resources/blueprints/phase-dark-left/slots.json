@@ -1,0 +1,145 @@
+{
+  "layout": "phase-dark-left",
+  "source": "master",
+  "slide": "slide15.xml",
+  "media": [
+    "image8.png"
+  ],
+  "slots": [
+    {
+      "name": "PHASE_LABEL",
+      "kind": "scalar"
+    },
+    {
+      "name": "TITLE",
+      "kind": "scalar"
+    },
+    {
+      "name": "SUBTITLE",
+      "kind": "scalar"
+    },
+    {
+      "name": "LEAD",
+      "kind": "scalar"
+    },
+    {
+      "name": "TAG1",
+      "kind": "scalar",
+      "group": "tag1"
+    },
+    {
+      "name": "TAG2",
+      "kind": "scalar",
+      "group": "tag2"
+    },
+    {
+      "name": "TAG3",
+      "kind": "scalar",
+      "group": "tag3"
+    },
+    {
+      "name": "RIGHT_TITLE",
+      "kind": "scalar"
+    },
+    {
+      "name": "STEP1_HEAD",
+      "kind": "scalar",
+      "group": "step1"
+    },
+    {
+      "name": "STEP1_DESC",
+      "kind": "scalar",
+      "group": "step1"
+    },
+    {
+      "name": "STEP2_HEAD",
+      "kind": "scalar",
+      "group": "step2"
+    },
+    {
+      "name": "STEP2_DESC",
+      "kind": "scalar",
+      "group": "step2"
+    },
+    {
+      "name": "STEP3_HEAD",
+      "kind": "scalar",
+      "group": "step3"
+    },
+    {
+      "name": "STEP3_DESC",
+      "kind": "scalar",
+      "group": "step3"
+    },
+    {
+      "name": "STEP4_HEAD",
+      "kind": "scalar",
+      "group": "step4"
+    },
+    {
+      "name": "STEP4_DESC",
+      "kind": "scalar",
+      "group": "step4"
+    }
+  ],
+  "groups": {
+    "tag1": {
+      "ids": [
+        7,
+        8
+      ],
+      "control_slot": "TAG1"
+    },
+    "tag2": {
+      "ids": [
+        9,
+        10
+      ],
+      "control_slot": "TAG2"
+    },
+    "tag3": {
+      "ids": [
+        11,
+        12
+      ],
+      "control_slot": "TAG3"
+    },
+    "step1": {
+      "ids": [
+        14,
+        15,
+        16,
+        17
+      ],
+      "control_slot": "STEP1_HEAD"
+    },
+    "step2": {
+      "ids": [
+        18,
+        19,
+        20,
+        21
+      ],
+      "control_slot": "STEP2_HEAD"
+    },
+    "step3": {
+      "ids": [
+        22,
+        23,
+        24,
+        25
+      ],
+      "control_slot": "STEP3_HEAD"
+    },
+    "step4": {
+      "ids": [
+        26,
+        27,
+        28,
+        29
+      ],
+      "control_slot": "STEP4_HEAD"
+    }
+  },
+  "tables": []
+}

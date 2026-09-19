@@ -1,0 +1,78 @@
+{
+  "layout": "three-col-cards",
+  "source": "master",
+  "slide": "slide13.xml",
+  "media": [
+    "image8.png"
+  ],
+  "slots": [
+    {
+      "name": "SECTION",
+      "kind": "scalar"
+    },
+    {
+      "name": "TITLE",
+      "kind": "scalar"
+    },
+    {
+      "name": "CARD1_HEADER",
+      "kind": "scalar",
+      "group": "card1"
+    },
+    {
+      "name": "CARD1_BODY",
+      "kind": "list",
+      "group": "card1"
+    },
+    {
+      "name": "CARD2_HEADER",
+      "kind": "scalar",
+      "group": "card2"
+    },
+    {
+      "name": "CARD2_BODY",
+      "kind": "list",
+      "group": "card2"
+    },
+    {
+      "name": "CARD3_HEADER",
+      "kind": "scalar",
+      "group": "card3"
+    },
+    {
+      "name": "CARD3_BODY",
+      "kind": "list",
+      "group": "card3"
+    }
+  ],
+  "groups": {
+    "card1": {
+      "ids": [
+        6,
+        7,
+        8,
+        9
+      ],
+      "control_slot": "CARD1_HEADER"
+    },
+    "card2": {
+      "ids": [
+        10,
+        11,
+        12,
+        13
+      ],
+      "control_slot": "CARD2_HEADER"
+    },
+    "card3": {
+      "ids": [
+        14,
+        15,
+        16,
+        17
+      ],
+      "control_slot": "CARD3_HEADER"
+    }
+  },
+  "tables": []
+}

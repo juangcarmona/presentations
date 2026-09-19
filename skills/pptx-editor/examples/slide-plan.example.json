@@ -1,0 +1,314 @@
+{
+  "collab": "fixed_price",
+  "flags": {
+    "has_discovery": false,
+    "phased": true,
+    "is_brownfield": false
+  },
+  "included_slides": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    38,
+    39,
+    40,
+    41,
+    42
+  ],
+  "generated_count": 8,
+  "slides": [
+    {
+      "n": 1,
+      "type": "placeholder",
+      "file": "slide1.xml",
+      "placeholders": [
+        "[Date]",
+        "[Presentation Title]",
+        "[Client]"
+      ]
+    },
+    {
+      "n": 2,
+      "type": "copy-as-is",
+      "file": "slide2.xml"
+    },
+    {
+      "n": 3,
+      "type": "copy-as-is",
+      "file": "slide3.xml"
+    },
+    {
+      "n": 4,
+      "type": "copy-as-is",
+      "file": "slide4.xml"
+    },
+    {
+      "n": 5,
+      "type": "placeholder",
+      "file": "slide5.xml",
+      "placeholders": [
+        "[Enter the client project context here]"
+      ]
+    },
+    {
+      "n": 6,
+      "type": "placeholder",
+      "file": "slide6.xml",
+      "placeholders": [
+        "[Requirements summary]",
+        "[Expected proposal]",
+        "[Business objectives]",
+        "[Target users]",
+        "[Initial technical requirements]"
+      ]
+    },
+    {
+      "n": 7,
+      "type": "copy-as-is",
+      "file": "slide7.xml"
+    },
+    {
+      "n": 8,
+      "type": "generated",
+      "file": "slide8.xml",
+      "blueprint": "three-col-cards",
+      "section": "our-solution",
+      "context_keys": [
+        "objectives",
+        "epics"
+      ]
+    },
+    {
+      "n": 9,
+      "type": "generated",
+      "file": "slide9.xml",
+      "blueprint": "three-col-cards",
+      "section": "indicative-scope",
+      "context_keys": [
+        "epics",
+        "phases"
+      ]
+    },
+    {
+      "n": 10,
+      "type": "generated",
+      "file": "slide10.xml",
+      "blueprint": "two-col-text-callout",
+      "section": "out-of-scope",
+      "context_keys": [
+        "epics",
+        "objectives"
+      ]
+    },
+    {
+      "n": 11,
+      "type": "generated",
+      "file": "slide11.xml",
+      "blueprint": "icon-list-split",
+      "section": "risks",
+      "context_keys": [
+        "risks"
+      ]
+    },
+    {
+      "n": 12,
+      "type": "generated",
+      "file": "slide12.xml",
+      "blueprint": "icon-list-split",
+      "section": "prerequisites",
+      "context_keys": [
+        "risks",
+        "prerequisites"
+      ]
+    },
+    {
+      "n": 13,
+      "type": "copy-as-is",
+      "file": "slide13.xml"
+    },
+    {
+      "n": 14,
+      "type": "placeholder",
+      "file": "slide14.xml",
+      "placeholders": []
+    },
+    {
+      "n": 15,
+      "type": "copy-as-is",
+      "file": "slide15.xml"
+    },
+    {
+      "n": 16,
+      "type": "copy-as-is",
+      "file": "slide16.xml"
+    },
+    {
+      "n": 17,
+      "type": "copy-as-is",
+      "file": "slide17.xml"
+    },
+    {
+      "n": 18,
+      "type": "copy-as-is",
+      "file": "slide18.xml"
+    },
+    {
+      "n": 19,
+      "type": "copy-as-is",
+      "file": "slide19.xml"
+    },
+    {
+      "n": 21,
+      "type": "placeholder",
+      "file": "slide21.xml",
+      "placeholders": [
+        "[Technology 1]",
+        "[Technology 2]",
+        "[Technology 3]",
+        "[Technology 4]",
+        "[Technology 5]",
+        "[Technology 6]",
+        "[Insert detailed technical diagram — Cloud, DataPipelines, Monitoring, ML Models]"
+      ]
+    },
+    {
+      "n": 22,
+      "type": "generated",
+      "file": "slide22.xml",
+      "blueprint": "icon-list-split",
+      "section": "technology-solution",
+      "context_keys": [
+        "technologies",
+        "epics"
+      ]
+    },
+    {
+      "n": 23,
+      "type": "copy-as-is",
+      "file": "slide23.xml"
+    },
+    {
+      "n": 24,
+      "type": "generated",
+      "file": "slide24.xml",
+      "blueprint": "phase-dark-left",
+      "section": "phases",
+      "context_keys": [
+        "phases",
+        "team"
+      ]
+    },
+    {
+      "n": 25,
+      "type": "placeholder",
+      "file": "slide25.xml",
+      "placeholders": []
+    },
+    {
+      "n": 26,
+      "type": "generated",
+      "file": "slide26.xml",
+      "blueprint": "icon-list-split",
+      "section": "prerequisites-and-dependencies",
+      "context_keys": [
+        "risks",
+        "prerequisites"
+      ]
+    },
+    {
+      "n": 28,
+      "type": "copy-as-is",
+      "file": "slide28.xml"
+    },
+    {
+      "n": 29,
+      "type": "copy-as-is",
+      "file": "slide29.xml"
+    },
+    {
+      "n": 30,
+      "type": "copy-as-is",
+      "file": "slide30.xml"
+    },
+    {
+      "n": 31,
+      "type": "copy-as-is",
+      "file": "slide31.xml"
+    },
+    {
+      "n": 32,
+      "type": "copy-as-is",
+      "file": "slide32.xml"
+    },
+    {
+      "n": 33,
+      "type": "copy-as-is",
+      "file": "slide33.xml"
+    },
+    {
+      "n": 34,
+      "type": "copy-as-is",
+      "file": "slide34.xml"
+    },
+    {
+      "n": 35,
+      "type": "copy-as-is",
+      "file": "slide35.xml"
+    },
+    {
+      "n": 38,
+      "type": "copy-as-is",
+      "file": "slide38.xml"
+    },
+    {
+      "n": 39,
+      "type": "copy-as-is",
+      "file": "slide39.xml"
+    },
+    {
+      "n": 40,
+      "type": "copy-as-is",
+      "file": "slide40.xml"
+    },
+    {
+      "n": 41,
+      "type": "copy-as-is",
+      "file": "slide41.xml"
+    },
+    {
+      "n": 42,
+      "type": "copy-as-is",
+      "file": "slide42.xml"
+    }
+  ]
+}

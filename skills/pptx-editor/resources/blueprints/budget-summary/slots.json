@@ -1,0 +1,92 @@
+{
+  "layout": "budget-summary",
+  "source": "master",
+  "slide": "slide35.xml",
+  "media": [
+    "image22.png",
+    "image8.png"
+  ],
+  "slots": [
+    {
+      "name": "SECTION",
+      "kind": "scalar"
+    },
+    {
+      "name": "TITLE",
+      "kind": "scalar"
+    },
+    {
+      "name": "DESGLOSE_TITLE",
+      "kind": "scalar"
+    },
+    {
+      "name": "DESGLOSE_DESC",
+      "kind": "scalar"
+    },
+    {
+      "name": "M1_LABEL",
+      "kind": "scalar",
+      "group": "m1"
+    },
+    {
+      "name": "M1_VALUE",
+      "kind": "scalar",
+      "group": "m1"
+    },
+    {
+      "name": "M2_LABEL",
+      "kind": "scalar",
+      "group": "m2"
+    },
+    {
+      "name": "M2_VALUE",
+      "kind": "scalar",
+      "group": "m2"
+    },
+    {
+      "name": "M3_LABEL",
+      "kind": "scalar",
+      "group": "m3"
+    },
+    {
+      "name": "M3_VALUE",
+      "kind": "scalar",
+      "group": "m3"
+    },
+    {
+      "name": "TOTAL",
+      "kind": "scalar"
+    },
+    {
+      "name": "TOTAL_NOTE",
+      "kind": "scalar"
+    }
+  ],
+  "groups": {
+    "m1": {
+      "ids": [
+        10,
+        11,
+        12
+      ],
+      "control_slot": "M1_LABEL"
+    },
+    "m2": {
+      "ids": [
+        13,
+        14,
+        15
+      ],
+      "control_slot": "M2_LABEL"
+    },
+    "m3": {
+      "ids": [
+        16,
+        17,
+        18
+      ],
+      "control_slot": "M3_LABEL"
+    }
+  },
+  "tables": []
+}

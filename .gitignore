@@ -1,0 +1,15 @@
+# Dependencies and generated Slidev output
+**/node_modules/
+**/dist/
+**/.slidev/
+**/.vite/
+
+# Local caches and generated exports
+**/.cache/
+**/_outputs/
+**/working/
+
+# OS/editor noise
+.DS_Store
+Thumbs.db
+.vscode/
