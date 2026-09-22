@@ -3,6 +3,7 @@
 **/dist/
 **/.slidev/
 **/.vite/
+talks/**/deck/*.pdf
 
 # Local caches and generated exports
 **/.cache/
