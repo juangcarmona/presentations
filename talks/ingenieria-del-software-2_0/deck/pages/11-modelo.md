@@ -4,7 +4,7 @@ layout: default
 
 <div class="plain-section-label">Product Definition as Code</div>
 
-# El modelo: qué se define y cómo se relaciona
+# Qué escribimos del producto, y cómo se conecta
 
 <div class="mt-2 flex justify-center">
   <img src="/pdac-2-product-definition-model.png" alt="PDaC-2: actores, journeys, casos de uso, reglas de negocio, dominio, requisitos y comportamiento estructurado" class="max-h-[370px] w-auto rounded-lg">

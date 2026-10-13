@@ -4,7 +4,7 @@ layout: default
 
 <div class="plain-section-label">Product Definition as Code</div>
 
-# Autoridad en una dirección, aprendizaje en las dos
+# Producto decide. La entrega aprende y propone.
 
 <div class="mt-2 flex justify-center">
   <img src="/pdac-authority-and-learning.png" alt="Product thinking, accepted product definition y delivery: autoridad hacia abajo, evidencia y Product Changes propuestos hacia arriba" class="max-h-[360px] w-auto rounded-lg">

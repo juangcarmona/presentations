@@ -6,12 +6,12 @@ density: normal
 
 # Ingeniería del Software 2.0
 
-| Fase | La IA ayuda a… | Lo que la mantiene en su sitio |
+| Fase | La IA ayuda a… | Engineering toolkit |
 |---|---|---|
 | Código | Trabajar con el contexto del proyecto | Instrucciones, skills · guardarraíles duros |
 | Producto | Mantener la intención y su impacto | PDaC · citas verificadas en CI |
 | Arquitectura | Respetar decisiones y límites | arc42 · ADRs · tests de arquitectura |
-| Desarrollo | Implementar y revisar | Flujo agéntico · capa determinista |
+| Desarrollo | Implementar y revisar | Flujo agéntico · puertas y revisión |
 | Validación | Generar y mantener los e2e | Escenarios trazables · evidencia |
 
 <!--

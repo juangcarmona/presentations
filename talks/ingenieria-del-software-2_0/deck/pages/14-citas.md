@@ -4,10 +4,9 @@ layout: default
 
 <div class="plain-section-label">Product Definition as Code</div>
 
-# PDaC detecta la deriva. Quien consume decide.
 
 <div class="mt-2 flex justify-center">
-  <img src="/pdac-5-citation-and-drift.png" alt="PDaC-5: estados de cita current, stale, unresolved y tampered, y escenario de deriva controlado por personas" class="max-h-[370px] w-auto rounded-lg">
+  <img src="/pdac-5-citation-and-drift.png" alt="PDaC-5: estados de cita current, stale, unresolved y tampered, y escenario de deriva controlado por personas" class="max-h-[440px] w-auto rounded-lg">
 </div>
 
 <!--

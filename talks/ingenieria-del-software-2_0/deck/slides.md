@@ -84,10 +84,6 @@ src: ./pages/17-flujo-agentico.md
 ---
 
 ---
-src: ./pages/18-capa-determinista.md
----
-
----
 src: ./pages/19-validacion.md
 ---
 
