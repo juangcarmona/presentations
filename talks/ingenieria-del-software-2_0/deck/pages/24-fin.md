@@ -1,28 +1,15 @@
 ---
-layout: default
+layout: main-cover-2
+year: ¿Preguntas?
+tagline: jgcarmona.com · linkedin.com/in/juangcarmona · pdac.dev
 ---
 
-<div class="grid h-full grid-cols-[2fr_3fr] items-center gap-12">
-  <div class="flex justify-center">
-    <img src="/juan.jpg" alt="Juan García Carmona" class="h-60 w-60 rounded-full border-4 border-[#2F69FF] object-cover">
-  </div>
-  <div>
-    <div class="plain-section-label">¿Preguntas?</div>
-    <h1>Juan García Carmona</h1>
-    <p class="text-lg text-[#6B7280]">Software Architect · AI Strategist · Plain Concepts</p>
-    <ul class="mt-4 text-base">
-      <li>Más de 20 años desarrollando software</li>
-      <li>Sistemas críticos y seguros</li>
-      <li>Autor de Product Definition as Code y agent-toolkit</li>
-    </ul>
-    <div class="mt-6 flex flex-col gap-1 text-base font-semibold">
-      <a href="https://jgcarmona.com">jgcarmona.com</a>
-      <a href="https://www.linkedin.com/in/juangcarmona/">linkedin.com/in/juangcarmona</a>
-      <a href="https://pdac.dev">pdac.dev</a>
-    </div>
-  </div>
-</div>
+# Juan García Carmona
+
+Software Architect · AI Strategist · Plain Concepts
+
+<img src="/juan.jpg" alt="Juan García Carmona" class="absolute right-28 top-1/2 h-60 w-60 -translate-y-1/2 rounded-full border-4 border-[#2F69FF] object-cover shadow-xl">
 
 <!--
-Gracias. Abrir preguntas. Dejar esta diapositiva puesta durante el turno de preguntas para que quien quiera pueda apuntar los enlaces.
+Gracias. Más de veinte años desarrollando software; autor de Product Definition as Code y de agent-toolkit. Abrir preguntas y dejar esta diapositiva puesta para que quien quiera apunte los enlaces.
 -->
