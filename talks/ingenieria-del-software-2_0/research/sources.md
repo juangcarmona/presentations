@@ -9,6 +9,8 @@
 | [Where Product Definition as Code comes from](https://pdac.dev/articles/what-product-definition-as-code-puts-together/) | Tabla de disciplinas que junta PDaC; "one-way authority, two-way learning" |
 | [I Tried to Prove PDaC Wrong](https://jgcarmona.com/en/i-tried-to-prove-pdac-wrong/) | Caso real: 160 specs en OpenSpec, dos modelos del mismo IVA, regla prohibida y obligatoria en el mismo fichero |
 | [Planos de la Estrella de la Muerte](https://www.youtube.com/watch?v=vsERtDqflfI) | Vídeo de cierre sobre documentación técnica |
+| [Skills for Fabric](https://learn.microsoft.com/en-us/fabric/fundamentals/skills-for-fabric-overview) | Skills oficiales de Microsoft para Fabric; soporte en Claude Code, Copilot CLI, Codex, OpenCode |
+| [Power BI Modeling MCP](https://github.com/microsoft/powerbi-modeling-mcp) | MCP de modelado (preview): medidas, relaciones, DAX, PBIP/TMDL; `--readonly` y confirmación |
 | [arc42](https://arc42.org/) | Los doce bloques de la plantilla de documentación de arquitectura |
 | [`../../soft-and-hard-guardrails/`](../../soft-and-hard-guardrails/) | Blandos vs duros, cuatro superficies de enforcement, ejemplo `dotnet test \| tail` del harness |
 | Repositorio de presentaciones (`AGENTS.md`, `CLAUDE.md`, `skills-lock.json`) | Ejemplo real de repo preparado para agentes |

@@ -13,8 +13,9 @@ Un repaso del ciclo de vida del software con mecanismos para domar a la IA en ca
 | Producto: intención, autoridad, modelo, origen, ProductShape + demo, citas, workflow | 9–15 | 17 |
 | Técnica: arc42 | 16 | 4 |
 | Desarrollo: flujo agéntico (agent-toolkit) | 17 | 5 |
-| Validación: de structured behaviour a e2e, la pirámide | 18–19 | 6 |
-| Vista global, lo que depende de nosotros, vídeo, ponente y preguntas | 20–23 | 8 |
+| Validación: de structured behaviour a e2e, la pirámide | 18–19 | 5 |
+| Power BI y Fabric: lo mismo, en su mundo | 20 | 3 |
+| Vista global, lo que depende de nosotros, vídeo, ponente y preguntas | 21–24 | 7 |
 
 ## Ideas que deben quedar
 

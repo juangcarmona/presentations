@@ -92,6 +92,10 @@ src: ./pages/20-piramide.md
 ---
 
 ---
+src: ./pages/20b-power-bi-fabric.md
+---
+
+---
 src: ./pages/21-vista-global.md
 ---
 
