@@ -8,8 +8,8 @@ Un repaso del ciclo de vida del software con mecanismos para domar a la IA en ca
 | --- | --- | --- |
 | Portada y recorrido | 1–2 | 2 |
 | Código: preparar el repo, guardarraíles, estructura | 3–5 | 9 |
-| Tendencias: SDD | 6 | 3 |
-| Documentación: dos fuentes de verdad, gaps de SDD | 7–8 | 6 |
+| Tendencias: SDD y sus gaps | 6–7 | 6 |
+| Documentación: dos fuentes de verdad | 8 | 3 |
 | Producto: intención, autoridad, modelo, origen, ProductShape + demo, citas, workflow | 9–15 | 17 |
 | Técnica: arc42 | 16 | 4 |
 | Desarrollo: flujo agéntico (agent-toolkit) | 17 | 5 |

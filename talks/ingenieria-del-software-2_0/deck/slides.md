@@ -40,11 +40,11 @@ src: ./pages/06-sdd.md
 ---
 
 ---
-src: ./pages/07-dimensiones.md
+src: ./pages/07-gaps.md
 ---
 
 ---
-src: ./pages/08-gaps.md
+src: ./pages/08-dimensiones.md
 ---
 
 ---
