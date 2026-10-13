@@ -6,15 +6,15 @@ Un repaso del ciclo de vida del software con mecanismos para domar a la IA en ca
 
 | Bloque | Diapositivas | Minutos |
 | --- | --- | --- |
-| Portada y recorrido | 1–2 | 3 |
-| Código: preparar el repo, guardarraíles, estructura | 3–5 | 10 |
+| Portada y recorrido | 1–2 | 2 |
+| Código: preparar el repo, guardarraíles, estructura | 3–5 | 9 |
 | Tendencias: SDD | 6 | 3 |
-| Documentación: dos fuentes de verdad, gaps de SDD | 7–8 | 7 |
-| Producto: la intención, PDaC, origen, ProductShape + demo | 9–12 | 13 |
-| Técnica: arc42 | 13 | 3 |
-| Desarrollo: flujo agéntico, capa determinista | 14–15 | 7 |
-| Validación: de structured behaviour a e2e, la pirámide | 16–17 | 6 |
-| Vista global, lo que depende de nosotros, vídeos, preguntas | 18–21 | 8 |
+| Documentación: dos fuentes de verdad, gaps de SDD | 7–8 | 6 |
+| Producto: intención, autoridad, modelo, origen, ProductShape + demo, citas, workflow | 9–15 | 16 |
+| Técnica: arc42 | 16 | 3 |
+| Desarrollo: flujo agéntico, capa determinista | 17–18 | 7 |
+| Validación: de structured behaviour a e2e, la pirámide | 19–20 | 6 |
+| Vista global, lo que depende de nosotros, vídeo, preguntas | 21–24 | 8 |
 
 ## Ideas que deben quedar
 

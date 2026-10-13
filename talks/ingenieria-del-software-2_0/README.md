@@ -6,7 +6,7 @@ Diseñar, construir y validar productos con IA. Sesión de 60 minutos para desar
 
 Primera edición: Albacete Power BI & Fabric User Group, 14 de octubre de 2026, 19:15, Cervecería La Nena (Albacete). Para otra edición, cambia `date` en la portada (`deck/slides.md`).
 
-Pendiente: copiar `deck/public/lifecycle-overview.svg` (agent-toolkit) y los logos de pdac.dev en `deck/public/pdac/`, y poner el enlace del vídeo en `deck/pages/20-videos.md`.
+Los recursos gráficos de PDaC, ProductShape y agent-toolkit están en `deck/public/`. La diapositiva de cierre incrusta un vídeo de YouTube: necesita conexión en la sala.
 
 ## Idea de la charla
 

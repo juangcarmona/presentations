@@ -52,49 +52,61 @@ src: ./pages/09-intencion.md
 ---
 
 ---
-src: ./pages/10-pdac.md
+src: ./pages/10-autoridad.md
 ---
 
 ---
-src: ./pages/11-origen.md
+src: ./pages/11-modelo.md
 ---
 
 ---
-src: ./pages/12-productshape.md
+src: ./pages/12-origen.md
 ---
 
 ---
-src: ./pages/13-arc42.md
+src: ./pages/13-productshape.md
 ---
 
 ---
-src: ./pages/14-flujo-agentico.md
+src: ./pages/14-citas.md
 ---
 
 ---
-src: ./pages/15-capa-determinista.md
+src: ./pages/15-workflow.md
 ---
 
 ---
-src: ./pages/16-validacion.md
+src: ./pages/16-arc42.md
 ---
 
 ---
-src: ./pages/17-piramide.md
+src: ./pages/17-flujo-agentico.md
 ---
 
 ---
-src: ./pages/18-vista-global.md
+src: ./pages/18-capa-determinista.md
 ---
 
 ---
-src: ./pages/19-nosotros.md
+src: ./pages/19-validacion.md
 ---
 
 ---
-src: ./pages/20-videos.md
+src: ./pages/20-piramide.md
 ---
 
 ---
-src: ./pages/21-fin.md
+src: ./pages/21-vista-global.md
+---
+
+---
+src: ./pages/22-nosotros.md
+---
+
+---
+src: ./pages/23-videos.md
+---
+
+---
+src: ./pages/24-fin.md
 ---
