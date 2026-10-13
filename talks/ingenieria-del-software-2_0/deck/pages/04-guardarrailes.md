@@ -21,7 +21,7 @@ layout: default
   </div>
 </div>
 
-<div class="flex-1 rounded-2xl border-2 p-8" style="border-color:#F3385933; background:#F338590d">
+<div v-click class="flex-1 rounded-2xl border-2 p-8" style="border-color:#F3385933; background:#F338590d">
   <p class="text-xs font-bold uppercase tracking-widest" style="color:#F33859">Duros</p>
   <h3 class="mt-3 text-2xl font-bold text-[#333333]">Bloquean</h3>
   <p class="mt-3 text-base text-[#6B7280] leading-relaxed">La herramienta se niega a continuar si se rompe la regla.</p>
@@ -38,5 +38,5 @@ layout: default
 </div>
 
 <!--
-Guardarraíles: restricciones que mantienen los cambios dentro de límites aceptables. Los blandos guían: la regla existe, pero nada impide ignorarla. Los duros bloquean: la herramienta se niega a continuar. Cuatro superficies para los duros: build, commit, CI y la nueva, el harness del agente, que intercepta lo que el agente intenta hacer. Ejemplo real: el agente encadena dotnet test con tail; en una tubería el código de salida es el de tail, y un test rojo informa verde. El hook lo bloquea antes de ejecutarlo. La cooperación del agente no es evidencia. Algunos blandos merecen volverse duros: cuando una regla importa lo suficiente, se hace ejecutable. Veremos más guardarraíles duros en el resto de la charla: citas de producto en CI y los tests. Más detalle: mi charla de guardarraíles blandos y duros.
+Guardarraíles: restricciones que mantienen los cambios dentro de límites aceptables. Los blandos guían: la regla existe, pero nada impide ignorarla. [clic] Los duros bloquean: la herramienta se niega a continuar. Cuatro superficies para los duros: build, commit, CI y la nueva, el harness del agente, que intercepta lo que el agente intenta hacer. Ejemplo real: el agente encadena dotnet test con tail; en una tubería el código de salida es el de tail, y un test rojo informa verde. El hook lo bloquea antes de ejecutarlo. La cooperación del agente no es evidencia. Algunos blandos merecen volverse duros: cuando una regla importa lo suficiente, se hace ejecutable. Veremos más guardarraíles duros en el resto de la charla: citas de producto en CI y los tests. Más detalle: mi charla de guardarraíles blandos y duros.
 -->
