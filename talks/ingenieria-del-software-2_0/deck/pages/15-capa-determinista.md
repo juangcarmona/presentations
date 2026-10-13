@@ -2,7 +2,7 @@
 layout: default
 ---
 
-<div class="plain-section-label">Guardarraíles · capa determinista</div>
+<div class="plain-section-label">Desarrollo · capa determinista</div>
 
 # El agente es probabilista. El framework, determinista.
 
@@ -34,5 +34,5 @@ layout: default
 </div>
 
 <!--
-La consola anterior era un guardarraíl duro sobre un comando. Esto es lo mismo aplicado a todo el flujo. El framework orquesta con código y esquemas; el LLM no decide el camino. Los scripts validan el ticket, validan la estructura y las evidencias de la entrega y aplican el veredicto del revisor. Los agentes solo hacen lo que es probabilista: implementar y auditar criterios. Si el revisor pide cambios, el flujo vuelve a Dev con el resultado de la revisión, pero con un techo duro: un contador compartido por ticket. Agotado, el ticket queda Blocked y vuelve a refinement o a una persona. Ejemplo de herramienta: Microsoft Conductor. Madurez: el framework está implementado; el contador, a medias. Frase de cierre: el workflow y sus controles son deterministas; lo que genera el agente, no. El código fija qué entra, qué sale y cuándo parar.
+El hook del harness era un guardarraíl duro sobre un comando. Esto es lo mismo aplicado a todo el flujo de implementación. El framework orquesta con código y esquemas; el LLM no decide el camino. Los scripts validan el ticket, validan la estructura y las evidencias de la entrega y aplican el veredicto del revisor. Los agentes solo hacen lo que es probabilista: implementar y auditar criterios. Si el revisor pide cambios, el flujo vuelve a Dev con el resultado de la revisión, pero con un techo duro: un contador compartido por ticket. Agotado, el ticket queda Blocked y vuelve a refinement o a una persona. Ejemplo de herramienta: Microsoft Conductor. Madurez: el framework está implementado; el contador, a medias. Frase de cierre: el workflow y sus controles son deterministas; lo que genera el agente, no. El código fija qué entra, qué sale y cuándo parar.
 -->

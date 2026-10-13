@@ -2,9 +2,9 @@
 layout: default
 ---
 
-<div class="plain-section-label">Anillo 3 · Producto</div>
+<div class="plain-section-label">Product Definition as Code</div>
 
-# Product Definition as Code
+# Autoridad en una dirección, aprendizaje en las dos
 
 <div class="mt-6 grid grid-cols-[5fr_1.4fr_6fr] items-center gap-3 text-sm">
   <div class="overflow-hidden rounded-lg border-2 border-[#333333] bg-white">
