@@ -52,45 +52,53 @@ src: ./pages/09-consola.md
 ---
 
 ---
-src: ./pages/10-sdd.md
+src: ./pages/10-capa-determinista.md
 ---
 
 ---
-src: ./pages/11-pdac.md
+src: ./pages/11-sdd.md
 ---
 
 ---
-src: ./pages/12-regla.md
+src: ./pages/12-pdac.md
 ---
 
 ---
-src: ./pages/13-gherkin.md
+src: ./pages/13-regla.md
 ---
 
 ---
-src: ./pages/14-piramide.md
+src: ./pages/14-gherkin.md
 ---
 
 ---
-src: ./pages/15-evidencia.md
+src: ./pages/15-piramide.md
 ---
 
 ---
-src: ./pages/16-operacion.md
+src: ./pages/16-evidencia.md
 ---
 
 ---
-src: ./pages/17-ejercicio.md
+src: ./pages/17-operacion.md
 ---
 
 ---
-src: ./pages/18-bucle.md
+src: ./pages/18-ejercicio.md
 ---
 
 ---
-src: ./pages/19-nosotros.md
+src: ./pages/19-bucle.md
 ---
 
 ---
-src: ./pages/20-fin.md
+src: ./pages/20-big-picture.md
+---
+
+---
+src: ./pages/21-nosotros.md
+---
+
+---
+src: ./pages/22-fin.md
 ---

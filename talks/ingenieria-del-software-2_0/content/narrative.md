@@ -21,14 +21,15 @@ Los guardarraíles no son un anillo: aparecen donde hacen falta (junto al códig
 
 | Bloque | Diapositivas | Minutos |
 | --- | --- | --- |
-| Apertura: el cuello de botella se mueve, mapa y ejemplo | 1–4 | 6 |
-| Anillo 1: repo preparado para agentes, arc42, instrucciones | 5–7 | 10 |
-| Guardarraíles blandos y duros, ejemplo del harness | 8–9 | 7 |
-| Anillos 2 y 3: SDD, divergencia y PDaC | 10–12 | 10 |
-| Anillo 4: tests como guardarraíles, la pirámide | 13–14 | 7 |
-| Anillos 5 y 6: evidencia y operación | 15–16 | 6 |
-| Ejercicio: 30 → 14 días y el bucle de cada cambio | 17–18 | 8 |
-| Cierre y preguntas | 19–20 | 6 |
+| Apertura: el cuello de botella se mueve, mapa y ejemplo | 1–4 | 5 |
+| Anillo 1: repo preparado para agentes, arc42, instrucciones | 5–7 | 9 |
+| Guardarraíles: blandos y duros, harness y capa determinista | 8–10 | 9 |
+| Anillos 2 y 3: SDD, divergencia y PDaC | 11–13 | 9 |
+| Anillo 4: tests como guardarraíles, la pirámide | 14–15 | 6 |
+| Anillos 5 y 6: evidencia y operación | 16–17 | 5 |
+| Ejercicio: 30 → 14 días y el bucle de cada cambio | 18–19 | 7 |
+| Big picture: cinco etapas, dos KB, un contrato | 20 | 4 |
+| Cierre y preguntas | 21–22 | 6 |
 
 ## Ideas que deben quedar
 
@@ -39,4 +40,6 @@ Los guardarraíles no son un anillo: aparecen donde hacen falta (junto al códig
 - Los tests son guardarraíles conectados con la intención; el escenario es intocable para el agente.
 - La evidencia da fundamento a la revisión humana; no la sustituye.
 - Producción propone cambios de producto; no los impone.
+- El agente es probabilista; el framework, determinista: el código fija qué entra, qué sale y cuándo parar.
+- Cinco etapas, dos bases de conocimiento (negocio = docs/product, técnica = docs/architecture) y un contrato: el ticket.
 - plan → test → implement → review → verify → remember → improve: los dos últimos hacen que el sistema aprenda.
