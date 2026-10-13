@@ -8,7 +8,7 @@ transition: slide-left
 mdc: true
 layout: main-cover-1
 background: /bg-cover-1.jpg
-date: Juan García Carmona · Albacete Power BI & Fabric User Group · 14 oct 2026
+date: Juan G. Carmona · Albacete Power BI & Fabric User Group · 14 oct 2026
 ---
 
 # Ingeniería del Software 2.0
