@@ -27,11 +27,13 @@ El `.pptx` exportado del borrador vive en `deck/_outputs/`, que el repositorio i
 
 ```bash
 cd talks/ingenieria-del-software-2_0/deck
-pnpm install
+pnpm install --frozen-lockfile
 pnpm dev      # vista previa
 pnpm build    # comprobación determinista
 pnpm export   # PDF
 ```
+
+`pnpm-lock.yaml` está versionado y parte del de `soft-and-hard-guardrails`: con `@slidev/cli@latest`, una resolución limpia trae `markdown-it@15`, que rompe `@comark/markdown-it` (`ERR_PACKAGE_PATH_NOT_EXPORTED: ./lib/token.mjs`). No borres el lockfile; usa `pnpm install --frozen-lockfile`.
 
 `public/bg-cover-1.jpg` es la imagen de portada del tema `chapter-plain` (la exige el layout `main-cover-1`).
 
