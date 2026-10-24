@@ -35,7 +35,20 @@ These are plain Markdown definitions so an agent harness can expose them using i
 
 ## Current talks
 
+- The public catalogue is built from this repository and is intended for [`talks.jgcarmona.com`](https://talks.jgcarmona.com/).
 - [Soft & Hard Guardrails](talks/soft-and-hard-guardrails/README.md) — a Slidev talk using the Plain Concepts Chapters theme.
+- [Ingeniería del Software 2.0](talks/ingenieria-del-software-2_0/README.md) — a talk about building and validating software with AI.
+
+## Public catalogue
+
+The root application is a small React/Vite catalogue. It is deliberately separate from each talk: the talk directories remain the canonical source, while the catalogue provides the public index and links back to the editable material.
+
+```bash
+npm install
+npm run dev
+```
+
+Use `npm run build` to produce the static site and `npm run preview` to inspect that build locally.
 
 ## Tooling
 
