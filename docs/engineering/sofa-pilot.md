@@ -8,6 +8,10 @@ The catalogue source, talk sources and owner-authored issue define the scope of 
 
 Use the supervised route. Propose labels only if they already exist in the repository; an empty label proposal is valid when none applies. The owner remains `juangcarmona`; assessment confidence and unavailable evidence must be explicit. Triage completes when the change is classified with a route, owner, scope, risks and next decision. Implementation/browser checks belong to the later implementation stage, not to triage completion.
 
+For this catalogue story, the outer stage-result evidence and blocker arrays describe completion of the requested triage. Preserve future typecheck, build, keyboard and visual checks under `output.laterAcceptanceChecks`, with their unperformed status; do not list them as unavailable triage checks. If evidence needed to classify the issue is unavailable, retain that blocker and return `blocked`. A `passed` result requires empty `missingEvidence`, `unavailableChecks` and `pendingReview` arrays and only resolved outer evidence. Never turn an unperformed check into a passing check.
+
+SoFa verifies the source commit and workflow identity before execution and again before publication. Cite those request identities as host-supplied provenance; the read-only triage engine does not independently verify them through git or GitHub. Independent verification by the engine is not a triage requirement.
+
 ## Gate decisions
 
 The host accepts an exact `/lh:refine <triage-run-id>` comment from the owner after a passing triage report. That authorizes refinement of the recorded input. It does not authorize implementation or merge. A blocked report requires resolution of its stated blocker and a fresh authorized request.
