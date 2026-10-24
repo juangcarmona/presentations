@@ -5,7 +5,7 @@
 - Baseline: `0.1.0`
 - Product: `presentations`
 - Profiles: `visual-theme`
-- SDLC package: `@juangcarmona/lighthouse-sdlc@0.8.0`
+- SDLC package: `@juangcarmona/lighthouse-sdlc@0.9.0`
 - UI package: `@juangcarmona/lighthouse-ui@0.2.0`
 - ProductShape: not adopted
 - ArcShape: not adopted

@@ -11,6 +11,8 @@ This repository develops technical talks from research through editable deck sou
 
 ## Context map
 
+- For Lighthouse triage, refinement or the SoFa pilot, read `docs/engineering/sofa-pilot.md` for the issue authority, bounded adoption exception and human gates.
+
 - Read `docs/agents/presentations.md` when creating or reorganizing a talk, choosing a deck format, or deciding where source and generated files belong.
 - Use `research` when gathering factual material; store its output under the target talk's `research/` directory.
 - Use `anydoc` when a task needs the contents of an office document (Word, PowerPoint, Excel, PDF, etc.) converted to Markdown.
