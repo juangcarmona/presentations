@@ -1,0 +1,22 @@
+{
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && npm run build:decks && vite build",
+    "build:decks": "node scripts/build-decks.mjs",
+    "preview": "vite preview",
+    "typecheck": "tsc -b --noEmit"
+  },
+  "devDependencies": {
+    "@juangcarmona/lighthouse": "0.9.0",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "@vitejs/plugin-react": "6.1.1",
+    "typescript": "6.0.3",
+    "vite": "8.3.1"
+  },
+  "dependencies": {
+    "@juangcarmona/lighthouse-ui": "0.2.0",
+    "react": "19.3.0",
+    "react-dom": "19.3.0"
+  }
+}

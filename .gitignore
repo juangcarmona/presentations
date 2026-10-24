@@ -1,6 +1,7 @@
 # Dependencies and generated Slidev output
 **/node_modules/
 **/dist/
+public/decks/
 **/.slidev/
 **/.vite/
 talks/**/deck/*.pdf
