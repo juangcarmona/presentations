@@ -1,0 +1,151 @@
+import { test, expect } from '@playwright/test'
+import AxeBuilder from '@axe-core/playwright'
+import { readFileSync, mkdirSync } from 'node:fs'
+
+const baseline = JSON.parse(readFileSync('tests/fixtures/migration.json', 'utf8'))
+const talks = [
+  { slug: 'software-engineering-2_0', directory: 'ingenieria-del-software-2_0', language: 'es', count: 24 },
+  { slug: 'soft-and-hard-guardrails', directory: 'soft-and-hard-guardrails', language: 'en', count: 15 },
+]
+const forward = page => page.keyboard.press('ArrowRight')
+mkdirSync('test-results/captures', { recursive: true })
+
+test('all five directory-index entries, fragments, reloads, history and assets', async ({ page, request }) => {
+  const manifest = await (await request.get('/site-manifest.json')).json()
+  for (const path of manifest.entries) {
+    expect((await request.get(path)).status()).toBe(200)
+    await page.goto(path)
+    await expect(page.locator('h1')).toBeVisible()
+    await page.reload()
+    await expect(page.locator('h1')).toBeVisible()
+    if (path !== '/') {
+      await page.goto(`${path}#scene=unknown`)
+      await expect(page.locator('[data-scene="cover"]')).toBeVisible()
+      await forward(page)
+      await expect(page.locator('[data-scene]')).not.toHaveAttribute('data-scene', 'cover')
+      await page.reload()
+      await expect(page.locator('[data-scene]')).not.toHaveAttribute('data-scene', 'cover')
+      await forward(page)
+      await page.goBack()
+      await expect(page.locator('[role="status"]')).toContainText('2 /')
+      await page.goForward()
+      await expect(page.locator('[role="status"]')).toContainText('3 /')
+    }
+  }
+  for (const asset of manifest.assets) expect((await request.get(asset)).status(), asset).toBe(200)
+  expect((await request.get('/not-a-real-route/')).status()).toBe(404)
+  await page.goto('/')
+  await page.screenshot({ path: 'test-results/captures/catalog-desktop.png', fullPage: true })
+})
+
+for (const talk of talks) for (const theme of ['dark', 'light', 'system']) {
+  test(`${talk.slug}: every scene, exact code, accessibility and ${theme} appearance`, async ({ page }) => {
+    test.setTimeout(120_000)
+    const errors = []
+    page.on('pageerror', error => errors.push(error.message))
+    await page.emulateMedia({ colorScheme: 'dark' })
+    await page.goto(`/${talk.slug}/`)
+    await expect(page.locator('[data-scene="cover"]')).toBeVisible()
+    await page.evaluate(theme => { document.documentElement.dataset.lhTheme = theme }, theme)
+    await expect(page.locator('html')).toHaveAttribute('lang', talk.language)
+    const scenes = baseline.scenes.filter(scene => scene.directory === talk.directory)
+    expect(scenes.length).toBe(talk.count)
+    for (let i = 0; i < scenes.length; i++) {
+      const scene = scenes[i]
+      await expect(page.locator('[data-scene]')).toHaveAttribute('data-scene', scene.id)
+      await expect(page.locator('#scene-title')).toHaveText(scene.title)
+      await expect(page.locator('article')).toHaveCount(1)
+      const code = await page.locator('pre code').allTextContents()
+      for (const block of scene.code) expect(code).toContain(block)
+      const result = await new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa', 'wcag21aa', 'wcag22aa']).analyze()
+      expect(result.violations, `${scene.id}: ${JSON.stringify(result.violations.map(v => ({ id: v.id, nodes: v.nodes.map(n => n.target) })))}`).toEqual([])
+      if (theme === 'dark') await page.screenshot({ path: `test-results/captures/${talk.slug}-${scene.id}.png`, fullPage: true })
+      await page.locator('body').click({ position: { x: 2, y: 2 } })
+      await forward(page)
+    }
+    await expect(page.locator('.scene-controls button').last()).toBeDisabled()
+    await expect(page.locator('[data-scene]')).toHaveAttribute('data-scene', scenes.at(-1).id)
+    expect(errors).toEqual([])
+  })
+}
+
+for (const talk of talks) {
+  test(`${talk.slug}: narrow layout, zoom-equivalent and motion-off`, async ({ page }) => {
+    await page.setViewportSize({ width: 320, height: 720 })
+    await page.emulateMedia({ reducedMotion: 'reduce', colorScheme: 'light' })
+    const scenes = baseline.scenes.filter(scene => scene.directory === talk.directory)
+    for (const scene of scenes) {
+      await page.goto(`/${talk.slug}/#scene=${scene.id}`)
+      await expect(page.locator('[data-scene]')).toHaveAttribute('data-scene', scene.id)
+      expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true)
+      expect(await page.locator('.scene').evaluate(element => getComputedStyle(element).animationDuration)).toBe('0s')
+      if (scene.id === 'cover' || scene.id.includes('console') || ['11-modelo', '24-fin', '14-takeaway'].includes(scene.id)) await page.screenshot({ path: `test-results/captures/${talk.slug}-${scene.id}-320px-motion-off.png`, fullPage: true })
+    }
+    await page.setViewportSize({ width: 1280, height: 900 })
+    await page.goto(`/${talk.slug}/`)
+    await page.locator('body').evaluate(element => { element.style.zoom = '4' })
+    expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true)
+  })
+}
+
+test('keyboard journey, native controls, focus recovery and protected interactive descendants', async ({ page }) => {
+  await page.goto('/')
+  const enter = page.getByRole('link', { name: 'Enter talk' }).first()
+  await enter.focus()
+  await page.keyboard.press('Enter')
+  await expect(page.locator('[data-scene="cover"]')).toBeVisible()
+  const previous = page.locator('.scene-controls button').first()
+  const next = page.locator('.scene-controls button').last()
+  await expect(previous).toBeDisabled()
+  await next.focus()
+  await page.screenshot({ path: 'test-results/captures/navigation-before-focus.png', fullPage: true })
+  await page.keyboard.press('ArrowRight')
+  await expect(page.locator('[data-scene="cover"]')).toBeVisible()
+  await page.keyboard.press('Enter')
+  await expect(page.locator('[data-scene="02-recorrido"]')).toBeVisible()
+  await expect(next).toBeFocused()
+  await page.screenshot({ path: 'test-results/captures/navigation-after-focus.png', fullPage: true })
+  await page.locator('body').click({ position: { x: 2, y: 2 } })
+  await page.keyboard.press('PageDown')
+  await expect(page.locator('[data-scene="03-repo"]')).toBeVisible()
+  await page.keyboard.press('PageUp')
+  await expect(page.locator('[data-scene="02-recorrido"]')).toBeVisible()
+  await page.evaluate(() => {
+    const article = document.querySelector('article')
+    article.insertAdjacentHTML('beforeend', '<div id="interactive-fixture"><a href="#"><span>nested link</span></a><button><span>nested button</span></button><input aria-label="Typing" /><div contenteditable="true">editable</div><div role="slider" tabindex="0"><span>slider</span></div><video controls></video><audio controls></audio><iframe title="fixture frame" src="about:blank"></iframe></div>')
+  })
+  for (const selector of ['a span', 'button span', 'input', '[contenteditable]', '[role="slider"] span', 'video', 'audio', 'iframe']) {
+    const handled = await page.locator(`#interactive-fixture ${selector}`).evaluate(element => {
+      const event = new KeyboardEvent('keydown', { key: 'ArrowRight', bubbles: true, cancelable: true })
+      element.dispatchEvent(event)
+      return event.defaultPrevented
+    })
+    expect(handled, selector).toBe(false)
+  }
+  for (const flag of ['repeat', 'isComposing', 'altKey', 'ctrlKey', 'metaKey', 'shiftKey']) {
+    expect(await page.locator('article').evaluate((element, flag) => {
+      const event = new KeyboardEvent('keydown', { key: 'ArrowRight', bubbles: true, cancelable: true, [flag]: true })
+      element.dispatchEvent(event); return event.defaultPrevented
+    }, flag)).toBe(false)
+  }
+  await page.locator('#interactive-fixture input').focus()
+  await page.evaluate(() => { location.hash = 'scene=03-repo' })
+  await expect(page.locator('#scene-title')).toBeFocused()
+  await expect(page.locator('#interactive-fixture')).toHaveCount(0)
+  await page.getByRole('link', { name: '← Catálogo' }).focus()
+  await page.keyboard.press('Enter')
+  await expect(page).toHaveURL(/\/#catalog$/)
+})
+
+test('external media failure leaves context, source and onward navigation', async ({ page }) => {
+  await page.route('https://www.youtube-nocookie.com/**', route => route.abort())
+  await page.goto('/software-engineering-2_0/#scene=23-videos')
+  await expect(page.getByRole('link', { name: /Ver «Planos/ })).toHaveAttribute('href', 'https://www.youtube.com/watch?v=vsERtDqflfI')
+  await expect(page.getByText(/Si no se reproduce/)).toBeVisible()
+  await page.getByText('Cargar reproductor externo de YouTube').click()
+  await expect(page.locator('iframe')).toHaveAttribute('title', /Planos/)
+  await page.locator('.scene-controls button').last().click()
+  await expect(page.locator('[data-scene="24-fin"]')).toBeVisible()
+  await expect(page.locator('.portrait-fallback')).toBeVisible()
+  await expect(page.locator('img')).toHaveCount(0)
+})

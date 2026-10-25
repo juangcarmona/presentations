@@ -1,0 +1,4 @@
+.guardrail-motif { display: flex; gap: var(--lh-space-8); margin-block: var(--lh-space-8); border-block: 2px solid var(--lh-action); padding: var(--lh-space-8); font: 700 1.5rem var(--lh-font-mono); flex-wrap: wrap; }
+.enforcement-flow { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--lh-space-4); padding: 0; list-style: none; }
+.enforcement-flow li { padding: var(--lh-space-6); border-top: 3px solid var(--lh-action); background: var(--lh-surface); }
+@media (max-width: 600px) { .enforcement-flow { grid-template-columns: 1fr; } }
