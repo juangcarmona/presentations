@@ -24,6 +24,10 @@
     "releases.immutable": {
       "value": null,
       "reason": "No validated draft-and-attach release publisher is configured for this repository."
+    },
+    "actions.workflow": {
+      "value": null,
+      "reason": "Proposal publication requires Actions to create pull requests. GitHub groups creation and approval in one setting; keep default token permissions read-only and manage this opt-in manually. The trusted publisher never approves or merges PRs."
     }
   }
 }
