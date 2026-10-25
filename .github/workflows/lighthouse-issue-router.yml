@@ -33,7 +33,7 @@ jobs:
       - uses: actions/checkout@v5
         with:
           repository: juangcarmona/lighthouse
-          ref: bf1885aedd8ff219ced2868cf93f2f95bf74067f
+          ref: f4df9446efe0f24e5d438068e00284af24303ec0
           persist-credentials: false
       - uses: actions/setup-node@v5
         with:
