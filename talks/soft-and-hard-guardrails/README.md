@@ -20,4 +20,4 @@ Previous/Next, ArrowRight/PageDown and ArrowLeft/PageUp progress without wrappin
 
 Edit JSX, not retired Slidev Markdown. One root public dependency graph builds both talks; there is no talk-local install, private theme or presentation framework. Author notes are not runtime imports. `dist/`, screenshots and reports are generated artifacts. Old Slidev PDF/PowerPoint exports are not supported. Original concept material and installed skills are preserved as research/provenance.
 
-Owner content/visual acceptance of the complete experience remains pending; automated tests do not grant approval.
+The owner accepted the first delivery in PR #38; visual polish is tracked in #39. See the [delivery status and verification limits](../../README.md#delivery-status-and-verification). Automated tests do not replace the remaining manual checks.
