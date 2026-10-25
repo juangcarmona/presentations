@@ -1,8 +1,9 @@
-import { useEffect, useState } from 'react'
+import { lazy, Suspense, useEffect, useMemo, useState } from 'react'
+import Experience from './Experience'
 import { talks } from './talks'
 import type { Talk } from './talk-model'
 
-type Theme = 'dark' | 'light'
+type Theme = 'dark' | 'light' | 'system'
 
 function SiteHeader({ theme, onThemeChange }: { theme: Theme; onThemeChange: () => void }) {
   return (
@@ -19,11 +20,11 @@ function SiteHeader({ theme, onThemeChange }: { theme: Theme; onThemeChange: () 
       <button
         className="theme-toggle"
         type="button"
-        aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
+        aria-label={`Appearance: ${theme}. Change appearance`}
         onClick={onThemeChange}
       >
         <span aria-hidden="true">{theme === 'dark' ? '☼' : '◐'}</span>
-        {theme === 'dark' ? 'Light' : 'Dark'}
+        {theme}
       </button>
     </header>
   )
@@ -41,8 +42,9 @@ function SiteFooter() {
 function Layout({ children, theme, onThemeChange }: { children: React.ReactNode; theme: Theme; onThemeChange: () => void }) {
   return (
     <div className="site-shell">
+      <a className="skip-link" href="#contenido">Skip to content</a>
       <SiteHeader theme={theme} onThemeChange={onThemeChange} />
-      <main id="contenido">{children}</main>
+      <main id="contenido" tabIndex={-1}>{children}</main>
       <SiteFooter />
     </div>
   )
@@ -128,70 +130,11 @@ function TalkCard({ talk }: { talk: Talk }) {
 }
 
 function TalkPage({ talk }: { talk: Talk }) {
-  return (
-    <>
-      <section className="deck-section" aria-labelledby="deck-title">
-        <div className="deck-heading">
-          <div>
-            <p className="kicker"><span>01</span> / the presentation</p>
-            <h2 id="deck-title">The actual talk.</h2>
-          </div>
-          <a className="text-link" href={talk.deckUrl} target="_blank" rel="noreferrer">Open full screen <span aria-hidden="true">↗</span></a>
-        </div>
-        <div className="deck-frame">
-          <iframe title={`${talk.title} presentation`} src={talk.deckUrl} allowFullScreen />
-        </div>
-      </section>
-      <section className="talk-hero" aria-labelledby="talk-title">
-        <div className="talk-hero-copy">
-          <p className="kicker"><span>{talk.number}</span> / {talk.eyebrow}</p>
-          <h1 id="talk-title">{talk.title}</h1>
-          <p className="hero-lede">{talk.description}</p>
-          <div className="hero-actions">
-            <a className="button button-primary" href="#story">Walk the story <span aria-hidden="true">↓</span></a>
-            <a className="text-link" href={talk.readmeUrl}>Read the source <span aria-hidden="true">↗</span></a>
-          </div>
-        </div>
-        <div className="talk-signal" aria-label={`${talk.title} status`}>
-          <span className="signal-dot" />
-          <span>{talk.status}</span>
-          <strong>{talk.number}</strong>
-          <small>{talk.meta.join(' / ')}</small>
-        </div>
-      </section>
-
-      <section className="story-section" id="story" aria-labelledby="story-title">
-        <div className="story-intro">
-          <p className="kicker"><span>02</span> / the thesis</p>
-          <h2 id="story-title">The idea in one move.</h2>
-        </div>
-        <blockquote>{talk.thesis}</blockquote>
-      </section>
-
-      <section className="chapters-section" aria-labelledby="chapters-title">
-        <div className="section-heading">
-          <div>
-            <p className="kicker"><span>03</span> / the route</p>
-            <h2 id="chapters-title">Three movements.</h2>
-          </div>
-          <p>A compact view of the experience. The editable deck remains the source of truth.</p>
-        </div>
-        <div className="chapter-list">
-          {talk.chapters.map((chapter, index) => (
-            <article className="chapter" key={chapter.title}>
-              <span className="chapter-number">{String(index + 1).padStart(2, '0')}</span>
-              <div><h3>{chapter.title}</h3><p>{chapter.description}</p></div>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section className="talk-end" aria-label="Talk links">
-        <a className="button button-primary" href={talk.sourceUrl}>Open the source <span aria-hidden="true">↗</span></a>
-        <a className="text-link" href="/">Back to catalog <span aria-hidden="true">↗</span></a>
-      </section>
-    </>
-  )
+  const Content = useMemo(() => lazy(async () => {
+    const { default: experience } = await talk.load()
+    return { default: () => <Experience talk={talk} experience={experience} /> }
+  }), [talk])
+  return <Suspense fallback={<p role="status">Loading talk…</p>}><Content /></Suspense>
 }
 
 function NotFoundPage() {
@@ -205,16 +148,16 @@ function NotFoundPage() {
 }
 
 export function App() {
-  const [theme, setTheme] = useState<Theme>('dark')
+  const [theme, setTheme] = useState<Theme>('system')
   const path = window.location.pathname.replace(/^\/+|\/+$/g, '')
-  const talk = talks.find((candidate) => candidate.slug === path)
+  const talk = talks.find((candidate) => candidate.slug === path.replace(/^decks\//, ''))
 
   useEffect(() => {
     document.documentElement.dataset.lhTheme = theme
   }, [theme])
 
   return (
-    <Layout theme={theme} onThemeChange={() => setTheme(theme === 'dark' ? 'light' : 'dark')}>
+    <Layout theme={theme} onThemeChange={() => setTheme(theme === 'system' ? 'dark' : theme === 'dark' ? 'light' : 'system')}>
       {path === '' ? <CatalogPage /> : talk ? <TalkPage talk={talk} /> : <NotFoundPage />}
     </Layout>
   )

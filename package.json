@@ -1,23 +1,27 @@
 {
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && npm run build:decks && vite build",
-    "build:decks": "node scripts/build-decks.mjs",
+    "build": "npm run typecheck && vite build && node scripts/build-static.mjs && node scripts/verify-static.mjs",
     "preview": "vite preview",
-    "typecheck": "tsc -b --noEmit"
+    "typecheck": "tsc -b --noEmit",
+    "test": "node --test tests/*.test.mjs && node scripts/test-build-failures.mjs && playwright test",
+    "serve:static": "node scripts/serve-static.mjs"
   },
   "devDependencies": {
+    "@axe-core/playwright": "4.14.0",
     "@juangcarmona/lighthouse": "0.11.0",
+    "@playwright/test": "1.64.1",
     "@types/react": "19.3.0",
     "@types/react-dom": "19.3.0",
     "@vitejs/plugin-react": "6.1.1",
     "typescript": "6.0.3",
-    "vite": "8.3.1"
+    "vite": "8.3.5"
   },
   "dependencies": {
     "@juangcarmona/lighthouse-ui": "0.2.0",
     "react": "19.3.0",
     "react-dom": "19.3.0"
   },
-  "name": "presentations"
+  "name": "presentations",
+  "type": "module"
 }

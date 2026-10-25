@@ -20,7 +20,9 @@ Do not create empty directories in anticipation of future work. Add them when th
 
 ## Deck formats
 
-Slidev is the current path for narrative and technical-demo decks. Keep its entry point and page sources together under the talk's `deck/` directory. The package manifest is the canonical theme dependency; a local theme checkout may be inspected during development but is not part of this repository contract.
+The two current talks use explicit React scenes in talk-local `deck/experience.tsx` and local CSS. The root registry lazily loads those exports; the root npm lock is the only active install contract. Use the [root build and navigation contract](../../README.md#public-catalogue). Installed Slidev skills and historical command definitions remain preserved but are not the active path for these talks.
+
+Keep stable scene IDs, ordered titles and language in the experience export. Shared `src/Experience.tsx` owns navigation/focus; talk components own content. A new source unit must have a coverage row. Keep author-only notes under `content/`, keyed by scene ID, and never import/glob them into runtime modules. Keep code and essential diagrams readable as DOM with labelled overflow when needed. Local assets must be explicit imports; `public/` is not copied automatically.
 
 Choose a format because the deliverable requires it.
 
@@ -44,6 +46,6 @@ References are preferable to copied explanations. A workflow points to a skill f
 
 ## Generated artifacts
 
-Slidev writes generated sites to `dist/` and may export PDFs from the deck directory. The PowerPoint engine writes working state to `working/` and presentations to `_outputs/`. These paths, plus dependencies and caches, are ignored repository-wide.
+The root build writes the complete static site and manifest to `dist/`. Browser captures/reports go to `test-results/` and `test-reports/`. The historical PowerPoint engine uses `working/` and `_outputs/`; these are not active web build inputs. Generated output, dependencies and caches remain ignored. Current migration does not promise PDF/PowerPoint export parity.
 
 Generated files are validation and delivery artifacts, not narrative sources. Version one only when the repository intentionally needs a fixed deliverable and its talk README says why.
