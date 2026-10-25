@@ -1,0 +1,191 @@
+{
+  "schemaVersion": 1,
+  "runId": "e5f8e92cd2048aaf3749a1dd6bde4282f78add2e46f047e3984d089903dd8842",
+  "stage": "review",
+  "status": "blocked",
+  "gate": null,
+  "input": {
+    "repository": "juangcarmona/presentations",
+    "issue": 18,
+    "pr": 38,
+    "acceptedHead": "e02ddd1ad3761499a80c55abc0d45ba74b122a7b",
+    "sourceRevision": "e6bec81d63be4ec80a89bdbe862567edc381d676",
+    "currentRevision": "d0fe7dd50ece767c2568f7c3ccbfa240c928215e",
+    "intent": "1acb4466230b799a79cd12cfea54dea10128b994d5386c328a8c825e0e67960f",
+    "policy": "2a00485780edaf527c5892b07d7dd9760d2c6b1da8fc7e7509335138463fcf72",
+    "reviews": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "prIntent": "7fe161cf9b7b2519517e5bf72e44a28777ee7bbfd3272863821c734f911c4ea9",
+    "files": "f50b28053dafad1643f370a83b03d3a2ad54e1a185eb770e549cf694eb9c3799",
+    "provenance": "Host-supplied identities and authenticated completion observations in /input/context.json; no independent git or API authentication attempted."
+  },
+  "output": {
+    "summary": "Accepted first delivery and successful integration are recorded, but review closure remains blocked on final-label confirmation and inspection of the referenced durable integration evidence. No failed current GitHub check is supplied and no new runtime source defect was established by this inspection.",
+    "delivery": {
+      "accepted": true,
+      "acceptanceReference": "https://github.com/juangcarmona/presentations/pull/38#issuecomment-6404327905",
+      "acceptanceScope": "First implementation accepted after mobile-gallery review; visual polish deferred. This is not a comprehensive manual assistive-technology audit.",
+      "merged": true,
+      "mergeRevision": "e6bec81d63be4ec80a89bdbe862567edc381d676",
+      "mergeActor": "juangcarmona",
+      "postMergeCheck": "verify-catalog.yml passed at the merge revision in run 40240736956, matching the required catalog context and app 15368.",
+      "currentDispatchMergeAuthorized": false,
+      "productionDeployment": "Not established or implied; no integration or publication action requested by this review.",
+      "authority": "docs/engineering/repository-refinement.md:5 declares the issue and explicit owner answers as product intent; ProductShape/ArcShape are not installed authorities here. The generated generic baseline is not a reason to invent another approval. Historical acceptance does not grant this merge:false dispatch integration permission."
+    },
+    "acceptanceAssessment": [
+      {
+        "criteria": "Clean public installation, no active Slidev/private-theme dependency, full CI build",
+        "assessment": "Supported by the public root manifest, lock-audit test and clean workflow configuration plus host-authenticated post-merge success. Workflow uses npm ci --ignore-scripts without configured dependency-cache restoration and builds before tests. No fresh install was executed in this read-only review.",
+        "references": [
+          "package.json:2-23",
+          "tests/delivery.test.mjs:16-23",
+          ".github/workflows/verify-catalog.yml:16-29"
+        ]
+      },
+      {
+        "criteria": "Static output and catalogue/keyboard access",
+        "assessment": "Physical canonical and legacy HTML entry generation, asset validation and strict-static browser tests directly address behavior beyond a green status. Tests cover five routes, history, protected interactive targets and boundary focus.",
+        "references": [
+          "scripts/build-static.mjs:18-25",
+          "scripts/verify-static.mjs:34-59",
+          "src/Experience.tsx:18-78",
+          "tests/browser/experiences.spec.mjs:13-35,91-138,153-211"
+        ]
+      },
+      {
+        "criteria": "Content preservation and reviewable replacement visuals",
+        "assessment": "Both coverage maps account for 39 source units and disclose original DOM replacements. Fixture tests check scene counts, titles and code, not full narrative equivalence. The PR records a maintainer fingerprint/note comparison and later owner acceptance; neither proves a full manual accessibility audit. The permanent report and screenshots are linked but were not available for local inspection.",
+        "references": [
+          "talks/soft-and-hard-guardrails/content/coverage.md:3-31",
+          "talks/ingenieria-del-software-2_0/content/coverage.md:3-40",
+          "tests/delivery.test.mjs:26-38",
+          "tests/browser/experiences.spec.mjs:41-69",
+          "PR #38 comments 6404327905 and 6404430760"
+        ]
+      }
+    ],
+    "findings": [
+      {
+        "id": "R1",
+        "classification": "fixed",
+        "kind": "historical-source-defect",
+        "finding": "Scene-entry opacity caused insufficient contrast in the first clean CI run, according to the supplied PR evidence. Deterministic animation-midpoint axe tests now cover light and dark appearances.",
+        "owner": "Presentation implementation maintainer",
+        "followUpReference": "PR #38; tests/browser/experiences.spec.mjs:214-232",
+        "limits": "Correction is supported by the final successful check and inspected regression source; the original failing run was not replayed. No cross-work-item recurrence is established."
+      },
+      {
+        "id": "R2",
+        "classification": "deferred",
+        "kind": "product-quality",
+        "finding": "Owner accepted the first implementation while explicitly deferring visual polish.",
+        "owner": "juangcarmona",
+        "followUpReference": "Issue #39, as referenced in issue #18 comment 6404430576 and PR #38 comment 6404430760",
+        "limits": "Issue #39 contents and assignment were not supplied; this review does not open or start that work."
+      },
+      {
+        "id": "R3",
+        "classification": "accepted",
+        "kind": "guidance-drift",
+        "finding": "README.md:82 and docs/design/standalone-talk-review.md:31 describe the CI update as outstanding despite the implemented workflow and tasks.md:28,47-48. Both talk READMEs, the review checklist and tasks.md:49 still describe acceptance as pending despite later owner acceptance. Historical task snapshots must not silently become current approval claims.",
+        "owner": "Repository documentation maintainer (juangcarmona)",
+        "followUpReference": "This review R3; README.md:78-88; docs/design/standalone-talk-review.md:22-31; talks/soft-and-hard-guardrails/README.md:23; talks/ingenieria-del-software-2_0/README.md:34; openspec/changes/issue-18-proposal/tasks.md:44-49",
+        "limits": "Accepted here means an established review finding, not owner approval of a correction. Documentation was not rewritten. Preserved third-party Slidev skills and the intentional host-specific adapter are not classified as drift."
+      },
+      {
+        "id": "R4",
+        "classification": "accepted",
+        "kind": "verification-gap",
+        "finding": "No complete manual assistive-technology or reading-order audit is established. Owner acceptance and automated every-scene axe checks have narrower scope.",
+        "owner": "juangcarmona with the presentation accessibility reviewer",
+        "followUpReference": "PR #38 comment 6404327905; docs/design/standalone-talk-review.md:24-31; openspec/changes/issue-18-proposal/tasks.md:46",
+        "limits": "Known limitation, not a demonstrated accessibility failure. Remaining manual tasks need an explicit disposition in the closure record; no comprehensive audit is claimed."
+      },
+      {
+        "id": "R5",
+        "classification": "accepted",
+        "kind": "closure-evidence-gap",
+        "finding": "completion.labels is an empty, unscoped list; separate final issue and PR labels and the applicable final-label convention cannot be confirmed. The linked permanent integration report is not mounted under docs/process, so its findings and final screenshot evidence could not be inspected.",
+        "owner": "Review host and repository maintainer",
+        "followUpReference": "This review R5; /input/context.json completion.labels and owner comment 6404430576",
+        "limits": "Missing evidence, not a failed product check or proof the permanent report does not exist remotely."
+      }
+    ],
+    "guidanceInspection": {
+      "inspected": [
+        "AGENTS.md",
+        "LIGHTHOUSE.md",
+        "lighthouse.json",
+        ".lighthouse/github.json",
+        "docs/engineering/repository-refinement.md",
+        "docs/agents/presentations.md",
+        "README.md",
+        "docs/design/standalone-talk-review.md",
+        "both talk READMEs and coverage maps",
+        "openspec/changes/issue-18-proposal/tasks.md"
+      ],
+      "additionalObservation": "README.md:28-32 references .agents/commands paths absent in this checkout. This is an existing guidance/reference gap with unknown introduction, not an established regression of PR #38. Owner: repository documentation maintainer; follow-up: this review R3.",
+      "providerBoundary": "No installed skill, managed policy, workflow or guidance was changed. Proposed guards require separate review and failing-before/passing-after evidence."
+    },
+    "unperformedChecks": [
+      {
+        "check": "Comprehensive manual assistive-technology audit",
+        "status": "not-established",
+        "intendedStage": "presentation acceptance/follow-up",
+        "owner": "juangcarmona and accessibility reviewer"
+      },
+      {
+        "check": "Production deployment verification",
+        "status": "not-performed",
+        "intendedStage": "separately authorized publication",
+        "owner": "Repository owner"
+      }
+    ],
+    "retrospective": "## What went well\n- The root public dependency graph and clean full-build workflow address the standalone-delivery intent. Physical entries and strict-static browser journeys test deployability, not merely development-server behavior (package.json; verify-catalog.yml; tests/browser/experiences.spec.mjs:13-35).\n- The host records a merge and a successful required post-merge check at e6bec81; later owner acceptance explicitly bounds visual expectations. Coverage maps disclose replacements and verification limits.\n\n## What went wrong\n- A scene-animation contrast defect escaped local checks and appeared in clean CI (PR #38 body); midpoint regressions now cover both themes. This is one issue, not evidence of recurring failures across deliveries.\n- Current handoff guidance retains superseded CI and acceptance statements (R3). Final labels and the referenced permanent report cannot be inspected from the supplied closure evidence (R5). Full manual accessibility verification remains unestablished, not failed (R4). No new runtime defect was established.\n\n## Start doing\n- Reconcile current guidance with dated acceptance and final CI receipts, preserving incomplete manual checks separately. Owner: repository documentation maintainer.\n- Supply separately identified final issue/PR labels and the bounded permanent integration record to review. Owner: review host/maintainer.\n\n## Stop doing\n- Treating settled screenshots, fixture fingerprints or green CI as proof of full narrative equivalence or a manual accessibility audit.\n- Leaving completed maintainer handoffs presented as current outstanding work. Do not infer recurrence, timing savings or cost from retries.\n\n## Improvement candidates\n1. **Transition-state regression discipline — implementation/test maintainer.** Observed failure: opacity contrast missed locally, recorded in PR #38. Smallest guard: retain the deterministic midpoint light/dark axe tests already present at tests/browser/experiences.spec.mjs:214-232. Regression proof should first reproduce the reported failure on the historical pre-fix revision, then pass on the correction under the same browser/settings; this review inspected the tests but did not replay that comparison. Any expansion needs its own reviewed change.\n2. **Closure evidence completeness — review host maintainer.** Observed gap: completion.labels cannot establish both final label states and docs/process is absent while a permanent report is linked. Smallest guard: require item-scoped label receipts, their convention and the bounded report content before review can pass. Reproduce using this input and verify it remains blocked; then provide complete receipts and confirm only these blockers clear. Review and regression proof are required before adopting a guard.\n3. **Handoff reconciliation — repository documentation maintainer.** Observed drift: README.md:82/review-guide:31 contradict the delivered CI; talk READMEs/tasks.md retain pending acceptance after the later owner record. Smallest guard: a review checklist comparing changed guidance against dated completion receipts, without automatically checking off manual tasks. Reproduce by comparing these exact statements with verify-catalog.yml and comment 6404327905; review a narrowly scoped correction and confirm current/historical statements are distinguished while audit limitations remain. No policy or provider guidance changes are authorized here."
+  },
+  "evidence": [
+    {
+      "id": "host-identity-and-integration",
+      "status": "passed",
+      "source": "/input/context.json completion.binding, completion.merged, completion.merge",
+      "reason": "Host records accepted head and merge e6bec81; review does not independently authenticate or initiate a merge."
+    },
+    {
+      "id": "post-merge-catalog",
+      "status": "passed",
+      "source": "https://github.com/juangcarmona/presentations/actions/runs/40240736956/job/121311760811",
+      "reason": "Host-authenticated success for catalog/app 15368 at the integrated revision; postMerge workflow agrees."
+    },
+    {
+      "id": "owner-acceptance",
+      "status": "passed",
+      "source": "https://github.com/juangcarmona/presentations/pull/38#issuecomment-6404327905",
+      "reason": "Accepted first implementation with visual polish deferred; does not establish full manual audit."
+    },
+    {
+      "id": "behavior-and-guidance-inspection",
+      "status": "passed",
+      "source": "/workspace/.github/workflows/verify-catalog.yml; /workspace/tests/browser/experiences.spec.mjs; /workspace/docs/agents/presentations.md; /workspace/README.md",
+      "reason": "Inspected build/static/navigation regression contracts and affected guidance; drift recorded as R3. No tests rerun or source writes performed."
+    },
+    {
+      "id": "final-label-confirmation",
+      "status": "unavailable",
+      "source": "/input/context.json completion.labels",
+      "reason": "Empty unscoped list does not confirm final labels for both work item and PR; final-label convention not supplied."
+    },
+    {
+      "id": "permanent-integration-record-inspection",
+      "status": "unavailable",
+      "source": "https://github.com/juangcarmona/presentations/blob/0c21e0424df47458b4554c7dea297a7ae5e1cb7e/docs/process/20261025-18-standalone-talks/README.md",
+      "reason": "Referenced by owner but contents and 54 screenshots are not mounted; /workspace/docs/process is absent. No external fetch attempted."
+    }
+  ],
+  "missingEvidence": [
+    "Separate host-authenticated final label observations for issue #18 and PR #38, with the applicable final-label convention (including whether no labels is valid).",
+    "Contents of the referenced durable integration report and bounded acceptance evidence, including disposition of remaining manual review tasks, to complete inspection of the delivery record."
+  ],
+  "unavailableChecks": [],
+  "pendingReview": [],
+  "nextAction": "Review host/maintainer supplies the missing closure evidence for this same review stage. Preserve accepted delivery, recorded merge and passed checks; record guidance corrections and manual-audit disposition without opening issues, changing permissions or starting another stage."
+}
