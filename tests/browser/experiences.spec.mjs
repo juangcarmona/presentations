@@ -210,3 +210,24 @@ for (const talk of talks) {
     await expect(page).toHaveURL(/\/#catalog$/)
   })
 }
+
+for (const theme of ['dark', 'light']) {
+  test(`scene entrance preserves text contrast in ${theme} appearance`, async ({ page }) => {
+    await page.goto('/software-engineering-2_0/')
+    await expect(page.locator('[data-scene]')).toHaveAttribute('data-scene', 'cover')
+    await page.evaluate(theme => { document.documentElement.dataset.lhTheme = theme }, theme)
+    await page.addStyleTag({ content: '.scene { animation-duration: 10s; }' })
+    await page.locator('.scene-controls button').last().click()
+    await expect(page.locator('[data-scene]')).toHaveAttribute('data-scene', '02-recorrido')
+    // Hold the transition midway so fast and slow runners inspect the same state.
+    await page.locator('.scene').evaluate(element => {
+      const animation = element.getAnimations()[0]
+      if (!animation) throw new Error('Expected the normal-motion scene entrance')
+      animation.pause()
+      animation.currentTime = Number(animation.effect.getTiming().duration) / 2
+    })
+    const result = await new AxeBuilder({ page }).include('.scene').withTags(['wcag2a', 'wcag2aa']).analyze()
+    expect(result.violations).toEqual([])
+    await page.screenshot({ path: `test-results/captures/scene-entrance-${theme}.png`, fullPage: true })
+  })
+}

@@ -54,7 +54,8 @@ a:focus-visible, button:focus-visible {
 .experience-overview { border-top: 1px solid var(--lh-border); padding-block: var(--lh-space-6); line-height: 1.7; }
 .experience-overview blockquote { font-size: 1.5rem; line-height: 1.5; }
 summary { cursor: pointer; min-height: 44px; }
-@keyframes scene-enter { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+/* Keep text opaque so contrast is preserved throughout scene entry. */
+@keyframes scene-enter { from { transform: translateY(8px); } to { transform: translateY(0); } }
 @media (max-width: 600px) { .scene-grid { grid-template-columns: 1fr; } .scene-controls { gap: var(--lh-space-2); font-size: 0.8rem; } .scene-content pre { padding: var(--lh-space-4); } }
 
 .skip-link {
