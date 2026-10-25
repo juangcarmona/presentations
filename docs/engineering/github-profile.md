@@ -21,3 +21,5 @@ lighthouse capabilities apply --plan-file .lighthouse/reconciliation/github-prof
 ```
 
 Edit the configuration and review a new plan before changing policy. General `lighthouse verify` is not a live GitHub settings audit. Upgrade the application dependency through its normal package-adoption PR after the adapter is released; no runtime or workflow revision change is implied by this hosting setup.
+
+Merging the configuration PR advances `main`. Before requesting refinement against that new revision, review the merge commit and refresh the pilot's approved source/workflow revision through the existing host runbook. Until that reconciliation, admission must reject the new revision. Keep revision checks enabled.
