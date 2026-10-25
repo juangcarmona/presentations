@@ -1,30 +1,23 @@
 # Soft & Hard Guardrails
 
-A Slidev presentation about guidance that influences development and enforcement that mechanically blocks unsafe outcomes.
+A standalone English talk about guidance that influences development and enforcement that mechanically blocks unsafe outcomes. 2026 · DevEx Chapter Roundtable.
 
-## Sources
+## Canonical sources
 
-- [`research/concepts/`](research/concepts/) contains the two original HTML concept decks used as visual and content references.
-- [`research/extracts/`](research/extracts/) contains text derived from those HTML files during development. The extracts are preserved as working research, not as the canonical deck source.
-- [`deck/slides.md`](deck/slides.md) and [`deck/pages/`](deck/pages/) are the maintained presentation source.
+- [`deck/experience.tsx`](deck/experience.tsx): all 15 ordered explicit React scenes; stable IDs are part of the public URL contract.
+- [`deck/scenes.css`](deck/scenes.css): original talk-local visual motifs.
+- [`content/speaker-notes.md`](content/speaker-notes.md): author-only notes index. The original English source contained no speaker notes; each source unit is explicitly accounted for.
+- [`content/coverage.md`](content/coverage.md): cover plus every original page, code/citation/media coverage and original-source fingerprints.
+- [`research/concepts/`](research/concepts/): original HTML concept decks. [`research/extracts/`](research/extracts/) is derived research, not the maintained presentation.
 
-The unused `13-takeaway.md` was an exact duplicate of the referenced `14-takeaway.md` and has been removed.
+The unused `13-takeaway.md` was previously removed as an exact duplicate. The canonical final scene remains `14-takeaway`.
 
-## Run locally
+## Build and review
 
-```bash
-cd talks/soft-and-hard-guardrails/deck
-pnpm install
-pnpm dev
-```
+From the repository root, follow the [locked install, full build, browser checks and preview contract](../../README.md#public-catalogue). Open `/soft-and-hard-guardrails/`; the legacy `/decks/soft-and-hard-guardrails/` also works with directory indexes and no rewrite server. For a code example, use `#scene=08-console-compile`.
 
-Open the local URL printed by Slidev.
+Previous/Next, ArrowRight/PageDown and ArrowLeft/PageUp progress without wrapping; interactive controls retain their native keys. Scenes scroll vertically, code/tables use labelled bounded overflow, and system/light/dark plus reduced-motion preferences are supported. See the root guide for focus and static-host details.
 
-## Build or export
+Edit JSX, not retired Slidev Markdown. One root public dependency graph builds both talks; there is no talk-local install, private theme or presentation framework. Author notes are not runtime imports. `dist/`, screenshots and reports are generated artifacts. Old Slidev PDF/PowerPoint exports are not supported. Original concept material and installed skills are preserved as research/provenance.
 
-```bash
-pnpm build
-pnpm export
-```
-
-`dist/`, exported PDFs, Slidev caches, and `node_modules/` are generated and ignored. The deck uses the published `slidev-theme-chapter-plain` dependency declared in [`deck/package.json`](deck/package.json).
+Owner content/visual acceptance of the complete experience remains pending; automated tests do not grant approval.

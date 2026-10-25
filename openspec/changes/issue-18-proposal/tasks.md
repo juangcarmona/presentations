@@ -1,6 +1,6 @@
 # Tasks
 
-Implementation requires a separate owner authorization after proposal review. All tasks below are intentionally unchecked. Follow the design decisions and capability specs; numbered groups are dependency ordered.
+Implementation requires a separate owner authorization after proposal review. The host supplied that authorization for this bounded continuation. Checkboxes below record verified task completion, not owner acceptance; numbered groups remain dependency ordered. See the implementation evidence artifact for commands, screenshots and open review requirements.
 
 ## 1. Establish migration baselines
 
@@ -10,9 +10,9 @@ Implementation requires a separate owner authorization after proposal review. Al
 
 ## 2. Land the shared experience and routing contract
 
-- [ ] 2.1 Implement the small scene shell, ordered stable IDs, fragment/history handling, position and boundary states; add unit tests for first/last scenes, valid/missing/unknown fragments and back/forward history, and document the scene contract and supported keys for authors. Verify tests pass with a two-scene fixture. (AC5)
+- [x] 2.1 Implement the small scene shell, ordered stable IDs, fragment/history handling, position and boundary states; add unit tests for first/last scenes, valid/missing/unknown fragments and back/forward history, and document the scene contract and supported keys for authors. Verify tests pass with a two-scene fixture. (AC5)
 - [ ] 2.2 Add conservative keyboard filtering, persistent labelled controls, catalog return, focus recovery and title/language updates; add browser and accessibility fixture tests for nested interactive targets, input/editable fields, modifier/repeated/composing events, media, tab order and motion-off behavior. Verify light/dark/system contrast, 320px layout and no hidden-scene tab stops, and document interaction/focus rules. (AC5, AC6)
-- [ ] 2.3 Connect the catalog and canonical/legacy pathname dispatch to one talk registry without presentation iframes. Add route tests for all five specified entry paths and documented scene fragments; verify keyboard catalog-to-talk-to-catalog journeys with fixture experiences and retain source/overview links. Document the URL and domain-root hosting contract. (AC3, AC5)
+- [x] 2.3 Connect the catalog and canonical/legacy pathname dispatch to one talk registry without presentation iframes. Add route tests for all five specified entry paths and documented scene fragments; verify keyboard catalog-to-talk-to-catalog journeys with fixture experiences and retain source/overview links. Document the URL and domain-root hosting contract. (AC3, AC5)
 
 ## 3. Migrate complete talks with local evidence
 
@@ -23,8 +23,8 @@ Implementation requires a separate owner authorization after proposal review. Al
 ## 4. Cut over installation, complete static build and CI
 
 - [ ] 4.1 Consolidate the active public dependency graph into the root npm manifest/lockfile; retire the Slidev builder, deck manifests/locks and active renderer syntax only after verifying coverage/notes and consumers. Pin public test tooling as needed, preserve installed third-party skills/provenance and historical research, and add an active-path dependency audit. Verify a fresh `npm ci --ignore-scripts` requires no private/local resolution and no presentation framework. (AC1, AC2)
-- [ ] 4.2 Implement `npm run build` as typecheck plus Vite plus static-entry/manifest validation without installation steps; generate physical canonical/legacy HTML entries and validate every required local asset. Add build tests proving invalid talk source and a missing asset fail the whole build, audit output for author-only notes and source maps, and document artifact boundaries. Verify both full talk graphs and all expected outputs are present. (AC1, AC2, AC7)
-- [ ] 4.3 Add static-only browser verification using generated files and a directory-index server with no SPA fallback. Verify fresh loads/reloads of `/`, both canonical paths and both `/decks/<slug>/` paths, valid/invalid scene fragments, history and all required asset requests; document the exact no-rewrite serving command and limitations. (AC3)
+- [x] 4.2 Implement `npm run build` as typecheck plus Vite plus static-entry/manifest validation without installation steps; generate physical canonical/legacy HTML entries and validate every required local asset. Add build tests proving invalid talk source and a missing asset fail the whole build, audit output for author-only notes and source maps, and document artifact boundaries. Verify both full talk graphs and all expected outputs are present. (AC1, AC2, AC7)
+- [x] 4.3 Add static-only browser verification using generated files and a directory-index server with no SPA fallback. Verify fresh loads/reloads of `/`, both canonical paths and both `/decks/<slug>/` paths, valid/invalid scene fragments, history and all required asset requests; document the exact no-rewrite serving command and limitations. (AC3)
 - [ ] 4.4 Update `verify-catalog.yml` to omit dependency cache restoration, run locked public installation, relevant tests and the full root build, and retain build logs/manifest and review artifacts tied to revision. Add controlled failure-propagation verification and inspect the job for absence of private dependency credentials or restored package caches; leave Lighthouse jobs and publication guardrails unchanged. Reconcile root/talk READMEs, `docs/agents/presentations.md` and active authoring command references with the new install/build/preview workflow; read the repository writing-for-agents skill before editing agent-facing guidance. Verify documented commands as written in the clean job and report retired export limitations. (AC7)
 
 ## 5. Integration evidence and owner completion review
@@ -38,3 +38,12 @@ Implementation requires a separate owner authorization after proposal review. Al
 - Owner separately decides proposal acceptance and implementation authorization; proposal completion does not mark implementation tasks complete.
 - Before any later publication or merge, satisfy existing Lighthouse/product/architecture guardrails and obtain the separate required approvals. A build artifact or preview is not deployment authorization.
 - Archive only after the project's review requirements are satisfied, using the normal authorized workflow.
+
+## Continuation evidence and remaining work
+
+- The supplied seed contains all 39 scenes, mapped original-source fingerprints and extracted author notes. Unit checks verify the map/note index, titles and exact code fixtures; original prose/media equivalence and verbatim extraction were not independently re-established from the retired Markdown in this continuation. Tasks 1.1, 1.3, 3.1 and 3.2 stay open for that content review and acceptance of replacement visuals.
+- The runtime uses original DOM/CSS visuals and no archived media imports. Public locked installation and the active dependency audit pass, but tasks 1.2/4.1 are conservatively left open because the approved retirement sequence also depends on complete original-source/content verification.
+- Browser checks cover every scene and all three appearances, narrow/zoom-equivalent layout, motion-off behavior, protected interactions, focus and media failure. Tasks 2.2/3.3 also require complete manual review; automated coverage does not check those tasks off.
+- Task 4.4 is outside the authorized write scope: root/talk authoring documentation is already updated, but a maintainer must separately change the workflow. The evidence report describes the exact clean install/build/test and artifact changes; `.github` is untouched.
+- Task 5.1 includes a successful clean CI run, beyond local checks and the review artifact. The host independently reruns the required commands; no CI receipt is invented here.
+- Task 5.2 remains blocked on juangcarmona's explicit visual/content acceptance of both complete experiences, their coverage maps and original-equivalent diagrams/static demonstration. No deployment or merge is authorized.

@@ -1,0 +1,290 @@
+{
+  "baselineRevision": "b502b83ed4c99758f384cf6465b26d6764266f00",
+  "scenes": [
+    {
+      "directory": "ingenieria-del-software-2_0",
+      "source": "slides.md",
+      "id": "cover",
+      "title": "Ingeniería del Software 2.0",
+      "code": []
+    },
+    {
+      "directory": "ingenieria-del-software-2_0",
+      "source": "pages/02-recorrido.md",
+      "id": "02-recorrido",
+      "title": "Diseñar, construir y validar productos con IA",
+      "code": []
+    },
+    {
+      "directory": "ingenieria-del-software-2_0",
+      "source": "pages/03-repo.md",
+      "id": "03-repo",
+      "title": "Código: preparar el repo para la IA",
+      "code": []
+    },
+    {
+      "directory": "ingenieria-del-software-2_0",
+      "source": "pages/04-guardarrailes.md",
+      "id": "04-guardarrailes",
+      "title": "Dos tipos de guardarraíles",
+      "code": []
+    },
+    {
+      "directory": "ingenieria-del-software-2_0",
+      "source": "pages/05-estructura.md",
+      "id": "05-estructura",
+      "title": "Estructura ideal",
+      "code": []
+    },
+    {
+      "directory": "ingenieria-del-software-2_0",
+      "source": "pages/06-sdd.md",
+      "id": "06-sdd",
+      "title": "Spec-Driven Development",
+      "code": []
+    },
+    {
+      "directory": "ingenieria-del-software-2_0",
+      "source": "pages/07-gaps.md",
+      "id": "07-gaps",
+      "title": "Cada spec describe un cambio, no el producto",
+      "code": [
+        "$ grep -rn -i \"refund\" openspec/specs\nbilling:   Refunds are issued for purchases made in the last 30 days.\ncheckout:  Customers can request a refund within 30 days of delivery.\nsupport:   If the order is less than a month old, offer a refund."
+      ]
+    },
+    {
+      "directory": "ingenieria-del-software-2_0",
+      "source": "pages/08-dimensiones.md",
+      "id": "08-dimensiones",
+      "title": "Dos fuentes de verdad",
+      "code": []
+    },
+    {
+      "directory": "ingenieria-del-software-2_0",
+      "source": "pages/09-intencion.md",
+      "id": "09-intencion",
+      "title": "Escribíamos el qué… y lo abandonábamos",
+      "code": []
+    },
+    {
+      "directory": "ingenieria-del-software-2_0",
+      "source": "pages/10-autoridad.md",
+      "id": "10-autoridad",
+      "title": "Producto decide. La entrega aprende y propone.",
+      "code": []
+    },
+    {
+      "directory": "ingenieria-del-software-2_0",
+      "source": "pages/11-modelo.md",
+      "id": "11-modelo",
+      "title": "Qué escribimos del producto, y cómo se conecta",
+      "code": []
+    },
+    {
+      "directory": "ingenieria-del-software-2_0",
+      "source": "pages/12-origen.md",
+      "id": "12-origen",
+      "title": "Nada de esto es nuevo",
+      "code": []
+    },
+    {
+      "directory": "ingenieria-del-software-2_0",
+      "source": "pages/13-productshape.md",
+      "id": "13-productshape",
+      "title": "Definida una vez, citada por todos",
+      "code": []
+    },
+    {
+      "directory": "ingenieria-del-software-2_0",
+      "source": "pages/14-citas.md",
+      "id": "14-citas",
+      "title": "PDaC-5: Citation and Drift",
+      "code": []
+    },
+    {
+      "directory": "ingenieria-del-software-2_0",
+      "source": "pages/15-workflow.md",
+      "id": "15-workflow",
+      "title": "La IA propone, el código valida, una persona acepta",
+      "code": []
+    },
+    {
+      "directory": "ingenieria-del-software-2_0",
+      "source": "pages/16-arc42.md",
+      "id": "16-arc42",
+      "title": "Documentar arquitectura con arc42",
+      "code": []
+    },
+    {
+      "directory": "ingenieria-del-software-2_0",
+      "source": "pages/17-flujo-agentico.md",
+      "id": "17-flujo-agentico",
+      "title": "Un flujo agéntico de principio a fin",
+      "code": []
+    },
+    {
+      "directory": "ingenieria-del-software-2_0",
+      "source": "pages/19-validacion.md",
+      "id": "19-validacion",
+      "title": "Del comportamiento estructurado al test",
+      "code": [
+        "@BR-REFUND-001\nFeature: Ventana de devolución\n\n  Scenario: Dentro de plazo\n    Given un pedido entregado hace 29 días\n    When el cliente pide la devolución\n    Then se acepta\n\n  Scenario: Fuera de plazo\n    Given un pedido entregado hace 31 días\n    Then se rechaza"
+      ]
+    },
+    {
+      "directory": "ingenieria-del-software-2_0",
+      "source": "pages/20-piramide.md",
+      "id": "20-piramide",
+      "title": "La pirámide cambia de forma",
+      "code": []
+    },
+    {
+      "directory": "ingenieria-del-software-2_0",
+      "source": "pages/20b-power-bi-fabric.md",
+      "id": "20b-power-bi-fabric",
+      "title": "¿Y si trabajas con Power BI y Fabric?",
+      "code": [
+        "$ grep -rn \"Ventas netas\" .\nfinanzas.tmdl:   measure 'Ventas netas' = [Bruto] - [Devoluciones] - [Descuentos]\ncomercial.tmdl:  measure 'Ventas netas' = [Bruto] - [Descuentos]\ncierre.ipynb:    ventas_netas = facturado.sum()   # sin abonos"
+      ]
+    },
+    {
+      "directory": "ingenieria-del-software-2_0",
+      "source": "pages/21-vista-global.md",
+      "id": "21-vista-global",
+      "title": "Ingeniería del Software 2.0",
+      "code": []
+    },
+    {
+      "directory": "ingenieria-del-software-2_0",
+      "source": "pages/22-nosotros.md",
+      "id": "22-nosotros",
+      "title": "Lo que sigue dependiendo de nosotros",
+      "code": []
+    },
+    {
+      "directory": "ingenieria-del-software-2_0",
+      "source": "pages/23-videos.md",
+      "id": "23-videos",
+      "title": "Sin planos, no hay plan",
+      "code": []
+    },
+    {
+      "directory": "ingenieria-del-software-2_0",
+      "source": "pages/24-fin.md",
+      "id": "24-fin",
+      "title": "Juan G. Carmona",
+      "code": []
+    },
+    {
+      "directory": "soft-and-hard-guardrails",
+      "source": "slides.md",
+      "id": "cover",
+      "title": "Soft & Hard Guardrails",
+      "code": []
+    },
+    {
+      "directory": "soft-and-hard-guardrails",
+      "source": "pages/01-definition.md",
+      "id": "01-definition",
+      "title": "Guardrails are constraints that keep changes within acceptable boundaries",
+      "code": []
+    },
+    {
+      "directory": "soft-and-hard-guardrails",
+      "source": "pages/02-soft-vs-hard.md",
+      "id": "02-soft-vs-hard",
+      "title": "Two kinds of guardrails",
+      "code": []
+    },
+    {
+      "directory": "soft-and-hard-guardrails",
+      "source": "pages/03-soft-examples.md",
+      "id": "03-soft-examples",
+      "title": "Examples of soft guardrails",
+      "code": []
+    },
+    {
+      "directory": "soft-and-hard-guardrails",
+      "source": "pages/04-soft-concrete.md",
+      "id": "04-soft-concrete",
+      "title": "Soft guardrails in practice",
+      "code": []
+    },
+    {
+      "directory": "soft-and-hard-guardrails",
+      "source": "pages/05-hard-section.md",
+      "id": "05-hard-section",
+      "title": "When the tooling refuses",
+      "code": []
+    },
+    {
+      "directory": "soft-and-hard-guardrails",
+      "source": "pages/06-hard-map.md",
+      "id": "06-hard-map",
+      "title": "Four enforcement surfaces",
+      "code": []
+    },
+    {
+      "directory": "soft-and-hard-guardrails",
+      "source": "pages/07-hard-compile.md",
+      "id": "07-hard-compile",
+      "title": "1 · Build-time: the build fails",
+      "code": []
+    },
+    {
+      "directory": "soft-and-hard-guardrails",
+      "source": "pages/08-console-compile.md",
+      "id": "08-console-compile",
+      "title": "A dependency edge, rejected at project load",
+      "code": [
+        "<!-- Directory.Build.props — runs before references resolve -->\n<Target Name=\"ArchVerifyModuleReferences\"\n        BeforeTargets=\"ResolveProjectReferences\">\n  <Error Condition=\"'@(_ArchIllegalRef)' != '' and '$(ArchSkipReferenceGuard)' != 'true'\"\n         Text=\"Module '$(MSBuildProjectName)' must not reference '@(_ArchIllegalRef)'\" />\n</Target>"
+      ]
+    },
+    {
+      "directory": "soft-and-hard-guardrails",
+      "source": "pages/09-hard-commit-ci.md",
+      "id": "09-hard-commit-ci",
+      "title": "2 · Commit & 3 · CI: the change won't exist, won't land",
+      "code": []
+    },
+    {
+      "directory": "soft-and-hard-guardrails",
+      "source": "pages/10-console-adoption.md",
+      "id": "10-console-adoption",
+      "title": "A <button> the design system never saw",
+      "code": [
+        "// scripts/check-adoption.mjs — pnpm check:adoption\n// per-app contracts: form app → ui-*, admin app → ds-*\nconst RAW_NATIVE = ['button', 'select', 'input[type=date]'];\n\nfor (const node of templateNodes) {\n  if (RAW_NATIVE.includes(node.tag) && !node.line.includes('adoption-allow')) {\n    violations.push(`${node.file}:${node.line}  <${node.tag}> instead of ${app.prefix}-*`);\n  }\n}\n\nif (violations.length) process.exit(1); // wired into build.frontend.yml"
+      ]
+    },
+    {
+      "directory": "soft-and-hard-guardrails",
+      "source": "pages/11-hard-agent.md",
+      "id": "11-hard-agent",
+      "title": "4 · Agent harness: the agent is refused",
+      "code": []
+    },
+    {
+      "directory": "soft-and-hard-guardrails",
+      "source": "pages/12-console-agent.md",
+      "id": "12-console-agent",
+      "title": "A failing test that looks green",
+      "code": [
+        "$ dotnet test | tail -5\n✘ blocked by hooks/no-piped-verdicts.mjs — command not executed\n\n  `dotnet test` output is piped into `tail`.\n  In a pipeline, the exit code is the LAST command's —\n  tail's, not the runner's. A red test reports green.\n\n  Compliant shapes:\n    set -o pipefail           # pipeline returns the first failure\n    dotnet test > result.log  # the verdict comes from the runner itself"
+      ]
+    },
+    {
+      "directory": "soft-and-hard-guardrails",
+      "source": "pages/13-hard-philosophy.md",
+      "id": "13-hard-philosophy",
+      "title": "The philosophy behind stage 4",
+      "code": []
+    },
+    {
+      "directory": "soft-and-hard-guardrails",
+      "source": "pages/14-takeaway.md",
+      "id": "14-takeaway",
+      "title": "Some soft guardrails deserve to become hard",
+      "code": []
+    }
+  ]
+}

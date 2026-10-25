@@ -1,6 +1,7 @@
 import type { Talk } from '../../src/talk-model'
 
 export const talk: Talk = {
+  load: () => import('./deck/experience'),
   title: 'Soft & Hard Guardrails',
   slug: 'soft-and-hard-guardrails',
   number: '02',
