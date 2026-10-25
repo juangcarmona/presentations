@@ -34,6 +34,12 @@
     "publishEvidence": true,
     "postMergeWorkflows": [
       "verify-catalog.yml"
+    ],
+    "protectionObservations": [
+      {
+        "id": 25811656,
+        "revision": "138ff72523a604f6e9837a8675c392c72efab8a1325184f297ccae12a242b0b5"
+      }
     ]
   }
 }
