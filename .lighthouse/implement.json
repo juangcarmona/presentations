@@ -2,6 +2,10 @@
   "18": {
     "proposal": 33,
     "reviewRequired": true,
+    "seed": {
+      "base": "b502b83ed4c99758f384cf6465b26d6764266f00",
+      "head": "3f617492ec3956d404a3ff3ba144eda2fc0c46f2"
+    },
     "scope": "Implement the approved standalone-talk migration for both complete talks, preserving all source content, examples, citations, media meaning and speaker notes. Follow the approved design/specifications and record completed tasks. Deliver a complete static build with semantic DOM/SVG visuals, accessible keyboard navigation, direct-load canonical and legacy URLs, browser tests and a preview with screenshots. Owner visual/content acceptance remains pending and must block done. Preserve installed third-party skills and unrelated work. Workflow changes in task 4.4 belong to a separate maintainer-authored follow-up: describe the required changes in the evidence report, do not edit .github. Host checks run the full locked install, typecheck, build and tests independently.",
     "paths": [
       "src/", "tests/", "scripts/build-decks.mjs", "scripts/build-static.mjs", "scripts/verify-static.mjs", "scripts/serve-static.mjs", "scripts/test-build-failures.mjs",
