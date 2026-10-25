@@ -1,0 +1,11 @@
+# Repository refinement
+
+GitHub Actions owns this pilot. `lighthouse-issue-router.yml` routes an owner-added `refine` label or an owner reply to a pending `needs-info` question into `lighthouse-issue-refine.yml`. SoFa is an optional observer and verifier; its service and database are not needed to execute this workflow.
+
+The owner-authored issue and its explicit owner answers are the product-intent record for the requested refinement. ProductShape and ArcShape are not installed authorities in this repository. Do not demand a separate Product Change just to refine an owner-authorized talk or catalogue change. Refinement never grants implementation or merge authority.
+
+The workflow collects the issue and owner answers, reserves it with `agent-working`, executes one read-only stage, validates the Lighthouse result and rechecks source and issue identity before publication. Named steps, progress metadata, the job summary and the result artifact show what happened. `ready` means refinement completed; `needs-info` means the published question needs an owner answer. Reply in a comment to resume. After three unresolved answer rounds, inspect the reports and explicitly add `refine` to request another attempt.
+
+A dedicated `lighthouse-workflow` runner connects to the independent executor at `/run/lighthouse/engine.sock`. The executor receives an ephemeral source snapshot and context, and has no GitHub publication credential. Runtime authentication belongs to the operator. The adapter is pinned to the immutable Lighthouse revision in both workflows; it is independent of the installed foundation package version. Update it through Lighthouse's `install-issue-workflows.mjs` and review the generated diff.
+
+To take over an active issue, add `human-working` and wait for the run to finish or cancel it in Actions. The publication check rejects human takeover and changed issue content or answers. GitHub labels are cooperative reservations, not editor locks. A runner crash can leave `agent-working`; inspect the interrupted run before removing it. Failed executions do not silently retry. Later stages require their own authorized workflow; this pilot does not implement the talk migration.
