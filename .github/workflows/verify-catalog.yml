@@ -11,7 +11,7 @@ permissions:
 jobs:
   catalog:
     runs-on: ubuntu-24.04
-    timeout-minutes: 10
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
         with:
@@ -19,8 +19,22 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-          cache: npm
-      - run: npm ci --ignore-scripts
-      - run: npm run typecheck
-      - name: Build the catalogue application
-        run: npm exec --no -- vite build
+      - name: Install the locked public dependencies without a restored cache
+        run: npm ci --ignore-scripts
+      - name: Build the complete static site and validate its assets
+        run: npm run build
+      - name: Install Chromium for browser verification
+        run: npm exec --no -- playwright install --with-deps chromium
+      - name: Verify source coverage, build failures and browser journeys
+        run: npm test
+      - name: Retain the static preview and verification evidence
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: standalone-talks-${{ github.sha }}
+          path: |
+            dist/
+            test-reports/
+            test-results/
+          if-no-files-found: error
+          retention-days: 30
