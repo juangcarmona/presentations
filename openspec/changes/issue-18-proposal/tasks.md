@@ -1,0 +1,40 @@
+# Tasks
+
+Implementation requires a separate owner authorization after proposal review. All tasks below are intentionally unchecked. Follow the design decisions and capability specs; numbered groups are dependency ordered.
+
+## 1. Establish migration baselines
+
+- [ ] 1.1 Inventory both original entry files and every referenced page (Spanish cover plus 23 pages; English cover plus 14 pages), cross-check content/research and create talk-local coverage maps including examples, citations, media meaning and note destinations; verify every source unit has a map row and record baseline revision. (AC4)
+- [ ] 1.2 Audit asset origins and the active dependency/build graph; document allowed assets, original replacement plans and all private/local/framework resolutions to remove. Verify no reference-owned code/assets are planned for copying, and flag substantive deviations for owner acceptance rather than assuming approval. (AC2, AC4)
+- [ ] 1.3 Extract and preserve all speaker notes, including cover notes, in talk-local author Markdown keyed to stable scene IDs; document the canonical source/notes boundary in both READMEs and verify note coverage against every source page without importing note files into runtime fixtures. (AC4)
+
+## 2. Land the shared experience and routing contract
+
+- [ ] 2.1 Implement the small scene shell, ordered stable IDs, fragment/history handling, position and boundary states; add unit tests for first/last scenes, valid/missing/unknown fragments and back/forward history, and document the scene contract and supported keys for authors. Verify tests pass with a two-scene fixture. (AC5)
+- [ ] 2.2 Add conservative keyboard filtering, persistent labelled controls, catalog return, focus recovery and title/language updates; add browser and accessibility fixture tests for nested interactive targets, input/editable fields, modifier/repeated/composing events, media, tab order and motion-off behavior. Verify light/dark/system contrast, 320px layout and no hidden-scene tab stops, and document interaction/focus rules. (AC5, AC6)
+- [ ] 2.3 Connect the catalog and canonical/legacy pathname dispatch to one talk registry without presentation iframes. Add route tests for all five specified entry paths and documented scene fragments; verify keyboard catalog-to-talk-to-catalog journeys with fixture experiences and retain source/overview links. Document the URL and domain-root hosting contract. (AC3, AC5)
+
+## 3. Migrate complete talks with local evidence
+
+- [ ] 3.1 Convert Soft & Hard Guardrails into talk-local explicit React scenes with original DOM/SVG visuals, preserving English text, definitions, comparisons, code examples and citations. Update its coverage map and README; verify each source unit renders, no code example meaning is lost, browser scene tests pass and any deviations have explicit owner decisions. Add representative accessibility/visual tests for its diagrams and console content. (AC4, AC6)
+- [ ] 3.2 Convert Ingeniería del Software 2.0 into talk-local explicit scenes preserving Spanish content, date/context, diagrams, citations and full referenced sequence. Implement named video/link/context fallback and intentional portrait fallback, with original replacements for uncleared theme assets. Update its map and README; verify every source unit renders and test failed external media, image alternatives, code/diagram overflow and motion-off states. (AC4, AC6)
+- [ ] 3.3 Exercise every scene in both migrated talks with browser/accessibility tests; manually review reading order, full keyboard progression, interactive/media protection, focus, supported appearances, normal-text AA contrast, 320px/zoom layouts and reduced motion. Record findings and corrections in talk review evidence and update author guidance for any discovered constraints. Verify the coverage maps have no unexplained gaps before removing active legacy source. (AC4, AC5, AC6)
+
+## 4. Cut over installation, complete static build and CI
+
+- [ ] 4.1 Consolidate the active public dependency graph into the root npm manifest/lockfile; retire the Slidev builder, deck manifests/locks and active renderer syntax only after verifying coverage/notes and consumers. Pin public test tooling as needed, preserve installed third-party skills/provenance and historical research, and add an active-path dependency audit. Verify a fresh `npm ci --ignore-scripts` requires no private/local resolution and no presentation framework. (AC1, AC2)
+- [ ] 4.2 Implement `npm run build` as typecheck plus Vite plus static-entry/manifest validation without installation steps; generate physical canonical/legacy HTML entries and validate every required local asset. Add build tests proving invalid talk source and a missing asset fail the whole build, audit output for author-only notes and source maps, and document artifact boundaries. Verify both full talk graphs and all expected outputs are present. (AC1, AC2, AC7)
+- [ ] 4.3 Add static-only browser verification using generated files and a directory-index server with no SPA fallback. Verify fresh loads/reloads of `/`, both canonical paths and both `/decks/<slug>/` paths, valid/invalid scene fragments, history and all required asset requests; document the exact no-rewrite serving command and limitations. (AC3)
+- [ ] 4.4 Update `verify-catalog.yml` to omit dependency cache restoration, run locked public installation, relevant tests and the full root build, and retain build logs/manifest and review artifacts tied to revision. Add controlled failure-propagation verification and inspect the job for absence of private dependency credentials or restored package caches; leave Lighthouse jobs and publication guardrails unchanged. Reconcile root/talk READMEs, `docs/agents/presentations.md` and active authoring command references with the new install/build/preview workflow; read the repository writing-for-agents skill before editing agent-facing guidance. Verify documented commands as written in the clean job and report retired export limitations. (AC7)
+
+## 5. Integration evidence and owner completion review
+
+- [ ] 5.1 Retain a successful clean CI run for the reviewed revision covering locked install, full build, manifest, all-entry static tests and full browser/accessibility suite. Deliver both complete talk experiences plus catalog as a reviewable static artifact or preview with reproduction instructions; capture desktop/narrow covers, diagrams, code, boundaries/focus and reduced-motion evidence for each talk. Verify artifact links are usable by the owner and disclose external video requirements. (AC1, AC3, AC7, AC8)
+- [ ] 5.2 Obtain and link juangcarmona's explicit content/visual decision against both complete rendered experiences and coverage maps. Resolve requested corrections, rerun affected evidence and obtain acceptance of any substantive deviations; verify no unaccepted gaps remain and all AC1–AC8 evidence is indexed before calling the migration complete. This task cannot be satisfied by reference screenshots or automated checks alone. (AC4, AC8)
+
+## Workflow follow-up
+
+- Trusted publisher runs OpenSpec 1.15.0 strict validation on these proposal artifacts before opening the proposal PR; a maintainer triggers required checks before proposal merge.
+- Owner separately decides proposal acceptance and implementation authorization; proposal completion does not mark implementation tasks complete.
+- Before any later publication or merge, satisfy existing Lighthouse/product/architecture guardrails and obtain the separate required approvals. A build artifact or preview is not deployment authorization.
+- Archive only after the project's review requirements are satisfied, using the normal authorized workflow.
