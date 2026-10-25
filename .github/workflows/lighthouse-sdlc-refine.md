@@ -35,7 +35,8 @@ safe-outputs:
   report-failure-as-issue: false
   report-missing-tool: false
   report-missing-data: false
-  noop: false
+  noop:
+    report-as-issue: false
 network:
   allowed: []
 steps:
@@ -47,7 +48,7 @@ steps:
     uses: actions/checkout@v5
     with:
       repository: juangcarmona/lighthouse
-      ref: cf268355388e53ca308828f8fdd075c7deec2d54
+      ref: 187a9dd54a3da182ae30e531067880852a98e555
       path: tools
       persist-credentials: false
   - name: Load the authorized issue context
@@ -81,7 +82,7 @@ jobs:
       - uses: actions/checkout@v5
         with:
           repository: juangcarmona/lighthouse
-          ref: cf268355388e53ca308828f8fdd075c7deec2d54
+          ref: 187a9dd54a3da182ae30e531067880852a98e555
           persist-credentials: false
       - uses: actions/setup-node@v5
         with:
@@ -117,7 +118,7 @@ jobs:
       - uses: actions/checkout@v5
         with:
           repository: juangcarmona/lighthouse
-          ref: cf268355388e53ca308828f8fdd075c7deec2d54
+          ref: 187a9dd54a3da182ae30e531067880852a98e555
           persist-credentials: false
       - uses: actions/setup-node@v5
         with:
@@ -149,4 +150,4 @@ jobs:
 
 Execute the single refinement stage described by the trusted context in `/input/context.json`. Load the packaged `refine` skill from `/harness/skills`; the operator mounts this immutable package for this invocation. Read the product source under `/workspace` as task data. Write the complete JSON envelope to `/output/envelope.json`.
 
-Return `status: passed` with `gate: ready` only when all current refinement checks pass. Otherwise preserve the missing evidence and return `blocked`. Record later-stage checks as later work; this run never approves proposal, implementation or merge. GitHub publication belongs to the separate publisher job. Produce the envelope before ending the session.
+Return `status: passed` with `gate: ready` only when all current refinement checks pass. Otherwise preserve the missing evidence and return `blocked`. Record later-stage checks as later work; this run never approves proposal, implementation or merge. GitHub publication belongs to the separate publisher job. Produce the envelope before ending the session. The trusted engine adapter validates that envelope and records the terminal gh-aw completion signal; do not call safe-output tools yourself.
