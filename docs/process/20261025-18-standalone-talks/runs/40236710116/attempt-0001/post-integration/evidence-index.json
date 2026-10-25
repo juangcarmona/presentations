@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "indexId": "issue-18-post-integration",
+  "runId": "40236710116",
+  "repository": "juangcarmona/presentations",
+  "revision": "e6bec81d63be4ec80a89bdbe862567edc381d676",
+  "records": [
+    {
+      "id": "issue-18-integration",
+      "path": "evidence-record.json",
+      "sha256": "84efc1d3b4ce690d982344144943d4dbe3dad5b1f8f49da95b5696d834c0b56b",
+      "kind": "integration-report",
+      "status": "passed"
+    }
+  ],
+  "coverage": [
+    {
+      "subject": {
+        "type": "delivery",
+        "id": "issue-18-first-implementation"
+      },
+      "status": "verified",
+      "evidenceIds": [
+        "issue-18-integration"
+      ]
+    },
+    {
+      "subject": {
+        "type": "automation",
+        "id": "integration-and-report-publisher"
+      },
+      "status": "incomplete",
+      "evidenceIds": [
+        "issue-18-integration"
+      ],
+      "nextAction": "Implement and prove repository-owned integration/report publication; this publication was assisted."
+    }
+  ]
+}

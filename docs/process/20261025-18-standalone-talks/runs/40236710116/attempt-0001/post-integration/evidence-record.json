@@ -1,0 +1,313 @@
+{
+  "schemaVersion": 1,
+  "id": "issue-18-integration",
+  "runId": "40236710116",
+  "kind": "integration-report",
+  "scope": "delivery",
+  "status": "passed",
+  "producer": "operator-assisted Codex session with GitHub API and CI receipts",
+  "subject": {
+    "type": "issue",
+    "id": "18"
+  },
+  "observedAt": "2026-10-25T22:39:58.596933+00:00",
+  "artifacts": [
+    {
+      "type": "report",
+      "path": "agent-retrospective.md",
+      "sha256": "a003ae74e2c57a200d16ba02aa81545d4ceb7130e07721c6387b79a16debd955"
+    },
+    {
+      "type": "report",
+      "path": "report.md",
+      "sha256": "a9b5e7ded119938ae5c89610b5684fee0600429cc31d750d950e5e2e83122ed3"
+    },
+    {
+      "type": "report",
+      "path": "retrospective.md",
+      "sha256": "6805f8a8c7c127f1bb5aa80b8509855feca4c478183a57a38903bba7f7dafbbf"
+    },
+    {
+      "type": "screenshot",
+      "path": "screenshots/catalog-desktop.png",
+      "sha256": "ffed4a7bcaa4ee1fb708edc4b4c769d95dd4c10cf904f526e2bc1982439cbc5b"
+    },
+    {
+      "type": "screenshot",
+      "path": "screenshots/navigation-after-focus.png",
+      "sha256": "91405bd769954504a86bf0e525f06ca7cf0fdedd5de185187c338cbcdf65858e"
+    },
+    {
+      "type": "screenshot",
+      "path": "screenshots/navigation-before-focus.png",
+      "sha256": "4f02615991e634032f40421fd0b5b2e720c3c3aa6d504a48264db7efd8151039"
+    },
+    {
+      "type": "screenshot",
+      "path": "screenshots/scene-entrance-dark.png",
+      "sha256": "fe6e0824c3a0f3e859fc849c60d1c107a80de6cd8909351c361632bd5c5e6028"
+    },
+    {
+      "type": "screenshot",
+      "path": "screenshots/scene-entrance-light.png",
+      "sha256": "c22dbd94a6011676c68cea655780e3d22d46dec797079924ee93f24a6215d680"
+    },
+    {
+      "type": "screenshot",
+      "path": "screenshots/soft-and-hard-guardrails-01-definition.png",
+      "sha256": "aa4007c20fe72182b0cbdc903a7ee06ac471612fefa5f28e15a143aecc520589"
+    },
+    {
+      "type": "screenshot",
+      "path": "screenshots/soft-and-hard-guardrails-02-soft-vs-hard.png",
+      "sha256": "06789f20a76734b93b6b05df4f0883313ffc760af93ffa5ea63529150ffe2dc7"
+    },
+    {
+      "type": "screenshot",
+      "path": "screenshots/soft-and-hard-guardrails-03-soft-examples.png",
+      "sha256": "a5fac599fed97194820dba1a01a7c158b705d16611d4d0cd3dc9fc7d0b6598bb"
+    },
+    {
+      "type": "screenshot",
+      "path": "screenshots/soft-and-hard-guardrails-04-soft-concrete.png",
+      "sha256": "49f5f00b261b9ac57d961eb30e28dd1bd629b3ce7d2e8c466471345fa5b60ad2"
+    },
+    {
+      "type": "screenshot",
+      "path": "screenshots/soft-and-hard-guardrails-05-hard-section.png",
+      "sha256": "20920df2bb16245a6ec6fc3ac8de7e219b77d4fb277602fd618d408da08005b2"
+    },
+    {
+      "type": "screenshot",
+      "path": "screenshots/soft-and-hard-guardrails-06-hard-map.png",
+      "sha256": "8802ad4ce8ef1e6407d33c3bd49adf933395661206dd61009a69c4bdd82de98d"
+    },
+    {
+      "type": "screenshot",
+      "path": "screenshots/soft-and-hard-guardrails-07-hard-compile.png",
+      "sha256": "bd123999a861b28f77c59df2caa46a9033d176497f69150984bf39344b5584c5"
+    },
+    {
+      "type": "screenshot",
+      "path": "screenshots/soft-and-hard-guardrails-08-console-compile-320px-motion-off.png",
+      "sha256": "16974b9a2b1755d23e4ccc6272a68ba45097bdb57bd5c8111803e9b5b711ef0f"
+    },
+    {
+      "type": "screenshot",
+      "path": "screenshots/soft-and-hard-guardrails-08-console-compile.png",
+      "sha256": "d3befc8b63117f7afebb206fb5c5b00b34628b365c62d63982062482c363a91d"
+    },
+    {
+      "type": "screenshot",
+      "path": "screenshots/soft-and-hard-guardrails-09-hard-commit-ci.png",
+      "sha256": "3e953a222039f1d0bf9241e7387d515e95577d51984b234142418f3914e4c612"
+    },
+    {
+      "type": "screenshot",
+      "path": "screenshots/soft-and-hard-guardrails-10-console-adoption-320px-motion-off.png",
+      "sha256": "9b25176cc73433c316b7b7cd07825d96cf5a6130caf6a0b311b5283c41e233b7"
+    },
+    {
+      "type": "screenshot",
+      "path": "screenshots/soft-and-hard-guardrails-10-console-adoption.png",
+      "sha256": "296c55465dc77337172a93035b9b281de96622f6d9def1d3614ee8934a16e9b8"
+    },
+    {
+      "type": "screenshot",
+      "path": "screenshots/soft-and-hard-guardrails-11-hard-agent.png",
+      "sha256": "d2abca2a85fe62e7bf867fa149ab1f86a501b0599ea2e98012555cf8d1cd442d"
+    },
+    {
+      "type": "screenshot",
+      "path": "screenshots/soft-and-hard-guardrails-12-console-agent-320px-motion-off.png",
+      "sha256": "fa729134147da8ed692e3cbabfc98f116a54fec8f9c0d5020f9fd64bbeb93e1f"
+    },
+    {
+      "type": "screenshot",
+      "path": "screenshots/soft-and-hard-guardrails-12-console-agent.png",
+      "sha256": "c72cd790c23ed16a6f1bdb19cb6c45245633eff39dd3ba21bd14ca903e5dd4e8"
+    },
+    {
+      "type": "screenshot",
+      "path": "screenshots/soft-and-hard-guardrails-13-hard-philosophy.png",
+      "sha256": "71a2734df14c15dfaaa2c92dfc14191a43158007d0551464604339536bb175be"
+    },
+    {
+      "type": "screenshot",
+      "path": "screenshots/soft-and-hard-guardrails-14-takeaway-320px-motion-off.png",
+      "sha256": "f7060b35267d9b8877297d593f160c9520cfe7154cd68b400f379b50d6f349d5"
+    },
+    {
+      "type": "screenshot",
+      "path": "screenshots/soft-and-hard-guardrails-14-takeaway.png",
+      "sha256": "80422280245bba817fc4088e91961cb79596cf89581c2918f64db67e1067ae22"
+    },
+    {
+      "type": "screenshot",
+      "path": "screenshots/soft-and-hard-guardrails-cover-320px-motion-off.png",
+      "sha256": "85b15ec6d193a4dd992205e22090584843cb9c2abdbced9b8c51e938294d64e9"
+    },
+    {
+      "type": "screenshot",
+      "path": "screenshots/soft-and-hard-guardrails-cover.png",
+      "sha256": "16c176ca0843ca84137912bb9e181faae170665beaf78947835f41e151e63f1a"
+    },
+    {
+      "type": "screenshot",
+      "path": "screenshots/soft-and-hard-guardrails-final-boundary-focus.png",
+      "sha256": "eda90f34b4420fffbf640aa785041f32f9395c84aaffebcc4a780c30c79533a2"
+    },
+    {
+      "type": "screenshot",
+      "path": "screenshots/software-engineering-2_0-02-recorrido.png",
+      "sha256": "8d3e145c7c46aa9e84c785ce48b3a6293aae5015c3088423ef4199a416224888"
+    },
+    {
+      "type": "screenshot",
+      "path": "screenshots/software-engineering-2_0-03-repo.png",
+      "sha256": "2aebd3bc61e4a5b566003a167a3db68973f4c93788c0e38f90942cb9cc174498"
+    },
+    {
+      "type": "screenshot",
+      "path": "screenshots/software-engineering-2_0-04-guardarrailes.png",
+      "sha256": "9a110fbfe89ba71d49e335934c9de524a5996dbf560ddf337383c080afab1f74"
+    },
+    {
+      "type": "screenshot",
+      "path": "screenshots/software-engineering-2_0-05-estructura.png",
+      "sha256": "faa3016f1c17249cf908d243d1caa69c3726948a5b1567e5cc7b593b88610577"
+    },
+    {
+      "type": "screenshot",
+      "path": "screenshots/software-engineering-2_0-06-sdd.png",
+      "sha256": "e5eb600a79198896c9f5e0ac43ba381147bb36b703bd6ef69a34ff283b1a3f00"
+    },
+    {
+      "type": "screenshot",
+      "path": "screenshots/software-engineering-2_0-07-gaps.png",
+      "sha256": "bcb27f9aff4e9bb9f8fabff2edcd7d5bd2d2bb4c7103686209f3257e7342b21c"
+    },
+    {
+      "type": "screenshot",
+      "path": "screenshots/software-engineering-2_0-08-dimensiones.png",
+      "sha256": "01656a091996c0ecafdb097718e8d3e1edc2611c0f712e266eba940decbd2b81"
+    },
+    {
+      "type": "screenshot",
+      "path": "screenshots/software-engineering-2_0-09-intencion.png",
+      "sha256": "710ddd8882509c4300b5110e1a49b2da49363e9ec3f8fba53dc28b3294eb480c"
+    },
+    {
+      "type": "screenshot",
+      "path": "screenshots/software-engineering-2_0-10-autoridad.png",
+      "sha256": "672ca59e38ad08e0e11223f0c7503e39b92926175354cf8bd403b2c9e9e5041e"
+    },
+    {
+      "type": "screenshot",
+      "path": "screenshots/software-engineering-2_0-11-modelo-320px-motion-off.png",
+      "sha256": "3123a361fe0dfc650829e484a2152d16ae39e00798ac4465744c428cd2a76f12"
+    },
+    {
+      "type": "screenshot",
+      "path": "screenshots/software-engineering-2_0-11-modelo.png",
+      "sha256": "a4d1fa922d779e66d161b198c418a687042db93d9ec11672fe9cf82dfff0f052"
+    },
+    {
+      "type": "screenshot",
+      "path": "screenshots/software-engineering-2_0-12-origen.png",
+      "sha256": "a8b0a313c00b0783e05a06782410c8853e810f542736d78d4aa221c3b783716f"
+    },
+    {
+      "type": "screenshot",
+      "path": "screenshots/software-engineering-2_0-13-productshape.png",
+      "sha256": "e7642f533215ed039425e9db5884a79baac1498e5eb9d33e540acdc9cba5f791"
+    },
+    {
+      "type": "screenshot",
+      "path": "screenshots/software-engineering-2_0-14-citas.png",
+      "sha256": "dc3f5fed04902515323e5aec5d1f6300dd9013f71e7f36890e566298c3712dcb"
+    },
+    {
+      "type": "screenshot",
+      "path": "screenshots/software-engineering-2_0-15-workflow.png",
+      "sha256": "0d090bd734c6730b384e6c161cd1ab56cc6df163125ca6400ca7155c3c7aee9c"
+    },
+    {
+      "type": "screenshot",
+      "path": "screenshots/software-engineering-2_0-16-arc42.png",
+      "sha256": "8df01e05f986ef1f12b2ff75c8540371d14877757524efa79734d26b414b1af0"
+    },
+    {
+      "type": "screenshot",
+      "path": "screenshots/software-engineering-2_0-17-flujo-agentico.png",
+      "sha256": "d00fd1e9536d1b822c846486329aa7802031a4eaf4882e270f535ed67e91e857"
+    },
+    {
+      "type": "screenshot",
+      "path": "screenshots/software-engineering-2_0-19-validacion.png",
+      "sha256": "7aa04c4e06d62a177c8d2e6f9ce3b4fd6bda5d0359bbe47fc78fbd2ba1abd7e1"
+    },
+    {
+      "type": "screenshot",
+      "path": "screenshots/software-engineering-2_0-20-piramide.png",
+      "sha256": "95ff7dc6496b8b5a81c0f4d3e94decb05e20df44828a509cd2a8164c9a828f82"
+    },
+    {
+      "type": "screenshot",
+      "path": "screenshots/software-engineering-2_0-20b-power-bi-fabric.png",
+      "sha256": "427dab2b4b2ac514ab74e50c6fa76a404a4fb8494524a2c986e968f6b1e92120"
+    },
+    {
+      "type": "screenshot",
+      "path": "screenshots/software-engineering-2_0-21-vista-global.png",
+      "sha256": "7cdacf5bd7475fc9a64bde18d9444c691c7759578e422e7e9a726bb1b00c0e41"
+    },
+    {
+      "type": "screenshot",
+      "path": "screenshots/software-engineering-2_0-22-nosotros.png",
+      "sha256": "b482258154285537c57bf7ea4f5a5d37d9e0ec0893b780c9fdaeb9876b262f03"
+    },
+    {
+      "type": "screenshot",
+      "path": "screenshots/software-engineering-2_0-23-videos.png",
+      "sha256": "1465c510e9678aaac8ebdd703aedbf172ff73ca6a6fdd9080d3e0e75646fc483"
+    },
+    {
+      "type": "screenshot",
+      "path": "screenshots/software-engineering-2_0-24-fin-320px-motion-off.png",
+      "sha256": "1251dc2b9a9e5058d08c860ff6c6bd3ce5193b823bfe8c7c30bfd628c305fabb"
+    },
+    {
+      "type": "screenshot",
+      "path": "screenshots/software-engineering-2_0-24-fin.png",
+      "sha256": "29921997bc74f80a04ded9dfb0f119a5b07743ea54e9d29b3cd7680940088303"
+    },
+    {
+      "type": "screenshot",
+      "path": "screenshots/software-engineering-2_0-cover-320px-motion-off.png",
+      "sha256": "2f3877cc953723424bea40ae3f712dc5c44758c3d8966c29efe4fd237b003572"
+    },
+    {
+      "type": "screenshot",
+      "path": "screenshots/software-engineering-2_0-cover.png",
+      "sha256": "24ec3b7c6ab15487cbcab0c6c237a29a50921db8026a55991220d3637d34b882"
+    },
+    {
+      "type": "screenshot",
+      "path": "screenshots/software-engineering-2_0-final-boundary-focus.png",
+      "sha256": "39ccf4c4d4062a2f8e902932f68901536e8c3d00d61f88607dbe9f9688d76afa"
+    }
+  ],
+  "payload": {
+    "repository": "juangcarmona/presentations",
+    "pullRequest": 38,
+    "approvedHead": "e02ddd1ad3761499a80c55abc0d45ba74b122a7b",
+    "mergeCommit": "e6bec81d63be4ec80a89bdbe862567edc381d676",
+    "finalCiRun": 40239580036,
+    "defaultBranchCiRun": 40240736956,
+    "publicationMode": "operator-assisted",
+    "visualFollowUp": 39,
+    "fullManualAccessibilityAudit": "not-established",
+    "artifactRetentionDays": 30
+  }
+}
