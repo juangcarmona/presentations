@@ -22,7 +22,7 @@ jobs:
         uses: actions/checkout@v5
         with:
           repository: juangcarmona/lighthouse
-          ref: 2d10384ac1f245e109abc2e6d51e1b1f047f1884
+          ref: 9c1477ee8d7a90d5f0c244fa326631578417eb38
           path: tools
           persist-credentials: false
       - name: Read the repository revision
