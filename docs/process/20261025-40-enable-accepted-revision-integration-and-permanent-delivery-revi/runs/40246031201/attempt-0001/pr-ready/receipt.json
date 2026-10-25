@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "state": "blocked",
+  "sha": null,
+  "acceptedHead": "f6509048e85b1dddcebd7c9295eaf16b319f8206",
+  "authorization": {
+    "issue": 40,
+    "pr": 42,
+    "head": "f6509048e85b1dddcebd7c9295eaf16b319f8206",
+    "merge": true
+  },
+  "binding": {
+    "repository": "juangcarmona/presentations",
+    "issue": 40,
+    "pr": 42,
+    "head": "f6509048e85b1dddcebd7c9295eaf16b319f8206",
+    "base": "dc2934f874ee1e7d7ffd40c2966e66a8b7442ee2",
+    "branch": "main",
+    "intent": "5a0885aa25e0f75b26b2af0b898745602dafb6143d4b87930a3fd6375c9194b9",
+    "policy": "2a00485780edaf527c5892b07d7dd9760d2c6b1da8fc7e7509335138463fcf72",
+    "reviews": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "prIntent": "e1483df35f1a0a4b8293b37b812197bfdea0518c07f4a9b59760cc7825b10491",
+    "files": "4201f625fa092f21e0d5731801efd029607b6da2708d95c7cf212d4b09c187d5"
+  }
+}

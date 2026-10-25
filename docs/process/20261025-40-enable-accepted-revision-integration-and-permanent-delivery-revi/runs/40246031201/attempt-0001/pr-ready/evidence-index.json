@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "indexId": "evidence-index",
+  "runId": "025641a6238026707acf955999ddf943dd09c2571a4677c1a98312064d868a2d",
+  "repository": "juangcarmona/presentations",
+  "revision": "f6509048e85b1dddcebd7c9295eaf16b319f8206",
+  "records": [
+    {
+      "id": "completion:025641a6238026707acf955999ddf943dd09c2571a4677c1a98312064d868a2d",
+      "path": "evidence-record.json",
+      "sha256": "a91429af2216d76f9ade1780e415cbee2f0d7e00e07973ff326679f5def09051",
+      "kind": "stage-result",
+      "status": "pending-review",
+      "subject": {
+        "type": "issue",
+        "id": "https://github.com/juangcarmona/presentations/issues/40"
+      }
+    }
+  ],
+  "coverage": [
+    {
+      "subject": {
+        "type": "issue",
+        "id": "https://github.com/juangcarmona/presentations/issues/40"
+      },
+      "status": "incomplete",
+      "evidenceIds": [
+        "completion:025641a6238026707acf955999ddf943dd09c2571a4677c1a98312064d868a2d"
+      ],
+      "nextAction": "Collect or resolve evidence for issue:https://github.com/juangcarmona/presentations/issues/40."
+    }
+  ]
+}
