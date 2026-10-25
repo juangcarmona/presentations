@@ -13,4 +13,3 @@ Accepted first implementation, merged in [PR #38](https://github.com/juangcarmon
 ![software-engineering-2_0-cover-320px-motion-off.png](runs/40236710116/attempt-0001/post-integration/screenshots/software-engineering-2_0-cover-320px-motion-off.png)
 
 ![soft-and-hard-guardrails-cover-320px-motion-off.png](runs/40236710116/attempt-0001/post-integration/screenshots/soft-and-hard-guardrails-cover-320px-motion-off.png)
-
