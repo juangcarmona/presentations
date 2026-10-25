@@ -27,7 +27,13 @@
     },
     "actions.workflow": {
       "value": null,
-      "reason": "Proposal publication requires Actions to create pull requests. GitHub groups creation and approval in one setting; keep default token permissions read-only and manage this opt-in manually. The trusted publisher never approves or merges PRs."
+      "reason": "Actions may create PRs. GitHub groups creation and approval in one setting; default token permissions remain read-only. Completion can merge only after an explicit owner dispatch bound to the accepted head and fresh GitHub checks."
     }
+  },
+  "completion": {
+    "publishEvidence": true,
+    "postMergeWorkflows": [
+      "verify-catalog.yml"
+    ]
   }
 }
