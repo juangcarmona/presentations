@@ -1,0 +1,177 @@
+{
+  "schemaVersion": 1,
+  "runId": "1abb3e94c7083c44af369fb5baa2a3b397501eed6368739c09faa0ae3ea9dc6b",
+  "stage": "integrate",
+  "gate": "done",
+  "status": "passed",
+  "input": {
+    "sourceRevision": "f41a00c68e493bcab1b91af7ccce40e8c9babebc",
+    "taskDigest": "5a0885aa25e0f75b26b2af0b898745602dafb6143d4b87930a3fd6375c9194b9",
+    "workflowRunId": "40247701742",
+    "harnessRevision": "0570041b759dc2056a6461c17bdad993cd4a46bf",
+    "provenance": "Host-authenticated completion context; source and workflow identities are supplied by the host, not independently verified by the engine.",
+    "binding": {
+      "repository": "juangcarmona/presentations",
+      "issue": 40,
+      "pr": 42,
+      "head": "f41a00c68e493bcab1b91af7ccce40e8c9babebc",
+      "base": "420b54bfb199acc7ea567a9ee537f138f18a3dce",
+      "branch": "main",
+      "intent": "5a0885aa25e0f75b26b2af0b898745602dafb6143d4b87930a3fd6375c9194b9",
+      "policy": "2a00485780edaf527c5892b07d7dd9760d2c6b1da8fc7e7509335138463fcf72",
+      "reviews": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "prIntent": "e1483df35f1a0a4b8293b37b812197bfdea0518c07f4a9b59760cc7825b10491",
+      "files": "4201f625fa092f21e0d5731801efd029607b6da2708d95c7cf212d4b09c187d5"
+    }
+  },
+  "output": {
+    "summary": "Accepted documentation revision is prepared for owner-authorized integration. This assessment is not a merge receipt or completion of issue 40.",
+    "integration": {
+      "issue": 40,
+      "pullRequest": 42,
+      "acceptedHead": "f41a00c68e493bcab1b91af7ccce40e8c9babebc",
+      "base": "420b54bfb199acc7ea567a9ee537f138f18a3dce",
+      "targetBranch": "main",
+      "ownerAuthorization": {
+        "merge": true,
+        "source": "/input/context.json request.authorization",
+        "scope": "Only PR 42 at the full accepted head for issue 40. Does not waive GitHub protection or authorize deployment."
+      },
+      "action": "Trusted publisher may request merge only after fresh identity, authority, checks, base, review and reservation validation; GitHub enforces the allowed merge methods and protection.",
+      "observedMergeable": true,
+      "observedMerged": false,
+      "mergeReceipt": null,
+      "requiredApprovals": 0,
+      "reviewsObserved": [],
+      "requiredCheck": "catalog from app 15368 at the accepted head",
+      "additionalCheck": "Verify Lighthouse foundation passed at the accepted head; satisfies the PR's explicit additional verification requirement without changing the forge gate."
+    },
+    "scopeAndAcceptance": {
+      "changedPaths": [
+        "README.md",
+        "docs/engineering/repository-refinement.md",
+        "openspec/changes/issue-18-proposal/tasks.md",
+        "talks/ingenieria-del-software-2_0/README.md",
+        "talks/soft-and-hard-guardrails/README.md"
+      ],
+      "decision": "The host-supplied changed paths are confined to the five authorized documentation corrections, not talk content, styles, workflows or policy.",
+      "findings": [
+        "README.md:78-86 and both talk READMEs distinguish owner-accepted first delivery from incomplete manual verification, visual follow-up 39 and deployment authority.",
+        "openspec/changes/issue-18-proposal/tasks.md:42-49 records the acceptance decision and CI evidence while preserving unchecked content-equivalence, manual-review and full AC indexing tasks, including 5.2. Acceptance is not represented as execution of those checks.",
+        "docs/engineering/repository-refinement.md:29-35 documents exact-head explicit dispatch, default preparation, fresh authority checks, post-merge catalogue dispatch and permanent review reports consistently with the installed router, completion workers and GitHub profile.",
+        "AGENTS.md, docs/agents/presentations.md and docs/engineering/github-profile.md agree with the affected guidance. The repository-specific issue/owner-answer authority exception is explicit; LIGHTHOUSE.md deployment guardrails remain intact.",
+        "No unresolved current-stage instruction drift or source defect was identified. Historical proposal wording describes its original proposal stage and does not override the corrected current status."
+      ],
+      "historicalEvidenceBoundary": "Acceptance links and historical report references were inspected as documentation, not fetched or independently authenticated. The host work-item scope explicitly accepts the historical blocked review as a valid outcome; it does not require completing issue 18's missing checks for this documentation pilot."
+    },
+    "dependencyOrder": {
+      "dependency": "juangcarmona/lighthouse#105",
+      "assessment": "The needed completion capability is already installed: router exposes integrate/review with explicit head and merge inputs, both workers use the host-supplied harness revision, the profile adopts process/retrospectives, and verify-catalog.yml supports workflow_dispatch. The bounded documentation PR follows that installation.",
+      "limits": "Upstream issue closure and the PR body's 145-test assertion were not independently verified and are not asserted as authenticated test receipts. Local capability inspection plus the host-authenticated foundation check support this integration assessment."
+    },
+    "finalizationPlan": {
+      "executor": "trusted publisher after current-stage validation",
+      "observedIssue": {
+        "state": "open",
+        "labels": [
+          "waiting-review"
+        ]
+      },
+      "observedPullRequest": {
+        "state": "open",
+        "merged": false,
+        "labels": []
+      },
+      "onPassed": {
+        "add": [
+          "waiting-review"
+        ],
+        "remove": [],
+        "closeIssue": false
+      },
+      "onBlocked": {
+        "add": [
+          "waiting-review"
+        ],
+        "remove": [],
+        "closeIssue": false
+      },
+      "pullRequestLabels": "preserve",
+      "reservation": "Host adds agent-working after the supplied observation and releases it during cleanup for every outcome.",
+      "assessment": "Plan matches the configured attention label and keeps the automation work item open until later verification and review; labels are not merge authority.",
+      "evidenceBranch": "process/retrospectives"
+    },
+    "laterStageEvidence": [
+      {
+        "item": "Actual merge outcome and merged commit",
+        "status": "not-yet-observed",
+        "intendedStage": "publisher integration finalization",
+        "owner": "trusted publisher",
+        "requirement": "Retain the actual merge receipt; a passed assessment alone does not establish integration."
+      },
+      {
+        "item": "Merged-revision catalogue verification",
+        "status": "not-yet-run",
+        "intendedStage": "post-merge verification and review",
+        "owner": "trusted publisher and repository owner",
+        "requirement": "Explicitly dispatch verify-catalog.yml after merge and obtain successful revision-bound results. request.postMerge is empty, not a failed check."
+      },
+      {
+        "item": "Permanent issue 40 review report and retrospective",
+        "status": "pending-separate-owner-dispatch",
+        "intendedStage": "review",
+        "owner": "repository owner and trusted publisher",
+        "requirement": "After merged-revision checks, explicitly request review for the same issue, PR and accepted head with merge false; retain the validated report on process/retrospectives before completing the work item."
+      },
+      {
+        "item": "Issue 18 manual accessibility, original-source equivalence and full AC indexing",
+        "status": "incomplete-historical-verification",
+        "intendedStage": "issue 18 acceptance follow-up",
+        "owner": "repository owner and content/accessibility reviewers",
+        "requirement": "Preserve the unchecked tasks and acceptance limits. This documentation pilot neither completes nor waives them. Visual polish remains separately tracked in issue 39."
+      }
+    ]
+  },
+  "evidence": [
+    {
+      "id": "github-check:121331966057",
+      "status": "passed",
+      "source": "https://github.com/juangcarmona/presentations/actions/runs/40247463023/job/121331966057",
+      "reason": "Host-authenticated catalog success from app 15368 at f41a00c68e493bcab1b91af7ccce40e8c9babebc; the only forge-required context."
+    },
+    {
+      "id": "github-check:121331965719",
+      "status": "passed",
+      "source": "https://github.com/juangcarmona/presentations/actions/runs/40247462984/job/121331965719",
+      "reason": "Host-authenticated Verify Lighthouse foundation success at the accepted head, also explicitly requested by the PR."
+    },
+    {
+      "id": "accepted-revision-and-owner-dispatch",
+      "status": "passed",
+      "source": "/input/context.json request.authorization and completion.binding",
+      "reason": "Issue 40, PR 42, accepted head, checked revision and source revision agree. Explicit merge true is bound to that head; base and fingerprints are supplied for publisher revalidation."
+    },
+    {
+      "id": "bounded-documentation-acceptance",
+      "status": "passed",
+      "source": "README.md:78-86; docs/engineering/repository-refinement.md:29-35; openspec/changes/issue-18-proposal/tasks.md:42-49; both changed talk READMEs",
+      "reason": "Inspected text corrects delivery and automation status without declaring unperformed manual checks complete, waiving acceptance criteria or claiming deployment. Host changed paths contain only the authorized documentation."
+    },
+    {
+      "id": "installed-dependency-and-policy-consistency",
+      "status": "passed",
+      "source": ".github/workflows/lighthouse-sdlc-router.yml; .github/workflows/lighthouse-sdlc-integrate.md; .github/workflows/lighthouse-sdlc-review.md; .github/workflows/verify-catalog.yml; .lighthouse/github.json",
+      "reason": "Required completion capability, pinned workers, evidence-branch adoption and explicit post-merge dispatch support are present. Local profile matches host policy: catalog required, zero required approvals. Deployment restrictions are unchanged."
+    },
+    {
+      "id": "tracker-and-reservation-plan",
+      "status": "passed",
+      "source": "/input/context.json completion.finalization; docs/engineering/repository-refinement.md",
+      "reason": "The planned waiting-review label, open issue, preserved PR labels and host reservation cleanup correctly separate integration assessment from later work-item completion."
+    }
+  ],
+  "missingEvidence": [],
+  "unavailableChecks": [],
+  "pendingReview": [],
+  "nextAction": "Trusted publisher: revalidate current authority, all bound identities, accepted-head checks and reservation; request the explicitly authorized merge subject to GitHub protection, retain the actual outcome and dispatch verify-catalog.yml. Keep issue 40 open with waiting-review. After successful merged-revision verification, the repository owner must separately dispatch review to retain the permanent report and retrospective."
+}

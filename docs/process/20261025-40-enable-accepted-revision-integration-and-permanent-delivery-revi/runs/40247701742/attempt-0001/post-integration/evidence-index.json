@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "indexId": "evidence-index",
+  "runId": "1abb3e94c7083c44af369fb5baa2a3b397501eed6368739c09faa0ae3ea9dc6b",
+  "repository": "juangcarmona/presentations",
+  "revision": "3b08109bb59a895350e023554b46957be8f6373f",
+  "records": [
+    {
+      "id": "completion:1abb3e94c7083c44af369fb5baa2a3b397501eed6368739c09faa0ae3ea9dc6b",
+      "path": "evidence-record.json",
+      "sha256": "0b83cd72576ae2fc3cbeda55c5465d467d7af72b8ecd53f742282a50f4c31959",
+      "kind": "stage-result",
+      "status": "passed",
+      "subject": {
+        "type": "issue",
+        "id": "https://github.com/juangcarmona/presentations/issues/40"
+      }
+    }
+  ],
+  "coverage": [
+    {
+      "subject": {
+        "type": "issue",
+        "id": "https://github.com/juangcarmona/presentations/issues/40"
+      },
+      "status": "verified",
+      "evidenceIds": [
+        "completion:1abb3e94c7083c44af369fb5baa2a3b397501eed6368739c09faa0ae3ea9dc6b"
+      ]
+    }
+  ]
+}
