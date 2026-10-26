@@ -1,0 +1,161 @@
+{
+  "schemaVersion": 1,
+  "runId": "8fe3225971d65c8f15fcf5744ebc66d67c2b9ab2c271cae5b8dc2a3c1484aa23",
+  "stage": "review",
+  "gate": null,
+  "status": "blocked",
+  "input": {
+    "repository": "juangcarmona/presentations",
+    "issue": 40,
+    "pr": 42,
+    "acceptedHead": "f41a00c68e493bcab1b91af7ccce40e8c9babebc",
+    "integratedRevision": "3b08109bb59a895350e023554b46957be8f6373f",
+    "intentFingerprint": "5a0885aa25e0f75b26b2af0b898745602dafb6143d4b87930a3fd6375c9194b9",
+    "policyFingerprint": "2a00485780edaf527c5892b07d7dd9760d2c6b1da8fc7e7509335138463fcf72",
+    "provenance": "Identities, changed paths, merge observation and GitHub checks are host-supplied; no independent GitHub requests were made."
+  },
+  "output": {
+    "summary": "The bounded documentation pilot is integrated and merged-revision catalogue verification passed. Inspected guidance preserves historical acceptance limits and matches adopted completion configuration. Review completion is blocked by the pending current-stage verification check; no failed check or new source defect was established.",
+    "deliveryAssessment": {
+      "scope": "All five host-reported changed paths are documentation: root README, operator guide, issue-18 task record and both talk READMEs. No talk runtime, styles or workflow changes are reported in PR #42.",
+      "integration": "The host reports PR #42 closed and merged by github-actions[bot] at 3b08109bb59a895350e023554b46957be8f6373f. This is an actual merge observation, not an inference from an assessment or the skipped integrate job in the current review run.",
+      "verification": "Accepted-head catalogue and foundation checks passed. Explicit post-merge verify-catalog.yml run 40247989681 and catalogue job 121333552121 passed on the integrated revision. The workflow contains workflow_dispatch, locked install, full build, browser verification and revision-named artifacts. These observations do not establish manual acceptance or prove every prose claim.",
+      "authority": "The current dispatch has merge=false and authorizes review only. No integration, permission change, follow-up issue or other stage is requested by this result.",
+      "durability": "The adopted profile selects protected process/retrospectives publication. Permanent retention of this report and its receipt are downstream host effects, not completed agent actions. Historical issue-18 report links are recorded in the inspected documents; their remote contents were not independently fetched.",
+      "implementationEvidenceLimit": "The PR body reports 145 provider tests; their logs are not supplied and this review does not attest that count. Host-authenticated consumer checks and inspected configuration support this bounded assessment."
+    },
+    "guidanceReview": {
+      "inspected": [
+        "AGENTS.md:12-28",
+        "LIGHTHOUSE.md:16-26",
+        "README.md:78-88",
+        "docs/engineering/repository-refinement.md:19-35",
+        "docs/engineering/github-profile.md:1-22",
+        "docs/agents/presentations.md:21-51",
+        "openspec/changes/issue-18-proposal/tasks.md:30-49",
+        "talks/ingenieria-del-software-2_0/README.md:24-34",
+        "talks/soft-and-hard-guardrails/README.md:15-23",
+        ".lighthouse/github.json:6-43",
+        ".github/workflows/lighthouse-sdlc-router.yml:9-33,97-120",
+        ".github/workflows/lighthouse-sdlc-review.md:83-178",
+        ".github/workflows/verify-catalog.yml:3-41"
+      ],
+      "outcome": "No new stale or conflicting completion guidance established. The operator guide describes accepted-head dispatch, separate merge authorization, explicit post-merge CI and permanent reports consistently with inspected local configuration. The repository-specific issue/owner intent policy explicitly states that ProductShape and ArcShape are not installed authorities; generic generated baseline language is not treated as new drift. Custom-engine host completion signaling is intentional, not a missing product check."
+    },
+    "findings": [
+      {
+        "id": "documentation-status-reconciliation",
+        "classification": "fixed",
+        "kind": "historical documentation defect",
+        "owner": "repository maintainer",
+        "followUpReference": "PR #42; issue #40",
+        "evidence": "README.md:80-82, operator guide:27-35, both talk README endings and tasks.md:47-49 now record first-delivery acceptance and CI while retaining incomplete checks. The host work item identifies these as findings from review run 40244453359.",
+        "limit": "Current text was inspected; the historical report and pre-change diff were not independently available."
+      },
+      {
+        "id": "historical-manual-and-equivalence-evidence",
+        "classification": "deferred",
+        "kind": "acceptance evidence gap, not a newly established runtime defect",
+        "owner": "juangcarmona with talk maintainers",
+        "followUpReference": "issue #18 OpenSpec tasks 1.1-1.3, 2.2, 3.1-3.3, 4.1 and 5.2; visual follow-up #39",
+        "evidence": "tasks.md:44-49 explicitly preserves original-source/content equivalence and manual verification limits. Issue #40 accepts the historical blocked review as a valid outcome rather than requiring invented evidence.",
+        "scope": "Not a blocker for the bounded automation pilot; no waiver or completion of issue-18 acceptance criteria is inferred. #39 tracks visual polish, not all historical evidence obligations."
+      },
+      {
+        "id": "current-review-verification-pending",
+        "classification": "accepted",
+        "kind": "current-stage verification gap; failure not established",
+        "owner": "Lighthouse workflow maintainer / trusted host",
+        "followUpReference": "run 40248258587, job 121334390062; issue #40",
+        "evidence": "The authenticated observation marks review / Verify accepted commit, checks and evidence protection unavailable with state pending on the integrated revision.",
+        "decision": "Block completion until a terminal authenticated observation resolves this stage-specific verification. This does not add it to the forge merge gate, whose only required context is catalog."
+      }
+    ],
+    "preservedAcceptanceLimits": [
+      {
+        "status": "unverified",
+        "intendedStage": "issue-18 acceptance and completion review",
+        "checks": "Original-source prose/media equivalence, verbatim note extraction, full manual accessibility review, complete AC1-AC8 indexing and associated retirement-sequence verification remain incomplete in tasks.md:44-49."
+      },
+      {
+        "status": "deferred",
+        "intendedStage": "separately authorized visual follow-up #39",
+        "checks": "Visual polish is separate from this documentation and automation pilot."
+      },
+      {
+        "status": "not-authorized",
+        "intendedStage": "production publication",
+        "checks": "Neither first-delivery acceptance nor this review authorizes deployment."
+      }
+    ],
+    "finalization": {
+      "policySource": "completion.finalization and docs/engineering/repository-refinement.md:35",
+      "observedIssue": {
+        "state": "open",
+        "labels": [
+          "waiting-review"
+        ]
+      },
+      "observedPullRequest": {
+        "state": "closed",
+        "merged": true,
+        "labels": []
+      },
+      "intendedTransition": {
+        "add": [
+          "waiting-review"
+        ],
+        "remove": [],
+        "closeIssue": false,
+        "pullRequestLabels": "preserve"
+      },
+      "reservation": "Trusted host cleanup releases agent-working for every outcome.",
+      "publisherDuty": "Validate and retain this bounded report on process/retrospectives; recheck current authority, cited checks and reservation before applying effects. No final labels or publication are claimed already applied."
+    },
+    "retrospective": "## What went well\n- The host records PR #42 merged and catalogue verification successful at the exact integrated revision (job 121333552121). The five changed guides keep first-delivery acceptance separate from outstanding manual evidence.\n- Explicit dispatch and protected report publication are adopted in .lighthouse/github.json and the operator guide; review does not grant merge or deployment authority.\n\n## What went wrong\n- The earlier issue-18 review exposed stale delivery-status documentation (host work-item account, run 40244453359); PR #42 reconciles the inspected statements.\n- This snapshot still has a pending current-stage verification check, job 121334390062. This is missing verification, not an observed failed check or proven implementation defect. Historical manual/content evidence also remains incomplete, outside this pilot's completion criteria.\n- No new source defect was established. Recurrence across work items, root cause of the pending snapshot and cost/timing impacts are unknown; this single attempt does not establish recurrence.\n\n## Start doing\n- Repository maintainer: compare acceptance links, CI revision and open task notes across root/operator/talk guides when recording a delivery decision (evidence: README.md:80-82 and tasks.md:44-49).\n- Trusted host: supply terminal current-stage verification evidence before declaring completion; retain pending as pending meanwhile (job 121334390062).\n\n## Stop doing\n- Do not treat green catalogue CI as manual/content acceptance, or a pending check as failed. Keep first-version acceptance and remaining requirements distinct, as tasks.md:49 now does.\n\n## Improvement candidates\n- **Delivery-status consistency review** — Owner: repository maintainer; observed failure: historically stale status across guides, reported by issue #40 and corrected in PR #42. Smallest guard: a reviewer checklist linking the canonical acceptance decision, revision-bound CI and still-open task evidence. Reproduction: review pre-#42 guide versions against the PR #38 acceptance record and CI evidence, then confirm the checklist detects stale status; repeat against the corrected five documents without checking off unperformed tasks. This candidate needs separate review and regression proof; no automated policy change is proposed here.\n- **Terminal-evidence snapshot handling** — Owner: Lighthouse completion maintainer; observation: current-stage prepare verification is pending in this snapshot despite successful merged-revision catalogue CI. Smallest candidate guard: explicitly distinguish in-flight current-stage observations from unrelated skipped jobs and from failed checks before completion. Reproduction: fixture this supplied pending observation and require blocked, substitute an authenticated terminal success and reassess, and separately cover failure and unrelated skipped-job cases. Whether snapshot timing is a provider bug remains unknown; investigate in a separately authorized review before changing provider guidance or guards."
+  },
+  "evidence": [
+    {
+      "id": "github-check:121331966057",
+      "status": "passed",
+      "source": "https://github.com/juangcarmona/presentations/actions/runs/40247463023/job/121331966057",
+      "reason": "Host-authenticated catalogue success at accepted PR head f41a00c68e493bcab1b91af7ccce40e8c9babebc."
+    },
+    {
+      "id": "github-check:121331965719",
+      "status": "passed",
+      "source": "https://github.com/juangcarmona/presentations/actions/runs/40247462984/job/121331965719",
+      "reason": "Host-authenticated foundation success at the accepted head; separate from the required catalogue context."
+    },
+    {
+      "id": "github-check:121333552121",
+      "status": "passed",
+      "source": "https://github.com/juangcarmona/presentations/actions/runs/40247989681/job/121333552121",
+      "reason": "Host-authenticated post-merge catalogue verification at integrated and checked revision 3b08109bb59a895350e023554b46957be8f6373f."
+    },
+    {
+      "id": "github-check:121334390062",
+      "status": "unavailable",
+      "source": "https://github.com/juangcarmona/presentations/actions/runs/40248258587/job/121334390062",
+      "reason": "Current-stage accepted-commit/check/evidence-protection verification is pending, not failed. Its terminal result is unresolved."
+    },
+    {
+      "id": "host-observed-merge",
+      "status": "passed",
+      "source": "/input/context.json#/completion",
+      "reason": "The trusted host reports PR #42 merged at the integrated revision, consistent with observed closed/merged PR state."
+    },
+    {
+      "id": "affected-guidance-inspection",
+      "status": "passed",
+      "source": "/workspace/docs/engineering/repository-refinement.md:29-35",
+      "reason": "Compared all five changed documents with repository instructions, profile, router and verification workflow. No new completion-guidance drift established; historical manual gaps remain explicit."
+    }
+  ],
+  "missingEvidence": [],
+  "unavailableChecks": [
+    "github-check:121334390062: review / Verify accepted commit, checks and evidence protection is pending at the integrated revision; terminal authenticated evidence is required for current-stage completion."
+  ],
+  "pendingReview": [],
+  "nextAction": "Trusted host/workflow maintainer: resolve and supply the terminal current-stage verification observation, then reassess this review against fresh authenticated evidence. Retain the blocked report, keep #40 open with waiting-review, preserve PR labels and release the reservation. Do not merge, open follow-up issues or start another stage."
+}
