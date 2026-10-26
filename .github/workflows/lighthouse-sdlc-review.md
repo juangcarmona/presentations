@@ -51,7 +51,7 @@ steps:
     uses: actions/checkout@v5
     with:
       repository: juangcarmona/lighthouse
-      ref: 4008fc878b0481f2261c1d2496609c8ce1b803aa
+      ref: 788c301ee1eeec8c954ea8a11614c6249997fe4c
       path: tools
       persist-credentials: false
   - name: Load the authorized issue context
@@ -98,7 +98,7 @@ jobs:
       - uses: actions/checkout@v5
         with:
           repository: juangcarmona/lighthouse
-          ref: 4008fc878b0481f2261c1d2496609c8ce1b803aa
+          ref: 788c301ee1eeec8c954ea8a11614c6249997fe4c
           persist-credentials: false
       - uses: actions/setup-node@v5
         with:
@@ -140,7 +140,7 @@ jobs:
       - uses: actions/checkout@v5
         with:
           repository: juangcarmona/lighthouse
-          ref: 4008fc878b0481f2261c1d2496609c8ce1b803aa
+          ref: 788c301ee1eeec8c954ea8a11614c6249997fe4c
           persist-credentials: false
       - uses: actions/setup-node@v5
         with:
