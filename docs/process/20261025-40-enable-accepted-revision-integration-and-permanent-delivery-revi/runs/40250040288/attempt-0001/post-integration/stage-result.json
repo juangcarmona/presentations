@@ -1,0 +1,155 @@
+{
+  "schemaVersion": 1,
+  "runId": "792127b31acb5c16e34f3835e5bedfd8161c184d7b4bb6661a3fdf65cd92fdf1",
+  "stage": "review",
+  "status": "passed",
+  "gate": null,
+  "evidence": [
+    {
+      "id": "integration:40247701742:1",
+      "status": "passed",
+      "source": "https://github.com/juangcarmona/presentations/blob/85b1f2ee97fff3ae90e260ad9c8acfebfc80fef5/docs/process/20261025-40-enable-accepted-revision-integration-and-permanent-delivery-revi/runs/40247701742/attempt-0001/post-integration/report.md",
+      "reason": "Host-verified protected-branch record, SHA256 0b83cd72576ae2fc3cbeda55c5465d467d7af72b8ecd53f742282a50f4c31959, binds owner merge:true authorization for PR 42 accepted head f41a00c68e493bcab1b91af7ccce40e8c9babebc to actual merged revision 3b08109bb59a895350e023554b46957be8f6373f. This is merge evidence, not merely a passed assessment."
+    },
+    {
+      "id": "github-check:121331966057",
+      "status": "passed",
+      "source": "https://github.com/juangcarmona/presentations/actions/runs/40247463023/job/121331966057",
+      "reason": "Authenticated required catalog check from app 15368 passed on the exact accepted PR head."
+    },
+    {
+      "id": "github-check:121331965719",
+      "status": "passed",
+      "source": "https://github.com/juangcarmona/presentations/actions/runs/40247462984/job/121331965719",
+      "reason": "Additional foundation verification passed on the accepted head; it is not an additional forge merge gate."
+    },
+    {
+      "id": "github-check:121333552121",
+      "status": "passed",
+      "source": "https://github.com/juangcarmona/presentations/actions/runs/40247989681/job/121333552121",
+      "reason": "Authenticated catalog check passed on merged revision 3b08109bb59a895350e023554b46957be8f6373f. Host postMerge observation identifies successful verify-catalog.yml run 40247989681 at that revision, satisfying the explicit post-merge requirement."
+    },
+    {
+      "id": "review:affected-guidance",
+      "status": "passed",
+      "source": "/workspace/docs/engineering/repository-refinement.md:29-35",
+      "reason": "Inspected all five host-listed changed documents, AGENTS.md, docs/agents/presentations.md, docs/engineering/github-profile.md, lighthouse.json, LIGHTHOUSE.md, .lighthouse/github.json and router/catalog workflows. Documentation matches accepted-head dispatch, separate merge authorization, actual merge reporting, post-merge verification and protected evidence publication; unfinished historical verification stays open."
+    },
+    {
+      "id": "review:finalization-policy",
+      "status": "passed",
+      "source": "/input/context.json: completion.finalization",
+      "reason": "Observed issue open with waiting-review and PR closed/merged with no labels. The host's passed transition agrees with operator guidance: retain review evidence, remove waiting-review/ready/integrate/review, close the issue, preserve PR labels and release agent-working through cleanup. These are subsequent publisher actions, not prerequisites already performed."
+    }
+  ],
+  "missingEvidence": [],
+  "unavailableChecks": [],
+  "pendingReview": [],
+  "nextAction": "Trusted publisher: recheck current authority, cited checks, fingerprints and reservation; permanently retain this review on process/retrospectives, then apply the declared passed finalization for issue 40 and release the reservation. Do not merge again, change permissions, open issues or start another stage.",
+  "output": {
+    "summary": "Passed the bounded documentation integration pilot for issue 40 / PR 42. Actual owner-authorized integration and successful merged-revision catalogue verification are established by host-authenticated evidence. Affected guidance reconciles first-delivery acceptance and CI status without inventing manual checks. Current review retention and final labels are subsequent trusted-publisher effects.",
+    "identity": {
+      "repository": "juangcarmona/presentations",
+      "issue": 40,
+      "pr": 42,
+      "acceptedHead": "f41a00c68e493bcab1b91af7ccce40e8c9babebc",
+      "integratedRevision": "3b08109bb59a895350e023554b46957be8f6373f",
+      "checkedRevision": "3b08109bb59a895350e023554b46957be8f6373f",
+      "observedCurrentRevision": "a0a476c99bf74644e6e281184607685981e280e4",
+      "intent": "5a0885aa25e0f75b26b2af0b898745602dafb6143d4b87930a3fd6375c9194b9",
+      "policy": "2a00485780edaf527c5892b07d7dd9760d2c6b1da8fc7e7509335138463fcf72",
+      "reviews": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "prIntent": "e1483df35f1a0a4b8293b37b812197bfdea0518c07f4a9b59760cc7825b10491",
+      "files": "4201f625fa092f21e0d5731801efd029607b6da2708d95c7cf212d4b09c187d5",
+      "workflowRunId": "40250040288",
+      "attempt": "1",
+      "harnessRevision": "788c301ee1eeec8c954ea8a11614c6249997fe4c",
+      "provenance": "Supplied by the trusted host; no independent GitHub or git authentication was performed. Assessment concerns the integrated delivery, not a claim that the later current revision was tested. Current dispatch merge:false grants no integration authority."
+    },
+    "findings": [
+      {
+        "id": "delivery-status-drift",
+        "classification": "fixed",
+        "kind": "documentation defect",
+        "owner": "juangcarmona, repository maintainer",
+        "followUpReference": "#40 / PR #42; historical review run 40244453359",
+        "decision": "The bounded pilot reconciles the previously reported status statements across the five listed documentation paths. No unresolved source defect was established in this review.",
+        "evidence": [
+          "README.md:78-82 records owner acceptance, merged PR 38, CI and remaining limits.",
+          "docs/engineering/repository-refinement.md:27-35 records integrated delivery and installed completion workers.",
+          "talks/ingenieria-del-software-2_0/README.md:34 and talks/soft-and-hard-guardrails/README.md:23 point to acceptance and remaining checks.",
+          "openspec/changes/issue-18-proposal/tasks.md:44-49 preserves the incomplete verification requirements while recording acceptance."
+        ]
+      },
+      {
+        "id": "historical-talk-verification",
+        "classification": "deferred",
+        "kind": "historical acceptance-evidence gap, not a failed CI check",
+        "owner": "juangcarmona, content owner and manual reviewer",
+        "followUpReference": "#18 OpenSpec tasks 1.1-1.3, 2.2, 3.1-3.3, 4.1 and 5.2; #39 for visual polish only",
+        "decision": "Keep manual accessibility, source/content equivalence, retirement dependencies and full AC indexing explicitly incomplete. The owner-scoped issue 40 pilot does not waive them or require fabricating evidence to replace the valid historical blocked review. No new stage or issue is requested."
+      },
+      {
+        "id": "historical-postmerge-observation",
+        "classification": "fixed",
+        "kind": "verification availability gap",
+        "owner": "repository automation maintainer",
+        "followUpReference": "integration:40247701742:1; verify-catalog.yml run 40247989681",
+        "decision": "The integration record truthfully reported post-merge CI missing at its observation time. Current authenticated evidence supplies a successful check at the exact merged revision. Preserve both observations; neither an earlier workflow success nor skipped unrelated stages proves test execution. No workflow defect or recurrence is established."
+      },
+      {
+        "id": "local-authority-difference",
+        "classification": "accepted",
+        "kind": "intentional repository-specific authority",
+        "owner": "repository maintainer; Lighthouse owns generated guidance",
+        "followUpReference": "docs/engineering/repository-refinement.md:5; lighthouse.json:16-19; LIGHTHOUSE.md:10-18,24-26",
+        "decision": "Local intent is the issue and explicit owner answers; ProductShape and ArcShape are explicitly not adopted. Generic generated baseline wording is not evidence that this pilot requires adopting those authorities. No deployment is authorized, and provider-owned guidance is not rewritten by this review."
+      }
+    ],
+    "scopeAndLimits": {
+      "changedPaths": [
+        "README.md",
+        "docs/engineering/repository-refinement.md",
+        "openspec/changes/issue-18-proposal/tasks.md",
+        "talks/ingenieria-del-software-2_0/README.md",
+        "talks/soft-and-hard-guardrails/README.md"
+      ],
+      "assessment": "The host-listed paths are documentation only and match the bounded accepted pilot. No talk source, styles, workflow or policy changes are listed for PR 42. Installed router inputs include integrate/review, accepted head and explicit merge; catalogue workflow supports workflow_dispatch and runs locked install, build and tests. Evidence publication is adopted in .lighthouse/github.json.",
+      "notClaimed": [
+        "No new tests, manual accessibility review, screenshots or source-equivalence verification were performed by this review.",
+        "The PR description's 145 upstream tests were not independently authenticated here and are not used as a passing gate.",
+        "The previous review jobs' green conclusions alone do not establish intended behavior or current permanent review publication.",
+        "No production deployment, policy change, new issue, merge or subsequent stage is authorized."
+      ]
+    },
+    "finalization": {
+      "executor": "trusted publisher after validation and current rechecks",
+      "evidenceBranch": "process/retrospectives",
+      "observedIssue": {
+        "state": "open",
+        "labels": [
+          "waiting-review"
+        ]
+      },
+      "observedPullRequest": {
+        "state": "closed",
+        "merged": true,
+        "labels": []
+      },
+      "intendedTransition": {
+        "add": [],
+        "remove": [
+          "waiting-review",
+          "ready",
+          "integrate",
+          "review"
+        ],
+        "closeIssue": true
+      },
+      "pullRequestLabels": "preserve",
+      "reservation": "host cleanup releases agent-working for every outcome",
+      "publication": "This envelope prepares the current durable review; it does not assert that its subsequent publication or final label transition has already happened."
+    },
+    "retrospective": "## What went well\n- The protected integration record binds explicit owner authorization to accepted head `f41a00c6…` and actual merge `3b08109b…`; merged-revision catalogue check `github-check:121333552121` passed. Assessment, merge and verification remain separate facts.\n- PR #42 reconciles five guidance files while retaining unchecked manual/content-equivalence tasks (`tasks.md:44-49`). No unresolved source defect was established in this pilot.\n\n## What went wrong\n- The historical #18 review exposed stale delivery-status guidance (work-item account of run 40244453359); the correction required the bounded #40 documentation pilot. This is an established documentation defect, not a runtime defect.\n- Post-merge CI was unavailable when integration receipt `integration:40247701742:1` was written. Later run 40247989681 resolves availability; no failed check or automation defect is demonstrated. Recurrence across work items and any time/cost impact are unknown; retries do not establish recurrence.\n\n## Start doing\n- Repository maintainer: compare delivery-status statements with accepted revision, merge receipt and later CI when closing a delivery; preserve historical unknowns instead of rewriting them as passes.\n\n## Stop doing\n- Do not use a green orchestration job, owner acceptance, or a passed assessment as a substitute for a merge receipt or unperformed manual verification. The current evidence distinguishes these correctly; no additional failure of this kind is asserted.\n\n## Improvement candidates\n- **Status-consistency review checklist — owner: repository maintainer.** Observed failure: historical stale status statements, identified by run 40244453359 and corrected in PR #42. Smallest useful guard: a closure checklist covering root/operator/talk guidance and OpenSpec status against acceptance and CI receipts. Reproduce before correction by reviewing the pre-PR #42 versions against the same retained acceptance/CI evidence and recording the mismatches; then apply the checklist to PR #42 and confirm those mismatches disappear while manual tasks remain unchecked. This proposed guard needs separate review and before/after regression proof; it was not implemented here.\n- **No additional automation or provider-policy guard proposed.** The historical missing-check observation is resolved, not proof of a defect. Retain that distinction and let juangcarmona own the remaining #18 manual evidence and #39 visual work without opening new work from this stage."
+  }
+}
