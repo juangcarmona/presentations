@@ -1,0 +1,144 @@
+{
+  "schemaVersion": 1,
+  "runId": "6de4fcdcd942ef50189a049f117835e3a978f890417ea65e0710bed60a0ea101",
+  "stage": "review",
+  "gate": null,
+  "status": "blocked",
+  "evidence": [
+    {
+      "id": "github-check:121331966057",
+      "status": "passed",
+      "source": "https://github.com/juangcarmona/presentations/actions/runs/40247463023/job/121331966057",
+      "reason": "Authenticated catalogue success at accepted PR head f41a00c68e493bcab1b91af7ccce40e8c9babebc."
+    },
+    {
+      "id": "github-check:121331965719",
+      "status": "passed",
+      "source": "https://github.com/juangcarmona/presentations/actions/runs/40247462984/job/121331965719",
+      "reason": "Authenticated foundation success at accepted head; additional evidence, not an added forge merge requirement."
+    },
+    {
+      "id": "github-check:121333552121",
+      "status": "passed",
+      "source": "https://github.com/juangcarmona/presentations/actions/runs/40247989681/job/121333552121",
+      "reason": "Catalogue success at actual merged and checked revision 3b08109bb59a895350e023554b46957be8f6373f; postMerge identifies the required verify-catalog.yml run at this revision."
+    },
+    {
+      "id": "github-check:121335172378",
+      "status": "passed",
+      "source": "https://github.com/juangcarmona/presentations/actions/runs/40248258587/job/121335172378",
+      "reason": "Earlier review publisher job succeeded. This is not a supplied pinned report, publication receipt, or evidence of the review's assessment contents."
+    },
+    {
+      "id": "host-merge-observation",
+      "status": "passed",
+      "source": "/input/context.json#/completion",
+      "reason": "Host observes PR 42 closed and merged by github-actions[bot] at 3b08109bb59a895350e023554b46957be8f6373f. This independently establishes merge occurrence, not the historical owner dispatch or integration execution chain."
+    },
+    {
+      "id": "affected-guidance-inspection",
+      "status": "passed",
+      "source": "/workspace/docs/engineering/repository-refinement.md:29-35",
+      "reason": "Inspected all five changed documents, AGENTS.md, presentation guidance, profile, router and completion workflow sources. Corrections consistently record first-delivery acceptance without checking off unfinished manual work."
+    },
+    {
+      "id": "workflow-integration-provenance",
+      "status": "unavailable",
+      "source": "/input/context.json#/completion",
+      "reason": "No historical integration receipt or equivalent authenticated owner-dispatch/run evidence binds this merge to merge:true authorization for the accepted head. Current review authorization is merge:false; skipped integrate in an earlier review run cannot supply this evidence."
+    },
+    {
+      "id": "permanent-report-retention",
+      "status": "unavailable",
+      "source": "/input/context.json#/completion/observedChecks",
+      "reason": "No report commit/path or publication receipt is supplied for the earlier issue 40 review. Green publication alone does not demonstrate retained report identity and contents. Current report publication remains a subsequent publisher action."
+    }
+  ],
+  "missingEvidence": [
+    "Historical integration receipt or equivalent authenticated evidence connecting PR 42 accepted head f41a00c68e493bcab1b91af7ccce40e8c9babebc, explicit owner merge:true dispatch, workflow execution and merge 3b08109bb59a895350e023554b46957be8f6373f.",
+    "Pinned prior issue 40 review report or publication receipt on process/retrospectives establishing permanent retention and report identity; earlier publisher check success does not establish report contents."
+  ],
+  "unavailableChecks": [],
+  "pendingReview": [],
+  "nextAction": "Owner/operator supplies the existing integration and permanent-publication receipts for host authentication, then requests review again. Publisher retains this blocked record and keeps issue 40 open with waiting-review; no merge, new gate, policy edit or follow-up issue is requested.",
+  "output": {
+    "summary": "PR 42 documentation corrections and merged-revision catalogue CI are established. Workflow-authorized integration provenance and prior permanent review retention are not established by the supplied evidence. No failed required check is observed.",
+    "identity": {
+      "repository": "juangcarmona/presentations",
+      "issue": 40,
+      "pr": 42,
+      "acceptedHead": "f41a00c68e493bcab1b91af7ccce40e8c9babebc",
+      "integratedRevision": "3b08109bb59a895350e023554b46957be8f6373f",
+      "checkedRevision": "3b08109bb59a895350e023554b46957be8f6373f",
+      "currentRevision": "7a846e57b9ece0334b3d0991f58756190aba1af1",
+      "intent": "5a0885aa25e0f75b26b2af0b898745602dafb6143d4b87930a3fd6375c9194b9",
+      "policy": "2a00485780edaf527c5892b07d7dd9760d2c6b1da8fc7e7509335138463fcf72",
+      "files": "4201f625fa092f21e0d5731801efd029607b6da2708d95c7cf212d4b09c187d5",
+      "provenance": "Host-supplied identities and GitHub observations; no independent git/API verification. The newer current revision is not substituted for the integrated revision."
+    },
+    "scopeAssessment": "The host lists only README.md, docs/engineering/repository-refinement.md, openspec/changes/issue-18-proposal/tasks.md and both talk READMEs as changed. This matches the bounded documentation pilot, not talk content, styling, deployment or waiver of acceptance criteria. Installed worker/router configuration supports explicit accepted-head dispatch, post-merge catalogue dispatch and publisher-owned evidence. Configuration alone does not establish historical execution.",
+    "findings": [
+      {
+        "id": "documentation-status-correction",
+        "classification": "fixed",
+        "kind": "documentation defect",
+        "owner": "Repository maintainer",
+        "followUp": "PR #42 / issue #40",
+        "evidence": "README.md:78-82; docs/engineering/repository-refinement.md:15,27,29-35; both talk README delivery-status paragraphs; openspec/changes/issue-18-proposal/tasks.md:44-49",
+        "decision": "The inspected documents now distinguish owner acceptance of the first version from incomplete full verification, explain the adopted completion workers and retain open task checkboxes. Historical findings are supplied by the work-item record; no independent before/after diff was provided."
+      },
+      {
+        "id": "historical-talk-verification",
+        "classification": "accepted",
+        "kind": "historical evidence limitation",
+        "owner": "juangcarmona / talk maintainer",
+        "followUp": "Issue #18 OpenSpec task record; visual work #39",
+        "evidence": "tasks.md:7-9,14,19-21,25,33,44-49; issue #40 scope clarification",
+        "decision": "Preserve original-source equivalence, notes/asset-retirement sequencing and full manual accessibility/content review as incomplete. Issue #40 explicitly excludes inventing this evidence or waiving #18 criteria. These historical limits are not current #40 blockers; #39 is only the identified visual follow-up."
+      },
+      {
+        "id": "completion-receipts",
+        "classification": "deferred",
+        "kind": "current-stage evidence gap, not established source defect",
+        "owner": "Repository operator / trusted publisher maintainer",
+        "followUp": "Issue #40 existing integration and review run receipts",
+        "evidence": "completion.merged, completion.mergeActor, postMerge and earlier publisher check; no integration/publication receipts or pinned issue 40 report supplied",
+        "decision": "Blocks assessment of the explicit workflow-integration and permanent-retention acceptance requirements. Missing verification is not failed CI and does not prove either operation failed."
+      },
+      {
+        "id": "generated-authority-guidance",
+        "classification": "deferred",
+        "kind": "provider-owned guidance conflict; runtime defect not established",
+        "owner": "Lighthouse SDLC documentation owner with repository maintainer",
+        "followUp": "Issue #40 review record; separate authorized provider review, no issue created",
+        "evidence": "LIGHTHOUSE.md:10-11,18,24 versus lighthouse.json:16-19 and docs/engineering/repository-refinement.md:5",
+        "decision": "Generated guidance says ProductShape/ArcShape are unadopted but also mandates them. Local issue authority is explicit; no new approval requirement is inferred. Do not hand-edit managed guidance or change permissions in this stage."
+      }
+    ],
+    "historicalVerification": {
+      "status": "incomplete",
+      "intendedStage": "Issue #18 delivery acceptance and follow-up, outside this review's completion gate",
+      "openTasks": [
+        "1.1",
+        "1.2",
+        "1.3",
+        "2.2",
+        "3.1",
+        "3.2",
+        "3.3",
+        "4.1",
+        "5.2"
+      ],
+      "note": "No manual check, screenshot inspection, original-content comparison, upstream 145-test execution or production deployment was performed or independently verified in this review. PR claims about upstream tests are not authenticated test receipts here."
+    },
+    "finalization": {
+      "policySource": "completion.finalization and docs/engineering/repository-refinement.md:35",
+      "observedIssue": "open, waiting-review",
+      "observedPullRequest": "closed, merged, no labels",
+      "intendedTransition": "Keep issue open; retain/add waiting-review; remove no labels; preserve PR labels. Host cleanup releases agent-working on every outcome.",
+      "onFuturePassed": "Trusted publisher removes waiting-review, ready, integrate and review and closes the issue after validation; preserve PR labels.",
+      "publication": "Trusted publisher validates and retains this report on the adopted protected process/retrospectives branch, rechecking current authority, checks and reservation. No prior application of final labels or publication of this current report is required. Engine does not emit GitHub writes or the host's terminal signal."
+    },
+    "retrospective": "## What went well\n- The bounded PR changed only five documentation files; their status statements preserve #18's incomplete manual/content checks. Owner: repository maintainer. Evidence: changed-path list, root/talk delivery paragraphs and tasks.md:44–49.\n- Authenticated catalogue CI passed both accepted head and actual merged revision; verify-catalog.yml:3–7 supports explicit dispatch. Owner: repository automation maintainer.\n\n## What went wrong\n- Supplied evidence does not connect the bot merge to the historical owner-authorized integration run or identify the permanently retained prior #40 report. The earlier publisher job is green, not a receipt of report contents. This is an evidence gap, not proof of a workflow/source failure. Owner: operator/trusted publisher maintainer.\n- Generated LIGHTHOUSE.md:18,24 conflicts with its own adoption status and the manifest/operator guide. This is a guidance defect; no runtime enforcement defect was established. Owner: Lighthouse documentation maintainer.\n- No talk-runtime defect was established. Recurrence across work items is unknown; multiple runs of this issue do not establish recurrence.\n\n## Start doing\n- Attach accepted-head/owner-dispatch integration receipts and pinned report identities to completion context. Owner: trusted publisher maintainer. First recover existing receipts for #40; do not rerun merges to manufacture proof.\n- Review generated authority wording against explicit null integrations. Owner: Lighthouse documentation maintainer with repository maintainer.\n\n## Stop doing\n- Stop treating a green publisher job or skipped integration job as proof of accepted behavior, and stop treating first-version acceptance as evidence that unfinished manual checks ran. Owners: reviewers and maintainers. Evidence: earlier review run observations and tasks.md:49.\n\n## Improvement candidates\n1. Receipt continuity: observed failure is missing acceptance provenance in this review context, not proven loss of reports. Evidence: completion contains bot merge/post-merge success and earlier publication success but no pinned #40 report or historical integration receipt. Owner: trusted publisher maintainer. Smallest useful guard: expose existing bounded integration/publication receipts, binding issue, PR, accepted head, owner authorization, merged revision and report commit/path. Reproduce with this context: the merge/CI are known but those acceptance facts cannot be resolved; regression fixtures should reject missing/mismatched receipts and accept authentic matching ones, without requiring the current report to pre-exist. Proposal requires its own review and regression proof; no guard changed here.\n2. Authority projection: observed failure is contradictory generated guidance for unadopted integrations. Evidence: LIGHTHOUSE.md:10–11,18,24; lighthouse.json:16–19; repository-refinement.md:5. Owner: Lighthouse generator/documentation maintainer. Smallest useful guard: review conditional wording in the generated projection. Reproduce by rendering a profile with null ProductShape/ArcShape; regression proof should show coherent unadopted wording and preserve adopted-profile validation requirements. Separate provider review is required; do not hand-edit managed output or weaken policy."
+  }
+}

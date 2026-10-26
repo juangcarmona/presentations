@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "state": "merged-review-blocked",
+  "sha": "3b08109bb59a895350e023554b46957be8f6373f",
+  "acceptedHead": "f41a00c68e493bcab1b91af7ccce40e8c9babebc",
+  "authorization": {
+    "issue": 40,
+    "pr": 42,
+    "head": "f41a00c68e493bcab1b91af7ccce40e8c9babebc",
+    "merge": false
+  },
+  "binding": {
+    "repository": "juangcarmona/presentations",
+    "issue": 40,
+    "pr": 42,
+    "head": "f41a00c68e493bcab1b91af7ccce40e8c9babebc",
+    "base": "3b08109bb59a895350e023554b46957be8f6373f",
+    "branch": "main",
+    "intent": "5a0885aa25e0f75b26b2af0b898745602dafb6143d4b87930a3fd6375c9194b9",
+    "policy": "2a00485780edaf527c5892b07d7dd9760d2c6b1da8fc7e7509335138463fcf72",
+    "reviews": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "prIntent": "e1483df35f1a0a4b8293b37b812197bfdea0518c07f4a9b59760cc7825b10491",
+    "files": "4201f625fa092f21e0d5731801efd029607b6da2708d95c7cf212d4b09c187d5"
+  },
+  "postMerge": [
+    {
+      "workflow": "verify-catalog.yml",
+      "revision": "3b08109bb59a895350e023554b46957be8f6373f",
+      "state": "passed",
+      "status": "passed",
+      "runId": 40247989681,
+      "url": "https://github.com/juangcarmona/presentations/actions/runs/40247989681"
+    }
+  ]
+}
