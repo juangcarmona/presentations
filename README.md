@@ -75,11 +75,11 @@ Use Previous/Next or ArrowRight/PageDown and ArrowLeft/PageUp on noninteractive 
 
 The Spanish closing video is externally hosted on YouTube and needs a connection; it has a named player, source link and persistent contextual fallback. No media fetch is required to build. Diagrams use original DOM equivalents rather than copying the keynote reference or theme artwork. See each talk's coverage map for the exact migration baseline and asset decisions.
 
-### Review and CI follow-up
+### Delivery status and verification
 
-The generated site is a review artifact, not publication or merge approval. Owner acceptance of both complete rendered talks, content maps and diagram equivalents remains required. Historical research and installed third-party skills are preserved; the unused Slidev-oriented skill/command documents are not the active authoring path for these talks.
+The owner [accepted the first delivery and authorized integration](https://github.com/juangcarmona/presentations/pull/38#issuecomment-6404327905) of both talks. PR #38 is merged; visual polish is tracked in [#39](https://github.com/juangcarmona/presentations/issues/39). The [permanent report and screenshots](https://github.com/juangcarmona/presentations/blob/0c21e0424df47458b4554c7dea297a7ae5e1cb7e/docs/process/20261025-18-standalone-talks/README.md) retain the accepted revision and known limits. Full manual accessibility and original-source equivalence checks remain explicitly incomplete in the OpenSpec task record; acceptance of this first version does not claim those checks ran or authorize production deployment.
 
-A maintainer must separately update `.github/workflows/verify-catalog.yml`: omit package/dependency cache restoration, run `npm ci --ignore-scripts`, `npm run typecheck`, `npm run build`, then `npm test` in a clean job with public dependencies/Chromium and no private credentials. Retain logs, `dist/`, `dist/site-manifest.json`, browser reports and source-revision metadata. The failure fixtures in `npm test` prove both invalid talk source and missing assets fail verification. Leave Lighthouse checks, deployment authorities and publication gates unchanged. This bounded implementation does not edit `.github`.
+`.github/workflows/verify-catalog.yml` now performs a fresh locked public install, the full build and Chromium tests, and retains revision-bound static/browser artifacts. The build includes type checking; failure fixtures verify that invalid talk source and missing assets stop verification. Lighthouse guardrails remain a separate check. Historical research and installed third-party skills are preserved; Slidev-oriented documents are not the active authoring path for these talks.
 
 ## Tooling
 

@@ -31,7 +31,7 @@ Anterior/Siguiente, ArrowRight/PageDown y ArrowLeft/PageUp recorren las escenas 
 
 Los diagramas de PDaC y agentic-sdlc se representan como DOM semántico original, con citas y pasos legibles. La demo GIF pasa a pasos estáticos y mantiene el ejemplo BR-REFUND-001, cambio de regla y citas stale. La foto usa un fallback intencional de iniciales y nombre. La escena final de vídeo conserva «Planos de la Estrella de la Muerte», su enlace y contexto: el reproductor externo requiere conexión; el build no descarga medios externos.
 
-No hay instalación local del deck, Slidev ni tema privado. PDF/PowerPoint y los antiguos comandos `pnpm export` no tienen paridad garantizada. `dist/`, capturas y reportes son artefactos generados. La aceptación visual/de contenido por el propietario sigue pendiente, incluidos los diagramas equivalentes.
+No hay instalación local del deck, Slidev ni tema privado. PDF/PowerPoint y los antiguos comandos `pnpm export` no tienen paridad garantizada. `dist/`, capturas y reportes son artefactos generados. El propietario aceptó esta primera entrega en la PR #38; la mejora visual queda en la issue #39. Consulta el [estado de entrega y los límites de verificación](../../README.md#delivery-status-and-verification): las comprobaciones manuales pendientes siguen abiertas.
 
 ## Ideas aparcadas
 
