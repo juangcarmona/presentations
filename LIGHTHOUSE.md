@@ -5,7 +5,7 @@
 - Baseline: `0.1.0`
 - Product: `presentations`
 - Profiles: `visual-theme`
-- SDLC package: `@juangcarmona/lighthouse-sdlc@0.12.0`
+- SDLC package: `@juangcarmona/lighthouse-sdlc@0.13.0`
 - UI package: `@juangcarmona/lighthouse-ui@0.2.0`
 - ProductShape: not adopted
 - ArcShape: not adopted
@@ -15,12 +15,12 @@
 
 ## Delivery contract
 
-ProductShape remains the source of product intent and Product Changes. ArcShape remains the source of architecture documentation and decisions. Lighthouse installs the repository baseline and verifies the selected integrations without replacing either authority.
+ProductShape is not adopted; follow the repository-owned product intent and decision records. ArcShape is not adopted; follow the repository-owned architecture guidance. Lighthouse installs the repository baseline and verifies the selected integrations.
 
 The repository keeps source code in `src/`, documentation in `docs/`, infrastructure in `infra/` and repository automation in `scripts/`. A project may record a narrow, owned exception, but an initializer never overwrites an existing project file.
 
 The selected SDLC package owns lifecycle skills, commands, meta-commands, routes and gates. The `.lighthouse/` control plane records the selected package, command aliases and host adapters without storing agent runtime data. Use `lighthouse aliases --format json` or `.lighthouse/commands.json` to discover canonical and short agent commands.
 
-When the public site is enabled, its publication is allowed only after ProductShape and ArcShape validate successfully. A missing or invalid authority stops the build before deployment and reports the command that can repair the missing input.
+The Lighthouse documentation site is enabled but unavailable until both authorities are adopted and validate successfully. This route publishes product and architecture documentation. Application deployment follows the repository's own delivery policy.
 
 This file is managed. Put repository-specific policy in its own documentation and keep this projection generated from `lighthouse.json`.
