@@ -5,7 +5,7 @@
 - Baseline: `0.1.0`
 - Product: `Presentations`
 - Profiles: none
-- SDLC package: `@juangcarmona/lighthouse-sdlc@0.15.1`
+- SDLC package: `@juangcarmona/lighthouse-sdlc@0.15.2`
 - ProductShape: not adopted
 - ArcShape: not adopted
 - Public site: `disabled`
