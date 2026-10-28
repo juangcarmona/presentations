@@ -67,6 +67,10 @@ npm run serve:static
 
 Open `http://127.0.0.1:4173`. This server serves only `dist/`, supports directory indexes and returns 404 for missing files; there is **no SPA fallback**. Publish the whole `dist/` directory to a domain-root static host with directory indexes. Subpath hosting is not supported by this change. `npm run preview` is convenient for review, but the tests use the strict static server.
 
+### Cloudflare Workers
+
+The catalogue is deployed as a static-assets Worker, not Pages. `wrangler.jsonc` declares the Worker and serves the already verified `dist/` directory; Wrangler does not need to detect Vite or rewrite the build configuration. In Workers Builds, use `npm ci --ignore-scripts` for the install command, `npm run build` for the build command, and `npm run deploy` for the deploy command. The deploy command requires no extra build, so strict static verification runs once before upload. Missing paths remain 404s.
+
 Supported entries: `/`, `/software-engineering-2_0/`, `/soft-and-hard-guardrails/`, and `/decks/<published-slug>/` for both talks. Canonical and legacy entries show the same full experience, not a presentation iframe. Deep links use `#scene=<stable-id>`; absent/unknown scene fragments select the cover. Old undocumented Slidev numeric subroutes are not supported.
 
 ### Reading and presenting

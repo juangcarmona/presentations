@@ -2,6 +2,7 @@
   "scripts": {
     "dev": "vite",
     "build": "npm run typecheck && vite build && node scripts/build-static.mjs && node scripts/verify-static.mjs",
+    "deploy": "wrangler deploy",
     "preview": "vite preview",
     "typecheck": "tsc -b --noEmit",
     "test": "node --test tests/*.test.mjs && node scripts/test-build-failures.mjs && playwright test",
@@ -9,13 +10,14 @@
   },
   "devDependencies": {
     "@axe-core/playwright": "4.14.0",
-    "@juangcarmona/lighthouse": "0.11.2",
+    "@juangcarmona/lighthouse": "0.11.4",
     "@playwright/test": "1.64.1",
     "@types/react": "19.3.0",
     "@types/react-dom": "19.3.0",
     "@vitejs/plugin-react": "6.1.1",
     "typescript": "6.0.3",
-    "vite": "8.3.5"
+    "vite": "8.3.5",
+    "wrangler": "4.154.0"
   },
   "dependencies": {
     "@juangcarmona/lighthouse-ui": "0.2.0",
