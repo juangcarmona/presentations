@@ -146,8 +146,8 @@ test('external media failure leaves context, source and onward navigation', asyn
   await expect(page.locator('iframe')).toHaveAttribute('title', /Planos/)
   await page.locator('.scene-controls button').last().click()
   await expect(page.locator('[data-scene="24-fin"]')).toBeVisible()
-  await expect(page.locator('.portrait-fallback')).toBeVisible()
-  await expect(page.locator('img')).toHaveCount(0)
+  await expect(page.getByRole('img', { name: 'Juan G. Carmona, ponente' })).toBeVisible()
+  await expect(page.locator('.portrait-fallback')).toHaveCount(0)
 })
 
 for (const talk of talks) {
@@ -187,7 +187,8 @@ for (const talk of talks) {
     const light = await page.locator('body').evaluate(element => getComputedStyle(element).backgroundColor)
     await page.emulateMedia({ colorScheme: 'dark' })
     const dark = await page.locator('body').evaluate(element => getComputedStyle(element).backgroundColor)
-    expect(dark).not.toBe(light)
+    if (talk.language === 'es') expect(dark).toBe(light) // This keynote deliberately owns a dark identity.
+    else expect(dark).not.toBe(light)
     const next = page.locator('.scene-controls button').last()
     for (let step = 0; step < 30 && !await next.evaluate(element => element === document.activeElement); step++) {
       await page.keyboard.press('Tab')
@@ -210,6 +211,53 @@ for (const talk of talks) {
     await expect(page).toHaveURL(/\/#catalog$/)
   })
 }
+
+test('standalone keynote: isolated entry, complete media, fullscreen and desktop preview', async ({ page, request }) => {
+  await page.setViewportSize({ width: 1440, height: 900 })
+  await page.goto('/')
+  await page.locator('a[href="/software-engineering-2_0/"]').first().click()
+  await expect(page.locator('.keynote')).toBeVisible()
+  await expect(page.locator('.site-shell, .topbar, .footer, iframe')).toHaveCount(0)
+  const styles = await page.locator('link[rel="stylesheet"]').evaluateAll(nodes => nodes.map(node => node.href))
+  expect(styles.every(href => href.includes('/software-engineering-2_0/assets/'))).toBe(true)
+  await page.screenshot({ path: 'test-results/captures/issue-53-desktop-cover.png', fullPage: true, animations: 'disabled' })
+  const fullscreen = page.getByRole('button', { name: 'Pantalla completa', exact: true })
+  await fullscreen.click()
+  await expect(page.getByRole('button', { name: 'Salir de pantalla completa' })).toHaveAttribute('aria-pressed', 'true')
+  await page.getByRole('button', { name: 'Salir de pantalla completa' }).click()
+  await expect(fullscreen).toHaveAttribute('aria-pressed', 'false')
+  await page.evaluate(() => { document.querySelector('.keynote').requestFullscreen = () => Promise.reject(new Error('Denied for test')) })
+  await fullscreen.click()
+  await expect(page.getByRole('alert')).toContainText('Puedes seguir presentando aquí')
+  await page.locator('body').click({ position: { x: 2, y: 2 } })
+  await page.keyboard.press('ArrowRight')
+  await expect(page.locator('[data-scene="02-recorrido"]')).toBeVisible()
+  await page.reload() // Do not carry the simulated fullscreen failure into owner preview captures.
+  for (const id of ['04-guardarrailes', '10-autoridad', '11-modelo', '13-productshape', '14-citas', '15-workflow', '17-flujo-agentico', '19-validacion', '21-vista-global', '24-fin']) {
+    await page.goto(`/software-engineering-2_0/#scene=${id}`)
+    for (const img of await page.locator('img').all()) await expect.poll(() => img.evaluate(el => el.complete && el.naturalWidth > 0)).toBe(true)
+    await page.screenshot({ path: `test-results/captures/issue-53-desktop-${id}.png`, fullPage: true, animations: 'disabled' })
+  }
+  const manifest = await (await request.get('/site-manifest.json')).json()
+  expect(manifest.assets.filter(path => /\.(png|jpg|gif|svg)$/.test(path))).toHaveLength(10)
+  await page.goto('/decks/software-engineering-2_0/#scene=11-modelo')
+  await expect(page.getByRole('img', { name: /PDaC-2:/ })).toBeVisible()
+  await expect(page.locator('.topbar, .footer')).toHaveCount(0)
+})
+
+test('reduced-motion demo is opt-in and can be stopped', async ({ page }) => {
+  await page.emulateMedia({ reducedMotion: 'reduce' })
+  const gifs = []
+  page.on('request', request => { if (request.url().endsWith('.gif')) gifs.push(request.url()) })
+  await page.goto('/software-engineering-2_0/#scene=13-productshape')
+  await expect(page.locator('.demo-animation')).toHaveCount(0)
+  expect(gifs).toEqual([])
+  await expect(page.getByText('BR-REFUND-001: una regla definida una vez, con ID estable')).toBeVisible()
+  await page.getByRole('button', { name: 'Reproducir demo animada' }).click()
+  await expect(page.locator('.demo-animation')).toBeVisible()
+  await page.getByRole('button', { name: 'Detener demo animada' }).click()
+  await expect(page.locator('.demo-animation')).toHaveCount(0)
+})
 
 for (const theme of ['dark', 'light']) {
   test(`scene entrance preserves text contrast in ${theme} appearance`, async ({ page }) => {

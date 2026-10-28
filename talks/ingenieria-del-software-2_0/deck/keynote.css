@@ -1,0 +1,99 @@
+/* This stage owns its visual identity; no catalogue CSS is loaded in its build. */
+.keynote {
+  --lh-space-2: .5rem; --lh-space-3: .75rem; --lh-space-4: 1rem; --lh-space-6: 1.5rem; --lh-space-8: 2rem;
+  --lh-action: #8cc8ff; --lh-text: #f4f7ff; --lh-text-muted: #becbe0;
+  --lh-surface: #121e33; --lh-border: #394b68; --lh-border-strong: #657d9e;
+  --lh-radius-panel: 12px; --lh-on-action: #080d18;
+  --lh-font-mono: ui-monospace, Consolas, monospace;
+  color-scheme: dark; color: #f4f7ff; background: #080d18;
+  font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+  min-height: 100svh; width: 100%; position: relative; isolation: isolate;
+}
+html:has(.keynote) { background: #080d18; scroll-behavior: auto; }
+body:has(.keynote) { margin: 0; min-width: 0; background: #080d18; }
+.keynote *, .keynote *::before, .keynote *::after { box-sizing: border-box; }
+.keynote a { color: inherit; text-underline-offset: .2em; }
+.keynote button { font: inherit; color: inherit; cursor: pointer; border: 1px solid #657d9e; background: #121e33; border-radius: 6px; padding: .65rem 1rem; min-height: 44px; }
+.keynote button:hover:not(:disabled) { border-color: #8cc8ff; background: #203857; }
+.keynote button:disabled { color: #a7b5cc; cursor: default; border-style: dashed; }
+.keynote :focus-visible { outline: 3px solid #b5eaff; outline-offset: 4px; }
+.keynote-main { min-width: 0; }
+.keynote .keynote-scene {
+  position: relative; overflow: hidden; min-height: calc(100svh - 150px);
+  padding: clamp(24px, 5vh, 64px) clamp(24px, 6vw, 112px);
+  background: radial-gradient(ellipse at 95% 15%, #16395a 0, transparent 55%), #080d18;
+  animation: keynote-enter 560ms cubic-bezier(.2,.8,.2,1) both;
+}
+.keynote .scene-inner { position: relative; z-index: 1; width: min(1440px, 100%); margin: auto; }
+.keynote .scene-kicker { color: #a8c2df; font: 600 .72rem/1.5 var(--lh-font-mono); letter-spacing: .2em; margin: 0 0 1.4rem; }
+.keynote .scene-kicker span { color: #8de7ed; }
+.keynote h1 { margin: 0 0 1.5rem; max-width: 1200px; font-size: clamp(2rem, 4.5vw, 5rem); font-weight: 760; line-height: 1.04; letter-spacing: -.045em; overflow-wrap: anywhere; }
+.keynote h2 { font-size: clamp(1.3rem, 2.3vw, 2.2rem); line-height: 1.15; margin-top: 0; }
+.keynote h3 { line-height: 1.3; }
+.keynote .scene-content { font-size: clamp(1rem, 1.5vw, 1.4rem); line-height: 1.5; overflow-wrap: anywhere; max-width: none; }
+.keynote .scene-lede { font-size: clamp(1.4rem, 2.5vw, 2.5rem); color: #b9d6f4; line-height: 1.25; }
+.keynote .keynote-cover {
+  display: flex; align-items: center; min-height: calc(100svh - 150px);
+  background-image: linear-gradient(90deg, #080d18f5 0%, #080d18dd 48%, #080d1877 100%), var(--cover-image);
+  background-position: center; background-size: cover;
+}
+.keynote-cover h1 { max-width: 1000px; font-size: clamp(3rem, 7.8vw, 8.7rem); }
+.keynote-cover .scene-inner { padding-block: 3vh; }
+.keynote .intent-motif { border-color: #5e9dc6; color: #8de7ed; margin-bottom: 0; font-size: clamp(1rem, 2vw, 2rem); }
+.keynote .stage-orbit { position: absolute; width: 55vw; height: 55vw; border: 1px solid #8cc8ff22; border-radius: 50%; right: -25vw; top: -20vw; box-shadow: 0 0 0 5vw #8cc8ff06, 0 0 0 10vw #8cc8ff04; pointer-events: none; }
+.keynote .scene-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.4rem; margin-block: 1.5rem; }
+.keynote .scene-grid section { min-width: 0; padding: clamp(16px, 2vw, 32px); border: 1px solid #394b68; border-top: 3px solid #8cc8ff; border-radius: 10px; background: #121e33; }
+.keynote .scene-grid section:nth-child(even) { border-top-color: #8de7ed; }
+.keynote .scene-grid section p:last-child { margin-bottom: 0; }
+.keynote .scene-content > .product-flow { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.keynote [data-scene="19-validacion"] .scene-content { display: grid; grid-template-columns: 1.3fr 1fr; gap: 1.5rem; align-items: start; }
+.keynote [data-scene="19-validacion"] .product-flow { grid-template-columns: 1fr; }
+.keynote [data-scene="19-validacion"] pre { margin-top: 1rem; }
+.keynote .product-flow li { grid-template-columns: 1fr; gap: .4rem; align-content: start; animation: keynote-rise 650ms both; }
+.keynote .product-flow li:nth-child(2n) { animation-delay: 80ms; border-left-color: #8de7ed; }
+.keynote .product-flow li:nth-child(3n) { animation-delay: 160ms; }
+.keynote .flow-index { color: #8de7ed; }
+.keynote pre { max-width: 100%; overflow: auto; padding: 1.5rem; border: 1px solid #657d9e; background: #0d1626; border-radius: 12px; font-size: clamp(.8rem, 1.25vw, 1.15rem); line-height: 1.7; }
+.keynote code { font-family: var(--lh-font-mono); }
+.keynote blockquote { margin: 1.5rem 0; padding-left: 1.5rem; border-left: 4px solid #8de7ed; font-size: clamp(1.4rem, 2.5vw, 2.4rem); }
+.keynote .original-visual { margin: 0; text-align: center; }
+.keynote .original-visual img { display: block; max-height: 57vh; max-width: 100%; width: auto; height: auto; margin: auto; object-fit: contain; background: white; border-radius: 8px; }
+.keynote figcaption, .keynote .citation { color: #becbe0; font-size: .8rem; margin-top: .6rem; }
+.keynote .visual-explanation { margin-top: 1rem; }
+.keynote summary { cursor: pointer; min-height: 44px; padding-block: .7rem; }
+.keynote .product-logo { float: right; width: clamp(64px, 10vw, 140px); margin: 0 0 1rem 1rem; border-radius: 12px; }
+.keynote .product-demo { display: flex; flex-wrap: wrap; align-items: center; gap: 1.5rem; margin-block: 1.5rem; }
+.keynote .product-branding { width: min(360px, 100%); background: white; border-radius: 8px; }
+.keynote .demo-animation { display: block; max-width: 100%; max-height: 65vh; object-fit: contain; }
+.keynote .speaker-closing { display: grid; grid-template-columns: minmax(120px, 300px) 1fr; align-items: center; gap: 4vw; }
+.keynote .speaker-portrait { width: 100%; border-radius: 12px; border: 1px solid #657d9e; }
+.keynote .scene-list { display: grid; grid-template-columns: minmax(130px, 1fr) 3fr; margin: 0; }
+.keynote .scene-list dt, .keynote .scene-list dd { margin: 0; padding: 1rem 0; border-bottom: 1px solid #394b68; }
+.keynote .scene-list dt { color: #8de7ed; font-weight: 700; }
+.keynote .architecture-blocks { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.keynote .architecture-blocks li, .keynote .principles li { padding: .7rem; }
+.keynote .presentation-dock { position: relative; padding: .7rem clamp(16px, 3vw, 48px); border-top: 1px solid #394b68; background: #080d18; }
+.keynote .experience-meta { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .5rem 1rem; color: #becbe0; font-size: .75rem; letter-spacing: .04em; }
+.keynote .experience-meta span { font-family: var(--lh-font-mono); }
+.keynote .experience-meta button { font-size: .8rem; }
+.keynote .scene-controls { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: 1rem; margin-top: .5rem; }
+.keynote .scene-controls span { text-align: center; font-size: .8rem; color: #becbe0; overflow-wrap: anywhere; }
+.keynote .experience-overview { font-size: .8rem; color: #becbe0; }
+.keynote .experience-overview ol { columns: 3; padding-left: 1.5rem; }
+.keynote .experience-overview li { padding: .3rem; break-inside: avoid; }
+.keynote .stage-progress { position: fixed; bottom: 0; left: 0; height: 3px; background: #8de7ed; z-index: 2; transition: width 300ms ease; }
+.keynote:fullscreen { overflow-y: auto; }
+@keyframes keynote-enter { from { clip-path: inset(0 0 0 4%); } to { clip-path: inset(0); } }
+@keyframes keynote-rise { from { transform: translateY(14px); } to { transform: translateY(0); } }
+@media (max-width: 700px) {
+  .keynote .scene-grid, .keynote .scene-content > .product-flow, .keynote .architecture-blocks, .keynote .speaker-closing { grid-template-columns: 1fr; }
+  .keynote [data-scene="19-validacion"] .scene-content { grid-template-columns: 1fr; }
+  .keynote .speaker-portrait { max-width: 230px; }
+  .keynote .scene-list { grid-template-columns: 1fr; }
+  .keynote .scene-list dt { border: 0; padding-bottom: 0; }
+  .keynote .experience-meta span { display: none; }
+  .keynote .experience-overview ol { columns: 1; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .keynote *, .keynote *::before, .keynote *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}

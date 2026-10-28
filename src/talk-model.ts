@@ -4,7 +4,6 @@ export type TalkChapter = {
 }
 
 export type Talk = {
-  load: () => Promise<{ default: import('./experience-model').Experience }>
   title: string
   slug: string
   number: string

@@ -3,6 +3,8 @@ import Experience from './Experience'
 import { talks } from './talks'
 import type { Talk } from './talk-model'
 
+const SpanishPreview = import.meta.env.DEV ? lazy(() => import('../talks/ingenieria-del-software-2_0/deck/Presentation')) : null
+
 type Theme = 'dark' | 'light' | 'system'
 
 function SiteHeader({ theme, onThemeChange }: { theme: Theme; onThemeChange: () => void }) {
@@ -131,7 +133,7 @@ function TalkCard({ talk }: { talk: Talk }) {
 
 function TalkPage({ talk }: { talk: Talk }) {
   const Content = useMemo(() => lazy(async () => {
-    const { default: experience } = await talk.load()
+    const { default: experience } = await import('../talks/soft-and-hard-guardrails/deck/experience')
     return { default: () => <Experience talk={talk} experience={experience} /> }
   }), [talk])
   return <Suspense fallback={<p role="status">Loading talk…</p>}><Content /></Suspense>
@@ -156,9 +158,12 @@ export function App() {
     document.documentElement.dataset.theme = theme
   }, [theme])
 
+  if (talk?.slug === 'software-engineering-2_0') return <Suspense fallback={<p role="status">Cargando presentación…</p>}>{SpanishPreview ? <SpanishPreview /> : <a href="/software-engineering-2_0/">Abrir presentación</a>}</Suspense>
+  if (talk) return <main id="contenido" className="standalone-talk"><TalkPage talk={talk} /></main>
+
   return (
     <Layout theme={theme} onThemeChange={() => setTheme(theme === 'system' ? 'dark' : theme === 'dark' ? 'light' : 'system')}>
-      {path === '' ? <CatalogPage /> : talk ? <TalkPage talk={talk} /> : <NotFoundPage />}
+      {path === '' ? <CatalogPage /> : <NotFoundPage />}
     </Layout>
   )
 }

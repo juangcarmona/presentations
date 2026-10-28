@@ -9,7 +9,9 @@ test('registry and five physical entries have complete assets', () => {
   const manifest = verifyStatic('.', false)
   assert.equal(manifest.entries.length, 5)
   assert.equal(manifest.talks.length, 2)
-  assert.ok(manifest.assets.filter(name => name.includes('experience')).length >= 2)
+  assert.ok(manifest.assets.some(name => name.includes('experience')))
+  assert.ok(manifest.assets.some(name => name.startsWith('/software-engineering-2_0/assets/') && name.endsWith('.js')))
+  assert.equal(manifest.assets.filter(name => /\.(png|jpg|gif|svg)$/.test(name)).length, 10)
   assert.equal(escapeHTML('<"a&b\'>'), '&lt;&quot;a&amp;b&#39;&gt;')
 })
 

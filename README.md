@@ -25,7 +25,7 @@ Generated exports and dependency directories are ignored. Editable source and ci
 
 ## Public catalogue
 
-The root application is a small React/Vite catalogue. It is deliberately separate from each talk: the talk directories remain the canonical source, while the catalogue provides the public index and links back to the editable material.
+The root application is a small React/Vite catalogue. It provides metadata and links, not a shell around presentations. The Spanish keynote has a separately built talk-local entry and assets; the English talk keeps its existing renderer on a standalone route. Future talks can choose their own renderer and style.
 
 ```bash
 npm ci --ignore-scripts
@@ -57,18 +57,18 @@ Supported entries: `/`, `/software-engineering-2_0/`, `/soft-and-hard-guardrails
 
 ### Reading and presenting
 
-Use Previous/Next or ArrowRight/PageDown and ArrowLeft/PageUp on noninteractive surfaces. Navigation stops at the ends. Space and Up/Down keep their scrolling behavior; links, buttons, editable fields, media and ARIA widgets keep their own keys. Only the current scene is mounted. Controls retain focus; when the focused navigation button becomes disabled at a boundary, focus moves to the other enabled navigation button. A focused descendant removed by scene navigation transfers focus to the new heading. Long content scrolls normally; code/tables have labelled scroll regions. Appearance cycles through system/dark/light, and reduced motion disables scene animation. Overview, source and catalog links remain available.
+Use Previous/Next or ArrowRight/PageDown and ArrowLeft/PageUp on noninteractive surfaces. Navigation stops at the ends. Space and Up/Down keep their scrolling behavior; links, buttons, editable fields, media and ARIA widgets keep their own keys. Only the current scene is mounted. Controls retain focus; when the focused navigation button becomes disabled at a boundary, focus moves to the other enabled navigation button. A focused descendant removed by scene navigation transfers focus to the new heading. Long content scrolls normally; code/tables have labelled scroll regions. The catalogue offers system/dark/light appearance; the English talk follows the OS and the Spanish keynote owns its dark identity. Reduced motion disables scene animation. Overview, source and catalog links remain available.
 
-The Spanish closing video is externally hosted on YouTube and needs a connection; it has a named player, source link and persistent contextual fallback. No media fetch is required to build. Diagrams use original DOM equivalents rather than copying the keynote reference or theme artwork. See each talk's coverage map for the exact migration baseline and asset decisions.
+The Spanish keynote uses its own dark visual identity, viewport stage, explicit browser fullscreen controls and transitions. Reduced motion disables effects; the original GIF is opt-in with a stop control. Original diagrams have full-size links and supplemental semantic descriptions. Its closing video is externally hosted on YouTube and needs a connection; it has a named player, source link and persistent contextual fallback. No media fetch is required to build. See each talk's coverage map for the exact migration baseline and asset decisions.
 
 ### Delivery status and verification
 
-The owner [accepted the first delivery and authorized integration](https://github.com/juangcarmona/presentations/pull/38#issuecomment-6404327905) of both talks. PR #38 is merged; visual polish is tracked in [#39](https://github.com/juangcarmona/presentations/issues/39). Automated checks do not replace manual accessibility and original-source review.
+The owner [accepted the first delivery and authorized integration](https://github.com/juangcarmona/presentations/pull/38#issuecomment-6404327905) of both talks. [#53](https://github.com/juangcarmona/presentations/issues/53) supersedes conflicting visual-only constraints in #39 and restores the full standalone Spanish keynote. This redesign still requires owner desktop visual/content acceptance. Automated checks do not replace that decision.
 
 Continuous integration performs a fresh locked public install, the full build and Chromium tests, and retains revision-bound static/browser artifacts. Failure fixtures verify that invalid talk source and missing assets stop verification. Slidev-oriented documents are not the active authoring path for these talks.
 
 ## Tooling
 
-Editable React scenes and talk-specific CSS live under each talk's `deck/`. Use the root npm workflow above for both talks. Speaker notes live in talk-local `content/speaker-notes.md` and are never imported or copied into `dist/`. Vite's public directory copying and distributed source maps are disabled. Local assets must be explicitly imported so missing files fail the complete build. Archived source assets under talk directories are not distributed. PDF/PowerPoint/Slidev export commands are retired; export parity is not part of this migration.
+Editable React scenes and talk-specific CSS live under each talk's `deck/`. Use the root npm workflow above for both talks. Speaker notes live in talk-local `content/speaker-notes.md` and are never imported or copied into `dist/`. Vite's public directory copying and distributed source maps are disabled. Local assets must be explicitly imported so missing files fail the complete build. The ten approved Spanish assets are published under that talk's build directory and verified byte-for-byte. PDF/PowerPoint/Slidev export commands are retired; export parity is not part of this migration.
 
 Browser checks use system Chromium when available. Otherwise install the matching browser with `npm exec --no -- playwright install chromium` before `npm test`; the static build needs no browser.

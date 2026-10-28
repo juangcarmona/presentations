@@ -1,5 +1,6 @@
 import { readdirSync, readFileSync, statSync, writeFileSync } from 'node:fs'
 import { resolve, relative } from 'node:path'
+import { createHash } from 'node:crypto'
 import { entries, validateRegistry } from './build-static.mjs'
 
 export function files(directory) {
@@ -41,16 +42,25 @@ export function verifyStatic(root = '.', write = true) {
   }
   const outputFiles = files(dist).filter(path => !path.endsWith('/site-manifest.json'))
   for (const path of outputFiles) {
-    if (path.endsWith('.map') || !/\.(html|css|js)$/.test(path)) throw Error(`Unexpected distributed file: ${path}`)
+    if (path.endsWith('.map') || !/\.(html|css|js|svg|png|jpg|gif)$/.test(path)) throw Error(`Unexpected distributed file: ${path}`)
+    if (!/\.(html|css|js)$/.test(path)) continue
     const text = readFileSync(path, 'utf8')
     // Vite's emitted chunks use relative imports; validate every bundled asset edge.
-    for (const match of text.matchAll(/(?:["'`(])((?:\/?assets\/|\.\/)[^"'`()\s]+\.(?:js|css|svg|png|jpg|gif|woff2?))(?:["'`)])/g)) {
+    for (const match of text.matchAll(/(?:["'`(])((?:\/(?:software-engineering-2_0\/)?assets\/|assets\/|\.\/)[^"'`()\s]+\.(?:js|css|svg|png|jpg|gif|woff2?))(?:["'`)])/g)) {
       const asset = match[1].startsWith('./') ? resolve(path, '..', match[1]) : resolve(dist, match[1].replace(/^\//, ''))
       if (!statSync(asset, { throwIfNoEntry: false })?.isFile()) throw Error(`Missing required asset ${match[1]} in ${relative(dist, path)}`)
     }
   }
+  const approved = ['bg-cover-1.jpg', 'juan.jpg', 'lifecycle-overview.svg', 'pdac-2-product-definition-model.png', 'pdac-5-citation-and-drift.png', 'pdac-authority-and-learning.png', 'pdac-demo.gif', 'pdac-logo.png', 'pdac-reference-workflow.png', 'product_shape_branding.png']
+  const hash = path => createHash('sha256').update(readFileSync(path)).digest('hex')
+  const media = outputFiles.filter(path => /\.(svg|png|jpg|gif)$/.test(path))
+  if (media.length !== approved.length) throw Error('Expected exactly ten approved talk assets')
+  for (const name of approved) {
+    const expected = hash(resolve(root, `talks/ingenieria-del-software-2_0/deck/public/${name}`))
+    if (!media.some(path => relative(dist, path).startsWith('software-engineering-2_0/assets/') && hash(path) === expected)) throw Error(`Missing or modified approved asset: ${name}`)
+  }
   // Author notes are inspected only by build verification, never by runtime imports.
-  const outputText = outputFiles.map(path => readFileSync(path, 'utf8'))
+  const outputText = outputFiles.filter(path => /\.(html|css|js|svg)$/.test(path)).map(path => readFileSync(path, 'utf8'))
   for (const entry of entries) {
     const notes = readFileSync(resolve(root, `talks/${entry.directory}/content/speaker-notes.md`), 'utf8')
     assertNoAuthorNotes(notes, outputText, entry.directory)

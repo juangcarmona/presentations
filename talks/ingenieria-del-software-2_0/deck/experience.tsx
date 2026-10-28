@@ -1,5 +1,6 @@
 import type { Experience } from '../../../src/experience-model'
 import './scenes.css'
+import { Diagram, ProductDemo, ProductLogo, Portrait } from './Visuals'
 
 function Flow({ items, label }: { items: string[]; label: string }) {
   return <ol className="product-flow" aria-label={label}>{items.map((text, i) => <li key={text}><span className="flow-index" aria-hidden="true">{String(i + 1).padStart(2, '0')} →</span>{text}</li>)}</ol>
@@ -8,7 +9,7 @@ function Code({ children, label }: { children: string; label: string }) {
   return <pre role="region" aria-label={label} tabIndex={0}><code>{children}</code></pre>
 }
 function Citation({ href = 'https://pdac.dev/diagrams/', children = 'PDaC · diagramas originales' }: { href?: string; children?: React.ReactNode }) {
-  return <p className="citation">Referencia: <a href={href}>{children}</a>. Representación DOM original.</p>
+  return <p className="citation">Referencia: <a href={href}>{children}</a>.</p>
 }
 
 const experience: Experience = { language: 'es', scenes: [
@@ -35,6 +36,16 @@ const experience: Experience = { language: 'es', scenes: [
   { id: '21-vista-global', title: 'Ingeniería del Software 2.0', content: <><Flow label="Vista global y decisiones humanas" items={['CÓDIGO · AGENTS.md · skills · agentes · comandos → Una persona fija las convenciones', 'PRODUCTO · PDaC · ProductShape → Una persona acepta cambios de producto', 'ARQUITECTURA · arc42 · ADRs → Una persona toma decisiones', 'DESARROLLO · Flujo agéntico · agent-toolkit → Una persona revisa el PR', 'VALIDACIÓN · Given / When / Then → e2e → Una persona fija los escenarios', 'EVIDENCIA · PR con tests, citas y vídeo → Una persona juzga y acepta']} /><aside className="feedback-path"><strong>Guardarraíles duros · hooks · CI · citas verificadas · tests de arquitectura</strong><p>docs/product · el QUÉ · fuente de verdad</p><p>docs/architecture · el CÓMO · fuente de verdad</p><p>↩ La evidencia vuelve como Product Change propuesto</p><p>Una persona decide. El código lo hace cumplir.</p></aside></> },
   { id: '22-nosotros', title: 'Lo que sigue dependiendo de nosotros', content: <dl className="scene-list"><dt>Producto</dt><dd>Decidir qué producto queremos</dd><dt>Definición</dt><dd>Aceptar o rechazar cada cambio de definición</dd><dt>Guardarraíles</dt><dd>Elegir qué reglas merecen ser duras</dd><dt>Evidencia</dt><dd>Juzgar la evidencia, no solo mirarla</dd><dt>Responsabilidad</dt><dd>Responder de lo que se entrega</dd></dl> },
   { id: '23-videos', title: 'Sin planos, no hay plan', content: <><p>Planos de la Estrella de la Muerte: la documentación técnica permite entender un sistema y encontrar su punto débil sin haberlo construido.</p><p>El vídeo externo necesita conexión. Si no se reproduce, este contexto y el enlace siguen disponibles.</p><a href="https://www.youtube.com/watch?v=vsERtDqflfI">Ver «Planos de la Estrella de la Muerte» en YouTube</a><details className="video-panel"><summary>Cargar reproductor externo de YouTube</summary><iframe title="Planos de la Estrella de la Muerte — vídeo de cierre" src="https://www.youtube-nocookie.com/embed/vsERtDqflfI" loading="lazy" allowFullScreen /></details></> },
-  { id: '24-fin', title: 'Juan G. Carmona', content: <><p className="scene-lede">¿Preguntas?</p><p>Software Architect · AI Strategist · Plain Concepts</p><div className="portrait-fallback" aria-label="Juan G. Carmona, retrato no disponible"><span aria-hidden="true">JG</span><p>Juan G. Carmona · ponente</p></div><ul><li><a href="https://jgcarmona.com/">jgcarmona.com</a></li><li><a href="https://linkedin.com/in/juangcarmona">linkedin.com/in/juangcarmona</a></li><li><a href="https://pdac.dev/">pdac.dev</a></li></ul></> },
+  { id: '24-fin', title: 'Juan G. Carmona', content: <><p className="scene-lede">¿Preguntas?</p><p>Software Architect · AI Strategist · Plain Concepts</p><ul><li><a href="https://jgcarmona.com/">jgcarmona.com</a></li><li><a href="https://linkedin.com/in/juangcarmona">linkedin.com/in/juangcarmona</a></li><li><a href="https://pdac.dev/">pdac.dev</a></li></ul></> },
 ] }
+
+for (const scene of experience.scenes) {
+  if (['10-autoridad', '11-modelo', '14-citas', '15-workflow', '17-flujo-agentico'].includes(scene.id)) {
+    const explanation = scene.content
+    scene.content = <><Diagram id={scene.id as Parameters<typeof Diagram>[0]['id']} /><details className="visual-explanation"><summary>Descripción y conceptos del diagrama</summary>{explanation}</details></>
+  }
+  if (scene.id === '09-intencion') scene.content = <><ProductLogo />{scene.content}</>
+  if (scene.id === '13-productshape') scene.content = <><ProductDemo />{scene.content}</>
+  if (scene.id === '24-fin') scene.content = <div className="speaker-closing"><Portrait /><div>{scene.content}</div></div>
+}
 export default experience

@@ -76,6 +76,7 @@ a:focus-visible, button:focus-visible {
 
 :focus-visible { outline: 3px solid var(--focus); outline-offset: 4px; }
 .experience { padding-block: var(--space-6); }
+.standalone-talk { width: min(1440px, 100%); margin: auto; padding: clamp(16px, 4vw, 64px); }
 .experience-meta { display: flex; flex-wrap: wrap; justify-content: space-between; gap: var(--space-4); font: var(--text-small) var(--font-mono); color: var(--text-muted); }
 .scene-controls { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; margin-block: var(--space-6); gap: var(--space-4); color: var(--text); }
 .scene-controls span { text-align: center; overflow-wrap: anywhere; }
