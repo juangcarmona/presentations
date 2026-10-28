@@ -41,16 +41,17 @@ export function verifyStatic(root = '.', write = true) {
   }
   const outputFiles = files(dist).filter(path => !path.endsWith('/site-manifest.json'))
   for (const path of outputFiles) {
-    if (path.endsWith('.map') || !/\.(html|css|js)$/.test(path)) throw Error(`Unexpected distributed file: ${path}`)
+    if (path.endsWith('.map') || !/\.(html|css|js|svg|png|jpg|gif)$/.test(path)) throw Error(`Unexpected distributed file: ${path}`)
+    if (!/\.(html|css|js)$/.test(path)) continue
     const text = readFileSync(path, 'utf8')
     // Vite's emitted chunks use relative imports; validate every bundled asset edge.
-    for (const match of text.matchAll(/(?:["'`(])((?:\/?assets\/|\.\/)[^"'`()\s]+\.(?:js|css|svg|png|jpg|gif|woff2?))(?:["'`)])/g)) {
+    for (const match of text.matchAll(/(?:["'`(])((?:\/(?:software-engineering-2_0\/)?assets\/|assets\/|\.\/)[^"'`()\s]+\.(?:js|css|svg|png|jpg|gif|woff2?))(?:["'`)])/g)) {
       const asset = match[1].startsWith('./') ? resolve(path, '..', match[1]) : resolve(dist, match[1].replace(/^\//, ''))
       if (!statSync(asset, { throwIfNoEntry: false })?.isFile()) throw Error(`Missing required asset ${match[1]} in ${relative(dist, path)}`)
     }
   }
   // Author notes are inspected only by build verification, never by runtime imports.
-  const outputText = outputFiles.map(path => readFileSync(path, 'utf8'))
+  const outputText = outputFiles.filter(path => /\.(html|css|js)$/.test(path)).map(path => readFileSync(path, 'utf8'))
   for (const entry of entries) {
     const notes = readFileSync(resolve(root, `talks/${entry.directory}/content/speaker-notes.md`), 'utf8')
     assertNoAuthorNotes(notes, outputText, entry.directory)

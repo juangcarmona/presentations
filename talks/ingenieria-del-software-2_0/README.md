@@ -16,21 +16,22 @@ Un repaso del ciclo de vida del software con mecanismos para domar a la IA en ca
 | Narrativa y tiempos | [`content/narrative.md`](content/narrative.md) |
 | Fuentes externas | [`research/sources.md`](research/sources.md) |
 | Las 24 escenas editables | [`deck/experience.tsx`](deck/experience.tsx) |
-| Estilos y diagramas DOM originales | [`deck/scenes.css`](deck/scenes.css) |
+| Presentador y estilo independiente | [`deck/Presentation.tsx`](deck/Presentation.tsx), [`deck/keynote.css`](deck/keynote.css) |
+| Entrada y build propios | [`deck/index.html`](deck/index.html), [`deck/vite.config.ts`](deck/vite.config.ts) |
 | Notas del ponente, incluida portada, extraídas literalmente | [`content/speaker-notes.md`](content/speaker-notes.md) |
 | Cobertura de cada fuente original y decisiones de recursos | [`content/coverage.md`](content/coverage.md) |
 | Charla relacionada | [`../soft-and-hard-guardrails/`](../soft-and-hard-guardrails/) |
 
-Las notas no se importan, no se copian y no se publican en los bundles. La sintaxis del renderer anterior se conserva en el historial, no como una segunda fuente narrativa activa. Los recursos originales de `deck/public/` se conservan archivados, fuera del build: el sitio no necesita imágenes del tema ni derechos inferidos de fuentes externas.
+Las notas no se importan, no se copian y no se publican en los bundles. La sintaxis del renderer anterior se conserva en el historial, no como una segunda fuente narrativa activa. Los diez recursos originales de `deck/public/` se publican sin modificar: el propietario autorizó su reutilización pública en la issue #53. No se infieren derechos sobre otros recursos.
 
 ## Construir y presentar
 
 Desde la raíz, sigue el [contrato de instalación bloqueada, build completo, tests y vista previa](../../README.md#public-catalogue). Abre `/software-engineering-2_0/` o la entrada compatible `/decks/software-engineering-2_0/`. Ejemplo de enlace directo: `#scene=11-modelo`.
 
-Anterior/Siguiente, ArrowRight/PageDown y ArrowLeft/PageUp recorren las escenas sin volver al principio; los controles interactivos conservan sus teclas. Las escenas largas permiten scroll, los ejemplos tienen regiones de scroll etiquetadas y solo la escena actual participa en el orden de lectura. Se admiten apariencias sistema/clara/oscura y movimiento reducido. El catálogo, mapa y fuentes siguen disponibles.
+La charla abre directamente, sin cabecera/pie del catálogo ni iframe. Anterior/Siguiente, ArrowRight/PageDown y ArrowLeft/PageUp recorren las escenas sin volver al principio; los controles interactivos conservan sus teclas. Las escenas largas permiten scroll, los ejemplos tienen regiones de scroll etiquetadas y solo la escena actual participa en el orden de lectura. «Pantalla completa» entra en el modo del navegador; «Salir de pantalla completa» o Esc permiten salir. Si el navegador deniega ese modo, la charla sigue funcionando. El mapa contiene el recorrido, las fuentes y la ayuda de teclas; «Catálogo» permite volver al índice.
 
-Los diagramas de PDaC y agentic-sdlc se representan como DOM semántico original, con citas y pasos legibles. La demo GIF pasa a pasos estáticos y mantiene el ejemplo BR-REFUND-001, cambio de regla y citas stale. La foto usa un fallback intencional de iniciales y nombre. La escena final de vídeo conserva «Planos de la Estrella de la Muerte», su enlace y contexto: el reproductor externo requiere conexión; el build no descarga medios externos.
+Los diagramas originales de PDaC y agentic-sdlc vuelven como visuales principales con enlaces para ampliarlos y texto complementario accesible. La demo GIF conserva también los pasos estáticos BR-REFUND-001, cambio de regla y citas stale; solo se reproduce bajo petición y puede detenerse. El movimiento reducido desactiva transiciones y no inicia la demo automáticamente. La portada y el retrato usan los originales. La escena final de vídeo conserva «Planos de la Estrella de la Muerte», su enlace y contexto: el reproductor externo requiere conexión; el build no descarga medios externos.
 
-No hay instalación local del deck, Slidev ni tema privado. PDF/PowerPoint y los antiguos comandos `pnpm export` no tienen paridad garantizada. `dist/`, capturas y reportes son artefactos generados. El propietario aceptó esta primera entrega en la PR #38; la mejora visual queda en la issue #39. Consulta el [estado de entrega y los límites de verificación](../../README.md#delivery-status-and-verification): las comprobaciones manuales pendientes siguen abiertas.
+No hay instalación local del deck, Slidev ni tema privado. El build raíz construye primero el catálogo y después este deck en `deck/dist/`; ensambla su salida en los dos URL existentes del Worker estático. El catálogo solo importa los metadatos de `web.ts`, no este renderer. PDF/PowerPoint y los antiguos comandos `pnpm export` no tienen paridad garantizada. `dist/`, capturas y reportes son artefactos generados. La issue #53 sustituye las restricciones visuales anteriores: esta nueva entrega requiere aceptación visual y de contenido del propietario, no heredada de la PR #38.
 
 ## Ideas aparcadas

@@ -131,7 +131,7 @@ function TalkCard({ talk }: { talk: Talk }) {
 
 function TalkPage({ talk }: { talk: Talk }) {
   const Content = useMemo(() => lazy(async () => {
-    const { default: experience } = await talk.load()
+    const { default: experience } = await talk.load!()
     return { default: () => <Experience talk={talk} experience={experience} /> }
   }), [talk])
   return <Suspense fallback={<p role="status">Loading talk…</p>}><Content /></Suspense>
@@ -155,6 +155,9 @@ export function App() {
   useEffect(() => {
     document.documentElement.dataset.theme = theme
   }, [theme])
+
+  // Independent talk entries are served before the catalogue application.
+  if (talk?.standalone) return <p><a href={talk.deckUrl}>Open presentation</a></p>
 
   return (
     <Layout theme={theme} onThemeChange={() => setTheme(theme === 'system' ? 'dark' : theme === 'dark' ? 'light' : 'system')}>

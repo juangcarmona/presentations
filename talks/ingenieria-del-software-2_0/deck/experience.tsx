@@ -1,5 +1,30 @@
 import type { Experience } from '../../../src/experience-model'
-import './scenes.css'
+import { useEffect, useState } from 'react'
+import cover from './public/bg-cover-1.jpg'
+import portrait from './public/juan.jpg'
+import lifecycle from './public/lifecycle-overview.svg'
+import model from './public/pdac-2-product-definition-model.png'
+import citations from './public/pdac-5-citation-and-drift.png'
+import authority from './public/pdac-authority-and-learning.png'
+import demo from './public/pdac-demo.gif'
+import logo from './public/pdac-logo.png'
+import workflow from './public/pdac-reference-workflow.png'
+import branding from './public/product_shape_branding.png'
+
+function Figure({ src, alt }: { src: string; alt: string }) {
+  return <figure className="original-figure"><a href={src} target="_blank" rel="noreferrer" aria-label={`${alt}. Abrir imagen a tamaño completo`}><img src={src} alt={alt} /></a><figcaption>Visual original · <a href={src} target="_blank" rel="noreferrer">Ampliar ↗</a></figcaption></figure>
+}
+
+function Demo() {
+  const [playing, setPlaying] = useState(false)
+  useEffect(() => {
+    const preference = matchMedia('(prefers-reduced-motion: reduce)')
+    const stop = () => { if (preference.matches) setPlaying(false) }
+    preference.addEventListener('change', stop)
+    return () => preference.removeEventListener('change', stop)
+  }, [])
+  return <div className="demo-stage"><img className="product-brand" src={branding} alt="ProductShape, Product Definition as Code" /><button type="button" aria-pressed={playing} onClick={() => setPlaying(!playing)}>{playing ? 'Detener demo animada' : 'Reproducir demo animada'}</button>{playing && <img className="demo-animation" src={demo} alt="Demo: tres specs divergentes sobre devoluciones, BR-REFUND-001 definida una vez y verificación de citas obsoletas" />}<p>La animación solo se inicia bajo petición. Los pasos de la demo están disponibles debajo sin movimiento.</p></div>
+}
 
 function Flow({ items, label }: { items: string[]; label: string }) {
   return <ol className="product-flow" aria-label={label}>{items.map((text, i) => <li key={text}><span className="flow-index" aria-hidden="true">{String(i + 1).padStart(2, '0')} →</span>{text}</li>)}</ol>
@@ -37,4 +62,20 @@ const experience: Experience = { language: 'es', scenes: [
   { id: '23-videos', title: 'Sin planos, no hay plan', content: <><p>Planos de la Estrella de la Muerte: la documentación técnica permite entender un sistema y encontrar su punto débil sin haberlo construido.</p><p>El vídeo externo necesita conexión. Si no se reproduce, este contexto y el enlace siguen disponibles.</p><a href="https://www.youtube.com/watch?v=vsERtDqflfI">Ver «Planos de la Estrella de la Muerte» en YouTube</a><details className="video-panel"><summary>Cargar reproductor externo de YouTube</summary><iframe title="Planos de la Estrella de la Muerte — vídeo de cierre" src="https://www.youtube-nocookie.com/embed/vsERtDqflfI" loading="lazy" allowFullScreen /></details></> },
   { id: '24-fin', title: 'Juan G. Carmona', content: <><p className="scene-lede">¿Preguntas?</p><p>Software Architect · AI Strategist · Plain Concepts</p><div className="portrait-fallback" aria-label="Juan G. Carmona, retrato no disponible"><span aria-hidden="true">JG</span><p>Juan G. Carmona · ponente</p></div><ul><li><a href="https://jgcarmona.com/">jgcarmona.com</a></li><li><a href="https://linkedin.com/in/juangcarmona">linkedin.com/in/juangcarmona</a></li><li><a href="https://pdac.dev/">pdac.dev</a></li></ul></> },
 ] }
+const figures: Record<string, { src: string; alt: string }> = {
+  '10-autoridad': { src: authority, alt: 'Product thinking, accepted product definition y delivery: autoridad hacia abajo, evidencia y Product Changes propuestos hacia arriba' },
+  '11-modelo': { src: model, alt: 'PDaC-2: actores, journeys, casos de uso, reglas de negocio, dominio, requisitos y comportamiento estructurado' },
+  '14-citas': { src: citations, alt: 'PDaC-5: estados de cita current, stale, unresolved y tampered, y escenario de deriva controlado por personas' },
+  '15-workflow': { src: workflow, alt: 'Flujo de referencia de PDaC: baseline aceptada, Product Change, validación, aprobación humana, aplicar, rama, pull request, aceptación humana y nueva baseline' },
+  '17-flujo-agentico': { src: lifecycle, alt: 'Ciclo de vida de agentic-sdlc' },
+}
+
+for (const scene of experience.scenes) {
+  const figure = figures[scene.id]
+  if (figure) scene.content = <><Figure {...figure} /><details className="supporting-text"><summary>Lectura del diagrama y referencias</summary>{scene.content}</details></>
+  if (scene.id === 'cover') scene.content = <><img className="cover-art" src={cover} alt="" />{scene.content}</>
+  if (scene.id === '09-intencion') scene.content = <><img className="pdac-mark" src={logo} alt="PDaC" />{scene.content}</>
+  if (scene.id === '13-productshape') scene.content = <><Demo /><details className="supporting-text"><summary>Pasos de la demo y referencias</summary>{scene.content}</details></>
+  if (scene.id === '24-fin') scene.content = <div className="closing-layout"><img className="speaker-portrait" src={portrait} alt="Juan G. Carmona" /><div><p className="scene-lede">¿Preguntas?</p><p>Software Architect · AI Strategist · Plain Concepts</p><ul><li><a href="https://jgcarmona.com/">jgcarmona.com</a></li><li><a href="https://linkedin.com/in/juangcarmona">linkedin.com/in/juangcarmona</a></li><li><a href="https://pdac.dev/">pdac.dev</a></li></ul></div></div>
+}
 export default experience
