@@ -153,7 +153,7 @@ export function App() {
   const talk = talks.find((candidate) => candidate.slug === path.replace(/^decks\//, ''))
 
   useEffect(() => {
-    document.documentElement.dataset.lhTheme = theme
+    document.documentElement.dataset.theme = theme
   }, [theme])
 
   return (

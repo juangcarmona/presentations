@@ -34,5 +34,3 @@ Los diagramas de PDaC y agentic-sdlc se representan como DOM semántico original
 No hay instalación local del deck, Slidev ni tema privado. PDF/PowerPoint y los antiguos comandos `pnpm export` no tienen paridad garantizada. `dist/`, capturas y reportes son artefactos generados. El propietario aceptó esta primera entrega en la PR #38; la mejora visual queda en la issue #39. Consulta el [estado de entrega y los límites de verificación](../../README.md#delivery-status-and-verification): las comprobaciones manuales pendientes siguen abiertas.
 
 ## Ideas aparcadas
-
-Existe una versión larga tipo master class (unas 60 diapositivas) como artefacto en claude.ai. Se decidió no portarla.
