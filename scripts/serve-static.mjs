@@ -4,7 +4,7 @@ import { resolve, extname, sep } from 'node:path'
 
 const root = resolve(process.argv[2] || 'dist')
 const port = Number(process.argv[3] || 4173)
-const mime = { '.html': 'text/html; charset=utf-8', '.js': 'text/javascript', '.css': 'text/css', '.json': 'application/json', '.svg': 'image/svg+xml' }
+const mime = { '.html': 'text/html; charset=utf-8', '.js': 'text/javascript', '.css': 'text/css', '.json': 'application/json', '.svg': 'image/svg+xml', '.png': 'image/png', '.jpg': 'image/jpeg', '.gif': 'image/gif' }
 createServer(async (request, response) => {
   try {
     const url = new URL(request.url, 'http://localhost')

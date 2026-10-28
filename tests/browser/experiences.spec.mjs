@@ -146,8 +146,8 @@ test('external media failure leaves context, source and onward navigation', asyn
   await expect(page.locator('iframe')).toHaveAttribute('title', /Planos/)
   await page.locator('.scene-controls button').last().click()
   await expect(page.locator('[data-scene="24-fin"]')).toBeVisible()
-  await expect(page.locator('.portrait-fallback')).toBeVisible()
-  await expect(page.locator('img')).toHaveCount(0)
+  await expect(page.getByRole('img', { name: 'Juan G. Carmona' })).toBeVisible()
+  await expect(page.locator('.portrait-fallback')).toHaveCount(0)
 })
 
 for (const talk of talks) {
@@ -187,7 +187,8 @@ for (const talk of talks) {
     const light = await page.locator('body').evaluate(element => getComputedStyle(element).backgroundColor)
     await page.emulateMedia({ colorScheme: 'dark' })
     const dark = await page.locator('body').evaluate(element => getComputedStyle(element).backgroundColor)
-    expect(dark).not.toBe(light)
+    if (talk.language === 'en') expect(dark).not.toBe(light)
+    else expect(dark).toBe(light) // The standalone keynote owns a fixed dark identity.
     const next = page.locator('.scene-controls button').last()
     for (let step = 0; step < 30 && !await next.evaluate(element => element === document.activeElement); step++) {
       await page.keyboard.press('Tab')
