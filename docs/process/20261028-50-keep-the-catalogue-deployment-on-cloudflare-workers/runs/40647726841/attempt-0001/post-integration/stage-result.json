@@ -1,0 +1,134 @@
+{
+  "schemaVersion": 1,
+  "runId": "14ea5b5b7f260293cef333e7f55581d3286b2063a51c61678a97222103fe85ef",
+  "stage": "integrate",
+  "gate": "done",
+  "status": "blocked",
+  "evidence": [
+    {
+      "id": "github-check:122676439290",
+      "status": "passed",
+      "source": "https://github.com/juangcarmona/presentations/actions/runs/40646504022/job/122676439290",
+      "reason": "Host-authenticated catalog success from app 15368 on accepted head d1a7b4c5a510b04472dbb417d6d9aecc27484f19 satisfies the declared forge check. Workflow uses Node 22, not the explicitly requested Node 24."
+    },
+    {
+      "id": "github-check:122676439217",
+      "status": "passed",
+      "source": "https://github.com/juangcarmona/presentations/actions/runs/40646504030/job/122676439217",
+      "reason": "Host-authenticated foundation verification passed on the accepted head; satisfies the explicit no-blocking-drift execution requirement, but does not resolve the observed SDLC version discrepancy."
+    },
+    {
+      "id": "github-check:122677634191",
+      "status": "passed",
+      "source": "https://github.com/juangcarmona/presentations/actions/runs/40646877971/job/122677634191",
+      "reason": "Host-authenticated catalog success on reported merge/current revision d2a23f92994bbf41bbf0ae62a9ae54724b611a72. Workflow runs locked install, production build and tests on Node 22."
+    },
+    {
+      "id": "github-check:122677634287",
+      "status": "passed",
+      "source": "https://github.com/juangcarmona/presentations/actions/runs/40646877954/job/122677634287",
+      "reason": "Host-authenticated foundation verification passed on the reported merge revision."
+    },
+    {
+      "id": "worker-configuration-inspection",
+      "status": "passed",
+      "source": "/workspace/wrangler.jsonc:3-10; /workspace/package.json:4-5,13,20; /workspace/README.md:70-74; /workspace/package-lock.json:13-22",
+      "reason": "Assets-only Worker targets dist with 404-page handling, no configured rebuild or script entry; Wrangler 4.154.0 and Lighthouse 0.11.4 are pinned in package and lock root. README documents Workers Builds commands. Static inspection supports intent, not runtime proof."
+    },
+    {
+      "id": "acceptance-worker-execution",
+      "status": "unavailable",
+      "source": "/input/context.json:completion.pullRequest.body; /workspace/.github/workflows/verify-catalog.yml:20-30",
+      "reason": "PR reports Node 24.22.0 browser success, Wrangler dry-run reading 18 files, and Worker 200/404 smoke results, but supplies no revision-bound execution records for those explicit acceptance requirements. Authenticated catalog does not run them. No failed check is observed."
+    },
+    {
+      "id": "affected-guidance-sdlc-version",
+      "status": "pending-review",
+      "source": "/workspace/.lighthouse/commands.json:20-22; /workspace/lighthouse.json:20-24; /workspace/.lighthouse/sdlc.json:4-6; /workspace/LIGHTHOUSE.md:8",
+      "reason": "Changed command projection declares SDLC 0.15.0 while the manifest, control plane and generated guide declare 0.13.0. Maintainer must establish intended compatibility or resolve projection drift. This is an observed guidance inconsistency, not a proven runtime defect or failed foundation check."
+    },
+    {
+      "id": "authority-and-finalization-plan",
+      "status": "passed",
+      "source": "/input/context.json:request.authorization,completion.binding,completion.finalization; /workspace/.lighthouse/github.json; /workspace/docs/engineering/repository-refinement.md:29-35",
+      "reason": "Host supplies explicit merge:true authorization bound to issue 50, PR 51 and full accepted head; policy requires catalog/app 15368 and zero approvals. Adopted finalization adds waiting-review for either outcome, preserves PR labels and bug, does not close the issue, and releases agent-working through host cleanup. These effects need not preexist this assessment."
+    }
+  ],
+  "missingEvidence": [
+    "Owner/implementer: provide revision-bound full browser test execution on Node 24 for the accepted delivery; catalog uses Node 22 and PR prose alone is not execution evidence.",
+    "Owner/implementer: provide revision-bound Wrangler dry-run output demonstrating explicit repository Worker configuration and dist consumption without auto-configuration.",
+    "Owner/implementer: provide revision-bound local Worker smoke execution showing 200 for catalogue and talk routes and 404 for an unknown route."
+  ],
+  "unavailableChecks": [],
+  "pendingReview": [
+    "Repository maintainer: explain the SDLC 0.15.0 command projection versus the 0.13.0 manifest/control-plane/guide, with compatibility evidence or a separately reviewed correction. Foundation success alone does not settle intended consistency."
+  ],
+  "nextAction": "Maintainer supplies the three missing acceptance records and resolves the SDLC projection discrepancy, then explicitly requests reassessment. Publisher rechecks authority, checks and reservation before publication; do not request another merge of the already-merged PR. Review remains a separate owner-requested stage.",
+  "output": {
+    "binding": {
+      "repository": "juangcarmona/presentations",
+      "issue": 50,
+      "pr": 51,
+      "head": "d1a7b4c5a510b04472dbb417d6d9aecc27484f19",
+      "base": "d2a23f92994bbf41bbf0ae62a9ae54724b611a72",
+      "branch": "main",
+      "intent": "ad3db9e6e46fd2fcd359f1324b6719275e705c8deb35a83a8d5e8d171c46da5b",
+      "policy": "2a00485780edaf527c5892b07d7dd9760d2c6b1da8fc7e7509335138463fcf72",
+      "reviews": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "prIntent": "ea41372ce22269466b3060d6181122f31dcb25a47d3be70ce8d1534bf723dbb0",
+      "files": "ea2382929be3d858e233c5c1ea541aca1eca856241c9750e04671abdebf42b09"
+    },
+    "provenance": "Identity, changed paths, authority and GitHub observations are supplied by the trusted host. No independent GitHub or git identity verification was performed or required.",
+    "dependencyOrder": "No stacked dependency or predecessor is declared. Inspect verified build output before deploy; npm run deploy does not rebuild. No additional dependency gate is inferred.",
+    "forgeGate": "catalog from app 15368 passed on accepted head and reported merge revision; no failed required checks observed. Zero approvals required; fresh protection enforcement remains publisher/GitHub-owned.",
+    "merge": {
+      "authorizedHead": "d1a7b4c5a510b04472dbb417d6d9aecc27484f19",
+      "ownerDispatchMerge": true,
+      "hostObservedMerged": true,
+      "hostObservedMergeCommit": "d2a23f92994bbf41bbf0ae62a9ae54724b611a72",
+      "hostObservedMergeActor": "juangcarmona",
+      "action": "No second merge requested. This blocked assessment neither creates nor reverses the host-observed merge receipt.",
+      "priorIntegration": null
+    },
+    "synchronization": {
+      "observedIssue": "closed, labels: bug",
+      "observedPR": "closed and merged, labels: none",
+      "publisherPlan": "Add waiting-review on blocked; preserve bug and PR labels; closeIssue:false does not reopen or close the already-closed issue; host releases agent-working for every outcome.",
+      "authority": "Use host-supplied adopted finalization; no direct GitHub writes or policy changes."
+    },
+    "postMerge": {
+      "workflow": "verify-catalog.yml",
+      "revision": "d2a23f92994bbf41bbf0ae62a9ae54724b611a72",
+      "status": "passed",
+      "source": "https://github.com/juangcarmona/presentations/actions/runs/40646877971",
+      "provenance": "Host-authenticated observation, not inferred from this assessment.",
+      "cloudflareDeployment": "No deployment receipt supplied; not claimed successful and not added as a new acceptance gate."
+    },
+    "findings": [
+      {
+        "type": "verification-gap",
+        "owner": "Repository maintainer / implementer",
+        "finding": "Node 24, Worker dry-run and local Worker route results are asserted only in PR prose; authenticated CI covers Node 22 static-server tests instead. No execution failure established."
+      },
+      {
+        "type": "guidance-drift",
+        "owner": "Repository maintainer / Lighthouse projection owner",
+        "finding": "SDLC command projection and declared manifest/control-plane versions disagree. Compatibility and cause are unknown; do not infer a product runtime defect."
+      }
+    ],
+    "scopeLimits": [
+      "Source remained read-only. No tests were executed in this engine; supplied CI observations and source inspection were assessed.",
+      "Historical first-delivery manual accessibility and source-equivalence limits in README.md:84 remain explicit, outside issue 50's scoped acceptance; they are not newly imposed integration gates.",
+      "No review stage, retrospective publication, follow-up issue, policy amendment or regression guard was initiated. Any proposed guard requires its own review and regression proof.",
+      "Host validates this envelope and records the terminal gh-aw noop; no safeoutputs invocation belongs to this engine adapter."
+    ],
+    "laterStageChecks": [
+      {
+        "stage": "review",
+        "status": "not-performed",
+        "owner": "Repository owner",
+        "description": "Separate explicit owner dispatch required; this integration assessment does not grant review approval or start review."
+      }
+    ]
+  }
+}
