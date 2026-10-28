@@ -23,4 +23,10 @@ The selected SDLC package owns lifecycle skills, commands, meta-commands, routes
 
 The Lighthouse documentation site is enabled but unavailable until both authorities are adopted and validate successfully. This route publishes product and architecture documentation. Application deployment follows the repository's own delivery policy.
 
+## User identity
+
+When the product needs user authentication, delegate it to an external OpenID Connect provider through maintained framework middleware. Reuse an existing shared provider; Keycloak is the recommended self-hosted reference. Do not build password storage, credential recovery or an authorization server without an explicit product and architecture exception. Application authorization stays in the product. Use separate application clients and keep shared identity infrastructure outside application teardown.
+
+Read the installed Lighthouse package guide at `assets/profiles/identity.md` before implementing authentication. This is review guidance; foundation verification does not prove runtime authentication or authorization.
+
 This file is managed. Put repository-specific policy in its own documentation and keep this projection generated from `lighthouse.json`.

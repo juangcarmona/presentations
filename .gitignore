@@ -10,6 +10,7 @@ talks/**/deck/*.pdf
 **/.cache/
 **/_outputs/
 **/working/
+**/.wrangler/
 
 # OS/editor noise
 .DS_Store
