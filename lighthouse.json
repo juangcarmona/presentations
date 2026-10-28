@@ -1,0 +1,50 @@
+{
+  "$schema": "./node_modules/@juangcarmona/lighthouse/assets/schemas/lighthouse-manifest.schema.json",
+  "schemaVersion": 1,
+  "baseline": "0.1.0",
+  "product": "Presentations",
+  "application": {
+    "shape": "frontend",
+    "stacks": [
+      "react",
+      "typescript"
+    ]
+  },
+  "profiles": [],
+  "integrations": {
+    "productShape": null,
+    "arcShape": null
+  },
+  "packages": {
+    "sdlc": {
+      "name": "@juangcarmona/lighthouse-sdlc",
+      "version": "0.15.1"
+    }
+  },
+  "managed": [
+    "LIGHTHOUSE.md",
+    "scripts/lighthouse-guard.mjs",
+    ".husky/commit-msg",
+    ".husky/pre-push",
+    ".github/workflows/lighthouse.yml",
+    ".lighthouse/sdlc.json",
+    ".agents/skills/lighthouse-init/SKILL.md",
+    ".lighthouse/upgrade.json",
+    ".lighthouse/commands.json"
+  ],
+  "repository": {
+    "layout": [
+      "src",
+      "docs",
+      "infra",
+      "scripts"
+    ],
+    "publicSite": {
+      "enabled": false
+    },
+    "conventions": {
+      "commits": "conventional",
+      "branchPattern": "^(feat|fix|docs|refactor|test|chore|build|ci|perf|revert)/[1-9]\\d*-[a-z0-9]+(?:-[a-z0-9]+)*$"
+    }
+  }
+}
