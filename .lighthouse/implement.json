@@ -1,0 +1,25 @@
+{
+  "53": {
+    "scope": "Recover the existing issue #53 implementation from the immutable seed. Preserve its implementation and completed OpenSpec plan unless a required check identifies a correction. Complete locked installation, full verification, strict OpenSpec validation and a valid result envelope promptly. Retain a bounded desktop preview and reports. Owner visual/content acceptance remains pending; return that decision explicitly without claiming it has been granted.",
+    "paths": [
+      "*"
+    ],
+    "checks": [
+      [
+        "npm",
+        "ci",
+        "--ignore-scripts"
+      ],
+      [
+        "npm",
+        "run",
+        "verify"
+      ]
+    ],
+    "reviewRequired": false,
+    "seed": {
+      "base": "9948cf62b4797d66239328f24eda6ec7e30a70e8",
+      "head": "330c26c638c91e13897a50dc0ea6388d2616d4e7"
+    }
+  }
+}

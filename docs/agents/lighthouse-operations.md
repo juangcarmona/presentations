@@ -4,7 +4,7 @@ Read this before changing Lighthouse workflows or enabling automation.
 
 ## Installed baseline
 
-This adoption pins `@juangcarmona/lighthouse@0.11.6` and `@juangcarmona/lighthouse-sdlc@0.15.2`; `package-lock.json` records the full dependency graph. The installed workflow sources point to Lighthouse commit `cee9f62f8161771ea16366c6360b82e0efad045c` and were compiled with `gh aw` v0.93.2. The installed stages are triage, refine, propose, implement, integrate, review, and apply-review. Use `npm run lighthouse:verify` to check the installed baseline. Install or upgrade workflows with the pinned SDLC package's `src/install-workflows.mjs` and compile their generated locks with the repository's pinned `gh aw` CLI.
+This adoption pins `@juangcarmona/lighthouse@0.11.6` and `@juangcarmona/lighthouse-sdlc@0.15.2`; `package-lock.json` records the full dependency graph. The installed workflow sources point to Lighthouse commit `a2aaa8e22fd3ddbf296c7cc0e0bb0b4b02573c8a` and were compiled with `gh aw` v0.93.2. The installed stages are triage, refine, propose, implement, integrate, review, and apply-review. This reviewed source pin includes the validation-workspace branch fix and the 64 MiB evidence budget; the selected npm packages remain CLI 0.11.6 and SDLC 0.15.2 until the next package release. Use `npm run lighthouse:verify` to check the installed baseline. Install or upgrade workflows with the pinned SDLC package's `src/install-workflows.mjs` and compile their generated locks with the repository's pinned `gh aw` CLI.
 
 The router and lifecycle workers are installed, but GitHub Actions automation is gated by the repository variable `LIGHTHOUSE_AUTOMATION_ENABLED`. It must remain `false` until an owner confirms the runtime, provider credentials, workflow permissions, and triggers are ready. The installed completion workflow also allows refinement to continue automatically into implementation when the gate is enabled.
 
@@ -17,3 +17,7 @@ The router and lifecycle workers are installed, but GitHub Actions automation is
 - The runner must be dedicated to trusted repository workflows because its Docker access is privileged host access. Review the workflow permissions and runner isolation before enabling automation.
 
 The repository variable is intentionally set to `false` while credentials and runtime configuration remain unverified. An owner can enable it after completing the setup above and reviewing the Actions settings. No model provider, key value, or runner-host configuration is recorded here.
+
+## Issue recovery
+
+The issue-specific policy in `.lighthouse/implement.json` restores the immutable checkpoint for #53, then requires the normal independent checks and the issue’s owner visual/content acceptance. The checkpoint supplies source to verify; it grants no approval. Review or remove that override before requesting another implementation of #53 after its source has changed.
