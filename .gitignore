@@ -11,6 +11,7 @@ talks/**/deck/*.pdf
 **/_outputs/
 **/working/
 **/.wrangler/
+.lighthouse/reconciliation/*.plan.json
 
 # OS/editor noise
 .DS_Store
