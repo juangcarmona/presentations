@@ -35,13 +35,11 @@ npm run dev
 Use Node 22.18+ for native TypeScript support in the Node tests (Node 24 is also supported). The root npm lock is the only active dependency graph; all dependencies resolve from the public npm registry. Installation does not require lifecycle scripts, private repository credentials or talk-local dependencies. The build never installs packages.
 
 ```bash
-npm run typecheck
-npm run build
-npm test
+npm run verify
 npm run preview
 ```
 
-`npm run build` checks both talk graphs, builds Vite and emits/validates five physical HTML entries plus `dist/site-manifest.json`. `npm test` requires that build and Chromium at `/usr/bin/chromium` (configured explicitly in `playwright.config.mjs`); it runs unit, full-build failure, static-only browser and every-scene accessibility checks. Test tooling is development-only. Reports/captures go to ignored `test-reports/` and `test-results/`.
+`npm run verify` runs the Lighthouse baseline check, static build and complete test suite. `npm run build` checks both talk graphs, builds Vite and emits/validates five physical HTML entries plus `dist/site-manifest.json`. `npm test` requires that build and Chromium at `/usr/bin/chromium` (configured explicitly in `playwright.config.mjs`); it runs unit, full-build failure, static-only browser and every-scene accessibility checks. Test tooling is development-only. Reports/captures go to ignored `test-reports/` and `test-results/`.
 
 ### Ordinary static hosting
 
