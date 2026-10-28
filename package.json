@@ -1,7 +1,7 @@
 {
   "scripts": {
     "dev": "vite",
-    "build": "npm run typecheck && vite build && node scripts/build-static.mjs && node scripts/verify-static.mjs",
+    "build": "npm run typecheck && vite build && vite build --config talks/ingenieria-del-software-2_0/deck/vite.config.ts && node scripts/build-static.mjs && node scripts/verify-static.mjs",
     "deploy": "wrangler deploy",
     "lighthouse:verify": "lighthouse verify",
     "preview": "vite preview",

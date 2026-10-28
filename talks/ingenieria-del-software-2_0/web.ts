@@ -1,7 +1,7 @@
 import type { Talk } from '../../src/talk-model'
 
 export const talk: Talk = {
-  load: () => import('./deck/experience'),
+  standalone: true,
   title: 'Software Engineering 2.0',
   slug: 'software-engineering-2_0',
   number: '01',
