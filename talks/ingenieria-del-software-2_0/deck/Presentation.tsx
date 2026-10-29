@@ -54,9 +54,10 @@ export default function Presentation() {
   }, [scene])
 
   function move(direction: number) {
-    if (['04-guardarrailes', '20-piramide'].includes(scene.id)) {
-      if (direction > 0 && comparisonStage === 0) { setComparisonStage(1); return }
-      if (direction < 0 && comparisonStage === 1) { setComparisonStage(0); return }
+    const lastStage = scene.id === '04-guardarrailes' ? 2 : scene.id === '20-piramide' ? 1 : 0
+    if (lastStage) {
+      if (direction > 0 && comparisonStage < lastStage) { setComparisonStage(comparisonStage + 1); return }
+      if (direction < 0 && comparisonStage > 0) { setComparisonStage(comparisonStage - 1); return }
     }
     const target = nextIndex(index, direction, scenes.length)
     if (target !== index) location.hash = `scene=${scenes[target].id}`

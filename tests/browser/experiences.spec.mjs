@@ -35,6 +35,7 @@ for (const [path, scenes, language] of [
     if (path.includes('software-engineering')) expect(await page.locator('.scene a[href^="http"]').evaluateAll(links => links.every(link => link.target === '_blank' && link.rel.includes('noopener'))), scene.id).toBe(true)
     await page.keyboard.press('ArrowRight')
     if (path.includes('software-engineering') && ['04-guardarrailes', '20-piramide'].includes(scene.id)) await page.keyboard.press('ArrowRight')
+    if (path.includes('software-engineering') && scene.id === '04-guardarrailes') await page.keyboard.press('ArrowRight')
   }
   await expect(page.locator('[data-scene]')).toHaveAttribute('data-scene', scenes.at(-1).id)
   await page.reload()

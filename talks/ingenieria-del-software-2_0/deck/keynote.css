@@ -131,10 +131,25 @@ button { font: inherit; cursor: pointer; }
 [data-scene="04-guardarrailes"] .scene-grid section { display: block; min-width: 0; padding-top: 1.5rem; }
 [data-scene="04-guardarrailes"] .scene-grid section:nth-child(2) { border-top-color: #f0aa7a; }
 [data-scene="04-guardarrailes"] .scene-grid h2 { font-size: clamp(2.4rem, 4vw, 4.5rem); }
+[data-scene="04-guardarrailes"] .guardrail-trait { display: flex; flex-wrap: wrap; align-items: baseline; gap: .5rem 1.2rem; margin: 0 0 .9rem; }
+[data-scene="04-guardarrailes"] .guardrail-trait strong { color: #75c6df; font-size: clamp(1.5rem, 2.5vw, 2.7rem); }
+[data-scene="04-guardarrailes"] .scene-grid section:nth-child(2) .guardrail-trait strong { color: #f0aa7a; }
+[data-scene="04-guardarrailes"] .guardrail-trait span { color: var(--lh-text-muted); font: 700 clamp(.8rem, 1vw, 1rem) ui-monospace, monospace; text-transform: uppercase; letter-spacing: .08em; }
 [data-scene="04-guardarrailes"] .scene-grid ul { columns: 1; font-size: clamp(1.1rem, 1.75vw, 1.6rem); line-height: 1.55; }
 [data-scene="04-guardarrailes"] .scene-grid section:nth-child(2) li::marker { color: #f0aa7a; }
-[data-scene="04-guardarrailes"][data-stage="0"] .scene-grid section:nth-child(2) { visibility: hidden; opacity: 0; transform: translateX(35px); }
-[data-scene="04-guardarrailes"][data-stage="1"] .scene-grid section:nth-child(2) { visibility: visible; opacity: 1; transform: translateX(0); transition: opacity .5s ease-out, transform .5s ease-out; }
+[data-scene="04-guardarrailes"] .scene-grid section { visibility: hidden; opacity: 0; animation: none; }
+[data-scene="04-guardarrailes"][data-stage="1"] .scene-grid section:first-child, [data-scene="04-guardarrailes"][data-stage="2"] .scene-grid section { visibility: visible; opacity: 1; }
+[data-scene="04-guardarrailes"][data-stage="1"] .scene-grid section:first-child, [data-scene="04-guardarrailes"][data-stage="2"] .scene-grid section:nth-child(2) { animation: guardrail-enter .45s ease-out both; }
+[data-scene="04-guardarrailes"][data-stage="1"] .scene-grid section:first-child > *, [data-scene="04-guardarrailes"][data-stage="1"] .scene-grid section:first-child li, [data-scene="04-guardarrailes"][data-stage="2"] .scene-grid section:nth-child(2) > *, [data-scene="04-guardarrailes"][data-stage="2"] .scene-grid section:nth-child(2) li { animation: guardrail-enter .4s ease-out both; }
+[data-scene="04-guardarrailes"] .scene-grid section .guardrail-trait { animation-delay: .2s; }
+[data-scene="04-guardarrailes"] .scene-grid section > p:not(.guardrail-trait) { animation-delay: .45s; }
+[data-scene="04-guardarrailes"] .scene-grid section ul { animation-delay: .7s; }
+[data-scene="04-guardarrailes"] .scene-grid section li:nth-child(1) { animation-delay: .8s; }
+[data-scene="04-guardarrailes"] .scene-grid section li:nth-child(2) { animation-delay: 1s; }
+[data-scene="04-guardarrailes"] .scene-grid section li:nth-child(3) { animation-delay: 1.2s; }
+[data-scene="04-guardarrailes"] .scene-grid section li:nth-child(4) { animation-delay: 1.4s; }
+[data-scene="04-guardarrailes"] .scene-grid section li:nth-child(5) { animation-delay: 1.6s; }
+[data-scene="04-guardarrailes"] .scene-grid section li:nth-child(6) { animation-delay: 1.8s; }
 [data-scene="20-piramide"] .scene-grid { grid-template-columns: 1fr; }
 [data-scene="20-piramide"] .scene-grid section { display: none; }
 [data-scene="20-piramide"][data-stage="0"] .scene-grid section:first-child, [data-scene="20-piramide"][data-stage="1"] .scene-grid section:nth-child(2) { display: block; }
@@ -268,6 +283,7 @@ button { font: inherit; cursor: pointer; }
 @keyframes hud-load { from { transform: scaleX(0); opacity: 1; } 90% { transform: scaleX(1); opacity: 1; } to { transform: scaleX(1); opacity: 0; } }
 @keyframes journey-trace { to { stroke-dashoffset: -160; } }
 @keyframes journey-arrive { from { opacity: 0; transform: translateY(18px) scale(.9); } to { opacity: 1; transform: translateY(0) scale(1); } }
+@keyframes guardrail-enter { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
 @keyframes sdd-travel { 0% { left: 7%; } 100% { left: 93%; } }
 @media (max-width: 700px) {
   .scene, .scene:has(.diagram-stage), .scene:has(.journey-map) { height: auto; min-height: 100svh; display: block; padding: 4rem 6vw 6rem; }
@@ -314,7 +330,6 @@ button { font: inherit; cursor: pointer; }
   .arc-grid { display: block; }
   .arc-item { width: 100%; margin-bottom: .5rem; }
   [data-scene="04-guardarrailes"] .scene-grid { grid-template-columns: 1fr; }
-  [data-scene="04-guardarrailes"][data-stage="0"] .scene-grid section:nth-child(2) { display: none; }
   [data-scene="23-videos"] .scene-content { max-width: 100%; }
   [data-scene="23-videos"]::after { width: 60vw; top: auto; bottom: -17vw; right: -15vw; opacity: .25; }
 }
