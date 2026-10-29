@@ -7,10 +7,10 @@ test('catalogue opens one bilingual standalone keynote', async ({ page }) => {
   await expect(page.locator('.keynote')).toBeVisible()
   await expect(page.locator('.topbar, .footer, .site-shell, iframe')).toHaveCount(0)
   await expect(page.locator('.language-picker')).toBeVisible()
-  const hud = await page.locator('.presentation-hud').boundingBox()
-  expect(hud.x).toBeGreaterThan(800)
-  expect(hud.y).toBeGreaterThan(600)
-  await expect(page.locator('.presentation-hud > span').first()).toHaveText('0 min')
+  const number = await page.locator('.slide-number').boundingBox()
+  expect(number.x).toBeGreaterThan(800)
+  expect(number.y).toBeLessThan(100)
+  await expect(page.locator('.elapsed-clock, .hud-track')).toHaveCount(0)
   await page.getByRole('button', { name: 'EN', exact: true }).click()
   await expect(page).toHaveURL(/\/software-engineering-2_0\/\?lang=en$/)
   await expect(page.locator('html')).toHaveAttribute('lang', 'en')
@@ -18,7 +18,7 @@ test('catalogue opens one bilingual standalone keynote', async ({ page }) => {
   await page.locator('#scene-title').focus()
   await page.keyboard.press('ArrowRight')
   await expect(page.locator('.language-picker')).toHaveCount(0)
-  await expect(page.locator('.presentation-hud')).toContainText('2')
+  await expect(page.locator('.slide-number')).toHaveText('2')
   await page.reload()
   await expect(page.locator('html')).toHaveAttribute('lang', 'en')
   await page.keyboard.press('ArrowLeft')
@@ -27,7 +27,7 @@ test('catalogue opens one bilingual standalone keynote', async ({ page }) => {
   await expect(page).toHaveURL(/\/software-engineering-2_0\/#scene=cover$/)
 })
 
-test('static slide images preload and the cosmetic bar returns to grey', async ({ page }) => {
+test('static slide images preload without a cosmetic loading bar', async ({ page }) => {
   await page.goto('/software-engineering-2_0/')
   const assets = ['bg-cover-1-', 'juan-', 'pdac-logo-', 'product_shape_branding-', 'openspec-icon-', 'spec-kit-logo-', 'kiro-logo-']
   await expect.poll(() => page.evaluate(prefixes => {
@@ -35,12 +35,20 @@ test('static slide images preload and the cosmetic bar returns to grey', async (
     return prefixes.filter(prefix => loaded.some(name => name.startsWith(prefix)))
   }, assets)).toEqual(assets)
   expect(await page.evaluate(() => performance.getEntriesByType('resource').some(entry => entry.name.includes('pdac-demo-')))).toBe(false)
-  const bar = page.locator('.hud-track span')
-  await expect(bar).toHaveCSS('animation-duration', '1s')
-  await expect(bar).toHaveCSS('opacity', '0')
+  await expect(page.locator('.hud-track')).toHaveCount(0)
   await page.keyboard.press('ArrowRight')
   await expect(page.locator('[data-scene]')).toHaveAttribute('data-scene', '02-recorrido')
-  await expect(bar).toHaveCSS('opacity', '0')
+  await expect(page.locator('.hud-track')).toHaveCount(0)
+})
+
+test('presenter clock waits for the first minute and uses HH:mm', async ({ page }) => {
+  await page.clock.install()
+  await page.goto('/software-engineering-2_0/')
+  await expect(page.locator('.elapsed-clock')).toHaveCount(0)
+  await page.clock.fastForward(61_000)
+  await expect(page.locator('.elapsed-clock')).toHaveText('00:01')
+  await page.clock.fastForward(3_600_000)
+  await expect(page.locator('.elapsed-clock')).toHaveText('01:01')
 })
 
 test('diagram details stay near their node and phased slides advance locally', async ({ page }) => {

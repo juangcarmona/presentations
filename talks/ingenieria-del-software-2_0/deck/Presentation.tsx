@@ -16,6 +16,7 @@ export default function Presentation() {
   const preloadedImages = useRef<HTMLImageElement[]>([])
   const touchStart = useRef<{ x: number; y: number } | null>(null)
   const scene = scenes[index]
+  const elapsedMinutes = Math.floor(elapsed / 60)
 
   useEffect(() => {
     preloadedImages.current = presentationImages.map(src => {
@@ -100,10 +101,9 @@ export default function Presentation() {
       <div className="scene-content">{scene.content}</div>
       {scene.id === '20-piramide' && <button className="comparison-next" type="button" onClick={() => setComparisonStage(comparisonStage === 0 ? 1 : 0)}>{comparisonStage === 0 ? (language === 'en' ? 'Show now →' : 'Mostrar ahora →') : (language === 'en' ? '← Show before' : '← Mostrar antes')}</button>}
     </article>
-    <div className="presentation-hud" role="group" aria-label={language === 'en' ? `Elapsed ${Math.floor(elapsed / 60)} minutes. Slide ${index + 1} of ${scenes.length}` : `Transcurridos ${Math.floor(elapsed / 60)} minutos. Diapositiva ${index + 1} de ${scenes.length}`}>
-      <span aria-hidden="true">{Math.floor(elapsed / 60)} min</span>
-      <span aria-hidden="true">{index + 1}</span>
-      <span className="hud-track" aria-hidden="true"><span key={scene.id} /></span>
+    <div className="presentation-hud" role="group" aria-label={language === 'en' ? `Slide ${index + 1} of ${scenes.length}` : `Diapositiva ${index + 1} de ${scenes.length}`}>
+      <span className="slide-number" aria-hidden="true">{index + 1}</span>
+      {elapsedMinutes > 0 && <time className="elapsed-clock" dateTime={`PT${elapsedMinutes}M`} aria-label={language === 'en' ? `${elapsedMinutes} minutes elapsed` : `${elapsedMinutes} minutos transcurridos`}>{String(Math.floor(elapsedMinutes / 60)).padStart(2, '0')}:{String(elapsedMinutes % 60).padStart(2, '0')}</time>}
     </div>
     {index === 0 && <nav className="language-picker" aria-label={language === 'en' ? 'Presentation language' : 'Idioma de la presentación'}>
       <button type="button" lang="en" aria-pressed={language === 'en'} onClick={() => chooseLanguage('en')}>EN</button>

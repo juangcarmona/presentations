@@ -12,10 +12,10 @@ button { font: inherit; cursor: pointer; }
 .scene-content h3 { margin: 0 0 .4em; font-size: 1.25rem; }
 .scene-content p { max-width: 65ch; }
 .scene-lede { color: #d7def0; font-size: clamp(1.7rem, 3vw, 3.5rem); line-height: 1.16; letter-spacing: -.035em; max-width: 24em; }
-.presentation-hud { position: fixed; z-index: 8; right: 5.5vw; bottom: 2.8vh; display: flex; align-items: center; gap: 1.4rem; color: var(--lh-text-muted); font: 700 .8rem ui-monospace, monospace; letter-spacing: .04em; pointer-events: none; }
-.presentation-hud > span:nth-child(2) { font-size: 1.05rem; color: #b2bac5; }
-.hud-track { display: block; width: 76px; height: 3px; background: var(--lh-border); }
-.hud-track span { display: block; width: 100%; height: 100%; background: var(--lh-action); transform-origin: left; animation: hud-load 1s ease-out both; }
+.presentation-hud { color: var(--lh-text-muted); font: 600 .8rem ui-monospace, monospace; letter-spacing: .04em; pointer-events: none; }
+.slide-number, .elapsed-clock { position: fixed; z-index: 8; right: 5.5vw; opacity: .72; }
+.slide-number { top: 3vh; }
+.elapsed-clock { bottom: 2.8vh; }
 .language-picker { position: fixed; z-index: 9; left: 5.5vw; bottom: 2.2vh; display: flex; gap: .7rem; }
 .language-picker button { padding: .4rem .15rem; border: 0; background: transparent; color: #8e97a6; font: 700 .8rem ui-monospace, monospace; letter-spacing: .12em; }
 .language-picker button[aria-pressed="true"], .language-picker button:hover { color: #e7eaff; }
@@ -273,7 +273,6 @@ button { font: inherit; cursor: pointer; }
 @keyframes line-draw { from { stroke-dashoffset: 80; opacity: 0; } to { stroke-dashoffset: 0; opacity: .8; } }
 @keyframes float { to { transform: translateY(-18px); } }
 @keyframes cover-drift { to { transform: scale(1.1) translateX(-2%); } }
-@keyframes hud-load { from { transform: scaleX(0); opacity: 1; } 90% { transform: scaleX(1); opacity: 1; } to { transform: scaleX(1); opacity: 0; } }
 @keyframes journey-trace { to { stroke-dashoffset: -160; } }
 @keyframes journey-arrive { from { opacity: 0; transform: translateY(18px) scale(.9); } to { opacity: 1; transform: translateY(0) scale(1); } }
 @keyframes guardrail-enter { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
@@ -327,4 +326,3 @@ button { font: inherit; cursor: pointer; }
   [data-scene="23-videos"]::after { width: 60vw; top: auto; bottom: -17vw; right: -15vw; opacity: .25; }
 }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; } }
-@media (prefers-reduced-motion: reduce) { .hud-track span { opacity: 0; } }
