@@ -44,6 +44,10 @@ export default function Presentation() {
 
   useLayoutEffect(() => {
     document.title = `${scene.title} · Software Engineering 2.0`
+    document.querySelectorAll<HTMLAnchorElement>('.scene a[href^="http"]').forEach(link => {
+      link.target = '_blank'
+      link.rel = 'noopener noreferrer'
+    })
     window.scrollTo({ top: 0, behavior: 'instant' })
     if (focusScene.current) heading.current?.focus({ preventScroll: true })
     focusScene.current = false
@@ -77,7 +81,10 @@ export default function Presentation() {
     return () => removeEventListener('keydown', keydown)
   })
 
-  return <main className="keynote" lang={experience.language} onTouchStart={event => {
+  return <main className="keynote" lang={experience.language} onClick={event => {
+    if (!(event.target instanceof Element) || event.target.closest('a, button, input, textarea, select, details, pre, code, .terminal, [role="button"], [contenteditable="true"]') || window.getSelection()?.toString()) return
+    move(event.clientX < window.innerWidth / 2 ? -1 : 1)
+  }} onTouchStart={event => {
     touchStart.current = { x: event.touches[0].clientX, y: event.touches[0].clientY }
   }} onTouchEnd={event => {
     if (!touchStart.current || event.changedTouches.length === 0) return
@@ -90,7 +97,7 @@ export default function Presentation() {
     <article className="scene" key={scene.id} aria-labelledby="scene-title" data-scene={scene.id} data-stage={comparisonStage}>
       <h1 id="scene-title" ref={heading} tabIndex={-1}>{scene.title}</h1>
       <div className="scene-content">{scene.content}</div>
-      {['04-guardarrailes', '20-piramide'].includes(scene.id) && <button className="comparison-next" type="button" onClick={() => setComparisonStage(comparisonStage === 0 ? 1 : 0)}>{scene.id === '04-guardarrailes' ? (comparisonStage === 0 ? (language === 'en' ? 'Show hard guardrails →' : 'Mostrar guardarraíles duros →') : (language === 'en' ? '← Show soft guardrails' : '← Mostrar guardarraíles blandos')) : (comparisonStage === 0 ? (language === 'en' ? 'Show now →' : 'Mostrar ahora →') : (language === 'en' ? '← Show before' : '← Mostrar antes'))}</button>}
+      {['04-guardarrailes', '20-piramide'].includes(scene.id) && <button className="comparison-next" type="button" onClick={() => setComparisonStage(comparisonStage === 0 ? 1 : 0)}>{scene.id === '04-guardarrailes' ? (comparisonStage === 0 ? (language === 'en' ? 'Show hard guardrails →' : 'Mostrar guardarraíles duros →') : (language === 'en' ? '← Hide hard guardrails' : '← Ocultar guardarraíles duros')) : (comparisonStage === 0 ? (language === 'en' ? 'Show now →' : 'Mostrar ahora →') : (language === 'en' ? '← Show before' : '← Mostrar antes'))}</button>}
     </article>
     <div className="presentation-hud" role="group" aria-label={language === 'en' ? `Elapsed ${Math.floor(elapsed / 60)} minutes. Slide ${index + 1} of ${scenes.length}` : `Transcurridos ${Math.floor(elapsed / 60)} minutos. Diapositiva ${index + 1} de ${scenes.length}`}>
       <span aria-hidden="true">{Math.floor(elapsed / 60)} min</span>

@@ -11,7 +11,7 @@ import logo from './public/pdac-logo.png'
 import workflow from './public/pdac-reference-workflow.png'
 import branding from './public/product_shape_branding.png'
 import Diagram from './Diagrams'
-import { Arc42Overview, RepoStructure, SddOverview, TerminalCase, sddImages } from './SceneExtras'
+import { Arc42Overview, JourneyMap, RepoStructure, SddOverview, TerminalCase, sddImages } from './SceneExtras'
 
 export const presentationImages = [portrait, logo, branding, ...sddImages]
 
@@ -38,7 +38,7 @@ export function Citation({ href = 'https://pdac.dev/diagrams/', children, langua
 
 const experience: Experience = { language: 'es', scenes: [
   { id: 'cover', title: 'Ingeniería del Software 2.0', content: <><p className="scene-lede">Diseñar, construir y validar productos con IA</p><p>Juan G. Carmona</p><div className="intent-motif" aria-hidden="true">intención → sistema → evidencia</div></> },
-  { id: '02-recorrido', title: 'El recorrido', content: <Flow label="Recorrido" items={['Código', 'Tendencias', 'Documentación', 'Desarrollo', 'Validación', 'Vista global']} /> },
+  { id: '02-recorrido', title: 'Del código a la evidencia', content: <Flow label="Recorrido" items={['Código', 'Tendencias', 'Documentación', 'Desarrollo', 'Validación', 'Vista global']} /> },
   { id: '03-repo', title: 'Prepara el repo para la IA', content: <Diagram id="03-repo" language="es" /> },
   { id: '04-guardarrailes', title: 'Dos tipos de guardarraíles', content: <div className="scene-grid"><section><h2>Blandos · Guían</h2><p>La regla existe, pero nada impide ignorarla.</p><ul><li>AGENTS.md / CLAUDE.md</li><li>Skills</li><li>ADRs y docs</li><li>Reglas en warning</li><li>Checklists</li></ul></section><section><h2>Duros · Bloquean</h2><p>La herramienta se niega a continuar si se rompe la regla.</p><ul><li>Analizadores</li><li>Tests de arquitectura</li><li>Hooks de commit</li><li>CI obligatoria</li><li>Hooks del harness</li><li>Citas de producto en CI</li></ul></section></div> },
   { id: '05-estructura', title: 'Estructura ideal', content: <><Code label="Árbol del repositorio">{'├── AGENTS.md          # mapa de contexto\n├── CLAUDE.md          # @AGENTS.md\n├── .agents/skills/    # capacidades\n├── src/               # todo el código\n├── tests/             # unit · e2e\n└── docs/              # todo el conocimiento\n    ├── product/       # el QUÉ · PDaC\n    ├── architecture/  # el CÓMO · arc42\n    └── design/        # UX y UI'}</Code><p><strong>src/</strong> para el código. <strong>docs/</strong> para el conocimiento.</p><p>Cada decisión, en un solo sitio.</p></> },
@@ -75,6 +75,7 @@ for (const scene of source.scenes) {
   const figure = figures[scene.id]
   if (figure) scene.content = <Diagram id={scene.id} language={source.language} original={figure} />
   if (['08-dimensiones', '22-nosotros'].includes(scene.id)) scene.content = <Diagram id={scene.id} language={source.language} />
+  if (scene.id === '02-recorrido') scene.content = <JourneyMap language={source.language} />
   if (scene.id === '05-estructura') scene.content = <RepoStructure language={source.language} />
   if (scene.id === '06-sdd') scene.content = <SddOverview language={source.language} />
   if (scene.id === '07-gaps') scene.content = <TerminalCase language={source.language} variant="specs" />
