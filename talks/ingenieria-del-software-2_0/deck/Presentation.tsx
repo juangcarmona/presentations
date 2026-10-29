@@ -97,7 +97,7 @@ export default function Presentation() {
     <article className="scene" key={scene.id} aria-labelledby="scene-title" data-scene={scene.id} data-stage={comparisonStage}>
       <h1 id="scene-title" ref={heading} tabIndex={-1}>{scene.title}</h1>
       <div className="scene-content">{scene.content}</div>
-      {['04-guardarrailes', '20-piramide'].includes(scene.id) && <button className="comparison-next" type="button" onClick={() => setComparisonStage(comparisonStage === 0 ? 1 : 0)}>{scene.id === '04-guardarrailes' ? (comparisonStage === 0 ? (language === 'en' ? 'Show hard guardrails →' : 'Mostrar guardarraíles duros →') : (language === 'en' ? '← Hide hard guardrails' : '← Ocultar guardarraíles duros')) : (comparisonStage === 0 ? (language === 'en' ? 'Show now →' : 'Mostrar ahora →') : (language === 'en' ? '← Show before' : '← Mostrar antes'))}</button>}
+      {scene.id === '20-piramide' && <button className="comparison-next" type="button" onClick={() => setComparisonStage(comparisonStage === 0 ? 1 : 0)}>{comparisonStage === 0 ? (language === 'en' ? 'Show now →' : 'Mostrar ahora →') : (language === 'en' ? '← Show before' : '← Mostrar antes')}</button>}
     </article>
     <div className="presentation-hud" role="group" aria-label={language === 'en' ? `Elapsed ${Math.floor(elapsed / 60)} minutes. Slide ${index + 1} of ${scenes.length}` : `Transcurridos ${Math.floor(elapsed / 60)} minutos. Diapositiva ${index + 1} de ${scenes.length}`}>
       <span aria-hidden="true">{Math.floor(elapsed / 60)} min</span>

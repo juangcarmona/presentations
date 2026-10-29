@@ -11,40 +11,39 @@ export function JourneyMap({ language }: { language: Language }) {
   const [active, setActive] = useState<number | null>(null)
   const en = language === 'en'
   const stages = en ? [
-    ['Code', 'A repository that tells the agent where truth lives.'],
-    ['Guardrails', 'Guidance and checks shape what the agent can do.'],
-    ['Intent', 'Product definition says what should exist.'],
-    ['Architecture', 'Technical decisions say how it fits together.'],
-    ['Delivery', 'Specs and agents turn decisions into software.'],
-    ['Evidence', 'Tests and review tell us whether it works.'],
+    ['Intent', 'What should exist, and for whom?'],
+    ['Architecture', 'How does it fit together?'],
+    ['Code', 'The system we actually build.'],
+    ['Guardrails', 'Guidance and checks keep change within bounds.'],
+    ['Delivery', 'Make the change available.'],
+    ['Evidence', 'Test and review what actually works.'],
+    ['Maintenance', 'Keep the system useful as needs change.'],
   ] : [
-    ['Código', 'Un repositorio que muestra dónde vive la verdad.'],
-    ['Guardarraíles', 'Guías y controles acotan lo que puede hacer la IA.'],
-    ['Intención', 'La definición de producto dice qué construir.'],
-    ['Arquitectura', 'Las decisiones técnicas explican cómo encaja.'],
-    ['Entrega', 'Specs y agentes convierten decisiones en software.'],
-    ['Evidencia', 'Tests y revisión indican si funciona.'],
+    ['Intención', '¿Qué queremos construir y para quién?'],
+    ['Arquitectura', '¿Cómo encaja todo?'],
+    ['Código', 'El sistema que realmente construimos.'],
+    ['Guardarraíles', 'Guías y controles mantienen el cambio dentro de límites.'],
+    ['Entrega', 'Ponemos el cambio a disposición.'],
+    ['Evidencia', 'Probamos y revisamos lo que funciona.'],
+    ['Mantenimiento', 'Mantenemos el sistema útil cuando cambian las necesidades.'],
   ]
-  const positions = [[13, 26], [35, 12], [77, 24], [84, 72], [50, 95], [15, 73]]
-  return <section className="journey-map" aria-label={en ? 'From code and intent to evidence' : 'Del código y la intención a la evidencia'} onPointerMove={event => {
+  const positions = [[15, 31], [43, 23], [75, 31], [82, 61], [57, 77], [26, 76], [12, 58]]
+  return <section className="journey-map" aria-label={en ? 'Interconnected software engineering disciplines' : 'Disciplinas interconectadas de ingeniería del software'} onPointerMove={event => {
     if (event.pointerType !== 'mouse' || matchMedia('(prefers-reduced-motion: reduce)').matches) return
     const box = event.currentTarget.getBoundingClientRect()
     const x = (event.clientX - box.left) / box.width
     const y = (event.clientY - box.top) / box.height
     event.currentTarget.style.setProperty('--spot-x', `${x * 100}%`)
     event.currentTarget.style.setProperty('--spot-y', `${y * 100}%`)
-    const core = event.currentTarget.querySelector<HTMLElement>('.journey-core')
-    if (core) core.style.transform = `translate(${(x - .5) * 22}px, ${(y - .5) * 22}px)`
   }} onPointerLeave={event => {
     setActive(null)
     event.currentTarget.style.removeProperty('--spot-x')
     event.currentTarget.style.removeProperty('--spot-y')
-    const core = event.currentTarget.querySelector<HTMLElement>('.journey-core')
-    if (core) core.style.transform = ''
   }}>
-    <svg className="journey-lines" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path d="M13 26 L35 12 L77 24 L84 72 L50 95 L15 73 Z" /><path d="M13 26 L50 49 M35 12 L50 49 M77 24 L50 49 M84 72 L50 49 M50 95 L50 49 M15 73 L50 49" /></svg>
-    <div className="journey-core"><span>SOFTWARE<br />ENGINEERING <b>2.0</b></span><p>{active === null ? (en ? 'Intent → software → evidence' : 'Intención → software → evidencia') : stages[active][1]}</p></div>
+    <div className="journey-core"><span>SOFTWARE ENGINEERING <b>2.0</b></span></div>
+    <svg className="journey-lines" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path d="M15 31 L43 23 L75 31 L82 61 L57 77 L26 76 L12 58 Z" /><path d="M15 31 L75 31 M43 23 L57 77 M75 31 L26 76 M82 61 L12 58 M15 31 L57 77" /></svg>
     {stages.map(([label], i) => <button key={label} type="button" className="journey-node" data-active={active === i} style={{ left: `${positions[i][0]}%`, top: `${positions[i][1]}%`, animationDelay: `${i * 90}ms` }} aria-pressed={active === i} aria-label={`${label}. ${stages[i][1]}`} onMouseEnter={() => setActive(i)} onFocus={() => setActive(i)} onClick={() => setActive(i)}><span aria-hidden="true">◆</span>{label}</button>)}
+    <p className="journey-insight" aria-live="polite">{active === null ? (en ? 'Everything is connected.' : 'Todo está interconectado.') : stages[active][1]}</p>
   </section>
 }
 
@@ -82,7 +81,13 @@ export function RepoStructure({ language }: { language: Language }) {
 
 export function SddOverview({ language }: { language: Language }) {
   const [active, setActive] = useState(0)
+  const [framework, setFramework] = useState<number | null>(null)
   const en = language === 'en'
+  const frameworks = [
+    { name: 'OpenSpec', image: openspec, href: 'https://github.com/Fission-AI/OpenSpec/blob/main/docs/workflows.md', description: en ? 'A change proposal carries planning artifacts; apply it, then sync and archive the result.' : 'Una propuesta reúne los artefactos del cambio; se aplica y después se sincroniza y archiva.', flow: ['Explore?', 'Propose', 'Apply', 'Sync?', 'Archive'] },
+    { name: 'GitHub Spec Kit', image: specKit, href: 'https://github.com/github/spec-kit/blob/main/docs/quickstart.md', description: en ? 'A project constitution guides feature specs, plans and tasks; converge checks the result.' : 'Una constitución de proyecto guía las specs, los planes y las tareas; converge comprueba el resultado.', flow: ['Constitution¹', 'Specify', 'Plan', 'Tasks', 'Implement', 'Converge'] },
+    { name: 'Kiro', image: kiro, href: 'https://kiro.dev/docs/specs/feature-specs/', description: en ? 'Feature Specs review requirements, technical design and tasks before executing them. Design-first is also available.' : 'Las Feature Specs revisan requisitos, diseño técnico y tareas antes de ejecutarlas. También existe el flujo que empieza por diseño.', flow: ['Requirements', 'Design', 'Tasks', 'Execute'] },
+  ]
   const steps = en ? [
     ['✎', 'Specify', 'Capture the intended outcome, constraints and examples.'],
     ['◇', 'Plan', 'Choose an approach and make the trade-offs explicit.'],
@@ -95,17 +100,21 @@ export function SddOverview({ language }: { language: Language }) {
     ['⟨/⟩', 'Implementar', 'Cambia código, ejecuta pruebas y devuelve evidencia.'],
   ]
   return <div className="sdd-layout">
-    <section className="sdd-flow" aria-label={en ? 'Spec-driven development flow' : 'Flujo de desarrollo guiado por especificaciones'}>
-      <p className="section-label">{en ? 'INTENT BECOMES SOFTWARE' : 'DE LA INTENCIÓN AL SOFTWARE'}</p>
+    {framework === null ? <section className="sdd-flow" aria-label={en ? 'Spec-driven development flow' : 'Flujo de desarrollo guiado por especificaciones'}>
+      <p className="sdd-definition">{en ? 'Describe the intended change before coding; use the spec to guide planning, implementation and review.' : 'Describe el cambio antes de programar; la spec guía la planificación, la implementación y la revisión.'}</p>
+      <p className="section-label">{en ? 'A GENERAL WAY TO WORK' : 'UNA FORMA GENERAL DE TRABAJAR'}</p>
       <div className="sdd-steps">{steps.map(([icon, label], index) => <button type="button" className="sdd-step" data-active={active === index} key={label} aria-pressed={active === index} onMouseEnter={() => setActive(index)} onFocus={() => setActive(index)} onClick={() => setActive(index)}><span className="sdd-icon" aria-hidden="true">{icon}</span><small>{String(index + 1).padStart(2, '0')}</small><strong>{label}</strong></button>)}</div>
       <p className="sdd-message" aria-live="polite"><span>{String(active + 1).padStart(2, '0')} / 04</span>{steps[active][2]}</p>
-    </section>
-    <section className="sdd-tools" aria-label={en ? 'Three examples of SDD tools' : 'Tres ejemplos de herramientas SDD'}>
-      <p className="section-label">{en ? 'EXAMPLES' : 'EJEMPLOS'}</p>
+    </section> : <section className="sdd-framework-detail" id="sdd-framework-detail" aria-label={frameworks[framework].name}>
+      <div className="sdd-framework-head"><img src={frameworks[framework].image} alt="" /><span className="section-label">{en ? 'FRAMEWORK WORKFLOW' : 'FLUJO DEL FRAMEWORK'}</span><h2>{frameworks[framework].name}</h2></div>
+      <p>{frameworks[framework].description}</p>
+      <ol aria-label={en ? 'Framework workflow' : 'Flujo del framework'}>{frameworks[framework].flow.map(step => <li key={step}>{step}</li>)}</ol>
+      <a href={frameworks[framework].href} target="_blank" rel="noopener noreferrer">{en ? 'Official workflow ↗' : 'Flujo oficial ↗'}</a><small>{framework === 1 ? (en ? '¹ Once per project' : '¹ Una vez por proyecto') : framework === 0 ? (en ? '? Optional' : '? Opcional') : ''}</small>
+    </section>}
+    <section className="sdd-tools" aria-label={en ? 'Three SDD frameworks' : 'Tres frameworks SDD'}>
+      <p className="section-label">{en ? 'THREE FRAMEWORKS · THREE WORKFLOWS' : 'TRES FRAMEWORKS · TRES FLUJOS'}</p>
       <div className="sdd-tool-grid">
-        <a href="https://github.com/Fission-AI/OpenSpec" target="_blank" rel="noopener noreferrer"><img src={openspec} alt="" /><strong>OpenSpec ↗</strong></a>
-        <a href="https://github.com/github/spec-kit" target="_blank" rel="noopener noreferrer"><img src={specKit} alt="" /><strong>GitHub Spec Kit ↗</strong></a>
-        <a href="https://kiro.dev/" target="_blank" rel="noopener noreferrer"><img src={kiro} alt="" /><strong>Kiro ↗</strong></a>
+        {frameworks.map((item, index) => <button key={item.name} type="button" aria-expanded={framework === index} aria-controls={framework === index ? 'sdd-framework-detail' : undefined} onClick={() => setFramework(framework === index ? null : index)}><img src={item.image} alt="" /><strong>{item.name}</strong><span aria-hidden="true">{framework === index ? '−' : '+'}</span></button>)}
       </div>
     </section>
   </div>
@@ -120,13 +129,13 @@ export function TerminalCase({ language, variant }: { language: Language; varian
     'checkout: 30 days from delivery',
     'support:  less than a month',
   ] : en ? ['finance: gross - refunds - discounts', 'sales:   gross - discounts', 'close:   sum(invoiced) # no credits'] : ['finanzas: bruto - devoluciones - descuentos', 'comercial: bruto - descuentos', 'cierre:    sum(facturado) # sin abonos']
-  return <div className="case-layout">
+  return <div className="case-wrap">{specs && <p className="case-subtitle">{en ? 'Each spec describes a change, not the product.' : 'Cada spec describe un cambio, no el producto.'}</p>}<div className="case-layout">
     <div className="terminal" role="region" aria-label={en ? 'Console showing conflicting definitions' : 'Consola con definiciones divergentes'} tabIndex={0}>
       <div className="terminal-top"><span></span><span></span><span></span><b>bash</b></div>
       <div className="terminal-body"><p><span>user@home</span>:~$ {command}</p>{lines.map(line => <p key={line}>{line}</p>)}<p><span>user@home</span>:~$ <i aria-hidden="true">▍</i></p></div>
     </div>
     <div className="case-story">{specs ? <><p className="section-label">{en ? 'A REAL CASE' : 'UN CASO REAL'}</p><h2>{en ? '160 specs. Three truths.' : '160 specs. Tres verdades.'}</h2><p>{en ? 'The same rule differed across teams: VAT, runtime schema and even a security gap.' : 'La misma regla divergía entre equipos: IVA, esquema en runtime y hasta un agujero de seguridad.'}</p><blockquote>{en ? '“Forbidden and mandatory” in the same file.' : '«Prohibido y obligatorio» en el mismo fichero.'}</blockquote><a href="https://jgcarmona.com/en/i-tried-to-prove-pdac-wrong/">{en ? 'Read the case ↗' : 'Leer el caso ↗'}</a></> : <><p className="section-label">{en ? 'THE DECISION' : 'LA DECISIÓN'}</p><h2>{en ? 'Which one wins?' : '¿Cuál manda?'}</h2><p>{en ? 'Three consumers calculate net sales differently. Define the KPI once, with a stable ID; code and reports cite it.' : 'Tres consumidores calculan las ventas netas de forma diferente. Define el KPI una vez, con ID estable; código e informes lo citan.'}</p></>}</div>
-  </div>
+  </div></div>
 }
 
 const arcSections = [
