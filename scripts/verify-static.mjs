@@ -41,11 +41,11 @@ export function verifyStatic(root = '.', write = true) {
   }
   const outputFiles = files(dist).filter(path => !path.endsWith('/site-manifest.json'))
   for (const path of outputFiles) {
-    if (path.endsWith('.map') || !/\.(html|css|js|svg|png|jpg|gif)$/.test(path)) throw Error(`Unexpected distributed file: ${path}`)
+    if (path.endsWith('.map') || !/\.(html|css|js|svg|png|jpg|gif|webp)$/.test(path)) throw Error(`Unexpected distributed file: ${path}`)
     if (!/\.(html|css|js)$/.test(path)) continue
     const text = readFileSync(path, 'utf8')
     // Vite's emitted chunks use relative imports; validate every bundled asset edge.
-    for (const match of text.matchAll(/(?:["'`(])((?:\/(?:software-engineering-2_0\/)?assets\/|assets\/|\.\/)[^"'`()\s]+\.(?:js|css|svg|png|jpg|gif|woff2?))(?:["'`)])/g)) {
+    for (const match of text.matchAll(/(?:["'`(])((?:\/(?:software-engineering-2_0\/)?assets\/|assets\/|\.\/)[^"'`()\s]+\.(?:js|css|svg|png|jpg|gif|webp|woff2?))(?:["'`)])/g)) {
       const asset = match[1].startsWith('./') ? resolve(path, '..', match[1]) : resolve(dist, match[1].replace(/^\//, ''))
       if (!statSync(asset, { throwIfNoEntry: false })?.isFile()) throw Error(`Missing required asset ${match[1]} in ${relative(dist, path)}`)
     }

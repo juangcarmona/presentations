@@ -1,8 +1,8 @@
 import { useState } from 'react'
 
 type Localized = [es: string, en: string]
-type Node = { id: string; x: number; y: number; label: Localized; detail: Localized; accent?: boolean }
-type DiagramSpec = { name: Localized; caption: Localized; nodes: Node[]; edges: [number, number][] }
+type Node = { id: string; x: number; y: number; label: Localized; detail: Localized; bullets?: [Localized, Localized]; accent?: boolean; tone?: string }
+type DiagramSpec = { name: Localized; caption: Localized; nodes: Node[]; edges: [number, number][]; edgeLabels?: { x: number; y: number; label: Localized }[] }
 
 const diagrams: Record<string, DiagramSpec> = {
   '03-repo': {
@@ -17,29 +17,15 @@ const diagrams: Record<string, DiagramSpec> = {
     ],
     edges: [[1, 0], [2, 0], [3, 0], [4, 0]],
   },
-  '04-guardarrailes': {
-    name: ['Guardarraíles blandos y duros', 'Soft and hard guardrails'],
-    caption: ['Un consejo se puede ignorar. Un bloqueo detiene la entrega.', 'Advice can be ignored. A gate stops delivery.'],
-    nodes: [
-      { id: 'intent', x: 10, y: 49, label: ['Intención', 'Intent'], detail: ['Una regla o decisión que debe guiar el trabajo.', 'A rule or decision meant to guide the work.'] },
-      { id: 'soft', x: 39, y: 25, label: ['Guía', 'Guidance'], detail: ['AGENTS.md, skills, ADRs y checklists orientan al agente; no bloquean.', 'AGENTS.md, skills, ADRs and checklists guide the agent; they do not block.'] },
-      { id: 'hard', x: 39, y: 73, label: ['Guardarraíl', 'Gate'], detail: ['Analizadores, tests, hooks y CI obligatoria verifican la regla.', 'Analyzers, tests, hooks and required CI enforce the rule.'], accent: true },
-      { id: 'choice', x: 83, y: 25, label: ['Puede seguir', 'May proceed'], detail: ['La recomendación puede incumplirse; la revisión humana sigue siendo necesaria.', 'The recommendation can be ignored; human review is still needed.'] },
-      { id: 'stop', x: 83, y: 73, label: ['Se detiene', 'Stops'], detail: ['Una violación impide avanzar hasta que se resuelva.', 'A violation blocks progress until it is resolved.'], accent: true },
-    ],
-    edges: [[0, 1], [0, 2], [1, 3], [2, 4]],
-  },
   '08-dimensiones': {
     name: ['Dos fuentes de verdad complementarias', 'Two complementary sources of truth'],
-    caption: ['El producto define qué. La arquitectura explica cómo.', 'Product defines what. Architecture explains how.'],
+    caption: ['Producto y arquitectura aportan dos decisiones distintas a la entrega.', 'Product and architecture bring two distinct decisions into delivery.'],
     nodes: [
-      { id: 'product', x: 24, y: 24, label: ['Producto · QUÉ', 'Product · WHAT'], detail: ['docs/product/: reglas, journeys, casos de uso y comportamiento.', 'docs/product/: rules, journeys, use cases and behaviour.'], accent: true },
-      { id: 'architecture', x: 76, y: 24, label: ['Arquitectura · CÓMO', 'Architecture · HOW'], detail: ['docs/architecture/: contexto, bloques, ADRs y requisitos de calidad.', 'docs/architecture/: context, building blocks, ADRs and quality requirements.'], accent: true },
-      { id: 'pdac', x: 24, y: 70, label: ['PDaC / ProductShape', 'PDaC / ProductShape'], detail: ['La definición aceptada conserva la intención de producto.', 'The accepted definition retains product intent.'] },
-      { id: 'arc42', x: 76, y: 70, label: ['arc42 / ADRs', 'arc42 / ADRs'], detail: ['Decisiones y vistas describen los límites técnicos.', 'Decisions and views describe technical boundaries.'] },
-      { id: 'delivery', x: 50, y: 49, label: ['Entrega', 'Delivery'], detail: ['La implementación debe satisfacer ambas fuentes de verdad.', 'Implementation must satisfy both sources of truth.'] },
+      { id: 'product', x: 20, y: 28, label: ['WHAT · Producto', 'WHAT · Product'], detail: ['¿Qué queremos construir? PDaC conserva la definición aceptada; ProductShape permite explorarla y verificarla.', 'What do we want to build? PDaC preserves the accepted definition; ProductShape helps explore and verify it.'], bullets: [['Reglas y casos de uso', 'Rules and use cases'], ['Journeys y comportamiento', 'Journeys and behaviour']], accent: true, tone: 'teal' },
+      { id: 'architecture', x: 20, y: 71, label: ['HOW · Arquitectura', 'HOW · Architecture'], detail: ['¿Cómo lo construiremos? arc42 organiza la documentación; ArcShape ayuda a verla y navegarla.', 'How will we build it? arc42 structures documentation; ArcShape helps view and navigate it.'], bullets: [['Contexto y bloques', 'Context and building blocks'], ['ADRs y calidad', 'ADRs and quality']], accent: true, tone: 'violet' },
+      { id: 'delivery', x: 78, y: 49, label: ['DELIVERY · Entrega', 'DELIVERY'], detail: ['El desarrollo cita la definición de producto y respeta las decisiones de arquitectura.', 'Delivery cites the product definition and follows architecture decisions.'], bullets: [['Specs y código', 'Specs and code'], ['Tests y evidencia', 'Tests and evidence']], tone: 'blue' },
     ],
-    edges: [[0, 2], [1, 3], [0, 4], [1, 4]],
+    edges: [[0, 2], [1, 2]],
   },
   '10-autoridad': {
     name: ['Autoridad del producto y aprendizaje de la entrega', 'Product authority and delivery learning'],
@@ -55,17 +41,20 @@ const diagrams: Record<string, DiagramSpec> = {
   },
   '11-modelo': {
     name: ['Modelo de definición de producto', 'Product definition model'],
-    caption: ['Una definición conectada hace visible el impacto de cada cambio.', 'A connected definition makes the impact of every change visible.'],
+    caption: ['Diez tipos de artefacto. Una definición conectada y verificable.', 'Ten artifact kinds. One connected, verifiable definition.'],
     nodes: [
-      { id: 'actors', x: 12, y: 34, label: ['Actores', 'Actors'], detail: ['ACT-* participa en un journey.', 'ACT-* participates in a journey.'] },
-      { id: 'journeys', x: 32, y: 34, label: ['Journeys', 'Journeys'], detail: ['JRN-* describe una experiencia de principio a fin.', 'JRN-* describes an end-to-end experience.'] },
-      { id: 'usecases', x: 52, y: 34, label: ['Casos de uso', 'Use cases'], detail: ['UC-* materializa el journey y enlaza reglas y dominio.', 'UC-* realises the journey and links rules and domain.'], accent: true },
-      { id: 'rules', x: 73, y: 15, label: ['Reglas', 'Rules'], detail: ['BR-* gobierna el comportamiento del producto.', 'BR-* governs product behaviour.'] },
-      { id: 'domain', x: 73, y: 53, label: ['Dominio', 'Domain'], detail: ['TERM-* y BC-* dan vocabulario y límites.', 'TERM-* and BC-* provide vocabulary and boundaries.'] },
-      { id: 'requirements', x: 92, y: 34, label: ['Requisitos', 'Requirements'], detail: ['FR-*, QR-* y CON-* expresan obligaciones.', 'FR-*, QR-* express obligations.'] },
-      { id: 'behaviour', x: 73, y: 80, label: ['Given / When / Then', 'Given / When / Then'], detail: ['SB-* convierte el requisito en escenarios verificables.', 'SB-* turns a requirement into verifiable scenarios.'], accent: true },
+      { id: 'actors', x: 10, y: 20, label: ['Actores · ACT', 'Actors · ACT'], detail: ['Personas y sistemas externos que participan en la experiencia; un usuario puede ser un actor.', 'People and external systems taking part in the experience; a user may be an actor.'], tone: 'violet' },
+      { id: 'journeys', x: 30, y: 20, label: ['Journeys · JRN', 'Journeys · JRN'], detail: ['Experiencias completas que conectan objetivos, actores y casos de uso.', 'End-to-end experiences connecting goals, actors and use cases.'], tone: 'cyan' },
+      { id: 'usecases', x: 50, y: 20, label: ['Casos de uso · UC', 'Use cases · UC'], detail: ['Cada caso describe un objetivo y se relaciona con reglas, dominio y requisitos.', 'Each use case describes a goal and links rules, domain and requirements.'], accent: true, tone: 'teal' },
+      { id: 'rules', x: 70, y: 20, label: ['Reglas · BR', 'Rules · BR'], detail: ['Reglas de negocio que gobiernan el comportamiento del caso de uso; no son instrucciones técnicas.', 'Business rules governing use-case behaviour; they are not technical instructions.'], tone: 'amber' },
+      { id: 'terms', x: 10, y: 50, label: ['Términos · TERM', 'Terms · TERM'], detail: ['Vocabulario compartido del dominio: cada término tiene significado y contexto.', 'Shared domain vocabulary: each term has meaning and context.'], tone: 'green' },
+      { id: 'bounded', x: 30, y: 50, label: ['Contextos · BC', 'Contexts · BC'], detail: ['Bounded contexts delimitan dónde rige un modelo del dominio.', 'Bounded contexts define where a domain model applies.'], tone: 'green' },
+      { id: 'functional', x: 50, y: 50, label: ['Funcionales · FR', 'Functional · FR'], detail: ['Obligaciones funcionales derivadas de los casos de uso.', 'Functional obligations derived from use cases.'], tone: 'orange' },
+      { id: 'quality', x: 70, y: 50, label: ['Calidad · QR', 'Quality · QR'], detail: ['Atributos de calidad verificables para el producto.', 'Verifiable quality attributes for the product.'], tone: 'orange' },
+      { id: 'constraints', x: 90, y: 50, label: ['Límites · CON', 'Constraints · CON'], detail: ['Restricciones que debe respetar la solución; no llevan scenario-ref.', 'Constraints the solution must respect; they do not carry scenario-ref.'], tone: 'orange' },
+      { id: 'behaviour', x: 70, y: 80, label: ['Given / When / Then', 'Given / When / Then'], detail: ['SB-* estructura escenarios verificables referenciados por requisitos funcionales o de calidad.', 'SB-* structures verifiable scenarios referenced by functional or quality requirements.'], accent: true, tone: 'pink' },
     ],
-    edges: [[0, 1], [1, 2], [2, 3], [2, 4], [2, 5], [5, 6]],
+    edges: [[0, 1], [1, 2], [2, 3], [2, 5], [2, 6], [2, 7], [2, 8], [4, 5], [6, 9], [7, 9]],
   },
   '14-citas': {
     name: ['Citas y deriva', 'Citations and drift'],
@@ -122,6 +111,15 @@ const diagrams: Record<string, DiagramSpec> = {
       { id: 'evidence', x: 15, y: 75, label: ['Evidencia', 'Evidence'], detail: ['Tests y citas verificadas sostienen la aceptación.', 'Tests and verified citations support acceptance.'] },
     ],
     edges: [[1, 0], [2, 0], [3, 0], [0, 4], [4, 5], [5, 6], [6, 0]],
+    edgeLabels: [
+      { x: 28, y: 37, label: ['contexto', 'context'] },
+      { x: 50, y: 31, label: ['define', 'defines'] },
+      { x: 71, y: 37, label: ['limita', 'constrains'] },
+      { x: 71, y: 62, label: ['autoriza', 'approves'] },
+      { x: 67, y: 81, label: ['prueba', 'tests'] },
+      { x: 32, y: 81, label: ['devuelve', 'returns'] },
+      { x: 28, y: 62, label: ['informa', 'informs'] },
+    ],
   },
   '22-nosotros': {
     name: ['Lo que sigue siendo responsabilidad humana', 'What remains a human responsibility'],
@@ -142,14 +140,18 @@ export default function Diagram({ id, language, original }: { id: string; langua
   const [active, setActive] = useState<string | null>(null)
   const spec = diagrams[id]
   const locale = language === 'en' ? 1 : 0
-  const selected = spec.nodes.find(node => node.id === active)
   return <section className="diagram-stage" aria-label={spec.name[locale]}>
     <svg className="diagram-lines" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
-      <defs><marker id={`arrow-${id}`} markerWidth="4" markerHeight="4" refX="3" refY="2" orient="auto"><path d="M0 0 L4 2 L0 4" fill="#366bff" /></marker></defs>
-      {spec.edges.map(([from, to]) => <line key={`${from}-${to}`} x1={spec.nodes[from].x} y1={spec.nodes[from].y} x2={spec.nodes[to].x} y2={spec.nodes[to].y} markerEnd={`url(#arrow-${id})`} />)}
+      <defs><marker id={`arrow-${id}`} markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6" fill="#4da3ff" /></marker></defs>
+      {spec.edges.map(([from, to]) => {
+        const a = spec.nodes[from], b = spec.nodes[to]
+        const fraction = Math.min(8 / Math.hypot(a.x - b.x, a.y - b.y), .35)
+        return <line key={`${from}-${to}`} x1={a.x} y1={a.y} x2={b.x + (a.x - b.x) * fraction} y2={b.y + (a.y - b.y) * fraction} markerEnd={`url(#arrow-${id})`} />
+      })}
     </svg>
-    {spec.nodes.map(node => <button key={node.id} className={`diagram-node${node.accent ? ' diagram-node-accent' : ''}`} type="button" style={{ left: `${node.x}%`, top: `${node.y}%` }} aria-label={`${node.label[locale]}. ${node.detail[locale]}`} aria-pressed={active === node.id} onMouseEnter={() => setActive(node.id)} onMouseLeave={event => { if (document.activeElement !== event.currentTarget) setActive(null) }} onFocus={() => setActive(node.id)} onBlur={() => setActive(null)} onClick={() => setActive(node.id)}>{node.label[locale]}</button>)}
-    <div className={`diagram-detail${selected ? ' diagram-detail-active' : ''}`} role="status" aria-live="polite">{selected ? <><strong>{selected.label[locale]}</strong><span>{selected.detail[locale]}</span></> : <span>{spec.caption[locale]}</span>}</div>
+    {spec.edgeLabels?.map(({ x, y, label }) => <span className="edge-label" key={`${x}-${y}`} style={{ left: `${x}%`, top: `${y}%` }} aria-hidden="true">{label[locale]}</span>)}
+    {spec.nodes.map(node => <button key={node.id} className={`diagram-node${node.accent ? ' diagram-node-accent' : ''}`} data-tone={node.tone} type="button" style={{ left: `${node.x}%`, top: `${node.y}%` }} aria-label={`${node.label[locale]}. ${node.detail[locale]}`} aria-pressed={active === node.id} onMouseEnter={() => setActive(node.id)} onMouseLeave={event => { if (document.activeElement !== event.currentTarget) setActive(null) }} onFocus={() => setActive(node.id)} onBlur={() => setActive(null)} onClick={() => setActive(active === node.id ? null : node.id)}>{node.label[locale]}{active === node.id && <span className={`node-popover${id === '08-dimensiones' ? node.id === 'delivery' ? ' node-popover-side-left' : ' node-popover-side' : `${node.y > 60 ? ' node-popover-above' : ''}${node.x < 20 ? ' node-popover-left' : ''}${node.x > 80 ? ' node-popover-right' : ''}`}`} role="tooltip"><strong>{node.label[locale]}</strong>{node.detail[locale]}{node.bullets && <span className="popover-bullets">• {node.bullets[0][locale]}<br />• {node.bullets[1][locale]}</span>}</span>}</button>)}
+    <p className="diagram-caption">{spec.caption[locale]}</p>
     <p className="diagram-hint">{language === 'en' ? 'Hover, focus or tap a node' : 'Pasa el cursor, enfoca o toca un nodo'}{original && <> · <a href={original} target="_blank" rel="noreferrer">{language === 'en' ? 'Original diagram ↗' : 'Diagrama original ↗'}</a></>}</p>
   </section>
 }

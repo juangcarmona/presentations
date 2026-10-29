@@ -11,6 +11,7 @@ import logo from './public/pdac-logo.png'
 import workflow from './public/pdac-reference-workflow.png'
 import branding from './public/product_shape_branding.png'
 import Diagram from './Diagrams'
+import { Arc42Overview, RepoStructure, SddOverview, TerminalCase } from './SceneExtras'
 
 function Demo({ language }: { language: string }) {
   const [playing, setPlaying] = useState(() => !matchMedia('(prefers-reduced-motion: reduce)').matches)
@@ -71,7 +72,12 @@ export function decorateExperience(source: Experience) {
 for (const scene of source.scenes) {
   const figure = figures[scene.id]
   if (figure) scene.content = <Diagram id={scene.id} language={source.language} original={figure} />
-  if (['04-guardarrailes', '08-dimensiones', '22-nosotros'].includes(scene.id)) scene.content = <Diagram id={scene.id} language={source.language} />
+  if (['08-dimensiones', '22-nosotros'].includes(scene.id)) scene.content = <Diagram id={scene.id} language={source.language} />
+  if (scene.id === '05-estructura') scene.content = <RepoStructure language={source.language} />
+  if (scene.id === '06-sdd') scene.content = <SddOverview language={source.language} />
+  if (scene.id === '07-gaps') scene.content = <TerminalCase language={source.language} variant="specs" />
+  if (scene.id === '16-arc42') scene.content = <Arc42Overview language={source.language} />
+  if (scene.id === '20b-power-bi-fabric') scene.content = <TerminalCase language={source.language} variant="metric" />
   if (scene.id === 'cover') scene.content = <><img className="cover-art" src={cover} alt="" />{scene.content}</>
   if (scene.id === '09-intencion') scene.content = <><img className="pdac-mark" src={logo} alt="PDaC" />{scene.content}</>
   if (scene.id === '13-productshape') scene.content = <><Demo language={source.language} /><details className="supporting-text"><summary>{source.language === 'en' ? 'Demo steps and references' : 'Pasos de la demo y referencias'}</summary>{scene.content}</details></>

@@ -9,6 +9,7 @@ export default function Presentation() {
   const { scenes } = experience
   const [index, setIndex] = useState(() => sceneIndex(scenes, location.hash))
   const [elapsed, setElapsed] = useState(0)
+  const [comparisonStage, setComparisonStage] = useState(0)
   const started = useRef(performance.now())
   const heading = useRef<HTMLHeadingElement>(null)
   const focusScene = useRef(false)
@@ -23,7 +24,11 @@ export default function Presentation() {
 
   useEffect(() => {
     document.documentElement.lang = experience.language
-    const update = () => { focusScene.current = Boolean(document.activeElement?.closest('.scene')); setIndex(sceneIndex(scenes, location.hash)) }
+    const update = () => {
+      focusScene.current = Boolean(document.activeElement?.closest('.scene'))
+      setComparisonStage(0)
+      setIndex(sceneIndex(scenes, location.hash))
+    }
     addEventListener('hashchange', update)
     return () => removeEventListener('hashchange', update)
   }, [scenes])
@@ -36,6 +41,10 @@ export default function Presentation() {
   }, [scene])
 
   function move(direction: number) {
+    if (['04-guardarrailes', '20-piramide'].includes(scene.id)) {
+      if (direction > 0 && comparisonStage === 0) { setComparisonStage(1); return }
+      if (direction < 0 && comparisonStage === 1) { setComparisonStage(0); return }
+    }
     const target = nextIndex(index, direction, scenes.length)
     if (target !== index) location.hash = `scene=${scenes[target].id}`
   }
@@ -69,14 +78,15 @@ export default function Presentation() {
     if (Math.abs(dx) > 70 && Math.abs(dx) > Math.abs(dy) * 1.5) move(dx < 0 ? 1 : -1)
   }}>
     <a className="skip-link" href="#scene-title">{language === 'en' ? 'Skip to slide' : 'Ir a la diapositiva'}</a>
-    <article className="scene" key={scene.id} aria-labelledby="scene-title" data-scene={scene.id}>
+    <article className="scene" key={scene.id} aria-labelledby="scene-title" data-scene={scene.id} data-stage={comparisonStage}>
       <h1 id="scene-title" ref={heading} tabIndex={-1}>{scene.title}</h1>
       <div className="scene-content">{scene.content}</div>
+      {['04-guardarrailes', '20-piramide'].includes(scene.id) && <button className="comparison-next" type="button" onClick={() => setComparisonStage(comparisonStage === 0 ? 1 : 0)}>{scene.id === '04-guardarrailes' ? (comparisonStage === 0 ? (language === 'en' ? 'Show hard guardrails →' : 'Mostrar guardarraíles duros →') : (language === 'en' ? '← Show soft guardrails' : '← Mostrar guardarraíles blandos')) : (comparisonStage === 0 ? (language === 'en' ? 'Show now →' : 'Mostrar ahora →') : (language === 'en' ? '← Show before' : '← Mostrar antes'))}</button>}
     </article>
-    <div className="presentation-hud" role="group" aria-label={language === 'en' ? `Elapsed ${Math.floor(elapsed / 60)} minutes ${elapsed % 60} seconds. Slide ${index + 1} of ${scenes.length}` : `Transcurridos ${Math.floor(elapsed / 60)} minutos y ${elapsed % 60} segundos. Diapositiva ${index + 1} de ${scenes.length}`}>
-      <span aria-hidden="true">{String(Math.floor(elapsed / 60)).padStart(2, '0')}:{String(elapsed % 60).padStart(2, '0')}</span>
+    <div className="presentation-hud" role="group" aria-label={language === 'en' ? `Elapsed ${Math.floor(elapsed / 60)} minutes. Slide ${index + 1} of ${scenes.length}` : `Transcurridos ${Math.floor(elapsed / 60)} minutos. Diapositiva ${index + 1} de ${scenes.length}`}>
+      <span aria-hidden="true">{Math.floor(elapsed / 60)} min</span>
       <span aria-hidden="true">{index + 1}</span>
-      <span className="hud-track" aria-hidden="true"><span style={{ width: `${(index + 1) / scenes.length * 100}%` }} /></span>
+      <span className="hud-track" aria-hidden="true"><span key={scene.id} /></span>
     </div>
     {index === 0 && <nav className="language-picker" aria-label={language === 'en' ? 'Presentation language' : 'Idioma de la presentación'}>
       <button type="button" lang="en" aria-pressed={language === 'en'} onClick={() => chooseLanguage('en')}>EN</button>
