@@ -95,7 +95,7 @@ export default function Presentation() {
   }}>
     <a className="skip-link" href="#scene-title">{language === 'en' ? 'Skip to slide' : 'Ir a la diapositiva'}</a>
     <article className="scene" key={scene.id} aria-labelledby="scene-title" data-scene={scene.id} data-stage={comparisonStage}>
-      <h1 id="scene-title" ref={heading} tabIndex={-1}>{scene.title}</h1>
+      <h1 id="scene-title" className={scene.id === '02-recorrido' ? 'visually-hidden' : undefined} ref={heading} tabIndex={-1}>{scene.title}</h1>
       <div className="scene-content">{scene.content}</div>
       {scene.id === '20-piramide' && <button className="comparison-next" type="button" onClick={() => setComparisonStage(comparisonStage === 0 ? 1 : 0)}>{comparisonStage === 0 ? (language === 'en' ? 'Show now →' : 'Mostrar ahora →') : (language === 'en' ? '← Show before' : '← Mostrar antes')}</button>}
     </article>
