@@ -28,7 +28,7 @@ export function JourneyMap({ language }: { language: Language }) {
     ['Entrega', 'Desplegamos el software en desarrollo, preproducción y producción.'],
     ['Mantenimiento', 'Mantenemos el sistema útil cuando cambian las necesidades.'],
   ]
-  const positions = [[50, 15], [77, 25], [84, 53], [68, 79], [32, 79], [16, 53], [23, 25]]
+  const positions = [[50, 15], [77, 25], [84, 53], [68, 68], [32, 68], [16, 53], [23, 25]]
   const motto = en ? 'AI lets us improve our SDLC end to end, at every stage.' : 'La IA nos permite mejorar nuestro SDLC de extremo a extremo, en cada etapa.'
   return <section className="journey-map" aria-label={en ? 'Interconnected software engineering disciplines' : 'Disciplinas interconectadas de ingeniería del software'} onPointerMove={event => {
     if (event.pointerType !== 'mouse' || matchMedia('(prefers-reduced-motion: reduce)').matches) return
@@ -43,7 +43,7 @@ export function JourneyMap({ language }: { language: Language }) {
     event.currentTarget.style.removeProperty('--spot-y')
   }}>
     <button type="button" className="journey-core" data-active={active === stages.length} aria-pressed={active === stages.length} aria-label={`Software Engineering 2.0. ${motto}`} onMouseEnter={() => setActive(stages.length)} onFocus={() => setActive(stages.length)} onClick={() => setActive(stages.length)}><span>SOFTWARE ENGINEERING <b>2.0</b></span></button>
-    <svg className="journey-lines" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path d="M50 15 L77 25 L84 53 L68 79 L32 79 L16 53 L23 25 Z" /><path d="M50 15 L84 53 L32 79 L23 25 L77 25 L68 79 L16 53 Z" />{positions.map(([x, y], i) => <path className="journey-spoke" d={`M50 50 L${x} ${y}`} key={i} />)}</svg>
+    <svg className="journey-lines" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path d="M50 15 L77 25 L84 53 L68 68 L32 68 L16 53 L23 25 Z" /><path d="M50 15 L84 53 L32 68 L23 25 L77 25 L68 68 L16 53 Z" />{positions.map(([x, y], i) => <path className="journey-spoke" d={`M50 50 L${x} ${y}`} key={i} />)}</svg>
     {stages.map(([label], i) => <button key={label} type="button" className="journey-node" data-active={active === i} style={{ left: `${positions[i][0]}%`, top: `${positions[i][1]}%`, animationDelay: `${i * 90}ms` }} aria-pressed={active === i} aria-label={`${label}. ${stages[i][1]}`} onMouseEnter={() => setActive(i)} onFocus={() => setActive(i)} onClick={() => setActive(i)}><span aria-hidden="true">◆</span>{label}</button>)}
     <p className="journey-insight" aria-live="polite">{active === null ? (en ? 'Everything is connected.' : 'Todo está interconectado.') : active === stages.length ? motto : stages[active][1]}</p>
   </section>

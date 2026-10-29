@@ -163,13 +163,38 @@ test('workflow keeps human acceptance visible and skips the retired citations sl
   await page.keyboard.press('ArrowRight')
   await expect(page.locator('[data-scene]')).toHaveAttribute('data-scene', '15-workflow')
   await expect(page.locator('#scene-title')).toHaveText('De propuesta a producto aceptado')
-  await expect(page.locator('.diagram-node')).toHaveCount(3)
-  await expect(page.locator('.diagram-node .human-icon')).toHaveCount(1)
-  await page.getByRole('button', { name: /Aceptación/ }).hover()
-  await expect(page.locator('.node-popover')).toContainText('El merge acepta')
+  await expect(page.locator('.diagram-node')).toHaveCount(8)
+  await expect(page.locator('.diagram-node .human-icon')).toHaveCount(2)
+  const nodes = await page.locator('.diagram-node').allTextContents()
+  for (const label of ['Baseline aceptada', 'Validación', 'Apply', 'PR · revisión', 'Nueva baseline', 'Tests · evidencia']) expect(nodes.some(node => node.includes(label))).toBe(true)
+  await page.getByRole('button', { name: /PR · revisión/ }).hover()
+  await expect(page.locator('.node-popover')).toContainText('pruebas y las evidencias')
+  await page.getByRole('button', { name: /Merge acepta/ }).hover()
+  await expect(page.locator('.node-popover')).toContainText('Una persona acepta')
   await page.goto('/software-engineering-2_0/?lang=en#scene=15-workflow')
   await expect(page.locator('#scene-title')).toHaveText('From proposal to accepted product')
-  await expect(page.locator('.diagram-node .human-icon')).toHaveCount(1)
+  await expect(page.locator('.diagram-node .human-icon')).toHaveCount(2)
+})
+
+test('journey motto stays inside the map without covering a stage', async ({ page }) => {
+  for (const [width, height] of [[1280, 720], [1736, 785]]) {
+    await page.setViewportSize({ width, height })
+    await page.goto('/software-engineering-2_0/#scene=02-recorrido')
+    await page.locator('.journey-core').hover()
+    const layout = await page.locator('.journey-map').evaluate(map => {
+      const panel = map.querySelector('.journey-insight').getBoundingClientRect()
+      const frame = map.getBoundingClientRect()
+      return {
+        inside: panel.left >= frame.left && panel.right <= frame.right && panel.bottom <= frame.bottom,
+        covered: [...map.querySelectorAll('.journey-node')].filter(node => {
+          const box = node.getBoundingClientRect()
+          return box.left < panel.right && box.right > panel.left && box.top < panel.bottom && box.bottom > panel.top
+        }).map(node => node.textContent),
+      }
+    })
+    expect(layout.inside).toBe(true)
+    expect(layout.covered).toEqual([])
+  }
 })
 
 test('GIF plays without a fake pause control and respects reduced motion', async ({ page }) => {

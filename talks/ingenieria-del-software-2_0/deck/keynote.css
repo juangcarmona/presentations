@@ -37,7 +37,8 @@ button { font: inherit; cursor: pointer; }
 .diagram-node[data-tone="orange"] { border-color: #f0aa7a; background: #4b3021; }
 .diagram-node[data-tone="pink"] { border-color: #eaa4cf; background: #49243e; }
 .human-icon { display: block; width: 2.3rem; height: 2.3rem; margin: 0 auto .35rem; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; }
-[data-scene="15-workflow"] .diagram-node { width: clamp(180px, 23vw, 310px); min-height: 145px; display: grid; place-content: center; gap: .5rem; font-size: clamp(1.1rem, 1.6vw, 1.45rem); }
+[data-scene="15-workflow"] .diagram-node { width: clamp(155px, 19vw, 250px); min-height: 100px; display: grid; place-content: center; gap: .35rem; font-size: clamp(.9rem, 1.25vw, 1.2rem); }
+[data-scene="15-workflow"] .human-icon { width: 1.8rem; height: 1.8rem; margin-bottom: 0; }
 .diagram-badge { display: block; color: #c6b9ff; font: 700 .75rem ui-monospace, monospace; text-transform: uppercase; letter-spacing: .08em; }
 .node-popover { position: absolute; z-index: 9; top: calc(100% + 14px); left: 50%; width: min(310px, 72vw); transform: translateX(-50%); padding: .9rem 1rem; border: 1px solid var(--lh-focus); background: var(--lh-surface); color: var(--lh-text); box-shadow: 0 14px 40px #0008; font: 400 .9rem/1.35 ui-sans-serif, system-ui, sans-serif; text-align: left; letter-spacing: 0; pointer-events: none; }
 .node-popover strong { display: block; margin-bottom: .4rem; color: var(--lh-action); }
