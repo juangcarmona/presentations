@@ -1,5 +1,5 @@
 import type { Experience } from '../../../src/experience-model'
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import cover from './public/bg-cover-1.jpg'
 import portrait from './public/juan.jpg'
 import lifecycle from './public/lifecycle-overview.svg'
@@ -11,19 +11,46 @@ import logo from './public/pdac-logo.png'
 import workflow from './public/pdac-reference-workflow.png'
 import branding from './public/product_shape_branding.png'
 import Diagram from './Diagrams'
-import { Arc42Overview, JourneyMap, RepoStructure, SddOverview, TerminalCase, sddImages } from './SceneExtras'
+import { Arc42Overview, JourneyMap, OriginsMap, RepoStructure, SddOverview, TerminalCase, sddImages } from './SceneExtras'
 
 export const presentationImages = [portrait, logo, branding, ...sddImages]
 
 function Demo({ language }: { language: string }) {
   const [playing, setPlaying] = useState(() => !matchMedia('(prefers-reduced-motion: reduce)').matches)
+  const [still, setStill] = useState<string | null>(null)
+  const image = useRef<HTMLImageElement>(null)
+  const en = language === 'en'
+  const steps = en ? [
+    'Three specs disagree: purchase, delivery, “less than a month”.',
+    'BR-REFUND-001 defines the accepted rule once.',
+    'Each spec cites that rule; a change makes the citations stale.',
+    'prodshape citations verify flags what needs review.',
+  ] : [
+    'Tres specs discrepan: compra, entrega, «menos de un mes».',
+    'BR-REFUND-001 define la regla aceptada una sola vez.',
+    'Cada spec cita esa regla; al cambiar, las citas quedan obsoletas.',
+    'prodshape citations verify señala lo que hay que revisar.',
+  ]
   useEffect(() => {
     const preference = matchMedia('(prefers-reduced-motion: reduce)')
     const stop = () => { if (preference.matches) setPlaying(false) }
     preference.addEventListener('change', stop)
     return () => preference.removeEventListener('change', stop)
   }, [])
-  return <div className="demo-stage"><img className="product-brand" src={branding} alt="ProductShape, Product Definition as Code" /><div className="demo-count" aria-hidden="true">03 <span>→</span> 01<small>{language === 'en' ? 'conflicting specs → accepted rule' : 'specs divergentes → regla aceptada'}</small></div><button type="button" aria-pressed={playing} onClick={() => setPlaying(!playing)}>{playing ? (language === 'en' ? 'Stop animated demo' : 'Detener demo animada') : (language === 'en' ? 'Play animated demo' : 'Reproducir demo animada')}</button>{playing && <img className="demo-animation" src={demo} alt={language === 'en' ? 'Demo: three conflicting refund specs, one accepted BR-REFUND-001 rule and stale citation detection' : 'Demo: tres specs divergentes sobre devoluciones, BR-REFUND-001 definida una vez y verificación de citas obsoletas'} />}</div>
+  function toggle() {
+    if (playing) {
+      const current = image.current
+      if (current?.complete && current.naturalWidth) {
+        const canvas = document.createElement('canvas')
+        canvas.width = current.naturalWidth
+        canvas.height = current.naturalHeight
+        canvas.getContext('2d')?.drawImage(current, 0, 0)
+        setStill(canvas.toDataURL('image/png'))
+      }
+      setPlaying(false)
+    } else { setStill(null); setPlaying(true) }
+  }
+  return <div className="demo-stage"><ol className="demo-steps" aria-label={en ? 'Citation demonstration' : 'Demostración de citas'}>{steps.map((step, i) => <li key={step}><span>{String(i + 1).padStart(2, '0')}</span><p>{step}</p></li>)}</ol><button className="demo-visual" type="button" aria-pressed={playing} aria-label={playing ? (en ? 'Stop animated demo' : 'Detener demo animada') : (en ? 'Play animated demo' : 'Reproducir demo animada')} onClick={toggle}>{playing ? <img ref={image} className="demo-animation" src={demo} alt="" /> : still ? <img className="demo-animation" src={still} alt="" /> : <span className="demo-poster"><strong>BR-REFUND-001</strong><small>{en ? 'Play demo' : 'Reproducir demo'} ▶</small></span>}<span className="demo-state" aria-hidden="true">{playing ? 'Ⅱ' : '▶'}</span></button></div>
 }
 
 export function Flow({ items, label }: { items: string[]; label: string }) {
@@ -79,11 +106,12 @@ for (const scene of source.scenes) {
   if (scene.id === '05-estructura') scene.content = <RepoStructure language={source.language} />
   if (scene.id === '06-sdd') scene.content = <SddOverview language={source.language} />
   if (scene.id === '07-gaps') scene.content = <TerminalCase language={source.language} variant="specs" />
+  if (scene.id === '12-origen') scene.content = <OriginsMap language={source.language} />
   if (scene.id === '16-arc42') scene.content = <Arc42Overview language={source.language} />
   if (scene.id === '20b-power-bi-fabric') scene.content = <TerminalCase language={source.language} variant="metric" />
   if (scene.id === 'cover') scene.content = <><img className="cover-art" src={cover} alt="" />{scene.content}</>
   if (scene.id === '09-intencion') scene.content = <><img className="pdac-mark" src={logo} alt="PDaC" />{scene.content}</>
-  if (scene.id === '13-productshape') scene.content = <><Demo language={source.language} /><details className="supporting-text"><summary>{source.language === 'en' ? 'Demo steps and references' : 'Pasos de la demo y referencias'}</summary>{scene.content}</details></>
+  if (scene.id === '13-productshape') scene.content = <Demo language={source.language} />
   if (scene.id === '24-fin') scene.content = <div className="closing-layout"><img className="speaker-portrait" src={portrait} alt="Juan G. Carmona" /><div><p className="scene-lede">{source.language === 'en' ? 'Questions?' : '¿Preguntas?'}</p><p>Software Architect · AI Strategist · Plain Concepts</p><ul><li><a href="https://jgcarmona.com/">jgcarmona.com</a></li><li><a href="https://linkedin.com/in/juangcarmona">linkedin.com/in/juangcarmona</a></li><li><a href="https://pdac.dev/">pdac.dev</a></li></ul></div></div>
 }
 return source

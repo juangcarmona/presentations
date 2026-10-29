@@ -138,27 +138,46 @@ export function TerminalCase({ language, variant }: { language: Language; varian
   </div></div>
 }
 
+export function OriginsMap({ language }: { language: Language }) {
+  const [active, setActive] = useState(0)
+  const en = language === 'en'
+  const sources = en ? [
+    ['Git · Markdown · Schema', 'Versioned files', 'BR-REFUND-001.md has a readable diff; YAML metadata is checked in CI.'],
+    ['Requirements · DDD', 'Identity and meaning', 'BR-REFUND-001 keeps its ID and governs UC-REFUND, even if the file moves.'],
+    ['Configuration management', 'Accepted change', 'CHG-REFUND-002 proposes 30 → 14 days; a human-reviewed merge establishes the next baseline.'],
+    ['Traceability · graphs', 'Impact, not guesses', 'Citations in specs and tests become stale; the impact graph scopes agent context.'],
+  ] : [
+    ['Git · Markdown · Schema', 'Ficheros versionados', 'BR-REFUND-001.md tiene un diff legible; CI valida sus metadatos YAML.'],
+    ['Requisitos · DDD', 'Identidad y significado', 'BR-REFUND-001 conserva su ID y gobierna UC-REFUND aunque cambie de ruta.'],
+    ['Gestión de configuración', 'Cambio aceptado', 'CHG-REFUND-002 propone 30 → 14 días; el merge revisado por una persona establece la nueva baseline.'],
+    ['Trazabilidad · grafos', 'Impacto, no conjeturas', 'Las citas en specs y tests quedan obsoletas; el grafo acota el contexto del agente.'],
+  ]
+  return <div className="origins-map">
+    <div className="origins-sources" aria-label={en ? 'Engineering disciplines' : 'Disciplinas de ingeniería'}>{sources.map(([source, label], i) => <button key={source} type="button" className="origins-source" data-active={active === i} aria-pressed={active === i} onMouseEnter={() => setActive(i)} onFocus={() => setActive(i)} onClick={() => setActive(i)}><span>{String(i + 1).padStart(2, '0')} / {source}</span><strong>{label}</strong></button>)}</div>
+    <div className="origins-result" aria-live="polite"><span className="section-label">{en ? 'ASSEMBLED AROUND ONE RULE' : 'REUNIDO EN UNA SOLA REGLA'}</span><strong>BR-REFUND-001</strong><p>{sources[active][2]}</p><a href="https://pdac.dev/articles/what-product-definition-as-code-puts-together/" target="_blank" rel="noopener noreferrer">{en ? 'Read the lineage ↗' : 'Leer el origen ↗'}</a></div>
+  </div>
+}
+
 const arcSections = [
-  ['Introducción y objetivos', 'Introduction and goals', 'Objetivos de negocio, calidad y alcance.', 'Business goals, quality goals and scope.'],
-  ['Restricciones', 'Constraints', 'Límites técnicos, organizativos y de proceso.', 'Technical, organisational and process limits.'],
-  ['Contexto y alcance', 'Context and scope', 'Personas, sistemas vecinos y fronteras.', 'People, neighbouring systems and boundaries.'],
-  ['Estrategia de solución', 'Solution strategy', 'Decisiones fundamentales que orientan el diseño.', 'Fundamental decisions guiding the design.'],
-  ['Bloques de construcción', 'Building blocks', 'Componentes estáticos y responsabilidades.', 'Static components and responsibilities.'],
-  ['Vista de ejecución', 'Runtime view', 'Interacciones y secuencias en tiempo de ejecución.', 'Runtime interactions and sequences.'],
-  ['Vista de despliegue', 'Deployment view', 'Infraestructura, nodos y distribución.', 'Infrastructure, nodes and deployment.'],
-  ['Conceptos transversales', 'Crosscutting concepts', 'Patrones compartidos: seguridad, datos, errores.', 'Shared patterns: security, data and errors.'],
-  ['Decisiones', 'Decisions', 'ADRs: opciones, consecuencias y por qué.', 'ADRs: options, consequences and rationale.'],
-  ['Requisitos de calidad', 'Quality requirements', 'Escenarios y atributos verificables.', 'Scenarios and verifiable attributes.'],
-  ['Riesgos y deuda técnica', 'Risks and debt', 'Incógnitas, compromisos y trabajo pendiente.', 'Unknowns, compromises and pending work.'],
-  ['Glosario', 'Glossary', 'Términos que evitan malentendidos.', 'Terms that prevent misunderstandings.'],
+  ['Introducción y objetivos', 'Introduction and goals', 'Requisitos fundamentales, objetivos de calidad y alcance del sistema.', 'Fundamental requirements, quality goals and system scope.'],
+  ['Restricciones', 'Constraints', 'Límites técnicos, organizativos y regulatorios que condicionan el diseño.', 'Technical, organisational and regulatory limits that shape the design.'],
+  ['Contexto y alcance', 'Context and scope', 'Frontera del sistema, actores externos e interfaces con otros sistemas.', 'System boundary, external actors and interfaces with neighbouring systems.'],
+  ['Estrategia de solución', 'Solution strategy', 'Ideas esenciales y enfoques elegidos para satisfacer los objetivos.', 'Core ideas and approaches chosen to meet the goals.'],
+  ['Bloques de construcción', 'Building blocks', 'Estructura estática, responsabilidades y descomposición en módulos.', 'Static structure, responsibilities and decomposition into modules.'],
+  ['Vista de ejecución', 'Runtime view', 'Escenarios importantes: cómo colaboran los bloques en tiempo de ejecución.', 'Important scenarios: how building blocks collaborate at runtime.'],
+  ['Vista de despliegue', 'Deployment view', 'Dónde se ejecuta: infraestructura, nodos y distribución del software.', 'Where it runs: infrastructure, nodes and software deployment.'],
+  ['Conceptos transversales', 'Crosscutting concepts', 'Patrones y decisiones compartidas: seguridad, datos, errores y operaciones.', 'Shared patterns and decisions: security, data, errors and operations.'],
+  ['Decisiones', 'Decisions', 'Decisiones importantes, alternativas consideradas y sus consecuencias.', 'Important decisions, alternatives considered and their consequences.'],
+  ['Requisitos de calidad', 'Quality requirements', 'Atributos de calidad expresados mediante escenarios verificables.', 'Quality attributes expressed through verifiable scenarios.'],
+  ['Riesgos y deuda técnica', 'Risks and debt', 'Problemas conocidos, incertidumbres y compromisos todavía pendientes.', 'Known problems, uncertainties and outstanding compromises.'],
+  ['Glosario', 'Glossary', 'Términos específicos que el equipo debe entender de la misma manera.', 'Specific terms the team must understand in the same way.'],
 ] as const
 
 export function Arc42Overview({ language }: { language: Language }) {
   const [active, setActive] = useState<number | null>(null)
   const en = language === 'en'
-  return <div className="arc-overview">
-    <p className="section-label">arc42 · {en ? '12 SECTIONS' : '12 SECCIONES'}</p>
-    <div className="arc-grid">{arcSections.map((section, i) => <button key={i} type="button" className="arc-item" data-family={i < 3 || i === 9 ? 'intent' : i < 7 ? 'structure' : i < 10 ? 'decision' : 'reference'} aria-label={`${i + 1}. ${section[en ? 1 : 0]}. ${section[en ? 3 : 2]}`} aria-pressed={active === i} onMouseEnter={() => setActive(i)} onMouseLeave={event => { if (document.activeElement !== event.currentTarget) setActive(null) }} onFocus={() => setActive(i)} onBlur={() => setActive(null)} onClick={() => setActive(active === i ? null : i)}><span>{String(i + 1).padStart(2, '0')}</span><strong>{section[en ? 1 : 0]}</strong>{active === i && <span className={`node-popover${i >= 6 ? ' arc-popover-left' : ''}`} role="tooltip"><strong>{section[en ? 1 : 0]}</strong>{section[en ? 3 : 2]}</span>}</button>)}</div>
-    <p className="arc-footer">{en ? 'A shared map for humans and agents.' : 'Un mapa compartido para personas y agentes.'} <a href="https://arc42.org/">arc42 ↗</a></p>
-  </div>
+  return <div className="arc-overview"><div className="arc-layout">
+    <div className="arc-grid" aria-label={en ? 'The twelve arc42 sections' : 'Las doce secciones de arc42'}>{arcSections.map((section, i) => <button key={i} type="button" className="arc-item" data-family={i < 3 || i === 9 ? 'intent' : i < 7 ? 'structure' : i < 10 ? 'decision' : 'reference'} aria-label={`${i + 1}. ${section[en ? 1 : 0]}. ${section[en ? 3 : 2]}`} aria-pressed={active === i} onMouseEnter={() => setActive(i)} onFocus={() => setActive(i)} onClick={() => setActive(i)}><span>{String(i + 1).padStart(2, '0')}</span><strong>{section[en ? 1 : 0]}</strong></button>)}</div>
+    <aside className="arc-detail" aria-live="polite"><span className="section-label">arc42 / {active === null ? '01–12' : String(active + 1).padStart(2, '0')}</span><p>{active === null ? (en ? 'Twelve sections. Focus one to see what belongs there.' : 'Doce secciones. Selecciona una para ver qué documenta.') : arcSections[active][en ? 3 : 2]}</p><a href="https://arc42.org/overview/" target="_blank" rel="noopener noreferrer">{en ? 'Explore arc42 ↗' : 'Explorar arc42 ↗'}</a></aside>
+  </div></div>
 }
