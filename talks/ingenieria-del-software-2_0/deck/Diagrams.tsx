@@ -1,7 +1,7 @@
 import { useState } from 'react'
 
 type Localized = [es: string, en: string]
-type Node = { id: string; x: number; y: number; label: Localized; detail: Localized; bullets?: [Localized, Localized]; accent?: boolean; tone?: string }
+type Node = { id: string; x: number; y: number; label: Localized; detail: Localized; bullets?: [Localized, Localized]; accent?: boolean; tone?: string; human?: boolean; badge?: Localized }
 type DiagramSpec = { name: Localized; caption: Localized; nodes: Node[]; edges: [number, number][]; edgeLabels?: { x: number; y: number; label: Localized }[] }
 
 const diagrams: Record<string, DiagramSpec> = {
@@ -56,34 +56,15 @@ const diagrams: Record<string, DiagramSpec> = {
     ],
     edges: [[0, 1], [1, 2], [2, 3], [2, 5], [2, 6], [2, 7], [2, 8], [4, 5], [6, 9], [7, 9]],
   },
-  '14-citas': {
-    name: ['Citas y deriva', 'Citations and drift'],
-    caption: ['Detectar deriva no es reescribir: el consumidor decide.', 'Detecting drift is not rewriting: the consumer decides.'],
-    nodes: [
-      { id: 'intent', x: 13, y: 29, label: ['Intención', 'Intent'], detail: ['UC-CHECKOUT-001 es el artefacto de producto aceptado.', 'UC-CHECKOUT-001 is the accepted product artifact.'], accent: true },
-      { id: 'spec', x: 38, y: 29, label: ['Spec citada', 'Cited spec'], detail: ['La especificación cita la versión aceptada de la regla.', 'The specification cites the accepted version of the rule.'] },
-      { id: 'code', x: 63, y: 29, label: ['Código', 'Code'], detail: ['La implementación satisface la especificación revisada.', 'Implementation satisfies the reviewed specification.'] },
-      { id: 'evidence', x: 88, y: 29, label: ['Evidencia', 'Evidence'], detail: ['Tests y entrega aportan pruebas verificables.', 'Tests and delivery produce verifiable proof.'] },
-      { id: 'current', x: 13, y: 75, label: ['current', 'current'], detail: ['La cita coincide con el artefacto aceptado.', 'The citation matches the accepted artifact.'] },
-      { id: 'stale', x: 38, y: 75, label: ['stale', 'stale'], detail: ['Cambió el artefacto citado: la spec necesita revisión humana.', 'The cited artifact changed: the spec needs human review.'], accent: true },
-      { id: 'unresolved', x: 63, y: 75, label: ['unresolved', 'unresolved'], detail: ['No se puede resolver la referencia.', 'The reference cannot be resolved.'] },
-      { id: 'tampered', x: 88, y: 75, label: ['tampered', 'tampered'], detail: ['El bloque embebido no coincide con el texto canónico.', 'The embedded block differs from canonical text.'] },
-    ],
-    edges: [[0, 1], [1, 2], [2, 3], [0, 4], [0, 5], [0, 6], [0, 7]],
-  },
   '15-workflow': {
-    name: ['De cambio propuesto a nueva baseline', 'From proposed change to new baseline'],
+    name: ['De propuesta a producto aceptado', 'From proposal to accepted product'],
     caption: ['Apply materializa. Merge acepta.', 'Apply materialises. Merge accepts.'],
     nodes: [
-      { id: 'baseline', x: 11, y: 27, label: ['Baseline', 'Baseline'], detail: ['Definición de producto ya aceptada.', 'Already accepted product definition.'] },
-      { id: 'change', x: 33, y: 27, label: ['Product Change', 'Product Change'], detail: ['Delta semántico propuesto, todavía sin autoridad.', 'Proposed semantic delta, not yet authoritative.'] },
-      { id: 'validate', x: 55, y: 27, label: ['Validar', 'Validate'], detail: ['El overlay comprueba la propuesta antes de aplicarla.', 'The overlay checks the proposal before application.'] },
-      { id: 'approval', x: 78, y: 27, label: ['Aprobación humana', 'Human approval'], detail: ['Una persona autoriza materializar el cambio.', 'A person authorises materialising the change.'], accent: true },
-      { id: 'apply', x: 78, y: 73, label: ['Apply', 'Apply'], detail: ['Apply materializa un estado candidato en una rama.', 'Apply materialises a candidate state on a branch.'] },
-      { id: 'pr', x: 55, y: 73, label: ['Pull request', 'Pull request'], detail: ['Revisión Git del estado candidato y su evidencia.', 'Git review of the candidate state and its evidence.'] },
-      { id: 'accept', x: 33, y: 73, label: ['Merge acepta', 'Merge accepts'], detail: ['La aceptación humana del PR crea la nueva baseline.', 'Human acceptance of the PR creates the new baseline.'], accent: true },
+      { id: 'proposal', x: 18, y: 48, label: ['Propuesta semántica', 'Semantic proposal'], detail: ['La IA puede preparar un Product Change: un delta semántico, todavía sin autoridad.', 'AI can prepare a Product Change: a semantic delta, not yet authoritative.'], tone: 'violet', badge: ['AI-powered', 'AI-powered'] },
+      { id: 'validation', x: 50, y: 48, label: ['Validación', 'Validation'], detail: ['El overlay comprueba la propuesta. Tras la aprobación humana, apply materializa un estado candidato que se revisa en un PR.', 'The overlay checks the proposal. After human approval, apply materialises a candidate state reviewed in a PR.'], tone: 'teal' },
+      { id: 'acceptance', x: 82, y: 48, label: ['Aceptación', 'Acceptance'], detail: ['Una persona revisa el cambio y su evidencia. El merge acepta el PR y crea la nueva baseline.', 'A person reviews the change and its evidence. Merge accepts the PR and creates the new baseline.'], accent: true, tone: 'amber', human: true },
     ],
-    edges: [[0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 0]],
+    edges: [[0, 1], [1, 2]],
   },
   '17-flujo-agentico': {
     name: ['Ciclo de vida agéntico', 'Agentic lifecycle'],
@@ -150,7 +131,7 @@ export default function Diagram({ id, language, original }: { id: string; langua
       })}
     </svg>
     {spec.edgeLabels?.map(({ x, y, label }) => <span className="edge-label" key={`${x}-${y}`} style={{ left: `${x}%`, top: `${y}%` }} aria-hidden="true">{label[locale]}</span>)}
-    {spec.nodes.map(node => <button key={node.id} className={`diagram-node${node.accent ? ' diagram-node-accent' : ''}`} data-tone={node.tone} type="button" style={{ left: `${node.x}%`, top: `${node.y}%` }} aria-label={`${node.label[locale]}. ${node.detail[locale]}`} aria-pressed={active === node.id} onMouseEnter={() => setActive(node.id)} onMouseLeave={event => { if (document.activeElement !== event.currentTarget) setActive(null) }} onFocus={() => setActive(node.id)} onBlur={() => setActive(null)} onClick={() => setActive(active === node.id ? null : node.id)}>{node.label[locale]}{active === node.id && <span className={`node-popover${id === '08-dimensiones' ? node.id === 'delivery' ? ' node-popover-side-left' : ' node-popover-side' : `${node.y > 60 ? ' node-popover-above' : ''}${node.x < 20 ? ' node-popover-left' : ''}${node.x > 80 ? ' node-popover-right' : ''}`}`} role="tooltip">{node.detail[locale]}{node.bullets && <span className="popover-bullets">• {node.bullets[0][locale]}<br />• {node.bullets[1][locale]}</span>}</span>}</button>)}
+    {spec.nodes.map(node => <button key={node.id} className={`diagram-node${node.accent ? ' diagram-node-accent' : ''}`} data-tone={node.tone} type="button" style={{ left: `${node.x}%`, top: `${node.y}%` }} aria-label={`${node.label[locale]}. ${node.detail[locale]}`} aria-pressed={active === node.id} onMouseEnter={() => setActive(node.id)} onMouseLeave={event => { if (document.activeElement !== event.currentTarget) setActive(null) }} onFocus={() => setActive(node.id)} onBlur={() => setActive(null)} onClick={() => setActive(active === node.id ? null : node.id)}>{node.human && <svg className="human-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="7" r="3" /><path d="M5 21v-3a7 7 0 0 1 14 0v3" /></svg>}{node.label[locale]}{node.badge && <small className="diagram-badge">{node.badge[locale]}</small>}{active === node.id && <span className={`node-popover${id === '08-dimensiones' ? node.id === 'delivery' ? ' node-popover-side-left' : ' node-popover-side' : `${node.y > 60 ? ' node-popover-above' : ''}${node.x < 20 ? ' node-popover-left' : ''}${node.x > 80 ? ' node-popover-right' : ''}`}`} role="tooltip">{node.detail[locale]}{node.bullets && <span className="popover-bullets">• {node.bullets[0][locale]}<br />• {node.bullets[1][locale]}</span>}</span>}</button>)}
     <p className="diagram-caption">{spec.caption[locale]}</p>
     {original && <p className="diagram-hint"><a href={original} target="_blank" rel="noreferrer">{language === 'en' ? 'Original diagram ↗' : 'Diagrama original ↗'}</a></p>}
   </section>

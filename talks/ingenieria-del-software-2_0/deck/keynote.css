@@ -36,6 +36,9 @@ button { font: inherit; cursor: pointer; }
 .diagram-node[data-tone="green"] { border-color: #96e4ad; background: #173e2b; }
 .diagram-node[data-tone="orange"] { border-color: #f0aa7a; background: #4b3021; }
 .diagram-node[data-tone="pink"] { border-color: #eaa4cf; background: #49243e; }
+.human-icon { display: block; width: 2.3rem; height: 2.3rem; margin: 0 auto .35rem; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; }
+[data-scene="15-workflow"] .diagram-node { width: clamp(180px, 23vw, 310px); min-height: 145px; display: grid; place-content: center; gap: .5rem; font-size: clamp(1.1rem, 1.6vw, 1.45rem); }
+.diagram-badge { display: block; color: #c6b9ff; font: 700 .75rem ui-monospace, monospace; text-transform: uppercase; letter-spacing: .08em; }
 .node-popover { position: absolute; z-index: 9; top: calc(100% + 14px); left: 50%; width: min(310px, 72vw); transform: translateX(-50%); padding: .9rem 1rem; border: 1px solid var(--lh-focus); background: var(--lh-surface); color: var(--lh-text); box-shadow: 0 14px 40px #0008; font: 400 .9rem/1.35 ui-sans-serif, system-ui, sans-serif; text-align: left; letter-spacing: 0; pointer-events: none; }
 .node-popover strong { display: block; margin-bottom: .4rem; color: var(--lh-action); }
 .node-popover-above { top: auto; bottom: calc(100% + 14px); }
@@ -107,10 +110,9 @@ button { font: inherit; cursor: pointer; }
 .journey-lines path:nth-child(2) { stroke: #334f73; stroke-dasharray: 2 7; animation-duration: 22s; }
 .journey-lines .journey-spoke { stroke: #75c6df; stroke-dasharray: 4 8; opacity: .72; animation-duration: 10s; }
 .journey-core { position: absolute; z-index: 2; left: 50%; top: 50%; width: 240px; max-width: 28%; padding: 1.1rem; transform: translate(-50%, -50%); border: 1px solid #75c6df; background: #111b2b; box-shadow: 0 0 32px #4da3ff22; text-align: center; transition: width .25s, background .25s, box-shadow .25s; }
-.journey-core[data-active="true"], .journey-core:focus-visible { width: 320px; max-width: 36%; background: #162940; box-shadow: 0 0 32px #4da3ff55; }
+.journey-core[data-active="true"], .journey-core:focus-visible { background: #162940; box-shadow: 0 0 32px #4da3ff55; }
 .journey-core > span { display: block; color: var(--lh-text); font: 800 clamp(1.2rem, 2vw, 2rem)/1.05 ui-sans-serif, system-ui, sans-serif; letter-spacing: -.05em; }
 .journey-core b { color: #75c6df; }
-.journey-core small { display: block; margin-top: .8rem; color: var(--lh-text); font-size: clamp(.9rem, 1.25vw, 1.1rem); line-height: 1.3; }
 .journey-node { position: absolute; z-index: 3; min-width: 132px; padding: .7rem 1rem; border: 1px solid #4da3ff77; border-radius: 0; background: #111b2bee; color: var(--lh-text); font: 800 clamp(.9rem, 1.3vw, 1.2rem) ui-sans-serif, system-ui, sans-serif; text-align: left; translate: -50% -50%; transition: transform .22s, border-color .22s, box-shadow .22s; animation: journey-arrive .55s both; }
 .journey-node span { display: block; margin-bottom: .2rem; color: #75c6df; font: 700 .68rem ui-monospace, monospace; }
 .journey-node:nth-of-type(3n + 1) { border-color: #eaa4cf99; }
@@ -204,19 +206,14 @@ button { font: inherit; cursor: pointer; }
 .sdd-step strong { margin-top: .2rem; font-size: clamp(1rem, 1.5vw, 1.5rem); }
 .sdd-message { min-height: 3.5rem; margin: 0; color: var(--lh-text); font-size: clamp(1.1rem, 1.7vw, 1.55rem); text-align: center; }
 .sdd-message span { margin-right: 1rem; color: var(--lh-action); font: 700 .8rem ui-monospace, monospace; }
-.sdd-tool-grid { display: flex; flex-wrap: wrap; gap: .65rem; }
-.sdd-tool-grid button { display: flex; align-items: center; gap: .6rem; min-height: 2.8rem; padding: .35rem .8rem; border: 1px solid var(--lh-border); background: var(--lh-surface); color: var(--lh-text); font: 700 .85rem ui-monospace, monospace; }
-.sdd-tool-grid button:hover, .sdd-tool-grid button[aria-expanded="true"] { border-color: var(--lh-action); background: #1b4365; }
-.sdd-tool-grid button > span { color: var(--lh-action); font-size: 1.1rem; }
-.sdd-tool-grid img { width: 1.65rem; height: 1.65rem; object-fit: contain; }
-.sdd-framework-detail { min-height: 310px; padding: 1.4rem 1.7rem; border: 1px solid var(--lh-action); background: #14243b; animation: content-enter .2s both; }
+.sdd-framework-detail { padding: .5rem 0; animation: content-enter .2s both; }
 .sdd-framework-head { display: flex; align-items: center; gap: 1rem; }
-.sdd-framework-head img { width: 3rem; height: 3rem; object-fit: contain; }
+.sdd-framework-head img { width: 4.5rem; height: 4.5rem; object-fit: contain; }
 .sdd-framework-head .section-label { margin: 0; }
 .sdd-framework-head h2 { margin: 0; }
-.sdd-framework-detail p { max-width: 66ch; margin: 1rem 0 1.3rem; color: var(--lh-text-muted); }
-.sdd-framework-detail ol { display: flex; flex-wrap: wrap; gap: .5rem; margin: 0 0 1.3rem; padding: 0; list-style: none; }
-.sdd-framework-detail li { padding: .5rem .7rem; border: 1px solid #507394; color: #dceaff; font: 700 .9rem ui-monospace, monospace; }
+.sdd-framework-detail p { max-width: 66ch; margin: 1.5rem 0 2rem; color: var(--lh-text-muted); }
+.sdd-framework-detail ol { display: flex; gap: .7rem; margin: 0 0 1.5rem; padding: 0; list-style: none; }
+.sdd-framework-detail li { display: grid; place-content: center; flex: 1; min-width: 0; min-height: 110px; padding: .7rem; border: 1px solid #507394; background: #14243b; color: #dceaff; font: 700 clamp(.9rem, 1.35vw, 1.2rem) ui-monospace, monospace; text-align: center; }
 .sdd-framework-detail li + li::before { content: '→ '; color: var(--lh-action); }
 .sdd-framework-detail a { font-size: .85rem; }
 .sdd-framework-detail small { margin-left: .8rem; color: var(--lh-text-muted); }
@@ -321,7 +318,9 @@ button { font: inherit; cursor: pointer; }
   .sdd-steps { grid-template-columns: repeat(2,minmax(0,1fr)); }
   .sdd-steps::before, .sdd-steps::after { display: none; }
   .sdd-icon { width: 5rem; height: 5rem; }
-  .sdd-tool-grid { display: flex; }
+  [data-scene="15-workflow"] .diagram-node { width: 100%; }
+  .sdd-framework-detail ol { flex-wrap: wrap; }
+  .sdd-framework-detail li { flex: 1 1 42%; }
   .arc-grid { display: block; }
   .arc-item { width: 100%; margin-bottom: .5rem; }
   [data-scene="04-guardarrailes"] .scene-grid { grid-template-columns: 1fr; }

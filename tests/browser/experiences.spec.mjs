@@ -3,7 +3,8 @@ import AxeBuilder from '@axe-core/playwright'
 import { readFileSync } from 'node:fs'
 
 const baseline = JSON.parse(readFileSync('tests/fixtures/migration.json', 'utf8'))
-const spanish = baseline.scenes.filter(scene => scene.directory === 'ingenieria-del-software-2_0')
+// The fixture records every original source unit, including a slide retired from the published deck.
+const spanish = baseline.scenes.filter(scene => scene.directory === 'ingenieria-del-software-2_0' && scene.id !== '14-citas').flatMap(scene => scene.id === '06-sdd' ? [scene, ...['06a-openspec', '06b-spec-kit', '06c-kiro'].map(id => ({ id }))] : [scene])
 const guardrails = baseline.scenes.filter(scene => scene.directory === 'soft-and-hard-guardrails')
 
 test('every static entry and asset is directly served', async ({ page, request }) => {

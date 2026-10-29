@@ -42,10 +42,10 @@ export function JourneyMap({ language }: { language: Language }) {
     event.currentTarget.style.removeProperty('--spot-x')
     event.currentTarget.style.removeProperty('--spot-y')
   }}>
-    <button type="button" className="journey-core" data-active={active === stages.length} aria-pressed={active === stages.length} aria-label={`Software Engineering 2.0. ${motto}`} onMouseEnter={() => setActive(stages.length)} onFocus={() => setActive(stages.length)} onClick={() => setActive(stages.length)}><span>SOFTWARE ENGINEERING <b>2.0</b></span>{active === stages.length && <small>{motto}</small>}</button>
+    <button type="button" className="journey-core" data-active={active === stages.length} aria-pressed={active === stages.length} aria-label={`Software Engineering 2.0. ${motto}`} onMouseEnter={() => setActive(stages.length)} onFocus={() => setActive(stages.length)} onClick={() => setActive(stages.length)}><span>SOFTWARE ENGINEERING <b>2.0</b></span></button>
     <svg className="journey-lines" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path d="M50 15 L77 25 L84 53 L68 79 L32 79 L16 53 L23 25 Z" /><path d="M50 15 L84 53 L32 79 L23 25 L77 25 L68 79 L16 53 Z" />{positions.map(([x, y], i) => <path className="journey-spoke" d={`M50 50 L${x} ${y}`} key={i} />)}</svg>
     {stages.map(([label], i) => <button key={label} type="button" className="journey-node" data-active={active === i} style={{ left: `${positions[i][0]}%`, top: `${positions[i][1]}%`, animationDelay: `${i * 90}ms` }} aria-pressed={active === i} aria-label={`${label}. ${stages[i][1]}`} onMouseEnter={() => setActive(i)} onFocus={() => setActive(i)} onClick={() => setActive(i)}><span aria-hidden="true">◆</span>{label}</button>)}
-    {active !== stages.length && <p className="journey-insight" aria-live="polite">{active === null ? (en ? 'Everything is connected.' : 'Todo está interconectado.') : stages[active][1]}</p>}
+    <p className="journey-insight" aria-live="polite">{active === null ? (en ? 'Everything is connected.' : 'Todo está interconectado.') : active === stages.length ? motto : stages[active][1]}</p>
   </section>
 }
 
@@ -80,9 +80,9 @@ export function RepoStructure({ language }: { language: Language }) {
   </div>
 }
 
-export function SddOverview({ language }: { language: Language }) {
+export function SddOverview({ language, view = 'general' }: { language: Language; view?: 'general' | 'openspec' | 'spec-kit' | 'kiro' }) {
   const [active, setActive] = useState(0)
-  const [framework, setFramework] = useState<number | null>(null)
+  const framework = { general: null, openspec: 0, 'spec-kit': 1, kiro: 2 }[view]
   const en = language === 'en'
   const frameworks = [
     { name: 'OpenSpec', image: openspec, href: 'https://github.com/Fission-AI/OpenSpec/blob/main/docs/workflows.md', description: en ? 'A change proposal carries planning artifacts; apply it, then sync and archive the result.' : 'Una propuesta reúne los artefactos del cambio; se aplica y después se sincroniza y archiva.', flow: ['Explore?', 'Propose', 'Apply', 'Sync?', 'Archive'] },
@@ -107,17 +107,11 @@ export function SddOverview({ language }: { language: Language }) {
       <div className="sdd-steps">{steps.map(([icon, label], index) => <button type="button" className="sdd-step" data-active={active === index} key={label} aria-pressed={active === index} onMouseEnter={() => setActive(index)} onFocus={() => setActive(index)} onClick={() => setActive(index)}><span className="sdd-icon" aria-hidden="true">{icon}</span><small>{String(index + 1).padStart(2, '0')}</small><strong>{label}</strong></button>)}</div>
       <p className="sdd-message" aria-live="polite"><span>{String(active + 1).padStart(2, '0')} / 04</span>{steps[active][2]}</p>
     </section> : <section className="sdd-framework-detail" id="sdd-framework-detail" aria-label={frameworks[framework].name}>
-      <div className="sdd-framework-head"><img src={frameworks[framework].image} alt="" /><span className="section-label">{en ? 'FRAMEWORK WORKFLOW' : 'FLUJO DEL FRAMEWORK'}</span><h2>{frameworks[framework].name}</h2></div>
+      <div className="sdd-framework-head"><img src={frameworks[framework].image} alt="" /><span className="section-label">{en ? 'FRAMEWORK WORKFLOW' : 'FLUJO DEL FRAMEWORK'}</span></div>
       <p>{frameworks[framework].description}</p>
       <ol aria-label={en ? 'Framework workflow' : 'Flujo del framework'}>{frameworks[framework].flow.map(step => <li key={step}>{step}</li>)}</ol>
       <a href={frameworks[framework].href} target="_blank" rel="noopener noreferrer">{en ? 'Official workflow ↗' : 'Flujo oficial ↗'}</a><small>{framework === 1 ? (en ? '¹ Once per project' : '¹ Una vez por proyecto') : framework === 0 ? (en ? '? Optional' : '? Opcional') : ''}</small>
     </section>}
-    <section className="sdd-tools" aria-label={en ? 'Three SDD frameworks' : 'Tres frameworks SDD'}>
-      <p className="section-label">{en ? 'THREE FRAMEWORKS · THREE WORKFLOWS' : 'TRES FRAMEWORKS · TRES FLUJOS'}</p>
-      <div className="sdd-tool-grid">
-        {frameworks.map((item, index) => <button key={item.name} type="button" aria-expanded={framework === index} aria-controls={framework === index ? 'sdd-framework-detail' : undefined} onClick={() => setFramework(framework === index ? null : index)}><img src={item.image} alt="" /><strong>{item.name}</strong><span aria-hidden="true">{framework === index ? '−' : '+'}</span></button>)}
-      </div>
-    </section>
   </div>
 }
 
