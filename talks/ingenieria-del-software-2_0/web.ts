@@ -11,7 +11,7 @@ export const talk: Talk = {
   thesis:
     'AI changes the cost of producing software. It does not remove the need to decide what should be built, how it fits together, or how we know it works.',
   status: 'Presented · Albacete 2026',
-  meta: ['60 min', 'Spanish', 'Software + AI'],
+  meta: ['60 min', 'ES / EN', 'Software + AI'],
   deckUrl: '/decks/software-engineering-2_0/',
   chapters: [
     { title: 'The speed trap', description: 'When output becomes abundant, direction and constraints become the scarce resources.' },

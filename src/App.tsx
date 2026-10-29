@@ -121,6 +121,7 @@ function TalkCard({ talk }: { talk: Talk }) {
         </ul>
         <div className="card-actions">
           <a className="button button-secondary" href={`/${talk.slug}/`}>Enter talk <span aria-hidden="true">↗</span></a>
+          {talk.slug === 'software-engineering-2_0' && <a className="button button-secondary" href="/en/software-engineering-2_0/">English <span aria-hidden="true">↗</span></a>}
           <a className="text-link" href={talk.sourceUrl}>Source <span aria-hidden="true">↗</span></a>
         </div>
       </div>

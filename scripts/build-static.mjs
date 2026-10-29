@@ -27,5 +27,10 @@ export function buildStatic(root = '.') {
     }
     writeFileSync(`${directory}/index.html`, shell.replace(/<html[^>]*>/, `<html lang="${entry.language}">`).replace(/<title>.*?<\/title>/s, `<title>${escapeHTML(entry.title)}</title>`))
   }
+  const englishDirectory = resolve(root, 'dist/en/software-engineering-2_0')
+  mkdirSync(englishDirectory, { recursive: true })
+  cpSync(resolve(root, 'talks/ingenieria-del-software-2_0/deck/dist'), englishDirectory, { recursive: true })
+  const englishHtml = readFileSync(`${englishDirectory}/index.html`, 'utf8')
+  writeFileSync(`${englishDirectory}/index.html`, englishHtml.replace('<html lang="es">', '<html lang="en">').replaceAll('Ingeniería del Software 2.0', 'Software Engineering 2.0').replace('Diseñar, construir y validar productos con IA', 'Design, build and validate products with AI'))
 }
 if (import.meta.url === pathToFileURL(resolve(process.argv[1])).href) buildStatic()

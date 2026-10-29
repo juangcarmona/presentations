@@ -11,29 +11,29 @@ import logo from './public/pdac-logo.png'
 import workflow from './public/pdac-reference-workflow.png'
 import branding from './public/product_shape_branding.png'
 
-function Figure({ src, alt }: { src: string; alt: string }) {
-  return <figure className="original-figure"><a href={src} target="_blank" rel="noreferrer" aria-label={`${alt}. Abrir imagen a tamaño completo`}><img src={src} alt={alt} /></a><figcaption>Visual original · <a href={src} target="_blank" rel="noreferrer">Ampliar ↗</a></figcaption></figure>
+function Figure({ src, alt, language }: { src: string; alt: string; language: string }) {
+  return <figure className="original-figure"><a href={src} target="_blank" rel="noreferrer" aria-label={`${alt}. ${language === 'en' ? 'Open full-size image' : 'Abrir imagen a tamaño completo'}`}><img src={src} alt={alt} /></a></figure>
 }
 
-function Demo() {
-  const [playing, setPlaying] = useState(false)
+function Demo({ language }: { language: string }) {
+  const [playing, setPlaying] = useState(() => !matchMedia('(prefers-reduced-motion: reduce)').matches)
   useEffect(() => {
     const preference = matchMedia('(prefers-reduced-motion: reduce)')
     const stop = () => { if (preference.matches) setPlaying(false) }
     preference.addEventListener('change', stop)
     return () => preference.removeEventListener('change', stop)
   }, [])
-  return <div className="demo-stage"><img className="product-brand" src={branding} alt="ProductShape, Product Definition as Code" /><button type="button" aria-pressed={playing} onClick={() => setPlaying(!playing)}>{playing ? 'Detener demo animada' : 'Reproducir demo animada'}</button>{playing && <img className="demo-animation" src={demo} alt="Demo: tres specs divergentes sobre devoluciones, BR-REFUND-001 definida una vez y verificación de citas obsoletas" />}<p>La animación solo se inicia bajo petición. Los pasos de la demo están disponibles debajo sin movimiento.</p></div>
+  return <div className="demo-stage"><img className="product-brand" src={branding} alt="ProductShape, Product Definition as Code" /><div className="demo-count" aria-hidden="true">03 <span>→</span> 01<small>{language === 'en' ? 'conflicting specs → accepted rule' : 'specs divergentes → regla aceptada'}</small></div><button type="button" aria-pressed={playing} onClick={() => setPlaying(!playing)}>{playing ? (language === 'en' ? 'Stop animated demo' : 'Detener demo animada') : (language === 'en' ? 'Play animated demo' : 'Reproducir demo animada')}</button>{playing && <img className="demo-animation" src={demo} alt={language === 'en' ? 'Demo: three conflicting refund specs, one accepted BR-REFUND-001 rule and stale citation detection' : 'Demo: tres specs divergentes sobre devoluciones, BR-REFUND-001 definida una vez y verificación de citas obsoletas'} />}</div>
 }
 
-function Flow({ items, label }: { items: string[]; label: string }) {
+export function Flow({ items, label }: { items: string[]; label: string }) {
   return <ol className="product-flow" aria-label={label}>{items.map((text, i) => <li key={text}><span className="flow-index" aria-hidden="true">{String(i + 1).padStart(2, '0')} →</span>{text}</li>)}</ol>
 }
-function Code({ children, label }: { children: string; label: string }) {
+export function Code({ children, label }: { children: string; label: string }) {
   return <pre role="region" aria-label={label} tabIndex={0}><code>{children}</code></pre>
 }
-function Citation({ href = 'https://pdac.dev/diagrams/', children = 'PDaC · diagramas originales' }: { href?: string; children?: React.ReactNode }) {
-  return <p className="citation">Referencia: <a href={href}>{children}</a>. Representación DOM original.</p>
+export function Citation({ href = 'https://pdac.dev/diagrams/', children, language = 'es' }: { href?: string; children?: React.ReactNode; language?: string }) {
+  return <p className="citation">{language === 'en' ? 'Source' : 'Referencia'}: <a href={href}>{children ?? (language === 'en' ? 'PDaC · original diagrams' : 'PDaC · diagramas originales')}</a>.</p>
 }
 
 const experience: Experience = { language: 'es', scenes: [
@@ -70,12 +70,16 @@ const figures: Record<string, { src: string; alt: string }> = {
   '17-flujo-agentico': { src: lifecycle, alt: 'Ciclo de vida de agentic-sdlc' },
 }
 
-for (const scene of experience.scenes) {
+export function decorateExperience(source: Experience) {
+for (const scene of source.scenes) {
   const figure = figures[scene.id]
-  if (figure) scene.content = <><Figure {...figure} /><details className="supporting-text"><summary>Lectura del diagrama y referencias</summary>{scene.content}</details></>
+  if (figure) scene.content = <><Figure {...figure} language={source.language} /><details className="supporting-text"><summary>{source.language === 'en' ? 'Diagram notes and references' : 'Lectura del diagrama y referencias'}</summary>{scene.content}</details></>
   if (scene.id === 'cover') scene.content = <><img className="cover-art" src={cover} alt="" />{scene.content}</>
   if (scene.id === '09-intencion') scene.content = <><img className="pdac-mark" src={logo} alt="PDaC" />{scene.content}</>
-  if (scene.id === '13-productshape') scene.content = <><Demo /><details className="supporting-text"><summary>Pasos de la demo y referencias</summary>{scene.content}</details></>
-  if (scene.id === '24-fin') scene.content = <div className="closing-layout"><img className="speaker-portrait" src={portrait} alt="Juan G. Carmona" /><div><p className="scene-lede">¿Preguntas?</p><p>Software Architect · AI Strategist · Plain Concepts</p><ul><li><a href="https://jgcarmona.com/">jgcarmona.com</a></li><li><a href="https://linkedin.com/in/juangcarmona">linkedin.com/in/juangcarmona</a></li><li><a href="https://pdac.dev/">pdac.dev</a></li></ul></div></div>
+  if (scene.id === '13-productshape') scene.content = <><Demo language={source.language} /><details className="supporting-text"><summary>{source.language === 'en' ? 'Demo steps and references' : 'Pasos de la demo y referencias'}</summary>{scene.content}</details></>
+  if (scene.id === '24-fin') scene.content = <div className="closing-layout"><img className="speaker-portrait" src={portrait} alt="Juan G. Carmona" /><div><p className="scene-lede">{source.language === 'en' ? 'Questions?' : '¿Preguntas?'}</p><p>Software Architect · AI Strategist · Plain Concepts</p><ul><li><a href="https://jgcarmona.com/">jgcarmona.com</a></li><li><a href="https://linkedin.com/in/juangcarmona">linkedin.com/in/juangcarmona</a></li><li><a href="https://pdac.dev/">pdac.dev</a></li></ul></div></div>
 }
+return source
+}
+decorateExperience(experience)
 export default experience

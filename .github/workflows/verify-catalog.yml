@@ -19,7 +19,7 @@ jobs:
           persist-credentials: false
       - uses: actions/setup-node@v4
         with:
-          node-version: '22'
+          node-version: '24'
       - name: Install the locked public dependencies without a restored cache
         run: npm ci --ignore-scripts
       - name: Build the complete static site and validate its assets

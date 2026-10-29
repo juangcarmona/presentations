@@ -4,10 +4,10 @@ import { readFileSync, existsSync } from 'node:fs'
 import { entries, escapeHTML, validateRegistry } from '../scripts/build-static.mjs'
 import { verifyStatic, assertNoAuthorNotes } from '../scripts/verify-static.mjs'
 
-test('registry and five physical entries have complete assets', () => {
+test('registry and six physical entries have complete assets', () => {
   validateRegistry()
   const manifest = verifyStatic('.', false)
-  assert.equal(manifest.entries.length, 5)
+  assert.equal(manifest.entries.length, 6)
   assert.equal(manifest.talks.length, 2)
   assert.ok(manifest.assets.some(name => name.includes('experience')))
   assert.ok(manifest.assets.some(name => name.startsWith('/software-engineering-2_0/assets/')))
