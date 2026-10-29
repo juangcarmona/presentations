@@ -78,6 +78,11 @@ test('early scenes respond to side clicks, reveal comparison and keep external l
   await expect(page.locator('.journey-insight')).toContainText('Guías y controles')
   await page.getByRole('button', { name: /Entrega\. / }).hover()
   await expect(page.locator('.journey-insight')).toContainText('Desplegamos el software en desarrollo, preproducción y producción')
+  await page.locator('.journey-core').hover()
+  await expect(page.locator('.journey-core small')).toHaveText('La IA nos permite mejorar nuestro SDLC de extremo a extremo, en cada etapa.')
+  await expect(page.locator('.journey-insight')).toHaveCount(0)
+  await page.locator('.journey-core').click()
+  await expect(page).toHaveURL(/#scene=02-recorrido$/)
   await page.mouse.click(100, 620)
   await expect(page.locator('[data-scene]')).toHaveAttribute('data-scene', 'cover')
   await page.goto('/software-engineering-2_0/#scene=03-repo')
@@ -130,6 +135,9 @@ test('early scenes respond to side clicks, reveal comparison and keep external l
   await page.goto('/software-engineering-2_0/#scene=07-gaps')
   await expect(page.getByRole('heading', { name: 'Las specs no son la fuente de verdad' })).toBeVisible()
   await expect(page.locator('.case-subtitle')).toHaveText('Cada spec describe un cambio, no el producto.')
+  await page.goto('/software-engineering-2_0/?lang=en#scene=02-recorrido')
+  await page.locator('.journey-core').hover()
+  await expect(page.locator('.journey-core small')).toHaveText('AI lets us improve our SDLC end to end, at every stage.')
 })
 
 test('GIF plays without a fake pause control and respects reduced motion', async ({ page }) => {
