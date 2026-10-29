@@ -103,6 +103,9 @@ test('early scenes respond to side clicks, reveal comparison and keep external l
   await page.keyboard.press('ArrowLeft')
   await expect(page.locator('[data-scene]')).toHaveAttribute('data-stage', '1')
   await page.goto('/software-engineering-2_0/#scene=05-estructura')
+  await expect(page.locator('.repo-inspector .section-label')).toHaveCount(0)
+  expect((await page.locator('.repo-tree').boundingBox()).height).toBeLessThan(390)
+  expect(await page.evaluate(() => document.documentElement.scrollHeight <= innerHeight)).toBe(true)
   await page.getByRole('button', { name: /tests\/\. / }).hover()
   await expect(page.locator('.repo-inspector')).toContainText('Pruebas ejecutables')
   await page.getByRole('button', { name: /docs\/design\/\. / }).click()
@@ -141,9 +144,13 @@ test('GIF plays without a fake pause control and respects reduced motion', async
 })
 
 test('the lineage and architecture panels show examples without covering their maps', async ({ page }) => {
+  await page.setViewportSize({ width: 1280, height: 720 })
   await page.goto('/software-engineering-2_0/#scene=12-origen')
   await expect(page.locator('.origins-family')).toHaveCount(4)
   await expect(page.locator('.origins-family button')).toHaveCount(12)
+  await expect(page.locator('.origins-links, .origins-family > span, .origins-result a, .origins-result strong')).toHaveCount(0)
+  await expect(page.locator('.origins-result img')).toBeVisible()
+  expect(await page.evaluate(() => document.documentElement.scrollHeight <= innerHeight)).toBe(true)
   await page.getByRole('button', { name: /Citas \+ SHA-256/ }).hover()
   await expect(page.locator('.origins-result')).toContainText('referencias obsoletas')
   await page.getByRole('button', { name: /Product Changes/ }).hover()

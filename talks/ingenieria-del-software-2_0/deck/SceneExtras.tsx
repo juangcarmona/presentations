@@ -2,6 +2,7 @@ import { useState } from 'react'
 import openspec from './openspec-icon.png'
 import specKit from './spec-kit-logo.webp'
 import kiro from './kiro-logo.png'
+import pdacLogo from './public/pdac-logo.png'
 
 export const sddImages = [openspec, specKit, kiro]
 
@@ -71,7 +72,6 @@ export function RepoStructure({ language }: { language: Language }) {
       {files.map((file, i) => <button key={file.path} type="button" className="repo-entry" data-tone={file.tone} aria-pressed={active === i} aria-label={`${file.path}. ${file.detail[en ? 1 : 0]}`} onMouseEnter={() => setActive(i)} onFocus={() => setActive(i)} onClick={() => setActive(i)}><span aria-hidden="true">{file.branch}</span>{file.name}</button>)}
     </div>
     <div className="repo-inspector" data-tone={selected.tone} aria-live="polite">
-      <span className="section-label">{en ? 'IN THE REPOSITORY' : 'EN EL REPOSITORIO'}</span>
       <h2>{selected.path}</h2>
       <p>{selected.detail[en ? 1 : 0]}</p>
       <span className="repo-hint">{selected.hints[en ? 1 : 0]}</span>
@@ -142,7 +142,7 @@ export function OriginsMap({ language }: { language: Language }) {
   const [active, setActive] = useState<[number, number]>([0, 0])
   const en = language === 'en'
   const families = [
-    { tone: 'files', source: 'Git · Docs as Code · JSON Schema', name: en ? 'Files & validation' : 'Ficheros y validación', items: en ? [
+    { tone: 'files', name: en ? 'Files & validation' : 'Ficheros y validación', items: en ? [
       ['Git + Markdown', 'Readable, versioned product knowledge: history, diffs and human review.'],
       ['YAML + Schema', 'Structured metadata makes fields and relationships checkable without replacing readable text.'],
       ['Deterministic CI', 'Checks IDs, targets and citations without asking an AI to judge the structure.'],
@@ -151,7 +151,7 @@ export function OriginsMap({ language }: { language: Language }) {
       ['YAML + Schema', 'Los metadatos permiten validar campos y relaciones sin sustituir el texto legible.'],
       ['CI determinista', 'Comprueba IDs, destinos y citas sin pedir a la IA que juzgue la estructura.'],
     ] },
-    { tone: 'product', source: 'Requirements · DDD · Business Rules', name: en ? 'Product vocabulary' : 'Vocabulario de producto', items: en ? [
+    { tone: 'product', name: en ? 'Product vocabulary' : 'Vocabulario de producto', items: en ? [
       ['Actors + journeys', 'Who participates and what experience they have; journeys lead to use cases.'],
       ['Use cases + rules', 'Use cases describe behaviour; business rules govern it across scenarios.'],
       ['Requirements', 'Functional and quality requirements turn product intent into explicit obligations.'],
@@ -160,14 +160,14 @@ export function OriginsMap({ language }: { language: Language }) {
       ['Use cases + reglas', 'Los casos de uso describen comportamiento; las reglas de negocio lo gobiernan.'],
       ['Requisitos', 'Los requisitos funcionales y de calidad expresan obligaciones del producto.'],
     ] },
-    { tone: 'change', source: 'Configuration management · Git review', name: en ? 'Change control' : 'Control del cambio', items: en ? [
+    { tone: 'change', name: en ? 'Change control' : 'Control del cambio', items: en ? [
       ['Baselines', 'An accepted, identifiable product state; proposals do not silently rewrite it.'],
       ['Product Changes', 'A semantic change proposal records why and what changes; human-reviewed merge accepts it.'],
     ] : [
       ['Baselines', 'Estado de producto aceptado e identificable; una propuesta no lo reescribe en silencio.'],
       ['Product Changes', 'Una propuesta semántica explica por qué y qué cambia; el merge humano la acepta.'],
     ] },
-    { tone: 'trace', source: 'Traceability · graphs · context engineering', name: en ? 'Links & impact' : 'Relaciones e impacto', items: en ? [
+    { tone: 'trace', name: en ? 'Links & impact' : 'Relaciones e impacto', items: en ? [
       ['Stable IDs + typed links', 'An artefact keeps its identity when moved; link types define impact direction.'],
       ['Citations + SHA-256', 'A consumer cites an ID and content digest; changes flag stale references for review.'],
       ['Graphs + impact reports', 'Derived from accepted files and links: show the affected set, not another truth.'],
@@ -179,10 +179,9 @@ export function OriginsMap({ language }: { language: Language }) {
       ['Contexto acotado', 'El agente recibe la parte relevante del grafo de producto, no todo el repositorio.'],
     ] },
   ]
-  return <div className="origins-map" data-active-family={families[active[0]].tone}>
-    <svg className="origins-links" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path data-tone="files" d="M34 20 L50 50" /><path data-tone="product" d="M66 20 L50 50" /><path data-tone="change" d="M34 80 L50 50" /><path data-tone="trace" d="M66 80 L50 50" /></svg>
-    {families.map((family, i) => <section key={family.tone} className="origins-family" data-tone={family.tone}><span>{family.source}</span><h2>{family.name}</h2><div>{family.items.map(([label, detail], j) => <button key={label} type="button" aria-pressed={active[0] === i && active[1] === j} aria-label={`${label}. ${detail}`} onMouseEnter={() => setActive([i, j])} onFocus={() => setActive([i, j])} onClick={() => setActive([i, j])}>{label}</button>)}</div></section>)}
-    <aside className="origins-result" data-tone={families[active[0]].tone} aria-live="polite"><span className="section-label">{en ? 'EXISTING PRACTICES, ASSEMBLED' : 'PRÁCTICAS EXISTENTES, REUNIDAS'}</span><strong>PDaC</strong><p>{families[active[0]].items[active[1]][1]}</p><a href="https://pdac.dev/articles/what-product-definition-as-code-puts-together/" target="_blank" rel="noopener noreferrer">{en ? 'Where it comes from ↗' : 'De dónde viene ↗'}</a></aside>
+  return <div className="origins-map">
+    {families.map((family, i) => <section key={family.tone} className="origins-family" data-tone={family.tone}><h2>{family.name}</h2><div>{family.items.map(([label, detail], j) => <button key={label} type="button" aria-pressed={active[0] === i && active[1] === j} aria-label={`${label}. ${detail}`} onMouseEnter={() => setActive([i, j])} onFocus={() => setActive([i, j])} onClick={() => setActive([i, j])}>{label}</button>)}</div></section>)}
+    <aside className="origins-result" data-tone={families[active[0]].tone} aria-label={en ? 'Product Definition as Code contribution' : 'Aportación a Product Definition as Code'} aria-live="polite"><img src={pdacLogo} alt="" /><p>{families[active[0]].items[active[1]][1]}</p></aside>
   </div>
 }
 
