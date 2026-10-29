@@ -139,22 +139,50 @@ export function TerminalCase({ language, variant }: { language: Language; varian
 }
 
 export function OriginsMap({ language }: { language: Language }) {
-  const [active, setActive] = useState(0)
+  const [active, setActive] = useState<[number, number]>([0, 0])
   const en = language === 'en'
-  const sources = en ? [
-    ['Git · Markdown · Schema', 'Versioned files', 'BR-REFUND-001.md has a readable diff; YAML metadata is checked in CI.'],
-    ['Requirements · DDD', 'Identity and meaning', 'BR-REFUND-001 keeps its ID and governs UC-REFUND, even if the file moves.'],
-    ['Configuration management', 'Accepted change', 'CHG-REFUND-002 proposes 30 → 14 days; a human-reviewed merge establishes the next baseline.'],
-    ['Traceability · graphs', 'Impact, not guesses', 'Citations in specs and tests become stale; the impact graph scopes agent context.'],
-  ] : [
-    ['Git · Markdown · Schema', 'Ficheros versionados', 'BR-REFUND-001.md tiene un diff legible; CI valida sus metadatos YAML.'],
-    ['Requisitos · DDD', 'Identidad y significado', 'BR-REFUND-001 conserva su ID y gobierna UC-REFUND aunque cambie de ruta.'],
-    ['Gestión de configuración', 'Cambio aceptado', 'CHG-REFUND-002 propone 30 → 14 días; el merge revisado por una persona establece la nueva baseline.'],
-    ['Trazabilidad · grafos', 'Impacto, no conjeturas', 'Las citas en specs y tests quedan obsoletas; el grafo acota el contexto del agente.'],
+  const families = [
+    { tone: 'files', source: 'Git · Docs as Code · JSON Schema', name: en ? 'Files & validation' : 'Ficheros y validación', items: en ? [
+      ['Git + Markdown', 'Readable, versioned product knowledge: history, diffs and human review.'],
+      ['YAML + Schema', 'Structured metadata makes fields and relationships checkable without replacing readable text.'],
+      ['Deterministic CI', 'Checks IDs, targets and citations without asking an AI to judge the structure.'],
+    ] : [
+      ['Git + Markdown', 'Conocimiento de producto legible y versionado: historial, diffs y revisión humana.'],
+      ['YAML + Schema', 'Los metadatos permiten validar campos y relaciones sin sustituir el texto legible.'],
+      ['CI determinista', 'Comprueba IDs, destinos y citas sin pedir a la IA que juzgue la estructura.'],
+    ] },
+    { tone: 'product', source: 'Requirements · DDD · Business Rules', name: en ? 'Product vocabulary' : 'Vocabulario de producto', items: en ? [
+      ['Actors + journeys', 'Who participates and what experience they have; journeys lead to use cases.'],
+      ['Use cases + rules', 'Use cases describe behaviour; business rules govern it across scenarios.'],
+      ['Requirements', 'Functional and quality requirements turn product intent into explicit obligations.'],
+    ] : [
+      ['Actores + journeys', 'Quién participa y qué recorrido vive; los journeys conducen a casos de uso.'],
+      ['Use cases + reglas', 'Los casos de uso describen comportamiento; las reglas de negocio lo gobiernan.'],
+      ['Requisitos', 'Los requisitos funcionales y de calidad expresan obligaciones del producto.'],
+    ] },
+    { tone: 'change', source: 'Configuration management · Git review', name: en ? 'Change control' : 'Control del cambio', items: en ? [
+      ['Baselines', 'An accepted, identifiable product state; proposals do not silently rewrite it.'],
+      ['Product Changes', 'A semantic change proposal records why and what changes; human-reviewed merge accepts it.'],
+    ] : [
+      ['Baselines', 'Estado de producto aceptado e identificable; una propuesta no lo reescribe en silencio.'],
+      ['Product Changes', 'Una propuesta semántica explica por qué y qué cambia; el merge humano la acepta.'],
+    ] },
+    { tone: 'trace', source: 'Traceability · graphs · context engineering', name: en ? 'Links & impact' : 'Relaciones e impacto', items: en ? [
+      ['Stable IDs + typed links', 'An artefact keeps its identity when moved; link types define impact direction.'],
+      ['Citations + SHA-256', 'A consumer cites an ID and content digest; changes flag stale references for review.'],
+      ['Graphs + impact reports', 'Derived from accepted files and links: show the affected set, not another truth.'],
+      ['Bounded agent context', 'Give an agent the relevant slice of the product graph instead of everything.'],
+    ] : [
+      ['IDs + enlaces tipados', 'Un artefacto conserva su identidad al moverse; el tipo de relación dirige el impacto.'],
+      ['Citas + SHA-256', 'Un consumidor cita ID y huella del contenido; el cambio marca referencias obsoletas.'],
+      ['Grafos + impacto', 'Derivados de ficheros y relaciones aceptadas: muestran afectados, no otra verdad.'],
+      ['Contexto acotado', 'El agente recibe la parte relevante del grafo de producto, no todo el repositorio.'],
+    ] },
   ]
-  return <div className="origins-map">
-    <div className="origins-sources" aria-label={en ? 'Engineering disciplines' : 'Disciplinas de ingeniería'}>{sources.map(([source, label], i) => <button key={source} type="button" className="origins-source" data-active={active === i} aria-pressed={active === i} onMouseEnter={() => setActive(i)} onFocus={() => setActive(i)} onClick={() => setActive(i)}><span>{String(i + 1).padStart(2, '0')} / {source}</span><strong>{label}</strong></button>)}</div>
-    <div className="origins-result" aria-live="polite"><span className="section-label">{en ? 'ASSEMBLED AROUND ONE RULE' : 'REUNIDO EN UNA SOLA REGLA'}</span><strong>BR-REFUND-001</strong><p>{sources[active][2]}</p><a href="https://pdac.dev/articles/what-product-definition-as-code-puts-together/" target="_blank" rel="noopener noreferrer">{en ? 'Read the lineage ↗' : 'Leer el origen ↗'}</a></div>
+  return <div className="origins-map" data-active-family={families[active[0]].tone}>
+    <svg className="origins-links" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path data-tone="files" d="M34 20 L50 50" /><path data-tone="product" d="M66 20 L50 50" /><path data-tone="change" d="M34 80 L50 50" /><path data-tone="trace" d="M66 80 L50 50" /></svg>
+    {families.map((family, i) => <section key={family.tone} className="origins-family" data-tone={family.tone}><span>{family.source}</span><h2>{family.name}</h2><div>{family.items.map(([label, detail], j) => <button key={label} type="button" aria-pressed={active[0] === i && active[1] === j} aria-label={`${label}. ${detail}`} onMouseEnter={() => setActive([i, j])} onFocus={() => setActive([i, j])} onClick={() => setActive([i, j])}>{label}</button>)}</div></section>)}
+    <aside className="origins-result" data-tone={families[active[0]].tone} aria-live="polite"><span className="section-label">{en ? 'EXISTING PRACTICES, ASSEMBLED' : 'PRÁCTICAS EXISTENTES, REUNIDAS'}</span><strong>PDaC</strong><p>{families[active[0]].items[active[1]][1]}</p><a href="https://pdac.dev/articles/what-product-definition-as-code-puts-together/" target="_blank" rel="noopener noreferrer">{en ? 'Where it comes from ↗' : 'De dónde viene ↗'}</a></aside>
   </div>
 }
 
@@ -176,8 +204,9 @@ const arcSections = [
 export function Arc42Overview({ language }: { language: Language }) {
   const [active, setActive] = useState<number | null>(null)
   const en = language === 'en'
+  const family = (i: number) => i < 3 || i === 9 ? 'intent' : i < 7 ? 'structure' : i < 10 ? 'decision' : 'reference'
   return <div className="arc-overview"><div className="arc-layout">
-    <div className="arc-grid" aria-label={en ? 'The twelve arc42 sections' : 'Las doce secciones de arc42'}>{arcSections.map((section, i) => <button key={i} type="button" className="arc-item" data-family={i < 3 || i === 9 ? 'intent' : i < 7 ? 'structure' : i < 10 ? 'decision' : 'reference'} aria-label={`${i + 1}. ${section[en ? 1 : 0]}. ${section[en ? 3 : 2]}`} aria-pressed={active === i} onMouseEnter={() => setActive(i)} onFocus={() => setActive(i)} onClick={() => setActive(i)}><span>{String(i + 1).padStart(2, '0')}</span><strong>{section[en ? 1 : 0]}</strong></button>)}</div>
-    <aside className="arc-detail" aria-live="polite"><span className="section-label">arc42 / {active === null ? '01–12' : String(active + 1).padStart(2, '0')}</span><p>{active === null ? (en ? 'Twelve sections. Focus one to see what belongs there.' : 'Doce secciones. Selecciona una para ver qué documenta.') : arcSections[active][en ? 3 : 2]}</p><a href="https://arc42.org/overview/" target="_blank" rel="noopener noreferrer">{en ? 'Explore arc42 ↗' : 'Explorar arc42 ↗'}</a></aside>
+    <div className="arc-grid" aria-label={en ? 'The twelve arc42 sections' : 'Las doce secciones de arc42'}>{arcSections.map((section, i) => <button key={i} type="button" className="arc-item" data-family={family(i)} aria-label={`${i + 1}. ${section[en ? 1 : 0]}. ${section[en ? 3 : 2]}`} aria-pressed={active === i} onMouseEnter={() => setActive(i)} onFocus={() => setActive(i)} onClick={() => setActive(i)}><span>{String(i + 1).padStart(2, '0')}</span><strong>{section[en ? 1 : 0]}</strong></button>)}</div>
+    <aside className="arc-detail" data-family={active === null ? 'none' : family(active)} aria-live="polite"><span className="section-label">arc42 / {active === null ? '01–12' : String(active + 1).padStart(2, '0')}</span><p>{active === null ? (en ? 'Twelve sections. Focus one to see what belongs there.' : 'Doce secciones. Selecciona una para ver qué documenta.') : arcSections[active][en ? 3 : 2]}</p><a href="https://arc42.org/overview/" target="_blank" rel="noopener noreferrer">{en ? 'Explore arc42 ↗' : 'Explorar arc42 ↗'}</a></aside>
   </div></div>
 }

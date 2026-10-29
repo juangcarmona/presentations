@@ -1,5 +1,5 @@
 import type { Experience } from '../../../src/experience-model'
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useState } from 'react'
 import cover from './public/bg-cover-1.jpg'
 import portrait from './public/juan.jpg'
 import lifecycle from './public/lifecycle-overview.svg'
@@ -17,8 +17,6 @@ export const presentationImages = [portrait, logo, branding, ...sddImages]
 
 function Demo({ language }: { language: string }) {
   const [playing, setPlaying] = useState(() => !matchMedia('(prefers-reduced-motion: reduce)').matches)
-  const [still, setStill] = useState<string | null>(null)
-  const image = useRef<HTMLImageElement>(null)
   const en = language === 'en'
   const steps = en ? [
     'Three specs disagree: purchase, delivery, “less than a month”.',
@@ -37,20 +35,7 @@ function Demo({ language }: { language: string }) {
     preference.addEventListener('change', stop)
     return () => preference.removeEventListener('change', stop)
   }, [])
-  function toggle() {
-    if (playing) {
-      const current = image.current
-      if (current?.complete && current.naturalWidth) {
-        const canvas = document.createElement('canvas')
-        canvas.width = current.naturalWidth
-        canvas.height = current.naturalHeight
-        canvas.getContext('2d')?.drawImage(current, 0, 0)
-        setStill(canvas.toDataURL('image/png'))
-      }
-      setPlaying(false)
-    } else { setStill(null); setPlaying(true) }
-  }
-  return <div className="demo-stage"><ol className="demo-steps" aria-label={en ? 'Citation demonstration' : 'Demostración de citas'}>{steps.map((step, i) => <li key={step}><span>{String(i + 1).padStart(2, '0')}</span><p>{step}</p></li>)}</ol><button className="demo-visual" type="button" aria-pressed={playing} aria-label={playing ? (en ? 'Stop animated demo' : 'Detener demo animada') : (en ? 'Play animated demo' : 'Reproducir demo animada')} onClick={toggle}>{playing ? <img ref={image} className="demo-animation" src={demo} alt="" /> : still ? <img className="demo-animation" src={still} alt="" /> : <span className="demo-poster"><strong>BR-REFUND-001</strong><small>{en ? 'Play demo' : 'Reproducir demo'} ▶</small></span>}<span className="demo-state" aria-hidden="true">{playing ? 'Ⅱ' : '▶'}</span></button></div>
+  return <div className="demo-stage"><ol className="demo-steps" aria-label={en ? 'Citation demonstration' : 'Demostración de citas'}>{steps.map((step, i) => <li key={step}><span>{String(i + 1).padStart(2, '0')}</span><p>{step}</p></li>)}</ol><div className="demo-visual" onClick={event => event.stopPropagation()}>{playing ? <img className="demo-animation" src={demo} alt={en ? 'Animated demonstration of the refund rule and stale citations' : 'Demostración animada de la regla de devolución y citas obsoletas'} /> : <button className="demo-poster" type="button" onClick={() => setPlaying(true)}><strong>BR-REFUND-001</strong><small>{en ? 'Play demo' : 'Reproducir demo'} ▶</small></button>}</div></div>
 }
 
 export function Flow({ items, label }: { items: string[]; label: string }) {
