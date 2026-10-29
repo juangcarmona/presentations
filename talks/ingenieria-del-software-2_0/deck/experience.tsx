@@ -11,7 +11,9 @@ import logo from './public/pdac-logo.png'
 import workflow from './public/pdac-reference-workflow.png'
 import branding from './public/product_shape_branding.png'
 import Diagram from './Diagrams'
-import { Arc42Overview, RepoStructure, SddOverview, TerminalCase } from './SceneExtras'
+import { Arc42Overview, RepoStructure, SddOverview, TerminalCase, sddImages } from './SceneExtras'
+
+export const presentationImages = [portrait, logo, branding, ...sddImages]
 
 function Demo({ language }: { language: string }) {
   const [playing, setPlaying] = useState(() => !matchMedia('(prefers-reduced-motion: reduce)').matches)

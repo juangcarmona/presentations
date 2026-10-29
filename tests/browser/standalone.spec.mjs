@@ -27,6 +27,22 @@ test('catalogue opens one bilingual standalone keynote', async ({ page }) => {
   await expect(page).toHaveURL(/\/software-engineering-2_0\/#scene=cover$/)
 })
 
+test('static slide images preload and the cosmetic bar returns to grey', async ({ page }) => {
+  await page.goto('/software-engineering-2_0/')
+  const assets = ['bg-cover-1-', 'juan-', 'pdac-logo-', 'product_shape_branding-', 'openspec-icon-', 'spec-kit-logo-', 'kiro-logo-']
+  await expect.poll(() => page.evaluate(prefixes => {
+    const loaded = performance.getEntriesByType('resource').map(entry => entry.name.split('/').at(-1))
+    return prefixes.filter(prefix => loaded.some(name => name.startsWith(prefix)))
+  }, assets)).toEqual(assets)
+  expect(await page.evaluate(() => performance.getEntriesByType('resource').some(entry => entry.name.includes('pdac-demo-')))).toBe(false)
+  const bar = page.locator('.hud-track span')
+  await expect(bar).toHaveCSS('animation-duration', '1s')
+  await expect(bar).toHaveCSS('opacity', '0')
+  await page.keyboard.press('ArrowRight')
+  await expect(page.locator('[data-scene]')).toHaveAttribute('data-scene', '02-recorrido')
+  await expect(bar).toHaveCSS('opacity', '0')
+})
+
 test('diagram details stay near their node and phased slides advance locally', async ({ page }) => {
   await page.goto('/software-engineering-2_0/#scene=08-dimensiones')
   const what = page.getByRole('button', { name: /WHAT · Producto/ })

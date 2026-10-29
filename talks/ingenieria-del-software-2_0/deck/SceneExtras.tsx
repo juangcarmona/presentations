@@ -3,6 +3,8 @@ import openspec from './openspec-icon.png'
 import specKit from './spec-kit-logo.webp'
 import kiro from './kiro-logo.png'
 
+export const sddImages = [openspec, specKit, kiro]
+
 type Language = 'es' | 'en'
 
 export function RepoStructure({ language }: { language: Language }) {

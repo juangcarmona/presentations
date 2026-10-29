@@ -1,6 +1,6 @@
 import { useEffect, useLayoutEffect, useRef, useState } from 'react'
 import { handlesShortcut, interactiveSelector, nextIndex, sceneIndex } from '../../../src/scene-navigation'
-import spanish from './experience'
+import spanish, { presentationImages } from './experience'
 import english from './experience-en'
 
 export default function Presentation() {
@@ -13,8 +13,17 @@ export default function Presentation() {
   const started = useRef(performance.now())
   const heading = useRef<HTMLHeadingElement>(null)
   const focusScene = useRef(false)
+  const preloadedImages = useRef<HTMLImageElement[]>([])
   const touchStart = useRef<{ x: number; y: number } | null>(null)
   const scene = scenes[index]
+
+  useEffect(() => {
+    preloadedImages.current = presentationImages.map(src => {
+      const image = new Image()
+      image.src = src
+      return image
+    })
+  }, [])
 
   useEffect(() => {
     const tick = () => setElapsed(Math.floor((performance.now() - started.current) / 1000))
