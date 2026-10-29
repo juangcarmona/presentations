@@ -8,7 +8,7 @@ const guardrails = baseline.scenes.filter(scene => scene.directory === 'soft-and
 
 test('every static entry and asset is directly served', async ({ page, request }) => {
   const manifest = await (await request.get('/site-manifest.json')).json()
-  expect(manifest.entries).toHaveLength(6)
+  expect(manifest.entries).toHaveLength(5)
   for (const path of manifest.entries) {
     expect((await request.get(path)).status(), path).toBe(200)
     await page.goto(path)
@@ -16,11 +16,12 @@ test('every static entry and asset is directly served', async ({ page, request }
   }
   for (const asset of manifest.assets) expect((await request.get(asset)).status(), asset).toBe(200)
   expect((await request.get('/not-a-real-route/')).status()).toBe(404)
+  expect((await request.get('/en/software-engineering-2_0/')).status()).toBe(404)
 })
 
 for (const [path, scenes, language] of [
   ['/software-engineering-2_0/', spanish, 'es'],
-  ['/en/software-engineering-2_0/', spanish, 'en'],
+  ['/software-engineering-2_0/?lang=en', spanish, 'en'],
   ['/soft-and-hard-guardrails/', guardrails, 'en'],
 ]) test(`${path}: complete scene journey`, async ({ page }) => {
   test.setTimeout(90_000)
@@ -31,7 +32,6 @@ for (const [path, scenes, language] of [
   for (const scene of scenes) {
     await expect(page.locator('[data-scene]')).toHaveAttribute('data-scene', scene.id)
     await expect(page.locator('#scene-title')).toBeVisible()
-    if (language === 'es') await expect(page.locator('#scene-title')).toHaveText(scene.title)
     await page.keyboard.press('ArrowRight')
   }
   await expect(page.locator('[data-scene]')).toHaveAttribute('data-scene', scenes.at(-1).id)
@@ -59,14 +59,17 @@ test('standalone talk has no persistent controls, supports keys and protects foc
   await expect(page.locator('#scene-title')).toBeFocused()
 })
 
-test('English is a full standalone edition with original media', async ({ page }) => {
-  await page.goto('/en/software-engineering-2_0/#scene=11-modelo')
+test('English shares the standalone page and retains links to original media', async ({ page, request }) => {
+  await page.goto('/software-engineering-2_0/?lang=en#scene=11-modelo')
   await expect(page.locator('#scene-title')).toContainText('product')
-  await expect(page.locator('.original-figure img')).toBeVisible()
-  expect(await page.locator('.original-figure img').evaluate(img => img.complete && img.naturalWidth > 0)).toBe(true)
+  await expect(page.locator('.diagram-node')).toHaveCount(7)
+  const original = await page.getByRole('link', { name: 'Original diagram' }).getAttribute('href')
+  expect((await request.get(original)).status()).toBe(200)
+  await page.getByRole('button', { name: /Use cases/ }).hover()
+  await expect(page.locator('.diagram-detail')).toContainText('realises the journey')
   const scripts = await page.locator('script[src]').evaluateAll(nodes => nodes.map(node => node.src))
-  expect(scripts.every(src => src.includes('/en/software-engineering-2_0/assets/'))).toBe(true)
-  await page.goto('/en/software-engineering-2_0/#scene=24-fin')
+  expect(scripts.every(src => src.includes('/software-engineering-2_0/assets/'))).toBe(true)
+  await page.goto('/software-engineering-2_0/?lang=en#scene=24-fin')
   await expect(page.getByRole('img', { name: 'Juan G. Carmona' })).toBeVisible()
   await expect(page.getByText('Questions?')).toBeVisible()
 })

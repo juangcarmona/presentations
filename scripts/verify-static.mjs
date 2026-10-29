@@ -34,7 +34,7 @@ export function assertNoAuthorNotes(notes, outputs, directory) {
 export function verifyStatic(root = '.', write = true) {
   validateRegistry(root)
   const dist = resolve(root, 'dist')
-  const paths = ['/', ...entries.flatMap(({ slug }) => [`/${slug}/`, `/decks/${slug}/`]), '/en/software-engineering-2_0/']
+  const paths = ['/', ...entries.flatMap(({ slug }) => [`/${slug}/`, `/decks/${slug}/`])]
   for (const path of paths) {
     const html = readFileSync(`${dist}${path}index.html`, 'utf8')
     if (!html.includes('id="root"') || !html.includes('/assets/')) throw Error(`Invalid static entry: ${path}`)

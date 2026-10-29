@@ -3,20 +3,23 @@ import { handlesShortcut, interactiveSelector, nextIndex, sceneIndex } from '../
 import spanish from './experience'
 import english from './experience-en'
 
-const isEnglish = location.pathname.startsWith('/en/')
-const experience = isEnglish ? english : spanish
-const chapters = isEnglish
-  ? ['OPENING', 'CODE', 'INTENT', 'DELIVERY', 'EVIDENCE', 'US']
-  : ['APERTURA', 'CÓDIGO', 'INTENCIÓN', 'DESARROLLO', 'EVIDENCIA', 'NOSOTROS']
-function chapter(index: number) { return index < 2 ? 0 : index < 5 ? 1 : index < 16 ? 2 : index < 17 ? 3 : index < 21 ? 4 : 5 }
-
 export default function Presentation() {
+  const [language, setLanguage] = useState<'es' | 'en'>(() => new URLSearchParams(location.search).get('lang') === 'en' ? 'en' : 'es')
+  const experience = language === 'en' ? english : spanish
   const { scenes } = experience
   const [index, setIndex] = useState(() => sceneIndex(scenes, location.hash))
+  const [elapsed, setElapsed] = useState(0)
+  const started = useRef(performance.now())
   const heading = useRef<HTMLHeadingElement>(null)
   const focusScene = useRef(false)
   const touchStart = useRef<{ x: number; y: number } | null>(null)
   const scene = scenes[index]
+
+  useEffect(() => {
+    const tick = () => setElapsed(Math.floor((performance.now() - started.current) / 1000))
+    const timer = setInterval(tick, 1000)
+    return () => clearInterval(timer)
+  }, [])
 
   useEffect(() => {
     document.documentElement.lang = experience.language
@@ -35,6 +38,14 @@ export default function Presentation() {
   function move(direction: number) {
     const target = nextIndex(index, direction, scenes.length)
     if (target !== index) location.hash = `scene=${scenes[target].id}`
+  }
+
+  function chooseLanguage(value: 'es' | 'en') {
+    const url = new URL(location.href)
+    if (value === 'en') url.searchParams.set('lang', 'en')
+    else url.searchParams.delete('lang')
+    history.replaceState(null, '', url)
+    setLanguage(value)
   }
 
   useEffect(() => {
@@ -57,14 +68,20 @@ export default function Presentation() {
     touchStart.current = null
     if (Math.abs(dx) > 70 && Math.abs(dx) > Math.abs(dy) * 1.5) move(dx < 0 ? 1 : -1)
   }}>
-    <a className="skip-link" href="#scene-title">{isEnglish ? 'Skip to slide' : 'Ir a la diapositiva'}</a>
-    <div className="keynote-topline" aria-hidden="true"><span>JGC / SOFTWARE ENGINEERING <b>2.0</b></span><span>{chapters[chapter(index)]} — {String(index + 1).padStart(2, '0')}</span></div>
-    <article className="scene" key={scene.id} aria-labelledby="scene-title" data-scene={scene.id} data-chapter={chapter(index)}>
-      <div className="scene-orbit" aria-hidden="true" />
-      <p className="kicker">{String(index + 1).padStart(2, '0')} <span>/ {chapters[chapter(index)]}</span></p>
+    <a className="skip-link" href="#scene-title">{language === 'en' ? 'Skip to slide' : 'Ir a la diapositiva'}</a>
+    <article className="scene" key={scene.id} aria-labelledby="scene-title" data-scene={scene.id}>
       <h1 id="scene-title" ref={heading} tabIndex={-1}>{scene.title}</h1>
       <div className="scene-content">{scene.content}</div>
     </article>
+    <div className="presentation-hud" role="group" aria-label={language === 'en' ? `Elapsed ${Math.floor(elapsed / 60)} minutes ${elapsed % 60} seconds. Slide ${index + 1} of ${scenes.length}` : `Transcurridos ${Math.floor(elapsed / 60)} minutos y ${elapsed % 60} segundos. Diapositiva ${index + 1} de ${scenes.length}`}>
+      <span aria-hidden="true">{String(Math.floor(elapsed / 60)).padStart(2, '0')}:{String(elapsed % 60).padStart(2, '0')}</span>
+      <span aria-hidden="true">{index + 1}</span>
+      <span className="hud-track" aria-hidden="true"><span style={{ width: `${(index + 1) / scenes.length * 100}%` }} /></span>
+    </div>
+    {index === 0 && <nav className="language-picker" aria-label={language === 'en' ? 'Presentation language' : 'Idioma de la presentación'}>
+      <button type="button" lang="en" aria-pressed={language === 'en'} onClick={() => chooseLanguage('en')}>EN</button>
+      <button type="button" lang="es" aria-pressed={language === 'es'} onClick={() => chooseLanguage('es')}>ES</button>
+    </nav>}
     <span className="visually-hidden" role="status" aria-live="polite" aria-atomic="true">{index + 1} / {scenes.length} · {scene.title}</span>
   </main>
 }

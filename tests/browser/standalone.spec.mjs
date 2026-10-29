@@ -1,15 +1,30 @@
 import { test, expect } from '@playwright/test'
 
-test('catalogue opens independent Spanish and English keynotes', async ({ page }) => {
+test('catalogue opens one bilingual standalone keynote', async ({ page }) => {
   await page.goto('/')
   await page.getByRole('link', { name: 'Enter talk' }).first().click()
   await expect(page).toHaveURL(/\/software-engineering-2_0\/$/)
   await expect(page.locator('.keynote')).toBeVisible()
   await expect(page.locator('.topbar, .footer, .site-shell, iframe')).toHaveCount(0)
-  await page.goto('/')
-  await page.getByRole('link', { name: 'English' }).click()
-  await expect(page).toHaveURL(/\/en\/software-engineering-2_0\/$/)
+  await expect(page.locator('.language-picker')).toBeVisible()
+  const hud = await page.locator('.presentation-hud').boundingBox()
+  expect(hud.x).toBeLessThan(200)
+  expect(hud.y).toBeGreaterThan(600)
+  await expect.poll(async () => page.locator('.presentation-hud > span').first().textContent()).not.toBe('00:00')
+  await page.getByRole('button', { name: 'EN', exact: true }).click()
+  await expect(page).toHaveURL(/\/software-engineering-2_0\/\?lang=en$/)
   await expect(page.locator('html')).toHaveAttribute('lang', 'en')
+  await expect(page.locator('#scene-title')).toHaveText('Software Engineering 2.0')
+  await page.locator('#scene-title').focus()
+  await page.keyboard.press('ArrowRight')
+  await expect(page.locator('.language-picker')).toHaveCount(0)
+  await expect(page.locator('.presentation-hud')).toContainText('2')
+  await page.reload()
+  await expect(page.locator('html')).toHaveAttribute('lang', 'en')
+  await page.keyboard.press('ArrowLeft')
+  await page.getByRole('button', { name: 'ES', exact: true }).click()
+  await expect(page.locator('html')).toHaveAttribute('lang', 'es')
+  await expect(page).toHaveURL(/\/software-engineering-2_0\/#scene=cover$/)
 })
 
 test('original GIF is opt-in and can be stopped', async ({ page }) => {

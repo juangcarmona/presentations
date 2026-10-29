@@ -2,11 +2,11 @@
 
 Diseñar, construir y validar productos con IA. Sesión de 60 minutos para desarrolladores, disponible en español e inglés y pensada para repetirse en varios eventos.
 
-Primera edición: Albacete Power BI & Fabric User Group, 14 de octubre de 2026, 19:15, Cervecería La Nena (Albacete). Para otra edición, edita la portada en `deck/experience.tsx` y `deck/experience-en.tsx`.
+La portada no lleva datos de un evento concreto: la misma página sirve para futuras ediciones.
 
 ## Idea de la charla
 
-Un repaso del ciclo de vida del software con mecanismos para domar a la IA en cada fase: código, guardarraíles blandos y duros, SDD, dos fuentes de verdad (PDaC/ProductShape y arc42), desarrollo agéntico, validación y una vista global. Se conserva el ejemplo de Power BI y Fabric de esta edición.
+Un repaso del ciclo de vida del software con mecanismos para domar a la IA en cada fase: código, guardarraíles blandos y duros, SDD, dos fuentes de verdad (PDaC/ProductShape y arc42), desarrollo agéntico, validación y una vista global.
 
 ## Mapa de fuentes
 
@@ -17,6 +17,7 @@ Un repaso del ciclo de vida del software con mecanismos para domar a la IA en ca
 | Fuentes externas | [`research/sources.md`](research/sources.md) |
 | Las 24 escenas editables en ES y EN | [`deck/experience.tsx`](deck/experience.tsx), [`deck/experience-en.tsx`](deck/experience-en.tsx) |
 | Presentador y estilo independiente | [`deck/Presentation.tsx`](deck/Presentation.tsx), [`deck/keynote.css`](deck/keynote.css) |
+| Diagramas interactivos propios | [`deck/Diagrams.tsx`](deck/Diagrams.tsx) |
 | Entrada y build propios | [`deck/index.html`](deck/index.html), [`deck/vite.config.ts`](deck/vite.config.ts) |
 | Notas del ponente, incluida portada, extraídas literalmente | [`content/speaker-notes.md`](content/speaker-notes.md) |
 | Cobertura de cada fuente original y decisiones de recursos | [`content/coverage.md`](content/coverage.md) |
@@ -26,12 +27,12 @@ Las notas no se importan, no se copian y no se publican en los bundles. La sinta
 
 ## Construir y presentar
 
-Desde la raíz, sigue el [contrato de instalación bloqueada, build completo, tests y vista previa](../../README.md#public-catalogue). Abre `/software-engineering-2_0/` en español o `/en/software-engineering-2_0/` en inglés. La entrada compatible `/decks/software-engineering-2_0/` sigue en español. Ejemplo de enlace directo: `#scene=11-modelo`.
+Desde la raíz, sigue el [contrato de instalación bloqueada, build completo, tests y vista previa](../../README.md#public-catalogue). Abre `/software-engineering-2_0/` y cambia ES/EN en la portada; el idioma se conserva al navegar y recargar. La entrada compatible `/decks/software-engineering-2_0/` muestra la misma página. Ejemplo de enlace directo en inglés: `?lang=en#scene=11-modelo`.
 
-La charla abre directamente, sin marco del catálogo, iframe ni controles de navegación visibles. ArrowRight/PageDown avanzan y ArrowLeft/PageUp retroceden sin volver al principio; en pantalla táctil se puede deslizar horizontalmente. Las teclas de los elementos interactivos se conservan. Las escenas largas permiten scroll, los ejemplos tienen regiones de scroll etiquetadas y solo la escena actual participa en el orden de lectura. La URL mantiene el identificador de escena para recargar o compartir. La pantalla completa nativa del navegador sigue disponible mediante F11.
+La charla abre directamente, sin marco del catálogo, iframe ni controles de navegación visibles. ArrowRight/PageDown avanzan y ArrowLeft/PageUp retroceden sin volver al principio; en pantalla táctil se puede deslizar horizontalmente. El selector de idioma solo aparece en la portada. Abajo a la izquierda hay un reloj de tiempo transcurrido, número de escena y progreso. Las teclas de los elementos interactivos se conservan. Las escenas largas permiten scroll, los ejemplos tienen regiones de scroll etiquetadas y solo la escena actual participa en el orden de lectura. La URL mantiene idioma e identificador de escena para recargar o compartir. La pantalla completa nativa del navegador sigue disponible mediante F11.
 
-Los diagramas originales de PDaC y agentic-sdlc son visuales principales con enlaces para ampliarlos y texto complementario accesible. La demo GIF conserva los pasos estáticos BR-REFUND-001, cambio de regla y citas stale; se anima al entrar salvo si está activada la preferencia de movimiento reducido, y puede detenerse. El movimiento reducido desactiva transiciones. La portada y el retrato usan los originales. La escena final de vídeo conserva «Planos de la Estrella de la Muerte», su enlace y contexto: el reproductor externo requiere conexión; el build no descarga medios externos.
+Los diagramas principales son construcciones interactivas propias; sus nodos muestran explicaciones al pasar el ratón, enfocar o tocar. Las imágenes originales siguen publicadas y enlazadas para ampliar el detalle. La demo GIF conserva los pasos estáticos BR-REFUND-001, cambio de regla y citas stale; se anima al entrar salvo si está activada la preferencia de movimiento reducido, y puede detenerse. El movimiento reducido desactiva transiciones. La portada y el retrato usan los originales. La escena final de vídeo conserva «Planos de la Estrella de la Muerte», su enlace y contexto: el reproductor externo requiere conexión; el build no descarga medios externos.
 
-No hay instalación local del deck, Slidev ni tema privado. El build raíz construye primero el catálogo y después este deck en `deck/dist/`; ensambla su salida en tres URL del Worker estático. El catálogo solo importa los metadatos de `web.ts`, no este renderer. PDF/PowerPoint y los antiguos comandos `pnpm export` no tienen paridad garantizada. `dist/`, capturas y reportes son artefactos generados. Esta nueva entrega requiere aceptación visual y de contenido del propietario.
+No hay instalación local del deck, Slidev ni tema privado. El build raíz construye primero el catálogo y después este deck en `deck/dist/`; ensambla su salida en la URL canónica y la compatible del Worker estático. El catálogo solo importa los metadatos de `web.ts`, no este renderer. PDF/PowerPoint y los antiguos comandos `pnpm export` no tienen paridad garantizada. `dist/`, capturas y reportes son artefactos generados. Esta nueva entrega requiere aceptación visual y de contenido del propietario.
 
 ## Ideas aparcadas

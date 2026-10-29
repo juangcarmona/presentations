@@ -15,7 +15,7 @@ test('owner preview: all 24 scenes at presentation size and narrow viewport', as
   }
   await page.setViewportSize({ width: 320, height: 720 })
   for (const id of ['cover', '03-repo', '11-modelo', '24-fin']) {
-    await page.goto(`/en/software-engineering-2_0/#scene=${id}`)
+    await page.goto(`/software-engineering-2_0/?lang=en#scene=${id}`)
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), id).toBe(true)
   }
 })
