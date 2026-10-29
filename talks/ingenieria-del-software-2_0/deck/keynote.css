@@ -105,7 +105,8 @@ button { font: inherit; cursor: pointer; }
 .journey-lines { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; pointer-events: none; }
 .journey-lines path { fill: none; stroke: #5a82b6; stroke-width: 1.4px; vector-effect: non-scaling-stroke; stroke-dasharray: 7 9; opacity: .6; animation: journey-trace 14s linear infinite; }
 .journey-lines path:nth-child(2) { stroke: #334f73; stroke-dasharray: 2 7; animation-duration: 22s; }
-.journey-core { position: absolute; z-index: 2; left: 2.5rem; top: 1.8rem; padding-left: 1.2rem; border-left: 3px solid #75c6df; }
+.journey-lines .journey-spoke { stroke: #75c6df; stroke-dasharray: 4 8; opacity: .72; animation-duration: 10s; }
+.journey-core { position: absolute; z-index: 2; left: 50%; top: 50%; width: 240px; max-width: 28%; padding: 1.1rem; transform: translate(-50%, -50%); border: 1px solid #75c6df; background: #111b2b; box-shadow: 0 0 32px #4da3ff22; text-align: center; }
 .journey-core > span { color: var(--lh-text); font: 800 clamp(1.2rem, 2vw, 2rem)/1.05 ui-sans-serif, system-ui, sans-serif; letter-spacing: -.05em; }
 .journey-core b { color: #75c6df; }
 .journey-node { position: absolute; z-index: 3; min-width: 132px; padding: .7rem 1rem; border: 1px solid #4da3ff77; border-radius: 0; background: #111b2bee; color: var(--lh-text); font: 800 clamp(.9rem, 1.3vw, 1.2rem) ui-sans-serif, system-ui, sans-serif; text-align: left; translate: -50% -50%; transition: transform .22s, border-color .22s, box-shadow .22s; animation: journey-arrive .55s both; }
@@ -274,7 +275,7 @@ button { font: inherit; cursor: pointer; }
   .scene:has(.diagram-stage) .scene-content, .scene:has(.journey-map) .scene-content { display: block; }
   .journey-map { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: .65rem; min-height: 0; }
   .journey-lines { display: none; }
-  .journey-core { position: relative; grid-column: 1 / -1; left: auto; top: auto; padding: .6rem .8rem; }
+  .journey-core { position: relative; grid-column: 1 / -1; left: auto; top: auto; width: auto; max-width: none; padding: .6rem .8rem; transform: none; }
   .journey-node { position: static; min-width: 0; width: 100%; padding: .55rem .45rem; translate: none; font-size: .78rem; }
   .journey-insight { position: static; grid-column: 1 / -1; margin: .5rem; }
   .scene[data-scene="04-guardarrailes"] h1, .scene[data-scene="06-sdd"] h1 { font-size: clamp(1.65rem, 7.5vw, 3rem); }

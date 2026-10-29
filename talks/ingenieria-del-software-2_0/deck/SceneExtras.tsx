@@ -41,7 +41,7 @@ export function JourneyMap({ language }: { language: Language }) {
     event.currentTarget.style.removeProperty('--spot-y')
   }}>
     <div className="journey-core"><span>SOFTWARE ENGINEERING <b>2.0</b></span></div>
-    <svg className="journey-lines" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path d="M50 15 L77 25 L84 53 L68 79 L32 79 L16 53 L23 25 Z" /><path d="M50 15 L84 53 L32 79 L23 25 L77 25 L68 79 L16 53 Z" /></svg>
+    <svg className="journey-lines" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path d="M50 15 L77 25 L84 53 L68 79 L32 79 L16 53 L23 25 Z" /><path d="M50 15 L84 53 L32 79 L23 25 L77 25 L68 79 L16 53 Z" />{positions.map(([x, y], i) => <path className="journey-spoke" d={`M50 50 L${x} ${y}`} key={i} />)}</svg>
     {stages.map(([label], i) => <button key={label} type="button" className="journey-node" data-active={active === i} style={{ left: `${positions[i][0]}%`, top: `${positions[i][1]}%`, animationDelay: `${i * 90}ms` }} aria-pressed={active === i} aria-label={`${label}. ${stages[i][1]}`} onMouseEnter={() => setActive(i)} onFocus={() => setActive(i)} onClick={() => setActive(i)}><span aria-hidden="true">◆</span>{label}</button>)}
     <p className="journey-insight" aria-live="polite">{active === null ? (en ? 'Everything is connected.' : 'Todo está interconectado.') : stages[active][1]}</p>
   </section>
