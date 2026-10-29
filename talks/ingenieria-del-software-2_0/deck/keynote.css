@@ -128,23 +128,26 @@ button { font: inherit; cursor: pointer; }
 .video-panel iframe { width: min(100%,800px); aspect-ratio: 16/9; border: 0; }
 .comparison-next { position: relative; margin: 1rem 0 3rem; padding: .7rem 1rem; border: 1px solid var(--lh-action); border-radius: 0; background: var(--lh-surface); color: var(--lh-text); font: 700 .85rem ui-monospace, monospace; }
 .comparison-next:hover { background: #1b4365; }
-.guardrail-definition { max-width: 66ch; margin: 0 0 1.4rem; color: var(--lh-text-muted); font-size: clamp(1.15rem, 1.8vw, 1.7rem); }
+.guardrail-definition { max-width: 66ch; margin: 0 0 .8rem; color: var(--lh-text-muted); font-size: clamp(1.15rem, 1.8vw, 1.7rem); }
 [data-scene="04-guardarrailes"] .scene-grid { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 3vw; }
-[data-scene="04-guardarrailes"] .scene-grid section { display: block; min-width: 0; padding-top: 1.5rem; }
+[data-scene="04-guardarrailes"] .scene-grid section { display: block; min-width: 0; padding-top: .55rem; border-top-color: #75c6df; }
 [data-scene="04-guardarrailes"] .scene-grid section:nth-child(2) { border-top-color: #f0aa7a; }
-[data-scene="04-guardarrailes"] .scene-grid h2 { font-size: clamp(2.4rem, 4vw, 4.5rem); }
-[data-scene="04-guardarrailes"] .guardrail-trait { display: flex; flex-wrap: wrap; align-items: baseline; gap: .5rem 1.2rem; margin: 0 0 .9rem; }
-[data-scene="04-guardarrailes"] .guardrail-trait strong { color: #75c6df; font-size: clamp(1.5rem, 2.5vw, 2.7rem); }
-[data-scene="04-guardarrailes"] .scene-grid section:nth-child(2) .guardrail-trait strong { color: #f0aa7a; }
-[data-scene="04-guardarrailes"] .guardrail-trait span { color: var(--lh-text-muted); font: 700 clamp(.8rem, 1vw, 1rem) ui-monospace, monospace; text-transform: uppercase; letter-spacing: .08em; }
-[data-scene="04-guardarrailes"] .scene-grid ul { columns: 1; font-size: clamp(1.1rem, 1.75vw, 1.6rem); line-height: 1.55; }
+[data-scene="04-guardarrailes"] .guardrail-kind { display: block; color: #75c6df; font: 700 .8rem/1.1 ui-monospace, monospace; text-transform: uppercase; letter-spacing: .08em; }
+[data-scene="04-guardarrailes"] .scene-grid h2 { margin: .1rem 0 0; font-size: clamp(2.2rem, 3.5vw, 3.5rem); line-height: 1; }
+[data-scene="04-guardarrailes"] .scene-grid .guardrail-action { margin: 0 0 .35rem; color: #75c6df; font: 800 clamp(1.4rem, 2.25vw, 2.2rem)/1.05 ui-sans-serif, system-ui, sans-serif; }
+[data-scene="04-guardarrailes"] .scene-grid section:nth-child(2) .guardrail-kind, [data-scene="04-guardarrailes"] .scene-grid section:nth-child(2) .guardrail-action { color: #f0aa7a; }
+[data-scene="04-guardarrailes"] .scene-grid section > p:not(.guardrail-action) { margin: .25rem 0 .5rem; font-size: clamp(1rem, 1.5vw, 1.25rem); line-height: 1.35; }
+[data-scene="04-guardarrailes"] .scene-grid ul { columns: 1; margin: .2rem 0 0; font-size: clamp(1rem, 1.5vw, 1.25rem); line-height: 1.4; }
+[data-scene="04-guardarrailes"] .scene-grid li { font-size: inherit; }
+[data-scene="04-guardarrailes"] .scene-grid li::marker { color: #75c6df; font-size: .8em; }
 [data-scene="04-guardarrailes"] .scene-grid section:nth-child(2) li::marker { color: #f0aa7a; }
 [data-scene="04-guardarrailes"] .scene-grid section { visibility: hidden; opacity: 0; animation: none; }
 [data-scene="04-guardarrailes"][data-stage="1"] .scene-grid section:first-child, [data-scene="04-guardarrailes"][data-stage="2"] .scene-grid section { visibility: visible; opacity: 1; }
 [data-scene="04-guardarrailes"][data-stage="1"] .scene-grid section:first-child, [data-scene="04-guardarrailes"][data-stage="2"] .scene-grid section:nth-child(2) { animation: guardrail-enter .45s ease-out both; }
 [data-scene="04-guardarrailes"][data-stage="1"] .scene-grid section:first-child > *, [data-scene="04-guardarrailes"][data-stage="1"] .scene-grid section:first-child li, [data-scene="04-guardarrailes"][data-stage="2"] .scene-grid section:nth-child(2) > *, [data-scene="04-guardarrailes"][data-stage="2"] .scene-grid section:nth-child(2) li { animation: guardrail-enter .4s ease-out both; }
-[data-scene="04-guardarrailes"] .scene-grid section .guardrail-trait { animation-delay: .2s; }
-[data-scene="04-guardarrailes"] .scene-grid section > p:not(.guardrail-trait) { animation-delay: .45s; }
+[data-scene="04-guardarrailes"] .scene-grid section h2 { animation-delay: .1s; }
+[data-scene="04-guardarrailes"] .scene-grid section .guardrail-action { animation-delay: .2s; }
+[data-scene="04-guardarrailes"] .scene-grid section > p:not(.guardrail-action) { animation-delay: .45s; }
 [data-scene="04-guardarrailes"] .scene-grid section ul { animation-delay: .7s; }
 [data-scene="04-guardarrailes"] .scene-grid section li:nth-child(1) { animation-delay: .8s; }
 [data-scene="04-guardarrailes"] .scene-grid section li:nth-child(2) { animation-delay: 1s; }
