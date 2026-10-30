@@ -2,6 +2,10 @@
 
 Un repaso del ciclo de vida del software con mecanismos para domar a la IA en cada fase. Los guardarraíles se presentan una vez, junto a la preparación del repo, y reaparecen donde actúan (citas en CI, tests).
 
+## Próximo refinamiento (pendiente de revisión)
+
+Orden propuesto: intención → arquitectura → guardarraíles → código → evidencia → entrega → mantenimiento. Antes de mover escenas, revisar con el ponente qué ejemplos se solapan, dónde saltar del workflow a review/tests/evidencias y cómo cerrar el bucle de mantenimiento. El deck publicado conserva por ahora el orden anterior.
+
 ## Bloques y tiempos (60 min)
 
 | Bloque | Diapositivas | Minutos |
