@@ -32,14 +32,14 @@ npm ci --ignore-scripts
 npm run dev
 ```
 
-Use Node 22.18+ for native TypeScript support in the Node tests (Node 24 is also supported). The root npm lock is the only active dependency graph; all dependencies resolve from the public npm registry. Installation does not require lifecycle scripts, private repository credentials or talk-local dependencies. The build never installs packages.
+Use Node 24 for the Node tests' native TypeScript support. The root npm lock is the only active dependency graph; all dependencies resolve from the public npm registry. Installation does not require lifecycle scripts, private repository credentials or talk-local dependencies. The build never installs packages.
 
 ```bash
 npm run verify
 npm run preview
 ```
 
-`npm run verify` runs the Lighthouse baseline check, static build and complete test suite. `npm run build` checks both talk graphs, builds the catalogue and the Spanish talk's independent Vite entry, and emits/validates five physical HTML entries plus `dist/site-manifest.json`. `npm test` requires that build and Chromium at `/usr/bin/chromium` (configured explicitly in `playwright.config.mjs`); it runs unit, full-build failure, static-only browser and every-scene accessibility checks. Test tooling is development-only. Reports/captures go to ignored `test-reports/` and `test-results/`.
+`npm run verify` runs the Lighthouse baseline check, static build and complete test suite. `npm run build` checks both talk graphs, builds the catalogue and the bilingual talk's independent Vite entry, and emits/validates five physical HTML entries plus `dist/site-manifest.json`. `npm test` requires that build and Chromium (system or Playwright-installed); it runs unit, full-build failure, static-only browser and representative accessibility checks. Test tooling is development-only. Reports/captures go to ignored `test-reports/` and `test-results/`.
 
 ### Ordinary static hosting
 
@@ -53,13 +53,13 @@ Open `http://127.0.0.1:4173`. This server serves only `dist/`, supports director
 
 The catalogue is deployed as a static-assets Worker, not Pages. `wrangler.jsonc` declares the Worker and serves the already verified `dist/` directory; Wrangler does not need to detect Vite or rewrite the build configuration. In Workers Builds, use `npm ci --ignore-scripts` for the install command, `npm run build` for the build command, and `npm run deploy` for the deploy command. The deploy command requires no extra build, so strict static verification runs once before upload. Missing paths remain 404s.
 
-Supported entries: `/`, `/software-engineering-2_0/`, `/soft-and-hard-guardrails/`, and `/decks/<published-slug>/` for both talks. Canonical and legacy entries show the same full experience, not a presentation iframe. Deep links use `#scene=<stable-id>`; absent/unknown scene fragments select the cover. Old undocumented Slidev numeric subroutes are not supported.
+Supported entries: `/`, `/software-engineering-2_0/`, `/soft-and-hard-guardrails/`, and `/decks/<published-slug>/` for both talks. Canonical and legacy entries show the same full experience, not a presentation iframe. The software-engineering talk defaults to Spanish; its cover switches between ES and EN without leaving the page. Share an English scene with `?lang=en#scene=<stable-id>`. Absent/unknown scene fragments select the cover. Old undocumented Slidev numeric subroutes are not supported.
 
 ### Reading and presenting
 
-Use Previous/Next or ArrowRight/PageDown and ArrowLeft/PageUp on noninteractive surfaces. Navigation stops at the ends. Space and Up/Down keep their scrolling behavior; links, buttons, editable fields, media and ARIA widgets keep their own keys. Only the current scene is mounted. Controls retain focus; when the focused navigation button becomes disabled at a boundary, focus moves to the other enabled navigation button. A focused descendant removed by scene navigation transfers focus to the new heading. Long content scrolls normally; code/tables have labelled scroll regions. The English talk retains system/dark/light appearance; the Spanish keynote owns a dark visual identity and browser fullscreen controls. Reduced motion disables scene animation. Overview/map, source and catalog links remain available.
+The bilingual keynote uses ArrowRight/PageDown and ArrowLeft/PageUp, or horizontal touch swipes, without visible navigation controls. Navigation stops at the ends. Space and Up/Down keep their scrolling behavior; links, buttons, editable fields, media and ARIA widgets keep their own keys. The guardrail and test-pyramid scenes have two stages; advance once to reveal the second stage, then again for the next scene. Only the current scene is mounted. A focused descendant removed by scene navigation transfers focus to the new heading. Long content scrolls normally; code has a labelled scroll region. A translucent lower-right HUD shows whole minutes elapsed, slide number and a decorative four-second loading bar that restarts on each slide; the EN/ES selector appears only on the cover. Interactive diagrams reveal details next to each node on hover, focus or tap. Reduced motion disables scene animation. Use the browser's fullscreen shortcut (F11) when presenting. The other English talk retains its own system/dark/light appearance and controls.
 
-The Spanish closing video is externally hosted on YouTube and needs a connection; it has a named player, source link and persistent contextual fallback. No media fetch is required to build. The Spanish talk publishes the ten original owner-approved assets, including primary diagrams and an opt-in, stoppable GIF demo with static steps. See each talk's coverage map for the exact migration baseline and asset decisions.
+The closing video is externally hosted on YouTube and needs a connection; it has a named player, source link and persistent contextual fallback. No media fetch is required to build. The bilingual page publishes the ten original owner-approved assets, including links to source diagrams and a stoppable GIF demo with static steps. The GIF does not start with reduced motion enabled. See each talk's coverage map for the exact migration baseline and asset decisions.
 
 ### Delivery status and verification
 
