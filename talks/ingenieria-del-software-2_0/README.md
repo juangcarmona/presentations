@@ -15,7 +15,7 @@ Un repaso del ciclo de vida del software con mecanismos para domar a la IA en ca
 | Abstract, Sessionize y anuncios | [`content/abstract.md`](content/abstract.md) |
 | Narrativa y tiempos | [`content/narrative.md`](content/narrative.md) |
 | Fuentes externas | [`research/sources.md`](research/sources.md) |
-| Las 24 escenas editables en ES y EN | [`deck/experience.tsx`](deck/experience.tsx), [`deck/experience-en.tsx`](deck/experience-en.tsx) |
+| Las escenas editables en ES y EN | [`deck/experience.tsx`](deck/experience.tsx), [`deck/experience-en.tsx`](deck/experience-en.tsx) |
 | Presentador y estilo independiente | [`deck/Presentation.tsx`](deck/Presentation.tsx), [`deck/keynote.css`](deck/keynote.css) |
 | Diagramas interactivos propios | [`deck/Diagrams.tsx`](deck/Diagrams.tsx) |
 | Escenas de repositorio, SDD, consola y arc42 | [`deck/SceneExtras.tsx`](deck/SceneExtras.tsx) |

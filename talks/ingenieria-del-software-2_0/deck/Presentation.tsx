@@ -1,6 +1,6 @@
 import { useEffect, useLayoutEffect, useRef, useState } from 'react'
 import { handlesShortcut, interactiveSelector, nextIndex, sceneIndex } from '../../../src/scene-navigation'
-import spanish, { presentationImages } from './experience'
+import spanish, { chapterForScene, presentationImages } from './experience'
 import english from './experience-en'
 
 export default function Presentation() {
@@ -102,7 +102,7 @@ export default function Presentation() {
       {scene.id === '20-piramide' && <button className="comparison-next" type="button" onClick={() => setComparisonStage(comparisonStage === 0 ? 1 : 0)}>{comparisonStage === 0 ? (language === 'en' ? 'Show now →' : 'Mostrar ahora →') : (language === 'en' ? '← Show before' : '← Mostrar antes')}</button>}
     </article>
     <div className="presentation-hud" role="group" aria-label={language === 'en' ? `Slide ${index + 1} of ${scenes.length}` : `Diapositiva ${index + 1} de ${scenes.length}`}>
-      <span className="slide-number" aria-hidden="true">{index + 1}</span>
+      {chapterForScene(scene.id, language) && <span className="slide-number" aria-hidden="true">{chapterForScene(scene.id, language)}</span>}
       {elapsedMinutes > 0 && <time className="elapsed-clock" dateTime={`PT${elapsedMinutes}M`} aria-label={language === 'en' ? `${elapsedMinutes} minutes elapsed` : `${elapsedMinutes} minutos transcurridos`}>{String(Math.floor(elapsedMinutes / 60)).padStart(2, '0')}:{String(elapsedMinutes % 60).padStart(2, '0')}</time>}
     </div>
     {index === 0 && <nav className="language-picker" aria-label={language === 'en' ? 'Presentation language' : 'Idioma de la presentación'}>

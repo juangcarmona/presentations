@@ -84,6 +84,40 @@ const diagrams: Record<string, DiagramSpec> = {
     ],
     edges: [[0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [5, 0]],
   },
+  '20a-evidencia': {
+    name: ['Review, tests y evidencia', 'Review, tests and evidence'],
+    caption: ['CI aporta señales; una persona revisa el cambio, sus riesgos y su evidencia.', 'CI provides signals; a person reviews the change, its risks and its evidence.'],
+    nodes: [
+      { id: 'change', x: 14, y: 46, label: ['Cambio · PR', 'Change · PR'], detail: ['El diff muestra qué se ha modificado y qué decisión lo justifica.', 'The diff shows what changed and which decision justifies it.'], tone: 'violet' },
+      { id: 'tests', x: 38, y: 46, label: ['Tests', 'Tests'], detail: ['Unitarios, integración y escenarios de comportamiento comprueban aspectos distintos.', 'Unit, integration and behaviour scenarios check different aspects.'], tone: 'teal' },
+      { id: 'evidence', x: 62, y: 46, label: ['Evidencia', 'Evidence'], detail: ['Resultados, trazabilidad, validaciones y riesgos quedan adjuntos al cambio.', 'Results, traceability, checks and risks accompany the change.'], tone: 'cyan' },
+      { id: 'review', x: 86, y: 46, label: ['Review humano', 'Human review'], detail: ['Una persona decide si la evidencia basta y si el cambio merece integrarse.', 'A person decides whether the evidence is sufficient and whether to integrate the change.'], tone: 'amber', human: true },
+    ],
+    edges: [[0, 1], [1, 2], [2, 3]],
+  },
+  '18-entrega': {
+    name: ['Del candidato a producción', 'From candidate to production'],
+    caption: ['El merge no es el final: cada entorno exige señales, una decisión y una salida segura.', 'Merge is not the end: each environment needs signals, a decision and a safe exit.'],
+    nodes: [
+      { id: 'artifact', x: 13, y: 45, label: ['Artefacto', 'Artifact'], detail: ['Construcción versionada y reproducible; no se recompila a escondidas entre entornos.', 'A versioned, reproducible build; no hidden rebuild between environments.'], tone: 'violet' },
+      { id: 'development', x: 37, y: 45, label: ['Desarrollo', 'Development'], detail: ['Despliegue y comprobaciones tempranas de configuración e integración.', 'Deploy and check configuration and integration early.'], tone: 'blue' },
+      { id: 'staging', x: 62, y: 45, label: ['Preproducción', 'Staging'], detail: ['Ensayo de la versión candidata en condiciones cercanas a producción; se evalúa la evidencia.', 'Rehearse the candidate near production conditions; assess the evidence.'], tone: 'cyan' },
+      { id: 'production', x: 87, y: 45, label: ['Producción', 'Production'], detail: ['Una persona autoriza cuando procede; se observa el resultado y existe plan de reversión.', 'A person authorises when appropriate; observe the result and have a rollback plan.'], tone: 'green', human: true },
+    ],
+    edges: [[0, 1], [1, 2], [2, 3]],
+    edgeLabels: [{ x: 50, y: 35, label: ['gates', 'gates'] }, { x: 75, y: 35, label: ['decisión', 'decision'] }],
+  },
+  '18b-mantenimiento': {
+    name: ['Producción devuelve aprendizaje', 'Production returns learning'],
+    caption: ['Mantener no es parchear sin rumbo: observar, decidir, cambiar y volver a validar.', 'Maintenance is not aimless patching: observe, decide, change and validate again.'],
+    nodes: [
+      { id: 'signals', x: 18, y: 38, label: ['Señales', 'Signals'], detail: ['Incidentes, uso real, rendimiento, seguridad y feedback muestran qué está pasando.', 'Incidents, real usage, performance, security and feedback show what is happening.'], tone: 'cyan' },
+      { id: 'triage', x: 43, y: 38, label: ['Triage humano', 'Human triage'], detail: ['Una persona distingue un fallo, deuda técnica y una necesidad nueva; decide prioridad.', 'A person distinguishes failure, technical debt and a new need; decides priority.'], tone: 'amber', human: true },
+      { id: 'change', x: 70, y: 38, label: ['Cambio propuesto', 'Proposed change'], detail: ['La propuesta vuelve a intención y arquitectura si altera producto o sistema.', 'The proposal returns to intent and architecture if it changes the product or system.'], tone: 'violet' },
+      { id: 'verify', x: 70, y: 73, label: ['Verificar', 'Verify'], detail: ['Tests, review y evidencias confirman la corrección antes de volver a desplegar.', 'Tests, review and evidence confirm the correction before redeployment.'], tone: 'teal' },
+    ],
+    edges: [[0, 1], [1, 2], [2, 3], [3, 0]],
+  },
   '21-vista-global': {
     name: ['La ingeniería alrededor de una decisión humana', 'Engineering around human judgment'],
     caption: ['La IA acelera el trabajo. La decisión sigue siendo nuestra.', 'AI accelerates the work. The decision remains ours.'],
@@ -112,13 +146,15 @@ const diagrams: Record<string, DiagramSpec> = {
     caption: ['La IA acelera. Nosotros respondemos por el resultado.', 'AI accelerates. We own the outcome.'],
     nodes: [
       { id: 'decision', x: 50, y: 49, label: ['Juicio humano', 'Human judgment'], detail: ['El agente propone; una persona decide y responde por lo entregado.', 'The agent proposes; a person decides and owns what ships.'], accent: true },
-      { id: 'product', x: 20, y: 24, label: ['Producto', 'Product'], detail: ['Decidir qué producto queremos.', 'Decide which product we want.'] },
-      { id: 'definition', x: 50, y: 16, label: ['Definición', 'Definition'], detail: ['Aceptar o rechazar cada cambio de definición.', 'Accept or reject every definition change.'] },
-      { id: 'guardrails', x: 80, y: 24, label: ['Guardarraíles', 'Guardrails'], detail: ['Elegir qué reglas merecen ser duras.', 'Choose which rules deserve hard enforcement.'] },
-      { id: 'evidence', x: 25, y: 78, label: ['Evidencia', 'Evidence'], detail: ['Juzgar las pruebas, no solo mirarlas.', 'Judge the proof, not just glance at it.'] },
-      { id: 'responsibility', x: 75, y: 78, label: ['Responsabilidad', 'Responsibility'], detail: ['Responder de lo que se entrega.', 'Own what we ship.'] },
+      { id: 'intent', x: 50, y: 14, label: ['Intención', 'Intent'], detail: ['Decidir qué producto queremos y para quién.', 'Decide what product we want and for whom.'], tone: 'teal' },
+      { id: 'architecture', x: 78, y: 25, label: ['Arquitectura', 'Architecture'], detail: ['Elegir límites, responsabilidades y compromisos técnicos.', 'Choose boundaries, responsibilities and technical trade-offs.'], tone: 'violet' },
+      { id: 'guardrails', x: 85, y: 53, label: ['Guardarraíles', 'Guardrails'], detail: ['Decidir qué reglas guían y cuáles bloquean.', 'Decide which rules guide and which block.'], tone: 'pink' },
+      { id: 'code', x: 68, y: 79, label: ['Código', 'Code'], detail: ['Revisar si la implementación expresa la decisión aceptada.', 'Review whether the implementation expresses the accepted decision.'], tone: 'green' },
+      { id: 'evidence', x: 32, y: 79, label: ['Evidencia', 'Evidence'], detail: ['Juzgar si tests, review y resultados prueban lo suficiente.', 'Judge whether tests, review and results prove enough.'], tone: 'blue' },
+      { id: 'delivery', x: 15, y: 53, label: ['Entrega', 'Delivery'], detail: ['Autorizar el despliegue cuando proceda y responder de su impacto.', 'Authorise deployment when appropriate and own its impact.'], tone: 'orange' },
+      { id: 'maintenance', x: 22, y: 25, label: ['Mantenimiento', 'Maintenance'], detail: ['Priorizar señales de producción y decidir el siguiente cambio.', 'Prioritise production signals and decide the next change.'], tone: 'cyan' },
     ],
-    edges: [[1, 0], [2, 0], [3, 0], [4, 0], [5, 0]],
+    edges: [[1, 0], [2, 0], [3, 0], [4, 0], [5, 0], [6, 0], [7, 0]],
   },
 }
 

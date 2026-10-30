@@ -58,6 +58,7 @@ const experience: Experience = { language: 'es', scenes: [
   { id: '06a-openspec', title: 'OpenSpec', content: <></> },
   { id: '06b-spec-kit', title: 'GitHub Spec Kit', content: <></> },
   { id: '06c-kiro', title: 'Kiro', content: <></> },
+  { id: '06d-codigo', title: 'Del criterio al código', content: <div className="code-bridge"><Code label="Ejemplo ilustrativo de implementación">{'// BR-REFUND-001 · regla aceptada\nexport function canRefund(\n  daysSinceDelivery: number,\n  windowDays: number\n) {\n  return daysSinceDelivery <= windowDays\n}'}</Code><div className="code-bridge-notes"><p><strong>Intención</strong> · la regla define el comportamiento y sus límites.</p><p><strong>Arquitectura</strong> · decide dónde vive esta decisión.</p><p><strong>Evidencia</strong> · tests de borde: día 29, día 30 y día 31.</p></div></div> },
   { id: '07-gaps', title: 'Las specs no son la fuente de verdad', content: <><Code label="Tres definiciones divergentes">{'$ grep -rn -i "refund" openspec/specs\nbilling:   Refunds are issued for purchases made in the last 30 days.\ncheckout:  Customers can request a refund within 30 days of delivery.\nsupport:   If the order is less than a month old, offer a refund.'}</Code><h2>Caso real · 160 specs con OpenSpec</h2><blockquote>«Forbidden and mandatory, same file, same day, both marked MUST.»</blockquote><p>Dos modelos del mismo IVA, el esquema equivocado en runtime y un agujero de seguridad · <a href="https://jgcarmona.com/en/i-tried-to-prove-pdac-wrong/">I Tried to Prove PDaC Wrong</a></p></> },
   { id: '08-dimensiones', title: 'Dos fuentes de verdad', content: <div className="scene-grid"><section><h2>Producto · El QUÉ</h2><p><code>docs/product/</code></p><ul><li>Reglas de negocio</li><li>Journeys y casos de uso</li><li>Comportamiento estructurado</li><li>PDaC · ProductShape</li></ul></section><section><h2>Arquitectura · El CÓMO</h2><p><code>docs/architecture/</code></p><ul><li>Contexto y bloques</li><li>Conceptos transversales</li><li>Decisiones (ADRs)</li><li>Requisitos de calidad</li><li>arc42</li></ul></section></div> },
   { id: '09-intencion', title: 'Escribíamos el qué… y lo abandonábamos', content: <><p className="scene-lede">Ahora puede ser nuestra fuente de verdad. La mantenemos con ayuda de la IA, pero con reglas que no dependen de ella.</p><Citation href="https://pdac.dev/">Product Definition as Code</Citation></> },
@@ -70,6 +71,9 @@ const experience: Experience = { language: 'es', scenes: [
   { id: '17-flujo-agentico', title: 'Un flujo agéntico de principio a fin', content: <><Flow label="Ciclo de vida de agentic-sdlc" items={['Backlog', 'Refine → Ready · verifica un agente', 'Propose → Planned · verifica una persona', 'Implement → Done · verifican CI y una persona', 'Integrate', 'Review → vuelve al backlog']} /><p>agentic-sdlc · <a href="https://github.com/juangcarmona/agent-toolkit">github.com/juangcarmona/agent-toolkit</a></p><p>adopt descubre las herramientas del proyecto. done-gate-auditor revisa el diff fuera del contexto de quien lo escribió.</p></> },
   { id: '19-validacion', title: 'Del comportamiento estructurado al test', content: <><Code label="Escenarios de la ventana de devolución">{'@BR-REFUND-001\nFeature: Ventana de devolución\n\n  Scenario: Dentro de plazo\n    Given un pedido entregado hace 29 días\n    When el cliente pide la devolución\n    Then se acepta\n\n  Scenario: Fuera de plazo\n    Given un pedido entregado hace 31 días\n    Then se rechaza'}</Code><Flow label="Trazabilidad de la validación" items={['Structured behaviour (PDaC)', 'Criterios Given / When / Then en el backlog', 'Gherkin etiquetado con la regla', 'Tests e2e ejecutables', 'Evidencia']} /></> },
   { id: '20-piramide', title: 'La pirámide cambia de forma', content: <><div className="scene-grid"><section><h2>Antes</h2><div className="test-shape before"><p>E2E</p><p>Integración</p><p>Unitarios</p></div><p>Pocos e2e: caros de crear y de mantener</p></section><section><h2>Ahora</h2><div className="test-shape after"><p>E2E desde la intención</p><p>Integración</p><p>Unitarios</p></div><p>Producto y arquitectura como fuente de verdad</p></section></div><p>Los unitarios siguen siendo la base. Reparar la ejecución de un test nunca debe debilitar el escenario.</p></> },
+  { id: '20a-evidencia', title: 'Un cambio no termina al compilar', content: <></> },
+  { id: '18-entrega', title: 'Entregar es desplegar con control', content: <></> },
+  { id: '18b-mantenimiento', title: 'Operar, aprender, volver a decidir', content: <></> },
   { id: '20b-power-bi-fabric', title: 'Una métrica. Tres respuestas.', content: <><Code label="Tres definiciones de ventas netas">{'$ rg "ventas_netas" .\nfinanzas:  bruto - devoluciones - descuentos\ncomercial: bruto - descuentos\ncierre:    sum(facturado)  # sin abonos'}</Code><div className="scene-grid"><section><h2>El problema</h2><p>Tres consumidores calculan la misma métrica de tres formas.</p></section><section><h2>La decisión</h2><p>Definir el KPI una vez, con ID estable; el código y los informes citan esa definición.</p></section></div></> },
   { id: '21-vista-global', title: 'El sistema, de un vistazo', content: <Diagram id="21-vista-global" language="es" /> },
   { id: '22-nosotros', title: 'Lo que sigue dependiendo de nosotros', content: <dl className="scene-list"><dt>Producto</dt><dd>Decidir qué producto queremos</dd><dt>Definición</dt><dd>Aceptar o rechazar cada cambio de definición</dd><dt>Guardarraíles</dt><dd>Elegir qué reglas merecen ser duras</dd><dt>Evidencia</dt><dd>Juzgar la evidencia, no solo mirarla</dd><dt>Responsabilidad</dt><dd>Responder de lo que se entrega</dd></dl> },
@@ -85,6 +89,21 @@ const figures: Record<string, string> = {
   '17-flujo-agentico': lifecycle,
 }
 
+export const chapters = [
+  { label: ['Intención', 'Intent'], ids: ['08-dimensiones', '07-gaps', '09-intencion', '10-autoridad', '11-modelo', '12-origen', '13-productshape'] },
+  { label: ['Arquitectura', 'Architecture'], ids: ['16-arc42'] },
+  { label: ['Guardarraíles', 'Guardrails'], ids: ['04-guardarrailes'] },
+  { label: ['Código', 'Code'], ids: ['03-repo', '05-estructura', '06-sdd', '06a-openspec', '06b-spec-kit', '06c-kiro', '06d-codigo'] },
+  { label: ['Evidencia', 'Evidence'], ids: ['19-validacion', '20-piramide', '20a-evidencia'] },
+  { label: ['Entrega', 'Delivery'], ids: ['17-flujo-agentico', '18-entrega'] },
+  { label: ['Mantenimiento', 'Maintenance'], ids: ['18b-mantenimiento', '15-workflow'] },
+] as const
+
+export function chapterForScene(id: string, language: 'es' | 'en') {
+  const chapter = chapters.find(section => (section.ids as readonly string[]).includes(id))
+  return chapter?.label[language === 'en' ? 1 : 0] ?? (['02-recorrido', '21-vista-global', '22-nosotros'].includes(id) ? (language === 'en' ? '7 STAGES' : '7 ETAPAS') : null)
+}
+
 export function decorateExperience(source: Experience) {
 for (const scene of source.scenes) {
   const figure = figures[scene.id]
@@ -92,7 +111,8 @@ for (const scene of source.scenes) {
   if (['08-dimensiones', '22-nosotros'].includes(scene.id)) scene.content = <Diagram id={scene.id} language={source.language} />
   if (scene.id === '02-recorrido') scene.content = <JourneyMap language={source.language} />
   if (scene.id === '05-estructura') scene.content = <RepoStructure language={source.language} />
-  if (scene.id.startsWith('06')) scene.content = <SddOverview language={source.language} view={scene.id === '06-sdd' ? 'general' : scene.id === '06a-openspec' ? 'openspec' : scene.id === '06b-spec-kit' ? 'spec-kit' : 'kiro'} />
+  if (['06-sdd', '06a-openspec', '06b-spec-kit', '06c-kiro'].includes(scene.id)) scene.content = <SddOverview language={source.language} view={scene.id === '06-sdd' ? 'general' : scene.id === '06a-openspec' ? 'openspec' : scene.id === '06b-spec-kit' ? 'spec-kit' : 'kiro'} />
+  if (['20a-evidencia', '18-entrega', '18b-mantenimiento'].includes(scene.id)) scene.content = <Diagram id={scene.id} language={source.language} />
   if (scene.id === '07-gaps') scene.content = <TerminalCase language={source.language} variant="specs" />
   if (scene.id === '12-origen') scene.content = <OriginsMap language={source.language} />
   if (scene.id === '16-arc42') scene.content = <Arc42Overview language={source.language} />
@@ -102,6 +122,13 @@ for (const scene of source.scenes) {
   if (scene.id === '13-productshape') scene.content = <Demo language={source.language} />
   if (scene.id === '24-fin') scene.content = <div className="closing-layout"><img className="speaker-portrait" src={portrait} alt="Juan G. Carmona" /><div><p className="scene-lede">{source.language === 'en' ? 'Questions?' : '¿Preguntas?'}</p><p>Software Architect · AI Strategist · Plain Concepts</p><ul><li><a href="https://jgcarmona.com/">jgcarmona.com</a></li><li><a href="https://linkedin.com/in/juangcarmona">linkedin.com/in/juangcarmona</a></li><li><a href="https://pdac.dev/">pdac.dev</a></li></ul></div></div>
 }
+const order = ['cover', '02-recorrido', ...chapters.flatMap(chapter => chapter.ids), '21-vista-global', '22-nosotros', '24-fin']
+const byId = new Map(source.scenes.map(scene => [scene.id, scene]))
+source.scenes = order.map(id => {
+  const scene = byId.get(id)
+  if (!scene) throw new Error(`Missing keynote scene: ${id}`)
+  return scene
+})
 return source
 }
 decorateExperience(experience)

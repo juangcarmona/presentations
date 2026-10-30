@@ -14,7 +14,7 @@ button { font: inherit; cursor: pointer; }
 .scene-lede { color: #d7def0; font-size: clamp(1.7rem, 3vw, 3.5rem); line-height: 1.16; letter-spacing: -.035em; max-width: 24em; }
 .presentation-hud { color: var(--lh-text-muted); font: 600 .8rem ui-monospace, monospace; letter-spacing: .04em; pointer-events: none; }
 .slide-number, .elapsed-clock { position: fixed; z-index: 8; right: 5.5vw; opacity: .72; }
-.slide-number { top: 3vh; }
+.slide-number { top: 3vh; max-width: 30vw; color: #aeb9ca; font-size: .7rem; text-align: right; text-transform: uppercase; opacity: .72; }
 .elapsed-clock { bottom: 2.8vh; }
 .language-picker { position: fixed; z-index: 9; left: 5.5vw; bottom: 2.2vh; display: flex; gap: .7rem; }
 .language-picker button { padding: .4rem .15rem; border: 0; background: transparent; color: #8e97a6; font: 700 .8rem ui-monospace, monospace; letter-spacing: .12em; }
@@ -110,9 +110,16 @@ button { font: inherit; cursor: pointer; }
 .journey-lines path { fill: none; stroke: #5a82b6; stroke-width: 1.4px; vector-effect: non-scaling-stroke; stroke-dasharray: 7 9; opacity: .6; animation: journey-trace 14s linear infinite; }
 .journey-lines path:nth-child(2) { stroke: #334f73; stroke-dasharray: 2 7; animation-duration: 22s; }
 .journey-lines .journey-spoke { stroke: #75c6df; stroke-dasharray: 4 8; opacity: .72; animation-duration: 10s; }
-.journey-core { position: absolute; z-index: 2; left: 50%; top: 50%; width: 240px; max-width: 28%; padding: 1.1rem; transform: translate(-50%, -50%); border: 1px solid #75c6df; background: #111b2b; box-shadow: 0 0 32px #4da3ff22; text-align: center; transition: width .25s, background .25s, box-shadow .25s; }
+.journey-core { position: absolute; z-index: 2; left: 50%; top: 50%; width: clamp(250px, 24vw, 370px); max-width: 36%; padding: 1.1rem; transform: translate(-50%, -50%); border: 1px solid #75c6df; background: #111b2b; box-shadow: 0 0 32px #4da3ff22; text-align: center; transition: background .25s, box-shadow .25s; }
 .journey-core[data-active="true"], .journey-core:focus-visible { background: #162940; box-shadow: 0 0 32px #4da3ff55; }
-.journey-core > span { display: block; color: var(--lh-text); font: 800 clamp(1.2rem, 2vw, 2rem)/1.05 ui-sans-serif, system-ui, sans-serif; letter-spacing: -.05em; }
+.journey-core > span { display: block; color: var(--lh-text); font: 800 clamp(1rem, 1.65vw, 1.85rem)/1.08 ui-sans-serif, system-ui, sans-serif; letter-spacing: -.05em; overflow-wrap: normal; word-break: normal; white-space: nowrap; }
+.code-bridge { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(240px, .8fr); gap: clamp(1.5rem, 4vw, 5rem); align-items: center; min-height: 55vh; }
+.code-bridge pre { max-width: 100%; margin: 0; overflow: auto; }
+.code-bridge-notes { display: grid; gap: 1rem; }
+.code-bridge-notes p { margin: 0; padding: .7rem 0 .7rem 1rem; border-left: 3px solid var(--lh-action); color: var(--lh-text-muted); }
+.code-bridge-notes p:nth-child(2) { border-color: #ad9cf7; }
+.code-bridge-notes p:nth-child(3) { border-color: #78d5c0; }
+.code-bridge-notes strong { color: var(--lh-text); }
 .journey-core b { color: #75c6df; }
 .journey-node { position: absolute; z-index: 3; min-width: 132px; padding: .7rem 1rem; border: 1px solid #4da3ff77; border-radius: 0; background: #111b2bee; color: var(--lh-text); font: 800 clamp(.9rem, 1.3vw, 1.2rem) ui-sans-serif, system-ui, sans-serif; text-align: left; translate: -50% -50%; transition: transform .22s, border-color .22s, box-shadow .22s; animation: journey-arrive .55s both; }
 .journey-node span { display: block; margin-bottom: .2rem; color: #75c6df; font: 700 .68rem ui-monospace, monospace; }
@@ -286,6 +293,8 @@ button { font: inherit; cursor: pointer; }
   .journey-lines { display: none; }
   .journey-core { position: relative; grid-column: 1 / -1; left: auto; top: auto; width: auto; max-width: none; padding: .6rem .8rem; transform: none; }
   .journey-core[data-active="true"], .journey-core:focus-visible { width: auto; max-width: none; }
+  .journey-core > span { white-space: normal; }
+  .code-bridge { grid-template-columns: 1fr; min-height: 0; }
   .journey-node { position: static; min-width: 0; width: 100%; padding: .55rem .45rem; translate: none; font-size: .78rem; }
   .journey-insight { position: static; grid-column: 1 / -1; margin: .5rem; }
   .scene[data-scene="04-guardarrailes"] h1, .scene[data-scene="06-sdd"] h1 { font-size: clamp(1.65rem, 7.5vw, 3rem); }

@@ -2,24 +2,23 @@
 
 Un repaso del ciclo de vida del software con mecanismos para domar a la IA en cada fase. Los guardarraíles se presentan una vez, junto a la preparación del repo, y reaparecen donde actúan (citas en CI, tests).
 
-## Próximo refinamiento (pendiente de revisión)
+## Recorrido publicado
 
-Orden propuesto: intención → arquitectura → guardarraíles → código → evidencia → entrega → mantenimiento. Antes de mover escenas, revisar con el ponente qué ejemplos se solapan, dónde saltar del workflow a review/tests/evidencias y cómo cerrar el bucle de mantenimiento. El deck publicado conserva por ahora el orden anterior.
+Intención → arquitectura → guardarraíles → código → evidencia → entrega → mantenimiento. La escena 2 presenta el mapa; cada escena de desarrollo muestra su etapa en la esquina superior derecha. El cierre vuelve al mapa y a la responsabilidad humana en las siete etapas.
 
 ## Bloques y tiempos (60 min)
 
 | Bloque | Diapositivas | Minutos |
 | --- | --- | --- |
-| Portada y recorrido | 1–2 | 2 |
-| Código: preparar el repo, guardarraíles, estructura | 3–5 | 9 |
-| Tendencias: SDD y sus gaps | 6–7 | 6 |
-| Documentación: dos fuentes de verdad | 8 | 3 |
-| Producto: intención, autoridad, modelo, origen, ProductShape + demo, citas, workflow | 9–15 | 17 |
-| Técnica: arc42 | 16 | 4 |
-| Desarrollo: flujo agéntico (agent-toolkit) | 17 | 5 |
-| Validación: de structured behaviour a e2e, la pirámide | 18–19 | 5 |
-| Power BI y Fabric: lo mismo, en su mundo | 20 | 3 |
-| Vista global, lo que depende de nosotros, vídeo, ponente y preguntas | 21–24 | 7 |
+| Portada y recorrido | 1–2 | 3 |
+| Intención: dos fuentes, deriva, PDaC, autoridad, modelo y demo | 3–9 | 15 |
+| Arquitectura: arc42 | 10 | 4 |
+| Guardarraíles | 11 | 4 |
+| Código: repo, estructura, SDD y sus tres implementaciones, ejemplo | 12–18 | 13 |
+| Evidencia: comportamiento, tests, review | 19–21 | 7 |
+| Entrega: ciclo agéntico y despliegue entre entornos | 22–23 | 5 |
+| Mantenimiento: señales y vuelta a la decisión de producto | 24–25 | 5 |
+| Cierre: vista global, responsabilidad humana y preguntas | 26–28 | 4 |
 
 ## Ideas que deben quedar
 
@@ -29,4 +28,5 @@ Orden propuesto: intención → arquitectura → guardarraíles → código → 
 - La intención vuelve a ser fuente de verdad y se gestiona con IA de forma determinista: autoridad en una dirección, aprendizaje en las dos.
 - La documentación técnica (arc42) es la segunda fuente de verdad.
 - Si producto y arquitectura están al día, mantener los e2e deja de ser caro y la pirámide cambia de forma.
+- Un cambio pasa por tests, evidencias y review antes del despliegue; producción devuelve señales que pueden cambiar la intención.
 - La IA cambia cómo ejercemos la profesión, no de quién es la responsabilidad.

@@ -7,9 +7,7 @@ test('catalogue opens one bilingual standalone keynote', async ({ page }) => {
   await expect(page.locator('.keynote')).toBeVisible()
   await expect(page.locator('.topbar, .footer, .site-shell, iframe')).toHaveCount(0)
   await expect(page.locator('.language-picker')).toBeVisible()
-  const number = await page.locator('.slide-number').boundingBox()
-  expect(number.x).toBeGreaterThan(800)
-  expect(number.y).toBeLessThan(100)
+  await expect(page.locator('.slide-number')).toHaveCount(0)
   await expect(page.locator('.elapsed-clock, .hud-track')).toHaveCount(0)
   await page.getByRole('button', { name: 'EN', exact: true }).click()
   await expect(page).toHaveURL(/\/software-engineering-2_0\/\?lang=en$/)
@@ -18,7 +16,7 @@ test('catalogue opens one bilingual standalone keynote', async ({ page }) => {
   await page.locator('#scene-title').focus()
   await page.keyboard.press('ArrowRight')
   await expect(page.locator('.language-picker')).toHaveCount(0)
-  await expect(page.locator('.slide-number')).toHaveText('2')
+  await expect(page.locator('.slide-number')).toHaveText('7 STAGES')
   await page.reload()
   await expect(page.locator('html')).toHaveAttribute('lang', 'en')
   await page.keyboard.press('ArrowLeft')
@@ -64,7 +62,7 @@ test('diagram details stay near their node and phased slides advance locally', a
   await page.keyboard.press('ArrowRight')
   await expect(page.locator('[data-scene="20-piramide"]')).toHaveAttribute('data-stage', '1')
   await page.keyboard.press('ArrowRight')
-  await expect(page).toHaveURL(/#scene=20b-power-bi-fabric$/)
+  await expect(page).toHaveURL(/#scene=20a-evidencia$/)
 })
 
 test('early scenes respond to side clicks, reveal comparison and keep external links in a new tab', async ({ page }) => {
@@ -158,8 +156,11 @@ test('early scenes respond to side clicks, reveal comparison and keep external l
   await expect(page.locator('.journey-insight')).toHaveText('AI lets us improve our SDLC end to end, at every stage.')
 })
 
-test('workflow keeps human acceptance visible and skips the retired citations slide', async ({ page }) => {
+test('workflow keeps human acceptance visible in maintenance', async ({ page }) => {
   await page.goto('/software-engineering-2_0/#scene=13-productshape')
+  await page.keyboard.press('ArrowRight')
+  await expect(page.locator('[data-scene]')).toHaveAttribute('data-scene', '16-arc42')
+  await page.goto('/software-engineering-2_0/#scene=18b-mantenimiento')
   await page.keyboard.press('ArrowRight')
   await expect(page.locator('[data-scene]')).toHaveAttribute('data-scene', '15-workflow')
   await expect(page.locator('#scene-title')).toHaveText('De propuesta a producto aceptado')
@@ -177,15 +178,18 @@ test('workflow keeps human acceptance visible and skips the retired citations sl
 })
 
 test('journey motto stays inside the map without covering a stage', async ({ page }) => {
-  for (const [width, height] of [[1280, 720], [1736, 785]]) {
+  for (const [width, height] of [[1280, 720], [1736, 785], [2078, 1125]]) {
     await page.setViewportSize({ width, height })
     await page.goto('/software-engineering-2_0/#scene=02-recorrido')
     await page.locator('.journey-core').hover()
     const layout = await page.locator('.journey-map').evaluate(map => {
       const panel = map.querySelector('.journey-insight').getBoundingClientRect()
+      const core = map.querySelector('.journey-core')
+      const coreText = core.querySelector('span')
       const frame = map.getBoundingClientRect()
       return {
         inside: panel.left >= frame.left && panel.right <= frame.right && panel.bottom <= frame.bottom,
+        coreFits: coreText.scrollWidth <= core.clientWidth,
         covered: [...map.querySelectorAll('.journey-node')].filter(node => {
           const box = node.getBoundingClientRect()
           return box.left < panel.right && box.right > panel.left && box.top < panel.bottom && box.bottom > panel.top
@@ -193,6 +197,7 @@ test('journey motto stays inside the map without covering a stage', async ({ pag
       }
     })
     expect(layout.inside).toBe(true)
+    expect(layout.coreFits).toBe(true)
     expect(layout.covered).toEqual([])
   }
 })
