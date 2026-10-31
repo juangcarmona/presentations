@@ -4,6 +4,6 @@
   "document-architecture-with-arc42", "guardrails",
   "prepare-repo-for-ai", "repository-structure", "spec-driven-development", "openspec", "github-spec-kit", "kiro",
   "can-we-trust-the-result", "from-pyramid-to-hourglass", "from-structured-behaviour-to-tests",
-  "specs-are-not-source-of-truth", "define-once-cite-everywhere", "agentic-flow-end-to-end", "controlled-deployment", "operate-learn-decide-again", "from-proposal-to-accepted-product",
-  "what-still-depends-on-us", "juan-g-carmona"
+  "specs-are-not-source-of-truth", "define-once-cite-everywhere", "controlled-deployment", "operate-learn-decide-again", "from-proposal-to-accepted-product",
+  "agentic-flow-end-to-end", "what-still-depends-on-us", "juan-g-carmona"
 ]

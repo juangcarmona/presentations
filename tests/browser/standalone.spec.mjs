@@ -267,7 +267,18 @@ test('delivery specs lead into a three-beat citation example', async ({ page }) 
     await page.keyboard.press('ArrowRight')
     await expect(page.locator('.demo-steps li:visible')).toHaveCount(3)
     await page.keyboard.press('ArrowRight')
+    await expect(page.locator('[data-scene]')).toHaveAttribute('data-scene', 'controlled-deployment')
+  }
+})
+
+test('agentic flow recaps the seven stages immediately before the closing loop', async ({ page }) => {
+  for (const [language, label] of [['es', '7 ETAPAS'], ['en', '7 STAGES']]) {
+    await page.goto(`/software-engineering-2_0/?lang=${language}#scene=from-proposal-to-accepted-product`)
+    await page.keyboard.press('ArrowRight')
     await expect(page.locator('[data-scene]')).toHaveAttribute('data-scene', 'agentic-flow-end-to-end')
+    await expect(page.locator('.slide-number')).toHaveText(label)
+    await page.keyboard.press('ArrowRight')
+    await expect(page.locator('[data-scene]')).toHaveAttribute('data-scene', 'what-still-depends-on-us')
   }
 })
 

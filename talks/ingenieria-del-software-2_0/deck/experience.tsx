@@ -113,7 +113,7 @@ export const chapters = [
   { label: ['Guardarraíles', 'Guardrails'], ids: ['guardrails'] },
   { label: ['Código', 'Code'], ids: ['prepare-repo-for-ai', 'repository-structure', 'spec-driven-development', 'openspec', 'github-spec-kit', 'kiro'] },
   { label: ['Evidencia', 'Evidence'], ids: ['can-we-trust-the-result', 'from-pyramid-to-hourglass', 'from-structured-behaviour-to-tests'] },
-  { label: ['Entrega', 'Delivery'], ids: ['specs-are-not-source-of-truth', 'define-once-cite-everywhere', 'agentic-flow-end-to-end', 'controlled-deployment'] },
+  { label: ['Entrega', 'Delivery'], ids: ['specs-are-not-source-of-truth', 'define-once-cite-everywhere', 'controlled-deployment'] },
   { label: ['Mantenimiento', 'Maintenance'], ids: ['operate-learn-decide-again', 'from-proposal-to-accepted-product'] },
 ] as const
 
@@ -153,7 +153,7 @@ export const legacySceneIds: Record<string, string> = {
 
 export function chapterForScene(id: string, language: 'es' | 'en') {
   const chapter = chapters.find(section => (section.ids as readonly string[]).includes(id))
-  return chapter?.label[language === 'en' ? 1 : 0] ?? (['engineering-journey', 'what-still-depends-on-us'].includes(id) ? (language === 'en' ? '7 STAGES' : '7 ETAPAS') : null)
+  return chapter?.label[language === 'en' ? 1 : 0] ?? (['engineering-journey', 'agentic-flow-end-to-end', 'what-still-depends-on-us'].includes(id) ? (language === 'en' ? '7 STAGES' : '7 ETAPAS') : null)
 }
 
 export function decorateExperience(source: Experience) {
@@ -172,7 +172,7 @@ for (const scene of source.scenes) {
   if (scene.id === 'define-once-cite-everywhere') scene.content = <Demo language={source.language} />
   if (scene.id === 'juan-g-carmona') scene.content = <div className="closing-layout"><img className="speaker-portrait" src={portrait} alt="Juan G. Carmona" /><div><p className="scene-lede">{source.language === 'en' ? 'Questions?' : '¿Preguntas?'}</p><p>Software Architect · AI Strategist · Plain Concepts</p><ul><li><a href="https://jgcarmona.com/">jgcarmona.com</a></li><li><a href="https://linkedin.com/in/juangcarmona">linkedin.com/in/juangcarmona</a></li><li><a href="https://pdac.dev/">pdac.dev</a></li></ul></div></div>
 }
-const order = ['cover', 'engineering-journey', ...chapters.flatMap(chapter => chapter.ids), 'what-still-depends-on-us', 'juan-g-carmona']
+const order = ['cover', 'engineering-journey', ...chapters.flatMap(chapter => chapter.ids), 'agentic-flow-end-to-end', 'what-still-depends-on-us', 'juan-g-carmona']
 const byId = new Map(source.scenes.map(scene => [scene.id, scene]))
 source.scenes = order.map(id => {
   const scene = byId.get(id)
