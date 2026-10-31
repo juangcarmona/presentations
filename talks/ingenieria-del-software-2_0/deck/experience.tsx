@@ -11,7 +11,7 @@ import logo from './public/pdac-logo.png'
 import workflow from './public/pdac-reference-workflow.png'
 import branding from './public/product_shape_branding.png'
 import Diagram from './Diagrams'
-import { Arc42Overview, JourneyMap, OriginsMap, RepoStructure, SddOverview, TerminalCase, sddImages } from './SceneExtras'
+import { Arc42Overview, JourneyMap, LifecycleLoop, OriginsMap, RepoStructure, SddOverview, TerminalCase, sddImages } from './SceneExtras'
 
 export const presentationImages = [portrait, logo, branding, ...sddImages]
 
@@ -92,9 +92,10 @@ const experience: Experience = { language: 'es', scenes: [
   { id: 'agentic-flow-end-to-end', title: 'Un flujo agéntico de principio a fin', content: <><Flow label="Ciclo de vida de agentic-sdlc" items={['Backlog', 'Refine → Ready · verifica un agente', 'Propose → Planned · verifica una persona', 'Implement → Done · verifican CI y una persona', 'Integrate', 'Review → vuelve al backlog']} /><p>agentic-sdlc · <a href="https://github.com/juangcarmona/agent-toolkit">github.com/juangcarmona/agent-toolkit</a></p><p>adopt descubre las herramientas del proyecto. done-gate-auditor revisa el diff fuera del contexto de quien lo escribió.</p></> },
   { id: 'from-structured-behaviour-to-tests', title: 'Del comportamiento estructurado al test', content: <><Code label="Escenarios de la ventana de devolución">{'@BR-REFUND-001\nFeature: Ventana de devolución\n\n  Scenario: Dentro de plazo\n    Given un pedido entregado hace 29 días\n    When el cliente pide la devolución\n    Then se acepta\n\n  Scenario: Fuera de plazo\n    Given un pedido entregado hace 31 días\n    Then se rechaza'}</Code><Flow label="Trazabilidad de la validación" items={['Structured behaviour (PDaC)', 'Criterios Given / When / Then en el backlog', 'Gherkin etiquetado con la regla', 'Tests e2e ejecutables', 'Evidencia']} /></> },
   { id: 'from-pyramid-to-hourglass', title: 'De pirámide a reloj de arena', content: <><div className="scene-grid"><section><h2>Antes · pirámide</h2><div className="test-shape before"><p>E2E</p><p>Integración</p><p>Unitarios</p></div><p>Pocos e2e: caros de crear y mantener.</p></section><section><h2>Ahora · reloj de arena</h2><div className="test-shape after"><p>E2E desde la intención</p><p>Integración</p><p>Unitarios</p></div><p>Una definición de producto viva permite generar y mantener los e2e con ayuda de la IA.</p></section></div><p>Los unitarios siguen siendo la base. Los e2e comprueban el comportamiento aceptado.</p></> },
+  { id: 'can-we-trust-the-result', title: '¿Podemos fiarnos del resultado?', content: <></> },
   { id: 'controlled-deployment', title: 'Entregar es desplegar con control', content: <></> },
   { id: 'operate-learn-decide-again', title: 'Operar, aprender, volver a decidir', content: <></> },
-  { id: 'what-still-depends-on-us', title: 'Lo que sigue dependiendo de nosotros', content: <dl className="scene-list"><dt>Producto</dt><dd>Decidir qué producto queremos</dd><dt>Definición</dt><dd>Aceptar o rechazar cada cambio de definición</dd><dt>Guardarraíles</dt><dd>Elegir qué reglas merecen ser duras</dd><dt>Evidencia</dt><dd>Juzgar la evidencia, no solo mirarla</dd><dt>Responsabilidad</dt><dd>Responder de lo que se entrega</dd></dl> },
+  { id: 'what-still-depends-on-us', title: 'Todo sigue dependiendo de nosotros', content: <LifecycleLoop language="es" /> },
   { id: 'juan-g-carmona', title: 'Juan G. Carmona', content: <><p className="scene-lede">¿Preguntas?</p><p>Software Architect · AI Strategist · Plain Concepts</p><div className="portrait-fallback" aria-label="Juan G. Carmona, retrato no disponible"><span aria-hidden="true">JG</span><p>Juan G. Carmona · ponente</p></div><ul><li><a href="https://jgcarmona.com/">jgcarmona.com</a></li><li><a href="https://linkedin.com/in/juangcarmona">linkedin.com/in/juangcarmona</a></li><li><a href="https://pdac.dev/">pdac.dev</a></li></ul></> },
 ] }
 const figures: Record<string, string> = {
@@ -111,7 +112,7 @@ export const chapters = [
   { label: ['Arquitectura', 'Architecture'], ids: ['document-architecture-with-arc42'] },
   { label: ['Guardarraíles', 'Guardrails'], ids: ['guardrails'] },
   { label: ['Código', 'Code'], ids: ['prepare-repo-for-ai', 'repository-structure', 'spec-driven-development', 'openspec', 'github-spec-kit', 'kiro'] },
-  { label: ['Evidencia', 'Evidence'], ids: ['from-pyramid-to-hourglass', 'from-structured-behaviour-to-tests'] },
+  { label: ['Evidencia', 'Evidence'], ids: ['can-we-trust-the-result', 'from-pyramid-to-hourglass', 'from-structured-behaviour-to-tests'] },
   { label: ['Entrega', 'Delivery'], ids: ['specs-are-not-source-of-truth', 'define-once-cite-everywhere', 'agentic-flow-end-to-end', 'controlled-deployment'] },
   { label: ['Mantenimiento', 'Maintenance'], ids: ['operate-learn-decide-again', 'from-proposal-to-accepted-product'] },
 ] as const
@@ -159,7 +160,7 @@ export function decorateExperience(source: Experience) {
 for (const scene of source.scenes) {
   const figure = figures[scene.id]
   if (figure && scene.id !== 'product-decides') scene.content = <Diagram id={scene.id} language={source.language} original={figure} />
-  if (['two-sources-of-truth', 'what-still-depends-on-us'].includes(scene.id)) scene.content = <Diagram id={scene.id} language={source.language} />
+  if (scene.id === 'two-sources-of-truth') scene.content = <Diagram id={scene.id} language={source.language} />
   if (scene.id === 'engineering-journey') scene.content = <JourneyMap language={source.language} />
   if (scene.id === 'repository-structure') scene.content = <RepoStructure language={source.language} />
   if (['spec-driven-development', 'openspec', 'github-spec-kit', 'kiro'].includes(scene.id)) scene.content = <SddOverview language={source.language} view={scene.id === 'spec-driven-development' ? 'general' : scene.id === 'openspec' ? 'openspec' : scene.id === 'github-spec-kit' ? 'spec-kit' : 'kiro'} />

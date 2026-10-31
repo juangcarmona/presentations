@@ -1,5 +1,6 @@
 import type { Experience } from '../../../src/experience-model'
 import { Citation, Code, Flow, ProductCycle, WhatStory, decorateExperience } from './experience'
+import { LifecycleLoop } from './SceneExtras'
 import Diagram from './Diagrams'
 
 const experience: Experience = { language: 'en', scenes: [
@@ -24,9 +25,10 @@ const experience: Experience = { language: 'en', scenes: [
   { id: 'agentic-flow-end-to-end', title: 'An agentic flow from end to end', content: <><Flow label="Agentic SDLC lifecycle" items={['Backlog', 'Refine → Ready · agent verification', 'Propose → Planned · human verification', 'Implement → Done · CI and human verification', 'Integrate', 'Review → back to the backlog']} /><p>agentic-sdlc · <a href="https://github.com/juangcarmona/agent-toolkit">github.com/juangcarmona/agent-toolkit</a></p><p>adopt discovers project tools. done-gate-auditor reviews the diff outside the authoring context.</p></> },
   { id: 'from-structured-behaviour-to-tests', title: 'From structured behaviour to tests', content: <><Code label="Refund window scenarios">{'@BR-REFUND-001\nFeature: Refund window\n\n  Scenario: Within the window\n    Given an order delivered 29 days ago\n    When the customer requests a refund\n    Then the refund is accepted\n\n  Scenario: Outside the window\n    Given an order delivered 31 days ago\n    Then the refund is rejected'}</Code><Flow label="Validation trace" items={['Structured behaviour (PDaC)', 'Given / When / Then acceptance criteria', 'Gherkin tagged with the rule', 'Executable end-to-end tests', 'Evidence']} /></> },
   { id: 'from-pyramid-to-hourglass', title: 'From pyramid to hourglass', content: <><div className="scene-grid"><section><h2>Before · pyramid</h2><div className="test-shape before"><p>E2E</p><p>Integration</p><p>Unit</p></div><p>Few E2E tests: costly to create and maintain.</p></section><section><h2>Now · hourglass</h2><div className="test-shape after"><p>E2E from intent</p><p>Integration</p><p>Unit</p></div><p>A living product definition lets AI help generate and maintain E2E tests.</p></section></div><p>Unit tests remain the foundation. E2E tests check accepted behaviour.</p></> },
+  { id: 'can-we-trust-the-result', title: 'Can we trust the result?', content: <></> },
   { id: 'controlled-deployment', title: 'Delivery means controlled deployment', content: <></> },
   { id: 'operate-learn-decide-again', title: 'Operate, learn, decide again', content: <></> },
-  { id: 'what-still-depends-on-us', title: 'What still depends on us', content: <dl className="scene-list"><dt>Product</dt><dd>Decide which product we want</dd><dt>Definition</dt><dd>Accept or reject every change to the definition</dd><dt>Guardrails</dt><dd>Choose which rules deserve to be hard</dd><dt>Evidence</dt><dd>Judge the evidence, not just glance at it</dd><dt>Responsibility</dt><dd>Own what we ship</dd></dl> },
+  { id: 'what-still-depends-on-us', title: 'Everything still depends on us', content: <LifecycleLoop language="en" /> },
   { id: 'juan-g-carmona', title: 'Juan G. Carmona', content: <></> },
 ] }
 

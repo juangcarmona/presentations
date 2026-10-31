@@ -116,8 +116,8 @@ test('early scenes respond to side clicks, reveal comparison and keep external l
   expect(await page.evaluate(() => document.documentElement.scrollHeight <= innerHeight)).toBe(true)
   const listSizes = await page.locator('.scene-grid section ul').evaluateAll(lists => lists.map(list => getComputedStyle(list).fontSize))
   expect(listSizes[0]).toBe(listSizes[1])
-  expect(await page.locator('.scene-grid section li').first().evaluate(li => getComputedStyle(li, '::marker').color)).toBe('rgb(117, 198, 223)')
-  expect(await page.locator('.scene-grid section:nth-child(2) li').first().evaluate(li => getComputedStyle(li, '::marker').color)).toBe('rgb(240, 170, 122)')
+  expect(await page.locator('.scene-grid section li').first().evaluate(li => getComputedStyle(li, '::marker').color)).toBe('rgb(77, 163, 255)')
+  expect(await page.locator('.scene-grid section:nth-child(2) li').first().evaluate(li => getComputedStyle(li, '::marker').color)).toBe('rgb(255, 77, 109)')
   await page.keyboard.press('ArrowLeft')
   await expect(page.locator('[data-scene]')).toHaveAttribute('data-stage', '1')
   await page.goto('/software-engineering-2_0/#scene=repository-structure')
@@ -150,7 +150,7 @@ test('early scenes respond to side clicks, reveal comparison and keep external l
   await popup.close()
   await page.locator('#scene-title').focus()
   await page.keyboard.press('ArrowRight')
-  await expect(page.locator('[data-scene]')).toHaveAttribute('data-scene', 'from-pyramid-to-hourglass')
+  await expect(page.locator('[data-scene]')).toHaveAttribute('data-scene', 'can-we-trust-the-result')
   await page.goto('/software-engineering-2_0/#scene=specs-are-not-source-of-truth')
   await expect(page.getByRole('heading', { name: 'Las specs no son la fuente de verdad' })).toBeVisible()
   await expect(page.locator('.case-subtitle')).toHaveText('Cada spec describe un cambio, no el producto.')
@@ -166,6 +166,32 @@ test('legacy numbered links resolve to semantic scenes', async ({ page }) => {
   await expect(page.locator('[data-scene]')).toHaveAttribute('data-scene', 'what-still-depends-on-us')
   await page.keyboard.press('ArrowRight')
   await expect(page).toHaveURL(/#scene=juan-g-carmona$/)
+})
+
+test('stage colors, the evidence question and the closing loop stay aligned', async ({ page }) => {
+  await page.goto('/software-engineering-2_0/#scene=engineering-journey')
+  const palette = await page.evaluate(() => {
+    const style = getComputedStyle(document.documentElement)
+    return ['engineering', 'intent', 'architecture', 'guardrails', 'code', 'evidence', 'delivery', 'maintenance'].map(stage => style.getPropertyValue(`--stage-${stage}`).trim())
+  })
+  expect(palette).toEqual(['#4da3ff', '#00c2a8', '#9d4edd', '#ff4d6d', '#9ef01a', '#ffc300', '#4f6bff', '#ff7a00'])
+  for (const [stage, color] of [['intent', '0, 194, 168'], ['architecture', '157, 78, 221'], ['delivery', '79, 107, 255']]) {
+    await expect(page.locator(`.journey-node[data-step="${stage}"]`)).toHaveCSS('border-color', `rgb(${color})`)
+  }
+  await page.goto('/software-engineering-2_0/#scene=can-we-trust-the-result')
+  await expect(page.locator('#scene-title')).toHaveText('¿Podemos fiarnos del resultado?')
+  await expect(page.locator('.slide-number')).toHaveText('Evidencia')
+  await page.keyboard.press('ArrowRight')
+  await expect(page.locator('[data-scene]')).toHaveAttribute('data-scene', 'from-pyramid-to-hourglass')
+  await page.goto('/software-engineering-2_0/#scene=what-still-depends-on-us')
+  await expect(page.locator('#scene-title')).toHaveText('Todo sigue dependiendo de nosotros')
+  await expect(page.locator('.lifecycle-node')).toHaveCount(7)
+  await expect(page.locator('.lifecycle-pulse')).toHaveCount(7)
+  await expect(page.locator('.lifecycle-pulse').first()).toHaveCSS('animation-name', 'lifecycle-trace')
+  await page.emulateMedia({ reducedMotion: 'reduce' })
+  await expect(page.locator('.lifecycle-pulse').first()).toHaveCSS('animation-name', 'none')
+  await page.goto('/software-engineering-2_0/?lang=en#scene=what-still-depends-on-us')
+  await expect(page.locator('#scene-title')).toHaveText('Everything still depends on us')
 })
 
 test('the what-to-truth transition gives PDaC a bilingual interactive focus', async ({ page }) => {

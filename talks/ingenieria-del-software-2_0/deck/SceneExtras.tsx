@@ -44,8 +44,27 @@ export function JourneyMap({ language }: { language: Language }) {
   }}>
     <button type="button" className="journey-core" data-active={active === stages.length} aria-pressed={active === stages.length} aria-label={`${en ? 'Software Engineering' : 'Ingeniería del software'} 2.0. ${motto}`} onMouseEnter={() => setActive(stages.length)} onFocus={() => setActive(stages.length)} onClick={() => setActive(stages.length)}><span>{en ? <>SOFTWARE<br />ENGINEERING</> : <>INGENIERÍA<br />DEL SOFTWARE</>} <b>2.0</b></span></button>
     <svg className="journey-lines" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path d="M50 15 L77 25 L84 53 L68 68 L32 68 L16 53 L23 25 Z" /><path d="M50 15 L84 53 L32 68 L23 25 L77 25 L68 68 L16 53 Z" />{positions.map(([x, y], i) => <path className="journey-spoke" d={`M50 50 L${x} ${y}`} key={i} />)}</svg>
-    {stages.map(([label], i) => <button key={label} type="button" className="journey-node" data-active={active === i} style={{ left: `${positions[i][0]}%`, top: `${positions[i][1]}%`, animationDelay: `${i * 90}ms` }} aria-pressed={active === i} aria-label={`${label}. ${stages[i][1]}`} onMouseEnter={() => setActive(i)} onFocus={() => setActive(i)} onClick={() => setActive(i)}><span aria-hidden="true">◆</span>{label}</button>)}
+    {stages.map(([label], i) => <button key={label} type="button" className="journey-node" data-step={['intent', 'architecture', 'guardrails', 'code', 'evidence', 'delivery', 'maintenance'][i]} data-active={active === i} style={{ left: `${positions[i][0]}%`, top: `${positions[i][1]}%`, animationDelay: `${i * 90}ms` }} aria-pressed={active === i} aria-label={`${label}. ${stages[i][1]}`} onMouseEnter={() => setActive(i)} onFocus={() => setActive(i)} onClick={() => setActive(i)}><span aria-hidden="true">◆</span>{label}</button>)}
     <p className="journey-insight" aria-live="polite">{active === null ? (en ? 'Everything is connected.' : 'Todo está interconectado.') : active === stages.length ? motto : stages[active][1]}</p>
+  </section>
+}
+
+export function LifecycleLoop({ language }: { language: Language }) {
+  const en = language === 'en'
+  const stages = en ? ['Intent', 'Architecture', 'Guardrails', 'Code', 'Evidence', 'Delivery', 'Maintenance'] : ['Intención', 'Arquitectura', 'Guardarraíles', 'Código', 'Evidencia', 'Entrega', 'Mantenimiento']
+  const keys = ['intent', 'architecture', 'guardrails', 'code', 'evidence', 'delivery', 'maintenance']
+  const positions = [[50, 13], [77, 25], [84, 54], [67, 78], [33, 78], [16, 54], [23, 25]]
+  const segments = positions.map((from, i) => {
+    const to = positions[(i + 1) % positions.length]
+    const length = Math.hypot(to[0] - from[0], to[1] - from[1])
+    const x = (to[0] - from[0]) / length
+    const y = (to[1] - from[1]) / length
+    return `M${from[0] + x * 7} ${from[1] + y * 7} L${to[0] - x * 8} ${to[1] - y * 8}`
+  })
+  return <section className="lifecycle-loop" aria-label={en ? 'The seven stages form a continuous loop, from maintenance back to intent' : 'Las siete etapas forman un ciclo continuo, de mantenimiento a intención'}>
+    <svg className="lifecycle-lines" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><defs><marker id="lifecycle-arrow" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto"><path d="M0 0 L6 3.5 L0 7" fill="#4da3ff" /></marker></defs>{segments.map((path, i) => <g key={keys[i]} data-step={keys[i]}><path className="lifecycle-track" d={path} /><path className="lifecycle-pulse" d={path} pathLength="1" markerEnd="url(#lifecycle-arrow)" style={{ animationDelay: `${i * .8}s` }} /></g>)}</svg>
+    <span className="lifecycle-center">{en ? 'WE DECIDE' : 'DECIDIMOS'}</span>
+    <ol>{stages.map((label, i) => <li key={label} className="lifecycle-node" data-step={keys[i]} style={{ left: `${positions[i][0]}%`, top: `${positions[i][1]}%`, animationDelay: `${i * .8}s` }}>{label}</li>)}</ol>
   </section>
 }
 
@@ -53,18 +72,18 @@ export function RepoStructure({ language }: { language: Language }) {
   const [active, setActive] = useState(0)
   const en = language === 'en'
   const files = [
-    { path: 'AGENTS.md', name: 'AGENTS.md', branch: '├─', tone: 'violet', detail: [ 'Mapa breve: dónde están las reglas y qué leer antes de cambiar código.', 'A short map: where the rules live and what to read before changing code.' ], hints: ['Contexto siempre disponible', 'Always-available context'] },
-    { path: 'CLAUDE.md', name: 'CLAUDE.md', branch: '├─', tone: 'violet', detail: ['Entrada para asistentes que usan este nombre; puede remitir al mapa común.', 'Entry point for assistants using this name; it can point to the shared map.'], hints: ['Evita duplicar reglas', 'Avoid duplicated rules'] },
-    { path: '.github/', name: '.github/', branch: '├─', tone: 'cyan', detail: ['Instrucciones específicas para archivos o zonas del repositorio.', 'Instructions scoped to files or areas of the repository.'], hints: ['instructions/*.instructions.md', 'instructions/*.instructions.md'] },
-    { path: '.github/instructions/', name: 'instructions/', branch: '│  └─', tone: 'cyan', detail: ['Reglas que se aplican solo cuando se trabaja en rutas concretas.', 'Rules applied only when working in matching paths.'], hints: ['Contexto por ámbito', 'Scoped context'] },
-    { path: '.agents/', name: '.agents/', branch: '├─', tone: 'teal', detail: ['Capacidades reutilizables para tareas concretas.', 'Reusable capabilities for specific tasks.'], hints: ['Se cargan cuando hacen falta', 'Loaded when needed'] },
-    { path: '.agents/skills/', name: 'skills/', branch: '│  └─', tone: 'teal', detail: ['Cada skill encapsula instrucciones, recursos y, si procede, scripts.', 'Each skill bundles instructions, resources and scripts when needed.'], hints: ['Una tarea, una capacidad', 'One task, one capability'] },
-    { path: 'src/', name: 'src/', branch: '├─', tone: 'blue', detail: ['Código de producción: el comportamiento que entregamos.', 'Production code: the behaviour we deliver.'], hints: ['Implementación', 'Implementation'] },
-    { path: 'tests/', name: 'tests/', branch: '├─', tone: 'green', detail: ['Pruebas ejecutables: comprueban el comportamiento sin confundirlo con la implementación.', 'Executable tests: check behaviour without confusing it with implementation.'], hints: ['Evidencia separada', 'Separate evidence'] },
-    { path: 'docs/', name: 'docs/', branch: '└─', tone: 'amber', detail: ['Conocimiento duradero, versionado junto al código.', 'Durable knowledge versioned alongside the code.'], hints: ['Producto · arquitectura · diseño', 'Product · architecture · design'] },
-    { path: 'docs/product/', name: 'product/', branch: '   ├─', tone: 'amber', detail: ['Qué queremos construir: actores, casos de uso, reglas y comportamiento.', 'What we want to build: actors, use cases, rules and behaviour.'], hints: ['El QUÉ', 'The WHAT'] },
-    { path: 'docs/architecture/', name: 'architecture/', branch: '   ├─', tone: 'orange', detail: ['Cómo encaja: contexto, bloques, decisiones y atributos de calidad.', 'How it fits: context, building blocks, decisions and quality attributes.'], hints: ['El CÓMO', 'The HOW'] },
-    { path: 'docs/design/', name: 'design/', branch: '   └─', tone: 'pink', detail: ['Experiencia de uso, interfaces y sistema visual.', 'User experience, interfaces and visual system.'], hints: ['La EXPERIENCIA', 'The EXPERIENCE'] },
+    { path: 'AGENTS.md', name: 'AGENTS.md', branch: '├─', tone: 'pink', detail: [ 'Mapa breve: dónde están las reglas y qué leer antes de cambiar código.', 'A short map: where the rules live and what to read before changing code.' ], hints: ['Contexto siempre disponible', 'Always-available context'] },
+    { path: 'CLAUDE.md', name: 'CLAUDE.md', branch: '├─', tone: 'pink', detail: ['Entrada para asistentes que usan este nombre; puede remitir al mapa común.', 'Entry point for assistants using this name; it can point to the shared map.'], hints: ['Evita duplicar reglas', 'Avoid duplicated rules'] },
+    { path: '.github/', name: '.github/', branch: '├─', tone: 'pink', detail: ['Instrucciones específicas para archivos o zonas del repositorio.', 'Instructions scoped to files or areas of the repository.'], hints: ['instructions/*.instructions.md', 'instructions/*.instructions.md'] },
+    { path: '.github/instructions/', name: 'instructions/', branch: '│  └─', tone: 'pink', detail: ['Reglas que se aplican solo cuando se trabaja en rutas concretas.', 'Rules applied only when working in matching paths.'], hints: ['Contexto por ámbito', 'Scoped context'] },
+    { path: '.agents/', name: '.agents/', branch: '├─', tone: 'green', detail: ['Capacidades reutilizables para tareas concretas.', 'Reusable capabilities for specific tasks.'], hints: ['Se cargan cuando hacen falta', 'Loaded when needed'] },
+    { path: '.agents/skills/', name: 'skills/', branch: '│  └─', tone: 'green', detail: ['Cada skill encapsula instrucciones, recursos y, si procede, scripts.', 'Each skill bundles instructions, resources and scripts when needed.'], hints: ['Una tarea, una capacidad', 'One task, one capability'] },
+    { path: 'src/', name: 'src/', branch: '├─', tone: 'green', detail: ['Código de producción: el comportamiento que entregamos.', 'Production code: the behaviour we deliver.'], hints: ['Implementación', 'Implementation'] },
+    { path: 'tests/', name: 'tests/', branch: '├─', tone: 'amber', detail: ['Pruebas ejecutables: comprueban el comportamiento sin confundirlo con la implementación.', 'Executable tests: check behaviour without confusing it with implementation.'], hints: ['Evidencia separada', 'Separate evidence'] },
+    { path: 'docs/', name: 'docs/', branch: '└─', tone: 'blue', detail: ['Conocimiento duradero, versionado junto al código.', 'Durable knowledge versioned alongside the code.'], hints: ['Producto · arquitectura · diseño', 'Product · architecture · design'] },
+    { path: 'docs/product/', name: 'product/', branch: '   ├─', tone: 'teal', detail: ['Qué queremos construir: actores, casos de uso, reglas y comportamiento.', 'What we want to build: actors, use cases, rules and behaviour.'], hints: ['El QUÉ', 'The WHAT'] },
+    { path: 'docs/architecture/', name: 'architecture/', branch: '   ├─', tone: 'violet', detail: ['Cómo encaja: contexto, bloques, decisiones y atributos de calidad.', 'How it fits: context, building blocks, decisions and quality attributes.'], hints: ['El CÓMO', 'The HOW'] },
+    { path: 'docs/design/', name: 'design/', branch: '   └─', tone: 'teal', detail: ['Experiencia de uso, interfaces y sistema visual.', 'User experience, interfaces and visual system.'], hints: ['La EXPERIENCIA', 'The EXPERIENCE'] },
   ] as const
   const selected = files[active]
   return <div className="repo-layout">

@@ -88,7 +88,7 @@ export default function Presentation() {
     return () => removeEventListener('keydown', keydown)
   })
 
-  return <main className="keynote" lang={experience.language} onClick={event => {
+  return <main className="keynote" lang={experience.language} data-chapter={chapterForScene(scene.id, 'en')?.toLowerCase()} onClick={event => {
     if (!(event.target instanceof Element) || event.target.closest('a, button, input, textarea, select, details, pre, code, .terminal, [role="button"], [contenteditable="true"]') || window.getSelection()?.toString()) return
     move(event.clientX < window.innerWidth / 2 ? -1 : 1)
   }} onTouchStart={event => {
@@ -101,7 +101,7 @@ export default function Presentation() {
     if (Math.abs(dx) > 70 && Math.abs(dx) > Math.abs(dy) * 1.5) move(dx < 0 ? 1 : -1)
   }}>
     <a className="skip-link" href="#scene-title">{language === 'en' ? 'Skip to slide' : 'Ir a la diapositiva'}</a>
-    <article className="scene" key={scene.id} aria-labelledby="scene-title" data-scene={scene.id} data-stage={comparisonStage}>
+    <article className="scene" key={scene.id} aria-labelledby="scene-title" data-scene={scene.id} data-stage={comparisonStage} data-chapter={chapterForScene(scene.id, 'en')?.toLowerCase()}>
       <h1 id="scene-title" className={scene.id === 'engineering-journey' ? 'visually-hidden' : undefined} ref={heading} tabIndex={-1}>{scene.title}</h1>
       <div className="scene-content">{scene.content}</div>
       {scene.id === 'from-pyramid-to-hourglass' && <button className="comparison-next" type="button" onClick={() => setComparisonStage(comparisonStage === 0 ? 1 : 0)}>{comparisonStage === 0 ? (language === 'en' ? 'Show now →' : 'Mostrar ahora →') : (language === 'en' ? '← Show before' : '← Mostrar antes')}</button>}

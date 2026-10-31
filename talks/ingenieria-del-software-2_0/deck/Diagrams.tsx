@@ -97,21 +97,6 @@ const diagrams: Record<string, DiagramSpec> = {
     ],
     edges: [[0, 1], [1, 2], [2, 3], [3, 0]],
   },
-  'what-still-depends-on-us': {
-    name: ['Lo que sigue siendo responsabilidad humana', 'What remains a human responsibility'],
-    caption: ['La IA acelera. Nosotros respondemos por el resultado.', 'AI accelerates. We own the outcome.'],
-    nodes: [
-      { id: 'decision', x: 50, y: 49, label: ['Juicio humano', 'Human judgment'], detail: ['El agente propone; una persona decide y responde por lo entregado.', 'The agent proposes; a person decides and owns what ships.'], accent: true },
-      { id: 'intent', x: 50, y: 14, label: ['Intención', 'Intent'], detail: ['Decidir qué producto queremos y para quién.', 'Decide what product we want and for whom.'], tone: 'teal' },
-      { id: 'architecture', x: 78, y: 25, label: ['Arquitectura', 'Architecture'], detail: ['Elegir límites, responsabilidades y compromisos técnicos.', 'Choose boundaries, responsibilities and technical trade-offs.'], tone: 'violet' },
-      { id: 'guardrails', x: 85, y: 53, label: ['Guardarraíles', 'Guardrails'], detail: ['Decidir qué reglas guían y cuáles bloquean.', 'Decide which rules guide and which block.'], tone: 'pink' },
-      { id: 'code', x: 68, y: 79, label: ['Código', 'Code'], detail: ['Revisar si la implementación expresa la decisión aceptada.', 'Review whether the implementation expresses the accepted decision.'], tone: 'green' },
-      { id: 'evidence', x: 32, y: 79, label: ['Evidencia', 'Evidence'], detail: ['Juzgar si tests, review y resultados prueban lo suficiente.', 'Judge whether tests, review and results prove enough.'], tone: 'blue' },
-      { id: 'delivery', x: 15, y: 53, label: ['Entrega', 'Delivery'], detail: ['Autorizar el despliegue cuando proceda y responder de su impacto.', 'Authorise deployment when appropriate and own its impact.'], tone: 'orange' },
-      { id: 'maintenance', x: 22, y: 25, label: ['Mantenimiento', 'Maintenance'], detail: ['Priorizar señales de producción y decidir el siguiente cambio.', 'Prioritise production signals and decide the next change.'], tone: 'cyan' },
-    ],
-    edges: [[1, 0], [2, 0], [3, 0], [4, 0], [5, 0], [6, 0], [7, 0]],
-  },
 }
 
 export default function Diagram({ id, language, original }: { id: string; language: 'es' | 'en'; original?: string }) {
