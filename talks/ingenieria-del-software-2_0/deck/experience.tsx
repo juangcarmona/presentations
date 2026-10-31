@@ -19,15 +19,13 @@ function Demo({ language }: { language: string }) {
   const [playing, setPlaying] = useState(() => !matchMedia('(prefers-reduced-motion: reduce)').matches)
   const en = language === 'en'
   const steps = en ? [
-    'Three specs disagree: purchase, delivery, “less than a month”.',
-    'BR-REFUND-001 defines the accepted rule once.',
-    'Each spec cites that rule; a change makes the citations stale.',
-    'prodshape citations verify flags what needs review.',
+    'BR-REFUND-001: one accepted rule.',
+    'Each delivery spec cites it.',
+    'If it changes, CI flags stale citations.',
   ] : [
-    'Tres specs discrepan: compra, entrega, «menos de un mes».',
-    'BR-REFUND-001 define la regla aceptada una sola vez.',
-    'Cada spec cita esa regla; al cambiar, las citas quedan obsoletas.',
-    'prodshape citations verify señala lo que hay que revisar.',
+    'BR-REFUND-001: una regla aceptada.',
+    'Cada spec de entrega la cita.',
+    'Si cambia, CI señala las citas obsoletas.',
   ]
   useEffect(() => {
     const preference = matchMedia('(prefers-reduced-motion: reduce)')
@@ -35,7 +33,7 @@ function Demo({ language }: { language: string }) {
     preference.addEventListener('change', stop)
     return () => preference.removeEventListener('change', stop)
   }, [])
-  return <div className="demo-stage"><ol className="demo-steps" aria-label={en ? 'Citation demonstration' : 'Demostración de citas'}>{steps.map((step, i) => <li key={step}><span>{String(i + 1).padStart(2, '0')}</span><p>{step}</p></li>)}</ol><div className="demo-visual" onClick={event => event.stopPropagation()}>{playing ? <img className="demo-animation" src={demo} alt={en ? 'Animated demonstration of the refund rule and stale citations' : 'Demostración animada de la regla de devolución y citas obsoletas'} /> : <button className="demo-poster" type="button" onClick={() => setPlaying(true)}><strong>BR-REFUND-001</strong><small>{en ? 'Play demo' : 'Reproducir demo'} ▶</small></button>}</div></div>
+  return <div className="demo-stage"><div className="demo-narrative"><p>{en ? 'The accepted product definition is the source of truth. Specs are delivery snapshots.' : 'La definición aceptada del producto es la fuente de verdad. Las specs son fotos de la entrega.'}</p><ol className="demo-steps" aria-label={en ? 'Citation demonstration' : 'Demostración de citas'}>{steps.map((step, i) => <li key={step}><span>{String(i + 1).padStart(2, '0')}</span><p>{step}</p></li>)}</ol></div><div className="demo-visual" onClick={event => event.stopPropagation()}>{playing ? <img className="demo-animation" src={demo} alt={en ? 'Animated demonstration of the refund rule and stale citations' : 'Demostración animada de la regla de devolución y citas obsoletas'} /> : <button className="demo-poster" type="button" onClick={() => setPlaying(true)}><strong>BR-REFUND-001</strong><small>{en ? 'Play demo' : 'Reproducir demo'} ▶</small></button>}</div></div>
 }
 
 export function Flow({ items, label }: { items: string[]; label: string }) {
@@ -109,12 +107,12 @@ const figures: Record<string, string> = {
 }
 
 export const chapters = [
-  { label: ['Intención', 'Intent'], ids: ['two-sources-of-truth', 'we-abandoned-the-what', 'product-decides', 'product-definition-model', 'none-of-this-is-new', 'define-once-cite-everywhere'] },
+  { label: ['Intención', 'Intent'], ids: ['two-sources-of-truth', 'we-abandoned-the-what', 'product-decides', 'product-definition-model', 'none-of-this-is-new'] },
   { label: ['Arquitectura', 'Architecture'], ids: ['document-architecture-with-arc42'] },
   { label: ['Guardarraíles', 'Guardrails'], ids: ['guardrails'] },
-  { label: ['Código', 'Code'], ids: ['prepare-repo-for-ai', 'repository-structure', 'spec-driven-development', 'openspec', 'github-spec-kit', 'kiro', 'specs-are-not-source-of-truth'] },
+  { label: ['Código', 'Code'], ids: ['prepare-repo-for-ai', 'repository-structure', 'spec-driven-development', 'openspec', 'github-spec-kit', 'kiro'] },
   { label: ['Evidencia', 'Evidence'], ids: ['from-pyramid-to-hourglass', 'from-structured-behaviour-to-tests'] },
-  { label: ['Entrega', 'Delivery'], ids: ['agentic-flow-end-to-end', 'controlled-deployment'] },
+  { label: ['Entrega', 'Delivery'], ids: ['specs-are-not-source-of-truth', 'define-once-cite-everywhere', 'agentic-flow-end-to-end', 'controlled-deployment'] },
   { label: ['Mantenimiento', 'Maintenance'], ids: ['operate-learn-decide-again', 'from-proposal-to-accepted-product'] },
 ] as const
 

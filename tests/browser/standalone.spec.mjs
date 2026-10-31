@@ -150,7 +150,7 @@ test('early scenes respond to side clicks, reveal comparison and keep external l
   await popup.close()
   await page.locator('#scene-title').focus()
   await page.keyboard.press('ArrowRight')
-  await expect(page.locator('[data-scene]')).toHaveAttribute('data-scene', 'specs-are-not-source-of-truth')
+  await expect(page.locator('[data-scene]')).toHaveAttribute('data-scene', 'from-pyramid-to-hourglass')
   await page.goto('/software-engineering-2_0/#scene=specs-are-not-source-of-truth')
   await expect(page.getByRole('heading', { name: 'Las specs no son la fuente de verdad' })).toBeVisible()
   await expect(page.locator('.case-subtitle')).toHaveText('Cada spec describe un cambio, no el producto.')
@@ -203,9 +203,6 @@ test('the product cycle keeps accepted definition separate from proposed changes
 })
 
 test('workflow keeps human acceptance visible in maintenance', async ({ page }) => {
-  await page.goto('/software-engineering-2_0/#scene=define-once-cite-everywhere')
-  await page.keyboard.press('ArrowRight')
-  await expect(page.locator('[data-scene]')).toHaveAttribute('data-scene', 'document-architecture-with-arc42')
   await page.goto('/software-engineering-2_0/#scene=operate-learn-decide-again')
   await page.keyboard.press('ArrowRight')
   await expect(page.locator('[data-scene]')).toHaveAttribute('data-scene', 'from-proposal-to-accepted-product')
@@ -221,6 +218,22 @@ test('workflow keeps human acceptance visible in maintenance', async ({ page }) 
   await page.goto('/software-engineering-2_0/?lang=en#scene=from-proposal-to-accepted-product')
   await expect(page.locator('#scene-title')).toHaveText('From proposal to accepted product')
   await expect(page.locator('.diagram-node .human-icon')).toHaveCount(2)
+})
+
+test('delivery specs lead into a three-beat citation example', async ({ page }) => {
+  for (const language of ['es', 'en']) {
+    await page.goto(`/software-engineering-2_0/?lang=${language}#scene=specs-are-not-source-of-truth`)
+    await expect(page.locator('.slide-number')).toHaveText(language === 'en' ? 'Delivery' : 'Entrega')
+    await page.keyboard.press('ArrowRight')
+    await expect(page.locator('[data-scene]')).toHaveAttribute('data-scene', 'define-once-cite-everywhere')
+    await expect(page.locator('.demo-steps li:visible')).toHaveCount(1)
+    await page.keyboard.press('ArrowRight')
+    await expect(page.locator('.demo-steps li:visible')).toHaveCount(2)
+    await page.keyboard.press('ArrowRight')
+    await expect(page.locator('.demo-steps li:visible')).toHaveCount(3)
+    await page.keyboard.press('ArrowRight')
+    await expect(page.locator('[data-scene]')).toHaveAttribute('data-scene', 'agentic-flow-end-to-end')
+  }
 })
 
 test('journey motto stays inside the map without covering a stage', async ({ page }) => {

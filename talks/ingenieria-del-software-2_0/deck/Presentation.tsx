@@ -60,7 +60,7 @@ export default function Presentation() {
   }, [scene])
 
   function move(direction: number) {
-    const lastStage = scene.id === 'guardrails' ? 2 : scene.id === 'from-pyramid-to-hourglass' ? 1 : 0
+    const lastStage = ['guardrails', 'define-once-cite-everywhere'].includes(scene.id) ? 2 : scene.id === 'from-pyramid-to-hourglass' ? 1 : 0
     if (lastStage) {
       if (direction > 0 && comparisonStage < lastStage) { setComparisonStage(comparisonStage + 1); return }
       if (direction < 0 && comparisonStage > 0) { setComparisonStage(comparisonStage - 1); return }

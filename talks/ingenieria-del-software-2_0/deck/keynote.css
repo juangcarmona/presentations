@@ -87,6 +87,11 @@ button { font: inherit; cursor: pointer; }
 .demo-steps li { display: flex; align-items: baseline; gap: .8rem; padding: .65rem 0; border-bottom: 1px solid var(--lh-border); }
 .demo-steps li span { flex: none; color: var(--lh-action); font: 800 1rem ui-monospace, monospace; white-space: nowrap; }
 .demo-steps li p { margin: 0; font-size: clamp(1rem, 1.55vw, 1.4rem); }
+.demo-narrative > p { max-width: 28ch; margin: 0 0 2rem; color: #d7def0; font-size: clamp(1.5rem, 2.5vw, 2.5rem); line-height: 1.12; }
+[data-scene="define-once-cite-everywhere"] .demo-steps li { visibility: hidden; opacity: 0; transition: opacity .35s; }
+[data-scene="define-once-cite-everywhere"] .demo-steps li:first-child,
+[data-scene="define-once-cite-everywhere"][data-stage="1"] .demo-steps li:nth-child(2),
+[data-scene="define-once-cite-everywhere"][data-stage="2"] .demo-steps li { visibility: visible; opacity: 1; }
 .demo-visual { position: relative; display: grid; place-items: center; width: 100%; min-height: 330px; padding: .5rem; border: 1px solid var(--lh-border); border-radius: 0; background: #111b2b; color: var(--lh-text); }
 .demo-animation { display: block; width: 100%; max-height: 58vh; object-fit: contain; }
 .demo-poster { display: grid; gap: 1rem; place-content: center; width: 100%; min-height: 330px; border: 0; background: transparent; color: var(--lh-text); text-align: center; }
