@@ -3,8 +3,8 @@ import AxeBuilder from '@axe-core/playwright'
 import { readFileSync } from 'node:fs'
 
 const baseline = JSON.parse(readFileSync('tests/fixtures/migration.json', 'utf8'))
-// The fixture records every original source unit, including a slide retired from the published deck.
-const spanish = baseline.scenes.filter(scene => scene.directory === 'ingenieria-del-software-2_0' && scene.id !== '14-citas').flatMap(scene => scene.id === '06-sdd' ? [scene, ...['06a-openspec', '06b-spec-kit', '06c-kiro'].map(id => ({ id }))] : [scene])
+// The migration fixture records original source units; this fixture records the published narrative.
+const spanish = JSON.parse(readFileSync('tests/fixtures/active-scenes.json', 'utf8')).map(id => ({ id }))
 const guardrails = baseline.scenes.filter(scene => scene.directory === 'soft-and-hard-guardrails')
 
 test('every static entry and asset is directly served', async ({ page, request }) => {
@@ -35,8 +35,8 @@ for (const [path, scenes, language] of [
     await expect(page.locator('#scene-title')).toBeVisible()
     if (path.includes('software-engineering')) expect(await page.locator('.scene a[href^="http"]').evaluateAll(links => links.every(link => link.target === '_blank' && link.rel.includes('noopener'))), scene.id).toBe(true)
     await page.keyboard.press('ArrowRight')
-    if (path.includes('software-engineering') && ['04-guardarrailes', '20-piramide'].includes(scene.id)) await page.keyboard.press('ArrowRight')
-    if (path.includes('software-engineering') && scene.id === '04-guardarrailes') await page.keyboard.press('ArrowRight')
+    if (path.includes('software-engineering') && ['guardrails', 'from-pyramid-to-hourglass', 'define-once-cite-everywhere'].includes(scene.id)) await page.keyboard.press('ArrowRight')
+    if (path.includes('software-engineering') && ['guardrails', 'define-once-cite-everywhere'].includes(scene.id)) await page.keyboard.press('ArrowRight')
   }
   await expect(page.locator('[data-scene]')).toHaveAttribute('data-scene', scenes.at(-1).id)
   await page.reload()
@@ -50,21 +50,21 @@ test('standalone talk has no persistent controls, supports keys and protects foc
   await page.keyboard.press('ArrowLeft')
   await expect(page.locator('[data-scene]')).toHaveAttribute('data-scene', 'cover')
   await page.keyboard.press('PageDown')
-  await expect(page.locator('[data-scene]')).toHaveAttribute('data-scene', '02-recorrido')
+  await expect(page.locator('[data-scene]')).toHaveAttribute('data-scene', 'engineering-journey')
   await page.keyboard.press('PageUp')
   await expect(page.locator('[data-scene]')).toHaveAttribute('data-scene', 'cover')
-  await page.evaluate(() => { location.hash = 'scene=07-gaps' })
+  await page.evaluate(() => { location.hash = 'scene=specs-are-not-source-of-truth' })
   await expect(page.locator('.terminal')).toContainText('refund')
   await page.locator('.terminal').focus()
   await page.keyboard.press('ArrowRight')
-  await expect(page.locator('[data-scene]')).toHaveAttribute('data-scene', '07-gaps')
+  await expect(page.locator('[data-scene]')).toHaveAttribute('data-scene', 'specs-are-not-source-of-truth')
   await page.locator('#scene-title').focus()
-  await page.evaluate(() => { location.hash = 'scene=08-dimensiones' })
+  await page.evaluate(() => { location.hash = 'scene=two-sources-of-truth' })
   await expect(page.locator('#scene-title')).toBeFocused()
 })
 
 test('English shares the standalone page and retains links to original media', async ({ page, request }) => {
-  await page.goto('/software-engineering-2_0/?lang=en#scene=11-modelo')
+  await page.goto('/software-engineering-2_0/?lang=en#scene=product-definition-model')
   await expect(page.locator('#scene-title')).toContainText('product')
   await expect(page.locator('.diagram-node')).toHaveCount(10)
   const original = await page.getByRole('link', { name: 'Original diagram' }).getAttribute('href')
@@ -73,14 +73,14 @@ test('English shares the standalone page and retains links to original media', a
   await expect(page.locator('.node-popover')).toContainText('links rules, domain and requirements')
   const scripts = await page.locator('script[src]').evaluateAll(nodes => nodes.map(node => node.src))
   expect(scripts.every(src => src.includes('/software-engineering-2_0/assets/'))).toBe(true)
-  await page.goto('/software-engineering-2_0/?lang=en#scene=24-fin')
+  await page.goto('/software-engineering-2_0/?lang=en#scene=juan-g-carmona')
   await expect(page.getByRole('img', { name: 'Juan G. Carmona' })).toBeVisible()
   await expect(page.getByText('Questions?')).toBeVisible()
 })
 
 test('keynote respects reduced motion and has no WCAG A/AA violations on representative scenes', async ({ page }) => {
   await page.emulateMedia({ reducedMotion: 'reduce' })
-  for (const scene of ['cover', '03-repo', '11-modelo', '24-fin']) {
+  for (const scene of ['cover', 'prepare-repo-for-ai', 'product-definition-model', 'juan-g-carmona']) {
     await page.goto(`/software-engineering-2_0/#scene=${scene}`)
     await expect(page.locator('.scene')).toHaveCSS('animation-duration', '0s')
     const result = await new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa', 'wcag21aa']).analyze()
