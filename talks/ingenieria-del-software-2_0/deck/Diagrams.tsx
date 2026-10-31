@@ -27,18 +27,6 @@ const diagrams: Record<string, DiagramSpec> = {
     ],
     edges: [[0, 2], [1, 2]],
   },
-  'product-decides': {
-    name: ['Autoridad del producto y aprendizaje de la entrega', 'Product authority and delivery learning'],
-    caption: ['La autoridad baja. La evidencia vuelve como propuesta.', 'Authority flows down. Evidence returns as a proposal.'],
-    nodes: [
-      { id: 'thinking', x: 14, y: 37, label: ['Product thinking', 'Product thinking'], detail: ['Investigación, evidencia y juicio de producto.', 'Research, evidence and product judgment.'] },
-      { id: 'human', x: 39, y: 37, label: ['Aceptación humana', 'Human acceptance'], detail: ['Una persona acepta o rechaza el cambio de producto.', 'A person accepts or rejects the product change.'], accent: true },
-      { id: 'definition', x: 64, y: 37, label: ['Definición aceptada', 'Accepted definition'], detail: ['Ficheros legibles, IDs estables y relaciones tipadas conservan la autoridad.', 'Readable files, stable IDs and typed links retain authority.'], accent: true },
-      { id: 'delivery', x: 88, y: 37, label: ['Entrega', 'Delivery'], detail: ['Specs, arquitectura, backlog y agentes citan la definición.', 'Specs, architecture, backlog and agents cite the definition.'] },
-      { id: 'evidence', x: 64, y: 76, label: ['Evidencia ↩', 'Evidence ↩'], detail: ['La entrega devuelve evidencia y Product Changes propuestos; no reescribe la autoridad.', 'Delivery returns evidence and proposed Product Changes; it does not rewrite authority.'] },
-    ],
-    edges: [[0, 1], [1, 2], [2, 3], [3, 4], [4, 1]],
-  },
   'product-definition-model': {
     name: ['Modelo de definición de producto', 'Product definition model'],
     caption: ['Diez tipos de artefacto. Una definición conectada y verificable.', 'Ten artifact kinds. One connected, verifiable definition.'],

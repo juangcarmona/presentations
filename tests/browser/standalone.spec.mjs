@@ -186,6 +186,22 @@ test('the what-to-truth transition gives PDaC a bilingual interactive focus', as
   }
 })
 
+test('the product cycle keeps accepted definition separate from proposed changes', async ({ page }) => {
+  for (const [language, title, accepted, returnLabel] of [
+    ['es', 'El ciclo del producto', 'Definición de producto aceptada', 'Resultados + Product Changes propuestos'],
+    ['en', 'The product cycle', 'Accepted product definition', 'Results + proposed Product Changes'],
+  ]) {
+    await page.goto(`/software-engineering-2_0/?lang=${language}#scene=product-decides`)
+    await expect(page.locator('#scene-title')).toHaveText(title)
+    await expect(page.locator('.product-cycle-card')).toHaveCount(3)
+    await expect(page.locator('.product-cycle-definition')).toContainText(accepted)
+    await expect(page.locator('.product-cycle-return')).toContainText(returnLabel)
+    expect(await page.evaluate(() => document.documentElement.scrollHeight <= innerHeight)).toBe(true)
+  }
+  await page.setViewportSize({ width: 320, height: 720 })
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true)
+})
+
 test('workflow keeps human acceptance visible in maintenance', async ({ page }) => {
   await page.goto('/software-engineering-2_0/#scene=define-once-cite-everywhere')
   await page.keyboard.press('ArrowRight')

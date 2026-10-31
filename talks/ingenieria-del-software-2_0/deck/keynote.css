@@ -129,6 +129,29 @@ button { font: inherit; cursor: pointer; }
 .what-pdac img { flex: none; width: clamp(58px, 7vw, 100px); height: auto; }
 .what-pdac small { display: block; margin-top: .25rem; color: #96e4ad; font: 700 clamp(.75rem, 1vw, 1rem) ui-monospace, monospace; letter-spacing: .02em; }
 .what-rule { max-width: 52ch; margin: clamp(1.2rem, 3vh, 2.4rem) 0 0; color: #bec8d8; font-size: clamp(1.1rem, 1.6vw, 1.5rem); animation: content-enter .65s 1.15s both; }
+[data-scene="product-decides"] { height: 100svh; display: flex; flex-direction: column; padding-top: 5vh; }
+[data-scene="product-decides"] h1 { flex: none; font-size: clamp(2.6rem, 4.3vw, 5rem); margin-bottom: .8rem; }
+[data-scene="product-decides"] .scene-content { flex: 1; min-height: 0; max-width: none; display: flex; }
+.product-cycle { display: grid; grid-template-columns: minmax(0, 1fr) minmax(170px, 25%); gap: 2.5vw; width: 100%; max-height: 100%; padding: .5rem 2vw 1rem 0; }
+.product-cycle-stages { display: grid; grid-template-rows: 1fr 2.8rem 1fr 2.8rem 1fr; min-height: 0; }
+.product-cycle-card { display: flex; align-items: stretch; min-height: 0; border: 1px solid #5d82ba; background: #111b2b; animation: content-enter .55s both; transition: border-color .2s, background .2s, transform .2s; }
+.product-cycle-card:nth-of-type(3) { animation-delay: .25s; }
+.product-cycle-card:nth-of-type(5) { animation-delay: .5s; }
+.product-cycle-card:hover { border-color: #8fc2ff; background: #172947; transform: translateX(.4rem); }
+.product-cycle-definition { border-color: #4da3ff; background: #132945; }
+.product-cycle-icon { display: grid; place-items: center; flex: 0 0 clamp(5rem, 9vw, 8rem); background: #153b75; color: #f8faff; font-size: clamp(2.5rem, 4vw, 4rem); }
+.product-cycle-definition .product-cycle-icon { background: #2055a7; }
+.product-cycle-card > div { display: flex; flex-direction: column; justify-content: center; min-width: 0; padding: .5rem clamp(1rem, 2vw, 2rem); }
+.product-cycle-card strong { display: block; font-size: clamp(1.55rem, 2.8vw, 3rem); line-height: 1.05; letter-spacing: -.04em; }
+.product-cycle-card small { display: block; margin-top: .4rem; color: #b9c9e1; font-size: clamp(.95rem, 1.35vw, 1.35rem); }
+.product-cycle-connector { display: flex; align-items: center; justify-content: center; gap: .75rem; color: #8fc2ff; font: 700 clamp(.8rem, 1.1vw, 1.1rem) ui-monospace, monospace; }
+.product-cycle-connector::before { content: ''; height: 100%; border-left: 2px solid #4da3ff; }
+.product-cycle-connector::after { content: '▼'; align-self: end; margin-left: -1.23rem; color: #4da3ff; font-size: .8rem; }
+.product-cycle-return { position: relative; display: flex; flex-direction: column; justify-content: space-between; align-items: center; padding: 1.2rem .2rem; color: #f0aa7a; text-align: center; font: 700 clamp(.9rem, 1.3vw, 1.25rem) ui-monospace, monospace; }
+.product-cycle-return-head, .product-cycle-return-detail { position: relative; z-index: 1; padding: .35rem; background: var(--lh-canvas); }
+.product-cycle-return-head::before { content: '◀'; margin-right: .5rem; }
+.product-cycle-return-line { position: absolute; top: 2.4rem; bottom: 2.4rem; left: 50%; width: 55%; border-top: 2px dashed #f0aa7a; border-right: 2px dashed #f0aa7a; border-bottom: 2px dashed #f0aa7a; border-radius: 0 1rem 1rem 0; animation: content-enter .7s .8s both; }
+.product-cycle-return-detail { max-width: 15ch; }
 [data-scene="from-structured-behaviour-to-tests"] .scene-content { display: grid; grid-template-columns: minmax(0,1.15fr) minmax(0,1fr); gap: 2rem; }
 [data-scene="from-structured-behaviour-to-tests"] .product-flow { grid-template-columns: 1fr; }
 [data-scene="from-structured-behaviour-to-tests"] .product-flow li { padding: .35rem 0; font-size: 1rem; }
@@ -311,6 +334,17 @@ button { font: inherit; cursor: pointer; }
   .what-story h2 { font-size: clamp(2.5rem, 9vw, 4rem); }
   .what-pdac { font-size: clamp(1.15rem, 5vw, 1.6rem); }
   .what-pdac img { width: 58px; }
+  [data-scene="product-decides"] { height: auto; min-height: 100svh; display: block; padding: 4rem 6vw 6rem; }
+  [data-scene="product-decides"] .scene-content { display: block; }
+  .product-cycle { display: block; max-height: none; padding: 0; }
+  .product-cycle-stages { grid-template-rows: auto 2.8rem auto 2.8rem auto; }
+  .product-cycle-card { min-height: 8rem; }
+  .product-cycle-card strong { font-size: clamp(1.2rem, 5vw, 2rem); }
+  .product-cycle-card small { font-size: .9rem; }
+  .product-cycle-icon { flex-basis: 4rem; font-size: 2.3rem; }
+  .product-cycle-return { margin-top: 1.2rem; padding: .5rem 0; border-top: 2px dashed #f0aa7a; flex-direction: row; gap: .8rem; text-align: left; }
+  .product-cycle-return-line { display: none; }
+  .product-cycle-return-detail { max-width: 22ch; text-align: right; }
   .demo-stage, .arc-layout { grid-template-columns: 1fr; }
   .demo-animation { max-height: 40vh; }
   .origins-map { display: grid; gap: .8rem; height: auto; }
