@@ -11,7 +11,7 @@ test('owner preview: all published scenes at presentation size and narrow viewpo
     await page.goto(`/software-engineering-2_0/#scene=${scene.id}`)
     await expect(page.locator('[data-scene]')).toHaveAttribute('data-scene', scene.id)
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), scene.id).toBe(true)
-    if (['spec-driven-development', 'openspec', 'github-spec-kit', 'kiro', 'define-once-cite-everywhere', 'specs-are-not-source-of-truth', 'can-we-trust-the-result', 'from-structured-behaviour-to-tests', 'what-still-depends-on-us', 'from-proposal-to-accepted-product'].includes(scene.id)) expect(await page.evaluate(() => document.documentElement.scrollHeight <= innerHeight), scene.id).toBe(true)
+    if (['spec-driven-development', 'openspec', 'github-spec-kit', 'kiro', 'define-once-cite-everywhere', 'specs-are-not-source-of-truth', 'can-we-trust-the-result', 'from-structured-behaviour-to-tests', 'controlled-deployment', 'operate-learn-decide-again', 'agentic-flow-end-to-end', 'what-still-depends-on-us'].includes(scene.id)) expect(await page.evaluate(() => document.documentElement.scrollHeight <= innerHeight), scene.id).toBe(true)
     await page.screenshot({ path: `test-results/desktop-preview/${scene.id}.png`, fullPage: true })
     if (scene.id === 'define-once-cite-everywhere') {
       for (const stage of [1, 2]) {

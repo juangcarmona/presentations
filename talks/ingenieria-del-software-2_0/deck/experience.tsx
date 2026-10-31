@@ -8,7 +8,6 @@ import citations from './public/pdac-5-citation-and-drift.png'
 import authority from './public/pdac-authority-and-learning.png'
 import demo from './public/pdac-demo.gif'
 import logo from './public/pdac-logo.png'
-import workflow from './public/pdac-reference-workflow.png'
 import branding from './public/product_shape_branding.png'
 import Diagram from './Diagrams'
 import { Arc42Overview, JourneyMap, LifecycleLoop, OriginsMap, RepoStructure, SddOverview, TerminalCase, sddImages } from './SceneExtras'
@@ -95,7 +94,6 @@ const experience: Experience = { language: 'es', scenes: [
   { id: 'product-definition-model', title: 'Qué escribimos del producto, y cómo se conecta', content: <><h2>PDaC-2 · Product Definition Model</h2><Flow label="Definición canónica" items={['Actors: ACT-CUSTOMER · ACT-PAYMENT-SERVICE participan en journeys', 'Journeys: JRN-CHECKOUT · JRN-REFUND se realizan en Use Cases: UC-CHECKOUT · UC-REFUND', 'Use Cases: gobernados por Business Rules BR-REFUND-001 · BR-AUTH-001; usan Domain: Terms TERM-* · Bounded Contexts BC-*', 'Los casos de uso generan obligaciones: Functional FR-* · Quality QR-* · Constraints CON-*', 'Requirements → scenario-ref → Structured Behaviour: SB-* · SB-CHECKOUT-001 · Given / When / Then']} /><div className="scene-grid"><section><h3>Product Changes</h3><p>CHG-REFUND-002 · semantic proposed delta · afecta a la definición</p></section><section><h3>Derived views</h3><p>snapshot · impact · reference validation · graph diff · navigation · citation status</p></section><section><h3>Delivery consumers</h3><p>SDD specifications · AI agents · human teams · backlog / code citan la definición</p></section></div><Citation /></> },
   { id: 'none-of-this-is-new', title: 'Nada de esto es nuevo', content: <><ul className="principles"><li>Ficheros versionados y legibles</li><li>Metadatos y validación</li><li>IDs estables y enlaces tipados</li><li>Vocabulario de producto</li><li>Baselines y Product Changes</li><li>Citas y detección de obsoletos</li><li>Grafos e informes de impacto</li><li>Contexto acotado para agentes</li></ul><Citation href="https://pdac.dev/articles/what-product-definition-as-code-puts-together/">Where Product Definition as Code comes from</Citation></> },
   { id: 'define-once-cite-everywhere', title: 'Una regla, muchas referencias', content: <Demo language="es" /> },
-  { id: 'from-proposal-to-accepted-product', title: 'De propuesta a producto aceptado', content: <Diagram id="from-proposal-to-accepted-product" language="es" /> },
   { id: 'document-architecture-with-arc42', title: 'Documentar arquitectura con arc42', content: <><ol className="architecture-blocks"><li>Introducción y objetivos</li><li>Restricciones</li><li><strong>Contexto y alcance</strong></li><li><strong>Estrategia de solución</strong></li><li><strong>Bloques de construcción</strong></li><li>Vista de ejecución</li><li>Vista de despliegue</li><li><strong>Conceptos transversales</strong></li><li><strong>Decisiones (ADRs)</strong></li><li><em>Requisitos de calidad</em></li><li>Riesgos y deuda técnica</li><li><em>Glosario</em></li></ol><p><strong>Negrita:</strong> lo que el agente consulta en cada cambio. <em>Cursiva:</em> el puente con la definición de producto.</p><Citation href="https://arc42.org/">arc42 · doce bloques</Citation></> },
   { id: 'agentic-flow-end-to-end', title: 'Un flujo agéntico de principio a fin', content: <><Flow label="Ciclo de vida de agentic-sdlc" items={['Backlog', 'Refine → Ready · verifica un agente', 'Propose → Planned · verifica una persona', 'Implement → Done · verifican CI y una persona', 'Integrate', 'Review → vuelve al backlog']} /><p>agentic-sdlc · <a href="https://github.com/juangcarmona/agent-toolkit">github.com/juangcarmona/agent-toolkit</a></p><p>adopt descubre las herramientas del proyecto. done-gate-auditor revisa el diff fuera del contexto de quien lo escribió.</p></> },
   { id: 'from-structured-behaviour-to-tests', title: 'De la regla al test', content: <TestEvidence language="es" /> },
@@ -111,7 +109,6 @@ const figures: Record<string, string> = {
   'product-definition-model': model,
   // Keep the retired source illustration in the public deck assets.
   '14-citas': citations,
-  'from-proposal-to-accepted-product': workflow,
   'agentic-flow-end-to-end': lifecycle,
 }
 
@@ -122,11 +119,12 @@ export const chapters = [
   { label: ['Código', 'Code'], ids: ['prepare-repo-for-ai', 'repository-structure', 'spec-driven-development', 'openspec', 'github-spec-kit', 'kiro', 'specs-are-not-source-of-truth'] },
   { label: ['Evidencia', 'Evidence'], ids: ['can-we-trust-the-result', 'from-pyramid-to-hourglass', 'from-structured-behaviour-to-tests'] },
   { label: ['Entrega', 'Delivery'], ids: ['controlled-deployment'] },
-  { label: ['Mantenimiento', 'Maintenance'], ids: ['operate-learn-decide-again', 'from-proposal-to-accepted-product'] },
+  { label: ['Mantenimiento', 'Maintenance'], ids: ['operate-learn-decide-again'] },
 ] as const
 
 // Old shared links remain readable after the presentation was reorganised.
 export const legacySceneIds: Record<string, string> = {
+  'from-proposal-to-accepted-product': 'agentic-flow-end-to-end',
   '02-recorrido': 'engineering-journey',
   '03-repo': 'prepare-repo-for-ai',
   '04-guardarrailes': 'guardrails',
@@ -144,7 +142,7 @@ export const legacySceneIds: Record<string, string> = {
   '12-origen': 'none-of-this-is-new',
   '13-productshape': 'define-once-cite-everywhere',
   '14-citas': 'define-once-cite-everywhere',
-  '15-workflow': 'from-proposal-to-accepted-product',
+  '15-workflow': 'agentic-flow-end-to-end',
   '16-arc42': 'document-architecture-with-arc42',
   '17-flujo-agentico': 'agentic-flow-end-to-end',
   '18-entrega': 'controlled-deployment',
