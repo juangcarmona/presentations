@@ -168,6 +168,24 @@ test('legacy numbered links resolve to semantic scenes', async ({ page }) => {
   await expect(page).toHaveURL(/#scene=juan-g-carmona$/)
 })
 
+test('the what-to-truth transition gives PDaC a bilingual interactive focus', async ({ page }) => {
+  for (const [language, heading, now, rule] of [
+    ['es', 'Antes escribíamos el qué', 'Ahora puede ser nuestra fuente de verdad.', 'La mantenemos con ayuda de la IA'],
+    ['en', 'We used to write the “what”', 'Now it can be our source of truth.', 'We maintain it with AI'],
+  ]) {
+    await page.goto(`/software-engineering-2_0/?lang=${language}#scene=we-abandoned-the-what`)
+    await expect(page.locator('#scene-title')).toHaveText(heading)
+    await expect(page.getByRole('heading', { level: 2, name: now })).toBeVisible()
+    await expect(page.locator('.what-rule')).toContainText(rule)
+    const link = page.getByRole('link', { name: /Product Definition as Code/ })
+    await expect(link).toHaveAttribute('target', '_blank')
+    const before = await link.evaluate(node => getComputedStyle(node).backgroundColor)
+    await link.hover()
+    await expect.poll(() => link.evaluate(node => getComputedStyle(node).backgroundColor)).not.toBe(before)
+    expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true)
+  }
+})
+
 test('workflow keeps human acceptance visible in maintenance', async ({ page }) => {
   await page.goto('/software-engineering-2_0/#scene=define-once-cite-everywhere')
   await page.keyboard.press('ArrowRight')

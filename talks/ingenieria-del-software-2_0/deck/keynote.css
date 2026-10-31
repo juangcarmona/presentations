@@ -81,8 +81,7 @@ button { font: inherit; cursor: pointer; }
 .test-shape p:first-child { width: 30%; background: #415d9f; }
 .test-shape p:nth-child(2) { width: 60%; }
 .test-shape.after p:first-child { width: 85%; background: #3971ff; }
-.pdac-mark { position: absolute; right: 8vw; top: 21vh; width: min(20vw, 250px); filter: grayscale(.2); animation: float 5s ease-in-out infinite alternate; }
-.scene-content:has(.pdac-mark), .scene-content:has(.cover-art) { animation: none; }
+.scene-content:has(.cover-art) { animation: none; }
 .demo-stage { display: grid; grid-template-columns: minmax(0,.85fr) minmax(0,1.15fr); gap: 3vw; align-items: center; }
 .demo-steps { display: grid; gap: .55rem; margin: 0; padding: 0; list-style: none; }
 .demo-steps li { display: flex; align-items: baseline; gap: .8rem; padding: .65rem 0; border-bottom: 1px solid var(--lh-border); }
@@ -120,8 +119,16 @@ button { font: inherit; cursor: pointer; }
 .journey-node:nth-of-type(3n + 2) { border-color: #96e4ad99; }
 .journey-node:hover, .journey-node:focus-visible, .journey-node[data-active="true"] { border-color: var(--lh-focus); box-shadow: 0 0 25px #4da3ff55; transform: translateY(-7px) scale(1.06); }
 .journey-insight { position: absolute; right: 2rem; bottom: 1.3rem; max-width: 42ch; margin: 0; padding: .55rem .85rem; border-left: 2px solid #96e4ad; background: #101a2aee; color: var(--lh-text); font-size: clamp(.95rem, 1.35vw, 1.25rem); }
-[data-scene="we-abandoned-the-what"] h1 { max-width: 780px; font-size: clamp(3rem, 6vw, 6rem); }
-[data-scene="we-abandoned-the-what"] .scene-lede { max-width: min(75%,25em); }
+[data-scene="we-abandoned-the-what"] h1 { max-width: none; margin-bottom: 0; color: #75c6df; font-size: clamp(1.6rem, 2.8vw, 3rem); letter-spacing: -.04em; }
+[data-scene="we-abandoned-the-what"] .scene-content { min-height: min(68vh, 620px); display: flex; align-items: center; }
+.what-story { width: min(100%, 1000px); }
+.what-abandoned { margin: .15rem 0 clamp(2rem, 5vh, 4rem); color: #aab6c9; font-size: clamp(1.5rem, 2.5vw, 2.6rem); letter-spacing: -.04em; animation: content-enter .6s .2s both; }
+.what-story h2 { max-width: 18ch; margin: 0 0 clamp(1.2rem, 3vh, 2.5rem); font-size: clamp(2.7rem, 5.2vw, 5.5rem); line-height: 1.03; animation: content-enter .65s .55s both; }
+.what-pdac { display: flex; align-items: center; gap: clamp(.8rem, 2vw, 1.8rem); width: fit-content; max-width: 100%; padding: .65rem 1.2rem .65rem .75rem; border-left: 3px solid #96e4ad; background: #15263a; color: #f8faff; font-size: clamp(1.3rem, 2.5vw, 2.5rem); font-weight: 800; line-height: 1.08; letter-spacing: -.04em; text-decoration: none; animation: content-enter .65s .9s both; transition: background .2s, box-shadow .2s; }
+.what-pdac:hover, .what-pdac:focus-visible { background: #1b4365; box-shadow: 0 0 28px #4da3ff44; }
+.what-pdac img { flex: none; width: clamp(58px, 7vw, 100px); height: auto; }
+.what-pdac small { display: block; margin-top: .25rem; color: #96e4ad; font: 700 clamp(.75rem, 1vw, 1rem) ui-monospace, monospace; letter-spacing: .02em; }
+.what-rule { max-width: 52ch; margin: clamp(1.2rem, 3vh, 2.4rem) 0 0; color: #bec8d8; font-size: clamp(1.1rem, 1.6vw, 1.5rem); animation: content-enter .65s 1.15s both; }
 [data-scene="from-structured-behaviour-to-tests"] .scene-content { display: grid; grid-template-columns: minmax(0,1.15fr) minmax(0,1fr); gap: 2rem; }
 [data-scene="from-structured-behaviour-to-tests"] .product-flow { grid-template-columns: 1fr; }
 [data-scene="from-structured-behaviour-to-tests"] .product-flow li { padding: .35rem 0; font-size: 1rem; }
@@ -269,7 +276,6 @@ button { font: inherit; cursor: pointer; }
 @keyframes title-enter { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
 @keyframes content-enter { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
 @keyframes line-draw { from { stroke-dashoffset: 80; opacity: 0; } to { stroke-dashoffset: 0; opacity: .8; } }
-@keyframes float { to { transform: translateY(-18px); } }
 @keyframes cover-drift { to { transform: scale(1.1) translateX(-2%); } }
 @keyframes journey-trace { to { stroke-dashoffset: -160; } }
 @keyframes journey-arrive { from { opacity: 0; transform: translateY(18px) scale(.9); } to { opacity: 1; transform: translateY(0) scale(1); } }
@@ -300,8 +306,11 @@ button { font: inherit; cursor: pointer; }
   .scene-list { grid-template-columns: 1fr; }
   .scene-list dt { border: 0; padding-bottom: 0; }
   .scene-list dd { padding-top: .2rem; }
-  .pdac-mark { position: relative; float: right; top: auto; right: auto; width: 110px; }
-  [data-scene="we-abandoned-the-what"] .scene-lede { max-width: 100%; }
+  [data-scene="we-abandoned-the-what"] h1 { font-size: clamp(1.7rem, 6vw, 2.5rem); }
+  [data-scene="we-abandoned-the-what"] .scene-content { min-height: 0; margin-top: 2rem; }
+  .what-story h2 { font-size: clamp(2.5rem, 9vw, 4rem); }
+  .what-pdac { font-size: clamp(1.15rem, 5vw, 1.6rem); }
+  .what-pdac img { width: 58px; }
   .demo-stage, .arc-layout { grid-template-columns: 1fr; }
   .demo-animation { max-height: 40vh; }
   .origins-map { display: grid; gap: .8rem; height: auto; }
