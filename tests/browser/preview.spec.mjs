@@ -11,11 +11,11 @@ test('owner preview: all published scenes at presentation size and narrow viewpo
     await page.goto(`/software-engineering-2_0/#scene=${scene.id}`)
     await expect(page.locator('[data-scene]')).toHaveAttribute('data-scene', scene.id)
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), scene.id).toBe(true)
-    if (scene.id.startsWith('06') || scene.id === '15-workflow') expect(await page.evaluate(() => document.documentElement.scrollHeight <= innerHeight), scene.id).toBe(true)
+    if (['spec-driven-development', 'openspec', 'github-spec-kit', 'kiro', 'from-proposal-to-accepted-product'].includes(scene.id)) expect(await page.evaluate(() => document.documentElement.scrollHeight <= innerHeight), scene.id).toBe(true)
     await page.screenshot({ path: `test-results/desktop-preview/${scene.id}.png`, fullPage: true })
   }
   await page.setViewportSize({ width: 320, height: 720 })
-  for (const id of ['cover', '02-recorrido', '03-repo', '04-guardarrailes', '05-estructura', '06-sdd', '06d-codigo', '07-gaps', '08-dimensiones', '11-modelo', '12-origen', '16-arc42', '20-piramide', '20a-evidencia', '18-entrega', '18b-mantenimiento', '24-fin']) {
+  for (const id of ['cover', 'engineering-journey', 'prepare-repo-for-ai', 'guardrails', 'repository-structure', 'spec-driven-development', 'specs-are-not-source-of-truth', 'two-sources-of-truth', 'product-definition-model', 'none-of-this-is-new', 'document-architecture-with-arc42', 'from-pyramid-to-hourglass', 'from-structured-behaviour-to-tests', 'agentic-flow-end-to-end', 'controlled-deployment', 'operate-learn-decide-again', 'juan-g-carmona']) {
     await page.goto(`/software-engineering-2_0/?lang=en#scene=${id}`)
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), id).toBe(true)
   }

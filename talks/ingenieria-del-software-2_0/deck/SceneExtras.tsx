@@ -115,21 +115,19 @@ export function SddOverview({ language, view = 'general' }: { language: Language
   </div>
 }
 
-export function TerminalCase({ language, variant }: { language: Language; variant: 'specs' | 'metric' }) {
+export function TerminalCase({ language }: { language: Language }) {
   const en = language === 'en'
-  const specs = variant === 'specs'
-  const command = specs ? 'grep -rn -i "refund" openspec/specs' : `rg "${en ? 'net_sales' : 'ventas_netas'}" .`
-  const lines = specs ? [
+  const lines = [
     'billing:  30 days from purchase',
     'checkout: 30 days from delivery',
     'support:  less than a month',
-  ] : en ? ['finance: gross - refunds - discounts', 'sales:   gross - discounts', 'close:   sum(invoiced) # no credits'] : ['finanzas: bruto - devoluciones - descuentos', 'comercial: bruto - descuentos', 'cierre:    sum(facturado) # sin abonos']
-  return <div className="case-wrap">{specs && <p className="case-subtitle">{en ? 'Each spec describes a change, not the product.' : 'Cada spec describe un cambio, no el producto.'}</p>}<div className="case-layout">
+  ]
+  return <div className="case-wrap"><p className="case-subtitle">{en ? 'Each spec describes a change, not the product.' : 'Cada spec describe un cambio, no el producto.'}</p><div className="case-layout">
     <div className="terminal" role="region" aria-label={en ? 'Console showing conflicting definitions' : 'Consola con definiciones divergentes'} tabIndex={0}>
       <div className="terminal-top"><span></span><span></span><span></span><b>bash</b></div>
-      <div className="terminal-body"><p><span>user@home</span>:~$ {command}</p>{lines.map(line => <p key={line}>{line}</p>)}<p><span>user@home</span>:~$ <i aria-hidden="true">▍</i></p></div>
+      <div className="terminal-body"><p><span>user@home</span>:~$ grep -rn -i "refund" openspec/specs</p>{lines.map(line => <p key={line}>{line}</p>)}<p><span>user@home</span>:~$ <i aria-hidden="true">▍</i></p></div>
     </div>
-    <div className="case-story">{specs ? <><p className="section-label">{en ? 'A REAL CASE' : 'UN CASO REAL'}</p><h2>{en ? '160 specs. Three truths.' : '160 specs. Tres verdades.'}</h2><p>{en ? 'The same rule differed across teams: VAT, runtime schema and even a security gap.' : 'La misma regla divergía entre equipos: IVA, esquema en runtime y hasta un agujero de seguridad.'}</p><blockquote>{en ? '“Forbidden and mandatory” in the same file.' : '«Prohibido y obligatorio» en el mismo fichero.'}</blockquote><a href="https://jgcarmona.com/en/i-tried-to-prove-pdac-wrong/">{en ? 'Read the case ↗' : 'Leer el caso ↗'}</a></> : <><p className="section-label">{en ? 'THE DECISION' : 'LA DECISIÓN'}</p><h2>{en ? 'Which one wins?' : '¿Cuál manda?'}</h2><p>{en ? 'Three consumers calculate net sales differently. Define the KPI once, with a stable ID; code and reports cite it.' : 'Tres consumidores calculan las ventas netas de forma diferente. Define el KPI una vez, con ID estable; código e informes lo citan.'}</p></>}</div>
+    <div className="case-story"><p className="section-label">{en ? 'A REAL CASE' : 'UN CASO REAL'}</p><h2>{en ? '160 specs. Three truths.' : '160 specs. Tres verdades.'}</h2><p>{en ? 'The same rule differed across teams: VAT, runtime schema and even a security gap.' : 'La misma regla divergía entre equipos: IVA, esquema en runtime y hasta un agujero de seguridad.'}</p><blockquote>{en ? '“Forbidden and mandatory” in the same file.' : '«Prohibido y obligatorio» en el mismo fichero.'}</blockquote><a href="https://jgcarmona.com/en/i-tried-to-prove-pdac-wrong/">{en ? 'Read the case ↗' : 'Leer el caso ↗'}</a></div>
   </div></div>
 }
 

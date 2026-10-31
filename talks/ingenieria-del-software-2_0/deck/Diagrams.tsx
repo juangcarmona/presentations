@@ -5,7 +5,7 @@ type Node = { id: string; x: number; y: number; label: Localized; detail: Locali
 type DiagramSpec = { name: Localized; caption: Localized; nodes: Node[]; edges: [number, number][]; edgeLabels?: { x: number; y: number; label: Localized }[] }
 
 const diagrams: Record<string, DiagramSpec> = {
-  '03-repo': {
+  'prepare-repo-for-ai': {
     name: ['Un repositorio preparado para trabajar con IA', 'A repository ready to work with AI'],
     caption: ['El contexto vive en el repo. Cada capacidad se activa cuando toca.', 'Context lives in the repo. Each capability activates when needed.'],
     nodes: [
@@ -17,17 +17,17 @@ const diagrams: Record<string, DiagramSpec> = {
     ],
     edges: [[1, 0], [2, 0], [3, 0], [4, 0]],
   },
-  '08-dimensiones': {
+  'two-sources-of-truth': {
     name: ['Dos fuentes de verdad complementarias', 'Two complementary sources of truth'],
-    caption: ['Producto y arquitectura aportan dos decisiones distintas a la entrega.', 'Product and architecture bring two distinct decisions into delivery.'],
+    caption: ['El qué y el cómo alimentan la entrega; no se sustituyen entre sí.', 'The what and the how inform delivery; neither replaces the other.'],
     nodes: [
-      { id: 'product', x: 20, y: 28, label: ['WHAT · Producto', 'WHAT · Product'], detail: ['¿Qué queremos construir? PDaC conserva la definición aceptada; ProductShape permite explorarla y verificarla.', 'What do we want to build? PDaC preserves the accepted definition; ProductShape helps explore and verify it.'], bullets: [['Reglas y casos de uso', 'Rules and use cases'], ['Journeys y comportamiento', 'Journeys and behaviour']], accent: true, tone: 'teal' },
-      { id: 'architecture', x: 20, y: 71, label: ['HOW · Arquitectura', 'HOW · Architecture'], detail: ['¿Cómo lo construiremos? arc42 organiza la documentación; ArcShape ayuda a verla y navegarla.', 'How will we build it? arc42 structures documentation; ArcShape helps view and navigate it.'], bullets: [['Contexto y bloques', 'Context and building blocks'], ['ADRs y calidad', 'ADRs and quality']], accent: true, tone: 'violet' },
-      { id: 'delivery', x: 78, y: 49, label: ['DELIVERY · Entrega', 'DELIVERY'], detail: ['El desarrollo cita la definición de producto y respeta las decisiones de arquitectura.', 'Delivery cites the product definition and follows architecture decisions.'], bullets: [['Specs y código', 'Specs and code'], ['Tests y evidencia', 'Tests and evidence']], tone: 'blue' },
+      { id: 'product', x: 20, y: 28, label: ['WHAT · Producto', 'WHAT · Product'], detail: ['¿Qué queremos construir y para quién? Product Definition as Code (PDaC).', 'What do we build, and for whom? Product Definition as Code (PDaC).'], bullets: [['Definición aceptada y versionada', 'Accepted, versioned definition'], ['Cambios trazables y verificables', 'Traceable, verifiable changes']], accent: true, tone: 'teal' },
+      { id: 'architecture', x: 20, y: 71, label: ['HOW · Arquitectura', 'HOW · Architecture'], detail: ['¿Cómo lo construimos? Documentación de arquitectura.', 'How do we build it? Architecture documentation.'], bullets: [['arc42: contexto y bloques', 'arc42: context and building blocks'], ['ADRs: decisiones y restricciones', 'ADRs: decisions and constraints']], accent: true, tone: 'violet' },
+      { id: 'delivery', x: 78, y: 49, label: ['DELIVERY · Entrega', 'DELIVERY'], detail: ['Spec-Driven Development (SDD): de la intención al cambio entregable.', 'Spec-Driven Development (SDD): from intent to a deliverable change.'], bullets: [['Spec-Driven Delivery', 'Spec-Driven Delivery'], ['Specs, código y pruebas', 'Specs, code and tests']], tone: 'blue' },
     ],
     edges: [[0, 2], [1, 2]],
   },
-  '10-autoridad': {
+  'product-decides': {
     name: ['Autoridad del producto y aprendizaje de la entrega', 'Product authority and delivery learning'],
     caption: ['La autoridad baja. La evidencia vuelve como propuesta.', 'Authority flows down. Evidence returns as a proposal.'],
     nodes: [
@@ -39,7 +39,7 @@ const diagrams: Record<string, DiagramSpec> = {
     ],
     edges: [[0, 1], [1, 2], [2, 3], [3, 4], [4, 1]],
   },
-  '11-modelo': {
+  'product-definition-model': {
     name: ['Modelo de definición de producto', 'Product definition model'],
     caption: ['Diez tipos de artefacto. Una definición conectada y verificable.', 'Ten artifact kinds. One connected, verifiable definition.'],
     nodes: [
@@ -56,7 +56,7 @@ const diagrams: Record<string, DiagramSpec> = {
     ],
     edges: [[0, 1], [1, 2], [2, 3], [2, 5], [2, 6], [2, 7], [2, 8], [4, 5], [6, 9], [7, 9]],
   },
-  '15-workflow': {
+  'from-proposal-to-accepted-product': {
     name: ['De propuesta a producto aceptado', 'From proposal to accepted product'],
     caption: ['Apply materializa. Merge acepta.', 'Apply materialises. Merge accepts.'],
     nodes: [
@@ -71,31 +71,22 @@ const diagrams: Record<string, DiagramSpec> = {
     ],
     edges: [[0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 0]],
   },
-  '17-flujo-agentico': {
+  'agentic-flow-end-to-end': {
     name: ['Ciclo de vida agéntico', 'Agentic lifecycle'],
-    caption: ['Cada fase deja evidencia y un punto de decisión.', 'Every stage leaves evidence and a decision point.'],
+    caption: ['Proponer, implementar y verificar son pasos distintos. La persona acepta el cambio y su evidencia.', 'Proposing, implementing and verifying are distinct steps. A person accepts the change and its evidence.'],
     nodes: [
-      { id: 'backlog', x: 11, y: 31, label: ['Backlog', 'Backlog'], detail: ['El trabajo entra como necesidad, no como código.', 'Work enters as a need, not as code.'] },
-      { id: 'refine', x: 30, y: 31, label: ['Refine', 'Refine'], detail: ['Un agente verifica que la tarea esté lista.', 'An agent verifies that the task is ready.'] },
-      { id: 'propose', x: 49, y: 31, label: ['Propose', 'Propose'], detail: ['Una persona verifica y acepta el plan.', 'A person verifies and accepts the plan.'], accent: true },
-      { id: 'implement', x: 68, y: 31, label: ['Implement', 'Implement'], detail: ['CI y una persona verifican la implementación.', 'CI and a person verify the implementation.'], accent: true },
-      { id: 'integrate', x: 88, y: 31, label: ['Integrate', 'Integrate'], detail: ['El cambio aprobado se integra.', 'The approved change is integrated.'] },
-      { id: 'review', x: 49, y: 75, label: ['Review ↩', 'Review ↩'], detail: ['La evidencia vuelve al backlog como aprendizaje.', 'Evidence returns to the backlog as learning.'] },
+      { id: 'backlog', x: 12, y: 29, label: ['Backlog', 'Backlog'], detail: ['Una necesidad concreta entra como trabajo pendiente.', 'A concrete need enters as work to be done.'], tone: 'violet' },
+      { id: 'refine', x: 37, y: 29, label: ['Refine', 'Refine'], detail: ['Se aclara alcance, criterio de aceptación y fuentes de verdad.', 'Scope, acceptance criteria and sources of truth become clear.'], tone: 'cyan' },
+      { id: 'propose', x: 62, y: 29, label: ['Propose', 'Propose'], detail: ['El plan se propone y una persona lo acepta antes de implementar.', 'A plan is proposed and a person accepts it before implementation.'], accent: true, tone: 'amber', human: true },
+      { id: 'implement', x: 87, y: 29, label: ['Implement', 'Implement'], detail: ['Se produce el diff y se vincula con el criterio aceptado.', 'The diff is produced and linked to the accepted criterion.'], tone: 'blue' },
+      { id: 'tests', x: 87, y: 72, label: ['Tests · CI', 'Tests · CI'], detail: ['Tests y comprobaciones automáticas generan resultados reproducibles.', 'Tests and automated checks produce reproducible results.'], tone: 'teal' },
+      { id: 'review', x: 62, y: 72, label: ['Review · evidencia', 'Review · evidence'], detail: ['Una persona revisa diff, resultados y riesgos antes de aceptar.', 'A person reviews the diff, results and risks before acceptance.'], accent: true, tone: 'amber', human: true },
+      { id: 'integrate', x: 37, y: 72, label: ['Integrate', 'Integrate'], detail: ['Solo el cambio aceptado se integra y queda listo para desplegar.', 'Only the accepted change is integrated and ready to deploy.'], tone: 'green' },
+      { id: 'learn', x: 12, y: 72, label: ['Aprendizaje ↩', 'Learning ↩'], detail: ['Resultados y problemas vuelven al backlog como información nueva.', 'Results and issues return to the backlog as new information.'], tone: 'pink' },
     ],
-    edges: [[0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [5, 0]],
+    edges: [[0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 0]],
   },
-  '20a-evidencia': {
-    name: ['Review, tests y evidencia', 'Review, tests and evidence'],
-    caption: ['CI aporta señales; una persona revisa el cambio, sus riesgos y su evidencia.', 'CI provides signals; a person reviews the change, its risks and its evidence.'],
-    nodes: [
-      { id: 'change', x: 14, y: 46, label: ['Cambio · PR', 'Change · PR'], detail: ['El diff muestra qué se ha modificado y qué decisión lo justifica.', 'The diff shows what changed and which decision justifies it.'], tone: 'violet' },
-      { id: 'tests', x: 38, y: 46, label: ['Tests', 'Tests'], detail: ['Unitarios, integración y escenarios de comportamiento comprueban aspectos distintos.', 'Unit, integration and behaviour scenarios check different aspects.'], tone: 'teal' },
-      { id: 'evidence', x: 62, y: 46, label: ['Evidencia', 'Evidence'], detail: ['Resultados, trazabilidad, validaciones y riesgos quedan adjuntos al cambio.', 'Results, traceability, checks and risks accompany the change.'], tone: 'cyan' },
-      { id: 'review', x: 86, y: 46, label: ['Review humano', 'Human review'], detail: ['Una persona decide si la evidencia basta y si el cambio merece integrarse.', 'A person decides whether the evidence is sufficient and whether to integrate the change.'], tone: 'amber', human: true },
-    ],
-    edges: [[0, 1], [1, 2], [2, 3]],
-  },
-  '18-entrega': {
+  'controlled-deployment': {
     name: ['Del candidato a producción', 'From candidate to production'],
     caption: ['El merge no es el final: cada entorno exige señales, una decisión y una salida segura.', 'Merge is not the end: each environment needs signals, a decision and a safe exit.'],
     nodes: [
@@ -107,7 +98,7 @@ const diagrams: Record<string, DiagramSpec> = {
     edges: [[0, 1], [1, 2], [2, 3]],
     edgeLabels: [{ x: 50, y: 35, label: ['gates', 'gates'] }, { x: 75, y: 35, label: ['decisión', 'decision'] }],
   },
-  '18b-mantenimiento': {
+  'operate-learn-decide-again': {
     name: ['Producción devuelve aprendizaje', 'Production returns learning'],
     caption: ['Mantener no es parchear sin rumbo: observar, decidir, cambiar y volver a validar.', 'Maintenance is not aimless patching: observe, decide, change and validate again.'],
     nodes: [
@@ -118,30 +109,7 @@ const diagrams: Record<string, DiagramSpec> = {
     ],
     edges: [[0, 1], [1, 2], [2, 3], [3, 0]],
   },
-  '21-vista-global': {
-    name: ['La ingeniería alrededor de una decisión humana', 'Engineering around human judgment'],
-    caption: ['La IA acelera el trabajo. La decisión sigue siendo nuestra.', 'AI accelerates the work. The decision remains ours.'],
-    nodes: [
-      { id: 'human', x: 50, y: 49, label: ['Una persona decide', 'A person decides'], detail: ['Producto, arquitectura, guardarraíles y evidencia requieren juicio humano.', 'Product, architecture, guardrails and evidence require human judgment.'], accent: true },
-      { id: 'code', x: 15, y: 22, label: ['Código', 'Code'], detail: ['Convenciones, skills, agentes y comandos preparan el repositorio.', 'Conventions, skills, agents and commands prepare the repository.'] },
-      { id: 'product', x: 50, y: 15, label: ['Producto', 'Product'], detail: ['La definición aceptada conserva la autoridad sobre el qué.', 'The accepted definition retains authority over what to build.'] },
-      { id: 'architecture', x: 85, y: 22, label: ['Arquitectura', 'Architecture'], detail: ['arc42 y ADRs explican el cómo y sus límites.', 'arc42 and ADRs explain how and its boundaries.'] },
-      { id: 'delivery', x: 85, y: 75, label: ['Desarrollo', 'Delivery'], detail: ['El flujo agéntico produce un PR revisable.', 'The agentic flow produces a reviewable PR.'] },
-      { id: 'validation', x: 50, y: 82, label: ['Validación', 'Validation'], detail: ['Escenarios Given / When / Then se convierten en tests.', 'Given / When / Then scenarios become tests.'] },
-      { id: 'evidence', x: 15, y: 75, label: ['Evidencia', 'Evidence'], detail: ['Tests y citas verificadas sostienen la aceptación.', 'Tests and verified citations support acceptance.'] },
-    ],
-    edges: [[1, 0], [2, 0], [3, 0], [0, 4], [4, 5], [5, 6], [6, 0]],
-    edgeLabels: [
-      { x: 28, y: 37, label: ['contexto', 'context'] },
-      { x: 50, y: 31, label: ['define', 'defines'] },
-      { x: 71, y: 37, label: ['limita', 'constrains'] },
-      { x: 71, y: 62, label: ['autoriza', 'approves'] },
-      { x: 67, y: 81, label: ['prueba', 'tests'] },
-      { x: 32, y: 81, label: ['devuelve', 'returns'] },
-      { x: 28, y: 62, label: ['informa', 'informs'] },
-    ],
-  },
-  '22-nosotros': {
+  'what-still-depends-on-us': {
     name: ['Lo que sigue siendo responsabilidad humana', 'What remains a human responsibility'],
     caption: ['La IA acelera. Nosotros respondemos por el resultado.', 'AI accelerates. We own the outcome.'],
     nodes: [
@@ -172,7 +140,7 @@ export default function Diagram({ id, language, original }: { id: string; langua
       })}
     </svg>
     {spec.edgeLabels?.map(({ x, y, label }) => <span className="edge-label" key={`${x}-${y}`} style={{ left: `${x}%`, top: `${y}%` }} aria-hidden="true">{label[locale]}</span>)}
-    {spec.nodes.map(node => <button key={node.id} className={`diagram-node${node.accent ? ' diagram-node-accent' : ''}`} data-tone={node.tone} type="button" style={{ left: `${node.x}%`, top: `${node.y}%` }} aria-label={`${node.label[locale]}. ${node.detail[locale]}`} aria-pressed={active === node.id} onMouseEnter={() => setActive(node.id)} onMouseLeave={event => { if (document.activeElement !== event.currentTarget) setActive(null) }} onFocus={() => setActive(node.id)} onBlur={() => setActive(null)} onClick={() => setActive(active === node.id ? null : node.id)}>{node.human && <svg className="human-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="7" r="3" /><path d="M5 21v-3a7 7 0 0 1 14 0v3" /></svg>}{node.label[locale]}{node.badge && <small className="diagram-badge">{node.badge[locale]}</small>}{active === node.id && <span className={`node-popover${id === '08-dimensiones' ? node.id === 'delivery' ? ' node-popover-side-left' : ' node-popover-side' : `${node.y > 60 ? ' node-popover-above' : ''}${node.x < 20 ? ' node-popover-left' : ''}${node.x > 80 ? ' node-popover-right' : ''}`}`} role="tooltip">{node.detail[locale]}{node.bullets && <span className="popover-bullets">• {node.bullets[0][locale]}<br />• {node.bullets[1][locale]}</span>}</span>}</button>)}
+    {spec.nodes.map(node => <button key={node.id} className={`diagram-node${node.accent ? ' diagram-node-accent' : ''}`} data-tone={node.tone} type="button" style={{ left: `${node.x}%`, top: `${node.y}%` }} aria-label={`${node.label[locale]}. ${node.detail[locale]}`} aria-pressed={active === node.id} onMouseEnter={() => setActive(node.id)} onMouseLeave={event => { if (document.activeElement !== event.currentTarget) setActive(null) }} onFocus={() => setActive(node.id)} onBlur={() => setActive(null)} onClick={() => setActive(active === node.id ? null : node.id)}>{node.human && <svg className="human-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="7" r="3" /><path d="M5 21v-3a7 7 0 0 1 14 0v3" /></svg>}{node.label[locale]}{node.badge && <small className="diagram-badge">{node.badge[locale]}</small>}{active === node.id && <span className={`node-popover${id === 'two-sources-of-truth' ? node.id === 'delivery' ? ' node-popover-side-left' : ' node-popover-side' : `${node.y > 60 ? ' node-popover-above' : ''}${node.x < 20 ? ' node-popover-left' : ''}${node.x > 80 ? ' node-popover-right' : ''}`}`} role="tooltip">{node.detail[locale]}{node.bullets && <span className="popover-bullets">• {node.bullets[0][locale]}<br />• {node.bullets[1][locale]}</span>}</span>}</button>)}
     <p className="diagram-caption">{spec.caption[locale]}</p>
     {original && <p className="diagram-hint"><a href={original} target="_blank" rel="noreferrer">{language === 'en' ? 'Original diagram ↗' : 'Diagrama original ↗'}</a></p>}
   </section>

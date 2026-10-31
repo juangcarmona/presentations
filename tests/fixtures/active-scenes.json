@@ -1,9 +1,9 @@
 [
-  "cover", "02-recorrido",
-  "08-dimensiones", "07-gaps", "09-intencion", "10-autoridad", "11-modelo", "12-origen", "13-productshape",
-  "16-arc42", "04-guardarrailes",
-  "03-repo", "05-estructura", "06-sdd", "06a-openspec", "06b-spec-kit", "06c-kiro", "06d-codigo",
-  "19-validacion", "20-piramide", "20a-evidencia",
-  "17-flujo-agentico", "18-entrega", "18b-mantenimiento", "15-workflow",
-  "21-vista-global", "22-nosotros", "24-fin"
+  "cover", "engineering-journey",
+  "two-sources-of-truth", "we-abandoned-the-what", "product-decides", "product-definition-model", "none-of-this-is-new", "define-once-cite-everywhere",
+  "document-architecture-with-arc42", "guardrails",
+  "prepare-repo-for-ai", "repository-structure", "spec-driven-development", "openspec", "github-spec-kit", "kiro", "specs-are-not-source-of-truth",
+  "from-pyramid-to-hourglass", "from-structured-behaviour-to-tests",
+  "agentic-flow-end-to-end", "controlled-deployment", "operate-learn-decide-again", "from-proposal-to-accepted-product",
+  "what-still-depends-on-us", "juan-g-carmona"
 ]
