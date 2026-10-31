@@ -18,22 +18,30 @@ export const presentationImages = [portrait, logo, branding, ...sddImages]
 function Demo({ language }: { language: string }) {
   const [playing, setPlaying] = useState(() => !matchMedia('(prefers-reduced-motion: reduce)').matches)
   const en = language === 'en'
-  const steps = en ? [
-    'BR-REFUND-001: one accepted rule.',
-    'Each delivery spec cites it.',
-    'If it changes, CI flags stale citations.',
-  ] : [
-    'BR-REFUND-001: una regla aceptada.',
-    'Cada spec de entrega la cita.',
-    'Si cambia, CI señala las citas obsoletas.',
-  ]
+  const consumers = en ? ['Checkout spec', 'Support spec', 'Refund test'] : ['Spec de compra', 'Spec de soporte', 'Test de devolución']
   useEffect(() => {
     const preference = matchMedia('(prefers-reduced-motion: reduce)')
     const stop = () => { if (preference.matches) setPlaying(false) }
     preference.addEventListener('change', stop)
     return () => preference.removeEventListener('change', stop)
   }, [])
-  return <div className="demo-stage"><div className="demo-narrative"><p>{en ? 'The accepted product definition is the source of truth. Specs are delivery snapshots.' : 'La definición aceptada del producto es la fuente de verdad. Las specs son fotos de la entrega.'}</p><ol className="demo-steps" aria-label={en ? 'Citation demonstration' : 'Demostración de citas'}>{steps.map((step, i) => <li key={step}><span>{String(i + 1).padStart(2, '0')}</span><p>{step}</p></li>)}</ol></div><div className="demo-visual" onClick={event => event.stopPropagation()}>{playing ? <img className="demo-animation" src={demo} alt={en ? 'Animated demonstration of the refund rule and stale citations' : 'Demostración animada de la regla de devolución y citas obsoletas'} /> : <button className="demo-poster" type="button" onClick={() => setPlaying(true)}><strong>BR-REFUND-001</strong><small>{en ? 'Play demo' : 'Reproducir demo'} ▶</small></button>}</div></div>
+  return <div className="citation-scene">
+    <div className="citation-map" aria-label={en ? 'One accepted product rule cited by three delivery artifacts' : 'Una regla de producto aceptada citada por tres artefactos de entrega'}>
+      <div className="citation-rule"><small>{en ? 'ACCEPTED PRODUCT RULE' : 'REGLA DE PRODUCTO ACEPTADA'}</small><strong>BR-REFUND-001</strong><span>{en ? '30 days from delivery' : '30 días desde la entrega'}</span></div>
+      <div className="citation-consumers">{consumers.map(name => <div className="citation-consumer" key={name}><span aria-hidden="true">→</span><strong>{name}</strong><small>cites: BR-REFUND-001</small></div>)}</div>
+    </div>
+    <p className="citation-beat citation-beat-0">{en ? 'The rule lives once, in the accepted product definition.' : 'La regla vive una sola vez, en la definición aceptada del producto.'}</p>
+    <p className="citation-beat citation-beat-1">{en ? 'Specs and tests point to the same rule.' : 'Specs y tests apuntan a la misma regla.'}</p>
+    <p className="citation-beat citation-beat-2">{en ? 'If the rule changes, CI flags citations to review.' : 'Si la regla cambia, CI señala las citas que hay que revisar.'}</p>
+    <details className="citation-demo"><summary>{en ? 'Watch the full example' : 'Ver el ejemplo completo'}</summary>{playing ? <img className="demo-animation" src={demo} alt={en ? 'Animated demonstration of the refund rule and stale citations' : 'Demostración animada de la regla de devolución y citas obsoletas'} /> : <button type="button" onClick={() => setPlaying(true)}>{en ? 'Play demo' : 'Reproducir demo'} ▶</button>}</details>
+  </div>
+}
+
+export function TestEvidence({ language }: { language: 'es' | 'en' }) {
+  const en = language === 'en'
+  const steps = en ? ['Accepted rule', 'Given / When / Then', 'Executable E2E test', 'Evidence'] : ['Regla aceptada', 'Given / When / Then', 'Test E2E ejecutable', 'Evidencia']
+  const example = en ? '@BR-REFUND-001\nScenario: Within the window\n  Given an order delivered 29 days ago\n  When the customer requests a refund\n  Then the refund is accepted' : '@BR-REFUND-001\nScenario: Dentro de plazo\n  Given un pedido entregado hace 29 días\n  When el cliente pide la devolución\n  Then se acepta'
+  return <div className="testing-trace"><ol aria-label={en ? 'From product rule to test evidence' : 'De la regla de producto a la evidencia del test'}>{steps.map((step, i) => <li key={step}><span>{String(i + 1).padStart(2, '0')}</span><strong>{step}</strong></li>)}</ol><details><summary>{en ? 'See the scenario' : 'Ver el escenario'}</summary><Code label={en ? 'Refund scenario' : 'Escenario de devolución'}>{example}</Code></details></div>
 }
 
 export function Flow({ items, label }: { items: string[]; label: string }) {
@@ -86,11 +94,11 @@ const experience: Experience = { language: 'es', scenes: [
   { id: 'product-decides', title: 'El ciclo del producto', content: <ProductCycle language="es" /> },
   { id: 'product-definition-model', title: 'Qué escribimos del producto, y cómo se conecta', content: <><h2>PDaC-2 · Product Definition Model</h2><Flow label="Definición canónica" items={['Actors: ACT-CUSTOMER · ACT-PAYMENT-SERVICE participan en journeys', 'Journeys: JRN-CHECKOUT · JRN-REFUND se realizan en Use Cases: UC-CHECKOUT · UC-REFUND', 'Use Cases: gobernados por Business Rules BR-REFUND-001 · BR-AUTH-001; usan Domain: Terms TERM-* · Bounded Contexts BC-*', 'Los casos de uso generan obligaciones: Functional FR-* · Quality QR-* · Constraints CON-*', 'Requirements → scenario-ref → Structured Behaviour: SB-* · SB-CHECKOUT-001 · Given / When / Then']} /><div className="scene-grid"><section><h3>Product Changes</h3><p>CHG-REFUND-002 · semantic proposed delta · afecta a la definición</p></section><section><h3>Derived views</h3><p>snapshot · impact · reference validation · graph diff · navigation · citation status</p></section><section><h3>Delivery consumers</h3><p>SDD specifications · AI agents · human teams · backlog / code citan la definición</p></section></div><Citation /></> },
   { id: 'none-of-this-is-new', title: 'Nada de esto es nuevo', content: <><ul className="principles"><li>Ficheros versionados y legibles</li><li>Metadatos y validación</li><li>IDs estables y enlaces tipados</li><li>Vocabulario de producto</li><li>Baselines y Product Changes</li><li>Citas y detección de obsoletos</li><li>Grafos e informes de impacto</li><li>Contexto acotado para agentes</li></ul><Citation href="https://pdac.dev/articles/what-product-definition-as-code-puts-together/">Where Product Definition as Code comes from</Citation></> },
-  { id: 'define-once-cite-everywhere', title: 'Definida una vez, citada por todos', content: <><h2>ProductShape · Product Definition as Code</h2><Flow label="Demostración de citas" items={['Tres specs divergentes: compra, entrega y «menos de un mes»', 'BR-REFUND-001: una regla definida una vez, con ID estable', 'Cada spec cita la regla. Cambia la regla → las citas quedan stale', 'prodshape citations verify detecta las citas que necesitan revisión']} /><p className="demo-callout">Demo en vivo · Snapshot de DomusMind</p><p>Markdown es la fuente de verdad; el grafo se deriva. En CI, un guardarraíl duro sobre el conocimiento de producto.</p><Citation href="https://pdac.dev/">PDaC · ejemplo de devoluciones</Citation></> },
+  { id: 'define-once-cite-everywhere', title: 'Una regla, muchas referencias', content: <Demo language="es" /> },
   { id: 'from-proposal-to-accepted-product', title: 'De propuesta a producto aceptado', content: <Diagram id="from-proposal-to-accepted-product" language="es" /> },
   { id: 'document-architecture-with-arc42', title: 'Documentar arquitectura con arc42', content: <><ol className="architecture-blocks"><li>Introducción y objetivos</li><li>Restricciones</li><li><strong>Contexto y alcance</strong></li><li><strong>Estrategia de solución</strong></li><li><strong>Bloques de construcción</strong></li><li>Vista de ejecución</li><li>Vista de despliegue</li><li><strong>Conceptos transversales</strong></li><li><strong>Decisiones (ADRs)</strong></li><li><em>Requisitos de calidad</em></li><li>Riesgos y deuda técnica</li><li><em>Glosario</em></li></ol><p><strong>Negrita:</strong> lo que el agente consulta en cada cambio. <em>Cursiva:</em> el puente con la definición de producto.</p><Citation href="https://arc42.org/">arc42 · doce bloques</Citation></> },
   { id: 'agentic-flow-end-to-end', title: 'Un flujo agéntico de principio a fin', content: <><Flow label="Ciclo de vida de agentic-sdlc" items={['Backlog', 'Refine → Ready · verifica un agente', 'Propose → Planned · verifica una persona', 'Implement → Done · verifican CI y una persona', 'Integrate', 'Review → vuelve al backlog']} /><p>agentic-sdlc · <a href="https://github.com/juangcarmona/agent-toolkit">github.com/juangcarmona/agent-toolkit</a></p><p>adopt descubre las herramientas del proyecto. done-gate-auditor revisa el diff fuera del contexto de quien lo escribió.</p></> },
-  { id: 'from-structured-behaviour-to-tests', title: 'Del comportamiento estructurado al test', content: <><Code label="Escenarios de la ventana de devolución">{'@BR-REFUND-001\nFeature: Ventana de devolución\n\n  Scenario: Dentro de plazo\n    Given un pedido entregado hace 29 días\n    When el cliente pide la devolución\n    Then se acepta\n\n  Scenario: Fuera de plazo\n    Given un pedido entregado hace 31 días\n    Then se rechaza'}</Code><Flow label="Trazabilidad de la validación" items={['Structured behaviour (PDaC)', 'Criterios Given / When / Then en el backlog', 'Gherkin etiquetado con la regla', 'Tests e2e ejecutables', 'Evidencia']} /></> },
+  { id: 'from-structured-behaviour-to-tests', title: 'De la regla al test', content: <TestEvidence language="es" /> },
   { id: 'from-pyramid-to-hourglass', title: 'La evolución del testing', content: <><div className="scene-grid"><section><div><h2>Antes</h2><p>Pocos e2e: caros de crear y mantener.</p></div><div className="test-shape before" aria-label="Pirámide de pruebas"><p>E2E</p><p>Integración</p><p>Unitarios</p></div></section><section><div><h2>Ahora</h2><p>Una definición de producto viva permite generar y mantener los e2e con ayuda de la IA.</p></div><div className="test-shape after" aria-label="Reloj de arena de pruebas"><p>E2E desde la intención</p><p>Integración</p><p>Unitarios</p></div></section></div><p>Los unitarios siguen siendo la base. Los e2e comprueban el comportamiento aceptado.</p></> },
   { id: 'can-we-trust-the-result', title: '¿Podemos fiarnos del resultado?', content: <></> },
   { id: 'controlled-deployment', title: 'Entregar es desplegar con control', content: <></> },
@@ -108,12 +116,12 @@ const figures: Record<string, string> = {
 }
 
 export const chapters = [
-  { label: ['Intención', 'Intent'], ids: ['two-sources-of-truth', 'we-abandoned-the-what', 'product-decides', 'product-definition-model', 'none-of-this-is-new'] },
+  { label: ['Intención', 'Intent'], ids: ['two-sources-of-truth', 'we-abandoned-the-what', 'product-decides', 'product-definition-model', 'define-once-cite-everywhere', 'none-of-this-is-new'] },
   { label: ['Arquitectura', 'Architecture'], ids: ['document-architecture-with-arc42'] },
   { label: ['Guardarraíles', 'Guardrails'], ids: ['guardrails'] },
-  { label: ['Código', 'Code'], ids: ['prepare-repo-for-ai', 'repository-structure', 'spec-driven-development', 'openspec', 'github-spec-kit', 'kiro'] },
+  { label: ['Código', 'Code'], ids: ['prepare-repo-for-ai', 'repository-structure', 'spec-driven-development', 'openspec', 'github-spec-kit', 'kiro', 'specs-are-not-source-of-truth'] },
   { label: ['Evidencia', 'Evidence'], ids: ['can-we-trust-the-result', 'from-pyramid-to-hourglass', 'from-structured-behaviour-to-tests'] },
-  { label: ['Entrega', 'Delivery'], ids: ['specs-are-not-source-of-truth', 'define-once-cite-everywhere', 'controlled-deployment'] },
+  { label: ['Entrega', 'Delivery'], ids: ['controlled-deployment'] },
   { label: ['Mantenimiento', 'Maintenance'], ids: ['operate-learn-decide-again', 'from-proposal-to-accepted-product'] },
 ] as const
 

@@ -146,7 +146,7 @@ export function TerminalCase({ language }: { language: Language }) {
       <div className="terminal-top"><span></span><span></span><span></span><b>bash</b></div>
       <div className="terminal-body"><p><span>user@home</span>:~$ grep -rn -i "refund" openspec/specs</p>{lines.map(line => <p key={line}>{line}</p>)}<p><span>user@home</span>:~$ <i aria-hidden="true">▍</i></p></div>
     </div>
-    <div className="case-story"><p className="section-label">{en ? 'A REAL CASE' : 'UN CASO REAL'}</p><h2>{en ? '160 specs. Three truths.' : '160 specs. Tres verdades.'}</h2><p>{en ? 'The same rule differed across teams: VAT, runtime schema and even a security gap.' : 'La misma regla divergía entre equipos: IVA, esquema en runtime y hasta un agujero de seguridad.'}</p><blockquote>{en ? '“Forbidden and mandatory” in the same file.' : '«Prohibido y obligatorio» en el mismo fichero.'}</blockquote><a href="https://jgcarmona.com/en/i-tried-to-prove-pdac-wrong/">{en ? 'Read the case ↗' : 'Leer el caso ↗'}</a></div>
+    <div className="case-story"><p className="section-label">{en ? 'A REAL CASE · 160 SPECS' : 'UN CASO REAL · 160 SPECS'}</p><h2>{en ? 'Three answers to one question.' : 'Tres respuestas a una pregunta.'}</h2><p>{en ? 'A delivery spec captures one change. It cannot define the whole product.' : 'Una spec de entrega recoge un cambio. No puede definir el producto entero.'}</p><a href="https://jgcarmona.com/en/i-tried-to-prove-pdac-wrong/">{en ? 'Read the case ↗' : 'Leer el caso ↗'}</a></div>
   </div></div>
 }
 

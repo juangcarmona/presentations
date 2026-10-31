@@ -1,9 +1,9 @@
 [
   "cover", "engineering-journey",
-  "two-sources-of-truth", "we-abandoned-the-what", "product-decides", "product-definition-model", "none-of-this-is-new",
+  "two-sources-of-truth", "we-abandoned-the-what", "product-decides", "product-definition-model", "define-once-cite-everywhere", "none-of-this-is-new",
   "document-architecture-with-arc42", "guardrails",
-  "prepare-repo-for-ai", "repository-structure", "spec-driven-development", "openspec", "github-spec-kit", "kiro",
+  "prepare-repo-for-ai", "repository-structure", "spec-driven-development", "openspec", "github-spec-kit", "kiro", "specs-are-not-source-of-truth",
   "can-we-trust-the-result", "from-pyramid-to-hourglass", "from-structured-behaviour-to-tests",
-  "specs-are-not-source-of-truth", "define-once-cite-everywhere", "controlled-deployment", "operate-learn-decide-again", "from-proposal-to-accepted-product",
+  "controlled-deployment", "operate-learn-decide-again", "from-proposal-to-accepted-product",
   "agentic-flow-end-to-end", "what-still-depends-on-us", "juan-g-carmona"
 ]
