@@ -1,13 +1,18 @@
 import { useEffect, useLayoutEffect, useRef, useState } from 'react'
 import { handlesShortcut, interactiveSelector, nextIndex, sceneIndex } from '../../../src/scene-navigation'
-import spanish, { presentationImages } from './experience'
+import spanish, { chapterForScene, legacySceneIds, presentationImages } from './experience'
 import english from './experience-en'
+
+function indexFromHash(scenes: { id: string }[], hash: string) {
+  const oldId = new URLSearchParams(hash.replace(/^#/, '')).get('scene')
+  return sceneIndex(scenes, oldId && legacySceneIds[oldId] ? `#scene=${legacySceneIds[oldId]}` : hash)
+}
 
 export default function Presentation() {
   const [language, setLanguage] = useState<'es' | 'en'>(() => new URLSearchParams(location.search).get('lang') === 'en' ? 'en' : 'es')
   const experience = language === 'en' ? english : spanish
   const { scenes } = experience
-  const [index, setIndex] = useState(() => sceneIndex(scenes, location.hash))
+  const [index, setIndex] = useState(() => indexFromHash(scenes, location.hash))
   const [elapsed, setElapsed] = useState(0)
   const [comparisonStage, setComparisonStage] = useState(0)
   const started = useRef(performance.now())
@@ -37,7 +42,7 @@ export default function Presentation() {
     const update = () => {
       focusScene.current = Boolean(document.activeElement?.closest('.scene'))
       setComparisonStage(0)
-      setIndex(sceneIndex(scenes, location.hash))
+      setIndex(indexFromHash(scenes, location.hash))
     }
     addEventListener('hashchange', update)
     return () => removeEventListener('hashchange', update)
@@ -55,7 +60,7 @@ export default function Presentation() {
   }, [scene])
 
   function move(direction: number) {
-    const lastStage = scene.id === '04-guardarrailes' ? 2 : scene.id === '20-piramide' ? 1 : 0
+    const lastStage = ['guardrails', 'define-once-cite-everywhere'].includes(scene.id) ? 2 : scene.id === 'from-pyramid-to-hourglass' ? 1 : 0
     if (lastStage) {
       if (direction > 0 && comparisonStage < lastStage) { setComparisonStage(comparisonStage + 1); return }
       if (direction < 0 && comparisonStage > 0) { setComparisonStage(comparisonStage - 1); return }
@@ -83,7 +88,7 @@ export default function Presentation() {
     return () => removeEventListener('keydown', keydown)
   })
 
-  return <main className="keynote" lang={experience.language} onClick={event => {
+  return <main className="keynote" lang={experience.language} data-chapter={chapterForScene(scene.id, 'en')?.toLowerCase()} onClick={event => {
     if (!(event.target instanceof Element) || event.target.closest('a, button, input, textarea, select, details, pre, code, .terminal, [role="button"], [contenteditable="true"]') || window.getSelection()?.toString()) return
     move(event.clientX < window.innerWidth / 2 ? -1 : 1)
   }} onTouchStart={event => {
@@ -96,13 +101,12 @@ export default function Presentation() {
     if (Math.abs(dx) > 70 && Math.abs(dx) > Math.abs(dy) * 1.5) move(dx < 0 ? 1 : -1)
   }}>
     <a className="skip-link" href="#scene-title">{language === 'en' ? 'Skip to slide' : 'Ir a la diapositiva'}</a>
-    <article className="scene" key={scene.id} aria-labelledby="scene-title" data-scene={scene.id} data-stage={comparisonStage}>
-      <h1 id="scene-title" className={scene.id === '02-recorrido' ? 'visually-hidden' : undefined} ref={heading} tabIndex={-1}>{scene.title}</h1>
+    <article className="scene" key={scene.id} aria-labelledby="scene-title" data-scene={scene.id} data-stage={comparisonStage} data-chapter={chapterForScene(scene.id, 'en')?.toLowerCase()}>
+      <h1 id="scene-title" className={scene.id === 'engineering-journey' ? 'visually-hidden' : undefined} ref={heading} tabIndex={-1}>{scene.title}</h1>
       <div className="scene-content">{scene.content}</div>
-      {scene.id === '20-piramide' && <button className="comparison-next" type="button" onClick={() => setComparisonStage(comparisonStage === 0 ? 1 : 0)}>{comparisonStage === 0 ? (language === 'en' ? 'Show now →' : 'Mostrar ahora →') : (language === 'en' ? '← Show before' : '← Mostrar antes')}</button>}
     </article>
     <div className="presentation-hud" role="group" aria-label={language === 'en' ? `Slide ${index + 1} of ${scenes.length}` : `Diapositiva ${index + 1} de ${scenes.length}`}>
-      <span className="slide-number" aria-hidden="true">{index + 1}</span>
+      {chapterForScene(scene.id, language) && <span className="slide-number" aria-hidden="true">{chapterForScene(scene.id, language)}</span>}
       {elapsedMinutes > 0 && <time className="elapsed-clock" dateTime={`PT${elapsedMinutes}M`} aria-label={language === 'en' ? `${elapsedMinutes} minutes elapsed` : `${elapsedMinutes} minutos transcurridos`}>{String(Math.floor(elapsedMinutes / 60)).padStart(2, '0')}:{String(elapsedMinutes % 60).padStart(2, '0')}</time>}
     </div>
     {index === 0 && <nav className="language-picker" aria-label={language === 'en' ? 'Presentation language' : 'Idioma de la presentación'}>
