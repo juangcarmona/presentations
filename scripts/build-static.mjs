@@ -18,6 +18,7 @@ export function escapeHTML(text) { return text.replace(/[&<>"']/g, char => ({ '&
 export function buildStatic(root = '.') {
   validateRegistry(root)
   const shell = readFileSync(resolve(root, 'dist/index.html'), 'utf8')
+  writeFileSync(resolve(root, 'dist/404.html'), shell.replace('lang="es"', 'lang="en"').replace('<title>Talks · Juan G. Carmona</title>', '<title>404 · Juan G. Carmona</title>'))
   // Keep the approved source visual published after its redundant scene is retired.
   cpSync(resolve(root, 'talks/ingenieria-del-software-2_0/deck/public/pdac-reference-workflow.png'), resolve(root, 'talks/ingenieria-del-software-2_0/deck/dist/assets/pdac-reference-workflow.png'))
   for (const entry of entries) for (const prefix of ['', 'decks/']) {

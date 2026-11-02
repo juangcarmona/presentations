@@ -73,7 +73,7 @@ function CatalogPage() {
             <strong>{String(talks.length).padStart(2, '0')}</strong>
             <small>talks in the archive</small>
           </div>
-          <span className="signal-code">jgcarmona.com/talks</span>
+          <span className="signal-code">talks.jgcarmona.com</span>
         </div>
       </section>
 
@@ -139,10 +139,21 @@ function TalkPage({ talk }: { talk: Talk }) {
 
 function NotFoundPage() {
   return (
-    <section className="empty-state" aria-labelledby="not-found-title">
-      <p className="kicker"><span>404</span> / not found</p>
-      <h1 id="not-found-title">This talk has not entered the archive yet.</h1>
-      <a className="button button-primary" href="/">Back to catalog <span aria-hidden="true">↗</span></a>
+    <section className="not-found" aria-labelledby="not-found-title">
+      <div className="not-found-copy">
+        <p className="kicker"><span>404</span> / off script</p>
+        <h1 id="not-found-title">This scene<br />{' '}doesn’t exist<span className="not-found-period">.</span></h1>
+        <p className="not-found-lede">Wrong turn, missing link or an idea that hasn’t made it to the stage yet. The rest of the archive is right here.</p>
+        <div className="hero-actions">
+          <a className="button button-primary" href="/">Back to the talks <span aria-hidden="true">↗</span></a>
+          <a className="text-link" href="https://jgcarmona.com/">Visit the main site <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+      <div className="missing-scene" aria-hidden="true">
+        <span className="missing-scene-label">STAGE / UNKNOWN</span>
+        <div className="missing-scene-number"><span>4</span><span className="missing-scene-zero" /><span>4</span></div>
+        <div className="missing-scene-bottom"><span>NO MATCHING ROUTE</span><span>↖ BACK TO THE STORY</span></div>
+      </div>
     </section>
   )
 }

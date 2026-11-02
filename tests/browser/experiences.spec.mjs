@@ -20,6 +20,22 @@ test('every static entry and asset is directly served', async ({ page, request }
   expect((await request.get('/en/software-engineering-2_0/')).status()).toBe(404)
 })
 
+test('missing routes return the custom 404 and let visitors recover', async ({ page, request }) => {
+  const response = await page.goto('/not-a-real-route/')
+  expect(response?.status()).toBe(404)
+  await expect(page.getByRole('heading', { level: 1 })).toHaveText('This scene doesn’t exist.')
+  await expect(page.locator('.missing-scene-number')).toBeVisible()
+  await expect(page.getByText('talks.jgcarmona.com')).toHaveCount(1)
+  await expect(page.locator('html')).toHaveAttribute('lang', 'en')
+  await page.setViewportSize({ width: 390, height: 844 })
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true)
+  const accessibility = await new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa', 'wcag21aa']).analyze()
+  expect(accessibility.violations).toEqual([])
+  expect((await request.get('/en/software-engineering-2_0/')).status()).toBe(404)
+  await page.getByRole('link', { name: 'Back to the talks' }).click()
+  await expect(page.getByRole('heading', { name: 'Ideas that deserve a stage.' })).toBeVisible()
+})
+
 for (const [path, scenes, language] of [
   ['/software-engineering-2_0/', spanish, 'es'],
   ['/software-engineering-2_0/?lang=en', spanish, 'en'],

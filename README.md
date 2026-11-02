@@ -47,7 +47,9 @@ npm run preview
 npm run serve:static
 ```
 
-Open `http://127.0.0.1:4173`. This server serves only `dist/`, supports directory indexes and returns 404 for missing files; there is **no SPA fallback**. Publish the whole `dist/` directory to a domain-root static host with directory indexes. Subpath hosting is not supported by this change. `npm run preview` is convenient for review, but the tests use the strict static server.
+Open `http://127.0.0.1:4173`. This server serves only `dist/`, supports directory indexes and returns the custom `404.html` with a 404 status for missing paths; there is **no SPA fallback**. Publish the whole `dist/` directory to a domain-root static host with directory indexes. Subpath hosting is not supported by this change. `npm run preview` is convenient for review, but the tests use the strict static server.
+
+For a LAN preview with the real 404 status, run `node scripts/serve-static.mjs dist 4176 0.0.0.0` and open the host's IP on port 4176.
 
 ### Cloudflare Workers
 

@@ -4,6 +4,8 @@ import { resolve, extname, sep } from 'node:path'
 
 const root = resolve(process.argv[2] || 'dist')
 const port = Number(process.argv[3] || 4173)
+const host = process.argv[4] || '127.0.0.1'
+const notFound = await readFile(resolve(root, '404.html'))
 const mime = { '.html': 'text/html; charset=utf-8', '.js': 'text/javascript', '.css': 'text/css', '.json': 'application/json', '.svg': 'image/svg+xml', '.png': 'image/png', '.jpg': 'image/jpeg', '.gif': 'image/gif' }
 createServer(async (request, response) => {
   try {
@@ -16,5 +18,5 @@ createServer(async (request, response) => {
     }
     response.writeHead(200, { 'Content-Type': mime[extname(path)] || 'application/octet-stream' })
     response.end(await readFile(path))
-  } catch { response.writeHead(404).end('Not found') }
-}).listen(port, '127.0.0.1', () => console.log(`Static files: http://127.0.0.1:${port} (no SPA fallback)`))
+  } catch { response.writeHead(404, { 'Content-Type': 'text/html; charset=utf-8' }).end(notFound) }
+}).listen(port, host, () => console.log(`Static files: http://${host}:${port} (no SPA fallback)`))

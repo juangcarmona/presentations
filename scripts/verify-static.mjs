@@ -39,6 +39,8 @@ export function verifyStatic(root = '.', write = true) {
     const html = readFileSync(`${dist}${path}index.html`, 'utf8')
     if (!html.includes('id="root"') || !html.includes('/assets/')) throw Error(`Invalid static entry: ${path}`)
   }
+  const notFound = readFileSync(`${dist}/404.html`, 'utf8')
+  if (!notFound.includes('lang="en"') || !notFound.includes('id="root"') || !notFound.includes('/assets/')) throw Error('Invalid 404 page')
   const outputFiles = files(dist).filter(path => !path.endsWith('/site-manifest.json'))
   for (const path of outputFiles) {
     if (path.endsWith('.map') || !/\.(html|css|js|svg|png|jpg|gif|webp)$/.test(path)) throw Error(`Unexpected distributed file: ${path}`)
