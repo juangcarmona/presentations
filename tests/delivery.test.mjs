@@ -4,13 +4,13 @@ import { readFileSync, existsSync } from 'node:fs'
 import { entries, escapeHTML, validateRegistry } from '../scripts/build-static.mjs'
 import { verifyStatic, assertNoAuthorNotes } from '../scripts/verify-static.mjs'
 
-test('registry and five physical entries have complete assets', () => {
+test('registry and five physical entries include moved talk redirects', () => {
   validateRegistry()
   const manifest = verifyStatic('.', false)
   assert.equal(manifest.entries.length, 5)
   assert.equal(manifest.talks.length, 2)
   assert.ok(manifest.assets.some(name => name.includes('experience')))
-  assert.ok(manifest.assets.some(name => name.startsWith('/software-engineering-2_0/assets/')))
+  for (const path of ['/software-engineering-2_0/', '/decks/software-engineering-2_0/']) assert.match(readFileSync(`dist${path}index.html`, 'utf8'), /https:\/\/se2\.jgcarmona\.com\//)
   assert.equal(escapeHTML('<"a&b\'>'), '&lt;&quot;a&amp;b&#39;&gt;')
 })
 
@@ -20,16 +20,16 @@ test('one public locked dependency graph, without presentation frameworks or loc
     assert.doesNotMatch(path, /slidev|reveal\.js|impress\.js/)
     if (dependency.resolved) assert.ok(dependency.resolved.startsWith('https://registry.npmjs.org/'), `${path} must resolve publicly`)
   }
-  for (const entry of entries) for (const file of ['package.json', 'pnpm-lock.yaml', 'slides.md']) assert.equal(existsSync(`talks/${entry.directory}/deck/${file}`), false)
+  for (const entry of entries.filter(entry => !entry.redirectTo)) for (const file of ['package.json', 'pnpm-lock.yaml', 'slides.md']) assert.equal(existsSync(`talks/${entry.directory}/deck/${file}`), false)
   assert.equal(existsSync('scripts/build-decks.mjs'), false)
 })
 
 test('coverage and author notes account for every original source unit', () => {
   const baseline = JSON.parse(readFileSync('tests/fixtures/migration.json', 'utf8'))
-  assert.equal(baseline.scenes.length, 39)
-  for (const entry of entries) {
+  assert.equal(baseline.scenes.length, 15)
+  for (const entry of entries.filter(entry => !entry.redirectTo)) {
     const scenes = baseline.scenes.filter(scene => scene.directory === entry.directory)
-    assert.equal(scenes.length, entry.language === 'es' ? 24 : 15)
+    assert.equal(scenes.length, 15)
     const coverage = readFileSync(`talks/${entry.directory}/content/coverage.md`, 'utf8')
     const notes = readFileSync(`talks/${entry.directory}/content/speaker-notes.md`, 'utf8')
     for (const scene of scenes) {

@@ -120,7 +120,7 @@ function TalkCard({ talk }: { talk: Talk }) {
           {talk.meta.map((item) => <li key={item}>{item}</li>)}
         </ul>
         <div className="card-actions">
-          <a className="button button-secondary" href={`/${talk.slug}/`}>Enter talk <span aria-hidden="true">↗</span></a>
+          <a className="button button-secondary" href={talk.standalone ? talk.deckUrl : `/${talk.slug}/`}>Enter talk <span aria-hidden="true">↗</span></a>
           <a className="text-link" href={talk.sourceUrl}>Source <span aria-hidden="true">↗</span></a>
         </div>
       </div>

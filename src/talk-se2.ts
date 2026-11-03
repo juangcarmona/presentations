@@ -1,4 +1,4 @@
-import type { Talk } from '../../src/talk-model'
+import type { Talk } from './talk-model'
 
 export const talk: Talk = {
   standalone: true,
@@ -12,13 +12,13 @@ export const talk: Talk = {
     'AI changes the cost of producing software. It does not remove the need to decide what should be built, how it fits together, or how we know it works.',
   status: 'Published',
   meta: ['60 min', 'ES / EN', 'Software + AI'],
-  deckUrl: '/decks/software-engineering-2_0/',
+  deckUrl: 'https://se2.jgcarmona.com/',
   chapters: [
     { title: 'The speed trap', description: 'When output becomes abundant, direction and constraints become the scarce resources.' },
     { title: 'A system around the model', description: 'Product intent, architecture, guardrails and an agentic workflow working as one system.' },
     { title: 'Evidence is the finish line', description: 'Validation is not a final ceremony; it is how the system earns the right to ship.' },
   ],
-  sourceUrl: 'https://github.com/juangcarmona/presentations/tree/main/talks/ingenieria-del-software-2_0',
-  readmeUrl: 'https://github.com/juangcarmona/presentations/blob/main/talks/ingenieria-del-software-2_0/README.md',
+  sourceUrl: 'https://github.com/juangcarmona/talk-se2',
+  readmeUrl: 'https://github.com/juangcarmona/talk-se2/blob/main/README.md',
   featured: true,
 }

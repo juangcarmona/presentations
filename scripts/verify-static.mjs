@@ -37,7 +37,10 @@ export function verifyStatic(root = '.', write = true) {
   const paths = ['/', ...entries.flatMap(({ slug }) => [`/${slug}/`, `/decks/${slug}/`])]
   for (const path of paths) {
     const html = readFileSync(`${dist}${path}index.html`, 'utf8')
-    if (!html.includes('id="root"') || !html.includes('/assets/')) throw Error(`Invalid static entry: ${path}`)
+    const entry = entries.find(({ slug }) => path.includes(`/${slug}/`))
+    if (entry?.redirectTo) {
+      if (!html.includes(`location.replace(${JSON.stringify(entry.redirectTo)}+location.search+location.hash)`)) throw Error(`Invalid redirect: ${path}`)
+    } else if (!html.includes('id="root"') || !html.includes('/assets/')) throw Error(`Invalid static entry: ${path}`)
   }
   const outputFiles = files(dist).filter(path => !path.endsWith('/site-manifest.json'))
   for (const path of outputFiles) {
@@ -52,7 +55,7 @@ export function verifyStatic(root = '.', write = true) {
   }
   // Author notes are inspected only by build verification, never by runtime imports.
   const outputText = outputFiles.filter(path => /\.(html|css|js)$/.test(path)).map(path => readFileSync(path, 'utf8'))
-  for (const entry of entries) {
+  for (const entry of entries.filter(entry => !entry.redirectTo)) {
     const notes = readFileSync(resolve(root, `talks/${entry.directory}/content/speaker-notes.md`), 'utf8')
     assertNoAuthorNotes(notes, outputText, entry.directory)
   }
